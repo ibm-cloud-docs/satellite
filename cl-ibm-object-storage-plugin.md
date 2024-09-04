@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-07-18"
+lastupdated: "2024-09-04"
 
 
 keywords: satellite storage, change log, version history, ibm object storage plugin
@@ -23,6 +23,13 @@ Review the version history for the `ibm-object-storage-plugin` {{site.data.keywo
 ## Version 2.2
 {: #ibm-object-storage-plugin-2.2-change-log}
 
+
+### Revision 23, released 04 September 2024
+{: #ibm-object-storage-plugin-2.2-rev-23-change-log}
+
+
+- Resolves the following CVEs: [CVE-2024-6104](https://nvd.nist.gov/vuln/detail/CVE-2024-6104){: external} [CVE-2024-24791](https://nvd.nist.gov/vuln/detail/CVE-2024-24791){: external} [CVE-2023-45288](https://nvd.nist.gov/vuln/detail/CVE-2023-45288){: external} [CVE-2024-2398](https://nvd.nist.gov/vuln/detail/CVE-2024-2398){: external} [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/CVE-2024-37370){: external} [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/CVE-2024-37371){: external} 
+- Updates Go to version `1.21.13`.
 
 ### Revision 22, released 17 July 2024
 {: #ibm-object-storage-plugin-2.2-rev-22-change-log}
@@ -143,5 +150,3 @@ Review the version history for the `ibm-object-storage-plugin` {{site.data.keywo
 - Adds an option to disable reading secret from cross namespace for PVC creation.
 - Adds support for automatically populating the object store endpoint in the storage classes based on `storageclass` and `s3provider` parameters.
 - Adds support for Wasabi & AWS s3 provider on Satellite clusters.
-
-

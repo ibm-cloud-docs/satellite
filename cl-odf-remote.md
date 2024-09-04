@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-08-26"
+lastupdated: "2024-09-04"
 
 
 keywords: satellite storage, change log, version history, odf remote
@@ -23,6 +23,13 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 ## Version 4.15
 {: #odf-remote-4.15-change-log}
 
+
+### Revision 5, released 04 September 2024
+{: #odf-remote-4.15-rev-5-change-log}
+
+
+- Resolves the following CVEs: [CVE-2024-2398](https://nvd.nist.gov/vuln/detail/CVE-2024-2398){: external} [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/CVE-2024-37370){: external} [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/CVE-2024-37371){: external} 
+- Updates Go to version `1.21.13`.
 
 ### Revision 4, released 12 July 2024
 {: #odf-remote-4.15-rev-4-change-log}
@@ -56,6 +63,13 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 ## Version 4.14
 {: #odf-remote-4.14-change-log}
 
+
+### Revision 8, released 04 September 2024
+{: #odf-remote-4.14-rev-8-change-log}
+
+
+- Resolves the following CVEs: [CVE-2024-2398](https://nvd.nist.gov/vuln/detail/CVE-2024-2398){: external} [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/CVE-2024-37370){: external} [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/CVE-2024-37371){: external} 
+- Updates Go to version `1.21.13`.
 
 ### Revision 7, released 12 July 2024
 {: #odf-remote-4.14-rev-7-change-log}
@@ -117,6 +131,13 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 ## Version 4.13
 {: #odf-remote-4.13-change-log}
 
+
+### Revision 12, released 04 September 2024
+{: #odf-remote-4.13-rev-12-change-log}
+
+
+- Resolves the following CVEs: [CVE-2024-2398](https://nvd.nist.gov/vuln/detail/CVE-2024-2398){: external} [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/CVE-2024-37370){: external} [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/CVE-2024-37371){: external} 
+- Updates Go to version `1.21.13`.
 
 ### Revision 11, released 12 July 2024
 {: #odf-remote-4.13-rev-11-change-log}
@@ -213,6 +234,13 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 ## Version 4.12
 {: #odf-remote-4.12-change-log}
 
+
+### Revision 15, released 04 September 2024
+{: #odf-remote-4.12-rev-15-change-log}
+
+
+- Resolves the following CVEs: [CVE-2024-2398](https://nvd.nist.gov/vuln/detail/CVE-2024-2398){: external} [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/CVE-2024-37370){: external} [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/CVE-2024-37371){: external} 
+- Updates Go to version `1.21.13`.
 
 ### Revision 14, released 12 July 2024
 {: #odf-remote-4.12-rev-14-change-log}
@@ -670,5 +698,3 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 - Resolves the following CVEs: [CVE-2022-47629](https://nvd.nist.gov/vuln/detail/CVE-2022-47629){: external} 
 - Updates the UBI to version `8.7-1049.1675784874`.
 - Updates Go to version `1.18.9`.
-
-

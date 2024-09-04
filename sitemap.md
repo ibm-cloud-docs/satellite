@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-08-26"
+lastupdated: "2024-09-04"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -4090,6 +4090,8 @@ subcollection: satellite
 
 * [Version 2.2](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-change-log)
 
+    * [Revision 23, released 04 September 2024](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-23-change-log)
+
     * [Revision 22, released 17 July 2024](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-22-change-log)
 
     * [Revision 21, released 05 June 2024](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-21-change-log)
@@ -4442,6 +4444,8 @@ subcollection: satellite
 
 * [Version 4.15](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.15-change-log)
 
+    * [Revision 5, released 04 September 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.15-rev-5-change-log)
+
     * [Revision 4, released 12 July 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.15-rev-4-change-log)
 
     * [Revision 3, released 21 June 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.15-rev-3-change-log)
@@ -4451,6 +4455,8 @@ subcollection: satellite
     * [Revision 1, released 09 May 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.15-rev-1-change-log)
 
 * [Version 4.14](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.14-change-log)
+
+    * [Revision 8, released 04 September 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.14-rev-8-change-log)
 
     * [Revision 7, released 12 July 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.14-rev-7-change-log)
 
@@ -4467,6 +4473,8 @@ subcollection: satellite
     * [Revision 1, released 02 February 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.14-rev-1-change-log)
 
 * [Version 4.13](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-change-log)
+
+    * [Revision 12, released 04 September 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-rev-12-change-log)
 
     * [Revision 11, released 12 July 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-rev-11-change-log)
 
@@ -4491,6 +4499,8 @@ subcollection: satellite
     * [Revision 1, released 24 July 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-rev-1-change-log)
 
 * [Version 4.12](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-change-log)
+
+    * [Revision 15, released 04 September 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-15-change-log)
 
     * [Revision 14, released 12 July 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-14-change-log)
 
@@ -4612,6 +4622,8 @@ subcollection: satellite
 
 * [Version 4.15](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.15-change-log)
 
+    * [Revision 5, released 04 September 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.15-rev-5-change-log)
+
     * [Revision 4, released 12 July 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.15-rev-4-change-log)
 
     * [Revision 3, released 21 June 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.15-rev-3-change-log)
@@ -4621,6 +4633,8 @@ subcollection: satellite
     * [Revision 1, released 09 May 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.15-rev-1-change-log)
 
 * [Version 4.14](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.14-change-log)
+
+    * [Revision 8, released 04 September 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.14-rev-8-change-log)
 
     * [Revision 7, released 12 July 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.14-rev-7-change-log)
 
@@ -4637,6 +4651,8 @@ subcollection: satellite
     * [Revision 1, released 02 February 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.14-rev-1-change-log)
 
 * [Version 4.13](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-change-log)
+
+    * [Revision 12, released 04 September 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-rev-12-change-log)
 
     * [Revision 11, released 12 July 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-rev-11-change-log)
 
@@ -4661,6 +4677,8 @@ subcollection: satellite
     * [Revision 1, released 24 July 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-rev-1-change-log)
 
 * [Version 4.12](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-change-log)
+
+    * [Revision 15, released 04 September 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-15-change-log)
 
     * [Revision 14, released 12 July 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-14-change-log)
 
@@ -5198,4 +5216,3 @@ subcollection: satellite
 
 
 [Why does my {{site.data.keyword.satelliteshort}} Config rollout fail and result in a `not authorized` error?](/docs/satellite?topic=satellite-ts-satconfig-subid-perms#ts-satconfig-subid-perms)
-
