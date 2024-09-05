@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-08-01"
+lastupdated: "2024-09-04"
 
 keywords: satellite, connector, agent, windows
 
@@ -39,8 +39,9 @@ Configuration information is provided to the agent through the following environ
 | Environment variable | Required | Description |
 | --- | --- | --- |
 | `SATELLITE_CONNECTOR_ID` | Yes | The ID of the Satellite Connector that the agent is bound to. You can find your Connector ID in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} or by running the `ibmcloud sat experimental connector ls` command. |
-| `SATELLITE_CONNECTOR_IAM_APIKEY` | Yes |Your IAM API key. For security purposes, consider storing your IAM API key in a file and then providing the file for this value. **Note**: In Windows environments, you must escape the slash in the file path. |
+| `SATELLITE_CONNECTOR_IAM_APIKEY` | Yes | Your IAM API key. For security purposes, consider storing your IAM API key in a file and then providing the file for this value. **Note**: In Windows environments, you must escape the slash in the file path. |
 | `SATELLITE_CONNECTOR_TAGS` | No | A user defined string that can be helpful to identify your agent. This string can be any value that you find useful. The value must be less than or equal to 256 characters and is truncated if over 256 characters. The following characters are removed: `<>/{}%[]?,;@$&`. |
+| `SATELLITE_CONNECTOR_DIRECT_LINK_INGRESS` | No | The Satellite Tunnel Ingress server to direct the agent traffic to. Specifying an internal Ingress will ensure all traffic between the Agent and Tunnel server stays in your private network. |
 | `LOG_LEVEL` | No | Set the level of logging detail you want to receive for your agent. You can specify one of `fatal`, `error`, `warn`, `debug`, `info`, or `trace`. The default level is `info`. Typically, the `debug` and `trace` levels are used only when debugging. |
 {: caption="Table 1. Environment variables for configuration" caption-side="bottom"}
 
@@ -208,7 +209,7 @@ Before you begin, review the [Minimum requirements](/docs/satellite?topic=satell
     ```
     {: codeblock}
 
-1. **Optional**: Verify the `sha512sum` of the `.zip` by running the following command in PowerShell.
+1. Verify the `sha512sum` of the `.zip` by running the following command in PowerShell.
     ```txt
     Get-FileHash -Algorithm SHA512 -Path c:\windows_satellite_connector_1420916628.zip
     ```
@@ -268,11 +269,14 @@ Configuration information is provided to the agent through the following environ
 {: #windows-agent-run}
 
 
-1. Start the agent by running the `install` command in PowerShell.
+1. Start the agent by running the `install` command in PowerShell. 
     ```txt
     .\install
     ```
     {: codeblock}
+
+    If you start the agent and receive a Windows `Microsoft Defender SmartScreen` error, make sure you completed the step to verify the `sha512sum` after you [downloaded the agent](#windows-agent-download). Complete the verification step and try again. 
+    {: tip}
     
 
 1. Verify the agent is running by run the `Get-Service` command in PowerShell.
@@ -356,4 +360,3 @@ You can use the `update` command to apply configuration changes to your agent. W
 
 After creating a Connector agent, you can create endpoints to connect from the IBM Cloud private network to a resource running on your Location. You can also control access your endpoints by creating access control list rules. For more information, see [Creating and managing Connector endpoints](/docs/satellite?topic=satellite-connector-create-endpoints).
   
-

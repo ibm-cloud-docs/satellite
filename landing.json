@@ -1,7 +1,7 @@
 
 {
     "title": "Satellite",
-    "lastupdated": "2024-08-14",
+    "lastupdated": "2024-09-05",
     "introduction": "Explore the capabilities of IBM Cloud Satellite and discover the tools to manage your locations, hosts, and app workloads. ",
     "section_devtools": {
       "api": "/apidocs/kubernetes/containers-v1-v2", 
