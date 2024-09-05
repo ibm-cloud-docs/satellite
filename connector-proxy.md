@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-08-20"
+lastupdated: "2024-09-05"
 
 keywords: satellite, http proxy, http, proxy, connector
 
@@ -19,6 +19,9 @@ subcollection: satellite
 
 You can use a proxy to establish tunnel connection for your {{site.data.keyword.satelliteshort}} Connector.
 {: shortdesc}
+
+This document shows how to configure a forward proxy for your Connector agent. If you want to configure the target destination for outgoing requests refer to [Configuring the request path from your connector agent](/docs/satellite?topic=satellite-connector-agent-path) instead.
+{: note}
 
 There are various ways to setup a proxy. These instructions assume that you have a properly configured proxy, which is accessible from the machine running the Connector agent. The following instructions have been tested with the Connector agent machine running Ubuntu 22.04 with an explicit Squid proxy running on a different machine from the Connector agent.
 
@@ -44,10 +47,3 @@ There are various ways to setup a proxy. These instructions assume that you have
     HTTPS_PROXY=http://192.168.3.87:3128
     ```
     {: codeblock}
-
-
-
-
-
-
-

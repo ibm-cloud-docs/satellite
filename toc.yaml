@@ -170,6 +170,7 @@ toc:
             topics:
               - create-connector.md
               - run-agent-locally.md
+              - connector-agent-path.md
               - run-agent-swarm.md
               - end-to-end.md
               - connector-create-from-sg.md

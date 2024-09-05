@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-09-04"
+lastupdated: "2024-09-05"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1808,6 +1808,8 @@ subcollection: satellite
 * [Updating the agent on Windows](/docs/satellite?topic=satellite-run-agent-locally#update-agent-windows)
 
 * [Next steps](/docs/satellite?topic=satellite-run-agent-locally#agent-next-steps)
+
+[Configuring the request path from your connector agent](/docs/satellite?topic=satellite-connector-agent-path#connector-agent-path)
 
 [Running your Connector agent as a service in Docker Swarm Mode for high availability](/docs/satellite?topic=satellite-run-agent-swarm#run-agent-swarm)
 
