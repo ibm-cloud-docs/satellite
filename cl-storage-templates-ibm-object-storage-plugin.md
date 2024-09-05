@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-09-04"
+lastupdated: "2024-09-05"
 
 
 keywords: change log, version history, ibm-object-storage-plugin
@@ -131,7 +131,7 @@ Review the version history for `ibm-object-storage-plugin`.
 - Updates the UBI to version `8.7-1049.1675784874`.
 - Updates Go to version `1.18.9`.
 - Sets the default values for CPU request and CPU limit to `100m` and CPU limit to `500m`. 
-- Sets the default values for memory request to `128Mi and the memory limit to `500Mi`. 
+- Sets the default values for memory request to `128Mi` and the memory limit to `500Mi`. 
 - Adds an option to disable reading secret from cross namespace for PVC creation.
 - Adds support for automatically populating the object store endpoint in the storage classes based on `storageclass` and `s3provider` parameters.
 - Adds support for Wasabi and AWS s3 provider on Satellite clusters.
