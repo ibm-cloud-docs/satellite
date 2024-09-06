@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-08-21"
+lastupdated: "2024-09-06"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1366,7 +1366,7 @@ ibmcloud sat experimental acl update --acl-id ID --name NAME [-q] (--connector-i
 ## `ibmcloud sat experimental agent attach`
 {: #experimental-agent-attach-cli}
 
-[Expires on 2024-09-01. Use `ibmcloud sat agent attach` instead] Get a Satellite Connector Agent for a specific platform. Download the Agent `.zip` for Windows or get a link to the documentation for Docker environments.
+[Deactivated on 2024-09-01! Use `ibmcloud sat agent attach` instead] Get a Satellite Connector Agent for a specific platform. Download the Agent `.zip` for Windows or get a link to the documentation for Docker environments.
 
 ```txt
 ibmcloud sat experimental agent attach --platform PLATFORM [-q]
@@ -1388,7 +1388,7 @@ ibmcloud sat experimental agent attach --platform PLATFORM [-q]
 ## `ibmcloud sat experimental agent ls`
 {: #experimental-agent-ls-cli}
 
-[Expires on 2024-09-01. Use `ibmcloud sat agent ls` instead] List all Agents for a Satellite Connector.
+[Deactivated on 2024-09-01! Use `ibmcloud sat agent ls` instead] List all Agents for a Satellite Connector.
 
 ```txt
 ibmcloud sat experimental agent ls --connector-id ID [--output OUTPUT] [-q]
@@ -1606,6 +1606,34 @@ ibmcloud sat experimental endpoint authn set --endpoint ENDPOINT [--dest-ca-cert
 `--source-tls-mode MODE`
 :    The source TLS mode. Accepted values: `simple`, `mutual`
 {: #experimental-endpoint-authn-set-options-dl}
+
+
+## `ibmcloud sat experimental location update`
+{: #experimental-location-update-cli}
+
+[Expires on 2024-11-25] Update the name or description of a Satellite location.
+
+```txt
+ibmcloud sat experimental location update --location-id ID [--description DESCRIPTION] [--name NAME] [-q]
+```
+{: pre}
+{: #experimental-location-update-usage}
+
+### Command options
+{: #experimental-location-update-options}
+
+`--description DESCRIPTION`
+:    Enter a new description for the Satellite location. The length of the description is limited to 400 bytes.
+
+`--location-id ID`
+:    The ID of the Satellite location. To find the location ID, run `ibmcloud sat location ls`.
+
+`--name NAME`
+:    Specify a new name for the Satellite location. Location names must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be fewer than 36 characters. Do not reuse names, including names of deleted locations.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #experimental-location-update-options-dl}
 
 
 ## `ibmcloud sat group attach`
