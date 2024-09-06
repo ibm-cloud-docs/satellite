@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-09-05"
+lastupdated: "2024-09-06"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3456,6 +3456,10 @@ subcollection: satellite
 * [`ibmcloud sat experimental endpoint authn set`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-set-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-set-options)
+
+* [`ibmcloud sat experimental location update`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-location-update-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-location-update-options)
 
 * [`ibmcloud sat group attach`](/docs/satellite?topic=satellite-satellite-cli-reference#group-attach-cli)
 

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-08-23"
+lastupdated: "2024-09-06"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -78,7 +78,7 @@ Connector agent image version `1.1.5`.
 :   For more information, see the [change log](/docs/satellite?topic=satellite-cl-connector-agent-image) and [Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally#pull-agent-image).
 
 CLI version `1.0.628` is available.
-:   For more information, see [Updating the CLI](/docs/satellite?topic=satellite-cli-update) and the [CLI change log](/docs/satellite?topic=satellite-cs_cli_changelog).
+:   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
 
@@ -1568,5 +1568,3 @@ Review the release notes for 21 August 2020.
 
 New! {{site.data.keyword.satellitelong_notm}} is now available as a closed beta.
 :   For more information about the service and how it works, see the [{{site.data.keyword.satelliteshort}} product page](https://www.ibm.com/products/satellite){: external}. To register for the beta, go [here](https://cloud.ibm.com/satellite/overview){: external}.
-
-

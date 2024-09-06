@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-05-14"
+lastupdated: "2024-09-06"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
 
@@ -38,6 +38,9 @@ Plan to keep **at least 3 extra hosts** attached and unassigned to your location
 {: #control-plane-how-many-clusters-rhel}
 
 The following tables show sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in a non Red Hat CoreOS enabled location. These sizings are for reference only.  Your sizing requirements can change depending on the amount of workload running in a cluster. For more information, see [What types of changes can increase my location sizing requirements?](#types-changes-sizing-increase). 
+
+Generally, a cluster with six 8 vCPU x 32 GB RAM hosts is recommended as an initial size to run heavier components, such as Istio, and still have capacity to scale your workload up. However, you might choose a smaller or larger size based on your expected workload. Guidance for additional sizing options is included in this section. 
+{: note}
 
 
 

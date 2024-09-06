@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-21"
+lastupdated: "2024-09-06"
 
 keywords: satellite cli map, satellite commands, satellite cli, satellite reference
 
@@ -101,7 +101,7 @@ View and manage Satellite endpoints.
 ## experimental commands
 {: #icks_map_experimental}
 
-[Expires on 2024-11-18] Experiment with new commands. IMPORTANT: Commands here will retire after the [date] in their description.
+[Expires on 2024-11-25] Experiment with new commands. IMPORTANT: Commands here will retire after the [date] in their description.
 {: shortdesc}
 
 * **`experimental acl`**: [Expires on 2024-10-01. Use `ibmcloud sat acl` instead] View and manage Satellite access control lists (ACLs).
@@ -115,7 +115,7 @@ View and manage Satellite endpoints.
     * [`ibmcloud sat experimental acl subnet add`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-subnet-add-cli)
     * [`ibmcloud sat experimental acl subnet rm`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-subnet-rm-cli)
     * [`ibmcloud sat experimental acl update`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-update-cli)
-* **`experimental agent`**: [Expires on 2024-09-01. Use `ibmcloud sat agent` instead] Attach or view Satellite Connector Agents.
+* **`experimental agent`**: [Deactivated on 2024-09-01! Use `ibmcloud sat agent` instead] Attach or view Satellite Connector Agents.
     * [`ibmcloud sat experimental agent attach`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-agent-attach-cli)
     * [`ibmcloud sat experimental agent ls`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-agent-ls-cli)
 * **`experimental connector`**: [Expires on 2024-11-18] Create, view, and modify Satellite connectors.
@@ -126,6 +126,8 @@ View and manage Satellite endpoints.
 * **`experimental endpoint`**: [Expires on 2024-10-01] View and manage Satellite endpoints.
     * [`ibmcloud sat experimental endpoint authn rotate`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-rotate-cli)
     * [`ibmcloud sat experimental endpoint authn set`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-set-cli)
+* **`experimental location`**: [Expires on 2024-11-25] Create, view, and modify Satellite locations.
+    * [`ibmcloud sat experimental location update`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-location-update-cli)
 
 
 ## group commands
@@ -256,4 +258,3 @@ View and manage Satellite subscriptions to deploy Kubernetes configuration files
 * [`ibmcloud sat subscription ls`](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-ls-cli)
 * [`ibmcloud sat subscription rm`](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-rm-cli)
 * [`ibmcloud sat subscription update`](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-update-cli)
-
