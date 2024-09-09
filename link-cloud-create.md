@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-08-20"
+lastupdated: "2024-09-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -323,10 +323,10 @@ Use the CLI to create an endpoint so that sources that are connected to the {{si
     ```
     {: pre}
 
-### Setting up source lists to limit access to endpoints
+### Setting up access control lists to limit access to endpoints
 {: #link-sources}
 
-Control which clients can access destination resources by creating a source list for an endpoint.
+Control which clients can access destination resources by creating an access control list for an endpoint.
 {: shortdesc}
 
 If no sources are configured, any client can use an endpoint to connect to the destination resource. For example, for a location endpoint, any client that is connected to the {{site.data.keyword.cloud_notm}} private network can use the endpoint to connect to the destination resource that runs in your {{site.data.keyword.satelliteshort}} location. You can restrict access to your destination resource by adding only the IP addresses or subnet CIDRs of specific clients to the endpoint's source list.
@@ -334,21 +334,64 @@ If no sources are configured, any client can use an endpoint to connect to the d
 Currently, you can create source lists only for endpoints of type `location`. You cannot create source lists for endpoints of type `cloud`.
 {: note}
 
+### Creating access control lists by using the console
+{: #link-sources-ui}
+{: ui}
 
+Complete the following steps to create an access control list for an endpoint from the console.
+{: shortdesc}
 
-1. From the [{{site.data.keyword.satelliteshort}} **Locations** dashboard](https://cloud.ibm.com/satellite/locations), click the name of your location.
-2. From the **Link endpoints** tab, click the name of your endpoint.
-3. In the **Source list** section, click **Add source**.
-4. Choose an existing source or configure a new source and add it to the source list.
-    - To add an existing source, select the source name and click **Add**.
-    - To configure a new source, click **Configure source** to enter a source name and the IP address or subnet CIDR for the client that you want to connect to the endpoint, and click **Add**. Separate multiple IP addresses or subnet CIDRs with a comma (`,`).
-5. Use the toggle to enable the source to connect to the destination resource. After you enable a source, network traffic to the destination through the endpoint is permitted only from clients that use an IP address in the range that you specified in the source. Network traffic from other clients that is sent to the destination resource through the endpoint is blocked.
-6. Repeat these steps for any sources that you want to grant access to the destination resource through the endpoint.
+1. From the [{{site.data.keyword.satelliteshort}} **Locations** dashboard](https://cloud.ibm.com/satellite/locations){: external}, click the name of your location.
+1. Select the **Access control list** tab, then click **Create rule**.
+1. On the ACL rule page, complete the following steps.
+    1. Enter a **Rule name**.
+    1. Enter the **IP addresses** of the clients that are allowed to connect to the endpoint. This value can be a single IP address, a CIDR block, or a comma-separated list. The value must be fully contained in the following CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
+    1. Select the endpoint (or multiple endpoints) this rule should control access to in your location. Network traffic to the destination through the endpoint is permitted only from clients that use an IP address in the range that you specified in the rule. Network traffic from other clients that is sent to the destination resource through the endpoint is blocked.
+1. Click **Create**
+1. To modify an existing ACL rule, select **Edit** in the overflow menu at the right end of the rule, update the field values, and press **Save** when done.
 
-To see the status of sources for each endpoints, such as the last time that a source was modified for an endpoint, click the **Link endpoints** tab, and click the **Sources** tab.
-{: tip}
+### Creating access control lists by using the CLI
+{: #link-source-cli}
+{: cli}
 
+To use the CLI to create an access control list for an endpoint:
+{: shortdesc}
 
+1. Run the following command to create an ACL rule for one or more subnets and optionally bound to one or more endpoints.
+
+    ```sh
+    ibmcloud sat acl create --name NAME --location ID --subnet SUBNET [--subnet SUBNET ...] [--endpoint ENDPOINT ...]
+    ```
+    {: pre}
+
+    `--location LOCATION`
+    :   Enter the name or ID of your Satellite location.
+
+    `--name NAME`
+    :   Enter a name for the ACL.
+
+    `--subnet SUBNET`
+    :   Enter an IP or CIDR block allowed by this ACL. Value must be fully contained in the following CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12. You can repeat this parameter to provide multiple values.
+
+    `--endpoint ENDPOINT`
+    :   Optionally enter the name or ID of an endpoint to enable for this ACL. You can repeat this parameter to provide multiple values.
+
+1. Verify that the ACL was created.
+
+    ```sh
+    ibmcloud sat acl ls --location LOCATION
+    ```
+    {: pre}
+
+1. You can also add or remove endpoints or subnets for an existing ACL.
+
+   ```sh
+    ibmcloud sat acl endpoint add --location LOCATION --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...]
+    ibmcloud sat acl endpoint rm --location LOCATION --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...]
+    ibmcloud sat acl subnet add --location LOCATION --acl-id ID --subnet SUBNET [--subnet SUBNET ...]
+    ibmcloud sat acl subnet rm --location LOCATION --acl-id ID --subnet SUBNET [--subnet SUBNET ...]
+    ```
+    {: codeblock}
 
 ## Enabling and disabling endpoints
 {: #enable_disable_endpoint}
