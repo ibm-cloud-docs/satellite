@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-09-06"
+lastupdated: "2024-09-09"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2029,7 +2029,11 @@ subcollection: satellite
 
     * [Creating location endpoints by using the CLI](/docs/satellite?topic=satellite-link-cloud-create&interface=cli#link-location-cli)
 
-    * [Setting up source lists to limit access to endpoints](/docs/satellite?topic=satellite-link-cloud-create&interface=cli#link-sources)
+    * [Setting up access control lists to limit access to endpoints](/docs/satellite?topic=satellite-link-cloud-create&interface=cli#link-sources)
+
+    * [Creating access control lists by using the console](/docs/satellite?topic=satellite-link-cloud-create&interface=ui#link-sources-ui)
+
+    * [Creating access control lists by using the CLI](/docs/satellite?topic=satellite-link-cloud-create&interface=cli#link-source-cli)
 
 * [Enabling and disabling endpoints](/docs/satellite?topic=satellite-link-cloud-create&interface=cli#enable_disable_endpoint)
 
