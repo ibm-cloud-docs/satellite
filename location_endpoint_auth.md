@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-08-20"
+lastupdated: "2024-09-10"
 
 keywords: satellite, endpoints, authentication
 
@@ -18,9 +18,6 @@ subcollection: satellite
 
 All endpoint traffic is encrypted by default. However, you can choose to provide your own certificates to implement source and destination authentication. For TLS or HTTPS endpoints, there are two TLS connections in the endpoint request flow that you might need to configure. The first TLS handshake is between the source and the Satellite Link service. The second TLS handshake is between the Satellite Link service and your destination or target server. You can provide certificates for one or both of these connections.
 {: shortdesc}
-
-This is an experimental feature that is available for evaluation and testing purposes and might change without notice.
-{: experimental}
 
 Review the following authentication options.
 
@@ -53,7 +50,7 @@ If you choose to provide your own certificates for endpoint authentication, you 
 
 The `source` options refer to the TLS handshake between the source and the Satellite Link service. The `dest` options refer to the TLS handshake between the Satellite Link service and your destination or target server. You can provide certificates for one or both of these connections. Unspecified settings are set to their default values.
 
-The `ibmcloud sat experimental endpoint authn` command is only used to set certificates for the Satellite Link service, acting as a server on the source side and as a client on the destination side. You may also need to configure certificates for the source (client) and/or destination (server) in their corresponding application environments.
+The `ibmcloud sat endpoint authn` command is only used to set certificates for the Satellite Link service, acting as a server on the source side and as a client on the destination side. You may also need to configure certificates for the source (client) and/or destination (server) in their corresponding application environments.
 {: note}
 
 Review the following example scenarios.
@@ -78,7 +75,7 @@ Review the following example scenarios.
 1. Configure simple TLS with the destination server. This example provides the certificate of the trusted CA to validate the destination server's certificate.
 
     ```sh
-    ibmcloud sat experimental endpoint authn set \
+    ibmcloud sat endpoint authn set \
       --location ID \
       --endpoint myEndpoint \
       --dest-tls-mode simple
@@ -89,7 +86,7 @@ Review the following example scenarios.
 1. Before your certificates expire, rotate them by replacing the existing authentication certificates with new ones. Only the certificates that you specify are replaced.
 
     ```sh
-    ibmcloud sat experimental endpoint authn rotate \
+    ibmcloud sat endpoint authn rotate \
       --location ID \
       --endpoint myEndpoint \
       --dest-ca-cert-file /path/to/serverCACerts.pem
@@ -118,7 +115,7 @@ Review the following example scenarios.
     Similar to the previous use case, the `--dest-ca-cert-file` validates the destination server's certificate. The `dest-cert-file` and `dest-key-file` are used to perform the TLS handshake.
 
     ```sh
-    ibmcloud sat experimental endpoint authn set \
+    ibmcloud sat endpoint authn set \
       --location ID \
       --endpoint myEndpoint \
       --dest-tls-mode mutual \
@@ -131,7 +128,7 @@ Review the following example scenarios.
 1. Before your certificates expire, rotate them by replacing the existing authentication certificates with new ones. Only the certificates that you specify are replaced.
 
     ```sh
-    ibmcloud sat experimental endpoint authn rotate \
+    ibmcloud sat endpoint authn rotate \
       --location ID \
       --endpoint myEndpoint \
       --dest-cert-file /path/to/clientCertificate.pem \
@@ -166,7 +163,7 @@ Unlike the other examples, which can work with an endpoint `--dest-type` of eith
 
     This example provides the certificate of the trusted CA to validate the source's client certificate.
     ```sh
-    ibmcloud sat experimental endpoint authn set \
+    ibmcloud sat endpoint authn set \
       --location ID \
       --endpoint myEndpoint \
       --source-tls-mode mutual \
@@ -179,7 +176,7 @@ Unlike the other examples, which can work with an endpoint `--dest-type` of eith
 1. Before your certificates expire, rotate them by replacing the existing authentication certificates with new ones. Only the certificates that you specify are replaced.
 
     ```sh
-    ibmcloud sat experimental endpoint authn rotate \
+    ibmcloud sat endpoint authn rotate \
       --location ID \
       --endpoint myEndpoint \
       --source-cert-file /path/to/serverCertificate.pem \
@@ -214,7 +211,7 @@ Unlike the other examples, which can work with an endpoint `--dest-type` of eith
     This example enables mutual authentication between the source and the Satellite Link service as well as between the Satellite Link service and the destination server.
 
     ```sh
-    ibmcloud sat experimental endpoint authn set \
+    ibmcloud sat endpoint authn set \
       --location ID \
       --endpoint myEndpoint \
       --source-tls-mode mutual \
@@ -229,7 +226,7 @@ Unlike the other examples, which can work with an endpoint `--dest-type` of eith
 1. Before your certificates expire, rotate them by replacing the existing authentication certificates with new ones. Only the certificates that you specify are replaced.
 
     ```sh
-    ibmcloud sat experimental endpoint authn rotate \
+    ibmcloud sat endpoint authn rotate \
       --location ID \
       --endpoint myEndpoint \
       --source-ca-cert-file /path/to/clientCACerts.pem \
@@ -238,6 +235,3 @@ Unlike the other examples, which can work with an endpoint `--dest-type` of eith
       --dest-ca-cert-file /path/to/serverCACerts.pem
     ```
     {: pre}
-
-
-

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-08-23"
+lastupdated: "2024-09-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -28,7 +28,7 @@ After creating a [Connector](/docs/satellite?topic=satellite-create-connector&in
 1. Run the following command to find the ID of your Satellite Connector.
 
     ```sh
-    ibmcloud sat experimental connector ls
+    ibmcloud sat connector ls
     ```
     {: pre}
 
@@ -40,7 +40,7 @@ After creating a [Connector](/docs/satellite?topic=satellite-create-connector&in
     {: pre}
 
     `--connector-id ID`
-    :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+    :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
     `--dest-hostname HOSTNAME`
     :    Indicate the fully qualified domain name (FQDN) or the externally accessible IP address of the destination that you want to connect to. For `location` endpoints, this value must resolve from and be reachable from the control plane hosts for Satellite locations or where the agent runs for Satellite Connector.
@@ -133,12 +133,12 @@ For container platforms such as Docker or Rancher, this requires you to map the 
 1. Run the following command to create an ACL rule for one or more subnets and optionally bound to one or more endpoints.
 
     ```sh
-    ibmcloud sat experimental acl create --name NAME --connector-id ID --subnet SUBNET [--subnet SUBNET ...] [--endpoint ENDPOINT ...]
+    ibmcloud sat acl create --name NAME --connector-id ID --subnet SUBNET [--subnet SUBNET ...] [--endpoint ENDPOINT ...]
     ```
     {: pre}
 
     `--connector-id ID`
-    :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+    :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
     `--name NAME`
     :   The name for the ACL.
@@ -152,17 +152,17 @@ For container platforms such as Docker or Rancher, this requires you to map the 
 1. Verify that the ACL was created.
 
     ```sh
-    ibmcloud sat experimental acl ls --connector-id ID
+    ibmcloud sat acl ls --connector-id ID
     ```
     {: pre}
 
 1. You can also add or remove endpoints or subnets for an existing ACL.
 
    ```sh
-    ibmcloud sat experimental acl endpoint add --connector-id ID --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...]
-    ibmcloud sat experimental acl endpoint rm --connector-id ID --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...]
-    ibmcloud sat experimental acl subnet add --connector-id ID --acl-id ID --subnet SUBNET [--subnet SUBNET ...]
-    ibmcloud sat experimental acl subnet rm --connector-id ID --acl-id ID --subnet SUBNET [--subnet SUBNET ...]
+    ibmcloud sat acl endpoint add --connector-id ID --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...]
+    ibmcloud sat acl endpoint rm --connector-id ID --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...]
+    ibmcloud sat acl subnet add --connector-id ID --acl-id ID --subnet SUBNET [--subnet SUBNET ...]
+    ibmcloud sat acl subnet rm --connector-id ID --acl-id ID --subnet SUBNET [--subnet SUBNET ...]
     ```
     {: codeblock}
 
@@ -172,7 +172,7 @@ For container platforms such as Docker or Rancher, this requires you to map the 
 Example command to create an ACL rule allowing subnet 10.123.76.192/26 access to endpoint 'myendpoint'.
 
 ```sh
-ibmcloud sat experimental acl create --connector-id A1B0CDefgHilQ11ubmVjdG1yOiJjb11hnTdlWSRE1dnZla1szbDBsZyI --name myrule --subnet 10.123.76.192/26 --endpoint myendpoint
+ibmcloud sat acl create --connector-id A1B0CDefgHilQ11ubmVjdG1yOiJjb11hnTdlWSRE1dnZla1szbDBsZyI --name myrule --subnet 10.123.76.192/26 --endpoint myendpoint
 ```
 {: pre}
 
@@ -187,14 +187,14 @@ ACL created with ID A1B0CDefgHilQ11ubmVjdG1yOiJjb11hnTdlWSRE1dnZla1szbDBsZyI-Sou
 Use the ID of the newly created ACL to run the following command to add a second subnet, 10.194.127.64/26, to the ACL.
 
 ```sh
-ibmcloud sat experimental acl subnet add --connector-id A1B0CDefgHilQ11ubmVjdG1yOiJjb11hnTdlWSRE1dnZla1szbDBsZyI --acl-id A1B0CDefgHilQ11ubmVjdG1yOiJjb11hnTdlWSRE1dnZla1szbDBsZyI-Source-vbfea --subnet 10.194.127.64/26
+ibmcloud sat acl subnet add --connector-id A1B0CDefgHilQ11ubmVjdG1yOiJjb11hnTdlWSRE1dnZla1szbDBsZyI --acl-id A1B0CDefgHilQ11ubmVjdG1yOiJjb11hnTdlWSRE1dnZla1szbDBsZyI-Source-vbfea --subnet 10.194.127.64/26
 ```
 {: pre}
 
 Run the following command to list ACLs. You will see that the `myrule` ACL now includes two subnets, 10.123.76.192/26 and 10.194.127.64/26.
 
 ```sh
-ibmcloud sat experimental acl ls --connector-id A1B0CDefgHilQ11ubmVjdG1yOiJjb11hnTdlWSRE1dnZla1szbDBsZyI
+ibmcloud sat acl ls --connector-id A1B0CDefgHilQ11ubmVjdG1yOiJjb11hnTdlWSRE1dnZla1szbDBsZyI
 ```
 {: pre}
 

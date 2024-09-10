@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-09-06"
+lastupdated: "2024-09-10"
 
 keywords: satellite cli map, satellite commands, satellite cli, satellite reference
 
@@ -80,6 +80,18 @@ View and manage Satellite Configuration.
     * [`ibmcloud sat config version rm`](/docs/satellite?topic=satellite-satellite-cli-reference#config-version-rm-cli)
 
 
+## connector commands
+{: #icks_map_connector}
+
+Create, view, and modify Satellite connectors.
+{: shortdesc}
+
+* [`ibmcloud sat connector create`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-create-cli)
+* [`ibmcloud sat connector get`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-get-cli)
+* [`ibmcloud sat connector ls`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-ls-cli)
+* [`ibmcloud sat connector rm`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-rm-cli)
+
+
 ## endpoint commands
 {: #icks_map_endpoint}
 
@@ -118,7 +130,7 @@ View and manage Satellite endpoints.
 * **`experimental agent`**: [Deactivated on 2024-09-01! Use `ibmcloud sat agent` instead] Attach or view Satellite Connector Agents.
     * [`ibmcloud sat experimental agent attach`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-agent-attach-cli)
     * [`ibmcloud sat experimental agent ls`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-agent-ls-cli)
-* **`experimental connector`**: [Expires on 2024-11-18] Create, view, and modify Satellite connectors.
+* **`experimental connector`**: [Expires on 2024-11-18. Use `ibmcloud sat connector` instead] Create, view, and modify Satellite connectors.
     * [`ibmcloud sat experimental connector create`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-create-cli)
     * [`ibmcloud sat experimental connector get`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-get-cli)
     * [`ibmcloud sat experimental connector ls`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-ls-cli)

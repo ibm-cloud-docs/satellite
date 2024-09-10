@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-03-13"
+lastupdated: "2024-09-10"
 
 keywords: satellite, hybrid, multicloud, connector, create connector
 
@@ -72,20 +72,20 @@ A Connector provides a secure connection between a specific remote location and 
 
 1. Review the command parameters by running the following command.
     ```sh
-    ibmcloud sat experimental connector create --help
+    ibmcloud sat connector create --help
     ```
     {: pre}
 
 1. Run the following command to create a Connector.
 
     ```sh
-    ibmcloud sat experimental connector create --name NAME --region REGION
+    ibmcloud sat connector create --name NAME --region REGION
     ```
     {: pre}
 
     Example command to create a Connector called `my-connector` in `us-south`.
     ```sh
-    ibmcloud sat experimental connector create --name my-connector --region us-south
+    ibmcloud sat connector create --name my-connector --region us-south
     ```
     {: pre}
 
@@ -100,7 +100,7 @@ A Connector provides a secure connection between a specific remote location and 
 1. Verify your Connector was created by listing the Connectors in your account.
 
     ```sh
-    ibmcloud sat experimental connector ls
+    ibmcloud sat connector ls
     ```
     {: pre}
 
@@ -121,7 +121,3 @@ After creating a Connector, you must set up an agent to complete your set up.
 - Set up a Connector agent. For more information, see [Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally).
 - [Run the agent image in Swarm mode](/docs/satellite?topic=satellite-run-agent-swarm) for high-availability.
 - [Follow the end-to-end example](/docs/satellite?topic=satellite-end-to-end) to run the agent, configure your endpoints, and add TLS support.
-
-
-
-

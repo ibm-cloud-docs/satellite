@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-09-06"
+lastupdated: "2024-09-10"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -706,6 +706,109 @@ ibmcloud sat config version rm --config CONFIG --version VERSION [-f] [-q]
 `--version VERSION`
 :    Indicate the name or ID of the Satellite configuration version. To list versions, run `ibmcloud sat config get --config <configuration_name_or_ID>`.
 {: #config-version-rm-options-dl}
+
+
+## `ibmcloud sat connector create`
+{: #connector-create-cli}
+
+Create a Satellite connector.
+
+```txt
+ibmcloud sat connector create --name NAME --region REGION [-q]
+```
+{: pre}
+{: #connector-create-usage}
+
+### Command options
+{: #connector-create-options}
+
+`--name NAME`
+:    The name for the Satellite connector.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--region REGION`
+:    The IBM Cloud region to manage your Satellite connector.
+{: #connector-create-options-dl}
+
+
+## `ibmcloud sat connector get`
+{: #connector-get-cli}
+
+View the details of a Satellite Connector.
+
+```txt
+ibmcloud sat connector get --connector-id ID [--output OUTPUT] [-q]
+```
+{: pre}
+{: #connector-get-usage}
+
+### Command options
+{: #connector-get-options}
+
+`--connector-id ID`
+:    The ID of a Satellite connector.
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #connector-get-options-dl}
+
+
+## `ibmcloud sat connector ls`
+{: #connector-ls-cli}
+
+View the Satellite Connectors in your IBM Cloud account.
+
+```txt
+ibmcloud sat connector ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q]
+```
+{: pre}
+{: #connector-ls-usage}
+
+### Command options
+{: #connector-ls-options}
+
+`--after AFTER`
+:    Show Satellite Connectors after the given cursor.
+
+`--first FIRST`
+:    View the next Satellite Connectors, up to the first number of Connectors.
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #connector-ls-options-dl}
+
+
+## `ibmcloud sat connector rm`
+{: #connector-rm-cli}
+
+Delete a Satellite connector.
+
+```txt
+ibmcloud sat connector rm --connector-id ID [-f] [-q]
+```
+{: pre}
+{: #connector-rm-usage}
+
+### Command options
+{: #connector-rm-options}
+
+`--connector-id ID`
+:    The ID of a Satellite connector.
+
+`-f`
+:    Force the command to run without user prompts.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #connector-rm-options-dl}
 
 
 ## `ibmcloud sat endpoint authn rotate`
@@ -1413,7 +1516,7 @@ ibmcloud sat experimental agent ls --connector-id ID [--output OUTPUT] [-q]
 ## `ibmcloud sat experimental connector create`
 {: #experimental-connector-create-cli}
 
-[Expires on 2024-11-18] Create a Satellite connector.
+[Expires on 2024-11-18. Use `ibmcloud sat connector create` instead] Create a Satellite connector.
 
 ```txt
 ibmcloud sat experimental connector create --name NAME --region REGION [-q]
@@ -1438,7 +1541,7 @@ ibmcloud sat experimental connector create --name NAME --region REGION [-q]
 ## `ibmcloud sat experimental connector get`
 {: #experimental-connector-get-cli}
 
-[Expires on 2024-11-18] View the details of a Satellite Connector.
+[Expires on 2024-11-18. Use `ibmcloud sat connector get` instead] View the details of a Satellite Connector.
 
 ```txt
 ibmcloud sat experimental connector get --connector-id ID [--output OUTPUT] [-q]
@@ -1463,10 +1566,10 @@ ibmcloud sat experimental connector get --connector-id ID [--output OUTPUT] [-q]
 ## `ibmcloud sat experimental connector ls`
 {: #experimental-connector-ls-cli}
 
-[Expires on 2024-11-18] List all Satellite connectors in your IBM Cloud account.
+[Expires on 2024-11-18. Use `ibmcloud sat connector ls` instead] View the Satellite Connectors in your IBM Cloud account.
 
 ```txt
-ibmcloud sat experimental connector ls [--output OUTPUT] [-q] [--region REGION]
+ibmcloud sat experimental connector ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q]
 ```
 {: pre}
 {: #experimental-connector-ls-usage}
@@ -1474,21 +1577,24 @@ ibmcloud sat experimental connector ls [--output OUTPUT] [-q] [--region REGION]
 ### Command options
 {: #experimental-connector-ls-options}
 
+`--after AFTER`
+:    Show Satellite Connectors after the given cursor.
+
+`--first FIRST`
+:    View the next Satellite Connectors, up to the first number of Connectors.
+
 `--output OUTPUT`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
-
-`--region REGION`
-:    List only Satellite connectors in the specified IBM Cloud region.
 {: #experimental-connector-ls-options-dl}
 
 
 ## `ibmcloud sat experimental connector rm`
 {: #experimental-connector-rm-cli}
 
-[Expires on 2024-11-18] Delete a Satellite connector.
+[Expires on 2024-11-18. Use `ibmcloud sat connector rm` instead] Delete a Satellite connector.
 
 ```txt
 ibmcloud sat experimental connector rm --connector-id ID [-f] [-q]
