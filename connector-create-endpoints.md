@@ -133,7 +133,7 @@ For container platforms such as Docker or Rancher, this requires you to map the 
 1. Run the following command to create an ACL rule for one or more subnets and optionally bound to one or more endpoints.
 
     ```sh
-    ibmcloud sat acl create --name NAME --connector-id ID --subnet SUBNET [--subnet SUBNET ...] [--endpoint ENDPOINT ...]
+    ibmcloud sat acl create --connector-id ID --name NAME --subnet SUBNET [--subnet SUBNET ...] [--endpoint ENDPOINT ...]
     ```
     {: pre}
 

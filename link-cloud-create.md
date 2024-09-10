@@ -360,7 +360,7 @@ Complete the following steps to create an access control list for an endpoint fr
 1. Run the following command to create an ACL rule for one or more subnets and optionally bound to one or more endpoints.
 
     ```sh
-    ibmcloud sat acl create --name NAME --location ID --subnet SUBNET [--subnet SUBNET ...] [--endpoint ENDPOINT ...]
+    ibmcloud sat acl create --location LOCATION --name NAME --subnet SUBNET [--subnet SUBNET ...] [--endpoint ENDPOINT ...]
     ```
     {: pre}
 
