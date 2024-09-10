@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-09-09"
+lastupdated: "2024-09-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -354,13 +354,13 @@ Complete the following steps to create an access control list for an endpoint fr
 {: #link-source-cli}
 {: cli}
 
-To use the CLI to create an access control list for an endpoint:
+Complete the following steps to create an access control list for an endpoint from the CLI.
 {: shortdesc}
 
 1. Run the following command to create an ACL rule for one or more subnets and optionally bound to one or more endpoints.
 
     ```sh
-    ibmcloud sat acl create --name NAME --location ID --subnet SUBNET [--subnet SUBNET ...] [--endpoint ENDPOINT ...]
+    ibmcloud sat acl create --location LOCATION --name NAME --subnet SUBNET [--subnet SUBNET ...] [--endpoint ENDPOINT ...]
     ```
     {: pre}
 

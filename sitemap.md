@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-09-09"
+lastupdated: "2024-09-10"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -195,6 +195,12 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
+
+* [September 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep24)
+
+    * [10 September 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep1024)
+
+        * CLI version `1.0.657` is available.
 
 * [August 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-august24)
 
@@ -3231,6 +3237,8 @@ subcollection: satellite
 
 * [config commands](/docs/satellite?topic=satellite-icsat_map#icks_map_config)
 
+* [connector commands](/docs/satellite?topic=satellite-icsat_map#icks_map_connector)
+
 * [endpoint commands](/docs/satellite?topic=satellite-icsat_map#icks_map_endpoint)
 
 * [experimental commands](/docs/satellite?topic=satellite-icsat_map#icks_map_experimental)
@@ -3352,6 +3360,22 @@ subcollection: satellite
 * [`ibmcloud sat config version rm`](/docs/satellite?topic=satellite-satellite-cli-reference#config-version-rm-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#config-version-rm-options)
+
+* [`ibmcloud sat connector create`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-create-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#connector-create-options)
+
+* [`ibmcloud sat connector get`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-get-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#connector-get-options)
+
+* [`ibmcloud sat connector ls`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-ls-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#connector-ls-options)
+
+* [`ibmcloud sat connector rm`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-rm-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#connector-rm-options)
 
 * [`ibmcloud sat endpoint authn rotate`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-authn-rotate-cli)
 
