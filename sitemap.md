@@ -196,6 +196,12 @@ subcollection: satellite
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
+* [September 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep24)
+
+    * [10 September 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep1024)
+
+        * CLI version `1.0.657` is available.
+
 * [August 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-august24)
 
     * [23 August 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-august2324)
