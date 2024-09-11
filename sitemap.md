@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-09-10"
+lastupdated: "2024-09-11"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -166,7 +166,9 @@ subcollection: satellite
 
 * [Does {{site.data.keyword.satelliteshort}} Connector support Cloud Endpoints?](/docs/satellite?topic=satellite-connector-faq#connector-faq-endpoints)
 
-* [How can I restrict access to my endpoints?](/docs/satellite?topic=satellite-connector-faq#connector-faq-restrict)
+* [How can I restrict access to my location endpoints?](/docs/satellite?topic=satellite-connector-faq#connector-faq-restrict)
+
+* [How can I restrict the Connector Agent access on my network?](/docs/satellite?topic=satellite-connector-faq#connector-faq-agent-restrict)
 
 * [I created an ACL for my Connector, why doesn't it take effect?](/docs/satellite?topic=satellite-connector-faq#connector-faq-acl-implementation)
 
@@ -3700,6 +3702,8 @@ subcollection: satellite
 [CLI change log](/docs/satellite?topic=satellite-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/satellite?topic=satellite-cs_cli_changelog#10)
+
+* [Version v1.0.657](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010657)
 
 * [Version v1.0.652](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010652)
 
