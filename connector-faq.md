@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-09-11"
+lastupdated: "2024-09-12"
 
 keywords: satellite, connector, faq, frequently asked questions
 
@@ -30,7 +30,7 @@ You can set up ACL rules to restrict access to your endpoints. When you create y
 ## How can I restrict the Connector Agent access on my network?
 {: #connector-faq-agent-restrict}
 
-Use any standard firewall in your location to control the endpoints accessable by the Connector Agent on your network. On Windows, for example, you can configure Windows firewall to allow the agent to only access the specific set of endpoints needed by your application. However, when using a firewall, make sure the firewall also allows access to the required endpoints describe in [network requirements](/docs/satellite?topic=satellite-understand-connectors#network-requirements).
+Use any standard firewall in your location to restrict the endpoints on your network that are accessable to the Connector Agent. On Windows, for example, you can configure Windows firewall to allow the agent to only access the specific set of endpoints needed by your application. However, when using a firewall, make sure the firewall also allows access to the required endpoints described in [network requirements](/docs/satellite?topic=satellite-understand-connectors#network-requirements).
 
 ## I created an ACL for my Connector, why doesn't it take effect?
 {: #connector-faq-acl-implementation}
