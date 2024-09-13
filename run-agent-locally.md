@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-09-10"
+lastupdated: "2024-09-13"
 
 keywords: satellite, connector, agent, windows
 
@@ -279,7 +279,7 @@ Configuration information is provided to the agent through the following environ
     {: tip}
     
 
-1. Verify the agent is running by run the `Get-Service` command in PowerShell.
+1. Verify the agent is installed by running the `Get-Service` command in PowerShell.
     ```txt
     Get-Service 'Satellite Connector Service'
     ```
@@ -305,9 +305,14 @@ After setting up an agent, you can create Endpoints and ACLs to manage access to
 ## Updating the agent on Windows
 {: #update-agent-windows}
 
-You can use the `update` command to apply configuration changes to your agent. When you run the command, the agent is stopped, uninstalled, and reinstalled. Complete the following steps to update your agent.
+You can use the `update` command in the agent package to apply configuration changes to your agent. When you run the command, the agent is stopped, uninstalled, and reinstalled. Complete the following steps to update your agent.
 
-1. Before updating, review the changes in the [Connector Windows agent change log](/docs/satellite?topic=satellite-cl-connector-windows-agent).
+1. Before updating, review the changes in the [Connector Windows agent change log](/docs/satellite?topic=satellite-cl-connector-windows-agent) and check if the latest version is newer than your currently running agent.
+
+    You can find your current version number in the `version.txt` file inside the agent package for your currently running agent. If no `version.txt` file is found or your current version number is less than the latest version number, there is a newer version available for update.
+    {: tip}
+
+1. If there is a newer agent version available and you would like to use it, download the latest version by following the instructions in [Step 1: Downloading the Connector agent files from the CLI](#windows-agent-download) before proceeding to the following steps.
 
 1. Modify the configuration parameters in the `config.json` file.
 
@@ -341,7 +346,7 @@ You can use the `update` command to apply configuration changes to your agent. W
     ```
     {: codeblock}
 
-1. Verify the agent is running by run the `Get-Service` command in PowerShell.
+1. Verify the agent is installed by running the `Get-Service` command in PowerShell.
     ```txt
     Get-Service 'Satellite Connector Service'
     ```
