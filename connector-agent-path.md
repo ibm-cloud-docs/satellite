@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-09-05"
+lastupdated: "2024-09-17"
 
 keywords: satellite, hybrid, multicloud, connector, private tunnel
 
@@ -33,7 +33,7 @@ Follow the steps to configure your Connector agent to use an internal Ingress ho
 
 1. Set the `SATELLITE_CONNECTOR_DIRECT_LINK_INGRESS` parameter along with your other required [agent parameters](/docs/satellite?topic=satellite-run-agent-locally#review-parameters). For example:
 
-    ```
+    ```txt
     SATELLITE_CONNECTOR_ID=U2F0ZWxsaXRlQ29ubmVjdG9yOiJjaHIwbDFnMjFyNzRlMzRqdDVkZyI
     SATELLITE_CONNECTOR_IAM_APIKEY=
     SATELLITE_CONNECTOR_DIRECT_LINK_INGRESS=d-01-ws.private.us-south.link.satellite.cloud.ibm.com
