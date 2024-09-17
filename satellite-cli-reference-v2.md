@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-09-10"
+lastupdated: "2024-09-17"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -2153,13 +2153,16 @@ ibmcloud sat key rotate --name NAME [-f] [-q]
 Create a Satellite location. A Satellite location is a representation of an environment in your infrastructure provider. After you create a location, attach hosts from separate zones of your backing infrastructure environment with the `ibmcloud sat host attach` command.
 
 ```txt
-ibmcloud sat location create --managed-from REGION --name NAME [--coreos-enabled] [--cos-bucket BUCKET] [--description DESCRIPTION] [--ha-zone ZONE ...] [--pod-network-interface-selection SELECTION] [--pod-subnet SUBNET] [--provider PROVIDER] [--provider-credential CREDENTIAL] [--provider-region REGION] [-q] [--service-subnet SUBNET]
+ibmcloud sat location create --managed-from REGION --name NAME [--capability CAPABILITY ...] [--coreos-enabled] [--cos-bucket BUCKET] [--description DESCRIPTION] [--ha-zone ZONE ...] [--physical-address ADDRESS] [--pod-network-interface-selection SELECTION] [--pod-subnet SUBNET] [--provider PROVIDER] [--provider-credential CREDENTIAL] [--provider-region REGION] [-q] [--service-subnet SUBNET]
 ```
 {: pre}
 {: #location-create-usage}
 
 ### Command options
 {: #location-create-options}
+
+`--capability CAPABILITY`
+:    A capability of the Satellite location.
 
 `--coreos-enabled`
 :    Enable Red Hat CoreOS features for the Satellite location. This action cannot be undone. See [https://ibm.biz/infra-os](https://ibm.biz/infra-os).
@@ -2178,6 +2181,9 @@ ibmcloud sat location create --managed-from REGION --name NAME [--coreos-enabled
 
 `--name NAME`
 :    Specify a name for the Satellite location. Location names must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be fewer than 36 characters. Do not reuse names, even if the other location is deleted.
+
+`--physical-address ADDRESS`
+:    The physical address of the Satellite location.
 
 `--pod-network-interface-selection SELECTION`
 :    The method for selecting the node network interface for the internal pod network. This option can be used only if you also enable Red Hat CoreOS with the `--coreos-enabled` option. To provide a direct URL or IP address, specify `can-reach=<url>` or `can-reach=<ip_address>`. To choose a network interface, specify `interface=<network_interface>`.
