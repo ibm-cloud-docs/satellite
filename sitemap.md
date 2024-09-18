@@ -1873,6 +1873,8 @@ subcollection: satellite
 
     * [Mutual authentication at both the source and destination](/docs/satellite?topic=satellite-connector_endpoint_auth#mutual-auth-both-conn)
 
+* [Removing certificates](/docs/satellite?topic=satellite-connector_endpoint_auth#remove-certs-conn)
+
 
 ## Managing apps with Satellite Config
 {: #sitemap_managing_apps_with_satellite_config}
@@ -2060,6 +2062,8 @@ subcollection: satellite
     * [Mutual authentication between the source and the Satellite Link service](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-source-loc)
 
     * [Mutual authentication at both the source and destination](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-both-loc)
+
+* [Removing certificates](/docs/satellite?topic=satellite-location_endpoint_auth#remove-certs-loc)
 
 [Accessing your {{site.data.keyword.redhat_openshift_notm}} API Satellite link endpoints](/docs/satellite?topic=satellite-link-endpoint-secure#link-endpoint-secure)
 
