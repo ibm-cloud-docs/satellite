@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-09-10"
+lastupdated: "2024-09-18"
 
 keywords: satellite, endpoints, authentication
 
@@ -235,3 +235,26 @@ Unlike the other examples, which can work with an endpoint `--dest-type` of eith
       --dest-ca-cert-file /path/to/serverCACerts.pem
     ```
     {: pre}
+
+## Removing certificates
+{: #remove-certs-conn}
+
+The `ibmcloud sat endpoint authn set` command can be used to remove one or more existing certificates. The set command removes all certificates other than the ones specified in the command's options. For example, the following command removes all currently configured certificates for endpoint `myEndpoint`.
+
+```sh
+ibmcloud sat endpoint authn set --connector-id ID --endpoint myEndpoint
+```
+{: pre}
+
+If you only want to remove some of the certificates, leaving others unchanged, make sure to pass options with the current values of the other certificates. For example, the following command can be used to remove `source` certificates that are currently set, leaving the `dest` certificates unchanged.
+
+```sh
+ibmcloud sat endpoint authn set \
+  --connector-id ID \
+  --endpoint myEndpoint \
+  --dest-tls-mode mutual \
+  --dest-cert-file /path/to/current/clientCertificate.pem \
+  --dest-key-file /path/to/current/clientKey.pem \
+  --dest-ca-cert-file /path/to/current/serverCACerts.pem
+```
+{: pre}
