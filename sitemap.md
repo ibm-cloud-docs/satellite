@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-09-11"
+lastupdated: "2024-09-18"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -199,6 +199,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [September 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep24)
+
+    * [18 September 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep1024)
+
+        * CLI version `1.0.665` is available.
 
     * [10 September 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep1024)
 
