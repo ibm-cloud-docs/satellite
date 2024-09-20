@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-09-20"
 
 keywords: satellite, connector, agent
 
@@ -69,52 +69,52 @@ The {{site.data.keyword.satelliteshort}} Connector agent that runs in your envir
 
 Dallas
 :    * Destination IP addresses: 169.46.88.106, 169.61.31.178, 169.61.156.226
-     * Destination hostnames: `c-01-ws.us-south.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
+     * Destination hostnames: `c-01-ws.us-south.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`, `iam.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
 
 Frankfurt
 :    * Destination IP addresses: 149.81.188.130, 158.177.75.210, 161.156.38.2  
-     * Destination hostnames:  `c-01-ws.eu-de.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
+     * Destination hostnames:  `c-01-ws.eu-de.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`, `iam.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
 
 London
 :    * Destination IP addresses: 158.175.130.138, 141.125.87.226, 158.176.74.242
-     * Destination hostnames: `c-01-ws.eu-gb.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
+     * Destination hostnames: `c-01-ws.eu-gb.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`, `iam.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
 
 Madrid
 :   * Destination IP addresses: `13.120.67.106`, `13.121.67.82`, `13.122.67.186`
-    * Destination hostnames: `c-01-ws.eu-es.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
+    * Destination hostnames: `c-01-ws.eu-es.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`, `iam.cloud.ibm.com`
     * Protocol and ports: HTTPS 443
      
 Osaka
 :    * Destination IP addresses: 163.68.78.234, 163.69.70.106, 163.73.70.50
-     * Destination hostnames: `c-01-ws.jp-osa.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
+     * Destination hostnames: `c-01-ws.jp-osa.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`, `iam.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
 
 Sao Paulo
 :    * Destination IP addresses: 163.107.69.114, 163.109.70.234, 169.57.155.74 
-     * Destination hostnames: `c-01-ws.br-sao.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
+     * Destination hostnames: `c-01-ws.br-sao.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`, `iam.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
 
 Sydney
 :    * Destination IP addresses: 130.198.75.74, 135.90.67.154, 168.1.201.194
-     * Destination hostnames: `c-01-ws.au-syd.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
+     * Destination hostnames: `c-01-ws.au-syd.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`, `iam.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
      
 Tokyo
 :    * Destination IP addresses: 161.202.150.66, 128.168.89.146, 165.192.71.226
-     * Destination hostnames: `c-01-ws.jp-tok.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
+     * Destination hostnames: `c-01-ws.jp-tok.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`, `iam.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
 
 Toronto
 :    * Destination IP addresses: 163.74.67.114, 163.75.70.74, 158.85.79.18
-     * Destination hostnames: `c-01-ws.ca-tor.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
+     * Destination hostnames: `c-01-ws.ca-tor.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`, `iam.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
 
 Washington D.C.
 :    * Destination IP addresses: 169.47.156.154, 169.63.148.250, 169.62.1.34
-     * Destination hostnames: `c-01-ws.us-east.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
+     * Destination hostnames: `c-01-ws.us-east.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`, `iam.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
 
 ## Next steps
@@ -124,6 +124,3 @@ Washington D.C.
 - [Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally)
 - [Running your Connector agent as a service in Docker Swarm Mode for high availability](/docs/satellite?topic=satellite-run-agent-swarm)
 - [{{site.data.keyword.satelliteshort}} Connector end-to-end example](/docs/satellite?topic=satellite-end-to-end)
-
-
-
