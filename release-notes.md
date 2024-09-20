@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-09-18"
+lastupdated: "2024-09-20"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -26,7 +26,7 @@ Review the latest changes to the {{site.data.keyword.satellitelong}} documentati
 {: #satellite-sep24}
 
 ### 18 September 2024
-{: #satellite-sep1024}
+{: #satellite-sep1824}
 {: release-note}
 
 CLI version `1.0.665` is available.
