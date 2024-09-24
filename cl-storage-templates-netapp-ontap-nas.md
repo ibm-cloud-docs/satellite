@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-09-04"
+lastupdated: "2024-09-24"
 
 
 keywords: change log, version history, netapp-ontap-nas
@@ -20,6 +20,7 @@ subcollection: satellite
 Review the version history for `netapp-ontap-nas`.
 {: shortdesc}
 
+
 ## Version 24.02
 {: #cl-storage-templates-netapp-ontap-nas-24.02}
 
@@ -33,6 +34,7 @@ Review the version history for `netapp-ontap-nas`.
 {: #cl-storage-templates-netapp-ontap-nas-24.02-1}
 
 - Initial Release
+
 
 
 ## Version 22.10
@@ -121,6 +123,7 @@ Review the version history for `netapp-ontap-nas`.
 - Initial release.
 
 
+
 ## Version 22.04
 {: #cl-storage-templates-netapp-ontap-nas-22.04}
 
@@ -207,6 +210,7 @@ Review the version history for `netapp-ontap-nas`.
 - Updates the `tridentctl` pod as to run as non-root. 
 
 
+
 ## Version 21.04
 {: #cl-storage-templates-netapp-ontap-nas-21.04}
 
@@ -275,4 +279,3 @@ Review the version history for `netapp-ontap-nas`.
 - Updates the UBI to version `8.7-1049.1675784874`.
 - Updates Go to version `1.18.9`.
 - Updates the `tridentctl` pod as to run as non-root. 
-

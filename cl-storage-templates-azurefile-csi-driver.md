@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-09-04"
+lastupdated: "2024-09-24"
 
 
 keywords: change log, version history, azurefile-csi-driver
@@ -20,6 +20,7 @@ subcollection: satellite
 Review the version history for `azurefile-csi-driver`.
 {: shortdesc}
 
+
 ## Version 1.22.0
 {: #cl-storage-templates-azurefile-csi-driver-1.22.0}
 
@@ -28,6 +29,7 @@ Review the version history for `azurefile-csi-driver`.
 {: #cl-storage-templates-azurefile-csi-driver-1.22.0-1}
 
 - Initial release.
+
 
 
 ## Version 1.18.0
@@ -40,6 +42,7 @@ Review the version history for `azurefile-csi-driver`.
 - Adds support for automatically restarting plug-in pods when updating or upgrading a storage configuration.
 
 
+
 ## Version 1.9.0
 {: #cl-storage-templates-azurefile-csi-driver-1.9.0}
 
@@ -48,4 +51,3 @@ Review the version history for `azurefile-csi-driver`.
 {: #cl-storage-templates-azurefile-csi-driver-1.9.0-4}
 
 - Adds support for automatically restarting plug-in pods when updating or upgrading a storage configuration.
-

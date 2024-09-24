@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-09-06"
+lastupdated: "2024-09-24"
 
 
 keywords: change log, version history, ibm-vpc-block-csi-driver
@@ -19,6 +19,7 @@ subcollection: satellite
 
 Review the version history for `ibm-vpc-block-csi-driver`.
 {: shortdesc}
+
 
 ## Version 5.1
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1}
@@ -80,6 +81,7 @@ Review the version history for `ibm-vpc-block-csi-driver`.
 - `Volumesnapshotclass` supported by `vpc block csi` driver is made as default `snapshotclass`
 - `Priorityclass` added in deployment for controller and node pods
 - Removed `preStop` hook for csi-driver-registrar
+
 
 
 ## Version 5.0

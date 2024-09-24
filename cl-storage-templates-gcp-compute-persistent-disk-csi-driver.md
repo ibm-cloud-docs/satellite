@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-09-04"
+lastupdated: "2024-09-24"
 
 
 keywords: change log, version history, gcp-compute-persistent-disk-csi-driver
@@ -20,6 +20,7 @@ subcollection: satellite
 Review the version history for `gcp-compute-persistent-disk-csi-driver`.
 {: shortdesc}
 
+
 ## Version 1.8.0
 {: #cl-storage-templates-gcp-compute-persistent-disk-csi-driver-1.8.0}
 
@@ -28,6 +29,7 @@ Review the version history for `gcp-compute-persistent-disk-csi-driver`.
 {: #cl-storage-templates-gcp-compute-persistent-disk-csi-driver-1.8.0-2}
 
 - Removes the `PodSecurityPolicy` as Kubernetes v1.25+ does not support PSPs. 
+
 
 
 ## Version 1.7.1
@@ -40,6 +42,7 @@ Review the version history for `gcp-compute-persistent-disk-csi-driver`.
 - Removes the `PodSecurityPolicy` as Kubernetes v1.25+ does not support PSPs. 
 
 
+
 ## Version 1.0.4
 {: #cl-storage-templates-gcp-compute-persistent-disk-csi-driver-1.0.4}
 
@@ -48,4 +51,3 @@ Review the version history for `gcp-compute-persistent-disk-csi-driver`.
 {: #cl-storage-templates-gcp-compute-persistent-disk-csi-driver-1.0.4-4}
 
 - Removes the `PodSecurityPolicy` as Kubernetes v1.25+ does not support PSPs. 
-
