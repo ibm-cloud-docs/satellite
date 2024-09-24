@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-05-10"
+lastupdated: "2024-09-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -187,7 +187,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
             
 1. [Grant access to {{site.data.keyword.cos_short}}](/docs/vpc?topic=vpc-object-storage-prereq&interface=cli).
             
-1. [Import your custom RHCOS image in VPC](/docs/account?topic=account-catalog-vsivpc-tutorial). You can create custom images in the [VPC console](https://cloud.ibm.com/vpc-ext/compute/images){: external}.
+1. [Import your custom RHCOS image in VPC](/docs/account?topic=account-catalog-vsivpc-tutorial). You can create custom images in the [VPC console](https://cloud.ibm.com/infrastructure/compute/images){: external}.
         
 1. Give your image a **Name**, select the **Resource group** where you want to create the image and select **Cloud Object Storage**
         
@@ -231,7 +231,3 @@ Now that you added hosts to your location, you can assign them to your location 
 5. Learn more about the [{{site.data.keyword.satelliteshort}} Link component](/docs/satellite?topic=satellite-link-location-cloud) and how you can use endpoints to manage the network traffic between your location and {{site.data.keyword.cloud_notm}}.
 
 Need help? Check out [Getting support](/docs/satellite?topic=satellite-get-help) where you can find information about cloud status, issues, and logging; contacting support; and setting your email notification preferences for {{site.data.keyword.cloud_notm}} platform-related items.
-
-
-
-
