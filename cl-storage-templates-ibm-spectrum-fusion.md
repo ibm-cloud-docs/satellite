@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-09-04"
+lastupdated: "2024-09-24"
 
 
 keywords: change log, version history, ibm-spectrum-fusion
@@ -20,6 +20,7 @@ subcollection: satellite
 Review the version history for `ibm-spectrum-fusion`.
 {: shortdesc}
 
+
 ## Version 2.4.0
 {: #cl-storage-templates-ibm-spectrum-fusion-2.4.0}
 
@@ -28,4 +29,3 @@ Review the version history for `ibm-spectrum-fusion`.
 {: #cl-storage-templates-ibm-spectrum-fusion-2.4.0-1}
 
 - Initial release.
-

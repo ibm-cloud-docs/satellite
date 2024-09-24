@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-09-04"
+lastupdated: "2024-09-24"
 
 
 keywords: change log, version history, ibm-system-storage-block-csi-driver
@@ -20,6 +20,7 @@ subcollection: satellite
 Review the version history for `ibm-system-storage-block-csi-driver`.
 {: shortdesc}
 
+
 ## Version 1.11.2
 {: #cl-storage-templates-ibm-system-storage-block-csi-driver-1.11.2}
 
@@ -28,6 +29,7 @@ Review the version history for `ibm-system-storage-block-csi-driver`.
 {: #cl-storage-templates-ibm-system-storage-block-csi-driver-1.11.2-1}
 
 - Initial release
+
 
 
 ## Version 1.11.1
@@ -40,6 +42,7 @@ Review the version history for `ibm-system-storage-block-csi-driver`.
 - Initial release
 
 
+
 ## Version 1.10.0
 {: #cl-storage-templates-ibm-system-storage-block-csi-driver-1.10.0}
 
@@ -48,6 +51,7 @@ Review the version history for `ibm-system-storage-block-csi-driver`.
 {: #cl-storage-templates-ibm-system-storage-block-csi-driver-1.10.0-1}
 
 - Initial release
+
 
 
 ## Version 1.5.0
@@ -60,6 +64,7 @@ Review the version history for `ibm-system-storage-block-csi-driver`.
 - Adds a new storage class parameter for `storage-class-preference`.
 
 
+
 ## Version 1.4.0
 {: #cl-storage-templates-ibm-system-storage-block-csi-driver-1.4.0}
 
@@ -68,4 +73,3 @@ Review the version history for `ibm-system-storage-block-csi-driver`.
 {: #cl-storage-templates-ibm-system-storage-block-csi-driver-1.4.0-2}
 
 - Adds a new storage class parameter for `storage-class-preference`.
-

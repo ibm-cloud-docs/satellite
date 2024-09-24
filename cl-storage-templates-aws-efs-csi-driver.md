@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-09-04"
+lastupdated: "2024-09-24"
 
 
 keywords: change log, version history, aws-efs-csi-driver
@@ -20,6 +20,7 @@ subcollection: satellite
 Review the version history for `aws-efs-csi-driver`.
 {: shortdesc}
 
+
 ## Version 2.0.3
 {: #cl-storage-templates-aws-efs-csi-driver-2.0.3}
 
@@ -28,6 +29,7 @@ Review the version history for `aws-efs-csi-driver`.
 {: #cl-storage-templates-aws-efs-csi-driver-2.0.3-1}
 
 - Initial release
+
 
 
 ## Version 1.4.2
@@ -40,6 +42,7 @@ Review the version history for `aws-efs-csi-driver`.
 - Initial release.
 
 
+
 ## Version 1.3.7
 {: #cl-storage-templates-aws-efs-csi-driver-1.3.7}
 
@@ -50,6 +53,7 @@ Review the version history for `aws-efs-csi-driver`.
 - Adds support for automatically restarting plug-in pods when updating or upgrading a storage configuration.
 
 
+
 ## Version 1.3.1
 {: #cl-storage-templates-aws-efs-csi-driver-1.3.1}
 
@@ -58,4 +62,3 @@ Review the version history for `aws-efs-csi-driver`.
 {: #cl-storage-templates-aws-efs-csi-driver-1.3.1-4}
 
 - Adds support for automatically restarting plug-in pods when updating or upgrading a storage configuration.
-

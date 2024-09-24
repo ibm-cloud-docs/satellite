@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-09-04"
+lastupdated: "2024-09-24"
 
 
 keywords: change log, version history, vsphere-csi-driver
@@ -19,6 +19,7 @@ subcollection: satellite
 
 Review the version history for `vsphere-csi-driver`.
 {: shortdesc}
+
 
 ## Version 2.7.0
 {: #cl-storage-templates-vsphere-csi-driver-2.7.0}
@@ -40,6 +41,7 @@ Review the version history for `vsphere-csi-driver`.
 - Initial release
 
 
+
 ## Version 2.5.1
 {: #cl-storage-templates-vsphere-csi-driver-2.5.1}
 
@@ -48,4 +50,3 @@ Review the version history for `vsphere-csi-driver`.
 {: #cl-storage-templates-vsphere-csi-driver-2.5.1-6}
 
 - Adds the `vmware-system-csi` namespace resource explicitly.
-

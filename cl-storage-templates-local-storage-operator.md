@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-09-04"
+lastupdated: "2024-09-24"
 
 
 keywords: change log, version history, local-storage-operator
@@ -20,6 +20,7 @@ subcollection: satellite
 Review the version history for `local-storage-operator`.
 {: shortdesc}
 
+
 ## Version 1.0.0
 {: #cl-storage-templates-local-storage-operator-1.0.0}
 
@@ -28,4 +29,3 @@ Review the version history for `local-storage-operator`.
 {: #cl-storage-templates-local-storage-operator-1.0.0-1}
 
 - Initial release
-
