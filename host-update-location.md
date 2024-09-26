@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-09-26"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Updating {{site.data.keyword.satelliteshort}} location control plane hosts 
 {: #host-update-location}
 
-{{site.data.keyword.IBM_notm}} provides version updates for your hosts that are assigned to the {{site.data.keyword.satelliteshort}} location control plane. The version updates include OpenShift Container Platform, the operating system, and security patches. You choose when to apply the host version updates by detaching the hosts from your location, reloading the host machine in the infrastructure provider, and reattaching and reassigning the host to the {{site.data.keyword.satelliteshort}} location control plane. 
+Get the latest OpenShift Container Platform, operating system, and security patches by detaching the hosts from your location, reloading the host machine in your infrastructure provider, then reattaching and reassigning the hosts to your {{site.data.keyword.satelliteshort}} location control plane. 
 {: shortdesc}
 
 
@@ -150,6 +150,3 @@ Repeat these steps until all your RHEL 7 control plane hosts are replaced by RHE
 
 If you have clusters running RHEL 7 hosts in your location, you might need to migrate your worker nodes. For more information, follow the [migration guide](/docs/openshift?topic=openshift-rhel_migrate) for your cluster version.
 {: tip}
-
-
-
