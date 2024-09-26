@@ -53,8 +53,7 @@ Use one of the following instructions, depending on your environment.
     Use the Cloud Service Endpoint source IPs to configure your ACL. For example:
 
     ```sh
-    ibmcloud sat acl create --name `myOpenShiftACL` --location myLocation --endpoint openshift-api-cqv7rh4w0pf9mjcsacd0` \
-        --subnet 10.22.13.83 --subnet 10.12.158.57 --subnet 10.12.158.57
+    ibmcloud sat acl create --name myOpenShiftACL --location myLocation --endpoint openshift-api-cqv7rh4w0pf9mjcsacd0 --subnet 10.22.13.83 --subnet 10.12.158.57 --subnet 10.12.164.28
     ```
     {: pre}
 
@@ -76,9 +75,8 @@ Use one of the following instructions, depending on your environment.
     Use the `private_ip` of your virtual service instance to configure your ACL. For example:
 
     ```sh
-    ibmcloud sat acl create --name `myOpenShiftACL` --location myLocation --endpoint openshift-api-cqv7rh4w0pf9mjcsacd0` \
-        --subnet 10.166.165.5
+    ibmcloud sat acl create --name myOpenShiftACL --location myLocation --endpoint openshift-api-cqv7rh4w0pf9mjcsacd0 --subnet 10.166.165.5
     ```
     {: pre}
 
-* **In all other cases**, you can find the {{site.data.keyword.redhat_openshift_notm}} API Satellite link endpoint by looking in the {{site.data.keyword.loganalysislong_notm}} logs for your {{site.data.keyword.satelliteshort}} location. To open these logs, click **Open Dashboard** under **Logging for Link**. You can set up a filter in the monitoring instance to filter out the value you need. For example, search for `flowlog: rejected by` in the log and you will see an IP. Add an ACL with a subnet matching that IP for your endpoint. This IP is logged when you use `oc` commands via link endpoint on the {{site.data.keyword.redhat_openshift_notm}} API. For more information, see [Logging for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-health).
+* **In all other cases**, you can find the {{site.data.keyword.redhat_openshift_notm}} API Satellite link endpoint by looking in the {{site.data.keyword.loganalysislong_notm}} logs for your {{site.data.keyword.satelliteshort}} location. To open these logs, click **Open Dashboard** under **Logging for Link**. You can set up a filter in the monitoring instance to filter out the value you need. For example, search for `flowlog: rejected by` in the log and you will see a rejected client IP. Add an ACL with a subnet matching that IP for your endpoint. This IP is logged when you use `oc` commands via link endpoint on the {{site.data.keyword.redhat_openshift_notm}} API. For more information, see [Logging for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-health).
