@@ -17,7 +17,7 @@ subcollection: satellite
 # Updating {{site.data.keyword.satelliteshort}} location control plane hosts 
 {: #host-update-location}
 
-Get the latest OpenShift Container Platform, the operating system, and security patches by detaching the hosts from your location, reloading the host machine in your infrastructure provider, then reattaching and reassigning the hosts to your {{site.data.keyword.satelliteshort}} location control plane. 
+Get the latest OpenShift Container Platform, operating system, and security patches by detaching the hosts from your location, reloading the host machine in your infrastructure provider, then reattaching and reassigning the hosts to your {{site.data.keyword.satelliteshort}} location control plane. 
 {: shortdesc}
 
 
