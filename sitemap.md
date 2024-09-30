@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-09-20"
+lastupdated: "2024-09-30"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1023,80 +1023,6 @@ subcollection: satellite
         * Review the release notes for 12 January 2021.
 
         * Host updates
-
-* [December 2020](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec20)
-
-    * Review the release notes for December 2020.
-
-    * [9 December 2020](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec0920)
-
-        * Review the release notes for 9 December 2020.
-
-        * Private hosts
-
-        * Azure host support
-
-        * Physical machine support
-
-        * Host network requirements
-
-        * AWS and GCP host DNS
-
-* [November 2020](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov20)
-
-    * Review the release notes for November 2020.
-
-    * [18 November 2020](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov1820)
-
-        * Review the release notes for 18 November 2020.
-
-        * Internal registry
-
-        * Service overview
-
-* [October 2020](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct20)
-
-    * Review the release notes for October 2020.
-
-    * [8 October 2020](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct0820)
-
-        * Review the release notes for 8 October 2020.
-
-        * Host network requirements
-
-    * [6 October 2020](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct0620)
-
-        * Review the release notes for 6 October 2020.
-
-        * CLI change log
-
-        * Location subdomain troubleshooting
-
-* [September 2020](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep20)
-
-    * Review the release notes for September 2020.
-
-    * [14 September 2020](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep1420)
-
-        * Review the release notes for 14 September 2020.
-
-        * Host requirements
-
-        * IAM
-
-        * Provider documentation
-
-        * Service requirements
-
-* [August 2020](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug20)
-
-    * Review the release notes for August 2020.
-
-    * [21 August 2020](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug2120)
-
-        * Review the release notes for 21 August 2020.
-
-        * New! {{site.data.keyword.satellitelong_notm}} is now available as a closed beta.
 
 
 ## Tutorial library for Satellite
