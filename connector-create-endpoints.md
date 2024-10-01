@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-09-10"
+lastupdated: "2024-10-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -115,7 +115,7 @@ For container platforms such as Docker or Rancher, this requires you to map the 
     ```
     {: screen}
 
-2. Map the target port to the container using the steps appropriate for your container platform. For most platforms, including Docker and Rancher, you can use the `-p LISTENPORT:CONTAINERPORT` option when starting your Connector agent.
+1. Map the target port to the container using the steps appropriate for your container platform. For most platforms, including Docker and Rancher, you can use the `-p LISTENPORT:CONTAINERPORT` option when starting your Connector agent.
 
     For example, using Docker, the following command exposes port `8443` for the endpoint's container-internal target port `29998`.
 
@@ -125,6 +125,8 @@ For container platforms such as Docker or Rancher, this requires you to map the 
     {: pre}
 
     You may also need to work with your container platform and operating system to allow outside traffic into your chosen `LISTENPORT`. In the previous example, the `LISTENPORT` is `8443`.
+
+1. Now the resource is reachable from the IP address or the DNS name set up in your container platform on port 8443 in this example.
 
 ## Creating an access control list (ACL) rule from the CLI
 {: #create-connector-rule-cli}
