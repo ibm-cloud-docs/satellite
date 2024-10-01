@@ -126,6 +126,8 @@ For container platforms such as Docker or Rancher, this requires you to map the 
 
     You may also need to work with your container platform and operating system to allow outside traffic into your chosen `LISTENPORT`. In the previous example, the `LISTENPORT` is `8443`.
 
+3. Now the resource is reachable from the IP address or the DNS name set up in your container platform on port 8443 in this example.
+
 ## Creating an access control list (ACL) rule from the CLI
 {: #create-connector-rule-cli}
 {: cli}
