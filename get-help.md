@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-09-17"
+lastupdated: "2024-10-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -60,11 +60,13 @@ You can also view logs that are automatically generated for your {{site.data.key
 ## Feedback and questions
 {: #feedback-qs}
 
-1. Search for your question and post in the {{site.data.keyword.cloud_notm}} [Slack](https://ibm-cloud-success.slack.com/join/shared_invite/zt-2p5zqh275-FL8XUSEmn_vvAJZzrHqYcA){: external}, in the `#satellite` channel.
-2. Review forums such as Stack Overflow to see whether other users ran into the same issue. When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
-    - For questions about {{site.data.keyword.satelliteshort}}, use the tags `ibm-cloud` and `satellite`.
-    - If you have technical questions about developing or deploying clusters or apps with {{site.data.keyword.redhat_openshift_notm}}, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `openshift`, and `containers`.
-    - See [Getting help](/docs/get-support?topic=get-support-using-avatar#using-avatar) for more details about using the forums.
+Review forums such as Stack Overflow to see whether other users ran into the same issue. When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
+
+For questions about {{site.data.keyword.satelliteshort}}, use the tags `ibm-cloud` and `satellite`.
+
+If you have technical questions about developing or deploying clusters or apps with {{site.data.keyword.redhat_openshift_notm}}, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `openshift`, and `containers`.
+
+See [Getting help](/docs/get-support?topic=get-support-using-avatar#using-avatar) for more details about using the forums.
 
 ## Contacting support
 {: #help-support}
