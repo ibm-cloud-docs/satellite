@@ -198,6 +198,12 @@ subcollection: satellite
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
+* [October 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct24)
+
+    * [2 October 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct0224)
+
+        * {{site.data.keyword.satelliteshort}} storage template patch updates are available.
+
 * [September 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep24)
 
     * [18 September 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep1824)
