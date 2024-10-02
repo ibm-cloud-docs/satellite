@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-09-24"
+lastupdated: "2024-10-02"
 
 
 keywords: change log, version history, netapp-ontap-nas
@@ -25,6 +25,11 @@ Review the version history for `netapp-ontap-nas`.
 {: #cl-storage-templates-netapp-ontap-nas-24.02}
 
 
+### Revision 3, released 01 October 2024
+{: #cl-storage-templates-netapp-ontap-nas-24.02-3}
+
+- Resolves the following CVEs: [CVE-2024-34158](https://nvd.nist.gov/vuln/detail/CVE-2024-34158){: external}, [CVE-2024-34155](https://nvd.nist.gov/vuln/detail/CVE-2024-34155){: external}, and [CVE-2024-34156](https://nvd.nist.gov/vuln/detail/CVE-2024-34156){: external}.
+
 ### Revision 2, released 05 June 2024
 {: #cl-storage-templates-netapp-ontap-nas-24.02-2}
 
@@ -40,6 +45,11 @@ Review the version history for `netapp-ontap-nas`.
 ## Version 22.10
 {: #cl-storage-templates-netapp-ontap-nas-22.10}
 
+
+### Revision 14, released 01 October 2024
+{: #cl-storage-templates-netapp-ontap-nas-22.10-14}
+
+- Resolves the following CVEs: [CVE-2024-34158](https://nvd.nist.gov/vuln/detail/CVE-2024-34158){: external}, [CVE-2024-34155](https://nvd.nist.gov/vuln/detail/CVE-2024-34155){: external}, and [CVE-2024-34156](https://nvd.nist.gov/vuln/detail/CVE-2024-34156){: external}.
 
 ### Revision 13, released 05 June 2024
 {: #cl-storage-templates-netapp-ontap-nas-22.10-13}
@@ -127,6 +137,11 @@ Review the version history for `netapp-ontap-nas`.
 ## Version 22.04
 {: #cl-storage-templates-netapp-ontap-nas-22.04}
 
+
+### Revision 27, released 01 October 2024
+{: #cl-storage-templates-netapp-ontap-nas-22.04-27}
+
+- Resolves the following CVEs: [CVE-2024-34158](https://nvd.nist.gov/vuln/detail/CVE-2024-34158){: external}, [CVE-2024-34155](https://nvd.nist.gov/vuln/detail/CVE-2024-34155){: external}, and [CVE-2024-34156](https://nvd.nist.gov/vuln/detail/CVE-2024-34156){: external}.
 
 ### Revision 26, released 05 June 2024
 {: #cl-storage-templates-netapp-ontap-nas-22.04-26}

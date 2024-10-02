@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-09-24"
+lastupdated: "2024-10-02"
 
 
 keywords: change log, version history, ibm-object-storage-plugin
@@ -24,6 +24,15 @@ Review the version history for `ibm-object-storage-plugin`.
 ## Version 2.2
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2}
 
+
+### Revision 24, released 01 October 2024
+{: #cl-storage-templates-ibm-object-storage-plugin-2.2-24}
+
+- Resolves the following CVEs: [CVE-2024-34158](https://nvd.nist.gov/vuln/detail/CVE-2024-34158){: external}, [CVE-2024-34155](https://nvd.nist.gov/vuln/detail/CVE-2024-34155){: external}, and [CVE-2024-34156](https://nvd.nist.gov/vuln/detail/CVE-2024-34156){: external}.
+- Updates Go to version `1.22.7`.
+- Fixed mount issue with coreos9 roks 4.16 cluster 
+- s3fs-fuse version updated to v1.94
+- Support for ubuntu24 SecureByDefault clusters
 
 ### Revision 23, released 04 September 2024
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-23}

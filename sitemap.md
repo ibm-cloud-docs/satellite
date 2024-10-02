@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-09-30"
+lastupdated: "2024-10-02"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -4064,6 +4064,8 @@ subcollection: satellite
 
 * [Version 2.2](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2)
 
+    * [Revision 24, released 01 October 2024](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-24)
+
     * [Revision 23, released 04 September 2024](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-23)
 
     * [Revision 22, released 17 July 2024](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-22)
@@ -4228,11 +4230,15 @@ subcollection: satellite
 
 * [Version 24.02](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-24.02)
 
+    * [Revision 3, released 01 October 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-24.02-3)
+
     * [Revision 2, released 05 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-24.02-2)
 
     * [Revision 1, released 29 April 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-24.02-1)
 
 * [Version 22.10](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.10)
+
+    * [Revision 14, released 01 October 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.10-14)
 
     * [Revision 13, released 05 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.10-13)
 
@@ -4261,6 +4267,8 @@ subcollection: satellite
     * [Revision 1, released 20 February 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.10-1)
 
 * [Version 22.04](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.04)
+
+    * [Revision 27, released 01 October 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.04-27)
 
     * [Revision 26, released 05 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.04-26)
 
@@ -4314,11 +4322,15 @@ subcollection: satellite
 
 * [Version 24.02](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-24.02)
 
+    * [Revision 3, released 01 October 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-24.02-3)
+
     * [Revision 2, released 05 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-24.02-2)
 
     * [Revision 1, released 29 April 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-24.02-1)
 
 * [Version 22.10](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.10)
+
+    * [Revision 14, released 01 October 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.10-14)
 
     * [Revision 13, released 05 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.10-13)
 
@@ -4347,6 +4359,8 @@ subcollection: satellite
     * [Revision 1, released 20 February 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.10-1)
 
 * [Version 22.04](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.04)
+
+    * [Revision 27, released 01 October 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.04-27)
 
     * [Revision 26, released 05 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.04-26)
 
