@@ -37,7 +37,7 @@ Outbound connectivity host requirements for Non-RHCOS locations
 :    [Non-RHCOS locations in Sydney](/docs/satellite?topic=satellite-reqs-host-network-outbound-syd).
 :    [Non-RHCOS locations in Tokyo](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok).
 :    [Non-RHCOS locations in Toronto](/docs/satellite?topic=satellite-reqs-host-network-outbound-tor).
-:    [Non-RHCOS locations in Washington D.C.](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc).
+:    [Non-RHCOS locations in Washington D.C.](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc)
 
 
 
@@ -52,7 +52,7 @@ Outbound connectivity requirements for Red Hat CoreOS (RHCOS) locations
 :    [RHCOS enabled locations in Sydney](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-syd).
 :    [RHCOS enabled locations in Tokyo](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-tok).
 :    [RHCOS enabled locations in Toronto](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-tor).
-:    [RHCOS enabled locations in Washington D.C.](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-wdc).
+:    [RHCOS enabled locations in Washington D.C.](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-wdc)
 
 
 
@@ -68,4 +68,4 @@ Outbound connectivity requirements for Red Hat CoreOS (RHCOS) locations with red
 :    [RHCOS enabled locations with reduced firewall in Sydney](/docs/satellite?topic=satellite-req-minimum-outbound-syd).
 :    [RHCOS enabled locations with reduced firewall in Tokyo](/docs/satellite?topic=satellite-req-minimum-outbound-tok).
 :    [RHCOS enabled locations with reduced firewall in Toronto](/docs/satellite?topic=satellite-req-minimum-outbound-tor).
-:    [RHCOS enabled locations with reduced firewall in Washington D.C.](/docs/satellite?topic=satellite-req-minimum-outbound-wdc).
+:    [RHCOS enabled locations with reduced firewall in Washington D.C.](/docs/satellite?topic=satellite-req-minimum-outbound-wdc)
