@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-09-17"
+lastupdated: "2024-10-04"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -48,7 +48,7 @@ ibmcloud sat acl create --name NAME --subnet SUBNET [--subnet SUBNET ...] [--end
 {: #acl-create-options}
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--endpoint ENDPOINT`
 :    A name or ID of an endpoint to enable for this ACL.
@@ -85,7 +85,7 @@ ibmcloud sat acl endpoint add --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOI
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--endpoint ENDPOINT`
 :    A name or ID of an endpoint to enable for this ACL.
@@ -116,7 +116,7 @@ ibmcloud sat acl endpoint ls --acl-id ID [--output OUTPUT] [-q] (--connector-id 
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--location LOCATION`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
@@ -147,7 +147,7 @@ ibmcloud sat acl endpoint rm --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOIN
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--endpoint ENDPOINT`
 :    A name or ID of an endpoint to disable for this ACL.
@@ -178,7 +178,7 @@ ibmcloud sat acl get --acl-id ID [--output OUTPUT] [-q] (--connector-id ID | --l
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--location LOCATION`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
@@ -206,7 +206,7 @@ ibmcloud sat acl ls [--output OUTPUT] [-q] (--connector-id ID | --location LOCAT
 {: #acl-ls-options}
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--location LOCATION`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
@@ -237,7 +237,7 @@ ibmcloud sat acl rm --acl-id ID [-q] (--connector-id ID | --location LOCATION)
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--location LOCATION`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
@@ -265,7 +265,7 @@ ibmcloud sat acl subnet add --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--location LOCATION`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
@@ -296,7 +296,7 @@ ibmcloud sat acl subnet rm --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--location LOCATION`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
@@ -327,7 +327,7 @@ ibmcloud sat acl update --acl-id ID --name NAME [-q] (--connector-id ID | --loca
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--location LOCATION`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
@@ -826,7 +826,7 @@ ibmcloud sat endpoint authn rotate --endpoint ENDPOINT [--dest-ca-cert-file FILE
 {: #endpoint-authn-rotate-options}
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--dest-ca-cert-file FILE`
 :    Trusted CA certificate or chain used to validate the destination server's certificate. For example `myCA.pem`.
@@ -872,7 +872,7 @@ ibmcloud sat endpoint authn set --endpoint ENDPOINT [--dest-ca-cert-file FILE] [
 {: #endpoint-authn-set-options}
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--dest-ca-cert-file FILE`
 :    Trusted CA certificate or chain used to validate the destination server's certificate. For example `myCA.pem`.
@@ -924,7 +924,7 @@ ibmcloud sat endpoint create --dest-hostname HOSTNAME --dest-port PORT --dest-ty
 {: #endpoint-create-options}
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--dest-hostname HOSTNAME`
 :    Indicate the fully qualified domain name (FQDN) or the externally accessible IP address of the destination that you want to connect to. For `cloud` endpoints, this value must resolve to a public IP address or to a private IP address that is accessible within IBM Cloud such as a private cloud service endpoint. For `location` endpoints, this value must resolve from and be reachable from the control plane hosts for Satellite locations or where the agent runs for Satellite Connector.
@@ -976,7 +976,7 @@ ibmcloud sat endpoint disable --endpoint ENDPOINT [-f] [-q] (--connector-id ID |
 {: #endpoint-disable-options}
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--endpoint ENDPOINT`
 :    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls (--connector-id ID | --location LOCATION)`.
@@ -1007,7 +1007,7 @@ ibmcloud sat endpoint enable --endpoint ENDPOINT [-f] [-q] (--connector-id ID | 
 {: #endpoint-enable-options}
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--endpoint ENDPOINT`
 :    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls (--connector-id ID | --location LOCATION)`.
@@ -1038,7 +1038,7 @@ ibmcloud sat endpoint get --endpoint ENDPOINT [--output OUTPUT] [-q] (--connecto
 {: #endpoint-get-options}
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--endpoint ENDPOINT`
 :    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls (--connector-id ID | --location LOCATION)`.
@@ -1069,7 +1069,7 @@ ibmcloud sat endpoint ls [--output OUTPUT] [-q] (--connector-id ID | --location 
 {: #endpoint-ls-options}
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--location LOCATION`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
@@ -1097,7 +1097,7 @@ ibmcloud sat endpoint rm --endpoint ENDPOINT [-q] (--connector-id ID | --locatio
 {: #endpoint-rm-options}
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--endpoint ENDPOINT`
 :    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls (--connector-id ID | --location LOCATION)`.
@@ -1125,7 +1125,7 @@ ibmcloud sat endpoint update --endpoint ENDPOINT [--dest-hostname HOSTNAME] [--d
 {: #endpoint-update-options}
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--dest-hostname HOSTNAME`
 :    Indicate the fully qualified domain name (FQDN) or the externally accessible IP address of the destination that you want to connect to. For `cloud` endpoints, this value must resolve to a public IP address or to a private IP address that is accessible within IBM Cloud such as a private cloud service endpoint. For `location` endpoints, this value must resolve from and be reachable from the control plane hosts for Satellite locations or where the agent runs for Satellite Connector.
@@ -1162,7 +1162,7 @@ ibmcloud sat endpoint update --endpoint ENDPOINT [--dest-hostname HOSTNAME] [--d
 ## `ibmcloud sat experimental acl create`
 {: #experimental-acl-create-cli}
 
-[Expires on 2024-10-01. Use `ibmcloud sat acl create` instead] Create an ACL.
+[Deactivated on 2024-10-01! Use `ibmcloud sat acl create` instead] Create an ACL.
 
 ```txt
 ibmcloud sat experimental acl create --name NAME --subnet SUBNET [--subnet SUBNET ...] [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
@@ -1174,7 +1174,7 @@ ibmcloud sat experimental acl create --name NAME --subnet SUBNET [--subnet SUBNE
 {: #experimental-acl-create-options}
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--endpoint ENDPOINT`
 :    A name or ID of an endpoint to enable for this ACL.
@@ -1196,7 +1196,7 @@ ibmcloud sat experimental acl create --name NAME --subnet SUBNET [--subnet SUBNE
 ## `ibmcloud sat experimental acl endpoint add`
 {: #experimental-acl-endpoint-add-cli}
 
-[Expires on 2024-10-01. Use `ibmcloud sat acl endpoint add` instead] Add one or more enabled endpoints to an ACL.
+[Deactivated on 2024-10-01! Use `ibmcloud sat acl endpoint add` instead] Add one or more enabled endpoints to an ACL.
 
 ```txt
 ibmcloud sat experimental acl endpoint add --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
@@ -1211,7 +1211,7 @@ ibmcloud sat experimental acl endpoint add --acl-id ID --endpoint ENDPOINT [--en
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--endpoint ENDPOINT`
 :    A name or ID of an endpoint to enable for this ACL.
@@ -1227,7 +1227,7 @@ ibmcloud sat experimental acl endpoint add --acl-id ID --endpoint ENDPOINT [--en
 ## `ibmcloud sat experimental acl endpoint ls`
 {: #experimental-acl-endpoint-ls-cli}
 
-[Expires on 2024-10-01. Use `ibmcloud sat acl endpoint ls` instead] List all enabled endpoints for an ACL.
+[Deactivated on 2024-10-01! Use `ibmcloud sat acl endpoint ls` instead] List all enabled endpoints for an ACL.
 
 ```txt
 ibmcloud sat experimental acl endpoint ls --acl-id ID [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
@@ -1242,7 +1242,7 @@ ibmcloud sat experimental acl endpoint ls --acl-id ID [--output OUTPUT] [-q] (--
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--location LOCATION`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
@@ -1258,7 +1258,7 @@ ibmcloud sat experimental acl endpoint ls --acl-id ID [--output OUTPUT] [-q] (--
 ## `ibmcloud sat experimental acl endpoint rm`
 {: #experimental-acl-endpoint-rm-cli}
 
-[Expires on 2024-10-01. Use `ibmcloud sat acl endpoint rm` instead] Remove one or more enabled endpoints from an ACL.
+[Deactivated on 2024-10-01! Use `ibmcloud sat acl endpoint rm` instead] Remove one or more enabled endpoints from an ACL.
 
 ```txt
 ibmcloud sat experimental acl endpoint rm --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
@@ -1273,7 +1273,7 @@ ibmcloud sat experimental acl endpoint rm --acl-id ID --endpoint ENDPOINT [--end
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--endpoint ENDPOINT`
 :    A name or ID of an endpoint to disable for this ACL.
@@ -1289,7 +1289,7 @@ ibmcloud sat experimental acl endpoint rm --acl-id ID --endpoint ENDPOINT [--end
 ## `ibmcloud sat experimental acl get`
 {: #experimental-acl-get-cli}
 
-[Expires on 2024-10-01. Use `ibmcloud sat acl get` instead] View the details of an ACL.
+[Deactivated on 2024-10-01! Use `ibmcloud sat acl get` instead] View the details of an ACL.
 
 ```txt
 ibmcloud sat experimental acl get --acl-id ID [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
@@ -1304,7 +1304,7 @@ ibmcloud sat experimental acl get --acl-id ID [--output OUTPUT] [-q] (--connecto
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--location LOCATION`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
@@ -1320,7 +1320,7 @@ ibmcloud sat experimental acl get --acl-id ID [--output OUTPUT] [-q] (--connecto
 ## `ibmcloud sat experimental acl ls`
 {: #experimental-acl-ls-cli}
 
-[Expires on 2024-10-01. Use `ibmcloud sat acl ls` instead] List all ACLs for a Satellite connector or location.
+[Deactivated on 2024-10-01! Use `ibmcloud sat acl ls` instead] List all ACLs for a Satellite connector or location.
 
 ```txt
 ibmcloud sat experimental acl ls [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
@@ -1332,7 +1332,7 @@ ibmcloud sat experimental acl ls [--output OUTPUT] [-q] (--connector-id ID | --l
 {: #experimental-acl-ls-options}
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--location LOCATION`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
@@ -1348,7 +1348,7 @@ ibmcloud sat experimental acl ls [--output OUTPUT] [-q] (--connector-id ID | --l
 ## `ibmcloud sat experimental acl rm`
 {: #experimental-acl-rm-cli}
 
-[Expires on 2024-10-01. Use `ibmcloud sat acl rm` instead] Delete an ACL.
+[Deactivated on 2024-10-01! Use `ibmcloud sat acl rm` instead] Delete an ACL.
 
 ```txt
 ibmcloud sat experimental acl rm --acl-id ID [-q] (--connector-id ID | --location LOCATION)
@@ -1363,7 +1363,7 @@ ibmcloud sat experimental acl rm --acl-id ID [-q] (--connector-id ID | --locatio
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--location LOCATION`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
@@ -1376,7 +1376,7 @@ ibmcloud sat experimental acl rm --acl-id ID [-q] (--connector-id ID | --locatio
 ## `ibmcloud sat experimental acl subnet add`
 {: #experimental-acl-subnet-add-cli}
 
-[Expires on 2024-10-01. Use `ibmcloud sat acl subnet add` instead] Add one or more subnets to an ACL.
+[Deactivated on 2024-10-01! Use `ibmcloud sat acl subnet add` instead] Add one or more subnets to an ACL.
 
 ```txt
 ibmcloud sat experimental acl subnet add --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q] (--connector-id ID | --location LOCATION)
@@ -1391,7 +1391,7 @@ ibmcloud sat experimental acl subnet add --acl-id ID --subnet SUBNET [--subnet S
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--location LOCATION`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
@@ -1407,7 +1407,7 @@ ibmcloud sat experimental acl subnet add --acl-id ID --subnet SUBNET [--subnet S
 ## `ibmcloud sat experimental acl subnet rm`
 {: #experimental-acl-subnet-rm-cli}
 
-[Expires on 2024-10-01. Use `ibmcloud sat acl subnet rm` instead] Remove one or more subnets from an ACL.
+[Deactivated on 2024-10-01! Use `ibmcloud sat acl subnet rm` instead] Remove one or more subnets from an ACL.
 
 ```txt
 ibmcloud sat experimental acl subnet rm --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q] (--connector-id ID | --location LOCATION)
@@ -1422,7 +1422,7 @@ ibmcloud sat experimental acl subnet rm --acl-id ID --subnet SUBNET [--subnet SU
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--location LOCATION`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
@@ -1438,7 +1438,7 @@ ibmcloud sat experimental acl subnet rm --acl-id ID --subnet SUBNET [--subnet SU
 ## `ibmcloud sat experimental acl update`
 {: #experimental-acl-update-cli}
 
-[Expires on 2024-10-01. Use `ibmcloud sat acl update` instead] Update the name of an ACL.
+[Deactivated on 2024-10-01! Use `ibmcloud sat acl update` instead] Update the name of an ACL.
 
 ```txt
 ibmcloud sat experimental acl update --acl-id ID --name NAME [-q] (--connector-id ID | --location LOCATION)
@@ -1453,7 +1453,7 @@ ibmcloud sat experimental acl update --acl-id ID --name NAME [-q] (--connector-i
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--location LOCATION`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
@@ -1619,7 +1619,7 @@ ibmcloud sat experimental connector rm --connector-id ID [-f] [-q]
 ## `ibmcloud sat experimental endpoint authn rotate`
 {: #experimental-endpoint-authn-rotate-cli}
 
-[Expires on 2024-10-01. Use `ibmcloud sat endpoint authn rotate` instead] Replace existing authentication certificates with new ones. There are two TLS connections in the request flow. The `source` options refer to the TLS handshake between the source and the Connector service. The `destination` options refer to the TLS handshake between the Connector service and your destination or target server. You can provide certificates for one or both of these connections. Only the certificates that you specify are replaced.
+[Deactivated on 2024-10-01! Use `ibmcloud sat endpoint authn rotate` instead] Replace existing authentication certificates with new ones. There are two TLS connections in the request flow. The `source` options refer to the TLS handshake between the source and the Connector service. The `destination` options refer to the TLS handshake between the Connector service and your destination or target server. You can provide certificates for one or both of these connections. Only the certificates that you specify are replaced.
 
 ```txt
 ibmcloud sat experimental endpoint authn rotate --endpoint ENDPOINT [--dest-ca-cert-file FILE] [--dest-cert-file FILE] [--dest-key-file FILE] [-q] [--source-ca-cert-file FILE] [--source-cert-file FILE] [--source-key-file FILE] (--connector-id ID | --location LOCATION)
@@ -1631,7 +1631,7 @@ ibmcloud sat experimental endpoint authn rotate --endpoint ENDPOINT [--dest-ca-c
 {: #experimental-endpoint-authn-rotate-options}
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--dest-ca-cert-file FILE`
 :    Trusted CA certificate or chain used to validate the destination server's certificate. For example `myCA.pem`.
@@ -1665,7 +1665,7 @@ ibmcloud sat experimental endpoint authn rotate --endpoint ENDPOINT [--dest-ca-c
 ## `ibmcloud sat experimental endpoint authn set`
 {: #experimental-endpoint-authn-set-cli}
 
-[Expires on 2024-10-01. Use `ibmcloud sat endpoint authn set` instead] Set authentication settings for an endpoint. There are two TLS connections in the request flow. The `source` options refer to the TLS handshake between the source and the Connector service. The `destination` options refer to the TLS handshake between the Connector service and your destination or target server. You can provide certificates for one or both of these connections. Unspecified settings are set to their default values.
+[Deactivated on 2024-10-01! Use `ibmcloud sat endpoint authn set` instead] Set authentication settings for an endpoint. There are two TLS connections in the request flow. The `source` options refer to the TLS handshake between the source and the Connector service. The `destination` options refer to the TLS handshake between the Connector service and your destination or target server. You can provide certificates for one or both of these connections. Unspecified settings are set to their default values.
 
 ```txt
 ibmcloud sat experimental endpoint authn set --endpoint ENDPOINT [--dest-ca-cert-file FILE] [--dest-cert-file FILE] [--dest-key-file FILE] [--dest-tls-mode MODE] [-q] [--source-ca-cert-file FILE] [--source-cert-file FILE] [--source-key-file FILE] [--source-tls-mode MODE] (--connector-id ID | --location LOCATION)
@@ -1677,7 +1677,7 @@ ibmcloud sat experimental endpoint authn set --endpoint ENDPOINT [--dest-ca-cert
 {: #experimental-endpoint-authn-set-options}
 
 `--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
 `--dest-ca-cert-file FILE`
 :    Trusted CA certificate or chain used to validate the destination server's certificate. For example `myCA.pem`.

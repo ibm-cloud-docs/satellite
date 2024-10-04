@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-09-10"
+lastupdated: "2024-10-04"
 
 keywords: satellite cli map, satellite commands, satellite cli, satellite reference
 
@@ -116,7 +116,7 @@ View and manage Satellite endpoints.
 [Expires on 2024-11-25] Experiment with new commands. IMPORTANT: Commands here will retire after the [date] in their description.
 {: shortdesc}
 
-* **`experimental acl`**: [Expires on 2024-10-01. Use `ibmcloud sat acl` instead] View and manage Satellite access control lists (ACLs).
+* **`experimental acl`**: [Deactivated on 2024-10-01! Use `ibmcloud sat acl` instead] View and manage Satellite access control lists (ACLs).
     * [`ibmcloud sat experimental acl create`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-create-cli)
     * [`ibmcloud sat experimental acl endpoint add`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-endpoint-add-cli)
     * [`ibmcloud sat experimental acl endpoint ls`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-endpoint-ls-cli)
