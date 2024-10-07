@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-09-13"
+lastupdated: "2024-10-07"
 
 keywords: satellite, connector, agent, windows
 
@@ -275,7 +275,7 @@ Configuration information is provided to the agent through the following environ
     ```
     {: codeblock}
 
-    If you start the agent and receive a Windows `Microsoft Defender SmartScreen` error, make sure you completed the step to verify the `sha512sum` after you [downloaded the agent](#windows-agent-download). Complete the verification step and try again. 
+    If you start the agent and receive a Windows `Microsoft Defender SmartScreen` error, this is expected. The plain text install scripts are not signed. We suggest relying on the step to verify the `sha512sum` after you [downloaded the agent](#windows-agent-download). 
     {: tip}
     
 
