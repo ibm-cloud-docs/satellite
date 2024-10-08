@@ -3974,6 +3974,8 @@ subcollection: satellite
 
 * [Version 1.1](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.1-change-log)
 
+    * [Version 1.1.8, released 07 Oct 2024](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.1.8-change-log)
+
     * [Version 1.1.7, released 14 Jun 2024](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.1.7-change-log)
 
     * [Version 1.1.6, released 21 May 2024](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.1.6-change-log)
