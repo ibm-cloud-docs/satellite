@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-10-02"
+lastupdated: "2024-10-08"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -199,6 +199,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [October 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct24)
+
+    * [8 October 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct0824)
+
+        * New! Connecting to IBM Cloud via the private network by using Satellite Connector and Direct Link 2.0
 
     * [2 October 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct0224)
 
@@ -1085,6 +1089,27 @@ subcollection: satellite
 * [Beginner tutorial: Deploying a hello world app](/docs/satellite?topic=satellite-begin-sat-config-tutorial&interface=ui#begin-sat-config-tutorial-deploy-app-ui)
 
 * [Advanced tutorial: Deploying an app and updating it with new versions](/docs/satellite?topic=satellite-begin-sat-config-tutorial&interface=ui#begin-sat-config-tutorial-advanced-helloworld-ui)
+
+
+## Connecting to IBM Cloud via the private network by using Satellite Connector and Direct Link 2.0
+{: #sitemap_connecting_to_ibm_cloud_via_the_private_network_by_using_satellite_connector_and_direct_link_20}
+
+
+[Connecting to IBM Cloud via the private network by using Satellite Connector and Direct Link 2.0](/docs/satellite?topic=satellite-direct-link-vpe#direct-link-vpe)
+
+* [Prerequisites](/docs/satellite?topic=satellite-direct-link-vpe#dl-vpe-prereq)
+
+* [Create a subnet for your VPE gateway](/docs/satellite?topic=satellite-direct-link-vpe#dl-vpe-subnet-create)
+
+* [Create a VPE gateway](/docs/satellite?topic=satellite-direct-link-vpe#dl-vpe-gateway-create)
+
+* [Create a DNS instance and a customer resolver](/docs/satellite?topic=satellite-direct-link-vpe#dl-vpe-dns-create)
+
+* [Optional: Create a DNS forwarding rule](/docs/satellite?topic=satellite-direct-link-vpe#dl-vpe-dns-forward)
+
+* [Test connectivity](/docs/satellite?topic=satellite-direct-link-vpe#dl-vpe-test)
+
+* [Set up Satellite Connector](/docs/satellite?topic=satellite-direct-link-vpe#dl-vpe-connector)
 
 
 ## Connecting Locations with {{site.data.keyword.cloud_notm}} using {{site.data.keyword.dl_short}}
