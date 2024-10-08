@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-02"
+lastupdated: "2024-10-08"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -24,6 +24,13 @@ Review the latest changes to the {{site.data.keyword.satellitelong}} documentati
 
 ## October 2024
 {: #satellite-oct24}
+
+### 8 October 2024
+{: #satellite-oct0824}
+{: release-note}
+
+New! Connecting to IBM Cloud via the private network by using Satellite Connector and Direct Link 2.0
+:   A new tutorial is available for Direct Link 2.0 users to Connector IBM Cloud via Virtual Private Endpoints (VPE) and Satellite Connector. For more information, see [Connecting to IBM Cloud via the private network by using Satellite Connector and Direct Link 2.0](/docs/satellite?topic=satellite-direct-link-vpe).
 
 ### 2 October 2024
 {: #satellite-oct0224}
