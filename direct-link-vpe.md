@@ -64,9 +64,9 @@ Create the subnet in the VPC where you want to create a VPE gateway.
     ```
     {: pre}
 
-    Example command
+    Example command to create a subnet in VPC `r001-a1aa1a11-5eaf-4df4-9de8-ba49a46008bc`
     ```txt
-    ibmcloud is subnet-create test-subnet r006-e4fc3b82-5eaf-4df4-9de8-ba49a46008bc --zone us-south-1 --ipv4-address-count 4
+    ibmcloud is subnet-create test-subnet r001-a1aa1a11-5eaf-4df4-9de8-ba49a46008bc --zone us-south-1 --ipv4-address-count 4
     ```
     {: pre}
 
@@ -103,30 +103,30 @@ Create the subnet in the VPC where you want to create a VPE gateway.
 
     Example 
     ```txt
-    ibmcloud is endpoint-gateway-create --name test-vpe --vpc-id r006-e4fc3b82-5eaf-4df4-9de8-ba49a46008bc --target crn:v1:public:satellite-link:us-south:::endpoint:d-01-ws.private.us-south.link.satellite.cloud.ibm.com
+    ibmcloud is endpoint-gateway-create --name test-vpe --vpc-id r001-a1aa1a11-5eaf-4df4-9de8-ba49a46008bc --target crn:v1:public:satellite-link:us-south:::endpoint:d-01-ws.private.us-south.link.satellite.cloud.ibm.com
     ```
     {: pre}
 
     Example output
     ```txt
-    ID                  r006-62dc723b-48e5-4676-a0df-4755de9577f6
+    ID                  r001-11aa111b-48e5-4676-a0df-4755de9577f6
     Name                test-vpe
-    CRN                 crn:v1:bluemix:public:is:us-south:a/9f19417983334c98bfea53579abf81e9::endpoint-gateway:r006-62dc723b-48e5-4676-a0df-4755de9577f6
+    CRN                 crn:v1:bluemix:public:is:us-south:a/9f19417983334c98bfea53579abf81e9::endpoint-gateway:r001-11aa111b-48e5-4676-a0df-4755de9577f6
     Target              crn:v1:public:satellite-link:us-south:::endpoint:d-01-ws.private.us-south.link.satellite.cloud.ibm.com
     Target Type         provider_cloud_service
     VPC                 ID                                          Name
-                        r006-e4fc3b82-5eaf-4df4-9de8-ba49a46008bc   vpc-gen2-bbwsb-dal
+                        r001-a1aa1a11-5eaf-4df4-9de8-ba49a46008bc   my-vpc
 
     Private IPs         -
     Service Endpoints   d-01-ws.private.us-south.link.satellite.cloud.ibm.com
     Lifecycle State     pending
     Health State        ok
     Security groups     ID                                          Name
-                        r006-7749cde3-02c5-457b-a085-c334f1fcb3b5   overarch-plated-earwig-culture-retake-linguini
+                        r006-7749cde3-02c5-457b-a085-a111f1fcb3b5   overarch-plated-earwig-culture-retake-linguini
 
     Created             2023-09-28T16:40:33-04:00
     Resource Group      ID                                 Name
-                        6b5746f5bed04989a754ef34b9bf8509   Default
+                        6b5746f5bed01111a754ef34b9bf1111   Default
     ```
     {: screen}
 
@@ -162,7 +162,7 @@ The default forwarding rule is automatically created to forward all DNS queries 
     Service Name        dns-svcs
     Service ID          b4ed8a30-936f-11e9-b289-1d079699cbe5
     Plan ID             2c8fa097-d7c2-4df2-b53e-2efb7874cdf7
-    Resource Group ID   6b5746f5bed04989a754ef34b9bf8509
+    Resource Group ID   6b5746f5bed01111a754ef34b9bf1111
     Location            global
     State               active
     ```
@@ -275,5 +275,3 @@ For more information, see the following links:
 
 - [Creating a Connector](/docs/satellite?topic=satellite-create-connector&interface=ui).
 - [Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally&interface=ui).
-
-
