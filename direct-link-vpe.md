@@ -100,6 +100,7 @@ Create the subnet in the VPC where you want to create a VPE gateway.
     ```txt
     ibmcloud is endpoint-gateway-create --name NAME --vpc-id VPC-ID --target crn:v1:bluemix:public:satellite-link:us-south:::endpoint:d-01-ws.private.us-south.link.satellite.cloud.ibm.com
     ```
+    {: pre}
 
     Example 
     ```txt
