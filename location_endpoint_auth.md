@@ -19,7 +19,9 @@ subcollection: satellite
 All endpoint traffic is encrypted by default. However, you can choose to provide your own certificates to implement source and destination authentication. For TLS or HTTPS endpoints, there are two TLS connections in the endpoint request flow that you might need to configure. The first TLS handshake is between the source and the Satellite Link service. The second TLS handshake is between the Satellite Link service and your destination or target server. You can provide certificates for one or both of these connections.
 {: shortdesc}
 
-Review the following authentication options. If you don't configure any endpoint authentication settings, endpoint traffic is still encrypted, but Satellite Link acts as a transit service only. This applies even to endpoints using the TCP or HTTP protocol. For endpoints with protocol TLS or HTTPS, traffic through Satellite Link will attempt to use simple authentication by default, relying on its well known built-in certificates, which may or may not be sufficient.
+Review the following authentication options.
+
+If you don't configure any endpoint authentication settings, endpoint traffic is still encrypted, but Satellite Link acts as a transit service only. This applies even to endpoints using the TCP or HTTP protocol. For endpoints with protocol TLS or HTTPS, traffic through Satellite Link will attempt to use simple authentication by default, relying on its well known built-in certificates, which may or may not be sufficient.
 
 [Simple authentication between the Satellite Link service and the destination](#mutual-auth-cli-loc)
 :   The destination server authenticates itself with the Satellite Link service. To set up simple authentication with the destination, your endpoint must have a destination protocol of TLS. If the destination's server certificate is not signed by a well-known certificate authority or is not self-signed, you will need to configure a trusted CA certificate or chain to validate the destination's server certificate.
@@ -32,11 +34,8 @@ Review the following authentication options. If you don't configure any endpoint
 [Mutual authentication between Satellite Link and the destination server](#mutual-auth-destination-loc)
 :    With mutual authentication, the destination server authenticates itself to the Satellite Link service and the Satellite Link service must authenticate itself to the destination. To set up mutual authentication between the Satellite Link service and the destination server, you need to configure the Satellite Link service authentication the same way as in the simple destination authentication case. However, you will also need to provide a client certificate and key that the Satellite Link service uses to authenticate with the destination.
 
-
 [Mutual authentication between the source and the Satellite Link service](#mutual-auth-source-loc)
 :   With mutual authentication, the Satellite Link service authenticates itself to the source and the source must authenticate itself to the Satellite Link service. To set up mutual authentication between the source and Satellite Link service, you must configure the Satellite Link service authentication the same way as in the simple source authentication case. However, you also need to configure a CA certificate that the Satellite Link service uses to validate the source's client certificate.
-
-
 
 [Mutual authentication between the source and the Satellite Link service as well as Satellite Link and the destination server](#mutual-auth-both-loc)
 :   Requests to both the Satellite Link service and the destination server are authenticated. Two TLS handshakes must be verified before traffic is allowed. For this setup, create an endpoint with a source protocol of TLS or HTTPS and a destination protocol of TLS. Then, provide all of the certificates needed for both the source and destination mutual authentication cases, as described above.
@@ -56,11 +55,10 @@ The `ibmcloud sat endpoint authn` command is only used to set certificates for t
 Review the following example scenarios.
 
 
-
 ### Simple authentication between the Satellite Link service and the destination
 {: #simple-auth-destination-loc}
 
-1. Create an HTTPS endpoint to an HTTPS server with destination certificate verification. 
+1. Create an HTTPS endpoint to an HTTPS server.
 
     ```sh
     ibmcloud sat endpoint create 
@@ -73,7 +71,36 @@ Review the following example scenarios.
     ```
     {: pre}
 
-1. Create an HTTPS endpoint to an HTTP server with source mutual authentication.
+1. Configure simple TLS with the destination server.
+
+    This example provides the certificate of the trusted CA to validate the destination server's certificate.
+
+    ```sh
+    ibmcloud sat endpoint authn set \
+      --location ID \
+      --endpoint myEndpoint \
+      --dest-tls-mode simple \
+      --dest-ca-cert-file /path/to/serverCACerts.pem
+    ```
+    {: pre}
+
+1. Before your certificates expire, rotate them by replacing the existing authentication certificates with new ones. Only the certificates that you specify are replaced.
+
+    ```sh
+    ibmcloud sat endpoint authn rotate \
+      --location ID \
+      --endpoint myEndpoint \
+      --dest-ca-cert-file /path/to/serverCACerts.pem
+    ```
+    {: pre}
+
+### Simple authentication with the Satellite Link service
+{: #simple-auth-source-loc}
+
+Unlike most configurations, which can work with an endpoint `--dest-type` of either `location` or `cloud`, this one must use `--dest-type cloud` because setting source certificates for location destination endpoints is not supported.
+{: exception}
+
+1. Create an HTTPS endpoint to an HTTP server.
 
     ```sh
     ibmcloud sat endpoint create \
@@ -87,15 +114,17 @@ Review the following example scenarios.
     ```
     {: pre}
 
-1. Configure mutual TLS between the source and the Satellite Link service.
+1. Configure simple TLS between the source and the Satellite Link service.
 
-    This example provides the certificate of the trusted CA to validate the source's client certificate.
+    This example provides the server certificate for the Satellite Link service to authenticate with the source.
+
     ```sh
     ibmcloud sat endpoint authn set \
       --location ID \
       --endpoint myEndpoint \
       --source-tls-mode simple \
-      --source-ca-cert-file /path/to/clientCACerts.pem
+      --source-cert-file /path/to/serverCertificate.pem \
+      --source-key-file /path/to/serverKey.pem
     ```
     {: pre}
 
@@ -105,44 +134,8 @@ Review the following example scenarios.
     ibmcloud sat endpoint authn rotate \
       --location ID \
       --endpoint myEndpoint \
-      --source-ca-cert-file /path/to/clientCACerts.pem
-    ```
-    {: pre}
-
-### Simple authentication with the Satellite Link service
-{: #simple-auth-source-loc}
-
-1. Create an HTTPS endpoint to an HTTPS server with source certificate verification. 
-
-    ```sh
-    ibmcloud sat endpoint create 
-      --location ID \
-      --name myEndpoint \
-      --dest-hostname example.com \
-      --dest-port 443 \
-      --source-protocol HTTPS \
-      --dest-type location
-    ```
-    {: pre}
-
-1. Configure simple TLS with Satellite Link. This example provides the certificate of the trusted CA to validate the source server's certificate.
-
-    ```sh
-    ibmcloud sat endpoint authn set \
-      --location ID \
-      --endpoint myEndpoint \
-      --dest-tls-mode simple
-      --source-ca-cert-file /path/to/sourceCACerts.pem
-    ```
-    {: pre}
-
-1. Before your certificates expire, rotate them by replacing the existing authentication certificates with new ones. Only the certificates that you specify are replaced.
-
-    ```sh
-    ibmcloud sat endpoint authn rotate \
-      --location ID \
-      --endpoint myEndpoint \
-      --source-ca-cert-file /path/to/sourceCACerts.pem
+      --source-cert-file /path/to/serverCertificate.pem \
+      --source-key-file /path/to/serverKey.pem
     ```
     {: pre}
 
@@ -157,7 +150,7 @@ Review the following example scenarios.
       --name myEndpoint \
       --dest-hostname example.com \
       --dest-port 443 \
-      --dest-protocol TLS\
+      --dest-protocol TLS \
       --source-protocol HTTP \
       --dest-type location
     ```
@@ -195,10 +188,10 @@ Review the following example scenarios.
 ### Mutual authentication between the source and the Satellite Link service
 {: #mutual-auth-source-loc}
 
-Unlike the other examples, which can work with an endpoint `--dest-type` of either `location` or `cloud`, this one must use `--dest-type cloud` because setting source certificates for location destination endpoints is not supported.
+Unlike most configurations, which can work with an endpoint `--dest-type` of either `location` or `cloud`, this one must use `--dest-type cloud` because setting source certificates for location destination endpoints is not supported.
 {: exception}
 
-1. Create an HTTPS endpoint to an HTTP server with source mutual authentication.
+1. Create an HTTPS endpoint to an HTTP server.
 
     ```sh
     ibmcloud sat endpoint create \
@@ -214,7 +207,8 @@ Unlike the other examples, which can work with an endpoint `--dest-type` of eith
 
 1. Configure mutual TLS between the source and the Satellite Link service.
 
-    This example provides the certificate of the trusted CA to validate the source's client certificate.
+    This example provides the server certificate for the Satellite Link service to authenticate with the source and the certificate of the trusted CA to validate the source's client certificate.
+
     ```sh
     ibmcloud sat endpoint authn set \
       --location ID \
@@ -238,13 +232,8 @@ Unlike the other examples, which can work with an endpoint `--dest-type` of eith
     ```
     {: pre}
 
-
-
-
 ### Mutual authentication at both the source and destination
 {: #mutual-auth-both-loc}
-
-
 
 1. Create an HTTPS endpoint to an HTTPS server.
 
@@ -288,6 +277,7 @@ Unlike the other examples, which can work with an endpoint `--dest-type` of eith
       --dest-ca-cert-file /path/to/serverCACerts.pem
     ```
     {: pre}
+
 
 ## Removing certificates
 {: #remove-certs-loc}

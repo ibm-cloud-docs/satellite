@@ -58,7 +58,7 @@ Review the following example scenarios.
 ### Simple authentication between the Connector service and the destination
 {: #simple-auth-destination-conn}
 
-1. Create an HTTPS endpoint to an HTTPS server with destination certificate verification. 
+1. Create an HTTPS endpoint to an HTTPS server.
 
     ```sh
     ibmcloud sat endpoint create 
@@ -71,13 +71,15 @@ Review the following example scenarios.
     ```
     {: pre}
 
-1. Configure simple TLS with the destination server. This example provides the certificate of the trusted CA to validate the destination server's certificate.
+1. Configure simple TLS with the destination server.
+
+    This example provides the certificate of the trusted CA to validate the destination server's certificate.
 
     ```sh
     ibmcloud sat endpoint authn set \
       --connector-id ID \
       --endpoint myEndpoint \
-      --dest-tls-mode simple
+      --dest-tls-mode simple \
       --dest-ca-cert-file /path/to/serverCACerts.pem
     ```
     {: pre}
@@ -95,7 +97,10 @@ Review the following example scenarios.
 ### Simple authentication with the Connector service
 {: #simple-auth-source-conn}
 
-1. Create an HTTPS endpoint to an HTTP server with source simple authentication.
+Unlike most configurations, which can work with an endpoint `--dest-type` of either `location` or `cloud`, this one must use `--dest-type cloud` because setting source certificates for location destination endpoints is not supported.
+{: exception}
+
+1. Create an HTTPS endpoint to an HTTP server.
 
     ```sh
     ibmcloud sat endpoint create \
@@ -111,14 +116,15 @@ Review the following example scenarios.
 
 1. Configure simple TLS between the source and the Connector service.
 
-    This example provides the server certificate for the connector service to authenticate with the source.
+    This example provides the server certificate for the Connector service to authenticate with the source.
 
     ```sh
     ibmcloud sat endpoint authn set \
       --connector-id ID \
       --endpoint myEndpoint \
-      --source-tls-mode simple
-      --source-ca-cert-file /path/to/clientCACerts.pem
+      --source-tls-mode simple \
+      --source-cert-file /path/to/serverCertificate.pem \
+      --source-key-file /path/to/serverKey.pem
     ```
     {: pre}
 
@@ -128,7 +134,8 @@ Review the following example scenarios.
     ibmcloud sat endpoint authn rotate \
       --connector-id ID \
       --endpoint myEndpoint \
-      --source-ca-cert-file /path/to/clientCACerts.pem
+      --source-cert-file /path/to/serverCertificate.pem \
+      --source-key-file /path/to/serverKey.pem
     ```
     {: pre}
 
@@ -143,7 +150,7 @@ Review the following example scenarios.
       --name myEndpoint \
       --dest-hostname example.com \
       --dest-port 443 \
-      --dest-protocol TLS\
+      --dest-protocol TLS \
       --source-protocol HTTP \
       --dest-type location
     ```
@@ -176,15 +183,13 @@ Review the following example scenarios.
     ```
     {: pre}
 
-
-
 ### Mutual authentication between the source and the Connector service
 {: #mutual-auth-source-conn}
 
-Unlike the other examples, which can work with an endpoint `--dest-type` of either `location` or `cloud`, this one must use `--dest-type cloud` because setting source certificates for location destination endpoints is not supported.
+Unlike most configurations, which can work with an endpoint `--dest-type` of either `location` or `cloud`, this one must use `--dest-type cloud` because setting source certificates for location destination endpoints is not supported.
 {: exception}
 
-1. Create an HTTPS endpoint to an HTTP server with source mutual authentication.
+1. Create an HTTPS endpoint to an HTTP server.
 
     ```sh
     ibmcloud sat endpoint create \
@@ -200,7 +205,8 @@ Unlike the other examples, which can work with an endpoint `--dest-type` of eith
 
 1. Configure mutual TLS between the source and the Connector service.
 
-    This example provides the certificate of the trusted CA to validate the source's client certificate.
+    This example provides the server certificate for the Connector service to authenticate with the source and the certificate of the trusted CA to validate the source's client certificate.
+
     ```sh
     ibmcloud sat endpoint authn set \
       --connector-id ID \
@@ -224,13 +230,8 @@ Unlike the other examples, which can work with an endpoint `--dest-type` of eith
     ```
     {: pre}
 
-
-
-
 ### Mutual authentication at both the source and destination
 {: #mutual-auth-both-conn}
-
-
 
 1. Create an HTTPS endpoint to an HTTPS server.
 
@@ -274,6 +275,7 @@ Unlike the other examples, which can work with an endpoint `--dest-type` of eith
       --dest-ca-cert-file /path/to/serverCACerts.pem
     ```
     {: pre}
+
 
 ## Removing certificates
 {: #remove-certs-conn}
