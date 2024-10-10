@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-10-10"
 
 keywords: satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -597,6 +597,4 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
 | Block storage worker node label key | `block-nodes-label-key` | Config | The `key` of the worker node `key=value` label that you want to use for block storage. | false | N/A |
 | Block storage worker node label value | `block-nodes-label-value` | Config | The `value` of the worker node `key=value` label that you want to use for block storage. | false | N/A |
 | Device Path for Local Storage Block | `block-devicepath` | Config | The path to the storage devices on your worker node that you want to use for block storage. Example: `/dev/sdc`. This option is required when `auto-discover-devices-block` is set to false. | false | N/A |
-{: caption="Table 1. 1.0.0 parameter reference" caption-side="bottom"}
-
-
+{: caption="1.0.0 parameter reference" caption-side="bottom"}

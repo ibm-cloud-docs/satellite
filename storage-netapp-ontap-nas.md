@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-10-10"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, netapp nas trident
 
@@ -475,7 +475,7 @@ Use the console to remove a storage assignment and storage configuration.
 | Limit Volume Size | `limitVolumeSize` | Config | Maximum requestable volume size (in Gibibytes) and qtree parent volume size | true | `50Gi` |
 | Limit AggregateUsage | `limitAggregateUsage` | Config | Fail provisioning if usage is greater than this percentage. | true | `80%` |
 | NFS Mount Options | `nfsMountOptions` | Config | The NFS mount options. | true | `nfsvers=4` |
-{: caption="Table 1. 22.04 parameter reference" caption-side="bottom"}
+{: caption="22.04 parameter reference" caption-side="bottom"}
 
 
 ### 22.10 parameter reference
@@ -492,7 +492,7 @@ Use the console to remove a storage assignment and storage configuration.
 | Limit Volume Size | `limitVolumeSize` | Config | Maximum requestable volume size (in Gibibytes) and qtree parent volume size | true | `50Gi` |
 | Limit AggregateUsage | `limitAggregateUsage` | Config | Fail provisioning if usage is greater than this percentage. | true | `80%` |
 | NFS Mount Options | `nfsMountOptions` | Config | The NFS mount options. | true | `nfsvers=4` |
-{: caption="Table 2. 22.10 parameter reference" caption-side="bottom"}
+{: caption="22.10 parameter reference" caption-side="bottom"}
 
 
 ### 24.02 parameter reference
@@ -509,7 +509,7 @@ Use the console to remove a storage assignment and storage configuration.
 | Limit Volume Size | `limitVolumeSize` | Config | Maximum requestable volume size (in Gibibytes) and qtree parent volume size | true | `50Gi` |
 | Limit AggregateUsage | `limitAggregateUsage` | Config | Fail provisioning if usage is greater than this percentage. | true | `80%` |
 | NFS Mount Options | `nfsMountOptions` | Config | The NFS mount options. | true | `nfsvers=4` |
-{: caption="Table 3. 24.02 parameter reference" caption-side="bottom"}
+{: caption="24.02 parameter reference" caption-side="bottom"}
 
 
 
@@ -543,4 +543,3 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 {: #sat-nas-2104-support}
 
 If you run into an issue with NetApp Trident, you can visit the [NetApp support page](https://mysupport.netapp.com/site/){: external}. 
-

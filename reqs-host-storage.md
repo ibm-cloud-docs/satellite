@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-10-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -22,7 +22,7 @@ Review the following storage requirements for hosts that are assigned to the loc
 
 Hosts must have a boot device with an `ext4` file system and enough space to boot the host and run the operating system. While a minimum of 10 GiB is required, 25 GiB is recommended. In addition, `/tmp` and `/usr` must each have at least 1.5 GiB available. Hosts can't have a device that is mounted to `/var/data`. The `/boot` partition must be a minimum of 1 GiB.
 
-![Host storage](/images/sat_architecture_host_storage.svg){: caption="Figure 1. Satellite host storage requirements" caption-side="bottom"}
+![Host storage](/images/sat_architecture_host_storage.svg){: caption="Satellite host storage requirements" caption-side="bottom"}
 
 Boot device (Operating system)
 :   Hosts must have a boot device with an `ext4` file system and enough space to boot the host and run the operating system. While a minimum of 10 GiB is required, 25 GiB is recommended. 
@@ -34,6 +34,3 @@ Storage for hosts that are assigned to services (for example, clusters) `*`
 :   Depending on the services that you want to use, you might need to add more storage before you attach hosts to your location. For service-specific storage requirements, refer to the service documentation. If you plan to deploy additional services or operators to the clusters in your location, you must account for cluster storage plus any additional deployments that you want to use in your clusters. For example, OpenShift Data Foundation.
     - [{{site.data.keyword.satelliteshort}}-enabled services](/docs/satellite?topic=satellite-managed-services)
     - [{{site.data.keyword.satelliteshort}} storage overview](/docs/satellite?topic=satellite-storage-template-ov)
-
-
-

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-10-10"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -432,7 +432,7 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 | VPC IaaS endpoint | `g2_riaas_endpoint_url` | Config | The VPC regional endpoint of your VPC cluster in the format `https://region.iaas.cloud.ibm.com`. Example: `https://eu-de.iaas.cloud.ibm.com`. For more information, see https://ibm.biz/vpc-endpoints | true | N/A |
 | Resource group ID | `g2_resource_group_id` | Config | The ID of the resource group where your VPC is located. You can find your resource group by running the `ibmcloud is vpc VPC-ID` command and note the Resource group field. | true | N/A |
 | IAM API key | `g2_api_key` | Secret | The IAM API key of account where your VPC is located. You can use your existing API key or you can create an API key by running the `ibmcloud iam api-key-create NAME` command. | true | N/A |
-{: caption="Table 1. 5.1 parameter reference" caption-side="bottom"}
+{: caption="5.1 parameter reference" caption-side="bottom"}
 
 
 ## Storage class reference for {{site.data.keyword.block_storage_is_short}}
@@ -452,7 +452,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for IBM VPC bloc
 | `ibmc-vpc-block-metro-retain-5iops-tier` | 5 | 5 | 10 GB - 9600 GB | SSD | Retain | WaitForFirstConsumer |
 | `ibmc-vpc-block-metro-retain-custom`  | Custom | Custom | Based on IOPS | SSD | Retain | WaitForFirstConsumer |
 | `ibmc-vpc-block-metro-retain-general-purpose` | 3 | 3 | 10 GiB - 16 TB | SSD | Retain | WaitForFirstConsumer |
-{: caption="Table 2. Storage class reference for IBM Block Storage for VPC" caption-side="bottom"}
+{: caption="Storage class reference for IBM Block Storage for VPC" caption-side="bottom"}
 
 ## Getting help and support for {{site.data.keyword.block_storage_is_short}}
 {: #sat-vpc-csi-support}
@@ -463,5 +463,3 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for IBM VPC bloc
 1. Check the status of the {{site.data.keyword.Bluemix_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external}.
 1. Review [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud){: external} to see whether other users experienced the same problem. Tag any questions with ibm-cloud and {{site.data.keyword.block_storage_is_short}}, so that it's seen by the {{site.data.keyword.Bluemix_notm}} development teams.
 1. If you run into an issue with {{site.data.keyword.block_storage_is_short}} submit a support request with [{{site.data.keyword.cloud}} Support](https://www.ibm.com/cloud/support){: external}.
-
-

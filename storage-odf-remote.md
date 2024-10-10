@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-08-19"
+lastupdated: "2024-10-10"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote devices, odf, openshift data foundation
 
@@ -502,7 +502,7 @@ Use the command line to remove a storage assignment.
 | KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | false | N/A |
 | KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | N/A |
 | Ignore Noobaa | `ignore-noobaa` | Config | Set to `false` if you want to deploy MultiCloud Object Gateway (Noobaa) | true | `true` |
-{: caption="Table 1. 4.12 parameter reference" caption-side="bottom"}
+{: caption="4.12 parameter reference" caption-side="bottom"}
 
 
 ### 4.13 parameter reference
@@ -534,7 +534,7 @@ Use the command line to remove a storage assignment.
 | Disable Noobaa LB | `disable-noobaa-LB` | Config | Set to `true` if you want to disable Noobaa public load balancer | true | `false` |
 | In-transit Encryption | `encryption-intransit` | Config | Set to `true` if you want to enable in-transit encryption | true | `false` |
 | Taint Nodes | `taint-nodes` | Config | When set the selected worker nodes will be dedicated to Data Foundation use only | true | `false` |
-{: caption="Table 2. 4.13 parameter reference" caption-side="bottom"}
+{: caption="4.13 parameter reference" caption-side="bottom"}
 
 
 ### 4.14 parameter reference
@@ -569,7 +569,7 @@ Use the command line to remove a storage assignment.
 | Add Single Replica Pool(once enabled, cannot be disabled) | `add-single-replica-pool` | Config | Enabling this feature creates a single replica pool without data replication, increasing the risk of data loss, data corruption, and potential system instability. Once it is enabled, it cannot be disabled | true | `false` |
 | Taint Nodes | `taint-nodes` | Config | When set the selected worker nodes will be dedicated to Data Foundation use only | true | `false` |
 | Prepare for Disaster Recovery | `prepare-for-disaster-recovery` | Config | Enabling this will set up the storage system for disaster recovery service with the essential configurations in place. This will subsequently allow seamless implementation of DR strategies for your workloads | true | `false` |
-{: caption="Table 3. 4.14 parameter reference" caption-side="bottom"}
+{: caption="4.14 parameter reference" caption-side="bottom"}
 
 
 ### 4.15 parameter reference
@@ -607,7 +607,7 @@ Use the command line to remove a storage assignment.
 | Enable NFS | `enable-nfs` | Config | Allow exports from the Network File System (NFS) that can then be accessed internally or externally from the OpenShift cluster | true | `false` |
 | Use Ceph RBD As Default Storage Class | `use-ceph-rbd-as-default-storage-class` | Config | Set the Ceph RADOS block device (RBD) storage class as the default storage class during the deployment of OpenShift Data Foundation | true | `false` |
 | Resource Profile | `resource-profile` | Config | Choose a resource profile based on the availability of resources during deployment. Choose between `lean`, `balanced` and `performance`. | true | `balanced` |
-{: caption="Table 4. 4.15 parameter reference" caption-side="bottom"}
+{: caption="4.15 parameter reference" caption-side="bottom"}
 
 
 
@@ -627,4 +627,4 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Da
 | `sat-ocs-noobaa-gold` **Default** | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
 | `sat-ocs-cephrbd-gold-metro` | Block | ext4 | `openshift-storage.rbd.csi.ceph.com` | WaitForFirstConsumer | True | Delete |
 | `sat-ocs-cephfs-gold-metro` | File | N/A | `openshift-storage.cephfs.csi.ceph.com` | WaitForFirstConsumer | True | Delete |
-{: caption="Table 4. Storage class reference for OpenShift Container storage" caption-side="bottom"}
+{: caption="Storage class reference for OpenShift Container storage" caption-side="bottom"}

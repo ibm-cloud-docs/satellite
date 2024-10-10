@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-10-10"
 
 keywords: satellite, hybrid, multicloud, securing your data, secure data, information
 
@@ -61,7 +61,7 @@ Do not use sensitive or personally identifiable information for the names, label
 Review the following image to see how your personal and sensitive information is stored, backed up, and encrypted.
 {: shortdesc}
 
-![{{site.data.keyword.satelliteshort}} data security](images/satellite_data_security.svg "Data security"){: caption="Figure 1. Satellite data security" caption-side="bottom"}
+![{{site.data.keyword.satelliteshort}} data security](images/satellite_data_security.svg "Data security"){: caption="Satellite data security" caption-side="bottom"}
 
 
 
@@ -120,4 +120,3 @@ Removing personal and sensitive information is permanent and cannot be undone. M
 - **Cluster data in {{site.data.keyword.cos_full_notm}}**: When you create a {{site.data.keyword.openshiftlong_notm}} cluster, some cluster data is backed up to an {{site.data.keyword.cos_short}} instance in your account. To delete the data, review the [{{site.data.keyword.cos_short}} documentation](/docs/cloud-object-storage?topic=cloud-object-storage-security).
 
 - **Cluster data on the local host**: Because the cluster masters run on your {{site.data.keyword.satelliteshort}} location control plane hosts, the data is still available on the physical hosts in your infrastructure provider after you delete the {{site.data.keyword.satelliteshort}} location. To delete the data, consult your infrastructure provider documentation to reload the operating system or delete the host.
-

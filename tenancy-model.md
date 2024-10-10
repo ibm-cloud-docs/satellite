@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-06-27"
+lastupdated: "2024-10-10"
 
 keywords: satellite, hybrid, multicloud, tenancy, resellers, satellite reseller, satellite use case
 
@@ -24,7 +24,7 @@ As a hybrid or distributed cloud reseller, I want to set up {{site.data.keyword.
 
 In this model, you create an enterprise account and separate client accounts for each client. Within each client account, you create a {{site.data.keyword.satelliteshort}} location and deploy an {{site.data.keyword.openshiftshort}} cluster.
 
-![Concept overview of Satellite tenancy setup](/images/account_overview_graphic.svg){: caption="Figure 1. Enterprise account setup for resellers." caption-side="bottom"}
+![Concept overview of Satellite tenancy setup](/images/account_overview_graphic.svg){: caption="Enterprise account setup for resellers." caption-side="bottom"}
 
 ## Managing client locations and clusters
 {: #location-mgmt-tenancy}
@@ -253,7 +253,3 @@ Follow the steps to [create an API that can be used in your client account](/doc
 {: #create-roles-tenancy}
 
 Follow the steps to set up the [cluster roles your client needs](/docs/openshift?topic=openshift-iam-platform-access-roles#example-iam).
-
-
-
-

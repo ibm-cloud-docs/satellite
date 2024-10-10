@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-10-10"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration
 
@@ -520,7 +520,7 @@ Note that you must delete your storage assignments before you can successfully d
 | --- | --- | --- | --- | --- | --- |
 | AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | true | N/A |
 | AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | true | N/A |
-{: caption="Table 1. 1.1.0 parameter reference" caption-side="bottom"}
+{: caption="1.1.0 parameter reference" caption-side="bottom"}
 
 
 ### 1.5.1 parameter reference
@@ -530,7 +530,7 @@ Note that you must delete your storage assignments before you can successfully d
 | --- | --- | --- | --- | --- | --- |
 | AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | true | N/A |
 | AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | true | N/A |
-{: caption="Table 2. 1.5.1 parameter reference" caption-side="bottom"}
+{: caption="1.5.1 parameter reference" caption-side="bottom"}
 
 
 ### 1.12.0 parameter reference
@@ -540,7 +540,7 @@ Note that you must delete your storage assignments before you can successfully d
 | --- | --- | --- | --- | --- | --- |
 | AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | true | N/A |
 | AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | true | N/A |
-{: caption="Table 3. 1.12.0 parameter reference" caption-side="bottom"}
+{: caption="1.12.0 parameter reference" caption-side="bottom"}
 
 
 ### 1.31.0 parameter reference
@@ -550,7 +550,7 @@ Note that you must delete your storage assignments before you can successfully d
 | --- | --- | --- | --- | --- | --- |
 | AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | true | N/A |
 | AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | true | N/A |
-{: caption="Table 4. 1.31.0 parameter reference" caption-side="bottom"}
+{: caption="1.31.0 parameter reference" caption-side="bottom"}
 
 
 
@@ -569,7 +569,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EBS. You
 | `sat-aws-block-bronze-metro` | st1 | ext4 | `ebs.csi.aws.com` | N/A | 125 GiB - 16 TiB | HDD | True |  WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html#hard-disk-drives){: external} |
 | `sat-aws-block-silver-metro` | gp3 | ext4 | `ebs.csi.aws.com` | 1 GiB - 16 TiB | SSD | True | WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html#solid-state-drives){: external} |
 | `sat-aws-block-gold-metro` | io2 | ext4 | `ebs.csi.aws.com` | 10 | 10 GiB - 6.25 TiB | SSD | True | WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html#solid-state-drives){: external}
-{: caption="Table 2. AWS EBS storage class reference." caption-side="bottom"}
+{: caption="AWS EBS storage class reference." caption-side="bottom"}
 
 
 
@@ -584,9 +584,3 @@ When you use AWS EBS Storage, try the following resources before you open a supp
 1. Check the status of the {{site.data.keyword.Bluemix_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external}.
 1. Review [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud){: external} to see whether other users experienced the same problem. Tag any questions with `ibm-cloud` and `AWS-EBS`.
 1. The [AWS Support Center](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fsupport%2Fhome%3Fstate%3DhashArgs%2523%252F%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fsupportcenter&forceMobileApp=0&code_challenge=u3nT-WHT9gSG_PS93w4dwD6R_PWLj1eOU9GLUMEOkzo&code_challenge_method=SHA-256){: external} is another resource available to AWS customers looking for more in-depth support options. 
-
-
-
-
-
-

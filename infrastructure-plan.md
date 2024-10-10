@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-30"
+lastupdated: "2024-10-10"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 
@@ -28,7 +28,7 @@ Before you create your location, choose your infrastructure provider, infrastruc
 Your {{site.data.keyword.satelliteshort}} location starts with your infrastructure, such as a public cloud provider or on-prem. Your infrastructure provides the basis for the hosts and zones that you use to build out your {{site.data.keyword.satelliteshort}} location. For more information about the different responsibilities for your infrastructure and {{site.data.keyword.satelliteshort}} resources, see [Your responsibilities](/docs/satellite?topic=satellite-responsibilities).
 
 
-![Concept overview of planning your infrastructure](/images/plan-sat-envirn.svg){: caption="Figure 1. Your Satellite location is built atop the zones and hosts in your infrastructure provider." caption-side="bottom"}
+![Concept overview of planning your infrastructure](/images/plan-sat-envirn.svg){: caption="Your Satellite location is built atop the zones and hosts in your infrastructure provider." caption-side="bottom"}
 
 ### Plan your infrastructure provider
 {: #infra-plan-provider}
@@ -228,8 +228,3 @@ Retrieve the VMWare credentials that {{site.data.keyword.satelliteshort}} can us
 2. Identify or [create a user](https://docs.vmware.com/en/VMware-Cloud-Director/10.4/VMware-Cloud-Director-Tenant-Portal-Guide/GUID-1CACBB2E-FE35-4662-A08D-D2BCB174A43C.html){: external} with **Administrator** role.
 3. Find your [network information](/docs/satellite?topic=satellite-loc-vmware-create-auto#vmware-network).
 4. Provide this information on the [VMware Cloud Director template](/docs/satellite?topic=satellite-loc-vmware-create-auto#create-auto-vmware).
-
-
-
-
-

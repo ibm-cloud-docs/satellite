@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-10-10"
 
 keywords: satellite storage, satellite config, satellite configurations, 
 
@@ -374,7 +374,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
 | Namespace | `namespace` | Config | The namespace where you want to create the deployment. | true | `default` |
-{: caption="Table 1. 1.10.0 parameter reference" caption-side="bottom"}
+{: caption="1.10.0 parameter reference" caption-side="bottom"}
 
 
 ### 1.11.1 parameter reference
@@ -383,7 +383,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
 | Namespace | `namespace` | Config | The namespace where you want to create the deployment. | true | `default` |
-{: caption="Table 2. 1.11.1 parameter reference" caption-side="bottom"}
+{: caption="1.11.1 parameter reference" caption-side="bottom"}
 
 
 ### 1.11.2 parameter reference
@@ -396,7 +396,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
 | Secret Management Address | `secret-management-address` | Secret | The address of the management server. This could be an IP address or a URL. For example: `example-cluster.xiv.ibm.com`. | true | N/A |
 | Secret Username | `secret-username` | Secret | The username to use to authenticate to the management server. | true | N/A |
 | Secret Password | `secret-password` | Secret | The password to use to authenticate to the management server. | true | N/A |
-{: caption="Table 3. 1.11.2 parameter reference" caption-side="bottom"}
+{: caption="1.11.2 parameter reference" caption-side="bottom"}
 
 
 
@@ -413,6 +413,3 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
 1. Check the status of the {{site.data.keyword.Bluemix_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external}.
 1. Review [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud){: external} to see whether other users experienced the same problem. Tag any questions with `ibm-cloud`.
 1. If you run into an issue with {{site.data.keyword.blockstorageshort}} submit a support request with [{{site.data.keyword.cloud}} Support](https://www.ibm.com/cloud/support){: external}.
-
-
-

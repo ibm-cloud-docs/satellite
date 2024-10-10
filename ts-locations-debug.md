@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-08-13"
+lastupdated: "2024-10-10"
 
 keywords: satellite, hybrid, multicloud, location error messages, location messages, location errors
 
@@ -372,7 +372,7 @@ To determine where your problem exists,
     | ------ | -------------- |
     | `wdc` | `s3.us.cloud-object-storage.appdomain.cloud` |
     | `lon` | `s3.eu.cloud-object-storage.appdomain.cloud` |
-    {: caption="Table 1. Required outbound connectivity for hosts to {{site.data.keyword.cos_short}} endpoints" caption-side="bottom"}
+    {: caption="Required outbound connectivity for hosts to {{site.data.keyword.cos_short}} endpoints" caption-side="bottom"}
 
 2. Verify that the {{site.data.keyword.cos_short}} service instance and bucket that back up your etcd data are available and were not deleted.
     1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click the name of your location.

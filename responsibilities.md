@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-10-10"
 
 keywords: satellite, hybrid, multicloud, RACI, responsibilities, shared responsibilities
 
@@ -52,7 +52,7 @@ Review the following sections for the specific responsibilities for you and for 
 | Physical storage | You | You | You | You | You |
 | Physical network and devices | You | You | You | You | You |
 | Facilities and data centers | You | You | You | You | You |
-{: caption="Table 1. Overview of shared responsibilities." caption-side="bottom"}
+{: caption="Overview of shared responsibilities." caption-side="bottom"}
 
 
 ## Tasks for shared responsibilities by area
@@ -79,7 +79,7 @@ Incident and operations management includes tasks such as monitoring, event mana
 | {{site.data.keyword.satelliteshort}} Connector | - Provide an interface to initiate operational activities, such as to create and delete connectors. \n - Automatically forward connector events to your {{site.data.keyword.cloud_notm}} Activity Tracker instance. | Use the provided tools to create a connector. |
 | {{site.data.keyword.satelliteshort}} Connector Agent Image | - Test and publish updates to the {{site.data.keyword.satelliteshort}} Connector Agent Image in the {{site.data.keyword.cloud_notm}} Container Registry. \n - Monitor and update the software inside the container image for CVE. | You are responsible for updating the {{site.data.keyword.satelliteshort}} Connector Agent Image to new versions published to the {{site.data.keyword.cloud_notm}} Container Registry. |
 | {{site.data.keyword.satelliteshort}} Connector Agent for Windows Service | - Test and publish updates to the {{site.data.keyword.satelliteshort}} Connector Agent for Windows Service as `.zip` file in the {{site.data.keyword.cloud_notm}}. \n - Monitor and update the software inside the `.zip` file. | You are responsible for updating the {{site.data.keyword.satelliteshort}} Connector Agent for Windows Service to new versions published to the {{site.data.keyword.cloud_notm}}, retrieved by using the CLI. For more information, see [Running the agent on Windows](/docs/satellite?topic=satellite-run-agent-locally&interface=cli#windows-agent-download). |
-{: caption="Table 2. Responsibilities for incident and operations" caption-side="bottom"}
+{: caption="Responsibilities for incident and operations" caption-side="bottom"}
 
 ### Change management
 {: #change-management}
@@ -97,7 +97,7 @@ Change management includes tasks such as deployment, configuration, operating sy
 | {{site.data.keyword.satelliteshort}}-enabled services | - Review each service's documentation for additional responsibilities that {{site.data.keyword.IBM_notm}} maintains. For example, with {{site.data.keyword.openshiftlong_notm}} clusters, {{site.data.keyword.IBM_notm}} provides patch version updates for the masters automatically and for the worker nodes that you initiate. | - Review each service's documentation for additional responsibilities that you fulfill when you use these services. |
 | {{site.data.keyword.satelliteshort}} Connector | Provide an interface to initiate change management activities, such as to delete connectors. | Before you delete any connectors, save and back up all the endpoints you have created for the connector. |
 | {{site.data.keyword.satelliteshort}} Connector Agent for Windows Service | Provide an interface for the {{site.data.keyword.satelliteshort}} Connector Agent for Windows Service to connect to a {{site.data.keyword.satelliteshort}} Connector by leveraging {{site.data.keyword.IBM_notm}} IAM credentials. | Maintain and rotate the IAM credentials needed by the agent image. |
-{: caption="Table 3. Responsibilities for change management" caption-side="bottom"}
+{: caption="Responsibilities for change management" caption-side="bottom"}
 
 ### Identity and access management
 {: #iam-responsibilities}
@@ -115,7 +115,7 @@ Identity and access management includes tasks such as authentication, authorizat
 | {{site.data.keyword.satelliteshort}}-enabled services | - Review each service's documentation for additional responsibilities that {{site.data.keyword.IBM_notm}} maintains. | - Review each service's documentation for additional responsibilities that you fulfill when you use these services. |
 | {{site.data.keyword.satelliteshort}} Connector | Provide an interface to assign access control to connectors through IAM. | Use the provided tools to manage authentication, authorization, and access control policies. |
 | {{site.data.keyword.satelliteshort}} Connector Agent Image | Provide an interface for the {{site.data.keyword.satelliteshort}} Connector Agent image to connect to a {{site.data.keyword.satelliteshort}} Connector by leveraging {{site.data.keyword.IBM_notm}} IAM credentials. | Maintain and rotate the IAM credentials needed by the agent image. |
-{: caption="Table 4. Responsibilities for identity and access management." caption-side="bottom"}
+{: caption="Responsibilities for identity and access management." caption-side="bottom"}
 
 ### Security and regulation compliance
 {: #security-compliance}
@@ -135,7 +135,7 @@ Security and regulation compliance includes tasks such as security controls impl
 | {{site.data.keyword.satelliteshort}} Connector | - Update the managed master components. \n - Provide the ability to control access to connectors through {{site.data.keyword.IBM_notm}} IAM. | You are responsible for keeping your container platform infrastructure secure and compliant. |
 | {{site.data.keyword.satelliteshort}} Connector Agent Image | - Test and publish updates to the {{site.data.keyword.satelliteshort}} Connector Agent Image in the {{site.data.keyword.IBM_notm}} Container Registry. \n - Monitor and update the software inside the container image for CVE. | You are responsible for updating the {{site.data.keyword.satelliteshort}} Connector Agent Image to new versions published to the {{site.data.keyword.IBM_notm}} Container Registry.  |
 | {{site.data.keyword.satelliteshort}} Connector Agent for Windows Service | - Test and publish updates to the {{site.data.keyword.satelliteshort}} Connector Agent for Windows Service as a `.zip` file in the {{site.data.keyword.IBM_notm}}. \n - Monitor and update the software inside the `.zip` file. | You are responsible for updating the {{site.data.keyword.satelliteshort}} Connector Agent for Windows Service to new versions published to the {{site.data.keyword.cloud_notm}}, retrieved using the CLI. For more information, see [Running the agent on Windows](/docs/satellite?topic=satellite-run-agent-locally&interface=cli#windows-agent-download). |
-{: caption="Table 5. Responsibilities for security and regulation compliance." caption-side="bottom"}
+{: caption="Responsibilities for security and regulation compliance." caption-side="bottom"}
 
 ### Disaster recovery
 {: #disaster-recovery}
@@ -151,5 +151,4 @@ Disaster recovery includes tasks such as providing dependencies on disaster reco
 |{{site.data.keyword.satelliteshort}} Link | N/A | - Reinstate any necessary [endpoints](/docs/satellite?topic=satellite-link-location-cloud) to your resources after recovering from a disaster. |
 | {{site.data.keyword.satelliteshort}} Storage | - Back up information about storage configurations and assigned clusters.  | - Ensure that your data is stored highly available by using snapshots, data replication, data synchronization, or other high availability mechanisms.  \n - Back up your data to meet compliance and regulatory requirements for data retention.  \n - Use the provided tools from your storage provider or in your on-prem data center to monitor physical storage instances and replace defective instances as necessary. |
 | {{site.data.keyword.satelliteshort}}-enabled services | - Review each service's documentation for additional responsibilities that {{site.data.keyword.IBM_notm}} maintains. | - Review each service's documentation for additional responsibilities that you fulfill when you use these services. |
-{: caption="Table 6. Responsibilities for disaster recovery." caption-side="bottom"}
-
+{: caption="Responsibilities for disaster recovery." caption-side="bottom"}

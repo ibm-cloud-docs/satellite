@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-10-10"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce, compute engine
 
@@ -481,7 +481,7 @@ Use the console to remove a storage configuration.
 | Token URI | `token_uri` | Secret | Token URI for the service account. You can find this in the JSON service account key file. | true | N/A |
 | URL for the authorization provider certificate | `auth_provider_x509_cert_url` | Secret | URL for the authorization provider certificate. You can find this in the JSON service account key file. | true | N/A |
 | URL for the client certificate | `client_x509_cert_url` | Secret | URL for the client certificate. You can find this in the JSON service account key file. | true | N/A |
-{: caption="Table 1. 1.0.4 parameter reference" caption-side="bottom"}
+{: caption="1.0.4 parameter reference" caption-side="bottom"}
 
 
 ### 1.7.1 parameter reference
@@ -498,7 +498,7 @@ Use the console to remove a storage configuration.
 | Token URI | `token_uri` | Secret | Token URI for the service account. You can find this in the JSON service account key file. | true | N/A |
 | URL for the authorization provider certificate | `auth_provider_x509_cert_url` | Secret | URL for the authorization provider certificate. You can find this in the JSON service account key file. | true | N/A |
 | URL for the client certificate | `client_x509_cert_url` | Secret | URL for the client certificate. You can find this in the JSON service account key file. | true | N/A |
-{: caption="Table 2. 1.7.1 parameter reference" caption-side="bottom"}
+{: caption="1.7.1 parameter reference" caption-side="bottom"}
 
 
 ### 1.8.0 parameter reference
@@ -515,7 +515,7 @@ Use the console to remove a storage configuration.
 | Token URI | `token_uri` | Secret | Token URI for the service account. You can find this in the JSON service account key file. | true | N/A |
 | URL for the authorization provider certificate | `auth_provider_x509_cert_url` | Secret | URL for the authorization provider certificate. You can find this in the JSON service account key file. | true | N/A |
 | URL for the client certificate | `client_x509_cert_url` | Secret | URL for the client certificate. You can find this in the JSON service account key file. | true | N/A |
-{: caption="Table 3. 1.8.0 parameter reference" caption-side="bottom"}
+{: caption="1.8.0 parameter reference" caption-side="bottom"}
 
 
 ## Storage class reference for Compute Engine
@@ -534,7 +534,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for Google compu
 | `sat-gce-block-silver-metro` | 6 | 6 | 10 GB - 64 GB | SSD | Delete | WaitForFirstConsumer |
 | `sat-gce-block-bronze`  | 0.75 | 1.5 | 10 GiB - 64 TiB | HDD | Delete | Immediate |
 | `sat-gce-block-bronze-metro` | 0.75 | 1.5 | 10 GiB - 64 TiB | HDD | Delete | WaitForFirstConsumer |
-{: caption="Table 2. Storage class reference for Google compute engine persistent disk storage" caption-side="bottom"}
+{: caption="Storage class reference for Google compute engine persistent disk storage" caption-side="bottom"}
 
 
 ## Getting help and support for Google Compute Engine
@@ -548,5 +548,3 @@ When you use Google Compute Engine, try the following resources before you open 
 1. Check the status of the {{site.data.keyword.Bluemix_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external}.
 1. Review [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud){: external} to see whether other users experienced the same problem. Tag any questions with `ibm-cloud` and `Google-Cloud`.
 1. Open an issue in the [Google Cloud Console](https://cloud.google.com/support-hub){: external}.
-
-

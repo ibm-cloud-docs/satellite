@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-10-10"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -219,7 +219,7 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 | User Password | `password` | Secret | The password to connect to the storage device. | true | N/A |
 | Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | true | `50Gi` |
 | Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is greater than this percentage. | true | `80%` |
-{: caption="Table 1. 22.04 parameter reference" caption-side="bottom"}
+{: caption="22.04 parameter reference" caption-side="bottom"}
 
 
 ### 22.10 parameter reference
@@ -234,7 +234,7 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 | User Password | `password` | Secret | The password to connect to the storage device. | true | N/A |
 | Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | true | `50Gi` |
 | Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is greater than this percentage. | true | `80%` |
-{: caption="Table 2. 22.10 parameter reference" caption-side="bottom"}
+{: caption="22.10 parameter reference" caption-side="bottom"}
 
 
 ### 24.02 parameter reference
@@ -249,7 +249,7 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 | User Password | `password` | Secret | The password to connect to the storage device. | true | N/A |
 | Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | true | `50Gi` |
 | Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is greater than this percentage. | true | `80%` |
-{: caption="Table 3. 24.02 parameter reference" caption-side="bottom"}
+{: caption="24.02 parameter reference" caption-side="bottom"}
 
 
 ## Storage class reference for NetApp ONTAP-SAN
@@ -286,6 +286,3 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 {: #sat-san-2104-support}
 
 If you run into an issue with NetApp Trident, you can visit the [NetApp support page](https://mysupport.netapp.com/site/){: external}. 
-
-
-

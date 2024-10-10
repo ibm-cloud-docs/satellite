@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-05-10"
+lastupdated: "2024-10-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -44,7 +44,7 @@ To understand your high availability options in {{site.data.keyword.satellitesho
 
 The following image shows specific areas to watch in the {{site.data.keyword.satelliteshort}} architecture so you can improve your high availability.
 
-![Highly available {{site.data.keyword.satelliteshort}} architecture](/images/sat_architecture_ha1.svg "Highly available Satellite architecture"){: caption="Figure 1. Highly available Satellite architecture" caption-side="bottom"}
+![Highly available {{site.data.keyword.satelliteshort}} architecture](/images/sat_architecture_ha1.svg "Highly available Satellite architecture"){: caption="Highly available Satellite architecture" caption-side="bottom"}
 
 1. [{{site.data.keyword.satelliteshort}} management plane](#ha-control-plane-master)
 2. [{{site.data.keyword.satelliteshort}} control plane nodes](#ha-control-plane-worker)
@@ -92,7 +92,7 @@ Every {{site.data.keyword.cloud_notm}} service that you run in your {{site.data.
 
 The following image shows a basic {{site.data.keyword.satelliteshort}} location control plane node setup. This setup ensures that your {{site.data.keyword.satelliteshort}} location control plane has sufficient compute capacity to run basic {{site.data.keyword.satelliteshort}} workloads and that your control plane continues to run, even if one compute host becomes unavailable.
 
-![Default setup for the {{site.data.keyword.satelliteshort}} control plane.](images/sat_ha_default.svg "{{site.data.keyword.satelliteshort}} control plane"){: caption="Figure 2. {{site.data.keyword.satelliteshort}} control plane" caption-side="bottom"}
+![Default setup for the {{site.data.keyword.satelliteshort}} control plane.](images/sat_ha_default.svg "{{site.data.keyword.satelliteshort}} control plane"){: caption="{{site.data.keyword.satelliteshort}} control plane" caption-side="bottom"}
 
 Review the characteristics of the basic setup.
 
@@ -127,7 +127,7 @@ Depending on where your hosts are, the options that are available to you to incr
 The following image shows a high availability setup of your control plane nodes within an on-premises data center. All compute hosts are on a separate rack to ensure that power, network, and storage devices aren't shared. Because all compute hosts are located in the same data center, the requirements for networking speed and latency between the hosts are met.
 {: shortdesc}
 
-![High availability setup for an on-premises data center.](images/sat_control_plane_ha_onprem.svg "High availability setup in an on-premises data center."){: caption="Figure 3. High availability setup for an on-premises data center." caption-side="bottom"}
+![High availability setup for an on-premises data center.](images/sat_control_plane_ha_onprem.svg "High availability setup in an on-premises data center."){: caption="High availability setup for an on-premises data center." caption-side="bottom"}
 
 ### Example high availability setup in a public cloud provider
 {: #example-ha-cloudprovider}
@@ -136,7 +136,7 @@ The following image shows a highly available setup for compute hosts that are in
 {: shortdesc}
 
 
-![High-availability setup with compute hosts that are in a public cloud provider.](/images/sat_control_plane_to_cloud_ha.svg){: caption="Figure 4. High availability setup with compute hosts that are at a public cloud provider" caption-side="bottom"}
+![High-availability setup with compute hosts that are in a public cloud provider.](/images/sat_control_plane_to_cloud_ha.svg){: caption="High availability setup with compute hosts that are at a public cloud provider" caption-side="bottom"}
 
 
     
@@ -145,6 +145,4 @@ The following image shows a highly available setup for compute hosts that are in
 
 In this example scenario, two {{site.data.keyword.satelliteshort}} locations, one primary and one failover, are using the OpenShift Data Foundation storage solution and leveraging the [OpenShift APIs for Data Protection](https://docs.openshift.com/container-platform/4.13/backup_and_restore/application_backup_and_restore/oadp-intro.html){: external} (OADP) to backup data to an {{site.data.keyword.cos_full_notm}} instance.
 
-![High availability setup with two locations that use OADP to back up data to Cloud Object Storage](/images/oadp-ha.svg){: caption="Figure 5. High availability setup with two locations that use OADP to back up data to Cloud Object Storage" caption-side="bottom"}
-
-
+![High availability setup with two locations that use OADP to back up data to Cloud Object Storage](/images/oadp-ha.svg){: caption="High availability setup with two locations that use OADP to back up data to Cloud Object Storage" caption-side="bottom"}

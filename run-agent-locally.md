@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-10-07"
+lastupdated: "2024-10-10"
 
 keywords: satellite, connector, agent, windows
 
@@ -43,7 +43,7 @@ Configuration information is provided to the agent through the following environ
 | `SATELLITE_CONNECTOR_TAGS` | No | A user defined string that can be helpful to identify your agent. This string can be any value that you find useful. The value must be less than or equal to 256 characters and is truncated if over 256 characters. The following characters are removed: `<>/{}%[]?,;@$&`. |
 | `SATELLITE_CONNECTOR_DIRECT_LINK_INGRESS` | No | The Satellite Tunnel Ingress server to direct the agent traffic to. Specifying an internal Ingress will ensure all traffic between the Agent and Tunnel server stays in your private network. |
 | `LOG_LEVEL` | No | Set the level of logging detail you want to receive for your agent. You can specify one of `fatal`, `error`, `warn`, `debug`, `info`, or `trace`. The default level is `info`. Typically, the `debug` and `trace` levels are used only when debugging. |
-{: caption="Table 1. Environment variables for configuration" caption-side="bottom"}
+{: caption="Environment variables for configuration" caption-side="bottom"}
 
 ## Running the agent on your container platform
 {: #connector-agent-container-platform}
