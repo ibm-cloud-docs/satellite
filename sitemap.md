@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-10-08"
+lastupdated: "2024-10-10"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1778,7 +1778,7 @@ subcollection: satellite
 
     * [Step 3: Starting the agent](/docs/satellite?topic=satellite-run-agent-locally#windows-agent-run)
 
-* [Updating the agent on Windows](/docs/satellite?topic=satellite-run-agent-locally#update-agent-windows)
+    * [Updating the agent on Windows](/docs/satellite?topic=satellite-run-agent-locally#update-agent-windows)
 
 * [Next steps](/docs/satellite?topic=satellite-run-agent-locally#agent-next-steps)
 
@@ -1826,7 +1826,9 @@ subcollection: satellite
 
 * [Setting up authentication in the CLI](/docs/satellite?topic=satellite-connector_endpoint_auth#mutual-auth-cli-conn)
 
-    * [Simple authentication between the Connector service and the destination](/docs/satellite?topic=satellite-connector_endpoint_auth#simple-auth-source-conn)
+    * [Simple authentication between the Connector service and the destination](/docs/satellite?topic=satellite-connector_endpoint_auth#simple-auth-destination-conn)
+
+    * [Simple authentication with the Connector service](/docs/satellite?topic=satellite-connector_endpoint_auth#simple-auth-source-conn)
 
     * [Mutual authentication between the Connector service and the destination](/docs/satellite?topic=satellite-connector_endpoint_auth#mutual-auth-destination-conn)
 
@@ -2016,7 +2018,9 @@ subcollection: satellite
 
 * [Setting up authentication in the CLI](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-cli-loc)
 
-    * [Simple authentication between the Satellite Link service and the destination](/docs/satellite?topic=satellite-location_endpoint_auth#simple-auth-source-loc)
+    * [Simple authentication between the Satellite Link service and the destination](/docs/satellite?topic=satellite-location_endpoint_auth#simple-auth-destination-loc)
+
+    * [Simple authentication with the Satellite Link service](/docs/satellite?topic=satellite-location_endpoint_auth#simple-auth-source-loc)
 
     * [Mutual authentication between the Satellite Link service and the destination](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-destination-loc)
 

@@ -302,7 +302,7 @@ Configuration information is provided to the agent through the following environ
 After setting up an agent, you can create Endpoints and ACLs to manage access to those endpoints. For more information, see [Creating and managing Connector endpoints](/docs/satellite?topic=satellite-connector-create-endpoints).
 
 
-## Updating the agent on Windows
+### Updating the agent on Windows
 {: #update-agent-windows}
 
 You can use the `update` command in the agent package to apply configuration changes to your agent. When you run the command, the agent is stopped, uninstalled, and reinstalled. Complete the following steps to update your agent.
