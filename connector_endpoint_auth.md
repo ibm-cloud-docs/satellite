@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-10-11"
 
 keywords: satellite, endpoints, authentication
 
@@ -19,9 +19,9 @@ subcollection: satellite
 All endpoint traffic is encrypted by default. However, you can choose to provide your own certificates to implement source and destination authentication. For TLS or HTTPS endpoints, there are two TLS connections in the endpoint request flow that you might need to configure. The first TLS handshake is between the source and the Connector service. The second TLS handshake is between the Connector service and your destination or target server. You can provide certificates for one or both of these connections.
 {: shortdesc}
 
-Review the following authentication options.
-
 If you don't configure any endpoint authentication settings, endpoint traffic is still encrypted, but Connector acts as a transit service only. This applies even to endpoints using the TCP or HTTP protocol. For endpoints with protocol TLS or HTTPS, traffic through the Connector will attempt to use simple authentication by default, relying on its well known built-in certificates, which may or may not be sufficient.
+
+Review the following authentication options.
 
 [Simple authentication between the Connector service and the destination](#simple-auth-destination-conn)
 :   The destination server authenticates itself with the Connector service. To set up simple authentication with the destination, your endpoint must have a destination protocol of TLS. If the destination's server certificate is not signed by a well-known certificate authority or is not self-signed, you will need to configure a trusted CA certificate or chain to validate the destination's server certificate.
@@ -158,7 +158,7 @@ Unlike most configurations, which can work with an endpoint `--dest-type` of eit
 
 1. Configure mutual TLS with the destination server.
 
-    Similar to the previous use case, the `--dest-ca-cert-file` validates the destination server's certificate. The `dest-cert-file` and `dest-key-file` are used to perform the TLS handshake.
+    Similar to the simple authentication example, `--dest-ca-cert-file` validates the destination server's certificate. To perform the mutual TLS handshake, `--dest-cert-file` and `--dest-key-file` are used.
 
     ```sh
     ibmcloud sat endpoint authn set \
