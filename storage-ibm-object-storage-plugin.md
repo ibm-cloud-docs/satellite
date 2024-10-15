@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-10-10"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -351,7 +351,7 @@ If you no longer need your {{site.data.keyword.cos_full_notm}} configuration, yo
 | Object Storage provider | `s3provider` | Config | Available providers are `IBM`, `AWS` and `Wasabi`. For providers other than these, you must provide the `Object Storage service endpoint` parameter. | false | N/A |
 | Object Storage region | `cos-storageclass` | Config | Enter the region where your object storage is located. For IBM COS regions, see https://ibm.biz/cos-endpoints-list. For Wasabi, see https://ibm.biz/wasabi-endpoints. For AWS, see https://ibm.biz/aws-endpoints. | true | N/A |
 | Object Storage service endpoint | `cos-endpoint` | Config | Object Storage service endpoint. Required when using Object Storage providers other than IBM, AWS or Wasabi. Preference is given to `Object Storage provider` when both are set. | false | N/A |
-{: caption="Table 1. 2.2 parameter reference" caption-side="bottom"}
+{: caption="2.2 parameter reference" caption-side="bottom"}
 
 
 ## Storage class reference for {{site.data.keyword.cos_full_notm}}
@@ -361,7 +361,7 @@ If you no longer need your {{site.data.keyword.cos_full_notm}} configuration, yo
 | --- | --- | --- |
 | `ibm-s3fs-cos` | Immediate | False |
 | `ibm-s3fs-cos-perf` | Immediate | False |
-{: caption="Table 2. Cloud Object storage class reference" caption-side="bottom"}
+{: caption="Cloud Object storage class reference" caption-side="bottom"}
 
 ## Getting help and support for {{site.data.keyword.cos_full_notm}}
 {: #sat-storage-cos-support}
@@ -374,5 +374,3 @@ When you use {{site.data.keyword.cos_full_notm}}, try the following resources be
 1. Check the status of the {{site.data.keyword.Bluemix_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external}.
 1. Review [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud){: external} to see whether other users experienced the same problem. Tag any questions with `ibm-cloud` and `COS`.
 1. If you run into an issue with {{site.data.keyword.block_storage_is_short}}, submit a support request with [{{site.data.keyword.cloud}} Support](https://www.ibm.com/cloud/support){: external}.
-
-

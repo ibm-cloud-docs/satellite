@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-10-07"
+lastupdated: "2024-10-15"
 
 keywords: satellite, connector, agent, windows
 
@@ -43,7 +43,7 @@ Configuration information is provided to the agent through the following environ
 | `SATELLITE_CONNECTOR_TAGS` | No | A user defined string that can be helpful to identify your agent. This string can be any value that you find useful. The value must be less than or equal to 256 characters and is truncated if over 256 characters. The following characters are removed: `<>/{}%[]?,;@$&`. |
 | `SATELLITE_CONNECTOR_DIRECT_LINK_INGRESS` | No | The Satellite Tunnel Ingress server to direct the agent traffic to. Specifying an internal Ingress will ensure all traffic between the Agent and Tunnel server stays in your private network. |
 | `LOG_LEVEL` | No | Set the level of logging detail you want to receive for your agent. You can specify one of `fatal`, `error`, `warn`, `debug`, `info`, or `trace`. The default level is `info`. Typically, the `debug` and `trace` levels are used only when debugging. |
-{: caption="Table 1. Environment variables for configuration" caption-side="bottom"}
+{: caption="Environment variables for configuration" caption-side="bottom"}
 
 ## Running the agent on your container platform
 {: #connector-agent-container-platform}
@@ -287,7 +287,7 @@ Configuration information is provided to the agent through the following environ
 
 1. View the agent logs by running the `Get-Content` command in PowerShell.
     ```txt
-    Get-Content 'C:\path\to\extract\logs\{connector-agent-{{yyyy-mm-dd.n}}.log}'
+    Get-Content 'C:\path\to\extract\logs\{satelliteconnectorservice_{{yyyymmdd}}.out.log}'
     ```
     {: codeblock}
 
@@ -302,10 +302,10 @@ Configuration information is provided to the agent through the following environ
 After setting up an agent, you can create Endpoints and ACLs to manage access to those endpoints. For more information, see [Creating and managing Connector endpoints](/docs/satellite?topic=satellite-connector-create-endpoints).
 
 
-## Updating the agent on Windows
+### Updating the agent on Windows
 {: #update-agent-windows}
 
-You can use the `update` command in the agent package to apply configuration changes to your agent. When you run the command, the agent is stopped, uninstalled, and reinstalled. Complete the following steps to update your agent.
+You can use the `update-service` command in the agent package to apply configuration changes to your agent. When you run the command, the agent is stopped, uninstalled, and reinstalled. Complete the following steps to update your agent.
 
 1. Before updating, review the changes in the [Connector Windows agent change log](/docs/satellite?topic=satellite-cl-connector-windows-agent) and check if the latest version is newer than your currently running agent.
 
@@ -340,9 +340,9 @@ You can use the `update` command in the agent package to apply configuration cha
     ```
     {: codeblock}
 
-1. Run the `update` command in PowerShell.
+1. Run the `update-service` command in PowerShell.
     ```txt
-    .\update
+    .\update-service
     ```
     {: codeblock}
 
@@ -354,10 +354,9 @@ You can use the `update` command in the agent package to apply configuration cha
 
 1. View the agent logs by running the `Get-Content` command in PowerShell.
     ```txt
-    Get-Content 'C:\path\to\extract\logs\{connector-agent-{{yyyy-mm-dd.n}}.log}'
+    Get-Content 'C:\path\to\extract\logs\{satelliteconnectorservice_{{yyyymmdd}}.out.log}'
     ```
     {: codeblock}
-
 
 
 ## Next steps

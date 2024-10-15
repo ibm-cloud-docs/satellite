@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-10-10"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -27,7 +27,7 @@ You can create either GitOps-based configurations or Direct Upload configuration
 Store your Kubernetes resource definitions in a Git repository. Clusters automatically pull changes directly from your repository and Git references. Your resources stay in your source repository and automatically deploy when the referenced source changes. To use this method, select the **GitOps** template when you create your configuration. If you are using GitOps-based configuration for the first time and want to see how this flow works, you can select the **GitOps - Sample application** template, which guides you to set up and deploy a sample application from the IBM Git repository to your clusters.  
 {: shortdesc}
   
-![How {{site.data.keyword.satelliteshort}} configurations work](/images/satcon-gitops.svg){: caption="Figure 1. How GitOps configurations work" caption-side="bottom"}
+![How {{site.data.keyword.satelliteshort}} configurations work](/images/satcon-gitops.svg){: caption="How GitOps configurations work" caption-side="bottom"}
 
 A GitOps-based configuration involves the follow high-level steps.
 
@@ -41,7 +41,7 @@ A GitOps-based configuration involves the follow high-level steps.
 Store your Kubernetes resource definitions in {{site.data.keyword.satelliteshort}} Config by either manually uploading your YAML files or pushing YAML files from your CI/CD process. Manage changes directly through {{site.data.keyword.satelliteshort}} Config GUI, CLI, or from your CI/CD process. To use this method, select the **Direct upload** template when you create your configuration.
 {: shortdesc}
 
-![How {{site.data.keyword.satelliteshort}} configurations work](/images/satcon-direct-upload.svg){: caption="Figure 2. How Direct upload configurations work" caption-side="bottom"}
+![How {{site.data.keyword.satelliteshort}} configurations work](/images/satcon-direct-upload.svg){: caption="How Direct upload configurations work" caption-side="bottom"}
 
 A Direct Upload configuration involves the follow high-level steps.  
 
@@ -62,4 +62,3 @@ Review the following key concepts that are used when you create a {{site.data.ke
 |Version|A version represents a Kubernetes resource YAML file that you uploaded or manually created for a {{site.data.keyword.satelliteshort}} configuration. You can include any Kubernetes resource in your version and upload as many versions to a configuration as you like.  (This concept applies to **Direct Upload** configurations only.)|
 |Cluster groups|A cluster group specifies a set of clusters that are registered with the {{site.data.keyword.satelliteshort}} Config component and that are included in a {{site.data.keyword.satelliteshort}} configuration. Clusters that run in your location are automatically registered and can be added to a cluster group. Clusters that run in {{site.data.keyword.cloud_notm}} must be manually registered with the {{site.data.keyword.satelliteshort}} Config component before you can add them to a cluster group. |
 {: caption="Satellite config key concepts." caption-side="bottom"}
-

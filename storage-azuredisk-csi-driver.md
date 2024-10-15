@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-10-10"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, azure disk csi, azure disk
 
@@ -544,7 +544,7 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 | Virtual Machine Type | `vmType` | Config | You can find your virtual machine type in the Azure portal or by running the `az vm list` command. Example types: `standard` or `VMSS`. | true | N/A |
 | Network Security Group Name | `securityGroupName` | Config | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | true | N/A |
 | Virtual Network Name | `vnetName` | Config | The name of the virtual network. You can find the name of your virtual network in the Azure portal or by running the `az network vnet list` command. | true | N/A |
-{: caption="Table 1. 1.4.0 parameter reference" caption-side="bottom"}
+{: caption="1.4.0 parameter reference" caption-side="bottom"}
 
 
 ### 1.18.0 parameter reference
@@ -561,7 +561,7 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 | Virtual Machine Type | `vmType` | Config | You can find your virtual machine type in the Azure portal or by running the `az vm list` command. Example types: `standard` or `VMSS`. | true | N/A |
 | Network Security Group Name | `securityGroupName` | Config | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | true | N/A |
 | Virtual Network Name | `vnetName` | Config | The name of the virtual network. You can also find the name of your virtual network in the Azure portal or by running the `az network vnet list` command. | true | N/A |
-{: caption="Table 2. 1.18.0 parameter reference" caption-side="bottom"}
+{: caption="1.18.0 parameter reference" caption-side="bottom"}
 
 
 ### 1.23.0 parameter reference
@@ -578,7 +578,7 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 | Virtual Machine Type | `vmType` | Config | You can find your virtual machine type in the Azure portal or by running the `az vm list` command. Example types: `standard` or `VMSS`. | true | N/A |
 | Network Security Group Name | `securityGroupName` | Config | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | true | N/A |
 | Virtual Network Name | `vnetName` | Config | The name of the virtual network. You can find the name of your virtual network in the Azure portal or by running the `az network vnet list` command. | true | N/A |
-{: caption="Table 3. 1.23.0 parameter reference" caption-side="bottom"}
+{: caption="1.23.0 parameter reference" caption-side="bottom"}
 
 
 
@@ -596,7 +596,7 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 | `sat-azure-block-silver-metro` | 120 - 6000 | N/A | SSD | Delete | WaitForFirstConsumer |
 | `sat-azure-block-bronze`  | 500 - 2000 | 32 GiB - 32 TiB | HDD | Delete | Immediate |
 | `sat-azure-block-bronze-metro` | 500 - 2000 | 32 GiB - 32 TiB | HDD | Delete | WaitForFirstConsumer |
-{: caption="Table 2. Storage class reference for Azure Disk storage" caption-side="bottom"}
+{: caption="Storage class reference for Azure Disk storage" caption-side="bottom"}
 
 
 ## Getting help and support for Azure Disk storage
@@ -610,7 +610,3 @@ When you use Azure Disk Storage, try the following resources before you open a s
 1. Check the status of the {{site.data.keyword.Bluemix_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external}.
 1. Review [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud){: external} to see whether other users experienced the same problem. Tag any questions with `ibm-cloud` and `Azure-Disk`.
 1. Search the [Azure Service Portal](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview){: external} for more information. 
-
-
-
-

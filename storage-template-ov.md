@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-09-06"
+lastupdated: "2024-10-10"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -97,7 +97,7 @@ The following image depicts the workflow for creating a {{site.data.keyword.sate
 3. Assign your {{site.data.keyword.satelliteshort}} storage configuration to your clusters.
 4. {{site.data.keyword.satelliteshort}} deploys the storage drivers and any solution-specific resources for the provider that you selected to the clusters that you assigned the storage configuration to.
 
-![Concept overview of Satellite storage templates](/images/storage-template.svg){: caption="Figure 1. A conceptual overview of creating a storage configuration by using a template." caption-side="bottom"}
+![Concept overview of Satellite storage templates](/images/storage-template.svg){: caption="A conceptual overview of creating a storage configuration by using a template." caption-side="bottom"}
 
 ## How do I manage updates?
 {: #storage-template-updates}

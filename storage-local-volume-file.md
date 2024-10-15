@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-10-10"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -702,7 +702,7 @@ Use the console to remove a storage configuration.
 | Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | N/A |
 | Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | N/A |
 | File System type | `fstype` | Config | The file system type. Specify `ext3`, `ext4`, or `xfs`. | true | `ext4` |
-{: caption="Table 1. 4.9 parameter reference" caption-side="bottom"}
+{: caption="4.9 parameter reference" caption-side="bottom"}
 
 
 ### 4.10 parameter reference
@@ -715,7 +715,7 @@ Use the console to remove a storage configuration.
 | Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | N/A |
 | Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | N/A |
 | File System type | `fstype` | Config | The file system type. Specify `ext3`, `ext4`, or `xfs`. | true | `ext4` |
-{: caption="Table 2. 4.10 parameter reference" caption-side="bottom"}
+{: caption="4.10 parameter reference" caption-side="bottom"}
 
 
 ### 4.11 parameter reference
@@ -728,7 +728,7 @@ Use the console to remove a storage configuration.
 | Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | N/A |
 | Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | N/A |
 | File System type | `fstype` | Config | The file system type. Specify `ext3`, `ext4`, or `xfs`. | true | `ext4` |
-{: caption="Table 3. 4.11 parameter reference" caption-side="bottom"}
+{: caption="4.11 parameter reference" caption-side="bottom"}
 
 
 ### 4.12 parameter reference
@@ -741,7 +741,7 @@ Use the console to remove a storage configuration.
 | Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | N/A |
 | Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | N/A |
 | File System type | `fstype` | Config | The file system type. Specify `ext3`, `ext4`, or `xfs`. | true | `ext4` |
-{: caption="Table 4. 4.12 parameter reference" caption-side="bottom"}
+{: caption="4.12 parameter reference" caption-side="bottom"}
 
 
 ### 4.13 parameter reference
@@ -754,7 +754,7 @@ Use the console to remove a storage configuration.
 | Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | N/A |
 | Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | N/A |
 | File System type | `fstype` | Config | The file system type. Specify `ext3`, `ext4`, or `xfs`. | true | `ext4` |
-{: caption="Table 5. 4.13 parameter reference" caption-side="bottom"}
+{: caption="4.13 parameter reference" caption-side="bottom"}
 
 
 
@@ -768,7 +768,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local file s
 | Storage class name | File system | Reclaim policy |
 | --- | --- | --- |
 | `sat-local-file-gold` | `ext4` or `xfs` | Retain |
-{: caption="Table 2. Local file storage class reference." caption-side="bottom"}
+{: caption="Local file storage class reference." caption-side="bottom"}
 
 
 ## Getting help and support for local file storage
@@ -780,6 +780,3 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local file s
 1. Check the status of the {{site.data.keyword.Bluemix_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external}.
 1. Review [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud){: external} to see whether other users experienced the same problem. Tag any questions with ibm-cloud, so that it's seen by the {{site.data.keyword.Bluemix_notm}} development teams.
 1. If you run into an issue with the Local File Storage Operator, you can open an issue in the [Red Hat Customer Portal](https://access.redhat.com/){: external}. 
-
-
-

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-10-04"
+lastupdated: "2024-10-11"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -811,6 +811,37 @@ ibmcloud sat connector rm --connector-id ID [-f] [-q]
 {: #connector-rm-options-dl}
 
 
+## `ibmcloud sat endpoint authn get`
+{: #endpoint-authn-get-cli}
+
+Get the authentication settings for an endpoint.
+
+```txt
+ibmcloud sat endpoint authn get --endpoint ENDPOINT [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
+```
+{: pre}
+{: #endpoint-authn-get-usage}
+
+### Command options
+{: #endpoint-authn-get-options}
+
+`--connector-id ID`
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
+
+`--endpoint ENDPOINT`
+:    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls`.
+
+`--location LOCATION`
+:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #endpoint-authn-get-options-dl}
+
+
 ## `ibmcloud sat endpoint authn rotate`
 {: #endpoint-authn-rotate-cli}
 
@@ -1614,6 +1645,37 @@ ibmcloud sat experimental connector rm --connector-id ID [-f] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #experimental-connector-rm-options-dl}
+
+
+## `ibmcloud sat experimental endpoint authn get`
+{: #experimental-endpoint-authn-get-cli}
+
+[Deactivated on 2024-10-01! Use `ibmcloud sat endpoint authn get` instead] Get the authentication settings for an endpoint.
+
+```txt
+ibmcloud sat experimental endpoint authn get --endpoint ENDPOINT [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
+```
+{: pre}
+{: #experimental-endpoint-authn-get-usage}
+
+### Command options
+{: #experimental-endpoint-authn-get-options}
+
+`--connector-id ID`
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
+
+`--endpoint ENDPOINT`
+:    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls`.
+
+`--location LOCATION`
+:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #experimental-endpoint-authn-get-options-dl}
 
 
 ## `ibmcloud sat experimental endpoint authn rotate`

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-10-04"
+lastupdated: "2024-10-11"
 
 keywords: satellite cli map, satellite commands, satellite cli, satellite reference
 
@@ -99,6 +99,7 @@ View and manage Satellite endpoints.
 {: shortdesc}
 
 * **`endpoint authn`**: Configure authentication settings for an endpoint.
+    * [`ibmcloud sat endpoint authn get`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-authn-get-cli)
     * [`ibmcloud sat endpoint authn rotate`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-authn-rotate-cli)
     * [`ibmcloud sat endpoint authn set`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-authn-set-cli)
 * [`ibmcloud sat endpoint create`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-create-cli)
@@ -136,6 +137,7 @@ View and manage Satellite endpoints.
     * [`ibmcloud sat experimental connector ls`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-ls-cli)
     * [`ibmcloud sat experimental connector rm`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-rm-cli)
 * **`experimental endpoint`**: [Expires on 2024-10-01] View and manage Satellite endpoints.
+    * [`ibmcloud sat experimental endpoint authn get`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-get-cli)
     * [`ibmcloud sat experimental endpoint authn rotate`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-rotate-cli)
     * [`ibmcloud sat experimental endpoint authn set`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-set-cli)
 * **`experimental location`**: [Expires on 2024-11-25] Create, view, and modify Satellite locations.

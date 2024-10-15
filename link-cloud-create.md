@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-09-10"
+lastupdated: "2024-10-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -96,7 +96,7 @@ Use the CLI to create an endpoint so that sources in your {{site.data.keyword.sa
     | `--dest-protocol <destination-protocol>` | Optional: Enter the protocol of the destination resource. If you do not specify this option, the destination protocol is inherited from the source protocol. Supported protocols include `tcp` and `tls`. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols). |
     | `--source-protocol <source-protocol>` | Enter the protocol that the source must use to connect to the destination resource. Supported protocols include `tcp`, `tls`, `http`, `https`, and `http-tunnel`. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols). |
     |  `--sni <sni>` | Optional. If you specify a `tls` or `https` source protocol and want a separate hostname to be added to the TLS handshake, include the server name indicator. |
-    {: caption="Table 1. Understanding the API request" caption-side="bottom"}
+    {: caption="Understanding the API request" caption-side="bottom"}
 
 3. Wait a few minutes for the {{site.data.keyword.satelliteshort}} Link connector component to assign a port to your endpoint.
 
@@ -296,7 +296,7 @@ Use the CLI to create an endpoint so that sources that are connected to the {{si
     | `--dest-protocol <destination-protocol>` | Optional: Enter the protocol of the destination resource. If you do not specify this option, the destination protocol is inherited from the source protocol. Supported protocols include `tcp` and `tls`. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols). |
     | `--source-protocol <source-protocol>` | Enter the protocol that the source must use to connect to the destination resource. Supported protocols include `tcp`, `tls`, `http`, `https`, and `http-tunnel`. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols). |
     |  `--sni <sni>` | Optional. If you specify a `tls` or `https` source protocol and want a separate hostname to be added to the TLS handshake, include the server name indicator. |
-    {: caption="Table 1. Understanding the API request" caption-side="bottom"}
+    {: caption="Understanding the API request" caption-side="bottom"}
 
 3. Wait a few minutes for the {{site.data.keyword.satelliteshort}} Link connector component to assign a port to your endpoint.
 

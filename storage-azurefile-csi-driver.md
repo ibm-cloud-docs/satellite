@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-10-10"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file, azure file
 
@@ -536,7 +536,7 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 | Network Security Group Name | `securityGroupName` | Config | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | true | N/A |
 | Virtual Network Name | `vnetName` | Config | The name of the virtual network. You can find the name of your virtual network in the Azure portal or by running the `az network vnet list` command. | true | N/A |
 | Subnet Name | `subnetName` | Config | Name of one the of the subnets under the provided VNet | true | N/A |
-{: caption="Table 1. 1.9.0 parameter reference" caption-side="bottom"}
+{: caption="1.9.0 parameter reference" caption-side="bottom"}
 
 
 ### 1.18.0 parameter reference
@@ -554,7 +554,7 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 | Network Security Group Name | `securityGroupName` | Config | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | true | N/A |
 | Virtual Network Name | `vnetName` | Config | The name of the virtual network. You can find the name of your virtual network in the Azure portal or by running the `az network vnet list` command. | true | N/A |
 | Subnet Name | `subnetName` | Config | Name of one the of the subnets under the provided VNet | true | N/A |
-{: caption="Table 2. 1.18.0 parameter reference" caption-side="bottom"}
+{: caption="1.18.0 parameter reference" caption-side="bottom"}
 
 
 ### 1.22.0 parameter reference
@@ -572,7 +572,7 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 | Network Security Group Name | `securityGroupName` | Config | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | true | N/A |
 | Virtual Network Name | `vnetName` | Config | The name of the virtual network. You can find the name of your virtual network in the Azure portal or by running the `az network vnet list` command. | true | N/A |
 | Subnet Name | `subnetName` | Config | Name of one the of the subnets under the provided VNet | true | N/A |
-{: caption="Table 3. 1.22.0 parameter reference" caption-side="bottom"}
+{: caption="1.22.0 parameter reference" caption-side="bottom"}
 
 
 ## Storage class reference for Azure File
@@ -588,7 +588,7 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 | `sat-azure-file-silver-metro` | Delete | WaitForFirstConsumer |
 | `sat-azure-file-bronze` | Delete | Immediate |
 | `sat-azure-file-bronze-metro` | Delete | WaitForFirstConsumer |
-{: caption="Table 2. Storage class reference for Azure File storage" caption-side="bottom"}
+{: caption="Storage class reference for Azure File storage" caption-side="bottom"}
 
 
 ## Getting help and support for Azure File storage
@@ -602,6 +602,3 @@ When you use Azure File, try the following resources before you open a support c
 1. Check the status of the {{site.data.keyword.Bluemix_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external}.
 1. Review [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud){: external} to see whether other users experienced the same problem. Tag any questions with `ibm-cloud` and `Azure-Disk`.
 1. Open an issue in the [Azure Service Portal](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview){: external}. 
-
-
-

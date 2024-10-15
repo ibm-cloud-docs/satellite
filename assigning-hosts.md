@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-30"
+lastupdated: "2024-10-10"
 
 keywords: satellite, hybrid, multicloud, assigning hosts, host auto assignment, host auto assignment, host labels
 
@@ -74,7 +74,7 @@ Before you begin,
         | `--host-label <label>` | Enter the label that you want to use to identify the host that you want to assign. The label must be a key-value pair, and must exist on the host machine. When you run this command with the `label` option, the first host that is in an `unassigned` state and matches the label is assigned to your {{site.data.keyword.satelliteshort}} resource. |
         | `--worker-pool <worker-pool>` | Enter the name of the worker pool where you want to attach your compute hosts. To find available worker pools in your cluster, run `ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>`. If you do not specify this option, your compute host is automatically added to the default worker pool. |
         | `--zone <zone>` | The name of the zone where you want to assign the compute host. To see the zone names for your location, run `ibmcloud sat location get --location` and look for the `Host Zones` field. |
-        {: caption="Table 1. Understanding this command's components" caption-side="bottom"}
+        {: caption="Understanding this command's components" caption-side="bottom"}
 
         
     - The following example assigns a host by using the `os=RHCOS` host label.

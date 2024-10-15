@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-10-10"
 
 keywords: satellite storage, VMware, satellite config, satellite configurations, vsphere
 
@@ -440,7 +440,7 @@ Removing the storage configuration removes the driver from all assigned clusters
 | vCenter host | `host` | Config | The vCenter server IP address. | true | N/A |
 | vCenter data centers | `datacenters` | Config | List all data center paths where host VMs are present, separated by commas. Provide the name of the data center when it is located at the root. When it is placed in the folder, you need to specify the path as folder/data-center-name | true | N/A |
 | SSL certificate thumbprint | `thumbprint` | Secret | The SSL thumbprint to be used to establish a secure connection to VC.  | false | N/A |
-{: caption="Table 1. 2.5.1 parameter reference" caption-side="bottom"}
+{: caption="2.5.1 parameter reference" caption-side="bottom"}
 
 
 ### 2.7.0 parameter reference
@@ -454,7 +454,7 @@ Removing the storage configuration removes the driver from all assigned clusters
 | vCenter host | `host` | Config | The vCenter server IP address. | true | N/A |
 | vCenter data centers | `datacenters` | Config | List all data center paths where host VMs are present, separated by commas. Provide the name of the data center when it is located at the root. When it is placed in the folder, you need to specify the path as folder/data-center-name | true | N/A |
 | SSL certificate thumbprint | `thumbprint` | Secret | The SSL thumbprint to be used to establish a secure connection to VC.  | false | N/A |
-{: caption="Table 2. 2.7.0 parameter reference" caption-side="bottom"}
+{: caption="2.7.0 parameter reference" caption-side="bottom"}
 
 
 
@@ -464,6 +464,3 @@ Removing the storage configuration removes the driver from all assigned clusters
 {: #sat-vmware-csi-support}
 
 If you run into an issue with VMware submit a support request with [VMware Support](https://www.vmware.com/){: external}.
-
-
-

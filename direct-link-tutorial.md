@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-08-28"
+lastupdated: "2024-10-10"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -93,7 +93,7 @@ To enable access to the `166.9.X.X/16` range, create a Relay in your {{site.data
 
 The following diagram demonstrates the flow of traffic.
 
-![{{site.data.keyword.satelliteshort}} Link setup that uses a {{site.data.keyword.dl_short}} connection and a reverse proxy](/images/sat_dl_architecture.svg){: caption="Figure 1. Satellite Link setup that uses a DirectLink connection" caption-side="bottom"}
+![{{site.data.keyword.satelliteshort}} Link setup that uses a {{site.data.keyword.dl_short}} connection and a reverse proxy](/images/sat_dl_architecture.svg){: caption="Satellite Link setup that uses a DirectLink connection" caption-side="bottom"}
   
 1. Network traffic originating at your Location, such as a request from an {{site.data.keyword.satellitelong_notm}} cluster to an {{site.data.keyword.cloud_notm}} service, is routed via Link Service over Direct Link to the Relay Private Ingress, which has a Direct link routable address.
 2. The Relay initiates a new session to forward the request to the private cloud service endpoint of the tunnel server, which terminates to an IP address in the `166.9.X.X/16` range (Link private address).
