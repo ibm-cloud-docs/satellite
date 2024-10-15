@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-08"
+lastupdated: "2024-10-15"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -24,6 +24,16 @@ Review the latest changes to the {{site.data.keyword.satellitelong}} documentati
 
 ## October 2024
 {: #satellite-oct24}
+
+### 15 October 2024
+{: #satellite-oct1524}
+{: release-note}
+
+Satellite Connector agent image version `1.1.9`.
+:   For more information, see the [change log](/docs/satellite?topic=satellite-cl-connector-agent-image) and [Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally#pull-agent-image).
+
+Connector agent for Windows version `1.1.6`.
+:   For more information, see the [change log](/docs/satellite?topic=satellite-cl-connector-windows-agent) and [Updating the agent on Windows](/docs/satellite?topic=satellite-run-agent-locally#update-agent-windows).
 
 ### 8 October 2024
 {: #satellite-oct0824}

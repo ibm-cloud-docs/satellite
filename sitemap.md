@@ -200,6 +200,12 @@ subcollection: satellite
 
 * [October 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct24)
 
+    * [15 October 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct1524)
+
+        * Satellite Connector agent image version `1.1.9`.
+
+        * Connector agent for Windows version `1.1.6`.
+
     * [8 October 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct0824)
 
         * New! Connecting to IBM Cloud via the private network by using Satellite Connector and Direct Link 2.0
