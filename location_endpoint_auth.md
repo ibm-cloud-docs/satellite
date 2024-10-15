@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-10-11"
+lastupdated: "2024-10-15"
 
 keywords: satellite, endpoints, authentication
 
@@ -277,6 +277,33 @@ Unlike most configurations, which can work with an endpoint `--dest-type` of eit
       --dest-ca-cert-file /path/to/serverCACerts.pem
     ```
     {: pre}
+
+
+## Displaying authentication settings
+{: #get-certs-loc}
+
+The `ibmcloud sat endpoint authn get` command can be used to display the configured authentication settings for your endpoint. For example, the following command can be used to output the currently configured TLS modes and certificates for endpoint `myEndpoint`.
+
+```sh
+ibmcloud sat endpoint authn get --location ID --endpoint myEndpoint
+```
+{: pre}
+
+Assuming `myEndpoint` is configured as shown in the [source and destination mutual authentication example](#mutual-auth-both-loc), this command will produce output similar to the following.
+
+```sh
+OK
+
+Destination TLS Mode:          mutual
+Destination Certificate:       /path/to/clientCertificate.pem
+Destination Key:               /path/to/clientKey.pem
+Destination CA Certificates:   /path/to/serverCACerts.pem
+Source TLS Mode:               mutual
+Source Certificate:            -
+Source Key:                    -
+Source CA Certificates:        /path/to/clientCACerts.pem
+```
+{: screen}
 
 
 ## Removing certificates
