@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-10-15"
 
 keywords: satellite, connector, agent, windows
 
@@ -287,7 +287,7 @@ Configuration information is provided to the agent through the following environ
 
 1. View the agent logs by running the `Get-Content` command in PowerShell.
     ```txt
-    Get-Content 'C:\path\to\extract\logs\{connector-agent-{{yyyy-mm-dd.n}}.log}'
+    Get-Content 'C:\path\to\extract\logs\{satelliteconnectorservice_{{yyyymmdd}}.out.log}'
     ```
     {: codeblock}
 
@@ -305,7 +305,7 @@ After setting up an agent, you can create Endpoints and ACLs to manage access to
 ### Updating the agent on Windows
 {: #update-agent-windows}
 
-You can use the `update` command in the agent package to apply configuration changes to your agent. When you run the command, the agent is stopped, uninstalled, and reinstalled. Complete the following steps to update your agent.
+You can use the `update-service` command in the agent package to apply configuration changes to your agent. When you run the command, the agent is stopped, uninstalled, and reinstalled. Complete the following steps to update your agent.
 
 1. Before updating, review the changes in the [Connector Windows agent change log](/docs/satellite?topic=satellite-cl-connector-windows-agent) and check if the latest version is newer than your currently running agent.
 
@@ -340,9 +340,9 @@ You can use the `update` command in the agent package to apply configuration cha
     ```
     {: codeblock}
 
-1. Run the `update` command in PowerShell.
+1. Run the `update-service` command in PowerShell.
     ```txt
-    .\update
+    .\update-service
     ```
     {: codeblock}
 
@@ -354,10 +354,9 @@ You can use the `update` command in the agent package to apply configuration cha
 
 1. View the agent logs by running the `Get-Content` command in PowerShell.
     ```txt
-    Get-Content 'C:\path\to\extract\logs\{connector-agent-{{yyyy-mm-dd.n}}.log}'
+    Get-Content 'C:\path\to\extract\logs\{satelliteconnectorservice_{{yyyymmdd}}.out.log}'
     ```
     {: codeblock}
-
 
 
 ## Next steps
