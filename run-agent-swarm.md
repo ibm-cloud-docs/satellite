@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-10-16"
 
 keywords: satellite, connector
 
@@ -30,7 +30,6 @@ To configure {{site.data.keyword.satelliteshort}} Connectors, you must have Admi
         image: icr.io/ibm/satellite-connector/satellite-connector-agent:latest
         environment:
         - SATELLITE_CONNECTOR_ID=/satellite-connector-id
-        - SATELLITE_CONNECTOR_REGION=/satellite-connector-region
         - SATELLITE_CONNECTOR_IAM_APIKEY=/run/secrets/satellite-connector-iam-apikey
         - SATELLITE_CONNECTOR_TAGS={{.Node.Hostname}}
         deploy:
@@ -122,4 +121,3 @@ By default, the Swarm compose file sets the `SATELLITE_CONNECTOR_TAGS` environme
     
     
     
-
