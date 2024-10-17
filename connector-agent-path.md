@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-09-17"
+lastupdated: "2024-10-16"
 
 keywords: satellite, hybrid, multicloud, connector, private tunnel
 
@@ -37,7 +37,6 @@ Follow the steps to configure your Connector agent to use an internal Ingress ho
     SATELLITE_CONNECTOR_ID=U2F0ZWxsaXRlQ29ubmVjdG9yOiJjaHIwbDFnMjFyNzRlMzRqdDVkZyI
     SATELLITE_CONNECTOR_IAM_APIKEY=
     SATELLITE_CONNECTOR_DIRECT_LINK_INGRESS=d-01-ws.private.us-south.link.satellite.cloud.ibm.com
-    SATELLITE_CONNECTOR_REGION=stage-south
     SATELLITE_CONNECTOR_TAGS=test
     ```
     {: codeblock}

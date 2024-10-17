@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-09-05"
+lastupdated: "2024-10-16"
 
 keywords: satellite, http proxy, http, proxy, connector
 
@@ -41,9 +41,8 @@ There are various ways to setup a proxy. These instructions assume that you have
     ```txt  
     SATELLITE_CONNECTOR_ID=U2.....wZyI
     SATELLITE_CONNECTOR_IAM_APIKEY=/agent-env-files/apikey
-    SATELLITE_CONNECTOR_REGION=us-south
     SATELLITE_CONNECTOR_TAGS=my tag
     HTTP_PROXY=http://192.168.3.87:3128
-    HTTPS_PROXY=http://192.168.3.87:3128
+    HTTPS_PROXY=http://192.168.3.87:3129
     ```
     {: codeblock}

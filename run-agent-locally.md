@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-10-15"
+lastupdated: "2024-10-16"
 
 keywords: satellite, connector, agent, windows
 
@@ -43,6 +43,7 @@ Configuration information is provided to the agent through the following environ
 | `SATELLITE_CONNECTOR_TAGS` | No | A user defined string that can be helpful to identify your agent. This string can be any value that you find useful. The value must be less than or equal to 256 characters and is truncated if over 256 characters. The following characters are removed: `<>/{}%[]?,;@$&`. |
 | `SATELLITE_CONNECTOR_DIRECT_LINK_INGRESS` | No | The Satellite Tunnel Ingress server to direct the agent traffic to. Specifying an internal Ingress will ensure all traffic between the Agent and Tunnel server stays in your private network. |
 | `LOG_LEVEL` | No | Set the level of logging detail you want to receive for your agent. You can specify one of `fatal`, `error`, `warn`, `debug`, `info`, or `trace`. The default level is `info`. Typically, the `debug` and `trace` levels are used only when debugging. |
+| `PRETTY_LOG` | No | Windows environments only. Specify `true` to show logs in a pretty format or `false` to show the logs in JSON format. |
 {: caption="Environment variables for configuration" caption-side="bottom"}
 
 ## Running the agent on your container platform
@@ -65,21 +66,12 @@ The file names shown in the following steps are examples and can be tailored for
 
 1. Create a directory for the configuration files, in this example `~/agent/env-files`.
 1. Create a file in the `~/agent/env-files` directory called `apikey` with a single line value of your IBM Cloud API Key that can access the {{site.data.keyword.satelliteshort}} Connector.
-1. Create a file in the `~/agent/env-files` directory called `env.txt` with the following values. Modify the `SATELLITE_CONNECTOR_ID` variable with your {{site.data.keyword.satelliteshort}} Connector ID and the `SATELLITE_CONNECTOR_REGION` with the region of the {{site.data.keyword.satelliteshort}} Connector you created previously. 
+1. Create a file in the `~/agent/env-files` directory called `env.txt` with the following values. Modify the `SATELLITE_CONNECTOR_ID` variable with your {{site.data.keyword.satelliteshort}} Connector ID.
 
     ```sh
     SATELLITE_CONNECTOR_ID=<Your Satellite Connector ID>
     SATELLITE_CONNECTOR_IAM_APIKEY=/agent-env-files/apikey
     SATELLITE_CONNECTOR_TAGS=sample tag
-    ```
-    {: codeblock}
-    
-    Example `env.txt` with populated parameters.
-    
-    ```sh
-    SATELLITE_CONNECTOR_ID=U2F0ZWxsaXRlQ29ubmVjdG9yOiJjanM4cnRzZjFsN2c0M3U4cmp1MBA
-    SATELLITE_CONNECTOR_IAM_APIKEY=/agent-env-files/apikey
-    SATELLITE_CONNECTOR_TAGS=test
     ```
     {: codeblock}
   
@@ -166,7 +158,6 @@ The file names shown in the following steps are examples and can be tailored for
     {"level":30,"time":"2023-06-20T16:12:20.133Z","pid":8,"hostname":"6b793f671c79","name":"agentOps","msgid":"A02","msg":"Load SATELLITE_CONNECTOR_ID value from SATELLITE_CONNECTOR_ID environment variable."}
     {"level":30,"time":"2023-06-20T16:12:20.138Z","pid":8,"hostname":"6b793f671c79","name":"agentOps","msgid":"A01","msg":"Load SATELLITE_CONNECTOR_IAM_APIKEY value from file /agent-env-files/apikey."}
     {"level":30,"time":"2023-06-20T16:12:20.140Z","pid":8,"hostname":"6b793f671c79","name":"agentOps","msgid":"A02","msg":"Load SATELLITE_CONNECTOR_TAGS value from SATELLITE_CONNECTOR_TAGS environment variable."}
-    {"level":30,"time":"2023-06-20T16:12:20.141Z","pid":8,"hostname":"6b793f671c79","name":"agentOps","msgid":"A02","msg":"Load SATELLITE_CONNECTOR_REGION value from SATELLITE_CONNECTOR_REGION environment variable."}
     {"level":30,"time":"2023-06-20T16:12:20.142Z","pid":8,"hostname":"6b793f671c79","name":"connector-agent","msgid":"LA2","msg":"Connector id: U2F0ZWxsaXRlQ29ubmVjdG9yOiJjaThzdWd1ZDFwZ2RrZmUxa3UxZyI, region: us-south, release info: 20230610-dd48822928d35a84b31029a996fa9abc9d29fc93_A."}
     {"level":30,"time":"2023-06-20T16:12:20.392Z","pid":8,"hostname":"6b793f671c79","name":"tunneldns","msgid":"D04","msg":"DoTunnelDNSLookup DNS resolve c-01-ws.us-south.link.satellite.cloud.ibm.com to 169.61.31.178"}
     {"level":30,"time":"2023-06-20T16:12:21.560Z","pid":8,"hostname":"6b793f671c79","name":"utilities","msg":"MakeLinkAPICall GET /v1/connectors/U2F0ZWxsaXRlQ29ubmVjdG9yOiJjaThzdWd1ZDFwZ2RrZmUxa3UxZyI status code 200"}
