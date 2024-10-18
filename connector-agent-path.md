@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-10-17"
+lastupdated: "2024-10-18"
 
 keywords: satellite, hybrid, multicloud, connector, private tunnel
 
@@ -52,12 +52,12 @@ On Windows, add them to your `config.json` file.
 
 ```json
 {
-    "SATELLITE_CONNECTOR_ID": "U2.....wZyI",
-    "SATELLITE_CONNECTOR_IAM_APIKEY": "C:\\path\\to\\apikey",
-    "SATELLITE_CONNECTOR_TAGS": "test",
-    "PRETTY_LOG": true,
-    "HTTP_PROXY": "http://192.168.3.87:3128",
-    "HTTPS_PROXY": "https://192.168.3.87:3129"
+  "SATELLITE_CONNECTOR_ID": "U2.....wZyI",
+  "SATELLITE_CONNECTOR_IAM_APIKEY": "C:\\path\\to\\apikey",
+  "SATELLITE_CONNECTOR_TAGS": "test",
+  "PRETTY_LOG": true,
+  "HTTP_PROXY": "http://192.168.3.87:3128",
+  "HTTPS_PROXY": "https://192.168.3.87:3129"
 }
 ```
 {: codeblock}
@@ -87,8 +87,8 @@ Follow the steps to configure your Connector agent to use an internal Ingress ho
     ```txt
     SATELLITE_CONNECTOR_ID=U2.....wZyI
     SATELLITE_CONNECTOR_IAM_APIKEY=/agent-env-files/api-key
-    SATELLITE_CONNECTOR_DIRECT_LINK_INGRESS=d-01-ws.private.us-south.link.satellite.cloud.ibm.com
     SATELLITE_CONNECTOR_TAGS=test
+    SATELLITE_CONNECTOR_DIRECT_LINK_INGRESS=d-01-ws.private.us-south.link.satellite.cloud.ibm.com
     ```
     {: codeblock}
 
@@ -96,11 +96,11 @@ Follow the steps to configure your Connector agent to use an internal Ingress ho
 
     ```json
     {
-        "SATELLITE_CONNECTOR_ID": "U2.....wZyI",
-        "SATELLITE_CONNECTOR_IAM_APIKEY": "C:\\path\\to\\apikey",
-        "SATELLITE_CONNECTOR_DIRECT_LINK_INGRESS": "d-01-ws.private.us-south.link.satellite.cloud.ibm.com",
-        "SATELLITE_CONNECTOR_TAGS": "test",
-        "PRETTY_LOG": true
+      "SATELLITE_CONNECTOR_ID": "U2.....wZyI",
+      "SATELLITE_CONNECTOR_IAM_APIKEY": "C:\\path\\to\\apikey",
+      "SATELLITE_CONNECTOR_TAGS": "test",
+      "PRETTY_LOG": true,
+      "SATELLITE_CONNECTOR_DIRECT_LINK_INGRESS": "d-01-ws.private.us-south.link.satellite.cloud.ibm.com"
     }
     ```
     {: codeblock}
