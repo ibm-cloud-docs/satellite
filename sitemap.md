@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-10-15"
+lastupdated: "2024-10-17"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1788,29 +1788,13 @@ subcollection: satellite
 
 * [Next steps](/docs/satellite?topic=satellite-run-agent-locally#agent-next-steps)
 
-[Configuring the request path from your connector agent](/docs/satellite?topic=satellite-connector-agent-path#connector-agent-path)
+[Configuring the request path from your Connector agent](/docs/satellite?topic=satellite-connector-agent-path#connector-agent-path)
+
+* [Configuring a proxy for your {{site.data.keyword.satelliteshort}} Connector agent](/docs/satellite?topic=satellite-connector-agent-path#config-connector-proxy)
+
+* [Configuring a Tunnel server Ingress host for your {{site.data.keyword.satelliteshort}} Connector agent](/docs/satellite?topic=satellite-connector-agent-path#config-connector-ingress)
 
 [Running your Connector agent as a service in Docker Swarm Mode for high availability](/docs/satellite?topic=satellite-run-agent-swarm#run-agent-swarm)
-
-[{{site.data.keyword.satelliteshort}} Connector end-to-end example](/docs/satellite?topic=satellite-end-to-end#end-to-end)
-
-* [Creating a Docker container](/docs/satellite?topic=satellite-end-to-end#create-container)
-
-* [Creating your Link endpoint](/docs/satellite?topic=satellite-end-to-end#create-link-endpoint)
-
-* [Adding TLS support](/docs/satellite?topic=satellite-end-to-end#add-tls)
-
-[Migrating resources from {{site.data.keyword.SecureGateway}} to {{site.data.keyword.satelliteshort}} Connector](/docs/satellite?topic=satellite-connector-create-from-sg#connector-create-from-sg)
-
-* [Prerequisites](/docs/satellite?topic=satellite-connector-create-from-sg#sg-migrate-connector-prereqs)
-
-* [Migrating a Gateway to a Connector](/docs/satellite?topic=satellite-connector-create-from-sg#migrate-gateway-to-endpoint)
-
-* [Migrating {{site.data.keyword.SecureGateway}} Destinations to Connector endpoints](/docs/satellite?topic=satellite-connector-create-from-sg#migrate-destination-to-endpoint)
-
-* [Example migration requests](/docs/satellite?topic=satellite-connector-create-from-sg#migrate-examples)
-
-[Configuring a proxy for your {{site.data.keyword.satelliteshort}} Connector](/docs/satellite?topic=satellite-config-connector-proxy#config-connector-proxy)
 
 [Creating and managing Connector endpoints](/docs/satellite?topic=satellite-connector-create-endpoints#connector-create-endpoints)
 
@@ -1845,6 +1829,24 @@ subcollection: satellite
 * [Displaying authentication settings](/docs/satellite?topic=satellite-connector_endpoint_auth#get-certs-conn)
 
 * [Removing certificates](/docs/satellite?topic=satellite-connector_endpoint_auth#remove-certs-conn)
+
+[{{site.data.keyword.satelliteshort}} Connector end-to-end example](/docs/satellite?topic=satellite-end-to-end#end-to-end)
+
+* [Creating a Docker container](/docs/satellite?topic=satellite-end-to-end#create-container)
+
+* [Creating your Link endpoint](/docs/satellite?topic=satellite-end-to-end#create-link-endpoint)
+
+* [Adding TLS support](/docs/satellite?topic=satellite-end-to-end#add-tls)
+
+[Migrating resources from {{site.data.keyword.SecureGateway}} to {{site.data.keyword.satelliteshort}} Connector](/docs/satellite?topic=satellite-connector-create-from-sg#connector-create-from-sg)
+
+* [Prerequisites](/docs/satellite?topic=satellite-connector-create-from-sg#sg-migrate-connector-prereqs)
+
+* [Migrating a Gateway to a Connector](/docs/satellite?topic=satellite-connector-create-from-sg#migrate-gateway-to-endpoint)
+
+* [Migrating {{site.data.keyword.SecureGateway}} Destinations to Connector endpoints](/docs/satellite?topic=satellite-connector-create-from-sg#migrate-destination-to-endpoint)
+
+* [Example migration requests](/docs/satellite?topic=satellite-connector-create-from-sg#migrate-examples)
 
 
 ## Managing apps with Satellite Config
