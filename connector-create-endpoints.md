@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-10-01"
+lastupdated: "2024-10-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -110,8 +110,8 @@ For container platforms such as Docker or Rancher, this requires you to map the 
 
     ```sh
     OK
-    ID                                                              Name      Destination Type   Address      Status
-    A1A1AAaaaAAaA11AAAAAaA11aaaAaaaAaA_aaaaa                        test123   cloud              TCP :29998   enabled
+    ID                                          Name      Destination Type   Address      Status
+    A1A1AAaaaAAaA11AAAAAaA11aaaAaaaAaA_aaaaa    test123   cloud              TCP :29998   enabled
     ```
     {: screen}
 
