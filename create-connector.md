@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-09-10"
+lastupdated: "2024-10-21"
 
 keywords: satellite, hybrid, multicloud, connector, create connector
 
@@ -107,7 +107,7 @@ A Connector provides a secure connection between a specific remote location and 
     Example output.
     ```sh
     OK
-    ID                                                        Name             Managed From   State
+    ID                              Name             Managed From   State
     xxxxxxXXXXXXaaaaaaaAAAAA11111   my-connector     Dallas         created
     ```
     {: screen}

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-01"
+lastupdated: "2024-10-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -96,4 +96,4 @@ See [Getting help](/docs/get-support?topic=get-support-using-avatar#using-avatar
 ## Opting in to receive email notifications
 {: #opt-in-email}
 
-You can opt in to receive email notifications about {{site.data.keyword.cloud_notm}} platform-related items across your account and resource-related items for incidents, maintenance, security bulletins, and resource activity updates. Email notifications are not turned on by default. To understand how to set up these email notifications, see [Setting email preferences for notifications](/docs/account?topic=account-email-prefs).
+You can opt in to receive email notifications about {{site.data.keyword.cloud_notm}} platform-related items across your account and resource-related items for incidents, maintenance, security bulletins, and resource activity updates. Email notifications are not turned on by default. To understand how to set up these email notifications, see [Setting email preferences for notifications](/docs/account?topic=account-account-getting-started#account-gs-notifications).

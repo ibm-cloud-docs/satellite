@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-10-16"
+lastupdated: "2024-10-21"
 
 keywords: satellite, connector, agent, windows
 
@@ -230,11 +230,11 @@ Configuration information is provided to the agent through the following environ
     Example `config.json`.
     ```json
     {
-    "SATELLITE_CONNECTOR_ID":"<Your Satellite Connector ID>",
-    "SATELLITE_CONNECTOR_IAM_APIKEY":"<Your API Key>",
-    "SATELLITE_CONNECTOR_TAGS":"sample tag",
-    "LOG_LEVEL": "info",
-    "PRETTY_LOG": true
+      "SATELLITE_CONNECTOR_ID":"<Your Satellite Connector ID>",
+      "SATELLITE_CONNECTOR_IAM_APIKEY":"<Your API Key>",
+      "SATELLITE_CONNECTOR_TAGS":"sample tag",
+      "LOG_LEVEL": "info",
+      "PRETTY_LOG": true
     }
     ```
     {: codeblock}
@@ -242,11 +242,11 @@ Configuration information is provided to the agent through the following environ
     Example `config.json` with populated values.
     ```json
     {
-    "SATELLITE_CONNECTOR_ID":"U2F0ZWxsaXRlQ29ubmVjdG9yOiJjanM4cnRzZjFsN2c0M3U4cmp1MBA",
-    "SATELLITE_CONNECTOR_IAM_APIKEY":"C:\\path\\to\\apikey",
-    "SATELLITE_CONNECTOR_TAGS":"sample tag",
-    "LOG_LEVEL": "info",
-    "PRETTY_LOG": true
+      "SATELLITE_CONNECTOR_ID":"U2F0ZWxsaXRlQ29ubmVjdG9yOiJjanM4cnRzZjFsN2c0M3U4cmp1MBA",
+      "SATELLITE_CONNECTOR_IAM_APIKEY":"C:\\path\\to\\apikey",
+      "SATELLITE_CONNECTOR_TAGS":"sample tag",
+      "LOG_LEVEL": "info",
+      "PRETTY_LOG": true
     }
     ```
     {: codeblock}
@@ -310,11 +310,11 @@ You can use the `update-service` command in the agent package to apply configura
     Example `config.json`.
     ```json
     {
-    "SATELLITE_CONNECTOR_ID":"<Your Satellite Connector ID>",
-    "SATELLITE_CONNECTOR_IAM_APIKEY":"<Your API Key>",
-    "SATELLITE_CONNECTOR_TAGS":"<tags>",
-    "LOG_LEVEL": "info",
-    "PRETTY_LOG": true
+      "SATELLITE_CONNECTOR_ID":"<Your Satellite Connector ID>",
+      "SATELLITE_CONNECTOR_IAM_APIKEY":"<Your API Key>",
+      "SATELLITE_CONNECTOR_TAGS":"<tags>",
+      "LOG_LEVEL": "info",
+      "PRETTY_LOG": true
     }
     ```
     {: codeblock}
@@ -322,11 +322,11 @@ You can use the `update-service` command in the agent package to apply configura
     Example `config.json` with populated values.
     ```json
     {
-    "SATELLITE_CONNECTOR_ID":"U2F0ZWxsaXRlQ29ubmVjdG9yOiJjanM4cnRzZjFsN2c0M3U4cmp1MBA",
-    "SATELLITE_CONNECTOR_IAM_APIKEY":"C:\\path\\to\\apikey",
-    "SATELLITE_CONNECTOR_TAGS":"sample tag",
-    "LOG_LEVEL": "info",
-    "PRETTY_LOG": true
+      "SATELLITE_CONNECTOR_ID":"U2F0ZWxsaXRlQ29ubmVjdG9yOiJjanM4cnRzZjFsN2c0M3U4cmp1MBA",
+      "SATELLITE_CONNECTOR_IAM_APIKEY":"C:\\path\\to\\apikey",
+      "SATELLITE_CONNECTOR_TAGS":"sample tag",
+      "LOG_LEVEL": "info",
+      "PRETTY_LOG": true
     }
     ```
     {: codeblock}
