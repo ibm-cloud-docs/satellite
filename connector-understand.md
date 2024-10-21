@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-10-21"
 
 keywords: satellite, connector, agent
 
@@ -65,7 +65,7 @@ To pull the {{site.data.keyword.satelliteshort}} Connector agent image, you must
 - Destination hostnames: `icr.io` 
 - Protocol and ports: HTTPS 443 
 
-The {{site.data.keyword.satelliteshort}} Connector agent that runs in your environment needs public outbound connectivity to {{site.data.keyword.cloud_notm}}. This can be direct public access or via a proxy. There is no requirement for public inbound access. See the [Configuring a proxy for your {{site.data.keyword.satelliteshort}} Connector](/docs/satellite?topic=satellite-config-connector-proxy) for more information about using a proxy. The list of endpoints, including URLs and IP Addresses, that must be outbound accessible depends on the region you specified when creating the {{site.data.keyword.satelliteshort}} Connector. See the entry for your region in the following list.
+The {{site.data.keyword.satelliteshort}} Connector agent that runs in your environment needs public outbound connectivity to {{site.data.keyword.cloud_notm}}. This can be direct public access or via a proxy. There is no requirement for public inbound access. See the [Configuring a proxy for your {{site.data.keyword.satelliteshort}} Connector](/docs/satellite?topic=satellite-connector-agent-path) for more information about using a proxy. The list of endpoints, including URLs and IP Addresses, that must be outbound accessible depends on the region you specified when creating the {{site.data.keyword.satelliteshort}} Connector. See the entry for your region in the following list.
 
 Dallas
 :    * Destination IP addresses: 169.46.88.106, 169.61.31.178, 169.61.156.226

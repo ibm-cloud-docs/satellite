@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-09-24"
+lastupdated: "2024-10-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -187,7 +187,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
             
 1. [Grant access to {{site.data.keyword.cos_short}}](/docs/vpc?topic=vpc-object-storage-prereq&interface=cli).
             
-1. [Import your custom RHCOS image in VPC](/docs/account?topic=account-catalog-vsivpc-tutorial). You can create custom images in the [VPC console](https://cloud.ibm.com/infrastructure/compute/images){: external}.
+1. [Import your custom RHCOS image in VPC](/docs/account?topic=account-catalog-vsivpc-tutorial&interface=ui). You can create custom images in the [VPC console](https://cloud.ibm.com/infrastructure/compute/images){: external}.
         
 1. Give your image a **Name**, select the **Resource group** where you want to create the image and select **Cloud Object Storage**
         
