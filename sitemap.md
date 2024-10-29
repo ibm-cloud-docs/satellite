@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-10-17"
+lastupdated: "2024-10-29"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1793,6 +1793,10 @@ subcollection: satellite
 * [Configuring a proxy for your {{site.data.keyword.satelliteshort}} Connector agent](/docs/satellite?topic=satellite-connector-agent-path#config-connector-proxy)
 
 * [Configuring a Tunnel server Ingress host for your {{site.data.keyword.satelliteshort}} Connector agent](/docs/satellite?topic=satellite-connector-agent-path#config-connector-ingress)
+
+    * [Specifying an internal host](/docs/satellite?topic=satellite-connector-agent-path#specify-host)
+
+    * [Specifying a single network destination](/docs/satellite?topic=satellite-connector-agent-path#specify-dest)
 
 [Running your Connector agent as a service in Docker Swarm Mode for high availability](/docs/satellite?topic=satellite-run-agent-swarm#run-agent-swarm)
 
