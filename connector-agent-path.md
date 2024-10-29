@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-10-21"
+lastupdated: "2024-10-29"
 
 keywords: satellite, hybrid, multicloud, connector, private tunnel
 
@@ -69,7 +69,11 @@ If your Connector agent is running on a container platform, ensure that your con
 ## Configuring a Tunnel server Ingress host for your {{site.data.keyword.satelliteshort}} Connector agent
 {: #config-connector-ingress}
 
-You can configure the Satellite Tunnel server Ingress host that your Connector agent will forward traffic to. The Connector agent supports specifying either public or private Ingress hosts. For example, to help with compliance management, you can specify an internal Ingress host. This will ensure that the traffic between your Connector agent and Tunnel server stays in your private network and no traffic uses the public internet.
+You can configure the Satellite Tunnel server Ingress host that your Connector agent will forward traffic to. The Connector agent supports specifying either public or private Ingress hosts. To help with compliance management, you can configure a single network destination to reduce the number of outbound IP addresses to allow on your firewall. Also, by specifying an internal Ingress host, you can ensure that the traffic between your Connector agent and Tunnel server stays in your private network and no traffic uses the public internet.
+
+### Specifying an internal host
+{: #specify-host}
+
 
 Internal Ingress hosts are regional with the format `d-{nn}-ws.private.{mzr}.link.satellite.cloud.ibm.com` (for example, a tunnel server private Ingress in us-south is `d-01-ws.private.us-south.link.satellite.cloud.ibm.com`).
 These hosts resolve to Cloud Service Endpoint (CSE) IP addresses which are IBM reserved addresses in the 166.9.x.x range. By connecting the agent using these addresses, you can ensure all traffic to the Tunnel server will stay in IBM's internal private network.
@@ -106,3 +110,24 @@ Follow the steps to configure your Connector agent to use an internal Ingress ho
     {: codeblock}
 
 1. Follow the steps to run your Connector agent [on your container platform](/docs/satellite?topic=satellite-run-agent-locally#connector-agent-container-platform) or [on Windows](/docs/satellite?topic=satellite-run-agent-locally#run-agent-windows).
+
+### Specifying a single network destination
+{: #specify-dest}
+
+You can specify a single network destination instead of multiple destinations to reduce the number of outbound IP addresses to allow on your firewall. You can limit traffic to only use the tunnel server Ingress IP addresses in a single region by setting the `SATELLITE_CONNECTOR_DIRECT_LINK_INGRESS` parameter to a specific regional host.
+
+Public Ingress hosts are regional with the format `c-{nn}-ws.{mzr}.link.satellite.cloud.ibm.com` (for example, a tunnel server public Ingress in us-south is `c-01-ws.us-south.link.satellite.cloud.ibm.com`). To use the public Ingress in us-south, include the following parameter:
+
+- On a container platform, in your `env.txt` file.
+
+    ```txt
+    SATELLITE_CONNECTOR_DIRECT_LINK_INGRESS=c-01-ws.us-south.link.satellite.cloud.ibm.com
+    ```
+
+- On Windows, in your `config.json` file.
+
+    ```json
+    "SATELLITE_CONNECTOR_DIRECT_LINK_INGRESS": "c-01-ws.us-south.link.satellite.cloud.ibm.com"
+    ```
+
+This setting will allow you to limit your firewall to only allow the us-south IP addresses (169.46.88.106, 169.61.31.178, 169.61.156.226) as described in [network requirements](/docs/satellite?topic=satellite-understand-connectors#network-requirements).
