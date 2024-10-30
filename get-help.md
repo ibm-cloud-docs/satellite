@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-21"
+lastupdated: "2024-10-30"
 
 keywords: satellite, hybrid, multicloud
 
@@ -66,7 +66,7 @@ For questions about {{site.data.keyword.satelliteshort}}, use the tags `ibm-clou
 
 If you have technical questions about developing or deploying clusters or apps with {{site.data.keyword.redhat_openshift_notm}}, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `openshift`, and `containers`.
 
-See [Getting help](/docs/get-support?topic=get-support-using-avatar#using-avatar) for more details about using the forums.
+See [Getting help](/docs/account?topic=account-using-avatar) for more details about using the forums.
 
 ## Contacting support
 {: #help-support}
@@ -89,7 +89,7 @@ See [Getting help](/docs/get-support?topic=get-support-using-avatar#using-avatar
     You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/containers?topic=containers-debug-tool) to gather and export pertinent information to share with {{site.data.keyword.IBM_notm}} Support.
     {: tip}
 
-2. Contact {{site.data.keyword.IBM_notm}} Support by [opening a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}. To learn about opening an {{site.data.keyword.IBM_notm}} support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-using-avatar).
+2. Contact {{site.data.keyword.IBM_notm}} Support by [opening a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}. To learn about opening an {{site.data.keyword.IBM_notm}} support case, or about support levels and case severities, see [Contacting support](/docs/account?topic=account-using-avatar).
 3. For the **Problem type**, search for or select **{{site.data.keyword.satelliteshort}}**.
 4. For the **Case details**, provide a descriptive title and include the details that you previously gathered. From the **Resources**, you can also select the cluster that the issue is related to, if any.
 

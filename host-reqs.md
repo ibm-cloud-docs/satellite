@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-09"
+lastupdated: "2024-10-30"
 
 keywords: satellite, hybrid, multicloud, endpoint capacity, endpoint limits, location endpoint limits, location endpoints, cloud endpoints
 
@@ -23,7 +23,7 @@ You can add hosts from other cloud providers to your location. For more informat
 
 - If you plan on deploying {{site.data.keyword.redhat_openshift_notm}} clusters, make sure the operating system that you want to use for your hosts is supported for your location type and cluster version. For more information, see [{{site.data.keyword.redhat_openshift_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
 - Make sure that you use [official Red Hat certified hardware](https://catalog.redhat.com/hardware){: external}.
-- If you cannot meet these host requirements, [contact {{site.data.keyword.IBM_notm}} Support](/docs/get-support?topic=get-support-using-avatar) and include the following information: the host system configuration that you want, why you want the system configuration, and how many hosts you intend to create.
+- If you cannot meet these host requirements, [contact {{site.data.keyword.IBM_notm}} Support](/docs/account?topic=account-using-avatar) and include the following information: the host system configuration that you want, why you want the system configuration, and how many hosts you intend to create.
 
 You can verify your host setup with the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
@@ -100,4 +100,3 @@ You might need to refresh your packages on the host machine. For example, in {{s
     {: pre}
 
 For more information about how to enable the RHEL packages in hosts that you add from other cloud providers, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).
-

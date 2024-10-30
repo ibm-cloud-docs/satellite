@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-10-30"
 
 keywords: satellite, hybrid, multicloud, securing your data, secure data, information
 
@@ -113,7 +113,7 @@ Removing personal and sensitive information is permanent and cannot be undone. M
 
 - **Data that {{site.data.keyword.IBM_notm}} manages**: A backup of the {{site.data.keyword.satelliteshort}} location is in {{site.data.keyword.cos_full_notm}} and can still be accessed by the {{site.data.keyword.IBM_notm}} service team. To remove all data that {{site.data.keyword.IBM_notm}} stores, choose between the following options. Note that removing your personal and sensitive information requires all your {{site.data.keyword.satelliteshort}} locations to be deleted as well. Make sure that you backed up your data before your proceed.
 
-    - **Open an {{site.data.keyword.cloud_notm}} support case**: Contact {{site.data.keyword.IBM_notm}} Support to remove your personal and sensitive information from {{site.data.keyword.satellitelong_notm}}. For more information, see [Getting support](/docs/get-support?topic=get-support-using-avatar).
+    - **Open an {{site.data.keyword.cloud_notm}} support case**: Contact {{site.data.keyword.IBM_notm}} Support to remove your personal and sensitive information from {{site.data.keyword.satellitelong_notm}}. For more information, see [Getting support](/docs/account?topic=account-using-avatar).
     
     - **End your {{site.data.keyword.cloud_notm}} subscription**: After you end your {{site.data.keyword.cloud_notm}} subscription, all personal and sensitive information is permanently removed.
     
