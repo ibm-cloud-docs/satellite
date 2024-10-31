@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-10-30"
 
 keywords: satellite storage, satellite config, debug, troubleshoot, must gather
 
@@ -168,9 +168,4 @@ Review the error messages, logs, and details of your configurations and troubles
 ## Contact Support
 {: #contact-ibm-support}
 
-If the issue persists, open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
-
-
-
-
-
+If the issue persists, open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

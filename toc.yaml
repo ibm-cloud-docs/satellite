@@ -330,7 +330,7 @@ toc:
         - topicgroup:
             label: Troubleshooting
             topics:
-              - include: ../get-support/ViewStatus.md
+              - include: ../account/monitor-notif-status1.md
               - ts-locations-debug.md
               - ts-recover-location.md
               - ts-recovery-validation.md
