@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-10-30"
+lastupdated: "2024-11-01"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3211,7 +3211,7 @@ subcollection: satellite
 ## API reference
 {: #sitemap_api-reference}
 
-[API reference](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-cluster){: external}
+[API reference](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2#createsatellitecluster){: external}
 
 
 ## CLI plug-in reference
@@ -4934,35 +4934,25 @@ subcollection: satellite
 {: #sitemap_troubleshooting}
 
 
-[Monitoring notifications and status](/docs/satellite?topic=satellite-viewing-cloud-status#viewing-cloud-status)
+[Monitoring status](/docs/satellite?topic=satellite-best-practices#best-practices)
 
-* [Viewing status](/docs/satellite?topic=satellite-viewing-cloud-status#view-status-page)
+* [Check for upcoming maintenance windows](/docs/satellite?topic=satellite-best-practices#monbp-checmaintwin)
 
-* [Advanced status search](/docs/satellite?topic=satellite-viewing-cloud-status#adv-search)
+* [Check for current maintenance windows or an incident in progress](/docs/satellite?topic=satellite-best-practices#monbp-checcurmaninprog)
 
-    * [URL query filters:](/docs/satellite?topic=satellite-viewing-cloud-status#url-query)
+* [Take advantage of multiple {{site.data.keyword.Bluemix_notm}} locations](/docs/satellite?topic=satellite-best-practices#monbp-multpreg)
 
-* [Viewing the status of a dedicated multizone region (MZR)](/docs/satellite?topic=satellite-viewing-cloud-status#view-private-mzr)
+* [Subscribing to email notifications](/docs/satellite?topic=satellite-best-practices#monbp-subscribing)
 
-* [Subscribing to an RSS feed](/docs/satellite?topic=satellite-viewing-cloud-status#subscribing-rss-feed)
+* [Viewing cloud status](/docs/satellite?topic=satellite-best-practices#viewing-cloud-status)
 
-* [Checking incident reports](/docs/satellite?topic=satellite-viewing-cloud-status#status-incident-report)
+    * [Viewing the status of a dedicated multizone region (MZR)](/docs/satellite?topic=satellite-best-practices#view-private-mzr)
 
-* [Viewing notifications](/docs/satellite?topic=satellite-viewing-cloud-status#viewing-notifications)
+    * [Subscribing to an RSS feed](/docs/satellite?topic=satellite-best-practices#subscribing-rss-feed)
 
-    * [Notification types](/docs/satellite?topic=satellite-viewing-cloud-status#notification-types)
+    * [Checking incident reports](/docs/satellite?topic=satellite-best-practices#status-incident-report)
 
-* [Subscribing to email notifications](/docs/satellite?topic=satellite-viewing-cloud-status#subscribe-email-notifications)
-
-* [Checking the delivery status of email notifications and viewing email history](/docs/satellite?topic=satellite-viewing-cloud-status#view-email-history)
-
-* [Getting advanced notice for disruptive maintenance](/docs/satellite?topic=satellite-viewing-cloud-status#disruptive-maintenance)
-
-    * [Iaas](/docs/satellite?topic=satellite-viewing-cloud-status#iaas)
-
-    * [PaaS](/docs/satellite?topic=satellite-viewing-cloud-status#paas)
-
-    * [SaaS](/docs/satellite?topic=satellite-viewing-cloud-status#saas)
+    * [Advanced status search](/docs/satellite?topic=satellite-best-practices#adv-search)
 
 [Location error messages](/docs/satellite?topic=satellite-ts-locations-debug#ts-locations-debug)
 
