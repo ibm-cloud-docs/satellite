@@ -280,7 +280,7 @@ toc:
       topics: 
         - link:
                 label: API reference
-                href: https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-cluster
+                href: https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2#createsatellitecluster
         - topicgroup:
             label: CLI plug-in reference
             topics:
