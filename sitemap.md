@@ -4934,6 +4934,26 @@ subcollection: satellite
 {: #sitemap_troubleshooting}
 
 
+[Monitoring status](/docs/satellite?topic=satellite-best-practices#best-practices)
+
+* [Check for upcoming maintenance windows](/docs/satellite?topic=satellite-best-practices#monbp-checmaintwin)
+
+* [Check for current maintenance windows or an incident in progress](/docs/satellite?topic=satellite-best-practices#monbp-checcurmaninprog)
+
+* [Take advantage of multiple {{site.data.keyword.Bluemix_notm}} locations](/docs/satellite?topic=satellite-best-practices#monbp-multpreg)
+
+* [Subscribing to email notifications](/docs/satellite?topic=satellite-best-practices#monbp-subscribing)
+
+* [Viewing cloud status](/docs/satellite?topic=satellite-best-practices#viewing-cloud-status)
+
+    * [Viewing the status of a dedicated multizone region (MZR)](/docs/satellite?topic=satellite-best-practices#view-private-mzr)
+
+    * [Subscribing to an RSS feed](/docs/satellite?topic=satellite-best-practices#subscribing-rss-feed)
+
+    * [Checking incident reports](/docs/satellite?topic=satellite-best-practices#status-incident-report)
+
+    * [Advanced status search](/docs/satellite?topic=satellite-best-practices#adv-search)
+
 [Location error messages](/docs/satellite?topic=satellite-ts-locations-debug#ts-locations-debug)
 
 * [Reviewing error messages and logs](/docs/satellite?topic=satellite-ts-locations-debug#review-messages-logs)
