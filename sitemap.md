@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-11-01"
+lastupdated: "2024-11-04"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1142,7 +1142,11 @@ subcollection: satellite
 
 * [Creating a relay](/docs/satellite?topic=satellite-direct-link-tutorial#dl-create-coreos-relay)
 
-* [Provisioning Red Hat CoreOS hosts](/docs/satellite?topic=satellite-direct-link-tutorial#dl-provision-coreos-hosts)
+* [Redirect the traffic to use the {{site.data.keyword.dl_short}} Path](/docs/satellite?topic=satellite-direct-link-tutorial#dl-use-direct-link-path)
+
+    * [Using a Connector agent (Docker or Windows)](/docs/satellite?topic=satellite-direct-link-tutorial#dl-connector-agents)
+
+    * [Using a Location Host (CoreOS or RHEL)](/docs/satellite?topic=satellite-direct-link-tutorial#dl-provision-coreos-hosts)
 
 
 ## Using {{site.data.keyword.containerlong_notm}} on classic to host the `dl-reverse-proxy`
@@ -4933,26 +4937,6 @@ subcollection: satellite
 ## Troubleshooting
 {: #sitemap_troubleshooting}
 
-
-[Monitoring status](/docs/satellite?topic=satellite-best-practices#best-practices)
-
-* [Check for upcoming maintenance windows](/docs/satellite?topic=satellite-best-practices#monbp-checmaintwin)
-
-* [Check for current maintenance windows or an incident in progress](/docs/satellite?topic=satellite-best-practices#monbp-checcurmaninprog)
-
-* [Take advantage of multiple {{site.data.keyword.Bluemix_notm}} locations](/docs/satellite?topic=satellite-best-practices#monbp-multpreg)
-
-* [Subscribing to email notifications](/docs/satellite?topic=satellite-best-practices#monbp-subscribing)
-
-* [Viewing cloud status](/docs/satellite?topic=satellite-best-practices#viewing-cloud-status)
-
-    * [Viewing the status of a dedicated multizone region (MZR)](/docs/satellite?topic=satellite-best-practices#view-private-mzr)
-
-    * [Subscribing to an RSS feed](/docs/satellite?topic=satellite-best-practices#subscribing-rss-feed)
-
-    * [Checking incident reports](/docs/satellite?topic=satellite-best-practices#status-incident-report)
-
-    * [Advanced status search](/docs/satellite?topic=satellite-best-practices#adv-search)
 
 [Location error messages](/docs/satellite?topic=satellite-ts-locations-debug#ts-locations-debug)
 

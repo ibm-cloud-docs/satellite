@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-11-04"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -25,11 +25,11 @@ completion-time: 2h
 {: toc-services="satellite, containers, dl"}
 {: toc-completion-time="2h"}
 
-Supported location type
-:   Red Hat CoreOS (RHCOS)-enabled locations only
+Supported location types
+:   Red Hat CoreOS (RHCOS)-enabled Locations and Connectors
 
 Supported host operating systems
-:   Red Hat CoreOS (RHCOS)
+:   Red Hat CoreOS (RHCOS) and RHEL
 
 Use a secure {{site.data.keyword.dl_full}} connection for {{site.data.keyword.satelliteshort}} Link communications between your services running in an {{site.data.keyword.satellitelong}} Location and {{site.data.keyword.cloud}}.
 {: shortdesc}
@@ -168,7 +168,6 @@ In the following example, a private-only VPC cluster and private Ingress control
 
 1. Create a private-only {{site.data.keyword.redhat_openshift_notm}} cluster on VPC. For more information, see [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui). 
 
-
     There are many ways to expose apps in {{site.data.keyword.redhat_openshift_notm}} cluster in a VPC. In this example, the app will be privately exposed with private endpoints only, which is the most common use case for {{site.data.keyword.dl_short}} customers. {{site.data.keyword.redhat_openshift_notm}} clusters that are privately exposed with private endpoints only come with default private name and certificate. They will be used in this example to expose the NGINX reverse proxy pods. You can use the default ones or bring your custom host name and certificate. For more details, see [Privately exposing apps in VPC clusters with a private cloud service endpoint only](/docs/openshift?topic=openshift-ingress-private-expose#priv-se-priv-controller).
     {: note}
     
@@ -234,8 +233,6 @@ In the following example, a private-only VPC cluster and private Ingress control
                 name: nginxsvc
                 port:
                   number: 80
-
-
     ```
     {: codeblock}
     
@@ -421,198 +418,48 @@ In the following example, a private-only VPC cluster and private Ingress control
     {: screen} 
     
   
-## Provisioning Red Hat CoreOS hosts 
-{: #dl-provision-coreos-hosts}
+## Redirect the traffic to use the {{site.data.keyword.dl_short}} Path
+{: #dl-use-direct-link-path}
 {: step}
 
-Now the relay is ready and incoming traffic to the relay can be proxied to the tunnel server internal Ingress. {{site.data.keyword.dl_short}} agent must be deployed on the hosts to establish the connection to the tunnel server internally through the {{site.data.keyword.dl_short}}.
-{: shortdesc}
+Now that the relay is ready to proxy incoming traffic to the tunnel server internal Ingress, you can set up your Location host or Connector to redirect its traffic through the relay. This ensures that all the traffic will stay on the Direct Link path in your private network and no traffic uses the public internet.
 
-1. Download the Location attach script. Make sure you download the `.ign` file by selecting **Red Hat CoreOS** in the console when you download or using `ibmcloud sat host attach --location LOCATION --operating-system RHCOS` in the CLI.
+Redirect traffic for your Connector agent or Location host by following the applicable instructions below.
 
-1. Get the user token on the account where you are creating your Location.
-    ```sh
-    ibmcloud iam oauth-tokens
+### Using a Connector agent (Docker or Windows)
+{: #dl-connector-agents}
+
+Follow the instructions in [Configuring a Tunnel server Ingress host for your Satellite Connector agent](/docs/satellite?topic=satellite-connector-agent-path#config-connector-ingress) but set the `SATELLITE_CONNECTOR_DIRECT_LINK_INGRESS` parameter to the relay Ingress host created in step 2 (`mysatellite-dl.myname-cluster10-22bfd3cd491bdeb5a0f661fb1e2b0c44-0000.us-south.containers.appdomain.cloud`) instead of to the internal Ingress host itself. For example:
+
+- On a container platform, in your `env.txt` file.
+
+    ```txt
+    SATELLITE_CONNECTOR_DIRECT_LINK_INGRESS=mysatellite-dl.myname-cluster10-22bfd3cd491bdeb5a0f661fb1e2b0c44-0000.us-south.
     ```
-    {: pre}     
-  
-1. Use the token in the following curl command. Depending on your location or region, the URL is different. The following example command uses `us-south`. But if your location is in Frankfurt, replace `us-south` with `eu-de`.
-    ```sh
-    curl -X GET \
-    'https://api.us-south.link.satellite.cloud.ibm.com/v1/linkagentdownloadurl/LOCATION-ID?linktunnelhostname=INGRESS-SUBDOMAIN' \
-    --header 'Accept: */*' \
-    --header 'User-Agent: IBM Cloud Kubernetes Service - service-engine' \
-    --header 'Authorization: Bearer <TOKEN>' 
+
+- On Windows, in your `config.json` file.
+
+    ```json
+    "SATELLITE_CONNECTOR_DIRECT_LINK_INGRESS": "mysatellite-dl.myname-cluster10-22bfd3cd491bdeb5a0f661fb1e2b0c44-0000.us-south.containers.appdomain.cloud"
     ```
-    {: pre}  
 
-    Example output:
+### Using a Location Host (CoreOS or RHEL)
+{: #dl-provision-coreos-hosts}
+
+1. Run the following CLI command to download the host attachment script for your Location.
+
     ```sh
-    {"tunnel_host":"","location_id":"","auth_code":""}
+    ibmcloud sat host attach --location LOCATION --operating-system SYSTEM --host-link-agent-endpoint ENDPOINT
     ```
-    {: screen}    
+    {: pre}
 
-1. Create a script named `ign_tool.js` with the following content.
-    ```sh
-     /**
-     * This is a tool to help set up ibm-link-agent-hn systemd service. 
-     * It's a temporary solution and wil be useless when the IBM Cloud CLI feature is added. 
-     * 
-     * The tool requires two parameters, 
-     * 1. ign file to be modified and
-     * 2. the single quoted string of /v1/linkagentdownloadurl API call result .
-     * 
-     * It will generate a new ign file with the names as <input_file>_modified.ign , and several intermediate files as debug_xxx for debug purpose.
-     *
-     * Example: 
-     * node ign_tool.js downloaded.ign '{"tunnel_host":"c-01-ws.us-south.link.satellite.cloud.ibm.com","location_id":"cdcnlr820p5snpe0bte0","auth_code":"70a65b5d6e94da10xxxx"}'
-     * 
-     * The result is a new file named downloaded_modified.ign, which should be used as an ign file to create new RHCOS host with.
-     * 
-     */
+    `--location LOCATION`
+    :    The name or ID of the Satellite location.
 
+    `--operating-system SYSTEM`
+    :    The operating system of the hosts you want to attach to your location (RHEL or RHCOS).
 
-    const fs = require('fs');
-    const path = require('path');
-    const zlib = require('zlib');
+    `--host-link-agent-endpoint ENDPOINT`
+    :    The endpoint that the link agent uses to connect to the link tunnel server. In this case, the relay Ingress host created in step 2 (`mysatellite-dl.myname-cluster10-22bfd3cd491bdeb5a0f661fb1e2b0c44-0000.us-south.containers.appdomain.cloud`).
 
-    const BASE64HEAD=`data:text/plain;base64,`
-    const debugTempFile= true;
-
-    const inputIGNFilePath = process.argv[2];
-    if(!inputIGNFilePath || path.extname(inputIGNFilePath)!= '.ign')
-    {
-      console.log(`Please specify an ign file to be modified, ${inputIGNFilePath} not good`)
-      process.exit(1);
-    }
-    const configJSONString = process.argv[3];
-    if(!configJSONString)
-    {
-      console.log("Please specify the config JSON content as a string")
-      process.exit(1);
-    }
-    const configJSON = JSON.parse(configJSONString);
-    if( !configJSON.tunnel_host || 
-      !configJSON.location_id || 
-      !configJSON.auth_code )
-    {
-        console.log("Specified config JSON in bad format, please add single quote")
-        process.exit(1);
-    }
-
-    const outputIGNFilePath = inputIGNFilePath.replace(/\.ign$/,'_modified.ign');
-    console.log(`Will save new ign file as ${outputIGNFilePath}\n`)
-
-    // read input ign file and parse it to json
-    const inputIGNFileContent = fs.readFileSync(inputIGNFilePath).toString();
-    const inputIGNJSON = JSON.parse(inputIGNFileContent);
-
-
-    let needCompression = false;
-    const firstFileContent = inputIGNJSON.storage.files[0];
-    if( firstFileContent.contents.compression)
-    {
-      needCompression = true;
-      console.log(`compression is set as ${firstFileContent.contents.compression}\n`);
-    }
-    let originalScriptContent='';
-    const firstFileContentBuffer = Buffer.from(firstFileContent.contents.source.split(',')[1], 'base64');
-    if(needCompression )
-    {
-      originalScriptContent= zlib.gunzipSync(firstFileContentBuffer).toString();
-    }else 
-    {
-      originalScriptContent = firstFileContentBuffer.toString();
-    }
-    console.log(`original shell length ${originalScriptContent.length}, content like:\n\n${originalScriptContent.slice(0, 100)}\n...\n`);
-
-    if(debugTempFile)
-    {
-      console.log('saving original script content as debug_original.sh');
-      fs.writeFileSync('debug_originalscript.sh', originalScriptContent)
-    }
-
-
-    const scriptToAdd=
-    'mkdir -p /etc/ibm-link-agent-hn\n'+
-    'chmod 0755 /etc/ibm-link-agent-hn\n'+
-    'set +x\n'+
-    'echo "${LINK_AGENT_CONFIG}" > /etc/ibm-link-agent-hn/config\n'+
-    'set -x\n'+
-    '# validate json file\n'+
-    'jq -r \'.tunnel_host\' /etc/ibm-link-agent-hn/config\n'+
-    'chmod 0640 /etc/ibm-link-agent-hn/config\n'+
-    'export TUNNELHOST=`jq -r .tunnel_host /etc/ibm-link-agent-hn/config`\n'+
-    'export LOCATIONID=`jq -r .location_id /etc/ibm-link-agent-hn/config`\n'+
-    'set +x\n'+
-    'export AUTHCODE=`jq -r .auth_code /etc/ibm-link-agent-hn/config`\n'+
-    '# download binary\n'+
-    'curl "https://${TUNNELHOST}/linkagent/download" --header "x-location-id: $LOCATIONID" --header "auth-code: $AUTHCODE"  --output /usr/local/bin/ibm-link-agent-hn\n'+
-    'set -x\n'+
-    'chmod 0700 /usr/local/bin/ibm-link-agent-hn\n'+
-    '/usr/local/bin/ibm-link-agent-hn -h\n'+
-    '# setup systemd unit\n'+
-    'cat <<EOF >/etc/systemd/system/ibm-host-network-agent.service\n'+
-    '[Unit]\n'+
-    'Description=Link Host Network Agent Service\n'+
-    'After=network.target\n'+
-    '[Service]\n'+
-    'Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"\n'+
-    'ExecStartPre=/usr/bin/bash -c "mv -f /usr/local/bin/ibm-link-agent-hn-new /usr/local/bin/ibm-link-agent-hn || exit 0"\n'+
-    'ExecStart=/usr/local/bin/ibm-link-agent-hn\n'+
-    'Restart=always\n'+
-    '[Install]\n'+
-    'WantedBy=multi-user.target\n'+
-    'EOF\n'+
-    '# activate process\n'+
-    'chmod 0644 /etc/systemd/system/ibm-host-network-agent.service\n'+
-    'systemctl daemon-reload\n'+
-    'systemctl enable ibm-host-network-agent.service\n'+
-    'systemctl start ibm-host-network-agent.service\n';
-
-    const scriptContentModified = `#!/usr/bin/env bash
-
-    LINK_AGENT_CONFIG='${configJSONString}'
-    ${scriptToAdd}
-
-    ${originalScriptContent}
-    `;
-
-    if(debugTempFile)
-    {
-      console.log('saving modified script content as debug_modified.sh');
-      fs.writeFileSync('debug_modified.sh', scriptContentModified)
-    }
-    let finalBase64Content=''
-    if( needCompression)
-    {
-      const compressed = zlib.gzipSync(Buffer.from(scriptContentModified));
-      finalBase64Content = Buffer.from(compressed).toString('base64');
-    }
-    else 
-    {
-      finalBase64Content =Buffer.from(scriptContentModified).toString('base64');
-    }
-
-    if(debugTempFile)
-    {
-      console.log('saving base64 encoded content as debug_modified_base64');
-      fs.writeFileSync('debug_modified_base64', finalBase64Content)
-    }
-
-    inputIGNJSON.storage.files[0].contents.source=`${BASE64HEAD}${finalBase64Content}`
-
-    console.log(`saving final ign file to ${outputIGNFilePath}`);
-    fs.writeFileSync(outputIGNFilePath, JSON.stringify(inputIGNJSON));
-
-    ```
-    {: pre}   
-
-1. Run the script.
-    ```sh
-    node ign_tool.js attachHost-LOCATION.ign '{"tunnel_host":"INGRESS-SUBDOMAIN","location_id":"cdcnlr820p5snpe0bte0","auth_code":"70a65b5d6e94da10xxxx"}
-    ```
-    {: pre} 
-
-Now you have the script. Depending on your infrastructure, you can create your Red Hat CoreOS Location.
- 
+1. Attach the host agent by following the applicable instructions for your host operating system in [Attaching on-prem hosts to your location](https://cloud.ibm.com/docs/satellite?topic=satellite-attach-hosts).
