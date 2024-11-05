@@ -330,7 +330,7 @@ toc:
         - topicgroup:
             label: Troubleshooting
             topics:
-              - include: ../account/status-bps.md
+              - include: ../account/monitor-notification-status.md
               - ts-locations-debug.md
               - ts-recover-location.md
               - ts-recovery-validation.md

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-11-04"
+lastupdated: "2024-11-05"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -4937,6 +4937,36 @@ subcollection: satellite
 ## Troubleshooting
 {: #sitemap_troubleshooting}
 
+
+[Monitoring notifications and status](/docs/satellite?topic=satellite-viewing-cloud-status#viewing-cloud-status)
+
+* [Viewing status](/docs/satellite?topic=satellite-viewing-cloud-status#view-status-page)
+
+* [Advanced status search](/docs/satellite?topic=satellite-viewing-cloud-status#adv-search)
+
+    * [URL query filters:](/docs/satellite?topic=satellite-viewing-cloud-status#url-query)
+
+* [Viewing the status of a dedicated multizone region (MZR)](/docs/satellite?topic=satellite-viewing-cloud-status#view-private-mzr)
+
+* [Subscribing to an RSS feed](/docs/satellite?topic=satellite-viewing-cloud-status#subscribing-rss-feed)
+
+* [Checking incident reports](/docs/satellite?topic=satellite-viewing-cloud-status#status-incident-report)
+
+* [Viewing notifications](/docs/satellite?topic=satellite-viewing-cloud-status#viewing-notifications)
+
+    * [Notification types](/docs/satellite?topic=satellite-viewing-cloud-status#notification-types)
+
+* [Subscribing to email notifications](/docs/satellite?topic=satellite-viewing-cloud-status#subscribe-email-notifications)
+
+* [Checking the delivery status of email notifications and viewing email history](/docs/satellite?topic=satellite-viewing-cloud-status#view-email-history)
+
+* [Getting advanced notice for disruptive maintenance](/docs/satellite?topic=satellite-viewing-cloud-status#disruptive-maintenance)
+
+    * [Iaas](/docs/satellite?topic=satellite-viewing-cloud-status#iaas)
+
+    * [PaaS](/docs/satellite?topic=satellite-viewing-cloud-status#paas)
+
+    * [SaaS](/docs/satellite?topic=satellite-viewing-cloud-status#saas)
 
 [Location error messages](/docs/satellite?topic=satellite-ts-locations-debug#ts-locations-debug)
 
