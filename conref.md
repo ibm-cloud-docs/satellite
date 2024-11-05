@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-11-01"
+lastupdated: "2024-11-05"
 
 keywords: satellite, hybrid, multicloud
 
@@ -30,7 +30,7 @@ You have two options when deploying OpenShift Data Foundation to your {{site.dat
 {: #cost-estimate}
 {: faq}
 
-When you create a resource such as a location or cluster, you can review a cost estimate in the **Summary** pane of the console. For other types of estimates, see [Estimating your costs](/docs/billing-usage?topic=billing-usage-cost#cost).
+When you create a resource such as a location or cluster, you can review a cost estimate in the **Summary** pane of the console. For other types of estimates, see [Estimating your costs](/docs/account?topic=account-cost#cost).
 
 Keep in mind that some charges are not reflected in the estimate, such as the costs for your underlying infrastructure.
 
@@ -39,7 +39,7 @@ Keep in mind that some charges are not reflected in the estimate, such as the co
 {: faq}
  
 
-See [View your usage](/docs/billing-usage?topic=billing-usage-viewingusage#viewingusage) and [Set spending notifications](/docs/billing-usage?topic=billing-usage-spending) for general {{site.data.keyword.cloud_notm}} account guidance.
+See [View your usage](/docs/account?topic=account-viewingusage#viewingusage) and [Set spending notifications](/docs/account?topic=account-spending) for general {{site.data.keyword.cloud_notm}} account guidance.
 
 
 ## Creating an assignment in the CLI
@@ -315,7 +315,7 @@ You can use the [`/v2/storage/satellite/updateAssignment`](https://cloud.ibm.com
 {: #assignment-upgrade-api}
 {: api}
 
-You can use the [`/v2/storage/satellite/updateAssignment`](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2/updateassignment-storage){: external} API to update your assignments with new clusters or cluster groups. Set `updateConfigVersion` to `true` to apply the revision update.
+You can use the [`/v2/storage/satellite/updateAssignment`](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2#updateassignment-storage){: external} API to update your assignments with new clusters or cluster groups. Set `updateConfigVersion` to `true` to apply the revision update.
 
 1. Copy the following example request and replace the variables for the cluster groups and assignments that you want to update.
     ```sh
