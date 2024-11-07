@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-11-05"
+lastupdated: "2024-11-07"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -4938,35 +4938,15 @@ subcollection: satellite
 {: #sitemap_troubleshooting}
 
 
-[Monitoring notifications and status](/docs/satellite?topic=satellite-viewing-cloud-status#viewing-cloud-status)
+[Monitoring status best practices](/docs/satellite?topic=satellite-best-practices#best-practices)
 
-* [Viewing status](/docs/satellite?topic=satellite-viewing-cloud-status#view-status-page)
+* [Check for upcoming maintenance windows](/docs/satellite?topic=satellite-best-practices#monbp-checmaintwin)
 
-* [Advanced status search](/docs/satellite?topic=satellite-viewing-cloud-status#adv-search)
+* [Check for current maintenance windows or an incident in progress](/docs/satellite?topic=satellite-best-practices#monbp-checcurmaninprog)
 
-    * [URL query filters:](/docs/satellite?topic=satellite-viewing-cloud-status#url-query)
+* [Take advantage of multiple {{site.data.keyword.Bluemix_notm}} locations](/docs/satellite?topic=satellite-best-practices#monbp-multpreg)
 
-* [Viewing the status of a dedicated multizone region (MZR)](/docs/satellite?topic=satellite-viewing-cloud-status#view-private-mzr)
-
-* [Subscribing to an RSS feed](/docs/satellite?topic=satellite-viewing-cloud-status#subscribing-rss-feed)
-
-* [Checking incident reports](/docs/satellite?topic=satellite-viewing-cloud-status#status-incident-report)
-
-* [Viewing notifications](/docs/satellite?topic=satellite-viewing-cloud-status#viewing-notifications)
-
-    * [Notification types](/docs/satellite?topic=satellite-viewing-cloud-status#notification-types)
-
-* [Subscribing to email notifications](/docs/satellite?topic=satellite-viewing-cloud-status#subscribe-email-notifications)
-
-* [Checking the delivery status of email notifications and viewing email history](/docs/satellite?topic=satellite-viewing-cloud-status#view-email-history)
-
-* [Getting advanced notice for disruptive maintenance](/docs/satellite?topic=satellite-viewing-cloud-status#disruptive-maintenance)
-
-    * [Iaas](/docs/satellite?topic=satellite-viewing-cloud-status#iaas)
-
-    * [PaaS](/docs/satellite?topic=satellite-viewing-cloud-status#paas)
-
-    * [SaaS](/docs/satellite?topic=satellite-viewing-cloud-status#saas)
+* [Subscribing to email notifications](/docs/satellite?topic=satellite-best-practices#monbp-subscribing)
 
 [Location error messages](/docs/satellite?topic=satellite-ts-locations-debug#ts-locations-debug)
 
