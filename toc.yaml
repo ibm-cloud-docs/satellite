@@ -294,6 +294,7 @@ toc:
         - ha.md
         - disconnected-use.md
         - sat-notices.md
+        - data-portability.md
         - topicgroup:
             label: Version history
             topics:
