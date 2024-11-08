@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-11-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -120,7 +120,7 @@ Adding clusters to {{site.data.keyword.satelliteshort}} Configuration does not a
 ### Viewing {{site.data.keyword.satelliteshort}} Config registration status for clusters
 {: #satconfig-registration-status}
 
-You can view the registration status of clusters that are enabled for use with {{site.data.keyword.satelliteshort}} Config. Keep in mind that some of these clusters might be in a public cloud location, not your {{site.data.keyword.satelliteshort}} location.
+You can view the registration status of clusters that are enabled for use with {{site.data.keyword.satelliteshort}} Config. Keep in mind that some clusters might be in a public cloud location, not your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
 1. List clusters that are registered with {{site.data.keyword.satelliteshort}} Config. Note the output in the **Status** and **Location** columns.
@@ -334,4 +334,3 @@ You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or
 {: note}
 
 To set up monitoring for {{site.data.keyword.redhat_openshift_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see  [Deploying a monitoring agent in a {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/monitoring?topic=monitoring-agent_openshift). When you specify address for the `COLLECTOR_ENDPOINT`, you can use the `satellite-sysdig` link endpoint address so that you don't need to open up new firewall rules. 
-

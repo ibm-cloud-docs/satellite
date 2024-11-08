@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-10-15"
+lastupdated: "2024-11-08"
 
 keywords: satellite, endpoints, authentication
 
@@ -38,7 +38,7 @@ Review the following authentication options.
 :   With mutual authentication, the Satellite Link service authenticates itself to the source and the source must authenticate itself to the Satellite Link service. To set up mutual authentication between the source and Satellite Link service, you must configure the Satellite Link service authentication the same way as in the simple source authentication case. However, you also need to configure a CA certificate that the Satellite Link service uses to validate the source's client certificate.
 
 [Mutual authentication between the source and the Satellite Link service as well as Satellite Link and the destination server](#mutual-auth-both-loc)
-:   Requests to both the Satellite Link service and the destination server are authenticated. Two TLS handshakes must be verified before traffic is allowed. For this setup, create an endpoint with a source protocol of TLS or HTTPS and a destination protocol of TLS. Then, provide all of the certificates needed for both the source and destination mutual authentication cases, as described above.
+:   Requests to both the Satellite Link service and the destination server are authenticated. Two TLS handshakes must be verified before traffic is allowed. For this setup, create an endpoint with a source protocol of TLS or HTTPS and a destination protocol of TLS. Then, provide the certificates needed for both the source and destination mutual authentication cases, as described above.
 
 If you choose to provide your own certificates for endpoint authentication, you are responsible for rotating the certificates and managing expiration dates. If your certificate expires, you might experience disrupted traffic.
 {: important}
@@ -316,7 +316,7 @@ ibmcloud sat endpoint authn set --location ID --endpoint myEndpoint
 ```
 {: pre}
 
-If you only want to remove some of the certificates, leaving others unchanged, make sure to pass options with the current values of the other certificates. For example, the following command can be used to remove `source` certificates that are currently set, leaving the `dest` certificates unchanged.
+If you only want to remove some certificates, leaving others unchanged, make sure to pass options with the current values of the other certificates. For example, the following command can be used to remove `source` certificates that are currently set, leaving the `dest` certificates unchanged.
 
 ```sh
 ibmcloud sat endpoint authn set \

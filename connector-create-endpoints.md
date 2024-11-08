@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-10-21"
+lastupdated: "2024-11-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -171,7 +171,7 @@ For container platforms such as Docker or Rancher, this requires you to map the 
 ### Example commands for creating ACLs
 {: #create-connector-acls-comm}
 
-Example command to create an ACL rule allowing subnet 10.123.76.192/26 access to endpoint 'myendpoint'.
+Example command to create an ACL rule allowing subnet 10.123.76.192/26 access to endpoint `myendpoint`.
 
 ```sh
 ibmcloud sat acl create --connector-id A1B0CDefgHilQ11ubmVjdG1yOiJjb11hnTdlWSRE1dnZla1szbDBsZyI --name myrule --subnet 10.123.76.192/26 --endpoint myendpoint

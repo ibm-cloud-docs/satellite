@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-11-08"
 
 keywords: satellite, hybrid, multicloud, location, host, location control plane
 
@@ -25,7 +25,7 @@ Locations can be made of hosts of any size, including as small as a local deskto
 ## {{site.data.keyword.satelliteshort}} location overview
 {: #loc-overview}
 
-To set up a {{site.data.keyword.satelliteshort}} location, you must first create the location, add hosts to it, and then create the location control plane. If you use a quick start template (Schematics template), some of these steps are done for you automatically.  
+To set up a {{site.data.keyword.satelliteshort}} location, you must first create the location, add hosts to it, and then create the location control plane. If you use a quick start template (Schematics template), some steps are done for you automatically.  
 {: shortdesc}
 
 ![High level process overview.](/images/sat_location_overview.svg "High-level overview of a Satellite location"){: caption="High-level overview of a Satellite location" caption-side="bottom"}
