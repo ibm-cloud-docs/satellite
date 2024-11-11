@@ -4002,6 +4002,21 @@ subcollection: satellite
 * [Creative Commons Attribution Share Alike 4.0 Generic](/docs/satellite?topic=satellite-sat-notices#cc-40-generic)
 
 
+## Understanding data portability for Satellite
+{: #sitemap_understanding_data_portability_for_satellite}
+
+
+[Understanding data portability for Satellite](/docs/satellite?topic=satellite-data-portability#data-portability)
+
+* [Responsibilities](/docs/satellite?topic=satellite-data-portability#data-portability-responsibilities)
+
+* [Data export procedures](/docs/satellite?topic=satellite-data-portability#data-portability-procedures)
+
+* [Exported data formats](/docs/satellite?topic=satellite-data-portability#data-portability-data-formats)
+
+* [Data ownership](/docs/satellite?topic=satellite-data-portability#data-ownership)
+
+
 ## Version history
 {: #sitemap_version_history}
 

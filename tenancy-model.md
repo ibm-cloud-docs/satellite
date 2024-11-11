@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-10-21"
+lastupdated: "2024-11-11"
 
 keywords: satellite, hybrid, multicloud, tenancy, resellers, satellite reseller, satellite use case
 
@@ -127,7 +127,7 @@ Getting started options
 :    - **Description** and **Tags**: Descriptions and tags help you organize your {{site.data.keyword.cloud_notm}} resources.
 :    - **Managed from**: The {{site.data.keyword.cloud_notm}} region that you want to use to manage your location. For more information about why you must select an {{site.data.keyword.cloud_notm}} region, see [About {{site.data.keyword.cloud_notm}} regions for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions). Make sure to select the region that is closest to where your host machines physically reside that you plan to attach to your {{site.data.keyword.satelliteshort}} location to ensure low network latency between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}.
 :    - **Zones**: The names of the zones **must match exactly** the names of the corresponding zones in your infrastructure provider where you plan to create hosts, such as a cloud provider zone or on-prem rack. To retrieve the name of the zone for other cloud providers, consult your infrastructure provider.
-         - [Alibaba regions and zones](https://www.alibabacloud.com/help/en/ecs/product-overview/regions-and-zones/){: external}, such as `us-east-1a` and `us-east-1b`.
+         - [Alibaba regions and zones](https://www.alibabacloud.com/help/en/ecs/regions-and-zones){: external}, such as `us-east-1a` and `us-east-1b`.
          - [AWS regions and zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html){: external}, such as `us-east-1a`, `us-east-1b`, and `us-east-1c`.
          - [Azure `topology.kubernetes.io/zone` labels](https://learn.microsoft.com/en-us/azure/aks/availability-zones#verify-node-distribution-across-zones){: external}, such as `eastus-1`, `eastus-2`, and `eastus-3`. **Don't** use only the location name (`eastus`) or the zone number (`1`).
          - [GCP regions and zones](https://cloud.google.com/compute/docs/regions-zones){: external}, such as `us-west1-a`, `us-west1-b`, and `us-west1-c`.
