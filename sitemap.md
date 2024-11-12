@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-11-07"
+lastupdated: "2024-11-12"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3224,37 +3224,37 @@ subcollection: satellite
 
 [{{site.data.keyword.satellitelong_notm}} CLI map](/docs/satellite?topic=satellite-icsat_map#icsat_map)
 
-* [acl commands](/docs/satellite?topic=satellite-icsat_map#icks_map_acl)
+* [`acl` commands](/docs/satellite?topic=satellite-icsat_map#icks_map_acl)
 
-* [agent commands](/docs/satellite?topic=satellite-icsat_map#icks_map_agent)
+* [`agent` commands](/docs/satellite?topic=satellite-icsat_map#icks_map_agent)
 
-* [cluster commands](/docs/satellite?topic=satellite-icsat_map#icks_map_cluster)
+* [`cluster` commands](/docs/satellite?topic=satellite-icsat_map#icks_map_cluster)
 
-* [config commands](/docs/satellite?topic=satellite-icsat_map#icks_map_config)
+* [`config` commands](/docs/satellite?topic=satellite-icsat_map#icks_map_config)
 
-* [connector commands](/docs/satellite?topic=satellite-icsat_map#icks_map_connector)
+* [`connector` commands](/docs/satellite?topic=satellite-icsat_map#icks_map_connector)
 
-* [endpoint commands](/docs/satellite?topic=satellite-icsat_map#icks_map_endpoint)
+* [`endpoint` commands](/docs/satellite?topic=satellite-icsat_map#icks_map_endpoint)
 
-* [experimental commands](/docs/satellite?topic=satellite-icsat_map#icks_map_experimental)
+* [`experimental` commands](/docs/satellite?topic=satellite-icsat_map#icks_map_experimental)
 
-* [group commands](/docs/satellite?topic=satellite-icsat_map#icks_map_group)
+* [`group` commands](/docs/satellite?topic=satellite-icsat_map#icks_map_group)
 
-* [host commands](/docs/satellite?topic=satellite-icsat_map#icks_map_host)
+* [`host` commands](/docs/satellite?topic=satellite-icsat_map#icks_map_host)
 
-* [key commands](/docs/satellite?topic=satellite-icsat_map#icks_map_key)
+* [`key` commands](/docs/satellite?topic=satellite-icsat_map#icks_map_key)
 
-* [location commands](/docs/satellite?topic=satellite-icsat_map#icks_map_location)
+* [`location` commands](/docs/satellite?topic=satellite-icsat_map#icks_map_location)
 
-* [messages commands](/docs/satellite?topic=satellite-icsat_map#icks_map_messages)
+* [`messages` commands](/docs/satellite?topic=satellite-icsat_map#icks_map_messages)
 
-* [resource commands](/docs/satellite?topic=satellite-icsat_map#icks_map_resource)
+* [`resource` commands](/docs/satellite?topic=satellite-icsat_map#icks_map_resource)
 
-* [service commands](/docs/satellite?topic=satellite-icsat_map#icks_map_service)
+* [`service` commands](/docs/satellite?topic=satellite-icsat_map#icks_map_service)
 
-* [storage commands](/docs/satellite?topic=satellite-icsat_map#icks_map_storage)
+* [`storage` commands](/docs/satellite?topic=satellite-icsat_map#icks_map_storage)
 
-* [subscription commands](/docs/satellite?topic=satellite-icsat_map#icks_map_subscription)
+* [`subscription` commands](/docs/satellite?topic=satellite-icsat_map#icks_map_subscription)
 
 [CLI reference for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-satellite-cli-reference#satellite-cli-reference)
 

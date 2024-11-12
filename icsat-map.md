@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-10-11"
+lastupdated: "2024-11-12"
 
 keywords: satellite cli map, satellite commands, satellite cli, satellite reference
 
@@ -21,7 +21,7 @@ This page lists all `ibmcloud sat` commands as they are structured in the CLI. F
 
 
 
-## acl commands
+## `acl` commands
 {: #icks_map_acl}
 
 View and manage Satellite access control lists (ACLs).
@@ -41,7 +41,7 @@ View and manage Satellite access control lists (ACLs).
 * [`ibmcloud sat acl update`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-update-cli)
 
 
-## agent commands
+## `agent` commands
 {: #icks_map_agent}
 
 Attach or view Satellite Connector Agents.
@@ -51,7 +51,7 @@ Attach or view Satellite Connector Agents.
 * [`ibmcloud sat agent ls`](/docs/satellite?topic=satellite-satellite-cli-reference#agent-ls-cli)
 
 
-## cluster commands
+## `cluster` commands
 {: #icks_map_cluster}
 
 Register and manage clusters for use with Satellite configurations.
@@ -63,7 +63,7 @@ Register and manage clusters for use with Satellite configurations.
 * [`ibmcloud sat cluster unregister`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-unregister-cli)
 
 
-## config commands
+## `config` commands
 {: #icks_map_config}
 
 View and manage Satellite Configuration.
@@ -80,7 +80,7 @@ View and manage Satellite Configuration.
     * [`ibmcloud sat config version rm`](/docs/satellite?topic=satellite-satellite-cli-reference#config-version-rm-cli)
 
 
-## connector commands
+## `connector` commands
 {: #icks_map_connector}
 
 Create, view, and modify Satellite connectors.
@@ -92,7 +92,7 @@ Create, view, and modify Satellite connectors.
 * [`ibmcloud sat connector rm`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-rm-cli)
 
 
-## endpoint commands
+## `endpoint` commands
 {: #icks_map_endpoint}
 
 View and manage Satellite endpoints.
@@ -111,7 +111,7 @@ View and manage Satellite endpoints.
 * [`ibmcloud sat endpoint update`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-update-cli)
 
 
-## experimental commands
+## `experimental` commands
 {: #icks_map_experimental}
 
 [Expires on 2024-11-25] Experiment with new commands. IMPORTANT: Commands here will retire after the [date] in their description.
@@ -144,7 +144,7 @@ View and manage Satellite endpoints.
     * [`ibmcloud sat experimental location update`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-location-update-cli)
 
 
-## group commands
+## `group` commands
 {: #icks_map_group}
 
 View and manage Satellite cluster groups. Cluster groups are used to subscribe clusters to Satellite configurations of Kubernetes resources.
@@ -158,7 +158,7 @@ View and manage Satellite cluster groups. Cluster groups are used to subscribe c
 * [`ibmcloud sat group rm`](/docs/satellite?topic=satellite-satellite-cli-reference#group-rm-cli)
 
 
-## host commands
+## `host` commands
 {: #icks_map_host}
 
 View and modify Satellite hosts.
@@ -172,7 +172,7 @@ View and modify Satellite hosts.
 * [`ibmcloud sat host update`](/docs/satellite?topic=satellite-satellite-cli-reference#host-update-cli)
 
 
-## key commands
+## `key` commands
 {: #icks_map_key}
 
 View and manage Satellite Config keys.
@@ -183,7 +183,7 @@ View and manage Satellite Config keys.
 * [`ibmcloud sat key rotate`](/docs/satellite?topic=satellite-satellite-cli-reference#key-rotate-cli)
 
 
-## location commands
+## `location` commands
 {: #icks_map_location}
 
 Create, view, and modify Satellite locations.
@@ -199,7 +199,7 @@ Create, view, and modify Satellite locations.
 * [`ibmcloud sat location rm`](/docs/satellite?topic=satellite-satellite-cli-reference#location-rm-cli)
 
 
-## messages commands
+## `messages` commands
 {: #icks_map_messages}
 
 View the current user messages.
@@ -208,7 +208,7 @@ View the current user messages.
 * [`ibmcloud sat messages`](/docs/satellite?topic=satellite-satellite-cli-reference#messages-cli)
 
 
-## resource commands
+## `resource` commands
 {: #icks_map_resource}
 
 Search and view Kubernetes resources that are managed by a Satellite configuration.
@@ -220,7 +220,7 @@ Search and view Kubernetes resources that are managed by a Satellite configurati
 * [`ibmcloud sat resource ls`](/docs/satellite?topic=satellite-satellite-cli-reference#resource-ls-cli)
 
 
-## service commands
+## `service` commands
 {: #icks_map_service}
 
 View Satellite service clusters.
@@ -229,7 +229,7 @@ View Satellite service clusters.
 * [`ibmcloud sat service ls`](/docs/satellite?topic=satellite-satellite-cli-reference#service-ls-cli)
 
 
-## storage commands
+## `storage` commands
 {: #icks_map_storage}
 
 View and manage Satellite storage resources.
@@ -259,7 +259,7 @@ View and manage Satellite storage resources.
     * [`ibmcloud sat storage template ls`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-template-ls-cli)
 
 
-## subscription commands
+## `subscription` commands
 {: #icks_map_subscription}
 
 View and manage Satellite subscriptions to deploy Kubernetes configuration files to your clusters.
