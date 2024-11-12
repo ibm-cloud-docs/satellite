@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-09-26"
+lastupdated: "2024-11-12"
 
 keywords: satellite, hybrid, multicloud, endpoint, link, endpoint secure
 
@@ -42,7 +42,7 @@ Use one of the following instructions, depending on your environment.
 
     Look for the `Cloud Service Endpoint source IP addresses` section in the output. For example:
 
-    ```
+    ```txt
     Cloud Service Endpoint source IP addresses:    Zone         Address
                                                    us-south-1   10.22.13.83
                                                    us-south-2   10.12.158.57
@@ -66,7 +66,7 @@ Use one of the following instructions, depending on your environment.
 
     Example output:
 
-    ```
+    ```txt
     id          hostname      domain                          cpu   memory   public_ip        private_ip       datacenter   action
     146349551   myhost        mydomain.ibmcloud.private       1     2048     169.48.27.170    10.166.165.5     tor01
     ```
