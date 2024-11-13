@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-11-12"
+lastupdated: "2024-11-13"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -197,6 +197,12 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
+
+* [November 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov24)
+
+    * [12 November 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov1224)
+
+        * Connector agent for Windows version `1.1.7`.
 
 * [October 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct24)
 
@@ -4048,6 +4054,8 @@ subcollection: satellite
 [Connector Windows agent change log](/docs/satellite?topic=satellite-cl-connector-windows-agent#cl-connector-windows-agent)
 
 * [Version 1.1](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.1-change-log)
+
+    * [Version 1.1.7, released 12 Nov 2024](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.1.7-change-log)
 
     * [Version 1.1.6, released 8 Oct 2024](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.1.6-change-log)
 
