@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-10-11"
+lastupdated: "2024-11-19"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1547,7 +1547,7 @@ ibmcloud sat experimental agent ls --connector-id ID [--output OUTPUT] [-q]
 ## `ibmcloud sat experimental connector create`
 {: #experimental-connector-create-cli}
 
-[Expires on 2024-11-18. Use `ibmcloud sat connector create` instead] Create a Satellite connector.
+[Deactivated on 2024-11-18! Use `ibmcloud sat connector create` instead] Create a Satellite connector.
 
 ```txt
 ibmcloud sat experimental connector create --name NAME --region REGION [-q]
@@ -1572,7 +1572,7 @@ ibmcloud sat experimental connector create --name NAME --region REGION [-q]
 ## `ibmcloud sat experimental connector get`
 {: #experimental-connector-get-cli}
 
-[Expires on 2024-11-18. Use `ibmcloud sat connector get` instead] View the details of a Satellite Connector.
+[Deactivated on 2024-11-18! Use `ibmcloud sat connector get` instead] View the details of a Satellite Connector.
 
 ```txt
 ibmcloud sat experimental connector get --connector-id ID [--output OUTPUT] [-q]
@@ -1597,7 +1597,7 @@ ibmcloud sat experimental connector get --connector-id ID [--output OUTPUT] [-q]
 ## `ibmcloud sat experimental connector ls`
 {: #experimental-connector-ls-cli}
 
-[Expires on 2024-11-18. Use `ibmcloud sat connector ls` instead] View the Satellite Connectors in your IBM Cloud account.
+[Deactivated on 2024-11-18! Use `ibmcloud sat connector ls` instead] View the Satellite Connectors in your IBM Cloud account.
 
 ```txt
 ibmcloud sat experimental connector ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q]
@@ -1625,7 +1625,7 @@ ibmcloud sat experimental connector ls [--after AFTER] [--first FIRST] [--output
 ## `ibmcloud sat experimental connector rm`
 {: #experimental-connector-rm-cli}
 
-[Expires on 2024-11-18. Use `ibmcloud sat connector rm` instead] Delete a Satellite connector.
+[Deactivated on 2024-11-18! Use `ibmcloud sat connector rm` instead] Delete a Satellite connector.
 
 ```txt
 ibmcloud sat experimental connector rm --connector-id ID [-f] [-q]
@@ -1779,7 +1779,7 @@ ibmcloud sat experimental endpoint authn set --endpoint ENDPOINT [--dest-ca-cert
 ## `ibmcloud sat experimental location update`
 {: #experimental-location-update-cli}
 
-[Expires on 2024-11-25] Update the name or description of a Satellite location.
+[Expires on 2024-11-25. Use `ibmcloud sat location update` instead] Update the name or description of a Satellite location.
 
 ```txt
 ibmcloud sat experimental location update --location-id ID [--description DESCRIPTION] [--name NAME] [-q]
@@ -2421,6 +2421,34 @@ ibmcloud sat location rm --location LOCATION [-f] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #location-rm-options-dl}
+
+
+## `ibmcloud sat location update`
+{: #location-update-cli}
+
+Update the name or description of a Satellite location.
+
+```txt
+ibmcloud sat location update --location-id ID [--description DESCRIPTION] [--name NAME] [-q]
+```
+{: pre}
+{: #location-update-usage}
+
+### Command options
+{: #location-update-options}
+
+`--description DESCRIPTION`
+:    Enter a new description for the Satellite location. The length of the description is limited to 400 bytes.
+
+`--location-id ID`
+:    The ID of the Satellite location. To find the location ID, run `ibmcloud sat location ls`.
+
+`--name NAME`
+:    Specify a new name for the Satellite location. Location names must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be fewer than 36 characters. Do not reuse names, including names of deleted locations.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #location-update-options-dl}
 
 
 ## `ibmcloud sat messages`
