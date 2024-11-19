@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-11-12"
+lastupdated: "2024-11-19"
 
 keywords: satellite cli map, satellite commands, satellite cli, satellite reference
 
@@ -131,7 +131,7 @@ View and manage Satellite endpoints.
 * **`experimental agent`**: [Deactivated on 2024-09-01! Use `ibmcloud sat agent` instead] Attach or view Satellite Connector Agents.
     * [`ibmcloud sat experimental agent attach`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-agent-attach-cli)
     * [`ibmcloud sat experimental agent ls`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-agent-ls-cli)
-* **`experimental connector`**: [Expires on 2024-11-18. Use `ibmcloud sat connector` instead] Create, view, and modify Satellite connectors.
+* **`experimental connector`**: [Deactivated on 2024-11-18! Use `ibmcloud sat connector` instead] Create, view, and modify Satellite connectors.
     * [`ibmcloud sat experimental connector create`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-create-cli)
     * [`ibmcloud sat experimental connector get`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-get-cli)
     * [`ibmcloud sat experimental connector ls`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-ls-cli)
@@ -140,7 +140,7 @@ View and manage Satellite endpoints.
     * [`ibmcloud sat experimental endpoint authn get`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-get-cli)
     * [`ibmcloud sat experimental endpoint authn rotate`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-rotate-cli)
     * [`ibmcloud sat experimental endpoint authn set`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-set-cli)
-* **`experimental location`**: [Expires on 2024-11-25] Create, view, and modify Satellite locations.
+* **`experimental location`**: [Expires on 2024-11-25. Use `ibmcloud sat location` instead] Create, view, and modify Satellite locations.
     * [`ibmcloud sat experimental location update`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-location-update-cli)
 
 
@@ -197,6 +197,7 @@ Create, view, and modify Satellite locations.
 * [`ibmcloud sat location get`](/docs/satellite?topic=satellite-satellite-cli-reference#location-get-cli)
 * [`ibmcloud sat location ls`](/docs/satellite?topic=satellite-satellite-cli-reference#location-ls-cli)
 * [`ibmcloud sat location rm`](/docs/satellite?topic=satellite-satellite-cli-reference#location-rm-cli)
+* [`ibmcloud sat location update`](/docs/satellite?topic=satellite-satellite-cli-reference#location-update-cli)
 
 
 ## `messages` commands

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-11-13"
+lastupdated: "2024-11-19"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -25,12 +25,22 @@ Review the latest changes to the {{site.data.keyword.satellitelong}} documentati
 ## November 2024
 {: #satellite-nov24}
 
+
+### 19 November 2024
+{: #satellite-nov1924}
+{: release-note}
+
+
+CLI version `1.0.674` is available.
+:   For more information, see [Updating the CLI](/docs/satellite?topic=satellite-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
 ### 12 November 2024
 {: #satellite-nov1224}
 {: release-note}
 
 Connector agent for Windows version `1.1.7`.
 :   For more information, see the [change log](/docs/satellite?topic=satellite-cl-connector-windows-agent) and [Updating the agent on Windows](/docs/satellite?topic=satellite-run-agent-locally#update-agent-windows).
+
 
 ## October 2024
 {: #satellite-oct24}

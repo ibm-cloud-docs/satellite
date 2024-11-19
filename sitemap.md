@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-11-13"
+lastupdated: "2024-11-19"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -199,6 +199,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [November 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov24)
+
+    * [19 November 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov1924)
+
+        * CLI version `1.0.674` is available.
 
     * [12 November 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov1224)
 
@@ -3586,6 +3590,10 @@ subcollection: satellite
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#location-rm-options)
 
+* [`ibmcloud sat location update`](/docs/satellite?topic=satellite-satellite-cli-reference#location-update-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#location-update-options)
+
 * [`ibmcloud sat messages`](/docs/satellite?topic=satellite-satellite-cli-reference#messages-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#messages-options)
@@ -3709,6 +3717,8 @@ subcollection: satellite
 [CLI change log](/docs/satellite?topic=satellite-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/satellite?topic=satellite-cs_cli_changelog#10)
+
+* [Version v1.0.673](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010673)
 
 * [Version v1.0.665](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010665)
 
