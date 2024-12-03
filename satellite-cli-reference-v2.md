@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-11-19"
+lastupdated: "2024-12-03"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1779,7 +1779,7 @@ ibmcloud sat experimental endpoint authn set --endpoint ENDPOINT [--dest-ca-cert
 ## `ibmcloud sat experimental location update`
 {: #experimental-location-update-cli}
 
-[Expires on 2024-11-25. Use `ibmcloud sat location update` instead] Update the name or description of a Satellite location.
+[Deactivated on 2024-11-25! Use `ibmcloud sat location update` instead] Update the name or description of a Satellite location.
 
 ```txt
 ibmcloud sat experimental location update --location-id ID [--description DESCRIPTION] [--name NAME] [-q]
