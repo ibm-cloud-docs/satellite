@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-11-19"
+lastupdated: "2024-12-03"
 
 keywords: satellite cli map, satellite commands, satellite cli, satellite reference
 
@@ -140,7 +140,7 @@ View and manage Satellite endpoints.
     * [`ibmcloud sat experimental endpoint authn get`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-get-cli)
     * [`ibmcloud sat experimental endpoint authn rotate`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-rotate-cli)
     * [`ibmcloud sat experimental endpoint authn set`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-set-cli)
-* **`experimental location`**: [Expires on 2024-11-25. Use `ibmcloud sat location` instead] Create, view, and modify Satellite locations.
+* **`experimental location`**: [Deactivated on 2024-11-25! Use `ibmcloud sat location` instead] Create, view, and modify Satellite locations.
     * [`ibmcloud sat experimental location update`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-location-update-cli)
 
 
