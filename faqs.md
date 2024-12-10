@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-12-10"
 
 keywords: satellite, hybrid, multicloud, faq, service, host, location
 
@@ -104,7 +104,7 @@ See the [{{site.data.keyword.cloud_notm}} terms of service](/docs/overview?topic
 
 {{site.data.keyword.cloud_notm}} is built by following many data, finance, health, insurance, privacy, security, technology, and other international compliance standards. For more information, see [{{site.data.keyword.cloud_notm}} compliance](/docs/overview?topic=overview-compliance).
 
-To view detailed system requirements, you can run a [software product compatibility report for {{site.data.keyword.satellitelong_notm}}](https://www.ibm.com/software/reports/compatibility/clarity/softwareReqsForProduct.html){: external}.
+To view detailed system requirements, you can run a [software product compatibility report for {{site.data.keyword.satellitelong_notm}}](https://www.ibm.com/software/reports/compatibility/clarity/index.html){: external}.
 
 Note that compliance also might depend on the setup of the underlying infrastructure provider that you use for the {{site.data.keyword.satelliteshort}} location control plane and other resources.
 {: important}
@@ -134,9 +134,3 @@ See the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift
 {: #faq-fusion-hci}
 
 Yes, [IBM Storage Fusion HCI](/docs/satellite?topic=satellite-host-storage-fusion) is a purpose-built, hyper-converged architecture that supports managed service deployments with {{site.data.keyword.satellitelong_notm}}. It's designed to deploy bare metal {{site.data.keyword.redhat_openshift_notm}} container management and deployment software alongside IBM Storage Fusion software.
-
-
-
-
-
-
