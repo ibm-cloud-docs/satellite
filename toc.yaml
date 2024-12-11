@@ -295,7 +295,6 @@ toc:
         - disconnected-use.md
         - sat-notices.md
         - data-portability.md
-        - service-dependency.md
         - topicgroup:
             label: Version history
             topics:

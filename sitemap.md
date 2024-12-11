@@ -4035,13 +4035,6 @@ subcollection: satellite
 * [Data ownership](/docs/satellite?topic=satellite-data-portability#data-ownership)
 
 
-## Service dependency map for IBM Cloud Satellite
-{: #sitemap_service_dependency_map_for_ibm_cloud_satellite}
-
-
-[Service dependency map for IBM Cloud Satellite](/docs/satellite?topic=satellite-service-dependencies#service-dependencies)
-
-
 ## Version history
 {: #sitemap_version_history}
 
