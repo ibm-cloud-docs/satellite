@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-12-03"
+lastupdated: "2024-12-11"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -4033,6 +4033,13 @@ subcollection: satellite
 * [Exported data formats](/docs/satellite?topic=satellite-data-portability#data-portability-data-formats)
 
 * [Data ownership](/docs/satellite?topic=satellite-data-portability#data-ownership)
+
+
+## Service dependency map for IBM Cloud Satellite
+{: #sitemap_service_dependency_map_for_ibm_cloud_satellite}
+
+
+[Service dependency map for IBM Cloud Satellite](/docs/satellite?topic=satellite-service-dependencies#service-dependencies)
 
 
 ## Version history
