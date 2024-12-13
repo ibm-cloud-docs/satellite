@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-09-24"
+lastupdated: "2024-12-13"
 
 
 keywords: change log, version history, netapp-trident
@@ -24,6 +24,11 @@ Review the version history for `netapp-trident`.
 ## Version 24.02
 {: #cl-storage-templates-netapp-trident-24.02}
 
+
+### Revision 2, released 13 December 2024
+{: #cl-storage-templates-netapp-trident-24.02-2}
+
+- Fix issue with NetApp Trident operator cleanup 
 
 ### Revision 1, released 29 April 2024
 {: #cl-storage-templates-netapp-trident-24.02-1}

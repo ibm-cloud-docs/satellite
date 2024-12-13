@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-12-11"
+lastupdated: "2024-12-13"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -197,6 +197,12 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
+
+* [December 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-december24)
+
+    * [13 December 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-13december24)
+
+        * {{site.data.keyword.satelliteshort}} storage template patch updates are available.
 
 * [November 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov24)
 
@@ -4236,6 +4242,8 @@ subcollection: satellite
 
 * [Version 5.1](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.1)
 
+    * [Revision 9, released 13 December 2024](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.1-9)
+
     * [Revision 7, released 12 July 2024](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.1-7)
 
     * [Revision 6, released 20 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.1-6)
@@ -4521,6 +4529,8 @@ subcollection: satellite
 [`netapp-trident` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident)
 
 * [Version 24.02](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-24.02)
+
+    * [Revision 2, released 13 December 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-24.02-2)
 
     * [Revision 1, released 29 April 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-24.02-1)
 

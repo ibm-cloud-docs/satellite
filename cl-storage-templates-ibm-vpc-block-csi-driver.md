@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-09-24"
+lastupdated: "2024-12-13"
 
 
 keywords: change log, version history, ibm-vpc-block-csi-driver
@@ -24,6 +24,12 @@ Review the version history for `ibm-vpc-block-csi-driver`.
 ## Version 5.1
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1}
 
+
+### Revision 9, released 13 December 2024
+{: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-9}
+
+- Resolves the following CVEs: [CVE-2024-51744](https://nvd.nist.gov/vuln/detail/CVE-2024-51744){: external}.
+- Updates Go to version `1.22.9`.
 
 ### Revision 7, released 12 July 2024
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-7}
