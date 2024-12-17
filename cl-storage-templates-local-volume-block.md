@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-09-24"
+lastupdated: "2024-12-17"
 
 
 keywords: change log, version history, local-volume-block
@@ -14,11 +14,14 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
+<!-- The content in this topic is auto-generated except for reuse-snippets indicated with {[ ]}. -->
+
 # `local-volume-block` storage template version change log
 {: #cl-storage-templates-local-volume-block}
 
 Review the version history for `local-volume-block`.
 {: shortdesc}
+
 
 
 ## Version 4.13

@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-10-02"
+lastupdated: "2024-12-17"
 
 
 keywords: change log, version history, netapp-ontap-nas
@@ -14,11 +14,14 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
+<!-- The content in this topic is auto-generated except for reuse-snippets indicated with {[ ]}. -->
+
 # `netapp-ontap-nas` storage template version change log
 {: #cl-storage-templates-netapp-ontap-nas}
 
 Review the version history for `netapp-ontap-nas`.
 {: shortdesc}
+
 
 
 ## Version 24.02

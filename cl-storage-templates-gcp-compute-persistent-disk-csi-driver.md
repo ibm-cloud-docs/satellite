@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-09-24"
+lastupdated: "2024-12-17"
 
 
 keywords: change log, version history, gcp-compute-persistent-disk-csi-driver
@@ -14,11 +14,14 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
+<!-- The content in this topic is auto-generated except for reuse-snippets indicated with {[ ]}. -->
+
 # `gcp-compute-persistent-disk-csi-driver` storage template version change log
 {: #cl-storage-templates-gcp-compute-persistent-disk-csi-driver}
 
 Review the version history for `gcp-compute-persistent-disk-csi-driver`.
 {: shortdesc}
+
 
 
 ## Version 1.8.0

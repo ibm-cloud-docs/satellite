@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-11-04"
+lastupdated: "2024-12-17"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -87,7 +87,7 @@ This prevents customer’s sensitive data going over the public internet such as
 
 By default, two {{site.data.keyword.satelliteshort}} Link components, the tunnel server and the connector, proxy network traffic between {{site.data.keyword.cloud_notm}} and resources in your {{site.data.keyword.satelliteshort}} location over a secure TLS connection. This document covers the use case of using a TLS connection over Direct Link.
 
-This setup uses the tunnel server's private cloud service endpoint to route traffic over the {{site.data.keyword.cloud_notm}} private network(`166.9.0.0/8`, see [Service network](/docs/cloud-infrastructure?topic=cloud-infrastructure-ibm-cloud-ip-ranges#service-network). However, communication to the tunnel server's private cloud service endpoint must go through the 166.9.X.X/16 IP address range on the {{site.data.keyword.cloud_notm}} private network, which is not routable from {{site.data.keyword.dl_full_notm}}.
+This setup uses the tunnel server's private cloud service endpoint to route traffic over the {{site.data.keyword.cloud_notm}} private network(`166.9.0.0/8`, see [Service network](/docs/infrastructure-hub?topic=infrastructure-hub-ibm-cloud-ip-ranges#service-network). However, communication to the tunnel server's private cloud service endpoint must go through the 166.9.X.X/16 IP address range on the {{site.data.keyword.cloud_notm}} private network, which is not routable from {{site.data.keyword.dl_full_notm}}.
 
 To enable access to the `166.9.X.X/16` range, create a Relay in your {{site.data.keyword.cloud_notm}} account, which will reverse proxy incoming traffic to the tunnel server's private cloud service endpoint. By default, the Relay Ingress has an IP address in the internal `10.X.X.X/8` IP address range, which is accessible via a {{site.data.keyword.dl_short}} connection.
 
