@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-12-13"
+  years: 2020, 2025
+lastupdated: "2025-01-10"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -34,7 +34,6 @@ Review the latest changes to the {{site.data.keyword.satellitelong}} documentati
 
 ## November 2024
 {: #satellite-nov24}
-
 
 ### 19 November 2024
 {: #satellite-nov1924}
