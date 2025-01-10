@@ -206,8 +206,6 @@ subcollection: satellite
 
 * [November 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov24)
 
-    * {{site.data.keyword.satelliteshort}} storage template patch updates are available.
-
     * [19 November 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov1924)
 
         * CLI version `1.0.674` is available.
