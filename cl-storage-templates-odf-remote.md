@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2024, 2024
+  years: 2024, 2025
 
-lastupdated: "2024-12-17"
+lastupdated: "2025-01-10"
 
 
 keywords: change log, version history, odf-remote
