@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-10-29"
+  years: 2023, 2025
+lastupdated: "2025-01-13"
 
 keywords: satellite, hybrid, multicloud, connector, private tunnel
 
@@ -30,8 +30,8 @@ There are various ways to set up a proxy. These instructions assume that you hav
 The `HTTP_PROXY` and `HTTPS_PROXY` environment variables are used to redirect traffic to your proxy. For example:
 
 ```txt
-HTTP_PROXY=http://my.proxy.example.com:3128
-HTTPS_PROXY=https://my.proxy.example.com:3129
+HTTP_PROXY=http://myUserName:myPassword@my.proxy.example.com:3128
+HTTPS_PROXY=https://myUserName:myPassword@my.proxy.example.com:3129
 ```
 {: codeblock}
 
@@ -43,8 +43,8 @@ On a container platform, add them to your `env.txt` file.
 SATELLITE_CONNECTOR_ID=U2.....wZyI
 SATELLITE_CONNECTOR_IAM_APIKEY=/agent-env-files/apikey
 SATELLITE_CONNECTOR_TAGS=test
-HTTP_PROXY=http://192.168.3.87:3128
-HTTPS_PROXY=https://192.168.3.87:3129
+HTTP_PROXY=http://myUserName:myPassword@192.168.3.87:3128
+HTTPS_PROXY=https://myUserName:myPassword@192.168.3.87:3129
 ```
 {: codeblock}
 
@@ -56,8 +56,8 @@ On Windows, add them to your `config.json` file.
   "SATELLITE_CONNECTOR_IAM_APIKEY": "C:\\path\\to\\apikey",
   "SATELLITE_CONNECTOR_TAGS": "test",
   "PRETTY_LOG": true,
-  "HTTP_PROXY": "http://192.168.3.87:3128",
-  "HTTPS_PROXY": "https://192.168.3.87:3129"
+  "HTTP_PROXY": "http://myUserName:myPassword@192.168.3.87:3128",
+  "HTTPS_PROXY": "https://myUserName:myPassword@192.168.3.87:3129"
 }
 ```
 {: codeblock}
