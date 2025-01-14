@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-01-13"
+lastupdated: "2025-01-14"
 
 
 keywords: change log, version history, ibm-system-storage-block-csi-driver
@@ -15,6 +15,7 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 <!-- The content in this topic is auto-generated except for reuse-snippets indicated with {[ ]}. -->
+
 
 # `ibm-system-storage-block-csi-driver` storage template version change log
 {: #cl-storage-templates-ibm-system-storage-block-csi-driver}
