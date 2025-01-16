@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2023, 2024
+  years: 2023, 2025
 
-lastupdated: "2024-10-15"
+lastupdated: "2025-01-16"
 
 
 keywords: satellite, connector, agent, image, change log, version history
@@ -23,9 +23,20 @@ Review the version history for the {{site.data.keyword.satelliteshort}} Connecto
 Only the most recent version of the Connector agent image (identified by the version as well as the latest tags) is supported and has the latest security fixes. It is your responsibility to make sure to keep your agent image updated to the most recent version available. 
 {: important}
 
+## Version 1.2
+{: #connector-agent-1.2-change-log}
+
+### Version 1.2.0, released 14 Jan 2025
+{: #connector-agent-1.2.0-change-log}
+
+- Supports multi-architecture.
+- Improves resource usage monitoring.
+- Fixes security vulnerabilities.
+
 
 ## Version 1.1
 {: #connector-agent-1.1-change-log}
+
 
 ### Version 1.1.9, released 14 Oct 2024
 {: #connector-agent-1.1.9-change-log}
