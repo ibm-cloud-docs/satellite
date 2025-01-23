@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-10-21"
+  years: 2023, 2025
+lastupdated: "2025-01-23"
 
 keywords: satellite, connector, agent, windows
 
@@ -100,7 +100,7 @@ The file names shown in the following steps are examples and can be tailored for
     ```
     {: pre}
 
-1. Pull the latest version of the published image. You can find the list of published versions from [IBM Satellite Connector Agent Release History](/docs/satellite?topic=satellite-cl-connector-agent-image).
+1. Pull the latest version of the published image that suits your architecture. Accepted tag values are `latest`, `latest-amd64`, `latest-arm64`, `latest-ppc64le`, and `latest-s390x`. You can find the list of published versions from [IBM Satellite Connector Agent Release History](/docs/satellite?topic=satellite-cl-connector-agent-image).
     ```sh
     docker pull icr.io/ibm/satellite-connector/satellite-connector-agent:latest
     ```
@@ -115,15 +115,25 @@ The file names shown in the following steps are examples and can be tailored for
 1. To view available versions of agent image, run the following command.
 
     ```sh
-    ibmcloud cr images --include-ibm|grep connector
+    ibmcloud cr images --include-ibm |egrep -i "tag|satellite"
     ```
     {: pre}
   
     Example output:
     ```sh
-    icr.io/ibm/satellite-connector/satellite-connector-agent    latest    5f4e42c8d53e   ibm         1 day ago       124 MB   -
-    icr.io/ibm/satellite-connector/satellite-connector-agent    v1.0.5    6eadd91be5c0   ibm         1 week ago      124 MB   -
-    icr.io/ibm/satellite-connector/satellite-connector-agent    v1.1.0    5f4e42c8d53e   ibm         1 day ago       124 MB   -
+    Repository                                                  Tag             Digest         Namesp  Created         Size     Security status
+    icr.io/ibm/satellite-connector/satellite-connector-agent    latest          63a97392e510   ibm     -               937 B    -
+    icr.io/ibm/satellite-connector/satellite-connector-agent    latest-amd64    0d2b1a5773e5   ibm     1 week ago      50 MB    -
+    icr.io/ibm/satellite-connector/satellite-connector-agent    latest-arm64    cb60b8d7040f   ibm     1 week ago      94 MB    -
+    icr.io/ibm/satellite-connector/satellite-connector-agent    latest-ppc64le  4bcf8b1f6ea7   ibm     1 week ago      107 MB   -
+    icr.io/ibm/satellite-connector/satellite-connector-agent    latest-s390x    27588d9d6143   ibm     1 week ago      94 MB    -
+    icr.io/ibm/satellite-connector/satellite-connector-agent    v1.1.0          5f4e42c8d53e   ibm     2 years ago     124 MB   -
+    icr.io/ibm/satellite-connector/satellite-connector-agent    v1.1.1          0caddb11b1c1   ibm     1 year ago      125 MB   -
+    icr.io/ibm/satellite-connector/satellite-connector-agent    v1.1.10         52db33f1ec43   ibm     -               937 B    -
+    icr.io/ibm/satellite-connector/satellite-connector-agent    v1.1.10-amd64   90c920b580fe   ibm     2 months ago    50 MB    -
+    icr.io/ibm/satellite-connector/satellite-connector-agent    v1.1.10-arm64   322f92d8c373   ibm     2 months ago    94 MB    -
+    icr.io/ibm/satellite-connector/satellite-connector-agent    v1.1.10-ppc64le 603b3507f20c   ibm     2 months ago    107 MB   -
+    icr.io/ibm/satellite-connector/satellite-connector-agent    v1.1.10-s390x   afe670f04ea2   ibm     2 months ago    95 MB    -
     ```
     {: screen}
 
