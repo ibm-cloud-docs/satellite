@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-01-16"
+lastupdated: "2025-01-23"
 
 
 keywords: change log, version history, ibm-object-storage-plugin
@@ -32,7 +32,7 @@ Review the version history for `ibm-object-storage-plugin`.
 ### Revision 25, released 13 December 2024
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-25}
 
-- Resolves the following CVEs: [C](https://nvd.nist.gov/vuln/detail/C){: external}, [V](https://nvd.nist.gov/vuln/detail/V){: external}, [E](https://nvd.nist.gov/vuln/detail/E){: external}, [-](https://nvd.nist.gov/vuln/detail/-){: external}, [2](https://nvd.nist.gov/vuln/detail/2){: external}, [0](https://nvd.nist.gov/vuln/detail/0){: external}, [2](https://nvd.nist.gov/vuln/detail/2){: external}, [4](https://nvd.nist.gov/vuln/detail/4){: external}, [-](https://nvd.nist.gov/vuln/detail/-){: external}, [3](https://nvd.nist.gov/vuln/detail/3){: external}, [5](https://nvd.nist.gov/vuln/detail/5){: external}, [9](https://nvd.nist.gov/vuln/detail/9){: external}, and [6](https://nvd.nist.gov/vuln/detail/6){: external}.
+- Resolves the following CVEs: [CVE-2024-3596](https://nvd.nist.gov/vuln/detail/CVE-2024-3596){: external}.
 - Updates Go to version `1.22.9`.
 - ROKS v4.17 cluster support
 
