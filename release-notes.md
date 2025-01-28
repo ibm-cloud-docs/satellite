@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-01-28"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -24,6 +24,13 @@ Review the latest changes to the {{site.data.keyword.satellitelong}} documentati
 
 ## January 2025
 {: #satellite-jan25}
+
+### 28 January 2025
+{: #satellite-jan2825}
+{: release-note}
+
+Connector agent for Windows version `1.1.8`.
+:   For more information, see the [change log](/docs/satellite?topic=satellite-cl-connector-windows-agent) and [Updating the agent on Windows](/docs/satellite?topic=satellite-run-agent-locally#update-agent-windows).
 
 ### 16 January 2025
 {: #satellite-jan1625}
