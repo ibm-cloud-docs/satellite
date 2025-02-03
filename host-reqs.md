@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-30"
+  years: 2020, 2025
+lastupdated: "2025-02-03"
 
 keywords: satellite, hybrid, multicloud, endpoint capacity, endpoint limits, location endpoint limits, location endpoints, cloud endpoints
 
@@ -44,7 +44,7 @@ You can verify your host setup with the `satellite-host-check` script. For more 
 - RHEL hosts must have the `SELINUX=enforcing` policy set. You can verify that this policy is set by running the `sestatus` command and looking for `SELinux status: enabled` in the output.
 - If your host includes GPU compute, make sure that you install the Node Feature Discovery and NVIDIA GPU operators. For more information, see the prerequisite steps in [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app).
 - Hostnames can contain only lowercase alphanumeric characters, `-`, or `.`.
-- Hosts must have an ext4 filesystem for the boot disk.
+- Hosts must have an ext4 file system for the boot disk.
 
 
 

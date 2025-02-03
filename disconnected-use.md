@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-02-07"
+  years: 2022, 2025
+lastupdated: "2025-02-03"
 
 keywords: satellite, hybrid, multicloud, disconnected use, disconnected usage, disconnect
 
@@ -32,13 +32,13 @@ What happens when my token expires?
 :   After your token expires, you lose the ability to work with the Location. When you run a command, you get error messages such as `error: You must be logged in to the server (Unauthorized)`. To recover, you must reconnect to the Location and log in again to retrieve a new token. Do not reload nodes before the Location is reconnected. If you reload nodes while the Location is disconnected, the location won't recover. 
 
 Do I need to re-create the Location?
-:   No, you don't need to re-create the Location. You can reconnect the existing Location and reauthenticate to continue working with your Location.
+:   No, you don't need to re-create the Location. You can reconnect the existing Location and re-authenticate to continue working with your Location.
 
-How do I reauthenticate? 
+How do I re-authenticate? 
 :   Reconnect your Location first and then log in again with your credentials. 
 
 Do I have to recover etcd backup?
-:   If you are using RHCOS hosts, you don't need to recover etcd backup. The Location recovers automatically after you reconnect it and reauthenticate. However, locations that use RHEL might need to recover etcd.
+:   If you are using RHCOS hosts, you don't need to recover etcd backup. The Location recovers automatically after you reconnect it and re-authenticate. However, locations that use RHEL might need to recover etcd.
 
 What happens if a location stays disconnected for more than 7 days?
 :   After you restore your connection, you might need to replace all hosts across the location with new infrastructure.
@@ -124,7 +124,7 @@ The following tables explain the behavior and limitations of different component
 | Feature | Connected behavior | Disconnected behavior | Maximum disconnection tolerance |
 | -- | -- | -- | -- |
 | Authorization | Define user access roles by using IAM | You can't manage user access | N/A |
-| Authentication | Authenticate to IBM Cloud by using IAM | You can't reauthenticate | N/A |
+| Authentication | Authenticate to IBM Cloud by using IAM | You can't re-authenticate | N/A |
 {: caption="Disconnected identity and access management" caption-side="bottom"}
 
 ### Secret management
@@ -163,4 +163,3 @@ The following tables explain the behavior and limitations of different component
 | -- | -- | -- | -- |
 | Deploying or updating policies {{site.data.keyword.satelliteshort}} Service Mesh | You can deploy or update policies by using the CLI and console. | You can use the `kubectl` command to deploy and update policies. | Equal to the `accessTokenMaxAgeSeconds` value from last authentication |
 {: caption="Disconnected network and service mesh management" caption-side="bottom"}
-
