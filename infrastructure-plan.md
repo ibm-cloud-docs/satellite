@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-10-10"
+  years: 2022, 2025
+lastupdated: "2025-02-04"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 
@@ -225,6 +225,6 @@ Retrieve the VMWare credentials that {{site.data.keyword.satelliteshort}} can us
 {: shortdesc}
 
 1. Verify that you have the required [permissions in your VMWare account](/docs/satellite?topic=satellite-iam-common#permissions-vmware) to create a {{site.data.keyword.satelliteshort}} location from a template.
-2. Identify or [create a user](https://docs.vmware.com/en/VMware-Cloud-Director/10.4/VMware-Cloud-Director-Tenant-Portal-Guide/GUID-1CACBB2E-FE35-4662-A08D-D2BCB174A43C.html){: external} with **Administrator** role.
+2. Identify or [create a user](https://techdocs.broadcom.com/us/en/vmware-cis/cloud-director/vmware-cloud-director/10-6/map-for-vmware-cloud-director-tenant-portal-guide-10-6/managing-users-groups-and-roles-in-vcd-tenant/managing-users-in-your-vcd-tenant-portal-tenant/managing-users-in-your-vcd-tenant-portal-tenant.html){: external} with **Administrator** role.
 3. Find your [network information](/docs/satellite?topic=satellite-loc-vmware-create-auto#vmware-network).
 4. Provide this information on the [VMware Cloud Director template](/docs/satellite?topic=satellite-loc-vmware-create-auto#create-auto-vmware).

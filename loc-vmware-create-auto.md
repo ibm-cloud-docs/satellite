@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-04-17"
+  years: 2023, 2025
+lastupdated: "2025-02-04"
 
 keywords: satellite, hybrid, multicloud, vmware, vmware host, satellite location
 
@@ -47,7 +47,7 @@ To connect {{site.data.keyword.satelliteshort}} to your VMware Virtual Data Cent
 ### Networking information
 {: #vmware-network}
 
-Your VMware data center must include a [routed network](https://docs.vmware.com/en/VMware-Cloud-Director/10.4/VMware-Cloud-Director-Tenant-Portal-Guide/GUID-74C4D27F-9E2A-4EB2-BBE1-CDD45C80E270.html){: external}. You can also include an edge gateway that is configured and enabled with [distributed routing](https://docs.vmware.com/en/VMware-Cloud-Director/10.4/VMware-Cloud-Director-Service-Provider-Admin-Portal-Guide/GUID-19F4DF76-209C-4CFA-8EE7-E5264E170B5D.html){: external} and [DHCP](https://docs.vmware.com/en/VMware-Cloud-Director/10.5/VMware-Cloud-Director-Tenant-Guide/GUID-24AB3A28-F4F9-465A-8439-B2BDA1B23A1E.html){: external}. If you include the edge gateway name, then firewall rules are created for full outbound connectivity and a SNAT rule is created for mapping to an external IP address.
+Your VMware data center must include a [routed network](https://techdocs.broadcom.com/us/en/vmware-cis/cloud-director/vmware-cloud-director/10-6/-vcloud-api-programming-guide-for-service-providers-10-6/using-extensions-for-cloud-administration-api/creating-and-managing-vdc-templates-api/create-a-vdc-template-with-networking-api.html){: external}. You can also include an edge gateway that is configured and enabled with [distributed routing](https://techdocs.broadcom.com/us/en/vmware-cis/cloud-director/vmware-cloud-director/10-6/vmware-cloud-director-service-provider-portal-guide-10-6/managing-networking-resources-admin/managing-nsx-v-edge-gateways-ag-admin/editing-the-nsx-v-edge-gateway-properties-admin/editing-the-nsx-v-edge-gateway-properties-admin.html){: external} and [DHCP](https://techdocs.broadcom.com/us/en/vmware-cis/cloud-director/vmware-cloud-director/10-6/-nsxp-10-6/edge-gateway-management/edge-dhcp-services.html){: external}. If you include the edge gateway name, then firewall rules are created for full outbound connectivity and a SNAT rule is created for mapping to an external IP address.
   
 Include the following values when you run the template.
   
@@ -106,10 +106,9 @@ Retrieve the VMWare credentials that {{site.data.keyword.satelliteshort}} can us
 {: shortdesc}
 
 1. Verify that you have the required [permissions in your VMWare account](/docs/satellite?topic=satellite-iam-common#permissions-vmware) to create a {{site.data.keyword.satelliteshort}} location from a template.
-2. Identify or [create a user](https://docs.vmware.com/en/VMware-Cloud-Director/10.4/VMware-Cloud-Director-Tenant-Portal-Guide/GUID-1CACBB2E-FE35-4662-A08D-D2BCB174A43C.html){: external} with **Administrator** role.
+2. Identify or [create a user](https://techdocs.broadcom.com/us/en/vmware-cis/cloud-director/vmware-cloud-director/10-6/map-for-vmware-cloud-director-tenant-portal-guide-10-6/managing-users-groups-and-roles-in-vcd-tenant/managing-users-in-your-vcd-tenant-portal-tenant/managing-users-in-your-vcd-tenant-portal-tenant.html){: external} with **Administrator** role.
 3. Find your [network information](/docs/satellite?topic=satellite-loc-vmware-create-auto#vmware-network).
 4. Provide this information on the [VMware Cloud Director template](/docs/satellite?topic=satellite-loc-vmware-create-auto#create-auto-vmware).
-
     
 ## I created a {{site.data.keyword.satelliteshort}} location, what's next?
 {: #vmwareauto-whats-next}
@@ -124,11 +123,3 @@ Now that your {{site.data.keyword.satelliteshort}} location is set up, you are r
 5. Learn more about the [{{site.data.keyword.satelliteshort}} Link component](/docs/satellite?topic=satellite-link-location-cloud) and how you can use endpoints to manage the network traffic between your location and {{site.data.keyword.cloud_notm}}.
 
 Need help? Check out [Getting support](/docs/satellite?topic=satellite-get-help) where you can find information about cloud status, issues, and logging; contacting support; and setting your email notification preferences for {{site.data.keyword.cloud_notm}} platform-related items.
-
-
-
-
-
-
-
-
