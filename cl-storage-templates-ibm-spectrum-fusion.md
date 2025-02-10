@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-01-16"
+lastupdated: "2025-02-07"
 
 
 keywords: change log, version history, ibm-spectrum-fusion
