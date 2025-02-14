@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-01-28"
+lastupdated: "2025-02-14"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3734,6 +3734,8 @@ subcollection: satellite
 
 * [Version 1.0](/docs/satellite?topic=satellite-cs_cli_changelog#10)
 
+* [Version v1.0.677](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010677)
+
 * [Version v1.0.674](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010674)
 
 * [Version v1.0.673](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010673)
@@ -5116,6 +5118,14 @@ subcollection: satellite
 ### Hosts
 {: #sitemap_hosts}
 
+
+[Enabling SSH on Satellite hosts](/docs/satellite?topic=satellite-enabling-ssh-on-hosts#enabling-ssh-on-hosts)
+
+* [Enabling non-root SSH on RHCOS hosts before assignment](/docs/satellite?topic=satellite-enabling-ssh-on-hosts#non-root-ssh-before-coreos)
+
+* [Enabling non-root SSH on RHEL hosts before assignment](/docs/satellite?topic=satellite-enabling-ssh-on-hosts#non-root-ssh-before-rhel)
+
+* [Enabling root SSH on hosts after assignment](/docs/satellite?topic=satellite-enabling-ssh-on-hosts#root-ssh-after-assignemnt)
 
 [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug#ts-hosts-debug)
 
