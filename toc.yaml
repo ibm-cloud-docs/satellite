@@ -346,6 +346,7 @@ toc:
               - topicgroup:
                   label: Hosts
                   topics:
+                    - enabling-ssh-on-hosts.md
                     - ts-hosts-debug.md
                     - ts-hosts-login.md
                     - ts-hosts-login-rhcos.md
