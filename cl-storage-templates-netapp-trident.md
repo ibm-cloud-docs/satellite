@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-02-14"
+lastupdated: "2025-02-18"
 
 
 keywords: change log, version history, netapp-trident
@@ -62,7 +62,7 @@ Review the version history for `netapp-trident`.
 ### Revision 3, released 23 January 2023
 {: #cl-storage-templates-netapp-trident-22.04-3}
 
-- Removes the `PodSecurityPolicy` as Kubernetes v1.25+ does not support PSPs. 
+- Removes the `PodSecurityPolicy` as Kubernetes v1.25+ doesn't support PSPs. 
 
 
 
@@ -73,4 +73,4 @@ Review the version history for `netapp-trident`.
 ### Revision 4, released 23 January 2023
 {: #cl-storage-templates-netapp-trident-21.04-4}
 
-- Removes the `PodSecurityPolicy` as Kubernetes v1.25+ does not support PSPs. 
+- Removes the `PodSecurityPolicy` as Kubernetes v1.25+ doesn't support PSPs. 
