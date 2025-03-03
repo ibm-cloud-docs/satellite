@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-02-14"
+lastupdated: "2025-02-28"
 
 
 keywords: change log, version history, ibm-object-storage-plugin
@@ -62,20 +62,20 @@ Review the version history for `ibm-object-storage-plugin`.
 
 - Resolves the following CVEs: [CVE-2023-7008](https://nvd.nist.gov/vuln/detail/CVE-2023-7008){: external}, [CVE-2024-2961](https://nvd.nist.gov/vuln/detail/CVE-2024-2961){: external}, [CVE-2024-33599](https://nvd.nist.gov/vuln/detail/CVE-2024-33599){: external}, [CVE-2024-33600](https://nvd.nist.gov/vuln/detail/CVE-2024-33600){: external}, [CVE-2024-33601](https://nvd.nist.gov/vuln/detail/CVE-2024-33601){: external}, and [CVE-2024-33602](https://nvd.nist.gov/vuln/detail/CVE-2024-33602){: external}.
 - Updates Go to version `1.21.10`.
-- HPCS support for cos s3fs plugin 
+- HPCS support for cos s3fs plug-in 
 
 ### Revision 20, released 29 April 2024
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-20}
 
 - Resolves the following CVEs: [CVE-2023-45288](https://nvd.nist.gov/vuln/detail/CVE-2023-45288){: external}, [CVE-2024-24785](https://nvd.nist.gov/vuln/detail/CVE-2024-24785){: external}, [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487){: external}, and [CVE-2023-45288](https://nvd.nist.gov/vuln/detail/CVE-2023-45288){: external}.
 - Updates Go to version `1.21.9`.
-- Fix plugin installation issue on CoreOS8 cluster 
+- Fix plug-in installation issue on CoreOS8 cluster 
 
 ### Revision 19, released 29 February 2024
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-19}
 
 - Updates Go to version `1.21.7`.
-- Fix plugin installation issue on CoreOS cluster 
+- Fix plug-in installation issue on CoreOS cluster 
 
 ### Revision 18, released 02 February 2024
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-18}
