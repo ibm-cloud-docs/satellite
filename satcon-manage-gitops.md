@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-01-03"
+  years: 2022, 2025
+lastupdated: "2025-04-02"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite config gitops, satellite configuration gitops, satellite gitops
 
@@ -44,7 +44,7 @@ To connect to private repositories, you must create and apply a git personal acc
 
 1. Create a Github or Gitlab token.
     - For Github, [create a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens){: external}. When you create the token, grant it `repo` scope so that it can read from private repositories. You can also create a [machine user](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/managing-deploy-keys#machine-users){: external} and bind your personal access token to the machine user.
-    - For Gitlab, [create a personal token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html){: external} or [create a deploy token](https://docs.gitlab.com/ee/user/project/deploy_tokens/){: external}.
+    - For Gitlab, [create a personal token](https://docs.gitlab.com/user/profile/personal_access_tokens/){: external} or [create a deploy token](https://docs.gitlab.com/user/project/deploy_tokens/){: external}.
 
 1. Encode the token to base64.
     ```sh
@@ -228,6 +228,3 @@ Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to update 
     {: screen}
 
 1. Follow step 5 in [Creating {{site.data.keyword.satelliteshort}} configurations from the console](/docs/satellite?topic=satellite-setup-clusters-satconfig) to review the rollout status of your Kubernetes resources.
-
-
-

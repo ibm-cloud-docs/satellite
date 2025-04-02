@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-30"
+  years: 2020, 2025
+lastupdated: "2025-04-02"
 
 keywords: satellite, hybrid, multicloud, edge, use case, machine learning
 
@@ -62,7 +62,7 @@ As the edge environment system administrator, you enable a serverless tool to si
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations) on your edge computing infrastructure.
 2. [Create a managed {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) in the {{site.data.keyword.satelliteshort}} location.
 3. [Access the {{site.data.keyword.redhat_openshift_notm}} web console](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
-4. Using the OperatorHub, [install the {{site.data.keyword.redhat_openshift_notm}} Serverless operator](https://www.redhat.com/en/topics/microservices/why-choose-openshift-serverless){: external}.
+4. Using the OperatorHub, [install the {{site.data.keyword.redhat_openshift_notm}} Serverless operator](https://www.redhat.com/en/topics/cloud-native-apps/what-is-serverless){: external}.
 5. [Install the Knative Serving Operator](https://knative.dev/docs/install/operator/knative-with-operators/){: external}.
 
 You deployed {{site.data.keyword.satelliteshort}} with a serverless component.

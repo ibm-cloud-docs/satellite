@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-10-10"
+  years: 2022, 2025
+lastupdated: "2025-04-02"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -32,7 +32,7 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 1. Create a set of service credentials in your object storage provider.
     * [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials).
     * [AWS service credential](https://docs.aws.amazon.com/cli/latest/reference/iam/create-service-specific-credential.html){: external}.
-    * [Wasabi access key](https://docs.wasabi.com/docs/creating-a-user-account-and-access-key#assigning-an-access-key){: external}.
+    * [Wasabi access key](https://docs.wasabi.com/v1/docs/creating-a-user-account-and-access-key#assigning-an-access-key){: external}.
 1. [Create a secret that contains your s3 credentials](#config-storage-cos-secret).
 
 ## Creating a secret in your cluster that contains your object storage credentials
