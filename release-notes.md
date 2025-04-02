@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-03-27"
+lastupdated: "2025-04-02"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -21,6 +21,18 @@ content-type: release-note
 
 Review the latest changes to the {{site.data.keyword.satellitelong}} documentation.
 {: shortdesc}
+
+## April 2025
+{: #satellite-apr25}
+
+### 02 April 2025
+{: #satellite-apr0225}
+{: release-note}
+
+Updated list of [supported managed services](/docs/satellite?topic=satellite-managed-services).
+:   {{site.data.keyword.keymanagementservicefull_notm}}, {{site.data.keyword.messagehub_full}}, and {{site.data.keyword.cloud_notm}} Databases (ICD) managed services are no longer supported.
+
+
 
 ## March 2025
 {: #satellite-mar25}
@@ -431,8 +443,6 @@ Storage template revisions
 {{site.data.keyword.satelliteshort}} Connector
 :   {{site.data.keyword.satelliteshort}} Connector is a deployment model which enables secure communications from IBM Cloud to on-prem resources via a light weight container deployed on your container platform hosts. This option brings all the security and auditability of {{site.data.keyword.satelliteshort}} communication, but with much fewer resources required. For more information, see [Understanding {{site.data.keyword.satelliteshort}} Connectors](/docs/satellite?topic=satellite-understand-connectors).
 
-Setting up Connector as a Secure Gateway replacement
-:   Coming from Secure Gateway? {{site.data.keyword.satelliteshort}} Connector replaces Secure Gateway to provide connection between IBM Cloud and your on-prem data center. For more information, see [{{site.data.keyword.satelliteshort}} Connector and Security Gateway](/docs/satellite?topic=satellite-connector-and-secure-gateway).
 
 Understanding your responsibilities with {{site.data.keyword.satelliteshort}} Connector
 :   For more information, review the [Overview of shared responsibilities](/docs/satellite?topic=satellite-responsibilities#overview-by-resource) for {{site.data.keyword.satelliteshort}} Connector, the {{site.data.keyword.satelliteshort}} Connector agent image, and the {{site.data.keyword.satelliteshort}} Connector container platform.
@@ -822,7 +832,7 @@ New! You can now create Red Hat CoreOS enabled {{site.data.keyword.satelliteshor
 {: release-note}
 
 New! Added {{site.data.keyword.messagehub_full}} as a {{site.data.keyword.satelliteshort}}-enabled service
-:   See [Supported {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) and [About {{site.data.keyword.satellitelong_notm}} for {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-satellite_about).
+:   See [Supported {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services).
 
 
 New location error message is added. 
@@ -1220,8 +1230,6 @@ Review the release notes for 30 June 2021.
 New! General availability of the {{site.data.keyword.satelliteshort}} storage templates. 
 :   For more information about storage templates, see [Understanding storage templates](/docs/satellite?topic=satellite-storage-template-ov).
 
-New! {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services</strong>: Many {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} are now available to deploy to your {{site.data.keyword.satelliteshort}} location. 
-:   For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/blog/announcement/deploy-managed-cloud-native-databases-anywhere-with-ibm-cloud-satellite/){: external}.
 
 ### 24 June 2021
 {: #satellite-jun2421}

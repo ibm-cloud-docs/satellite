@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2025
+lastupdated: "2025-04-02"
 
 keywords: satellite, hybrid, multicloud, spectrum, spectrum fusion
 
@@ -29,7 +29,7 @@ Ready to order?
 :   [Contact IBM Sales](https://www.ibm.com/products/storage-fusion){: external}
 
 Ready to add IBM Storage Fusion HCI virtual machines as hosts?
-:   See the [IBM Storage Fusion documentation](https://www.ibm.com/docs/storage-fusion/2.6?topic=cloud-satellite-storage-fusion-hci-system){: external} for deployment steps.
+:   See the [IBM Storage Fusion documentation](https://www.ibm.com/docs/en/storage-fusion/2.6.0?topic=cloud-satellite-storage-fusion-hci-system){: external} for deployment steps.
 
 ## I added hosts to my location, what's next?
 {: #fusion-whats-next-host}
@@ -44,5 +44,3 @@ Now that you added hosts to your location, you can assign them to your location 
 5. Learn more about the [{{site.data.keyword.satelliteshort}} Link component](/docs/satellite?topic=satellite-link-location-cloud) and how you can use endpoints to manage the network traffic between your location and {{site.data.keyword.cloud_notm}}.
 
 Need help? Check out [Getting support](/docs/satellite?topic=satellite-get-help) where you can find information about cloud status, issues, and logging; contacting support; and setting your email notification preferences for {{site.data.keyword.cloud_notm}} platform-related items.
-
-

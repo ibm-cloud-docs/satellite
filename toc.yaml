@@ -26,7 +26,6 @@ toc:
           label: Understanding Satellite Connector
           topics:
             - connector-understand.md
-            - connector-and-secure-gateway.md
             - connector-faq.md
       - managed-services.md
       - release-notes.md
@@ -176,7 +175,6 @@ toc:
               - connector-create-endpoints.md
               - connector_endpoint_auth.md
               - end-to-end.md
-              - connector-create-from-sg.md
         - topicgroup:
             label: Managing apps with Satellite Config
             topics:
@@ -259,7 +257,6 @@ toc:
                     - storage-vsphere-csi-driver.md 
               - storage-class-ref.md
         - terraform.md
-        - sg-usecase.md
         - topicgroup:
             label: Enhancing security
             topics:

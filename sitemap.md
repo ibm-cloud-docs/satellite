@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-03-27"
+lastupdated: "2025-04-02"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -156,12 +156,6 @@ subcollection: satellite
 
 * [Next steps](/docs/satellite?topic=satellite-understand-connectors#connector-understand-next-steps)
 
-[{{site.data.keyword.satelliteshort}} Connector and Secure Gateway](/docs/satellite?topic=satellite-connector-and-secure-gateway#connector-and-secure-gateway)
-
-* [Terminology mapping](/docs/satellite?topic=satellite-connector-and-secure-gateway#secure-gateway-connector-terms)
-
-* [Capabilities](/docs/satellite?topic=satellite-connector-and-secure-gateway#capability-comparison)
-
 [{{site.data.keyword.satelliteshort}} Connector FAQ](/docs/satellite?topic=satellite-connector-faq#connector-faq)
 
 * [Does {{site.data.keyword.satelliteshort}} Connector support Cloud Endpoints?](/docs/satellite?topic=satellite-connector-faq#connector-faq-endpoints)
@@ -197,6 +191,12 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
+
+* [April 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr25)
+
+    * [02 April 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr0225)
+
+        * Updated list of [supported managed services](/docs/satellite?topic=satellite-managed-services).
 
 * [March 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar25)
 
@@ -427,8 +427,6 @@ subcollection: satellite
     * [5 July 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july0523)
 
         * {{site.data.keyword.satelliteshort}} Connector
-
-        * Setting up Connector as a Secure Gateway replacement
 
         * Understanding your responsibilities with {{site.data.keyword.satelliteshort}} Connector
 
@@ -868,8 +866,6 @@ subcollection: satellite
 
         * New! General availability of the {{site.data.keyword.satelliteshort}} storage templates. 
 
-        * New! {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services</strong>: Many {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} are now available to deploy to your {{site.data.keyword.satelliteshort}} location. 
-
     * [24 June 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jun2421)
 
         * Review the release notes for 24 June 2021.
@@ -1275,11 +1271,11 @@ subcollection: satellite
 
 * [Understanding the CLI tools](/docs/satellite?topic=satellite-cli-install#cli-understand)
 
-* [Run the installation command](/docs/satellite?topic=satellite-cli-install#cli-install-include-step1-install-idt)
+* [Running the installation command](/docs/satellite?topic=satellite-cli-install#cli-install-include-step1-install-idt)
 
-* [Verify the installation](/docs/satellite?topic=satellite-cli-install#cli-install-include-step2-verify-idt)
+* [Verifying the installation](/docs/satellite?topic=satellite-cli-install#cli-install-include-step2-verify-idt)
 
-* [Install CLI plug-ins and tools](/docs/satellite?topic=satellite-cli-install#cli-install-include-step3-install-idt-manually)
+* [Installing CLI plug-ins and tools](/docs/satellite?topic=satellite-cli-install#cli-install-include-step3-install-idt-manually)
 
 [Updating the CLI](/docs/satellite?topic=satellite-cli-update#cli-update)
 
@@ -1877,16 +1873,6 @@ subcollection: satellite
 * [Creating your Link endpoint](/docs/satellite?topic=satellite-end-to-end#create-link-endpoint)
 
 * [Adding TLS support](/docs/satellite?topic=satellite-end-to-end#add-tls)
-
-[Migrating resources from {{site.data.keyword.SecureGateway}} to {{site.data.keyword.satelliteshort}} Connector](/docs/satellite?topic=satellite-connector-create-from-sg#connector-create-from-sg)
-
-* [Prerequisites](/docs/satellite?topic=satellite-connector-create-from-sg#sg-migrate-connector-prereqs)
-
-* [Migrating a Gateway to a Connector](/docs/satellite?topic=satellite-connector-create-from-sg#migrate-gateway-to-endpoint)
-
-* [Migrating {{site.data.keyword.SecureGateway}} Destinations to Connector endpoints](/docs/satellite?topic=satellite-connector-create-from-sg#migrate-destination-to-endpoint)
-
-* [Example migration requests](/docs/satellite?topic=satellite-connector-create-from-sg#migrate-examples)
 
 
 ## Managing apps with Satellite Config
@@ -3091,21 +3077,6 @@ subcollection: satellite
 * [Creating a {{site.data.keyword.satelliteshort}} location by using Terraform](/docs/satellite?topic=satellite-terraform#terraform-location-create)
 
 * [What's next?](/docs/satellite?topic=satellite-terraform#terraform-setup-next)
-
-
-## Setting up {{site.data.keyword.satelliteshort}} as a Secure Gateway for on-prem solutions
-{: #sitemap_setting_up_as_a_secure_gateway_for_on-prem_solutions}
-
-
-[Setting up {{site.data.keyword.satelliteshort}} as a Secure Gateway for on-prem solutions](/docs/satellite?topic=satellite-sg-usecase#sg-usecase)
-
-* [{{site.data.keyword.satelliteshort}} as a Layer 4 connection solution](/docs/satellite?topic=satellite-sg-usecase#sg-alt)
-
-* [Setting up a secure connection to {{site.data.keyword.cloud_notm}} with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sg-usecase#sg-alt-setup)
-
-    * [Step 1: Deploy {{site.data.keyword.satelliteshort}} to your on-premises environment](/docs/satellite?topic=satellite-sg-usecase#sg-example-loc)
-
-    * [Step 2: Set up secure communication channels by using {{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-sg-usecase#sg-example-link)
 
 
 ## Enhancing security
