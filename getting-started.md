@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-04-17"
 
 keywords: satellite, hybrid, multicloud, getting started, {{site.data.keyword.satellitelong}}, hosts, host
 
@@ -24,7 +24,7 @@ Your {{site.data.keyword.satelliteshort}} location includes tools such as {{site
 
 ![Deploy apps and run anywhere with IBM Cloud Satellite](https://www.kaltura.com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/27941801/partner_id/1773841?iframeembed=true&entry_id=1_030mi9vp){: video output="iframe" data-script="#video-transcript-sat" id="mediacenterplayer" frameborder="0" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen}
 
-#### Video transcript
+## Video transcript
 {: #video-transcript-sat}
 {: notoc}
 
