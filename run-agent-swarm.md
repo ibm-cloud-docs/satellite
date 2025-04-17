@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-10-16"
+  years: 2023, 2025
+lastupdated: "2025-04-17"
 
 keywords: satellite, connector
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Running your Connector agent as a service in Docker Swarm Mode for high availability
 {: #run-agent-swarm}
 
-In addition to running the container standalone as shown in the previous example, you can use Docker Swarm mode to run a cluster of up to 3 containers on multiple machines to provide high availability of the {{site.data.keyword.satelliteshort}} Connector agent.
+In addition to running the container stand-alone as shown in the previous example, you can use Docker Swarm mode to run a cluster of up to 3 containers on multiple machines to provide high availability of the {{site.data.keyword.satelliteshort}} Connector agent.
 {: shortdesc}
 
 To configure {{site.data.keyword.satelliteshort}} Connectors, you must have Administrator access to the **Satellite** service in IAM access policies.

@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2024, 2024
-lastupdated: "2024-11-08"
+  years: 2024, 2025
+lastupdated: "2025-04-17"
 
 keywords: satellite, endpoints, authentication
 
@@ -49,7 +49,7 @@ If you choose to provide your own certificates for endpoint authentication, you 
 
 The `source` options refer to the TLS handshake between the source and the Satellite Link service. The `dest` options refer to the TLS handshake between the Satellite Link service and your destination or target server. You can provide certificates for one or both of these connections. Unspecified settings are set to their default values.
 
-The `ibmcloud sat endpoint authn` command is only used to set certificates for the Satellite Link service, acting as a server on the source side and as a client on the destination side. You may also need to configure certificates for the source (client) and/or destination (server) in their corresponding application environments.
+The `ibmcloud sat endpoint authn` command is only used to set certificates for the Satellite Link service, acting as a server on the source side and as a client on the destination side. You may also need to configure certificates for the source (client) and destination (server) in their corresponding application environments.
 {: note}
 
 Review the following example scenarios.

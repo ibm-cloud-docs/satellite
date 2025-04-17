@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-04-02"
+lastupdated: "2025-04-17"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite config gitops, satellite configuration gitops, satellite gitops
 
@@ -173,7 +173,7 @@ To update your configuration, you can make updates on subscription level. The ac
 
 - To deploy a new version of your application to the same cluster group, update the files in the GitHub or GitLab repository defined in your configuration and commit the changes. 
 - To change any properties of your source repository, you can edit the subscription and update the fields with new details.
-- To associate multiple repositories with the same configuration, add a new source repository, or add new Git ref details for the same source repository, you can create new subscriptions. Click **Create subscription** and fill in the details of your new subscription. If you want to create a new subscription that only has a few details changed, you can use the **Duplicate** option to auto fill all the fields with properties of the existing subscription and modify the fields that you want to change.
+- To associate multiple repositories with the same configuration, add a new source repository, or add new Git ref details for the same source repository, you can create new subscriptions. Click **Create subscription** and complete the details for your new subscription. If you want to create a new subscription that only has a few details changed, you can use the **Duplicate** option to auto fill all the fields with properties of the existing subscription and modify the fields that you want to change.
 - To delete a subscription, use the **Remove** option.
 
 ### Updating your subscription from the console

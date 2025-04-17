@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-12-17"
+  years: 2020, 2025
+lastupdated: "2025-04-17"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -58,7 +58,7 @@ Can I redirect all traffic to {{site.data.keyword.cloud_notm}} over Direct Link 
 :   Currently, not all services support Direct Link. So, depending on the services you use it might or might not be possible for all traffic to use Direct Link.
 
 What {{site.data.keyword.cloud_notm}} services can I access over Direct Link to avoid accessing them over Internet?
-:   After following these instructions, {{site.data.keyword.satelliteshort}} and Openshift on {{site.data.keyword.satelliteshort}} will work across Direct Link. Additional services deployed into a {{site.data.keyword.satelliteshort}} location might have features that require public Internet access. It is recommended to consult the documentation for each service running in a location to verify their connectivity requirements.
+:   After following these instructions, {{site.data.keyword.satelliteshort}} and OpenShift on {{site.data.keyword.satelliteshort}} will work across Direct Link. Additional services deployed into a {{site.data.keyword.satelliteshort}} location might have features that require public Internet access. It is recommended to consult the documentation for each service running in a location to verify their connectivity requirements.
 
 If I have two Locations that use Direct Link, can I use them for Direct Link to fail over from one Location to the other?
 :   This functionality is not yet available.
@@ -158,7 +158,7 @@ VPC clusters considerations for this scenario:
 - Worker node flavor: Any VPC infrastructure flavor
 - Version: 4.x.x
 - Worker pool: At least 2 worker nodes
-- Subnets: Include Ingress Load Balancer IP subnets if the default ranges conflict with the `--pod-subnet` and `--service-subnet` values of the {{site.data.keyword.redhat_openshift_notm}} cluster on Satellite or the network CIDR where the Satellite or {{site.data.keyword.redhat_openshift_notm}} hosts are deployed on-premise.
+- Subnets: Include Ingress Load Balancer IP subnets if the default ranges conflict with the `--pod-subnet` and `--service-subnet` values of the {{site.data.keyword.redhat_openshift_notm}} cluster on Satellite or the network CIDR where the Satellite or {{site.data.keyword.redhat_openshift_notm}} hosts are deployed on-premises.
 - Cloud service endpoints: Do not specify the `--disable-public-service-endpoint` option if you want both public and private endpoints. 
 - Spread the default worker pool across zones to increase the availability of your classic or VPC cluster.
 - Ensure that at least 2 worker nodes exist in each zone, so that the private ALBs that you configure in subsequent steps are highly available and can properly receive version updates.

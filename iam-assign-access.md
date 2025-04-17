@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-10"
+  years: 2020, 2025
+lastupdated: "2025-04-17"
 
 keywords: satellite, hybrid, multicloud, assign access, access for satellite
 
@@ -91,7 +91,7 @@ Use the {{site.data.keyword.cloud_notm}} IAM console to assign an access policy 
 2. From the menu bar, click **Manage > Access (IAM)**.
 3. Click **Access groups**, and then click the access group that you want to assign access to {{site.data.keyword.satellitelong_notm}}.
 4. Click the **Access policies** tab, and then click **Assign access**.
-5. With the **IAM Services** tile selected, in the service access dropdown field, select **{{site.data.keyword.satellitelong_notm}}**.
+5. With the **IAM Services** tile selected, in the service access drop-down field, select **{{site.data.keyword.satellitelong_notm}}**.
 
     You can start to enter letters like `sat` and the field filters results to help you find **{{site.data.keyword.satellitelong_notm}}**.
     {: tip}

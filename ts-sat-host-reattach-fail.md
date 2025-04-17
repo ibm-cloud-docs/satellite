@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-01-30"
+  years: 2021, 2025
+lastupdated: "2025-04-17"
 
 keywords: satellite, host, location
 
@@ -42,7 +42,7 @@ If the cluster master still recognizes the host, you must rename and reload the 
 2. Follow your host infrastructure provider's instructions to reload the host. For hosts provisioned through {{site.data.keyword.cloud_notm}}**, complete the following steps.
     - In the {{site.data.keyword.cloud_notm}} console:
         1. Navigate to **Classic infrastructure**>**Device list**.
-        2. In the **Devices** table, click on the host you want to reload. 
+        2. In the **Devices** table, click the host you want to reload. 
         3. From the **Actions** drop down menu, select **OS Reload**.
         4. Click **Reload**. Note that it may take several minutes for the reload process to complete.
 
@@ -69,4 +69,3 @@ If the cluster master still recognizes the host, you must rename and reload the 
             {: pre}
 
 3. [Attach the host to the location](/docs/satellite?topic=satellite-attach-hosts). 
-

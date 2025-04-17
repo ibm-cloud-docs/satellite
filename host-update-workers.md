@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-09-26"
+  years: 2020, 2025
+lastupdated: "2025-04-17"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch, host, update, host update
 
@@ -76,7 +76,7 @@ To review the changes that are included in each version update, see the [Version
 3. Click the **Hosts** tab.
 4. From the host list, click the link to the **Cluster** for the host that you want to update. A new tab opens for the {{site.data.keyword.openshiftlong_notm}} cluster details.
 5. Click the **Worker nodes** tab.
-6. In the **Version** column, check for an information icon that says `Update available` when you click on the icon. If no update is available, no icon is present.
+6. In the **Version** column, check for an information icon that says `Update available` when you click the icon. If no update is available, no icon is present.
 7. [Determine if the version update is a major, minor, or patch update](#host-update-workers-type). 
 
 ## Identifying worker node hosts

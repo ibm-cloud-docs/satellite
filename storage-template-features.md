@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-06-20"
+  years: 2020, 2025
+lastupdated: "2025-04-17"
 
 
 keywords: satellite storage, features, overview
@@ -38,12 +38,12 @@ subcollection: satellite
 | GCP Compute Persistent Disk CSI Driver | 1.0.4 | Google | True | True | True | Zonal | False |
 | GCP Compute Persistent Disk CSI Driver | 1.7.1 | Google | True | True | True | Zonal | False |
 | GCP Compute Persistent Disk CSI Driver | 1.8.0 | Google | True | True | True | Zonal | False |
-| IBM Object Storage Plugin | 2.2 | IBM | 
+| IBM Object Storage Plug-in | 2.2 | IBM | 
 | IBM System Storage Block CSI driver | 1.10.0 | IBM | False | False | True | Regional | True |
 | IBM System Storage Block CSI driver | 1.11.1 | IBM | False | False | True | Regional | True |
 | IBM System Storage Block CSI driver | 1.11.2 | IBM | False | False | True | Regional | True |
 | [Beta] IBM VPC Block CSI driver | 5.1 | IBM | 
-| [Beta] Local Storage File and/or Block | 1.0.0 | AWS, IBM | False | False | False | Zonal | False |
+| [Beta] Local Storage File and Block | 1.0.0 | AWS, IBM | False | False | False | Zonal | False |
 | Local Storage Operator - Block | 4.9 | AWS,IBM | False | False | False | Zonal | False |
 | Local Storage Operator - Block | 4.10 | AWS,IBM | False | False | False | Zonal | False |
 | Local Storage Operator - Block | 4.11 | AWS,IBM | False | False | False | Zonal | False |
@@ -71,4 +71,3 @@ subcollection: satellite
 | VMware CSI Driver | 2.5.1 | VMware,IBM | False | False | True | Zonal | False |
 | VMware CSI Driver | 2.7.0 | VMware,IBM | False | False | True | Zonal | False |
 {: caption="Storage template feature comparison" caption-side="bottom"}
-

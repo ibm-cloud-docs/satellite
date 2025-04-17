@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-30"
+  years: 2020, 2025
+lastupdated: "2025-04-17"
 
 keywords: satellite storage, satellite config, debug, troubleshoot, must gather
 
@@ -62,7 +62,7 @@ Complete the following steps to debug your Satellite storage configurations.
     ```
     {: pre}
 
-1. Get the details of the storage configuration you wish to troubleshoot and take note of the `storage-template-version` field. 
+1. Get the details of the storage configuration you want to troubleshoot and take note of the `storage-template-version` field. 
     ```sh
     ibmcloud sat storage config get --config <CONFIG_NAME> --json
     ```
