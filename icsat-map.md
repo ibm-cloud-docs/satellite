@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2024
-lastupdated: "2024-12-03"
+  years: 2025
+lastupdated: "2025-04-17"
 
 keywords: satellite cli map, satellite commands, satellite cli, satellite reference
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # {{site.data.keyword.satellitelong_notm}} CLI map
 {: #icsat_map}
 
-This page lists all `ibmcloud sat` commands as they are structured in the CLI. For more information about a specific command, click on the command or see the [{{site.data.keyword.satellitelong_notm}} CLI reference](/docs/satellite?topic=satellite-satellite-cli-reference).
+This page lists all `ibmcloud sat` commands as they are structured in the CLI. For more information about a specific command, click the command or see the [{{site.data.keyword.satellitelong_notm}} CLI reference](/docs/satellite?topic=satellite-satellite-cli-reference).
 
 
 

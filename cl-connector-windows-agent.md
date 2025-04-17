@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-01-28"
+lastupdated: "2025-04-17"
 
 
 keywords: satellite, connector, agent, windows, change log, version history
@@ -59,7 +59,7 @@ Only the most recent version of the Connector Windows agent is supported and has
 {: #connector-windows-agent-1.1.5-change-log}
 
 - Supports Cloud endpoint type (experimental).
-- Adds version.txt in zip.
+- Adds version.txt in `.zip`.
 - sha512sum: b45cc19be57a1b8bea365de81be5eae5e48f34c6aa39e3126e35207308e9d5c37f76067fe2d00f0dffb87916ecc529706c27df7d0d810b5096ff7394b512cb0c
 
 

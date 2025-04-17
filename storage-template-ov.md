@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-10"
+  years: 2020, 2025
+lastupdated: "2025-04-17"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -141,7 +141,7 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 | [IBM System Storage Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver) | `ibm-system-storage-block-csi-driver` | Version: 1.11.1 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-ibm-system-storage-block-csi-driver) 
 | [IBM System Storage Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver) | `ibm-system-storage-block-csi-driver` | Version: 1.11.2, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-ibm-system-storage-block-csi-driver) 
 | [[Beta] IBM VPC Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver) | `ibm-vpc-block-csi-driver` | Version: 5.1 (Default), Patch: 7 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver) 
-| [[Beta] Local Storage File and/or Block](/docs/satellite?topic=satellite-storage-local-storage) | `local-storage` | Version: 1.0.0 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-local-storage) 
+| [[Beta] Local Storage File and Block](/docs/satellite?topic=satellite-storage-local-storage) | `local-storage` | Version: 1.0.0 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-local-storage) 
 | [Local Storage Operator](/docs/satellite?topic=satellite-storage-local-storage-operator) | `local-storage-operator` | Version: 1.0.0 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-local-storage-operator) 
 | [Local Storage Operator - Block](/docs/satellite?topic=satellite-storage-local-volume-block) | `local-volume-block` | Version: 4.9, Patch: 4 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-block) 
 | [Local Storage Operator - Block](/docs/satellite?topic=satellite-storage-local-volume-block) | `local-volume-block` | Version: 4.10, Patch: 4 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-block) 

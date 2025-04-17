@@ -2,8 +2,8 @@
 
 
 copyright: 
-  years: 2023, 2024
-lastupdated: "2024-01-03"
+  years: 2023, 2025
+lastupdated: "2025-04-17"
 
 keywords: satellite, install cli, install sat, set up satellite command line, satellite command line, satellite cli, sat commands
 
@@ -45,12 +45,9 @@ For more installation methods, see [IBM Cloud CLI](/docs/cli?topic=cli-getting-s
 {{../cli/index.md#step3-install-idt-manually}}
 
 
-To install the `container-service` or `ks` plugin, which includes all `ibmcloud sat` commands, run the following command.
+To install the `container-service` or `ks` plug-in, which includes all `ibmcloud sat` commands, run the following command.
 
 ```sh
 ibmcloud plugin install ks
 ```
 {: pre}
-
-
-
