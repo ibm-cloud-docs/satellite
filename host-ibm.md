@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-21"
+  years: 2020, 2025
+lastupdated: "2025-04-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -109,16 +109,6 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     {: pre}
             
 1. Enable the package repositories on your machine.    
-
-    - RHEL 7:
-        ```sh
-        subscription-manager repos --enable rhel-server-rhscl-7-rpms
-        subscription-manager repos --enable rhel-7-server-optional-rpms
-        subscription-manager repos --enable rhel-7-server-rh-common-rpms
-        subscription-manager repos --enable rhel-7-server-supplementary-rpms
-        subscription-manager repos --enable rhel-7-server-extras-rpms
-        ```
-        {: pre}
     
     - RHEL 8 classic:
         ```sh
@@ -133,7 +123,22 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
         subscription-manager repos --enable rhel-8-for-x86_64-baseos-rpms 
         subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms
         subscription-manager repos --disable='*eus*'
-        yum install container-selinux -y
+        ```
+        {: pre}
+
+    - RHEL 9 VPC:
+        ```sh
+        subscription-manager release --set=9
+        subscription-manager repos --enable rhel-9-for-x86_64-baseos-rpms
+        subscription-manager repos --enable rhel-9-for-x86_64-appstream-rpms
+        subscription-manager repos --disable='*eus*'
+        ```
+        {: pre}
+
+    - RHEL 9 Classic:
+        ```sh
+        subscription-manager repos --enable rhel-9-for-x86_64-baseos-rpms
+        subscription-manager repos --enable rhel-9-for-x86_64-appstream-rpms
         ```
         {: pre}
 
@@ -143,7 +148,8 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     ```
     {: pre}
             
-1. Monitor the progress of the registration script.
+1. Watch the progress of the registration script.
+
     ```sh
     journalctl -f -u ibm-host-attach
     ```
