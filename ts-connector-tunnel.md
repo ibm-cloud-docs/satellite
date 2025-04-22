@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-01-03"
+  years: 2023, 2025
+lastupdated: "2025-04-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -34,9 +34,5 @@ Your Connector Agent cannot establish the tunnel with {{site.data.keyword.cloud_
 Your Connector Agent Docker container was unable to connect to the {{site.data.keyword.cloud_notm}} Connector servers, because of a firewall, gateway, or proxy configuration that is blocking public outbound access to {{site.data.keyword.cloud_notm}} in your environment.
 {: tsCauses}
 
-Make sure the the machine that is running the Connector Agent has outbound connectivity to {{site.data.keyword.cloud_notm}} and can resolve those hostnames. For more information, see the network connectivity requirements documented in [Minimum requirements](/docs/satellite?topic=satellite-understand-connectors#min-requirements).
+Make sure the the machine that is running the Connector Agent has outbound connectivity to {{site.data.keyword.cloud_notm}} and can resolve those hostnames. For more information, see the network connectivity requirements documented in [Minimum requirements](/docs/satellite?topic=satellite-understand-connectors#min-requirements) and [Configuring the request path from your Connector agent](/docs/satellite?topic=satellite-connector-agent-path).
 {: tsResolve}
-
-
-
-
