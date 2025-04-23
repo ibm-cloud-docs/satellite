@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-22"
+lastupdated: "2025-04-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -126,21 +126,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
         ```
         {: pre}
 
-    - RHEL 9 VPC:
-        ```sh
-        subscription-manager release --set=9
-        subscription-manager repos --enable rhel-9-for-x86_64-baseos-rpms
-        subscription-manager repos --enable rhel-9-for-x86_64-appstream-rpms
-        subscription-manager repos --disable='*eus*'
-        ```
-        {: pre}
 
-    - RHEL 9 Classic:
-        ```sh
-        subscription-manager repos --enable rhel-9-for-x86_64-baseos-rpms
-        subscription-manager repos --enable rhel-9-for-x86_64-appstream-rpms
-        ```
-        {: pre}
 
 1. Run the registration script on your machine.
     ```sh
