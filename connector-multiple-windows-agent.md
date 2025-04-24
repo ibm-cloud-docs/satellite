@@ -40,6 +40,36 @@ Running multiple agents on the same Windows host is not supported for Satellite 
 
 To deploy multiple agents on a single hots, you must use a configFile parameter.
 
+1. From the CLI, run the following command to download the agent `.zip` file.
+
+    ```sh
+    ibmcloud sat agent attach --platform windows
+    ```
+    {: codeblock}
+
+    Example output.
+    ```sh
+    Downloading agent setup tools for windows...
+    OK
+    Satellite connector agent for windows was successfully returned /var/folders/17/y8wr4y_x1tb4yf__g3wr6g8m0000gp/T/windows_satellite_connector_4097559421.zip
+    ```
+    {: codeblock}
+
+1. Verify the `sha512sum` of the `.zip` by running the following command in PowerShell.
+    ```txt
+    Get-FileHash -Algorithm SHA512 -Path c:\windows_satellite_connector_1420916628.zip
+    ```
+    {: pre}
+
+1. Run the following command in PowerShell to extract the `.zip` file contents.
+
+    ```txt
+    Expand-Archive -Path 'C:\path\to\windows_satellite_connector_4097559421.zip' -DestinationPath ‘C:\path\to\extract'
+    ```
+    {: codeblock}
+
+1. Complete the steps in the following section to update the configuration files that you extracted.
+
 
 1. Copy the following configuration and save it to a file called `config_connector1.json`.
 
