@@ -40,21 +40,22 @@ Running multiple agents on the same Windows host is not supported for Satellite 
 
 To deploy multiple agents on a single hots, you must use a configFile parameter.
 
-1. Copy the following configuration and save it to a file called `config_connector1.json`. Populate the config file with your Connector details and credentials. **Do not** name the file `config.json`.
+
+1. Copy the following configuration and save it to a file called `config_connector1.json`.
 
     ```json
     {
       "SATELLITE_CONNECTOR_ID": "<connector_id>",
       "SATELLITE_CONNECTOR_IAM_APIKEY": "<api_key>",
       "SATELLITE_CONNECTOR_TAGS": "<tags>",
-      "SATELLITE_CONNECTOR_INSTANCE_NAME": "<instance_name>", # Required. Must start with a character, can contain only characters `(a-zA-Z)`, numbers `(0-9)` and `_`, and the total length must be less than 50 characters.
+      "SATELLITE_CONNECTOR_INSTANCE_NAME": "<instance_name>",
       "LOG_LEVEL": "<log_level>",
       "PRETTY_LOG": <true|false>
     }
     ```
     {: codeblock}
 
-
+1. Populate the config file with your Connector details and credentials. **Do not** name the file `config.json`. The `SATELLITE_CONNECTOR_INSTANCE_NAME`is required and must start with a character, can contain only characters `(a-zA-Z)`, numbers `(0-9)` and `_`, and the total length must be less than 50 characters.
 
 
 1. Run the installation script.
