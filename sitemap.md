@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-04-24"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1873,6 +1873,16 @@ subcollection: satellite
 * [Creating your Link endpoint](/docs/satellite?topic=satellite-end-to-end#create-link-endpoint)
 
 * [Adding TLS support](/docs/satellite?topic=satellite-end-to-end#add-tls)
+
+[Deploying multiple Connector Windows agents on a single machine](/docs/satellite?topic=satellite-connector-create-endpoints#connector-create-endpoints)
+
+* [Considerations](/docs/satellite?topic=satellite-connector-create-endpoints#ma-considerations)
+
+* [Installing multiple Windows agents](/docs/satellite?topic=satellite-connector-create-endpoints#install-multiple)
+
+* [Installing a single agent](/docs/satellite?topic=satellite-connector-create-endpoints#single-agents)
+
+* [FAQ](/docs/satellite?topic=satellite-connector-create-endpoints#multiple-faq)
 
 
 ## Managing apps with Satellite Config

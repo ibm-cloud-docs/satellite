@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2024, 2024
-lastupdated: "2024-11-08"
+  years: 2024, 2025
+lastupdated: "2025-04-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -213,16 +213,31 @@ A1B0CDefgHilQ11ubmVjdG1yOiJjb11hnTdlWSRE1dnZla1szbDBsZyI-Source-vbfea   myrule  
 {: #create-connector-endpoint-console}
 {: ui}
 
-1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click the Connector that you want to use create an endpoint.
+1. From the [Connector console](https://cloud.ibm.com/satellite/connectors), click the Connector for which you want to create an endpoint.
 
-1. On the **Connector overview** page, click the **User endpoints** tab, then click **Create endpoint**.
+1. Click the **User endpoints** tab, then click **Create endpoint**.
+
+1. Select the endpoint type.
+    Agent location
+    :   Destination resource that runs on the same network as the Connector agent.
+
+    Cloud
+    :   Destination resource that runs in IBM Cloud.
+
+1. Click **Next**
 
 1. On the **Resource details** page, enter the following details.
 
-    1. Give your endpoint a name.
-    1. Enter the fully qualified domain name or IP address of the destination resource that you want to connect to.
-    1. Enter the port that your destination resource listens on for incoming requests.
-    1. Click **Next**.
+    Endpoint name
+    :   Give your endpoint a name.
+
+    Destination FQDN or IP
+    :   Enter the fully qualified domain name or IP address of the destination resource that you want to connect to.
+    
+    Destination port
+    :   Enter the port that your destination resource listens on for incoming requests.
+
+1. Click **Next**.
 
 1. On the **Protocol** page, select the protocol that a source must use to connect to the destination FQDN or IP address. This protocol must match the port for your destination resource. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).
 

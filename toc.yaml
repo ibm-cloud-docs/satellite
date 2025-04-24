@@ -175,6 +175,7 @@ toc:
               - connector-create-endpoints.md
               - connector_endpoint_auth.md
               - end-to-end.md
+              - connector-multiple-windows-agent.md
         - topicgroup:
             label: Managing apps with Satellite Config
             topics:
