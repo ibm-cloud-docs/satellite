@@ -14,7 +14,7 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 # Deploying multiple Connector Windows agents on a single machine
-{: #connector-create-endpoints}
+{: #connector-create-endpoints-ma}
 
 
 Beginning with Windows agent version 1.2.0, multiple agents on a single Windows host are now supported. Microsoft .NET 3.5 is required on the Server to use version `>= 1.2.0` of the Windows agent.
