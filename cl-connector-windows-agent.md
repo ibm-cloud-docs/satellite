@@ -30,7 +30,7 @@ Only the most recent version of the Connector Windows agent is supported and has
 ### Version 1.2.0, released 28 Apr 2025
 {: #connector-windows-agent-1.2.0-change-log}
 
-- Supports multiple connectors run on same host, details in https://cloud.ibm.com/docs/satellite?topic=satellite-connector-create-endpoints-ma.
+- Supports multiple connectors run on same host, details in https://cloud.ibm.com/docs/satellite?topic=satellite-connector-multiple-windows-agent.
 - Fixes security vulnerabilities.
 - sha512sum: 669c69f9ec675cc30692962a2d12fb8c624ef2f99fb1ffa4985989dd168e6d75db34b622dca0df8c7641f9148539aeb1b4b8ddeaefba4f1318ea5e1dc43112f7
 
