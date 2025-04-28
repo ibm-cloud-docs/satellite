@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-04-17"
+lastupdated: "2025-04-28"
 
 
 keywords: satellite, connector, agent, windows, change log, version history
@@ -22,6 +22,18 @@ Review the version history for the {{site.data.keyword.satelliteshort}} Connecto
 
 Only the most recent version of the Connector Windows agent is supported and has the latest security fixes. It is your responsibility to make sure to keep your agent updated to the most recent version available. 
 {: important}
+
+## Version 1.2
+{: #connector-windows-agent-1.2-change-log}
+
+
+### Version 1.2.0, released 28 Apr 2025
+{: #connector-windows-agent-1.2.0-change-log}
+
+- Supports multiple connectors run on same host, details in https://cloud.ibm.com/docs/satellite?topic=satellite-connector-create-endpoints-ma.
+- Fixes security vulnerabilities.
+- sha512sum: 669c69f9ec675cc30692962a2d12fb8c624ef2f99fb1ffa4985989dd168e6d75db34b622dca0df8c7641f9148539aeb1b4b8ddeaefba4f1318ea5e1dc43112f7
+
 
 
 ## Version 1.1
