@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-04-28"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -193,6 +193,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [April 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr25)
+
+    * [28 April 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan2825)
+
+        * Connector agent for Windows version `1.2.0`.
 
     * [02 April 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr0225)
 
@@ -1873,6 +1877,24 @@ subcollection: satellite
 * [Creating your Link endpoint](/docs/satellite?topic=satellite-end-to-end#create-link-endpoint)
 
 * [Adding TLS support](/docs/satellite?topic=satellite-end-to-end#add-tls)
+
+[Deploying multiple Connector Windows agents on a single machine](/docs/satellite?topic=satellite-connector-multiple-windows-agent#connector-multiple-windows-agent)
+
+* [Considerations](/docs/satellite?topic=satellite-connector-multiple-windows-agent#ma-considerations)
+
+* [Installing multiple Windows agents](/docs/satellite?topic=satellite-connector-multiple-windows-agent#install-multiple)
+
+* [Uninstalling multiple Windows agents](/docs/satellite?topic=satellite-connector-multiple-windows-agent#ma-uninstall)
+
+* [Updating multiple Windows agents](/docs/satellite?topic=satellite-connector-multiple-windows-agent#ma-update)
+
+* [Installing a single agent](/docs/satellite?topic=satellite-connector-multiple-windows-agent#single-agents)
+
+* [Uninstalling a single Windows agent](/docs/satellite?topic=satellite-connector-multiple-windows-agent#uninstall-single-agent)
+
+* [Updating a single Windows agent](/docs/satellite?topic=satellite-connector-multiple-windows-agent#update-single-agent)
+
+* [FAQ](/docs/satellite?topic=satellite-connector-multiple-windows-agent#multiple-faq)
 
 
 ## Managing apps with Satellite Config
@@ -3999,6 +4021,10 @@ subcollection: satellite
     * [Version 1.1.0, released 20 June 2023](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.1.0-change-log)
 
 [Connector Windows agent change log](/docs/satellite?topic=satellite-cl-connector-windows-agent#cl-connector-windows-agent)
+
+* [Version 1.2](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.2-change-log)
+
+    * [Version 1.2.0, released 28 Apr 2025](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.2.0-change-log)
 
 * [Version 1.1](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.1-change-log)
 
