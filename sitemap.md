@@ -194,6 +194,10 @@ subcollection: satellite
 
 * [April 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr25)
 
+    * [28 April 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan2825)
+
+        * Connector agent for Windows version `1.2.0`.
+
     * [02 April 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr0225)
 
         * Updated list of [supported managed services](/docs/satellite?topic=satellite-managed-services).
