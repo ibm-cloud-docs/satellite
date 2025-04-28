@@ -199,6 +199,23 @@ To deploy multiple agents on a single hots, you must use a configFile parameter.
     ```
     {: screen}
 
+## Uninstalling multiple Windows agents
+{: #ma-uninstall}
+
+To uninstall a Windows multiple agents, run the following command.
+
+```txt
+.\uninstall -configFile config_connector1.json
+```
+{: codeblock}
+
+This command uninstalls the Windows agent with the `SATELLITE_CONNECTOR_INSTANCE_NAME` from the configFile.
+
+## Updating multiple Windows agents
+{: #ma-update}
+
+To update multiple Windows agents, uninstall the agent, update the config file, then install the agent again using the updated config file.
+
 ## Installing a single agent
 {: #single-agents}
 
@@ -295,6 +312,22 @@ To deploy multiple agents on a single hots, you must use a configFile parameter.
     ```
     {: pre}
 
+
+
+## Uninstalling a single Windows agent
+{: #uninstall-single-agent}
+
+To uninstall single agent, run the following command.
+
+```txt
+.\unistall.sh
+```
+{: codeblock}
+
+## Updating a single Windows agent
+{: #update-single-agent}
+
+To update a Windows single Agent, uninstall the agent, update the config file, and install the agent again using the updated config file.
 
 
 ## FAQ

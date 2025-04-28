@@ -1880,7 +1880,15 @@ subcollection: satellite
 
 * [Installing multiple Windows agents](/docs/satellite?topic=satellite-connector-multiple-windows-agent#install-multiple)
 
+* [Uninstalling multiple Windows agents](/docs/satellite?topic=satellite-connector-multiple-windows-agent#ma-uninstall)
+
+* [Updating multiple Windows agents](/docs/satellite?topic=satellite-connector-multiple-windows-agent#ma-update)
+
 * [Installing a single agent](/docs/satellite?topic=satellite-connector-multiple-windows-agent#single-agents)
+
+* [Uninstalling a single Windows agent](/docs/satellite?topic=satellite-connector-multiple-windows-agent#uninstall-single-agent)
+
+* [Updating a single Windows agent](/docs/satellite?topic=satellite-connector-multiple-windows-agent#update-single-agent)
 
 * [FAQ](/docs/satellite?topic=satellite-connector-multiple-windows-agent#multiple-faq)
 
