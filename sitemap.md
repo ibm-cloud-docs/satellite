@@ -1874,15 +1874,15 @@ subcollection: satellite
 
 * [Adding TLS support](/docs/satellite?topic=satellite-end-to-end#add-tls)
 
-[Deploying multiple Connector Windows agents on a single machine](/docs/satellite?topic=satellite-connector-create-endpoints-ma#connector-create-endpoints-ma)
+[Deploying multiple Connector Windows agents on a single machine](/docs/satellite?topic=satellite-connector-multiple-windows-agent#connector-multiple-windows-agent)
 
-* [Considerations](/docs/satellite?topic=satellite-connector-create-endpoints-ma#ma-considerations)
+* [Considerations](/docs/satellite?topic=satellite-connector-multiple-windows-agent#ma-considerations)
 
-* [Installing multiple Windows agents](/docs/satellite?topic=satellite-connector-create-endpoints-ma#install-multiple)
+* [Installing multiple Windows agents](/docs/satellite?topic=satellite-connector-multiple-windows-agent#install-multiple)
 
-* [Installing a single agent](/docs/satellite?topic=satellite-connector-create-endpoints-ma#single-agents)
+* [Installing a single agent](/docs/satellite?topic=satellite-connector-multiple-windows-agent#single-agents)
 
-* [FAQ](/docs/satellite?topic=satellite-connector-create-endpoints-ma#multiple-faq)
+* [FAQ](/docs/satellite?topic=satellite-connector-multiple-windows-agent#multiple-faq)
 
 
 ## Managing apps with Satellite Config

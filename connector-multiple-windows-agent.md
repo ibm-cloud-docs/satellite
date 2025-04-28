@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-04-24"
+lastupdated: "2025-04-28"
 
 keywords: satellite, hybrid, multicloud
 
@@ -14,7 +14,7 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 # Deploying multiple Connector Windows agents on a single machine
-{: #connector-create-endpoints-ma}
+{: #connector-multiple-windows-agent}
 
 
 Beginning with Windows agent version 1.2.0, multiple agents on a single Windows host are now supported. Microsoft .NET 3.5 is required on the Server to use version `>= 1.2.0` of the Windows agent.
@@ -71,7 +71,7 @@ To deploy multiple agents on a single hots, you must use a configFile parameter.
 1. Complete the steps in the following section to update the configuration files that you extracted.
 
 
-1. Copy the following configuration and save it to a file called `config_connector1.json`.
+1. Edit the `multi_instance_config.json` file to include your Connector details.
 
     ```json
     {
@@ -88,17 +88,17 @@ To deploy multiple agents on a single hots, you must use a configFile parameter.
 1. Populate the config file with your Connector details and credentials. **Do not** name the file `config.json`. The `SATELLITE_CONNECTOR_INSTANCE_NAME`is required and must start with a character, can contain only characters `(a-zA-Z)`, numbers `(0-9)` and `_`, and the total length must be less than 50 characters.
 
 
-1. Run the installation script.
+1. Run the installation script in PowerShell.
 
     ```txt
-    ./install.ps1 -configFile config_connector1.json
+    ./install.ps1 -configFile multi_instance_config.json
     ```
     {: pre}
 
 
-1. View the agents running on a Windows Server.
+1. View the agents running on a Windows Server. Run the following command in PowerShell.
     ```txt
-    PS >  Get-Service -Name SatelliteConnectorService* | Format-Table -AutoSize
+    Get-Service -Name SatelliteConnectorService* | Format-Table -AutoSize
     ```
     {: pre}
     
@@ -111,10 +111,10 @@ To deploy multiple agents on a single hots, you must use a configFile parameter.
     ```
     {: screen}
 
-1. View the node processes running on a Windows Server.
+1. View the node processes running on a Windows Server. Run the following command in PowerShell.
 
     ```txt
-    PS > get-process | Where-Object {$_ -match 'node'}
+    get-process | Where-Object {$_ -match 'node'}
     ```
     {: pre}
 
@@ -208,8 +208,40 @@ Review the following steps to use the `install.ps1` script to install only a sin
 - The config file name must be `config.json`.
 - The config file `config.json` must not contain a `SATELLITE_CONNECTOR_INSTANCE_NAME`.
 
+To deploy multiple agents on a single hots, you must use a configFile parameter.
 
-1. Create a file called `config.json` and enter your Connector details.
+1. From the CLI, run the following command to download the agent `.zip` file.
+
+    ```sh
+    ibmcloud sat agent attach --platform windows
+    ```
+    {: codeblock}
+
+    Example output.
+    ```sh
+    Downloading agent setup tools for windows...
+    OK
+    Satellite connector agent for windows was successfully returned /var/folders/17/y8wr4y_x1tb4yf__g3wr6g8m0000gp/T/windows_satellite_connector_4097559421.zip
+    ```
+    {: codeblock}
+
+1. Verify the `sha512sum` of the `.zip` by running the following command in PowerShell.
+    ```txt
+    Get-FileHash -Algorithm SHA512 -Path c:\windows_satellite_connector_1420916628.zip
+    ```
+    {: pre}
+
+1. Run the following command in PowerShell to extract the `.zip` file contents.
+
+    ```txt
+    Expand-Archive -Path 'C:\path\to\windows_satellite_connector_4097559421.zip' -DestinationPath ‘C:\path\to\extract'
+    ```
+    {: codeblock}
+
+1. Complete the steps in the following section to update the configuration files that you extracted.
+
+
+1. Edit the `config.json` and enter your Connector details.
 
     ```json
     {
