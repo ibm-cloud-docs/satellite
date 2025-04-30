@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-02"
+lastupdated: "2025-04-30"
 
 keywords: satellite, hybrid, multicloud, spectrum, spectrum fusion
 
@@ -29,7 +29,7 @@ Ready to order?
 :   [Contact IBM Sales](https://www.ibm.com/products/storage-fusion){: external}
 
 Ready to add IBM Storage Fusion HCI virtual machines as hosts?
-:   See the [IBM Storage Fusion documentation](https://www.ibm.com/docs/en/storage-fusion/2.6.0?topic=cloud-satellite-storage-fusion-hci-system){: external} for deployment steps.
+:   See the [IBM Storage Fusion documentation](https://www.ibm.com/docs/en/storage-fusion/storage/2.6.0?topic=cloud-satellite-storage-fusion-hci-system){: external} for deployment steps.
 
 ## I added hosts to my location, what's next?
 {: #fusion-whats-next-host}
