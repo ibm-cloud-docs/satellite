@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-04-28"
+lastupdated: "2025-05-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -33,6 +33,14 @@ Running multiple agents on the same Windows host is not supported for Satellite 
 - The Windows agent runs as a node process on the Windows host. In both the IBM Cloud Console and the IBM Cloud CLI, the node process ID is appended to the Connector name and separated by a `.`.
 
 - In versions earlier than `1.2.0` of the Windows agent, you weren't allowed to specify a config file for the installation or uninstallation scripts. Instead, the scripts automatically took the file `config.json` from the same directory and used it to install or uninstall a single Windows agent.
+
+- A single Windows agents requires at least 4 vCPU and 4 GB is recommended. While this setup could handle multiple agents there is a significant drop in performance after the 4th agent. Therefore, at least 8 vCPU and 8 GB is recommended for running multiple agents.
+
+- Running multiple agents belonging to the same Connector doesn't offer any benefit. The best practice is to have 1 agent per Connector.
+
+- Installing multiple Windows agents requires 25MB of memory to be preserved for each agent.
+
+- Running traffic across agents adds up to ~70MB of memory and 15% CPU utilization per agent, with bandwidth reaching 150:200 Mbps per agent.
 
 
 ## Installing multiple Windows agents
