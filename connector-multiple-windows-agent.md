@@ -34,7 +34,7 @@ Running multiple agents on the same Windows host is not supported for Satellite 
 
 - In versions earlier than `1.2.0` of the Windows agent, you weren't allowed to specify a config file for the installation or uninstallation scripts. Instead, the scripts automatically took the file `config.json` from the same directory and used it to install or uninstall a single Windows agent.
 
-- A single Windows agents requires at least 4 vCPU and 4 GB is recommended. While this setup could handle multiple agent there is a significant drop in performance after the 4th agent. Therefore, at least 8 vCPU and 8 GB is recommended for running multiple agents.
+- A single Windows agents requires at least 4 vCPU and 4 GB is recommended. While this setup could handle multiple agents there is a significant drop in performance after the 4th agent. Therefore, at least 8 vCPU and 8 GB is recommended for running multiple agents.
 
 - Running multiple agents belonging to the same Connector doesn't offer any benefit. The best practice is to have 1 agent per Connector.
 
