@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-04-24"
+lastupdated: "2025-05-06"
 
 keywords: satellite, hybrid, multicloud
 
@@ -178,7 +178,7 @@ ibmcloud sat acl create --connector-id A1B0CDefgHilQ11ubmVjdG1yOiJjb11hnTdlWSRE1
 ```
 {: pre}
 
-This will produce output similar to the following.
+Example output
 
 ```sh
 OK
@@ -193,7 +193,7 @@ ibmcloud sat acl subnet add --connector-id A1B0CDefgHilQ11ubmVjdG1yOiJjb11hnTdlW
 ```
 {: pre}
 
-Run the following command to list ACLs. You will see that the `myrule` ACL now includes two subnets, 10.123.76.192/26 and 10.194.127.64/26.
+Run the following command to list ACLs. The `myrule` ACL now includes two subnets, 10.123.76.192/26 and 10.194.127.64/26.
 
 ```sh
 ibmcloud sat acl ls --connector-id A1B0CDefgHilQ11ubmVjdG1yOiJjb11hnTdlWSRE1dnZla1szbDBsZyI
@@ -218,6 +218,7 @@ A1B0CDefgHilQ11ubmVjdG1yOiJjb11hnTdlWSRE1dnZla1szbDBsZyI-Source-vbfea   myrule  
 1. Click the **User endpoints** tab, then click **Create endpoint**.
 
 1. Select the endpoint type.
+
     Agent location
     :   Destination resource that runs on the same network as the Connector agent.
 
