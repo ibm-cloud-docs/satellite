@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-04-24"
+lastupdated: "2025-05-06"
 
 
 keywords: change log, version history, netapp-trident
@@ -14,7 +14,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-<!-- The content in this topic is auto-generated except for reuse-snippets indicated with {[ ]}. -->
+
 
 
 # `netapp-trident` storage template version change log
