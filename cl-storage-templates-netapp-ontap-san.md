@@ -3,12 +3,12 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-05-06"
+lastupdated: "2025-05-13"
 
 
 keywords: change log, version history, netapp-ontap-san
 
-subcollection: satellite
+subcollection: "satellite"
 
 ---
 
@@ -28,6 +28,12 @@ Review the version history for `netapp-ontap-san`.
 ## Version 24.02
 {: #cl-storage-templates-netapp-ontap-san-24.02}
 
+
+### Revision 4, released 28 April 2025
+{: #cl-storage-templates-netapp-ontap-san-24.02-4}
+
+- Resolves the following CVEs: [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/CVE-2025-0395){: external}.
+- Updates Go to version `1.23.8`.
 
 ### Revision 3, released 01 October 2024
 {: #cl-storage-templates-netapp-ontap-san-24.02-3}
