@@ -29,6 +29,13 @@ Review the version history for `ibm-vpc-block-csi-driver`.
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1}
 
 
+### Revision 10, released 08 April 2025
+{: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-10}
+
+- Resolves the following CVEs: [CVE-2024-45339](https://nvd.nist.gov/vuln/detail/CVE-2024-45339){: external}, and [CVE-2024-45338](https://nvd.nist.gov/vuln/detail/CVE-2024-45338){: external}.
+- Updates Go to version `1.22.12`.
+- Resiliency improvement to use VPC Storage service API for tagging volumes. This doesn't impact existing or new PVCs. This reduces the number of Kubernetes service API calls. 
+
 ### Revision 9, released 13 December 2024
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-9}
 

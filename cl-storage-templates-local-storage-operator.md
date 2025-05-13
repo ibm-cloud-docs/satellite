@@ -29,6 +29,11 @@ Review the version history for `local-storage-operator`.
 {: #cl-storage-templates-local-storage-operator-1.0.0}
 
 
+### Revision 2, released 27 February 2025
+{: #cl-storage-templates-local-storage-operator-1.0.0-2}
+
+- Add support for ROKS 4.15 & 4.16
+
 ### Revision 1, released 18 October 2023
 {: #cl-storage-templates-local-storage-operator-1.0.0-1}
 
