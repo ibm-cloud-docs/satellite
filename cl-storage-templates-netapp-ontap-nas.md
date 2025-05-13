@@ -52,9 +52,27 @@ Review the version history for `netapp-ontap-nas`.
 
 
 
+## Version 23.10
+{: #cl-storage-templates-netapp-ontap-nas-23.10}
+
+
+### Revision 2, released 28 April 2025
+{: #cl-storage-templates-netapp-ontap-nas-23.10-2}
+
+- Resolves the following CVEs: [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/CVE-2025-0395){: external}.
+- Updates Go to version `1.23.8`.
+
+
+
 ## Version 22.10
 {: #cl-storage-templates-netapp-ontap-nas-22.10}
 
+
+### Revision 15, released 28 April 2025
+{: #cl-storage-templates-netapp-ontap-nas-22.10-15}
+
+- Resolves the following CVEs: [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/CVE-2025-0395){: external}.
+- Updates Go to version `1.23.8`.
 
 ### Revision 14, released 01 October 2024
 {: #cl-storage-templates-netapp-ontap-nas-22.10-14}
@@ -147,6 +165,12 @@ Review the version history for `netapp-ontap-nas`.
 ## Version 22.04
 {: #cl-storage-templates-netapp-ontap-nas-22.04}
 
+
+### Revision 28, released 28 April 2025
+{: #cl-storage-templates-netapp-ontap-nas-22.04-28}
+
+- Resolves the following CVEs: [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/CVE-2025-0395){: external}.
+- Updates Go to version `1.23.8`.
 
 ### Revision 27, released 01 October 2024
 {: #cl-storage-templates-netapp-ontap-nas-22.04-27}
