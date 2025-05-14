@@ -41,9 +41,24 @@ Review the version history for `netapp-trident`.
 
 
 
+## Version 23.10
+{: #cl-storage-templates-netapp-trident-23.10}
+
+
+### Revision 1, released 13 December 2024
+{: #cl-storage-templates-netapp-trident-23.10-1}
+
+
+
+
 ## Version 22.10
 {: #cl-storage-templates-netapp-trident-22.10}
 
+
+### Revision 2, released 13 December 2024
+{: #cl-storage-templates-netapp-trident-22.10-2}
+
+- Fix issue with NetApp Trident operator cleanup 
 
 ### Revision 1, released 20 February 2023
 {: #cl-storage-templates-netapp-trident-22.10-1}
@@ -58,6 +73,11 @@ Review the version history for `netapp-trident`.
 ## Version 22.04
 {: #cl-storage-templates-netapp-trident-22.04}
 
+
+### Revision 4, released 13 December 2024
+{: #cl-storage-templates-netapp-trident-22.04-4}
+
+- Fix issue with NetApp Trident operator cleanup 
 
 ### Revision 3, released 23 January 2023
 {: #cl-storage-templates-netapp-trident-22.04-3}
