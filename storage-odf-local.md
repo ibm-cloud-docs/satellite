@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-10"
+  years: 2020, 2025
+lastupdated: "2025-05-27"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -601,10 +601,10 @@ ibmcloud sat storage config param set --config <config-name> -p num-of-osd=2 --a
 
 
 
-    ```sh
-    ibmcloud sat storage config create --name odf-local --template-name odf-local --template-version 4.11 --location odf-sat-stage-location  -p "auto-discover-devices=true" -p "iam-api-key=<api-key>"
-    ```
-    {: pre}
+```sh
+ibmcloud sat storage config create --name odf-local --template-name odf-local --template-version 4.11 --location odf-sat-stage-location  -p "auto-discover-devices=true" -p "iam-api-key=<api-key>"
+```
+{: pre}
 
 1. Assign your configuration to your clusters.
     ```sh
