@@ -109,30 +109,30 @@ Set up the private Ingress application load balancers (ALBs) for the {{site.data
 
 5. Define an Ingress resource file that uses your custom domain to route incoming network traffic to an `nginxsvc` that you create in subsequent steps. Replace `<custom_ingress_domain>` with the domain that you registered, and `<secret_name>` with the secret that you created for your domain's TLS certificate.
     ```yaml
-    apiVersion: networking.k8s.io/v1beta1
-    kind: Ingress
-    metadata:
-      name: dl-ingress-resource
-      annotations:
-        kubernetes.io/ingress.class: "private-iks-k8s-nginx"
-        nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
-        nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
-    spec:
-      tls:
-      - hosts:
-        - <custom_ingress_domain>
-        secretName: <secret_name>
-      rules:
-      - host: <custom_ingress_domain>
-      http:
-        paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: nginxsvc
-              port:
-                number: 80
+   apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dl-ingress-resource
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+spec:
+  ingressClassName: "private-iks-k8s-nginx"
+  tls:
+  - hosts:
+    - <custom_ingress_domain>
+    secretName: <secret_name>
+  rules:
+  - host: <custom_ingress_domain>
+    http:
+      paths:
+      - path: /
+        pathType: Prefix 
+        backend:
+          service:
+            name: nginxsvc
+            port:
+              number: 80
     ```
     {: codeblock}
 
