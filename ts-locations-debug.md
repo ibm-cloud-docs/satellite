@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-10"
+  years: 2020, 2025
+lastupdated: "2025-06-05"
 
 keywords: satellite, hybrid, multicloud, location error messages, location messages, location errors
 
@@ -56,7 +56,7 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
     ```
     {: screen}
 
-3. Find more details about the error message and affected components by [setting up {{site.data.keyword.la_short}} to review {{site.data.keyword.satelliteshort}} location logs](/docs/satellite?topic=satellite-get-help#review-logs).
+3. Find more details about the error message and affected components by [setting up {{site.data.keyword.logs_full_notm}} to review {{site.data.keyword.satelliteshort}} location logs](/docs/satellite?topic=satellite-get-help#review-logs).
 
 4. Review the location state and message for steps to resolve the issue. For a description of the location state, see [Cluster States](/docs/openshift?topic=openshift-cluster-states-reference) in the {{site.data.keyword.openshiftshort}} documentation. For a description of the location message, review the following sections. If your location state is `warning` or `critical` **and** the location is ready for deployments, [open a support ticket](/docs/satellite?topic=satellite-get-help#help-support). 
 
@@ -86,9 +86,9 @@ Location message
 Steps to resolve
 :    Check back later to see if the issue is resolved. If the issue persists for a while, you can [open a support case](/docs/satellite?topic=satellite-get-help).
 
-To find more details about your issue, set up {{site.data.keyword.la_short}} for {{site.data.keyword.satelliteshort}} location.
+To find more details about your issue, set up {{site.data.keyword.logs_full_notm}} for {{site.data.keyword.satelliteshort}} location.
 
-1. [Set up {{site.data.keyword.la_short}} for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-la).
+1. [Set up {{site.data.keyword.logs_full_notm}} for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-la).
 2. Search the platform logs for the error code for more details, such as failed API method due to a permissions error.
 3. If the details indicate a permission error:
     1. As the account administrator, log in to the {{site.data.keyword.cloud_notm}} CLI and target the resource group and region that the location is in.
@@ -319,7 +319,7 @@ Location message
 :    R0045: A read-only file system has been detected on one or more hosts. Replace the affected host(s).
 
 Steps to resolve
-:    1. [Set up {{site.data.keyword.la_short}} for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-la) for more information about which hosts are affected.
+:    1. [Set up {{site.data.keyword.logs_full_notm}} for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-la) for more information about which hosts are affected.
      2. [Remove](/docs/satellite?topic=satellite-host-remove) the affected hosts and [reattach new hosts](/docs/satellite?topic=satellite-attach-hosts).
      3. If you still have issues, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID.
 
@@ -442,7 +442,7 @@ When you update or replace control plane hosts, **do not assign or remove multip
 2. [Assign the attached hosts](/docs/satellite?topic=satellite-attach-hosts) to your location. Make sure that you only assign hosts one at a time and that each assignment completes before you assign another host.  
 3. [Remove the original hosts from your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-host-remove). Make sure that you only remove hosts one at a time and that each removal completes before you remove another host. 
 
-For additional information about the affected components, [set up {{site.data.keyword.la_short}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0056` error logs](/docs/satellite?topic=satellite-health#logs-error).
+For additional information about the affected components, [set up {{site.data.keyword.logs_full_notm}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0056` error logs](/docs/satellite?topic=satellite-health#logs-error).
 
 ## R0057: Outbound traffic to IAM is failing
 {: #R0057}
@@ -463,7 +463,7 @@ Steps to resolve
 1. If the output from the previous step indicates a failure, check that your hosts meet all [system requirements](/docs/satellite?topic=satellite-host-reqs). 
 1. If you have met all the system requirements and the issue persists, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID. You can find your location ID by running the `ibmcloud sat location ls` command.
 
-For additional information about the affected components, [set up {{site.data.keyword.la_short}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0057` error logs](/docs/satellite?topic=satellite-health#logs-error).
+For additional information about the affected components, [set up {{site.data.keyword.logs_full_notm}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0057` error logs](/docs/satellite?topic=satellite-health#logs-error).
 
 ## R0058: DNS registration is failing
 {: #R0058}
@@ -493,7 +493,7 @@ Steps to resolve
 1. If the output from the previous step indicates a failure, check that your hosts meet all [system requirements](/docs/satellite?topic=satellite-host-reqs). 
 1. If you have met all the system requirements and the issue persists, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID. You can find your location ID by running the `ibmcloud sat location ls` command.
 
-For additional information about the affected components, [set up {{site.data.keyword.la_short}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0059` error logs](/docs/satellite?topic=satellite-health#logs-error).
+For additional information about the affected components, [set up {{site.data.keyword.logs_full_notm}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0059` error logs](/docs/satellite?topic=satellite-health#logs-error).
 
 ## R0060: Outbound traffic to LaunchDarkly is failing.
 {: #R0060}
@@ -514,7 +514,7 @@ Steps to resolve
 1. If the output from the previous step indicates a failure, check that your hosts meet all [system requirements](/docs/satellite?topic=satellite-host-reqs). 
 1. If you have met all the system requirements and the issue persists, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID. You can find your location ID by running the `ibmcloud sat location ls` command.
 
-For additional information about the affected components, [set up {{site.data.keyword.la_short}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0060` error logs](/docs/satellite?topic=satellite-health#logs-error).
+For additional information about the affected components, [set up {{site.data.keyword.logs_full_notm}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0060` error logs](/docs/satellite?topic=satellite-health#logs-error).
 
 ## R0061: A Satellite cluster API server is unreachable from IBM Cloud.
 {: #R0061}
@@ -525,7 +525,7 @@ Location message
 Steps to resolve
 :    Take the following steps to resolve this issue.
 
-1. Check the IBM Cloud platform logs for more details. For more information, see [set up {{site.data.keyword.la_short}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0061` error logs](/docs/satellite?topic=satellite-health#logs-error).
+1. Check the IBM Cloud platform logs for more details. For more information, see [set up {{site.data.keyword.logs_full_notm}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0061` error logs](/docs/satellite?topic=satellite-health#logs-error).
 
 1. Check that your hosts meet all [system requirements](/docs/satellite?topic=satellite-host-reqs), specifically for outbound connectivity to connect to IBM and Link tunnel clients. 
 1. If you have met all the system requirements and the issue persists, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID. You can find your location ID by running the `ibmcloud sat location ls` command.

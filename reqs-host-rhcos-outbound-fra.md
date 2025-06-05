@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-01-03"
+  years: 2023, 2025
+lastupdated: "2025-06-05"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -66,16 +66,14 @@ Allow Link tunnel clients to connect to the Link tunnel server endpoint. {: #lin
 
 :    You can find these hostnames or IP addresses by running the `dig c-<XX>-ws.eu-de.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned. 
 
-Optional: Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}.
-:    * Destination IP addresses and hostnames: [{{site.data.keyword.loganalysislong_notm}} endpoints](/docs/log-analysis?topic=log-analysis-endpoints#endpoints_api_public)
+Optional: Allow hosts to communicate with {{site.data.keyword.logs_full_notm}}.
+:    * Destination IP addresses and hostnames: [{{site.data.keyword.logs_full_notm}} endpoints](/docs/cloud-logs?topic=cloud-logs-vpe-connection&interface=cli)
      * Protocol and ports: HTTPS 443
 
-:    If you plan to use {{site.data.keyword.loganalysislong_notm}} in your {{site.data.keyword.openshiftshort}}  {{site.data.keyword.satelliteshort}} clusters, then include these network options.
+:    If you plan to use {{site.data.keyword.logs_full_notm}} in your {{site.data.keyword.openshiftshort}} {{site.data.keyword.satelliteshort}} clusters, then include these network options.
 
 Optional: Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}.
 :    * Destination IP addresses and hostnames: [{{site.data.keyword.monitoringshort_notm}} endpoints](/docs/monitoring?topic=monitoring-endpoints)
      * Protocol and ports: HTTPS 443 and 6443
 
 :    If you plan to use {{site.data.keyword.monitoringshort_notm}} in your {{site.data.keyword.openshiftshort}} {{site.data.keyword.satelliteshort}} clusters, then include these network options.
-
-

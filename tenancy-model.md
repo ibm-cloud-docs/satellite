@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-11-11"
+  years: 2022, 2025
+lastupdated: "2025-06-05"
 
 keywords: satellite, hybrid, multicloud, tenancy, resellers, satellite reseller, satellite use case
 
@@ -70,9 +70,7 @@ Want to automate this step? After you create an account, you can use the IBM ter
 
 1. [Add a client account to your enterprise](/docs/enterprise-management?topic=enterprise-management-enterprise-add).
 
-1. In the client account, [provision an {{site.data.keyword.loganalysisshort}} instance](/docs/log-analysis?topic=log-analysis-getting-started#getting-started-provision).
-
-1. In the client account, [provision a {{site.data.keyword.monitoringshort}} instance](/docs/monitoring?topic=monitoring-provision#provision).
+1. In the client account, provision an {{site.data.keyword.logs_full_notm}} instance.
 
 1. In the client account, [provision an {{site.data.keyword.cos_full_notm}} instance](/docs/monitoring?topic=monitoring-provision#provision).
 

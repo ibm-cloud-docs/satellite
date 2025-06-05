@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-01-23"
+lastupdated: "2025-06-05"
 
 keywords: satellite, hybrid, multicloud
 
@@ -40,14 +40,14 @@ See [Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?t
 When you create a {{site.data.keyword.satelliteshort}} location and set up the location control plane, {{site.data.keyword.IBM_notm}} automatically monitors and resolves certain alerts for issues with your location setup and host infrastructure. The following table describes different scenarios and the actions that {{site.data.keyword.IBM_notm}} takes to address the scenarios.
 {: shortdesc}
 
-Additionally, if you [set up your {{site.data.keyword.satelliteshort}} location to forward logs to {{site.data.keyword.la_full_notm}}](/docs/satellite?topic=satellite-health#setup-la), the messages and more detailed information from the {{site.data.keyword.IBM_notm}} Monitoring component are captured and stored in your {{site.data.keyword.la_full_notm}} instance.
+Additionally, if you [set up your {{site.data.keyword.satelliteshort}} location to forward logs to {{site.data.keyword.logs_full_notm}}](/docs/satellite?topic=satellite-health#setup-la), the messages and more detailed information from the {{site.data.keyword.IBM_notm}} Monitoring component are captured and stored in your {{site.data.keyword.logs_full_notm}} instance.
 
 | Scenario | Action |
 | --- | --- |
 | Location control plane does not have a host in three separate zones. | Check for attached, unassigned hosts in the location. If a host is available, assign the host to the location control plane for the missing zone, giving preference to hosts with a label that matches the zone. |
 | Cluster capacity exceeds 80% in a zone. | Prevent or allow {{site.data.keyword.redhat_openshift_notm}} clusters to be created. Assign available hosts to a location control plane for more compute resources. |
 | {{site.data.keyword.redhat_openshift_notm}} clusters are in an unhealthy state. | Resolve certain health issues with {{site.data.keyword.redhat_openshift_notm}} clusters. |
-| Default monitoring tools like Prometheus do not work. | Send alerts to your {{site.data.keyword.la_full_notm}} instance and return a status message with further troubleshooting information. |
+| Default monitoring tools like Prometheus do not work. | Send alerts to your {{site.data.keyword.logs_full_notm}} instance and return a status message with further troubleshooting information. |
 | Ingress subdomain registration fails. | Alert {{site.data.keyword.IBM_notm}} engineers to troubleshoot the issues further and return a status message with further troubleshooting information. |
 {: caption="IBM monitoring actions to address certain scenarios." caption-side="bottom"}
 
@@ -114,7 +114,7 @@ To review the health of {{site.data.keyword.openshiftlong_notm}} clusters that r
 When you add your clusters to {{site.data.keyword.satelliteshort}} Configuration, the Kubernetes resources are automatically added to an inventory that you can review. For more information, see [Managing apps with {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 {: shortdesc}
 
-Adding clusters to {{site.data.keyword.satelliteshort}} Configuration does not automatically set up logging and monitoring solutions, such as {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}.
+Adding clusters to {{site.data.keyword.satelliteshort}} Configuration does not automatically set up logging and monitoring solutions, such as {{site.data.keyword.logs_full_notm}} and {{site.data.keyword.mon_full_notm}}.
 {: note}
 
 ### Viewing {{site.data.keyword.satelliteshort}} Config registration status for clusters
@@ -330,7 +330,7 @@ The following additional attributes that are specific to {{site.data.keyword.sat
 ## Setting up monitoring for clusters
 {: #setup-clusters-monitoring}
 
-You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable monitoring for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy monitoring agents to your cluster to forward metrics to {{site.data.keyword.mon_short}}.
+You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console to enable monitoring for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy monitoring agents to your cluster to forward metrics to {{site.data.keyword.mon_short}}.
 {: note}
 
 To set up monitoring for {{site.data.keyword.redhat_openshift_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see  [Deploying a monitoring agent in a {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/monitoring?topic=monitoring-agent_openshift). When you specify address for the `COLLECTOR_ENDPOINT`, you can use the `satellite-sysdig` link endpoint address so that you don't need to open up new firewall rules. 

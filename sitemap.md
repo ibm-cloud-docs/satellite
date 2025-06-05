@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-05-13"
+lastupdated: "2025-06-05"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2109,7 +2109,7 @@ subcollection: satellite
 
 [Logging for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-health#health)
 
-* [Setting up {{site.data.keyword.la_short}} for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-la)
+* [Setting up {{site.data.keyword.logs_full_notm}} for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-la)
 
     * [Enabling platform logs](/docs/satellite?topic=satellite-health#enable-la)
 
@@ -2123,7 +2123,7 @@ subcollection: satellite
 
     * [Endpoint health status logs](/docs/satellite?topic=satellite-health#logs-link)
 
-* [Setting up {{site.data.keyword.at_short}} for {{site.data.keyword.satelliteshort}} location events](/docs/satellite?topic=satellite-health#setup-at)
+* [Setting up {{site.data.keyword.logs_full_notm}} for {{site.data.keyword.satelliteshort}} location events](/docs/satellite?topic=satellite-health#setup-at)
 
 * [Setting up logging for clusters](/docs/satellite?topic=satellite-health#setup-clusters-logging)
 

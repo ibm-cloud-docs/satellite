@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2025
+lastupdated: "2025-06-05"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -151,7 +151,7 @@ The private Ingress ALBs in your cluster are now configured to expose a reverse 
 Deploy an NGINX reverse proxy in the cluster that is exposed on the private network by the Ingress ALBs, and configure the reverse proxy to point to the {{site.data.keyword.satelliteshort}} Link tunnel server for your location.
 {: shortdesc}
 
-The following steps include editing and using local YAML files to create a ConfigMap, an NGINX deployment, and a service. As an alternative, you can clone an NGINX HTTPS sample repository, such as the [`https-nginx` directory of the `kubernetes/examples` repository](https://github.com/kubernetes/examples/tree/master/staging/https-nginx){: external}, and [push the Docker image to a namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started). If you use a sample repository, ensure that the NGINX configuration, such as in the `default.conf` file, includes the server block that is specified in step 2 of this section.
+The following steps include editing and using local YAML files to create a ConfigMap, an NGINX deployment, and a service. As an alternative, you can clone an NGINX HTTPS sample repository, such as the [`https-nginx` directory of the `kubernetes/examples` repository](https://github.com/kubernetes/examples/tree/master/_archived/https-nginx){: external}, and [push the Docker image to a namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started). If you use a sample repository, ensure that the NGINX configuration, such as in the `default.conf` file, includes the server block that is specified in step 2 of this section.
 {: tip}
 
 1. Get the private service endpoint for the Link tunnel server. In the output, look for the `Address` that is listed for an endpoint of type `location`.
@@ -302,5 +302,3 @@ Configure the Link tunnel client in your {{site.data.keyword.satelliteshort}} lo
 1. Verify that traffic flows from {{site.data.keyword.cloud_notm}} to your {{site.data.keyword.satelliteshort}} location by [creating a Link endpoint of type `location`](/docs/satellite?topic=satellite-link-cloud-create#link-location). For example, you might create a `location` endpoint for the IP address of an app in a {{site.data.keyword.satelliteshort}} cluster in your location, and then test the connection to the app from a service in the {{site.data.keyword.cloud_notm}} private network.
 
 You've successfully configured your {{site.data.keyword.satelliteshort}} Link setup so that all traffic that flows over Link endpoints now uses your {{site.data.keyword.dl_short}} connection.
-
-

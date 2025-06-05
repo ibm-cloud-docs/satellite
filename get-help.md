@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-30"
+  years: 2020, 2025
+lastupdated: "2025-06-05"
 
 keywords: satellite, hybrid, multicloud
 
@@ -55,7 +55,7 @@ If your host is not assigned to a cluster, or if the assignment fails, you can S
 
 If you are using {{site.data.keyword.bpshort}}, you can view job log details to find information about your deployment. For more information, see [Reviewing the {{site.data.keyword.bpshort}} job details](/docs/schematics?topic=schematics-wks-state).
 
-You can also view logs that are automatically generated for your {{site.data.keyword.satelliteshort}} location setup and collected in an {{site.data.keyword.la_full_notm}} instance. For more information, see [Logging for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-health).
+You can also view logs that are automatically generated for your {{site.data.keyword.satelliteshort}} location setup and collected in an {{site.data.keyword.logs_full_notm}} instance. For more information, see [Logging for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-health).
 
 ## Feedback and questions
 {: #feedback-qs}

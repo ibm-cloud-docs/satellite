@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-30"
+lastupdated: "2025-06-05"
 
 keywords: satellite, hybrid, multicloud
 
@@ -16,38 +16,38 @@ subcollection: satellite
 # Logging for {{site.data.keyword.satelliteshort}}
 {: #health}
 
-Integrate {{site.data.keyword.satelliteshort}} and other {{site.data.keyword.cloud_notm}} resources with {{site.data.keyword.la_full}} to get a comprehensive view and tools to manage all your resources.
+Integrate {{site.data.keyword.satelliteshort}} and other {{site.data.keyword.cloud_notm}} resources with {{site.data.keyword.logs_full}} to get a comprehensive view and tools to manage all your resources.
 {: shortdesc}
 
-Logging for your {{site.data.keyword.satelliteshort}} location and for the {{site.data.keyword.cloud_notm}} services that run in your location must be set up separately. For example, to collect logs for your {{site.data.keyword.satelliteshort}} location setup, you enable a {{site.data.keyword.la_short}} instance to collect platform logs in the same region that your location is managed from. Then, to collect logs for a {{site.data.keyword.openshiftlong_notm}} cluster that runs in your {{site.data.keyword.satelliteshort}} location, you create a logging agent in your cluster to automatically collect and forward pod logs to a {{site.data.keyword.la_short}} instance. Note that you can use the same {{site.data.keyword.la_short}} instance to collect logs for both your {{site.data.keyword.satelliteshort}} location and services that run in your {{site.data.keyword.satelliteshort}} location.
+Logging for your {{site.data.keyword.satelliteshort}} location and for the {{site.data.keyword.cloud_notm}} services that run in your location must be set up separately. For example, to collect logs for your {{site.data.keyword.satelliteshort}} location setup, you enable a {{site.data.keyword.logs_full_notm}} instance to collect platform logs in the same region that your location is managed from. Then, to collect logs for a {{site.data.keyword.openshiftlong_notm}} cluster that runs in your {{site.data.keyword.satelliteshort}} location, you create a logging agent in your cluster to automatically collect and forward pod logs to a {{site.data.keyword.logs_full_notm}} instance. Note that you can use the same {{site.data.keyword.logs_full_notm}} instance to collect logs for both your {{site.data.keyword.satelliteshort}} location and services that run in your {{site.data.keyword.satelliteshort}} location.
 
 
-## Setting up {{site.data.keyword.la_short}} for {{site.data.keyword.satelliteshort}} location platform logs
+## Setting up {{site.data.keyword.logs_full_notm}} for {{site.data.keyword.satelliteshort}} location platform logs
 {: #setup-la}
 
-Forward and view logs that are automatically generated for your {{site.data.keyword.satelliteshort}} location setup in an {{site.data.keyword.la_full_notm}} instance that is enabled for platform-level logs.
+Forward and view logs that are automatically generated for your {{site.data.keyword.satelliteshort}} location setup in an {{site.data.keyword.logs_full_notm}} instance that is enabled for platform-level logs.
 {: shortdesc}
 
 ### Enabling platform logs
 {: #enable-la}
 
-If you already have a {{site.data.keyword.la_short}} instance in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from, and the {{site.data.keyword.la_short}} instance is configured to collect platform logs, the logs that are generated for your {{site.data.keyword.satelliteshort}} location are automatically forwarded to this {{site.data.keyword.la_short}} instance. Otherwise, follow these steps to set up {{site.data.keyword.la_short}} for your {{site.data.keyword.satelliteshort}} location.
+If you already have a {{site.data.keyword.logs_full_notm}} instance in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from, and the {{site.data.keyword.logs_full_notm}} instance is configured to collect platform logs, the logs that are generated for your {{site.data.keyword.satelliteshort}} location are automatically forwarded to this {{site.data.keyword.logs_full_notm}} instance. Otherwise, follow these steps to set up {{site.data.keyword.logs_full_notm}} for your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
-1. [Provision an {{site.data.keyword.la_full_notm}} instance](https://cloud.ibm.com/catalog){: external} in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
-2. [Enable the instance for platform-level log collection](/docs/log-analysis?topic=log-analysis-config_svc_logs). Note that within one region, only one {{site.data.keyword.la_short}} instance can be enabled for platform logs collection.
+1. [Provision an {{site.data.keyword.logs_full_notm}} instance](https://cloud.ibm.com/catalog){: external} in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
+2. [Enable the instance for platform-level log collection](/docs/cloud-logs?topic=cloud-logs-cl-platform-logs). Note that within one region, only one {{site.data.keyword.logs_full_notm}} instance can be enabled for platform logs collection.
 
 ### Viewing logs for your {{site.data.keyword.satelliteshort}} location
 {: #view-la}
 
-Because the {{site.data.keyword.la_full_notm}} instance is enabled for platform-level log collection, logs for all {{site.data.keyword.la_short}}-integrated services are shown in the {{site.data.keyword.la_short}} dashboard. You can apply filters to view only logs for your {{site.data.keyword.satelliteshort}} location.
+Because the {{site.data.keyword.logs_full_notm}} instance is enabled for platform-level log collection, logs for all {{site.data.keyword.logs_full_notm}}-integrated services are shown in the {{site.data.keyword.logs_full_notm}} dashboard. You can apply filters to view only logs for your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
-1. In the [**Logging** dashboard](https://cloud.ibm.com/observe/logging){: external}, click **Open Dashboard** for your {{site.data.keyword.la_short}} instance.
+1. In the [**Logging** dashboard](https://cloud.ibm.com/observe/logging){: external}, click **Open Dashboard** for your {{site.data.keyword.logs_full_notm}} instance.
 2. In the Filters toolbar, click **Sources**, select `satellite`, and click **Apply**. The logs for all your {{site.data.keyword.satelliteshort}} locations in the region are shown.
 3. To filter for a specific {{site.data.keyword.satelliteshort}} location, click **Apps** in the Filters toolbar, select the CRN for your {{site.data.keyword.satelliteshort}} location, and click **Apply**. To identify the CRN for your location, get your location ID by running `ibmcloud sat location ls`, look for this location's ID at the end of the listed CRNs.
 
-For more tips on identifying logs in the dashboard, review how you can [search and filter logs](/docs/log-analysis?topic=log-analysis-view_logs).
+For more tips on identifying logs in the dashboard, review how you can [search and filter logs](/docs/cloud-logs?topic=cloud-logs-query-data-filter).
 {: tip}
 
 ### Analyzing logs for your {{site.data.keyword.satelliteshort}} location
@@ -69,7 +69,7 @@ By default, three types of logs are automatically generated for your {{site.data
 #### How can I set up alerts for location error logs?
 {: #analyze-la-alert}
 
-You can use the built-in {{site.data.keyword.la_short}} dashboard tools to save log searches and set up alerts for certain types of logs, such as errors.
+You can use the built-in {{site.data.keyword.logs_full_notm}} dashboard tools to save log searches and set up alerts for certain types of logs, such as errors.
 
 1. To filter for a specific {{site.data.keyword.satelliteshort}} location, click **Apps** in the Filters toolbar, select the CRN for your {{site.data.keyword.satelliteshort}} location, and click **Apply**. To identify the CRN for your location, look for the location's ID at the end of the CRN.
 2. Search for a specific query that you want an alert for. For example, to be alerted for any logs that contain `R00XX`-level location error messages, search for `R00`. To be alerted for {{site.data.keyword.satelliteshort}} Link health check failures, search for `Failed to reach endpoint`.
@@ -149,21 +149,21 @@ Example log
 
 
 
-## Setting up {{site.data.keyword.at_short}} for {{site.data.keyword.satelliteshort}} location events
+## Setting up {{site.data.keyword.logs_full_notm}} for {{site.data.keyword.satelliteshort}} location events
 {: #setup-at}
 
-To track how users and applications interact with your {{site.data.keyword.satelliteshort}} location, {{site.data.keyword.satellitelong_notm}} automatically generates user-initiated management events and forwards these event logs to {{site.data.keyword.at_full}}.
+To track how users and applications interact with your {{site.data.keyword.satelliteshort}} location, {{site.data.keyword.satellitelong_notm}} automatically generates user-initiated management events and forwards these event logs to {{site.data.keyword.logs_full_notm}}.
 {: shortdesc}
 
-To access these logs, [provision an instance of {{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started) in the same region that your location is managed from. For more information about the types of {{site.data.keyword.satelliteshort}} events that you can track, see [Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-at_events).
+To access these logs, provision an instance of {{site.data.keyword.logs_full_notm}} in the same region that your location is managed from. For more information about the types of {{site.data.keyword.satelliteshort}} events that you can track, see [Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-at_events).
 
 ## Setting up logging for clusters
 {: #setup-clusters-logging}
 
-To understand and set up logging for {{site.data.keyword.redhat_openshift_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the tutorials in the [{{site.data.keyword.la_full_notm}} documentation](/docs/log-analysis?topic=log-analysis-tutorial-use-logdna).
+To understand and set up logging for {{site.data.keyword.redhat_openshift_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the tutorials in the [{{site.data.keyword.logs_full_notm}} documentation](/docs/cloud-logs).
 {: shortdesc}
 
-You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable logging for {{site.data.keyword.satelliteshort}} clusters. You must [manually deploy logging agents to your cluster](#enable-clusters-logging) to forward logs to {{site.data.keyword.la_short}}.
+You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console to enable logging for {{site.data.keyword.satelliteshort}} clusters. You must [manually deploy logging agents to your cluster](#enable-clusters-logging) to forward logs to {{site.data.keyword.logs_full_notm}}.
 {: note}
 
 ### Enabling a logging instance in your cluster
