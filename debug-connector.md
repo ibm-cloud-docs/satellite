@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-02-28"
+  years: 2023, 2025
+lastupdated: "2025-06-05"
 
 keywords: satellite, hybrid, multicloud, connector, create connector
 
@@ -16,10 +16,10 @@ subcollection: satellite
 # Debugging Connectors
 {: #debug-connector}
   
-To troubleshoot your issues quickly and efficiently, it is highly recommended that you connect your {{site.data.keyword.satelliteshort}} Connector instance to an {{site.data.keyword.la_full_notm}} instance.  
+To troubleshoot your issues quickly and efficiently, it is highly recommended that you connect your {{site.data.keyword.satelliteshort}} Connector instance to an {{site.data.keyword.logs_full_notm}} instance.  
 {: shortdesc}
   
-Access your {{site.data.keyword.satelliteshort}} Connector instance from the console. If you don’t have an {{site.data.keyword.la_full_notm}} instance in your account for the region you created the {{site.data.keyword.satelliteshort}} Connector in, click **Connect** under the **Logging for Link** section. You will be taken to the **Catalog** page where you can create an {{site.data.keyword.la_full_notm}} instance. If you already have an {{site.data.keyword.la_full_notm}} instance, click **Configure** under the **Logging for Link** section. Then, select your existing logging instance. After you’ve connected an {{site.data.keyword.la_full_notm}} instance to your {{site.data.keyword.satelliteshort}} Connector, you can use the **Logging for Link** section to open the Logging Instance dashboard and the output will be filtered for your Connector.
+Access your {{site.data.keyword.satelliteshort}} Connector instance from the console. If you don’t have an {{site.data.keyword.logs_full_notm}} instance in your account for the region you created the {{site.data.keyword.satelliteshort}} Connector in, click **Connect** under the **Logging for Link** section. You will be taken to the **Catalog** page where you can create an {{site.data.keyword.logs_full_notm}} instance. If you already have an {{site.data.keyword.logs_full_notm}} instance, click **Configure** under the **Logging for Link** section. Then, select your existing logging instance. After you’ve connected an {{site.data.keyword.logs_full_notm}} instance to your {{site.data.keyword.satelliteshort}} Connector, you can use the **Logging for Link** section to open the Logging Instance dashboard and the output will be filtered for your Connector.
   
 The logging instance must have **Receive Platform Logs** enabled. To enable this option, select **Options** -> **Edit Platform** from the list of logging instances.
 {: note}
@@ -48,7 +48,7 @@ After 2 minutes, if the agent is still not displaying, follow these debugging st
     {: pre} 
 
   
-1. Check the log on the agent container. If there are no errors in the {{site.data.keyword.la_full_notm}} Dashboard, this means there is an issue that is occurring before the agent communicates with the tunnel servers. You can get more information by looking at the log file on the agent container. The command varies by container platform. If you are using Docker, you can use the following command:
+1. Check the log on the agent container. If there are no errors in the {{site.data.keyword.logs_full_notm}} Dashboard, this means there is an issue that is occurring before the agent communicates with the tunnel servers. You can get more information by looking at the log file on the agent container. The command varies by container platform. If you are using Docker, you can use the following command:
     ```sh
     docker logs <container id>
     ```
@@ -94,7 +94,7 @@ If your agent container is listed in the Active Agents tab on the console, follo
   
 1. Review the error messages.
   
-    After the tunnel is established, any errors will be located in both the {{site.data.keyword.la_full_notm}} instance and in the agent’s container platform logs. Most errors will now be those trying to access an endpoint from within {{site.data.keyword.cloud_notm}} to an application running on-prem over the tunnel. When accessing an endpoint, at the start of the connection a `flowlog` entry is written to the logging instance. For example:
+    After the tunnel is established, any errors will be located in both the {{site.data.keyword.logs_full_notm}} instance and in the agent’s container platform logs. Most errors will now be those trying to access an endpoint from within {{site.data.keyword.cloud_notm}} to an application running on-prem over the tunnel. When accessing an endpoint, at the start of the connection a `flowlog` entry is written to the logging instance. For example:
     ```sh
     flowlog: start for client 10.249.96.47:1206 connect to postgres.apps.wdc6.toddjohn.net:5432, conn_type: location
     ```
@@ -124,5 +124,3 @@ If your agent container is listed in the Active Agents tab on the console, follo
 
 
   
-
-

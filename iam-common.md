@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2025
+lastupdated: "2025-06-05"
 
 keywords: satellite, hybrid, multicloud
 
@@ -35,7 +35,7 @@ When you use an [{{site.data.keyword.bplong}} template](/docs/satellite?topic=sa
 ## Google Cloud Platform permissions
 {: #permissions-gcp}
 
-When you use an [{{site.data.keyword.bplong}} template](/docs/satellite?topic=satellite-loc-gcp-create-auto) to create your {{site.data.keyword.satelliteshort}} location, you must be assigned a role that can create virtual instances and networks in Google Cloud Platform. For example, you can be assigned the [**Cloud Build Editor**](https://cloud.google.com/iam/docs/understanding-roles#cloudbuild.builds.editor){: external} role in a specific project in GCP IAM. For more information about role permissions in GCP, see the [GCP documentation](https://cloud.google.com/iam/docs/permissions-reference){: external}.
+When you use an [{{site.data.keyword.bplong}} template](/docs/satellite?topic=satellite-loc-gcp-create-auto) to create your {{site.data.keyword.satelliteshort}} location, you must be assigned a role that can create virtual instances and networks in Google Cloud Platform. For example, you can be assigned the [**Cloud Build Editor**](https://cloud.google.com/iam/docs/roles-permissions#cloudbuild.builds.editor){: external} role in a specific project in GCP IAM. For more information about role permissions in GCP, see the [GCP documentation](https://cloud.google.com/iam/docs/roles-permissions){: external}.
 
 
 
@@ -45,5 +45,3 @@ When you use an [{{site.data.keyword.bplong}} template](/docs/satellite?topic=sa
 
 When you use an [{{site.data.keyword.bplong}} template](/docs/satellite?topic=satellite-loc-vmware-create-auto) to create your {{site.data.keyword.satelliteshort}} location, you must be assigned a role that can create virtual instances and networks in VMware. For example, you can be assigned the **Administrator** role for the VMware vSphere vCenter servers. For more information about role permissions in VMWare, see the [VMware documentation]https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.security.doc/GUID-93B962A7-93FA-4E96-B68F-AE66D3D6C663.html){: external}.
 {: shortdesc}
-
-

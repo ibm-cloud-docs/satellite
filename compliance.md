@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-30"
+  years: 2020, 2025
+lastupdated: "2025-06-05"
 
 keywords: satellite, hybrid, multicloud, satellite security, satellite compliance
 
@@ -45,7 +45,7 @@ Review the following ways that you can secure access to your location.
 
 - Consider the types of [user access to resources that run in your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-service-connection#user-access)
 - [Manage access for {{site.data.keyword.satelliteshort}} by using {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM)](/docs/satellite?topic=satellite-iam)
-- Monitor user-initiated activities by [Setting up {{site.data.keyword.at_short}} for {{site.data.keyword.satelliteshort}} location events](/docs/satellite?topic=satellite-health#setup-at)
+- Monitor user-initiated activities by [Setting up {{site.data.keyword.logs_full_notm}} for {{site.data.keyword.satelliteshort}} location events](/docs/satellite?topic=satellite-health#setup-at)
 - In the case of a potential security incident, [reset the key that the control plane uses to communicate with all the hosts in the Satellite location](/docs/satellite?topic=satellite-host-update-location#host-key-reset)
 - Protect sensitive data by [Encrypting the Kubernetes secrets by using a KMS provider](/docs/containers?topic=containers-encryption-setup).
 
@@ -88,12 +88,12 @@ Default {{site.data.keyword.satelliteshort}} Link endpoints are created for your
 
 {{site.data.keyword.satelliteshort}} Link provides built-in controls to help you restrict which clients can access endpoints, ensuring that there are no back door access points on your hosts. For more information, see [Access and audit controls](/docs/satellite?topic=satellite-link-location-cloud#link-audit-about).
 
-Additionally, you can configure auditing to monitor user-initiated events for Link endpoints. {{site.data.keyword.satellitelong_notm}} integrates with {{site.data.keyword.at_full}} to collect and send audit events for all link endpoints in your location to your {{site.data.keyword.at_short}} instance. For example, after you set up event auditing, you can review all events that relate to the masters for the clusters that run in your location, including events that are initiated by {{site.data.keyword.cloud_notm}}. To get started with auditing, see [Auditing events for endpoint actions](/docs/satellite?topic=satellite-link-cloud-monitor#link-audit).
+Additionally, you can configure auditing to monitor user-initiated events for Link endpoints. {{site.data.keyword.satellitelong_notm}} integrates with {{site.data.keyword.logs_full_notm}} to collect and send audit events for all link endpoints in your location to your {{site.data.keyword.logs_full_notm}} instance. For example, after you set up event auditing, you can review all events that relate to the masters for the clusters that run in your location, including events that are initiated by {{site.data.keyword.cloud_notm}}. To get started with auditing, see [Auditing events for endpoint actions](/docs/satellite?topic=satellite-link-cloud-monitor#link-audit).
 
 ### What happens if {{site.data.keyword.satelliteshort}} Link becomes unavailable? Can {{site.data.keyword.IBM_notm}} still maintain my {{site.data.keyword.satelliteshort}} location?
 {: #operational-access-availability}
 
-{{site.data.keyword.satelliteshort}} Link depends on the underlying connectivity of your hosts' local network to monitor and maintain the managed services for your {{site.data.keyword.satelliteshort}} location. If {{site.data.keyword.satelliteshort}} Link become unavailable, any requested changes to your {{site.data.keyword.satelliteshort}} location, such as adding hosts or access control requests to {{site.data.keyword.IBM_notm}} services through {{site.data.keyword.iamshort}}, are disrupted. After connectivity is restored, logs and events are sent to your [{{site.data.keyword.la_full_notm}} and {{site.data.keyword.at_full_notm}} instances](/docs/satellite?topic=satellite-health).
+{{site.data.keyword.satelliteshort}} Link depends on the underlying connectivity of your hosts' local network to monitor and maintain the managed services for your {{site.data.keyword.satelliteshort}} location. If {{site.data.keyword.satelliteshort}} Link become unavailable, any requested changes to your {{site.data.keyword.satelliteshort}} location, such as adding hosts or access control requests to {{site.data.keyword.IBM_notm}} services through {{site.data.keyword.iamshort}}, are disrupted. After connectivity is restored, logs and events are sent to your [{{site.data.keyword.logs_full_notm}} instances](/docs/satellite?topic=satellite-health).
 
 Note that your on-location workloads continue to run independently even if the location's connectivity to {{site.data.keyword.cloud_notm}} is unavailable. However, if any applications use a Link endpoint to communicate with {{site.data.keyword.cloud_notm}}, communication between those apps and {{site.data.keyword.cloud_notm}} is disrupted.
 
@@ -109,7 +109,7 @@ Let's Encrypt certificates are automatically generated for several {{site.data.k
 | Component | Example domain | Certificate expiry | Who regenerates | How to regenerate |
 |---|---|---|---|---|
 | Default {{site.data.keyword.openshiftlong_notm}} API endpoint (`openshift-api-<cluster_ID>`) for each {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster | `c-04.private.us-east.link.satellite.cloud.ibm.com` | 19800 hours (~2.26 years) | You | Regenerated during a [cluster master refresh](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh) or [cluster master update](/docs/containers?topic=containers-update#master). |
-| Default endpoints for {{site.data.keyword.cloud_notm}} services (IAM, {{site.data.keyword.cos_short}}, {{site.data.keyword.mon_short}}, {{site.data.keyword.la_short}}) | `m65f0b26d6c5f695647f5-6b64a6ccc9c596bf59a86625d8fa2202-c000.us-east.satellite.appdomain.cloud` | 90 days | {{site.data.keyword.IBM_notm}} | The Link tunnel server regenerates the certificate, and the Link tunnel client automatically reboots to reflect the rotated certificate. |
+| Default endpoints for {{site.data.keyword.cloud_notm}} services (IAM, {{site.data.keyword.cos_short}}, {{site.data.keyword.mon_short}}, {{site.data.keyword.logs_full_notm}}) | `m65f0b26d6c5f695647f5-6b64a6ccc9c596bf59a86625d8fa2202-c000.us-east.satellite.appdomain.cloud` | 90 days | {{site.data.keyword.IBM_notm}} | The Link tunnel server regenerates the certificate, and the Link tunnel client automatically reboots to reflect the rotated certificate. |
 | `c000`, `c001`, `c002`, and `c003` subdomains for each location zone | `s7033baaa45e1ae1a1060-d603ff82e51c94176a53d44566df9d79-c000.us-south.satellite.appdomain.cloud` | 19800 hours (~2.26 years) | You | Regenerated during a [cluster master refresh](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh) or [cluster master update](/docs/containers?topic=containers-update#master). |
 | `ce00` Ingress subdomains | `s7033baaa45e1ae1a1060-d603ff82e51c94176a53d44566df9d79-ce00.us-south.satellite.appdomain.cloud` | 90 days | {{site.data.keyword.IBM_notm}} | [Setting up Ingress](/docs/openshift?topic=openshift-ingress-roks4). |
 | Worker node connection to the API server | 10.240.128.09 | 3 years | You | [Update hosts that are assigned as worker nodes](/docs/satellite?topic=satellite-host-update-workers). |

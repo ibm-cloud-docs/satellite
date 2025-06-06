@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-10"
+  years: 2020, 2025
+lastupdated: "2025-06-05"
 
 keywords: satellite, hybrid, multicloud
 
@@ -22,13 +22,13 @@ Add auditing, logging, and monitoring to your link endpoints to help ensure the 
 ## Auditing events for endpoint actions
 {: #link-audit}
 
-{{site.data.keyword.satellitelong_notm}} integrates with {{site.data.keyword.at_full_notm}} to collect and send audit events for all link endpoints in your location to your {{site.data.keyword.at_short}} instance.
+{{site.data.keyword.satellitelong_notm}} integrates with {{site.data.keyword.logs_full_notm}} to collect and send audit events for all link endpoints in your location to your {{site.data.keyword.logs_full_notm}} instance.
 {: shortdesc}
 
-1. [Provision an instance of {{site.data.keyword.at_short}}](/docs/log-analysis?topic=log-analysis-provision) in the {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
+1. Provision an instance of {{site.data.keyword.logs_full_notm}} in the {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
 2. From the [{{site.data.keyword.satelliteshort}} **Locations** dashboard](https://cloud.ibm.com/satellite/locations), click the name of your location.
 3. From the **Link endpoints** tab, click the name of your endpoint.
-4. From the actions menu, click **Launch Auditing**. The dashboard for your {{site.data.keyword.at_short}} instance is opened, and the events are filtered for your endpoint's ID.
+4. From the actions menu, click **Launch Auditing**. The dashboard for your {{site.data.keyword.logs_full_notm}} instance is opened, and the events are filtered for your endpoint's ID.
 
 For more information about the types of {{site.data.keyword.satelliteshort}} events that you can track, see [Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-at_events).
 {: tip}

@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-11-11"
+  years: 2022, 2025
+lastupdated: "2025-06-05"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 
@@ -136,7 +136,7 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI,
     :    Optional. Enable [Red Hat CoreOS](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) features within the {{site.data.keyword.satelliteshort}} location. This action cannot be undone.
 
     `--logging-account-id LOGGING_ACCOUNT`
-    :    Optional. The {{site.data.keyword.cloud_notm}} account ID with the instance of {{site.data.keyword.la_full_notm}} that you want to forward your {{site.data.keyword.satelliteshort}} logs to. This option is available only in select environments.
+    :    Optional. The {{site.data.keyword.cloud_notm}} account ID with the instance of {{site.data.keyword.logs_full_notm}} that you want to forward your {{site.data.keyword.satelliteshort}} logs to. This option is available only in select environments.
 
     `--pod-subnet SUBNET`
     :    Optional. Specify a custom subnet CIDR to provide private IP addresses for pods. This option can be used only if you also enable Red Hat CoreOS with the `--coreos-enabled` option. All pods that are deployed to a worker node are assigned a private IP address in the 172.16.0.0/16 range by default. You can avoid subnet conflicts with the network that you use to connect to your location by specifying a custom subnet CIDR that provides the private IP addresses for your pods.

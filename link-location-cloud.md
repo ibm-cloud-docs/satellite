@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2025
+lastupdated: "2025-06-05"
 
 keywords: satellite, hybrid, multicloud, link endpoints, link, location endpoint, cloud endpoint
 
@@ -66,7 +66,7 @@ By default, source clients that are connected to the {{site.data.keyword.cloud_n
 3. The {{site.data.keyword.satelliteshort}} Link connector resolves the request to the destination's IP address and port, and forwards the request to the destination resource.
 
 What happens if {{site.data.keyword.satelliteshort}} Link becomes unavailable?
-:    Your on-location workloads continue to run independently even if the location's connectivity to {{site.data.keyword.cloud_notm}} is unavailable. However, if any applications use a Link endpoint to communicate with {{site.data.keyword.cloud_notm}}, communication between those apps and {{site.data.keyword.cloud_notm}} is disrupted. Additionally, any requested changes to your {{site.data.keyword.satelliteshort}} location, such as adding hosts or access control requests to {{site.data.keyword.IBM_notm}} services through {{site.data.keyword.iamshort}}, are disrupted. After connectivity is restored, logs and events are sent to your [{{site.data.keyword.la_full_notm}} and {{site.data.keyword.at_full_notm}} instances](/docs/satellite?topic=satellite-health). Note that {{site.data.keyword.satelliteshort}} Link depends on the underlying connectivity of your hosts' local network to monitor and maintain the managed services for your {{site.data.keyword.satelliteshort}} location.
+:    Your on-location workloads continue to run independently even if the location's connectivity to {{site.data.keyword.cloud_notm}} is unavailable. However, if any applications use a Link endpoint to communicate with {{site.data.keyword.cloud_notm}}, communication between those apps and {{site.data.keyword.cloud_notm}} is disrupted. Additionally, any requested changes to your {{site.data.keyword.satelliteshort}} location, such as adding hosts or access control requests to {{site.data.keyword.IBM_notm}} services through {{site.data.keyword.iamshort}}, are disrupted. After connectivity is restored, logs and events are sent to your [{{site.data.keyword.logs_full_notm}} instances](/docs/satellite?topic=satellite-health). Note that {{site.data.keyword.satelliteshort}} Link depends on the underlying connectivity of your hosts' local network to monitor and maintain the managed services for your {{site.data.keyword.satelliteshort}} location.
 
 ## External network requirements and security
 {: #link-security}
@@ -150,7 +150,7 @@ By default, after you set up an endpoint, any client can connect to the destinat
 ### Auditing user-initiated events
 {: #link-audit-events}
 
-After you set up source lists for endpoints, you can configure auditing to monitor user-initiated events for Link endpoints. {{site.data.keyword.satellitelong_notm}} integrates with {{site.data.keyword.at_full}} to collect and send audit events for all link endpoints in your location to your {{site.data.keyword.at_short}} instance. To get started with auditing, see [Auditing events for endpoint actions](/docs/satellite?topic=satellite-link-cloud-monitor#link-audit).
+After you set up source lists for endpoints, you can configure auditing to monitor user-initiated events for Link endpoints. {{site.data.keyword.satellitelong_notm}} integrates with {{site.data.keyword.logs_full_notm}} to collect and send audit events for all link endpoints in your location to your {{site.data.keyword.logs_full_notm}} instance. To get started with auditing, see [Auditing events for endpoint actions](/docs/satellite?topic=satellite-link-cloud-monitor#link-audit).
 
 ## Use cases
 {: #link-usecases}
@@ -189,4 +189,4 @@ You run a database in your {{site.data.keyword.satelliteshort}} location instead
 
 To establish this connection, you first create a `location` endpoint. You specify the database that runs in your {{site.data.keyword.satelliteshort}} location as the destination resource. Then, the client in the {{site.data.keyword.cloud_notm}} private network connects directly to the host name of the {{site.data.keyword.satelliteshort}} Link tunnel server. {{site.data.keyword.satelliteshort}} Link forwards this request to the location endpoint that you created for your on-location database.
 
-Finally, to maintain enterprise security and audit compliance, you specify a list of source IP ranges so that only trusted clients in the public cloud can access your on-location database through the endpoint. Then, you set up an {{site.data.keyword.at_full_notm}} instance so that audit logs can be automatically collected for all endpoints in your {{site.data.keyword.satelliteshort}} location.
+Finally, to maintain enterprise security and audit compliance, you specify a list of source IP ranges so that only trusted clients in the public cloud can access your on-location database through the endpoint. Then, you set up an {{site.data.keyword.logs_full_notm}} instance so that audit logs can be automatically collected for all endpoints in your {{site.data.keyword.satelliteshort}} location.
