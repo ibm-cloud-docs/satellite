@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-28"
+lastupdated: "2025-06-06"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -26,7 +26,7 @@ Review the latest changes to the {{site.data.keyword.satellitelong}} documentati
 {: #satellite-apr25}
 
 ### 28 April 2025
-{: #satellite-jan2825}
+{: #satellite-apr2825}
 {: release-note}
 
 Connector agent for Windows version `1.2.0`.
