@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-06-05"
+lastupdated: "2025-06-06"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -194,7 +194,7 @@ subcollection: satellite
 
 * [April 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr25)
 
-    * [28 April 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan2825)
+    * [28 April 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr2825)
 
         * Connector agent for Windows version `1.2.0`.
 
