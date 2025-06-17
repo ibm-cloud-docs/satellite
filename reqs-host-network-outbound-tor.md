@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-06-05"
+lastupdated: "2025-06-17"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -47,10 +47,6 @@ Allow hosts to communicate with {{site.data.keyword.iamshort}}.
      * Protocol and ports: TCP 443
      
 :    Your firewall must be Layer 7 to allow the IAM domain name. IAM does not have specific IP addresses that you can allow. If your firewall does not support Layer 7, you can allow all HTTPS network traffic on port 443.
-
-Allow hosts to connect to the LaunchDarkly service.
-:    * Destination hostnames: `app.launchdarkly.com`,`clientstream.launchdarkly.com`
-     * Protocol and ports: HTTPS 443
 
 Allow hosts to communicate with Red Hat Container Registry.
 :    Allow your host machines to access the required sites for OpenShift Container Platform. For more information, see [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.

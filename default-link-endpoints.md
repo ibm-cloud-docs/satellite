@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-06-05"
+lastupdated: "2025-06-17"
 
 keywords: satellite, hybrid, multicloud, default link enpoints, default link
 
@@ -28,11 +28,9 @@ The following table describes the Link endpoints that are automatically created 
 
 | Name | Description | Type | Instances |
 | ---- | ----------- | ---- | --------- |
-| `local-appLd-<location-ID>` | Allows your location to communicate with LaunchDarkly. | Cloud | One per location |
 | `local-containerapi-<location-ID>` | Allows your location to communicate with the {{site.data.keyword.cloud_notm}} containers API. | Cloud | One per location |
 | `local-cosRegional-<location-ID>` | Allows the control plane data of your location to be backed up to your {{site.data.keyword.cos_full}} instance. management plane data is backed up by {{site.data.keyword.IBM_notm}} and stored in an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_short}} instance. {{site.data.keyword.satelliteshort}} cluster master data is backed up to the {{site.data.keyword.cos_short}} instance that you own. | Cloud | One per location |
 | `local-cosUS-<location-ID>` | Allows your location to communicate with {{site.data.keyword.cos_full}}. | Cloud | One per location |
-| `local-csLd-<location-ID>` | Allows your location to communicate with LaunchDarkly. | Cloud | One per location |
 | `local-iam-<location-ID>` | Allows requests to your location in {{site.data.keyword.cloud_notm}} to be authenticated and user actions to be authorized by Identity and Access Management (IAM). | Cloud | One per location |
 | `local-icr-<location-ID>` | Allows the control plane data of your location to be backed up to your {{site.data.keyword.cos_full}} instance. management plane data is backed up by {{site.data.keyword.IBM_notm}} and stored in an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_short}} instance. {{site.data.keyword.satelliteshort}} cluster master data is backed up to the {{site.data.keyword.cos_short}} instance that you own. | Cloud | One per location |
 | `local-icrau-<location-ID>` | Allows your location to communicate with {{site.data.keyword.registryshort}}. | Cloud | One per location
