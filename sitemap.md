@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-06-06"
+lastupdated: "2025-06-17"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3733,6 +3733,8 @@ subcollection: satellite
 
 * [Version 1.0](/docs/satellite?topic=satellite-cs_cli_changelog#10)
 
+* [Version v1.0.706](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010706)
+
 * [Version v1.0.687](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010687)
 
 * [Version v1.0.679](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010679)
@@ -5087,8 +5089,6 @@ subcollection: satellite
 * [R0058: DNS registration is failing](/docs/satellite?topic=satellite-ts-locations-debug#R0058)
 
 * [R0059: Outbound traffic to IBM Cloud Container Registry is failing.](/docs/satellite?topic=satellite-ts-locations-debug#R0059)
-
-* [R0060: Outbound traffic to LaunchDarkly is failing.](/docs/satellite?topic=satellite-ts-locations-debug#R0060)
 
 * [R0061: A Satellite cluster API server is unreachable from IBM Cloud.](/docs/satellite?topic=satellite-ts-locations-debug#R0061)
 
