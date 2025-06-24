@@ -3916,31 +3916,6 @@ subcollection: satellite
     * [Disaster recovery](/docs/satellite?topic=satellite-responsibilities#disaster-recovery)
 
 
-## High availability and recovery
-{: #sitemap_high_availability_and_recovery}
-
-
-[High availability and recovery](/docs/satellite?topic=satellite-ha#ha)
-
-* [Understanding high availability in {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha#ha-understand)
-
-    * [High availability of the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-ha#ha-control-plane-master)
-
-    * [High availability of the {{site.data.keyword.satelliteshort}} control plane nodes](/docs/satellite?topic=satellite-ha#ha-control-plane-worker)
-
-    * [High availability of {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-ha#ha-cloud-services)
-
-* [Basic control plane worker setup](/docs/satellite?topic=satellite-ha#satellite-basic-setup)
-
-* [Highly available control plane worker setup](/docs/satellite?topic=satellite-ha#satellite-ha-setup)
-
-    * [Example high availability setup in an on-premises data center](/docs/satellite?topic=satellite-ha#example-ha-onprem)
-
-    * [Example high availability setup in a public cloud provider](/docs/satellite?topic=satellite-ha#example-ha-cloudprovider)
-
-    * [Example high availability setup that uses OpenShift APIs for Data Protection](/docs/satellite?topic=satellite-ha#example-ha-oadp)
-
-
 ## Disconnected use for Satellite components
 {: #sitemap_disconnected_use_for_satellite_components}
 
