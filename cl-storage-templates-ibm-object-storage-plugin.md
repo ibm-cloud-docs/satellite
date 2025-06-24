@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-05-13"
+lastupdated: "2025-06-24"
 
 
 keywords: change log, version history, ibm-object-storage-plug-in
@@ -28,6 +28,12 @@ Review the version history for `ibm-object-storage-plugin`.
 ## Version 2.2
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2}
 
+
+### Revision 29, released 24 June 2025
+{: #cl-storage-templates-ibm-object-storage-plugin-2.2-29}
+
+- Resolves the following CVEs: [CVE-2025-22872](https://nvd.nist.gov/vuln/detail/CVE-2025-22872){: external}, [CVE-2025-30204](https://nvd.nist.gov/vuln/detail/CVE-2025-30204){: external}, and [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}.
+- Updates Go to version `1.23.10`.
 
 ### Revision 28, released 25 April 2025
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-28}
