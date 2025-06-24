@@ -287,9 +287,9 @@ toc:
               - include: ../openshift/cli-changelog.md
         - requirements.md
         - sat-regions.md
+        - ha-dr.md
         - pricing.md
         - responsibilities.md
-        - ha.md
         - disconnected-use.md
         - sat-notices.md
         - data-portability.md
@@ -320,7 +320,7 @@ toc:
                     - cl-storage-templates-odf-local.md
                     - cl-storage-templates-odf-remote.md
                     - cl-storage-templates-ridge-csi-driver.md
-                    - cl-storage-templates-vsphere-csi-driver.md
+                    - cl-storage-templates-vsphere-csi-driver.md        
   - navgroup:
       id: help
       topics:

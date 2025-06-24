@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-05-13"
+lastupdated: "2025-06-24"
 
 
 keywords: change log, version history, odf-remote
@@ -25,9 +25,28 @@ Review the version history for `odf-remote`.
 
 
 
+## Version 4.18
+{: #cl-storage-templates-odf-remote-4.18}
+
+
+### Revision 1, released 24 June 2025
+{: #cl-storage-templates-odf-remote-4.18-1}
+
+- Updates Go to version `1.23.10`.
+- ODF 4.18 initial release
+
+
+
 ## Version 4.17
 {: #cl-storage-templates-odf-remote-4.17}
 
+
+### Revision 5, released 24 June 2025
+{: #cl-storage-templates-odf-remote-4.17-5}
+
+- Resolves the following CVEs: [CVE-2025-22874](https://nvd.nist.gov/vuln/detail/CVE-2025-22874){: external}, [CVE-2025-3576](https://nvd.nist.gov/vuln/detail/CVE-2025-3576){: external}, and [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}.
+- Updates Go to version `1.23.10`.
+- Latest bug fixes and minor improvements 
 
 ### Revision 4, released 25 April 2025
 {: #cl-storage-templates-odf-remote-4.17-4}
@@ -41,6 +60,13 @@ Review the version history for `odf-remote`.
 {: #cl-storage-templates-odf-remote-4.16}
 
 
+### Revision 7, released 24 June 2025
+{: #cl-storage-templates-odf-remote-4.16-7}
+
+- Resolves the following CVEs: [CVE-2025-22874](https://nvd.nist.gov/vuln/detail/CVE-2025-22874){: external}, [CVE-2025-3576](https://nvd.nist.gov/vuln/detail/CVE-2025-3576){: external}, and [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}.
+- Updates Go to version `1.23.10`.
+- Latest bug fixes and minor improvements 
+
 ### Revision 6, released 25 April 2025
 {: #cl-storage-templates-odf-remote-4.16-6}
 
@@ -52,6 +78,12 @@ Review the version history for `odf-remote`.
 ## Version 4.15
 {: #cl-storage-templates-odf-remote-4.15}
 
+
+### Revision 12, released 24 June 2025
+{: #cl-storage-templates-odf-remote-4.15-12}
+
+- Resolves the following CVEs: [CVE-2025-22874](https://nvd.nist.gov/vuln/detail/CVE-2025-22874){: external}, [CVE-2025-3576](https://nvd.nist.gov/vuln/detail/CVE-2025-3576){: external}, and [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}.
+- Updates Go to version `1.23.10`.
 
 ### Revision 11, released 25 April 2025
 {: #cl-storage-templates-odf-remote-4.15-11}
@@ -94,6 +126,12 @@ Review the version history for `odf-remote`.
 ## Version 4.14
 {: #cl-storage-templates-odf-remote-4.14}
 
+
+### Revision 15, released 24 June 2025
+{: #cl-storage-templates-odf-remote-4.14-15}
+
+- Resolves the following CVEs: [CVE-2025-22874](https://nvd.nist.gov/vuln/detail/CVE-2025-22874){: external}, [CVE-2025-3576](https://nvd.nist.gov/vuln/detail/CVE-2025-3576){: external}, and [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}.
+- Updates Go to version `1.23.10`.
 
 ### Revision 14, released 25 April 2025
 {: #cl-storage-templates-odf-remote-4.14-14}
@@ -161,6 +199,11 @@ Review the version history for `odf-remote`.
 ## Version 4.13
 {: #cl-storage-templates-odf-remote-4.13}
 
+
+### Revision 17, released 05 June 2025
+{: #cl-storage-templates-odf-remote-4.13-17}
+
+- Updates Go to version `1.23.9`.
 
 ### Revision 16, released 25 April 2025
 {: #cl-storage-templates-odf-remote-4.13-16}
@@ -259,6 +302,11 @@ Review the version history for `odf-remote`.
 ## Version 4.12
 {: #cl-storage-templates-odf-remote-4.12}
 
+
+### Revision 20, released 05 June 2025
+{: #cl-storage-templates-odf-remote-4.12-20}
+
+- Updates Go to version `1.23.9`.
 
 ### Revision 19, released 25 April 2025
 {: #cl-storage-templates-odf-remote-4.12-19}

@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-05-13"
+lastupdated: "2025-06-24"
 
 
 keywords: change log, version history, netapp-trident
@@ -28,6 +28,11 @@ Review the version history for `netapp-trident`.
 ## Version 24.02
 {: #cl-storage-templates-netapp-trident-24.02}
 
+
+### Revision 3, released 24 June 2025
+{: #cl-storage-templates-netapp-trident-24.02-3}
+
+- Support ROKS 4.16 
 
 ### Revision 2, released 13 December 2024
 {: #cl-storage-templates-netapp-trident-24.02-2}

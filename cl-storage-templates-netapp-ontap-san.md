@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-05-13"
+lastupdated: "2025-06-24"
 
 
 keywords: change log, version history, netapp-ontap-san
@@ -28,6 +28,13 @@ Review the version history for `netapp-ontap-san`.
 ## Version 24.02
 {: #cl-storage-templates-netapp-ontap-san-24.02}
 
+
+### Revision 5, released 24 June 2025
+{: #cl-storage-templates-netapp-ontap-san-24.02-5}
+
+- Resolves the following CVEs: [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}.
+- Updates Go to version `1.23.10`.
+- Support ROKS 4.16 
 
 ### Revision 4, released 28 April 2025
 {: #cl-storage-templates-netapp-ontap-san-24.02-4}
@@ -56,6 +63,12 @@ Review the version history for `netapp-ontap-san`.
 {: #cl-storage-templates-netapp-ontap-san-23.10}
 
 
+### Revision 3, released 24 June 2025
+{: #cl-storage-templates-netapp-ontap-san-23.10-3}
+
+- Resolves the following CVEs: [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}.
+- Updates Go to version `1.23.10`.
+
 ### Revision 2, released 28 April 2025
 {: #cl-storage-templates-netapp-ontap-san-23.10-2}
 
@@ -67,6 +80,12 @@ Review the version history for `netapp-ontap-san`.
 ## Version 22.10
 {: #cl-storage-templates-netapp-ontap-san-22.10}
 
+
+### Revision 16, released 24 June 2025
+{: #cl-storage-templates-netapp-ontap-san-22.10-16}
+
+- Resolves the following CVEs: [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}.
+- Updates Go to version `1.23.10`.
 
 ### Revision 15, released 28 April 2025
 {: #cl-storage-templates-netapp-ontap-san-22.10-15}
@@ -165,6 +184,12 @@ Review the version history for `netapp-ontap-san`.
 ## Version 22.04
 {: #cl-storage-templates-netapp-ontap-san-22.04}
 
+
+### Revision 29, released 24 June 2025
+{: #cl-storage-templates-netapp-ontap-san-22.04-29}
+
+- Resolves the following CVEs: [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}.
+- Updates Go to version `1.23.10`.
 
 ### Revision 28, released 28 April 2025
 {: #cl-storage-templates-netapp-ontap-san-22.04-28}
