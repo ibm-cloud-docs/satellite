@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-04-24"
+lastupdated: "2025-06-26"
 
 keywords: satellite, connector, agent, windows
 
@@ -282,7 +282,7 @@ Configuration information is provided to the agent through the following environ
 
 1. Verify the agent is installed by running the `Get-Service` command in PowerShell.
     ```txt
-    Get-Service 'Satellite Connector Service'
+    Get-Service 'SatelliteConnectorService'
     ```
     {: codeblock}
 
@@ -349,7 +349,7 @@ You can use the `update-service` command in the agent package to apply configura
 
 1. Verify the agent is installed by running the `Get-Service` command in PowerShell.
     ```txt
-    Get-Service 'Satellite Connector Service'
+    Get-Service 'SatelliteConnectorService'
     ```
     {: codeblock}
 
