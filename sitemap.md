@@ -194,6 +194,10 @@ subcollection: satellite
 
 * [June 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june25)
 
+    * [26 June 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june2625)
+
+        * Satellite Connector agent image version `1.2.2`.
+
     * [24 June 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june2425)
 
         * {{site.data.keyword.satelliteshort}} storage template patch updates are available.
