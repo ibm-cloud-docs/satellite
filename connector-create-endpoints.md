@@ -120,7 +120,7 @@ For container platforms such as Docker or Rancher, this requires you to map the 
     For example, using Docker, the following command exposes port `8443` for the endpoint's container-internal target port `29998`.
 
     ```sh
-    docker run -d -p 8822:29999  --env-file /root/agent/env-files/env.txt --env LOG_LEVEL=trace -v /root/agent/env-files:/agent-env-files icr.io/ibm/satellite-connector/satellite-connector-agent:latest
+    docker run -d -p 8443:29998 --env-file /root/agent/env-files/env.txt --env LOG_LEVEL=trace -v /root/agent/env-files:/agent-env-files icr.io/ibm/satellite-connector/satellite-connector-agent:latest
     ```
     {: pre}
 
