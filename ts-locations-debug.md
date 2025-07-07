@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-06-17"
+lastupdated: "2025-07-07"
 
 keywords: satellite, hybrid, multicloud, location error messages, location messages, location errors
 
@@ -267,7 +267,7 @@ Location message
 :    R0043: The location does not meet the following requirement: Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. If you still have issues, contact {{site.data.keyword.cloud_notm}} Support and include your Satellite location ID.
 
 Steps to resolve
-:    Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. You cannot block access to certain ports that might block communication across hosts. Review [Host network requirements](/docs/satellite?topic=satellite-reqs-host-network) and unblock the ports on the host in your infrastructure provider.	This error can also mean that the host does not have the required RHEL packages installed, or the required CPU, memory, disk space and firewall ports opened up. After you verify that your hosts meet all the requirements, take a look at the platform logs. For more information, see [Setting up Log Analysis for Satellite location platform logs](/docs/satellite?topic=satellite-health#setup-la).
+:    Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. You cannot block access to certain ports that might block communication across hosts. Review [Host network requirements](/docs/satellite?topic=satellite-reqs-host-network) and unblock the ports on the host in your infrastructure provider.	This error can also mean that the host does not have the required RHEL packages installed, or the required CPU, memory, disk space and firewall ports opened up. After you verify that your hosts meet all the requirements, take a look at the platform logs.
 
 To test TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts,
 1. SSH into a host that is attached to your location but that is not assigned to any resources.
