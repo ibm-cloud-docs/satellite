@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-04-02"
+lastupdated: "2025-07-07"
 
 keywords: satellite, hybrid, multicloud, managed services, enabled service, satellite-enabled
 
@@ -23,7 +23,6 @@ Learn about what services are supported by {{site.data.keyword.satellitelong_not
 | Service | Description of support | Supported by RHCOS hosts |
 | ------- | -------------- | -- |
 | {{site.data.keyword.openshiftlong_notm}} | You can create {{site.data.keyword.openshiftlong_notm}} clusters in a {{site.data.keyword.satelliteshort}} location, and use the hosts of your own infrastructure that you added to your location as the worker nodes for the cluster. See [Creating {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters). | Yes, for {{site.data.keyword.redhat_openshift_notm}} version 4.9 and later. |
-| {{site.data.keyword.cos_full_notm}} | {{site.data.keyword.cos_full_notm}} offers users the flexibility to run a managed {{site.data.keyword.cos_short}} service on client-owned on-premises infrastructure, edge locations or third-party public cloud infrastructure. See [About {{site.data.keyword.cos_short}} for {{site.data.keyword.satelliteshort}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-cos-satellite). | No |
 | {{site.data.keyword.cloud_notm}} Paks | Cloud Paks provide AI-powered software designed to accelerate application modernization with pre-integrated data, automation and security capabilities. Our software delivers a comprehensive and unified hybrid cloud platform experience, enabling business and IT teams to build and modernize applications faster across any cloud or IT infrastructure. | Depends on the Cloud Pak |
 {: caption="Supported managed services for Satellite" caption-side="bottom"}
 

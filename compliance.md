@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-06-05"
+lastupdated: "2025-07-07"
 
 keywords: satellite, hybrid, multicloud, satellite security, satellite compliance
 
@@ -97,7 +97,7 @@ Additionally, you can configure auditing to monitor user-initiated events for Li
 
 Note that your on-location workloads continue to run independently even if the location's connectivity to {{site.data.keyword.cloud_notm}} is unavailable. However, if any applications use a Link endpoint to communicate with {{site.data.keyword.cloud_notm}}, communication between those apps and {{site.data.keyword.cloud_notm}} is disrupted.
 
-For more information about making your {{site.data.keyword.satelliteshort}} location highly available, see [High availability and disaster recovery for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha).
+For more information about making your {{site.data.keyword.satelliteshort}} location highly available, see [High availability and disaster recovery for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-sat-ha-dr).
 
 
 ## Digital certificates for {{site.data.keyword.satelliteshort}} hosts and domains

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-06-26"
+lastupdated: "2025-07-07"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -555,8 +555,6 @@ subcollection: satellite
     * [3 October 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct322)
 
         * CLI change log
-
-* [September 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep22)
 
     * [23 September 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep2322)
 
@@ -3882,6 +3880,33 @@ subcollection: satellite
     * [How can I deploy in an EU Cloud Certified Location?](/docs/satellite?topic=satellite-sat-regions#eu-certified)
 
     * [What about latency requirements?](/docs/satellite?topic=satellite-sat-regions#supported-regions-latency)
+
+
+## Understanding high availability and disaster recovery for {{site.data.keyword.satelliteshort}}
+{: #sitemap_understanding_high_availability_and_disaster_recovery_for_}
+
+
+[Understanding high availability and disaster recovery for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-ha-dr#sat-ha-dr)
+
+* [High availability architecture](/docs/satellite?topic=satellite-sat-ha-dr#ha-architecture)
+
+    * [High availability of the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-sat-ha-dr#ha-control-plane-master)
+
+    * [High availability of the {{site.data.keyword.satelliteshort}} control plane nodes](/docs/satellite?topic=satellite-sat-ha-dr#ha-control-plane-worker)
+
+* [Disaster recovery architecture](/docs/satellite?topic=satellite-sat-ha-dr#dr-features)
+
+* [Recovery time objective (RTO) and recovery point objective (RPO)](/docs/satellite?topic=satellite-sat-ha-dr#rto-rpo-features)
+
+* [How {{site.data.keyword.IBM}} helps ensure disaster recovery](/docs/satellite?topic=satellite-sat-ha-dr#ibm-disaster-recovery)
+
+    * [How {{site.data.keyword.IBM_notm}} recovers from failures](/docs/satellite?topic=satellite-sat-ha-dr#ibm-zone-failure)
+
+* [How {{site.data.keyword.IBM_notm}} maintains services](/docs/satellite?topic=satellite-sat-ha-dr#ibm-service-maintenance)
+
+* [Your responsibilities for high availability and disaster recovery](/docs/satellite?topic=satellite-sat-ha-dr#feature-responsibilities)
+
+* [Change management](/docs/satellite?topic=satellite-sat-ha-dr#change-management-hadr)
 
 
 ## Pricing
