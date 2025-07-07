@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-06-05"
+lastupdated: "2025-07-07"
 
 keywords: satellite, hybrid, multicloud, link endpoints, link, location endpoint, cloud endpoint
 
@@ -57,7 +57,7 @@ By default, source clients in your {{site.data.keyword.satelliteshort}} location
 
 By default, source clients that are connected to the {{site.data.keyword.cloud_notm}} private network cannot reach destination resources that run in your {{site.data.keyword.satelliteshort}} location because the destination resource's IP address is not routable from outside the location. Review the following architecture diagram and steps, which demonstrate how {{site.data.keyword.satelliteshort}} Link enables communication from services that are connected to the {{site.data.keyword.cloud_notm}} private network to locations through {{site.data.keyword.satelliteshort}} endpoints.
 
-![Network traffic through {{site.data.keyword.satelliteshort}} Link.](/images/sat_link_location1.svg){: caption="Figure 2: Network traffic flow from an {{site.data.keyword.cloud_notm}} source to a destination resource in your location through {{site.data.keyword.satelliteshort}} Link" caption-side="bottom"}
+![Network traffic through {{site.data.keyword.satelliteshort}} Link.](/images/sat_link_location1.svg){: caption="Network traffic flow from an {{site.data.keyword.cloud_notm}} source to a destination resource in your location through {{site.data.keyword.satelliteshort}} Link" caption-side="bottom"}
 
 1. When you create an endpoint for a resource that runs in your {{site.data.keyword.satelliteshort}} location, a port is opened on the {{site.data.keyword.satelliteshort}} Link tunnel server and added in the endpoint configuration. Requests from sources that are connected to the {{site.data.keyword.cloud_notm}} private network are made to the {{site.data.keyword.satelliteshort}} Link tunnel server host name and this port, such as `c-01.us-east.link.satellite.cloud.ibm.com:30819`. This Link host name and port are mapped to the destination resource's domain and port.
 

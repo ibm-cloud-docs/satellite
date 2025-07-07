@@ -27,7 +27,7 @@ For more information about the available region and data center locations, see S
 
 The following image shows specific areas to watch in the {{site.data.keyword.satelliteshort}} architecture so you can improve your high availability.
 
-![Highly available {{site.data.keyword.satelliteshort}} architecture](/images/sat_architecture_ha1.svg "Highly available Satellite architecture"){: caption="Figure 1. Highly available Satellite architecture" caption-side="bottom"}
+![Highly available {{site.data.keyword.satelliteshort}} architecture](/images/sat_architecture_ha1.svg "Highly available Satellite architecture"){: caption="Highly available Satellite architecture" caption-side="bottom"}
 
 ### High availability of the {{site.data.keyword.satelliteshort}} location control plane
 {: #ha-control-plane-master}
