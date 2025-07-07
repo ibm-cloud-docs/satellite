@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-01-03"
+  years: 2023, 2025
+lastupdated: "2025-07-07"
 
 keywords: satellite, control plane, location control plane, location, satellite location, create location, create control plane
 
@@ -23,7 +23,7 @@ When you set up the {{site.data.keyword.satelliteshort}} location control plane,
 
 - Attach compute hosts in multiples of 3, such as 6, 9, or 12.
 - Determine the the correct [size of your location](/docs/satellite?topic=satellite-location-sizing).
-- Ensure your control plane meets the [suggested high-availability configuration](/docs/satellite?topic=satellite-ha#satellite-ha-setup) for network redundancy, distribution across physical locations, and so on.
+- Ensure your control plane meets the [suggested high-availability configuration](/docs/satellite?topic=satellite-sat-ha-dr) for network redundancy, distribution across physical locations, and so on.
 - Make sure that your hosts meet the [latency requirements](/docs/satellite?topic=satellite-service-architecture#architecture-latency).
 
 ## Setting up the control plane from the console

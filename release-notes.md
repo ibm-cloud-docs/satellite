@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-06-26"
+lastupdated: "2025-07-07"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -674,10 +674,6 @@ Apply updates your worker nodes in place
 
 CLI change log
 :   Updated the CLI plug-in change log page for the [release of version 1.0.454](/docs/openshift?topic=openshift-cs_cli_changelog).
-
-## September 2022
-{: #satellite-sep22}
-
 
 
 
