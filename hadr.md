@@ -16,7 +16,7 @@ subcollection: satellite
 # Understanding high availability and disaster recovery for {{site.data.keyword.satelliteshort}}
 {: #sat-ha-dr}
 
-High availability{: term} (HA) is the ability for a service to remain operational and accessible in the presence of unexpected failures. Disaster recovery{: term} is the process of recovering the service instance to a working state. {: shortdesc}
+[High availability](x2284708){: term} (HA) is the ability for a service to remain operational and accessible in the presence of unexpected failures. [Disaster recovery](#x2113280){: term} is the process of recovering the service instance to a working state. {: shortdesc}
 
 {{site.data.keyword.satelliteshort}} is a highly available regional or zonal service designed for availability during a regional or zonal outage. {{site.data.keyword.satelliteshort}} is designed to meet the Service Level Objectives (SLO) with the Standard plan.
 
@@ -74,7 +74,7 @@ For information relevant to IBM Cloud, see [How IBM Cloud prepares for disaster 
 | Feature | RTO and RPO | Considerations
 | -------------- | -------------- | ----------- |
 | Cloud Object Storage | See the [object storage docs](/docs/cloud-object-storage?topic=cloud-object-storage-cos-ha-dr#rto-rpo-features). | 
-{: caption="RTO/RPO features for IBM Cloud Kubernetes Service" caption-side="bottom"}
+{: caption="RTO/RPO features" caption-side="bottom"}
 
 ## How {{site.data.keyword.IBM}} helps ensure disaster recovery
 {: #ibm-disaster-recovery}
@@ -110,7 +110,7 @@ Interruptions in network connectivity and short periods of unavailability of a s
 
 You are responsible for configuring your cluster to achieve the appropriate level of availability for your apps and services. The level of availability that you set up for your cluster impacts your coverage under the [{{site.data.keyword.cloud_notm}} HA service level agreement terms](/docs/overview?topic=overview-slas). For example, to receive full HA coverage under the SLA terms, you must set up a multizone cluster with a total of at least 6 worker nodes, two worker nodes per zone that are evenly spread across three zones.
 
-You are responsible for the recovery of the workloads that run the cluster and your application data. For more information on your responsibilities for disaster recovery, see [Your responsibilities with using IBM Cloud Kubernetes Service](/docs/openshift?topic=openshift-responsibilities_iks#disaster-recovery).
+You are responsible for the recovery of the workloads that run the cluster and your application data. For more information on your responsibilities for disaster recovery, see [Your responsibilities](/docs/satellite?topic=satellite-responsibilities).
 
 ## Change management
 {: #change-management-hadr}
@@ -123,6 +123,6 @@ Change management includes tasks such as upgrades, configuration changes, and de
 
 - Use the API, CLI, or console tools to apply the provided [updates](/docs/openshift?topic=openshift-openshift_versions#os-satellite-without-coreos) for any Satellite clusters you own. Make sure to review the information and requirements for each version update to prevent issues or downtime. 
 
-- Make sure your cluster components stay [updated](/docs/openshift?topic=openshift-update&interface=ui) run all of the latest available versions.
+- Make sure your cluster components stay [updated](/docs/openshift?topic=openshift-update&interface=ui) and run the latest available versions.
 
 - Make sure any agents or storage templates run the latest version. You can check the version history in the reference section of the documentation to stay up-to-date.
