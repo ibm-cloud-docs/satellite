@@ -72,7 +72,7 @@ For information relevant to IBM Cloud, see [How IBM Cloud prepares for disaster 
 
 
 | Feature | RTO and RPO | Considerations
-| -------------- | -------------- | ----------- |<openshift>
+| -------------- | -------------- | ----------- |
 | Cloud Object Storage | See the [object storage docs](/docs/cloud-object-storage?topic=cloud-object-storage-cos-ha-dr#rto-rpo-features). | 
 {: caption="RTO/RPO features for IBM Cloud Kubernetes Service" caption-side="bottom"}
 
