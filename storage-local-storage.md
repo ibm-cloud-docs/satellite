@@ -203,7 +203,7 @@ After you have [retrieved the device paths for the disks that you want to use in
     Example command to create a version 1.0.0 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-storage --template-version 1.0.0 --param "install-local-storage-file=INSTALL-LOCAL-STORAGE-FILE"  --param "auto-discover-devices-file=AUTO-DISCOVER-DEVICES-FILE"  [--param "file-nodes-label-key=FILE-NODES-LABEL-KEY"]  [--param "file-nodes-label-value=FILE-NODES-LABEL-VALUE"]  [--param "file-devicepath=FILE-DEVICEPATH"]  --param "fstype=FSTYPE"  --param "install-local-storage-block=INSTALL-LOCAL-STORAGE-BLOCK"  --param "auto-discover-devices-block=AUTO-DISCOVER-DEVICES-BLOCK"  [--param "block-nodes-label-key=BLOCK-NODES-LABEL-KEY"]  [--param "block-nodes-label-value=BLOCK-NODES-LABEL-VALUE"]  [--param "block-devicepath=BLOCK-DEVICEPATH"] 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-storage --template-version 1.0.0 --param "install-local-storage-file=INSTALL-LOCAL-STORAGE-FILE"  --param "auto-discover-devices-file=AUTO-DISCOVER-DEVICES-FILE"  --param "file-nodes-label-key=FILE-NODES-LABEL-KEY"  --param "file-nodes-label-value=FILE-NODES-LABEL-VALUE"  --param "file-devicepath=FILE-DEVICEPATH"  --param "fstype=FSTYPE"  --param "install-local-storage-block=INSTALL-LOCAL-STORAGE-BLOCK"  --param "auto-discover-devices-block=AUTO-DISCOVER-DEVICES-BLOCK"  --param "block-nodes-label-key=BLOCK-NODES-LABEL-KEY"  --param "block-nodes-label-value=BLOCK-NODES-LABEL-VALUE"  --param "block-devicepath=BLOCK-DEVICEPATH" 
     ```
     {: pre}
 

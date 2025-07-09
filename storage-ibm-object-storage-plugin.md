@@ -129,7 +129,7 @@ Create the Kubernetes secret in your cluster that contains your service credenti
     Example command to create a version 2.2 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-object-storage-plugin --template-version 2.2 --param "helm-release-name=HELM-RELEASE-NAME"  [--param "parameters=PARAMETERS"]  --param "license=LICENSE"  [--param "s3provider=S3PROVIDER"]  --param "cos-storageclass=COS-STORAGECLASS"  [--param "cos-endpoint=COS-ENDPOINT"] 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-object-storage-plugin --template-version 2.2 --param "helm-release-name=HELM-RELEASE-NAME"  --param "parameters=PARAMETERS"  --param "license=LICENSE"  --param "s3provider=S3PROVIDER"  --param "cos-storageclass=COS-STORAGECLASS"  --param "cos-endpoint=COS-ENDPOINT" 
     ```
     {: pre}
 

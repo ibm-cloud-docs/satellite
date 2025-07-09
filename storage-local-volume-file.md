@@ -203,7 +203,7 @@ After you have [retrieved the device paths for the disks that you want to use in
     Example command to create a version 4.9 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.9 --param "auto-discover-devices=AUTO-DISCOVER-DEVICES"  --param "label-key=LABEL-KEY"  --param "label-value=LABEL-VALUE"  [--param "devicepath=DEVICEPATH"]  --param "fstype=FSTYPE" 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.9 --param "auto-discover-devices=AUTO-DISCOVER-DEVICES"  --param "label-key=LABEL-KEY"  --param "label-value=LABEL-VALUE"  --param "devicepath=DEVICEPATH"  --param "fstype=FSTYPE" 
     ```
     {: pre}
 
@@ -211,7 +211,7 @@ After you have [retrieved the device paths for the disks that you want to use in
     Example command to create a version 4.10 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.10 --param "auto-discover-devices=AUTO-DISCOVER-DEVICES"  --param "label-key=LABEL-KEY"  --param "label-value=LABEL-VALUE"  [--param "devicepath=DEVICEPATH"]  --param "fstype=FSTYPE" 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.10 --param "auto-discover-devices=AUTO-DISCOVER-DEVICES"  --param "label-key=LABEL-KEY"  --param "label-value=LABEL-VALUE"  --param "devicepath=DEVICEPATH"  --param "fstype=FSTYPE" 
     ```
     {: pre}
 
@@ -219,7 +219,7 @@ After you have [retrieved the device paths for the disks that you want to use in
     Example command to create a version 4.11 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.11 --param "auto-discover-devices=AUTO-DISCOVER-DEVICES"  --param "label-key=LABEL-KEY"  --param "label-value=LABEL-VALUE"  [--param "devicepath=DEVICEPATH"]  --param "fstype=FSTYPE" 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.11 --param "auto-discover-devices=AUTO-DISCOVER-DEVICES"  --param "label-key=LABEL-KEY"  --param "label-value=LABEL-VALUE"  --param "devicepath=DEVICEPATH"  --param "fstype=FSTYPE" 
     ```
     {: pre}
 
@@ -227,7 +227,7 @@ After you have [retrieved the device paths for the disks that you want to use in
     Example command to create a version 4.12 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.12 --param "auto-discover-devices=AUTO-DISCOVER-DEVICES"  --param "label-key=LABEL-KEY"  --param "label-value=LABEL-VALUE"  [--param "devicepath=DEVICEPATH"]  --param "fstype=FSTYPE" 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.12 --param "auto-discover-devices=AUTO-DISCOVER-DEVICES"  --param "label-key=LABEL-KEY"  --param "label-value=LABEL-VALUE"  --param "devicepath=DEVICEPATH"  --param "fstype=FSTYPE" 
     ```
     {: pre}
 
@@ -235,7 +235,7 @@ After you have [retrieved the device paths for the disks that you want to use in
     Example command to create a version 4.13 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.13 --param "auto-discover-devices=AUTO-DISCOVER-DEVICES"  --param "label-key=LABEL-KEY"  --param "label-value=LABEL-VALUE"  [--param "devicepath=DEVICEPATH"]  --param "fstype=FSTYPE" 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.13 --param "auto-discover-devices=AUTO-DISCOVER-DEVICES"  --param "label-key=LABEL-KEY"  --param "label-value=LABEL-VALUE"  --param "devicepath=DEVICEPATH"  --param "fstype=FSTYPE" 
     ```
     {: pre}
 
