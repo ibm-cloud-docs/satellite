@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-07"
+lastupdated: "2025-07-09"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -973,7 +973,7 @@ CLI change log
 
 
 {{site.data.keyword.keymanagementservicefull_notm}} 
-:   {{site.data.keyword.keymanagementservicefull_notm}} is added as a supported managed service for {{site.data.keyword.satelliteshort}}. For more information, see [Supported {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) and [About {{site.data.keyword.keymanagementserviceshort}} for {{site.data.keyword.satelliteshort}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-cos-satellite).
+:   {{site.data.keyword.keymanagementservicefull_notm}} is added as a supported managed service for {{site.data.keyword.satelliteshort}}. For more information, see [Supported {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services).
 
 Troubleshooting issue for errors when you run the `oc debug` command 
 :   See [Why can't I log in to my worker nodes or debug them with `oc debug` command?](/docs/satellite?topic=satellite-ts-cluster-ocdebug).
@@ -1011,7 +1011,7 @@ Review the release notes for January 2022.
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} 
-:   {{site.data.keyword.cos_full_notm}} is added as a supported managed service for {{site.data.keyword.satelliteshort}}. For more information, see [Supported {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) and [About {{site.data.keyword.cos_short}} for {{site.data.keyword.satelliteshort}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-cos-satellite).
+:   {{site.data.keyword.cos_full_notm}} is added as a supported managed service for {{site.data.keyword.satelliteshort}}. For more information, see [Supported {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services).
 
 ### 25 January 2022
 {: #satellite-jan2522}

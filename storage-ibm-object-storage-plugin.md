@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-04-02"
+lastupdated: "2025-07-09"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -129,7 +129,7 @@ Create the Kubernetes secret in your cluster that contains your service credenti
     Example command to create a version 2.2 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-object-storage-plugin --template-version 2.2 --param "helm-release-name=HELM-RELEASE-NAME"  [--param "parameters=PARAMETERS"]  --param "license=LICENSE"  [--param "s3provider=S3PROVIDER"]  --param "cos-storageclass=COS-STORAGECLASS"  [--param "cos-endpoint=COS-ENDPOINT"] 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-object-storage-plugin --template-version 2.2 --param "helm-release-name=HELM-RELEASE-NAME"  --param "parameters=PARAMETERS"  --param "license=LICENSE"  --param "s3provider=S3PROVIDER"  --param "cos-storageclass=COS-STORAGECLASS"  --param "cos-endpoint=COS-ENDPOINT" 
     ```
     {: pre}
 
@@ -343,15 +343,16 @@ If you no longer need your {{site.data.keyword.cos_full_notm}} configuration, yo
 ### 2.2 parameter reference
 {: #ibm-object-storage-plugin-2.2-parameters}
 
-| Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- | --- |
-| Release name | `helm-release-name` | Config | Helm chart release name. | true | `ibm-object-storage-plugin` |
-| Helm Chart additional parameters | `parameters` | Config | Helm Chart additional parameters. | false | N/A |
-| Object Storage plug-in license | `license` | Config | Object storage plug-in license: Apache license Version 2.0. Set to `true` to accept the license and install the plug-in. | true | N/A |
-| Object Storage provider | `s3provider` | Config | Available providers are `IBM`, `AWS` and `Wasabi`. For providers other than these, you must provide the `Object Storage service endpoint` parameter. | false | N/A |
-| Object Storage region | `cos-storageclass` | Config | Enter the region where your object storage is located. For IBM COS regions, see https://ibm.biz/cos-endpoints-list. For Wasabi, see https://ibm.biz/wasabi-endpoints. For AWS, see https://ibm.biz/aws-endpoints. | true | N/A |
-| Object Storage service endpoint | `cos-endpoint` | Config | Object Storage service endpoint. Required when using Object Storage providers other than IBM, AWS or Wasabi. Preference is given to `Object Storage provider` when both are set. | false | N/A |
-{: caption="2.2 parameter reference" caption-side="bottom"}
+| Display name | CLI option | Type | Description | Default value | 
+| --- | --- | --- | --- | --- |
+| Release name | `helm-release-name` | Config | Helm chart release name. | `ibm-object-storage-plugin` |
+| Helm Chart additional parameters | `parameters` | Config | Helm Chart additional parameters. | N/A |
+| Object Storage plug-in license | `license` | Config | Object storage plug-in license: Apache license Version 2.0. Set to `true` to accept the license and install the plug-in. | N/A |
+| Object Storage provider | `s3provider` | Config | Available providers are `IBM`, `AWS` and `Wasabi`. For providers other than these, you must provide the `Object Storage service endpoint` parameter. | N/A |
+| Object Storage region | `cos-storageclass` | Config | Enter the region where your object storage is located. For IBM COS regions, see https://ibm.biz/cos-endpoints-list. For Wasabi, see https://ibm.biz/wasabi-endpoints. For AWS, see https://ibm.biz/aws-endpoints. | N/A |
+| Object Storage service endpoint | `cos-endpoint` | Config | Object Storage service endpoint. Required when using Object Storage providers other than IBM, AWS or Wasabi. Preference is given to `Object Storage provider` when both are set. | N/A |
+{: caption="Table 1. 2.2 parameter reference" caption-side="bottom"}
+
 
 
 ## Storage class reference for {{site.data.keyword.cos_full_notm}}

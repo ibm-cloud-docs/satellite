@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-03"
+lastupdated: "2025-07-09"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, netapp nas trident
 
@@ -464,52 +464,53 @@ Use the console to remove a storage assignment and storage configuration.
 ### 22.04 parameter reference
 {: #netapp-ontap-nas-22.04-parameters}
 
-| Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- | --- |
-| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | true | N/A |
-| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | true | N/A |
-| SVM | `svm` | Config | The name of the SVM. | true | N/A |
-| User Name | `username` | Secret | The username to connect to the storage device. | true | N/A |
-| User Password | `password` | Secret | The password to connect to the storage device. | true | N/A |
-| Export Policy | `exportPolicy` | Config | The NAS option for the NFS export policy. | true | `default` |
-| Limit Volume Size | `limitVolumeSize` | Config | Maximum requestable volume size (in Gibibytes) and qtree parent volume size | true | `50Gi` |
-| Limit AggregateUsage | `limitAggregateUsage` | Config | Fail provisioning if usage is greater than this percentage. | true | `80%` |
-| NFS Mount Options | `nfsMountOptions` | Config | The NFS mount options. | true | `nfsvers=4` |
-{: caption="22.04 parameter reference" caption-side="bottom"}
+| Display name | CLI option | Type | Description | Default value | 
+| --- | --- | --- | --- | --- |
+| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | N/A |
+| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | N/A |
+| SVM | `svm` | Config | The name of the SVM. | N/A |
+| User Name | `username` | Secret | The username to connect to the storage device. | N/A |
+| User Password | `password` | Secret | The password to connect to the storage device. | N/A |
+| Export Policy | `exportPolicy` | Config | The NAS option for the NFS export policy. | `default` |
+| Limit Volume Size | `limitVolumeSize` | Config | Maximum requestable volume size (in Gibibytes) and qtree parent volume size | `50Gi` |
+| Limit AggregateUsage | `limitAggregateUsage` | Config | Fail provisioning if usage is greater than this percentage. | `80%` |
+| NFS Mount Options | `nfsMountOptions` | Config | The NFS mount options. | `nfsvers=4` |
+{: caption="Table 1. 22.04 parameter reference" caption-side="bottom"}
 
 
 ### 22.10 parameter reference
 {: #netapp-ontap-nas-22.10-parameters}
 
-| Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- | --- |
-| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | true | N/A |
-| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | true | N/A |
-| SVM | `svm` | Config | The name of the SVM. | true | N/A |
-| User Name | `username` | Secret | The username to connect to the storage device. | true | N/A |
-| User Password | `password` | Secret | The password to connect to the storage device. | true | N/A |
-| Export Policy | `exportPolicy` | Config | The NAS option for the NFS export policy. | true | `default` |
-| Limit Volume Size | `limitVolumeSize` | Config | Maximum requestable volume size (in Gibibytes) and qtree parent volume size | true | `50Gi` |
-| Limit AggregateUsage | `limitAggregateUsage` | Config | Fail provisioning if usage is greater than this percentage. | true | `80%` |
-| NFS Mount Options | `nfsMountOptions` | Config | The NFS mount options. | true | `nfsvers=4` |
-{: caption="22.10 parameter reference" caption-side="bottom"}
+| Display name | CLI option | Type | Description | Default value | 
+| --- | --- | --- | --- | --- |
+| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | N/A |
+| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | N/A |
+| SVM | `svm` | Config | The name of the SVM. | N/A |
+| User Name | `username` | Secret | The username to connect to the storage device. | N/A |
+| User Password | `password` | Secret | The password to connect to the storage device. | N/A |
+| Export Policy | `exportPolicy` | Config | The NAS option for the NFS export policy. | `default` |
+| Limit Volume Size | `limitVolumeSize` | Config | Maximum requestable volume size (in Gibibytes) and qtree parent volume size | `50Gi` |
+| Limit AggregateUsage | `limitAggregateUsage` | Config | Fail provisioning if usage is greater than this percentage. | `80%` |
+| NFS Mount Options | `nfsMountOptions` | Config | The NFS mount options. | `nfsvers=4` |
+{: caption="Table 2. 22.10 parameter reference" caption-side="bottom"}
 
 
 ### 24.02 parameter reference
 {: #netapp-ontap-nas-24.02-parameters}
 
-| Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- | --- |
-| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | true | N/A |
-| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | true | N/A |
-| SVM | `svm` | Config | The name of the SVM. | true | N/A |
-| User Name | `username` | Secret | The username to connect to the storage device. | true | N/A |
-| User Password | `password` | Secret | The password to connect to the storage device. | true | N/A |
-| Export Policy | `exportPolicy` | Config | The NAS option for the NFS export policy. | true | `default` |
-| Limit Volume Size | `limitVolumeSize` | Config | Maximum requestable volume size (in Gibibytes) and qtree parent volume size | true | `50Gi` |
-| Limit AggregateUsage | `limitAggregateUsage` | Config | Fail provisioning if usage is greater than this percentage. | true | `80%` |
-| NFS Mount Options | `nfsMountOptions` | Config | The NFS mount options. | true | `nfsvers=4` |
-{: caption="24.02 parameter reference" caption-side="bottom"}
+| Display name | CLI option | Type | Description | Default value | 
+| --- | --- | --- | --- | --- |
+| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | N/A |
+| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | N/A |
+| SVM | `svm` | Config | The name of the SVM. | N/A |
+| User Name | `username` | Secret | The username to connect to the storage device. | N/A |
+| User Password | `password` | Secret | The password to connect to the storage device. | N/A |
+| Export Policy | `exportPolicy` | Config | The NAS option for the NFS export policy. | `default` |
+| Limit Volume Size | `limitVolumeSize` | Config | Maximum requestable volume size (in Gibibytes) and qtree parent volume size | `50Gi` |
+| Limit AggregateUsage | `limitAggregateUsage` | Config | Fail provisioning if usage is greater than this percentage. | `80%` |
+| NFS Mount Options | `nfsMountOptions` | Config | The NFS mount options. | `nfsvers=4` |
+{: caption="Table 3. 24.02 parameter reference" caption-side="bottom"}
+
 
 
 

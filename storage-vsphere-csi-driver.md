@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-04"
+lastupdated: "2025-07-09"
 
 keywords: satellite storage, VMware, satellite config, satellite configurations, vsphere
 
@@ -102,7 +102,7 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
     Example command to create a version 2.5.1 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name vsphere-csi-driver --template-version 2.5.1 --param "vcenter-username=VCENTER-USERNAME"  --param "vcenter-password=VCENTER-PASSWORD"  --param "insecure-flag=INSECURE-FLAG"  --param "host=HOST"  --param "datacenters=DATACENTERS"  [--param "thumbprint=THUMBPRINT"] 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name vsphere-csi-driver --template-version 2.5.1 --param "vcenter-username=VCENTER-USERNAME"  --param "vcenter-password=VCENTER-PASSWORD"  --param "insecure-flag=INSECURE-FLAG"  --param "host=HOST"  --param "datacenters=DATACENTERS"  --param "thumbprint=THUMBPRINT" 
     ```
     {: pre}
 
@@ -110,7 +110,7 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
     Example command to create a version 2.7.0 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name vsphere-csi-driver --template-version 2.7.0 --param "vcenter-username=VCENTER-USERNAME"  --param "vcenter-password=VCENTER-PASSWORD"  --param "insecure-flag=INSECURE-FLAG"  --param "host=HOST"  --param "datacenters=DATACENTERS"  [--param "thumbprint=THUMBPRINT"] 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name vsphere-csi-driver --template-version 2.7.0 --param "vcenter-username=VCENTER-USERNAME"  --param "vcenter-password=VCENTER-PASSWORD"  --param "insecure-flag=INSECURE-FLAG"  --param "host=HOST"  --param "datacenters=DATACENTERS"  --param "thumbprint=THUMBPRINT" 
     ```
     {: pre}
 
@@ -432,29 +432,30 @@ Removing the storage configuration removes the driver from all assigned clusters
 ### 2.5.1 parameter reference
 {: #vsphere-csi-driver-2.5.1-parameters}
 
-| Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- | --- |
-| vCenter username | `vcenter-username` | Secret | The vCenter username. You must specify the username along with the domain name. For example: `Administrator@vsphere.local`. | true | N/A |
-| vCenter password | `vcenter-password` | Secret | The vCenter server user password. | true | N/A |
-| Insecure connection | `insecure-flag` | Config | Include the `insecure-flag`. `true` indicates that you want to include the flag, which uses self-signed certificate for login. `false` indicates that you use a secure connection. If you select `false`, you must provide an SSL thumbprint. | true | `false` |
-| vCenter host | `host` | Config | The vCenter server IP address. | true | N/A |
-| vCenter data centers | `datacenters` | Config | List all data center paths where host VMs are present, separated by commas. Provide the name of the data center when it is located at the root. When it is placed in the folder, you need to specify the path as folder/data-center-name | true | N/A |
-| SSL certificate thumbprint | `thumbprint` | Secret | The SSL thumbprint to be used to establish a secure connection to VC.  | false | N/A |
-{: caption="2.5.1 parameter reference" caption-side="bottom"}
+| Display name | CLI option | Type | Description | Default value | 
+| --- | --- | --- | --- | --- |
+| vCenter username | `vcenter-username` | Secret | The vCenter username. You must specify the username along with the domain name. For example: `Administrator@vsphere.local`. | N/A |
+| vCenter password | `vcenter-password` | Secret | The vCenter server user password. | N/A |
+| Insecure connection | `insecure-flag` | Config | Include the `insecure-flag`. `true` indicates that you want to include the flag, which uses self-signed certificate for login. `false` indicates that you use a secure connection. If you select `false`, you must provide an SSL thumbprint. | `false` |
+| vCenter host | `host` | Config | The vCenter server IP address. | N/A |
+| vCenter data centers | `datacenters` | Config | List all data center paths where host VMs are present, separated by commas. Provide the name of the data center when it is located at the root. When it is placed in the folder, you need to specify the path as folder/data-center-name | N/A |
+| SSL certificate thumbprint | `thumbprint` | Secret | The SSL thumbprint to be used to establish a secure connection to VC.  | N/A |
+{: caption="Table 1. 2.5.1 parameter reference" caption-side="bottom"}
 
 
 ### 2.7.0 parameter reference
 {: #vsphere-csi-driver-2.7.0-parameters}
 
-| Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- | --- |
-| vCenter username | `vcenter-username` | Secret | The vCenter username. You must specify the username along with the domain name. For example: `Administrator@vsphere.local`. | true | N/A |
-| vCenter password | `vcenter-password` | Secret | The vCenter server user password. | true | N/A |
-| Insecure connection | `insecure-flag` | Config | Include the `insecure-flag`. `true` indicates that you want to include the flag, which uses self-signed certificate for login. `false` indicates that you use a secure connection. If you select `false`, you must provide an SSL thumbprint. | true | `false` |
-| vCenter host | `host` | Config | The vCenter server IP address. | true | N/A |
-| vCenter data centers | `datacenters` | Config | List all data center paths where host VMs are present, separated by commas. Provide the name of the data center when it is located at the root. When it is placed in the folder, you need to specify the path as folder/data-center-name | true | N/A |
-| SSL certificate thumbprint | `thumbprint` | Secret | The SSL thumbprint to be used to establish a secure connection to VC.  | false | N/A |
-{: caption="2.7.0 parameter reference" caption-side="bottom"}
+| Display name | CLI option | Type | Description | Default value | 
+| --- | --- | --- | --- | --- |
+| vCenter username | `vcenter-username` | Secret | The vCenter username. You must specify the username along with the domain name. For example: `Administrator@vsphere.local`. | N/A |
+| vCenter password | `vcenter-password` | Secret | The vCenter server user password. | N/A |
+| Insecure connection | `insecure-flag` | Config | Include the `insecure-flag`. `true` indicates that you want to include the flag, which uses self-signed certificate for login. `false` indicates that you use a secure connection. If you select `false`, you must provide an SSL thumbprint. | `false` |
+| vCenter host | `host` | Config | The vCenter server IP address. | N/A |
+| vCenter data centers | `datacenters` | Config | List all data center paths where host VMs are present, separated by commas. Provide the name of the data center when it is located at the root. When it is placed in the folder, you need to specify the path as folder/data-center-name | N/A |
+| SSL certificate thumbprint | `thumbprint` | Secret | The SSL thumbprint to be used to establish a secure connection to VC.  | N/A |
+{: caption="Table 2. 2.7.0 parameter reference" caption-side="bottom"}
+
 
 
 

@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-10"
+  years: 2020, 2025
+lastupdated: "2025-07-09"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -565,41 +565,42 @@ Note that you must delete your storage assignments before you can successfully d
 ### 1.3.1 parameter reference
 {: #aws-efs-csi-driver-1.3.1-parameters}
 
-| Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | true | N/A |
-| AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | true | N/A |
-{: caption="1.3.1 parameter reference" caption-side="bottom"}
+| Display name | CLI option | Type | Description | Default value | 
+| --- | --- | --- | --- | --- |
+| AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | N/A |
+| AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | N/A |
+{: caption="Table 1. 1.3.1 parameter reference" caption-side="bottom"}
 
 
 ### 1.3.7 parameter reference
 {: #aws-efs-csi-driver-1.3.7-parameters}
 
-| Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | true | N/A |
-| AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | true | N/A |
-{: caption="1.3.7 parameter reference" caption-side="bottom"}
+| Display name | CLI option | Type | Description | Default value | 
+| --- | --- | --- | --- | --- |
+| AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | N/A |
+| AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | N/A |
+{: caption="Table 2. 1.3.7 parameter reference" caption-side="bottom"}
 
 
 ### 1.4.2 parameter reference
 {: #aws-efs-csi-driver-1.4.2-parameters}
 
-| Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | true | N/A |
-| AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | true | N/A |
-{: caption="1.4.2 parameter reference" caption-side="bottom"}
+| Display name | CLI option | Type | Description | Default value | 
+| --- | --- | --- | --- | --- |
+| AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | N/A |
+| AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | N/A |
+{: caption="Table 3. 1.4.2 parameter reference" caption-side="bottom"}
 
 
 ### 2.0.3 parameter reference
 {: #aws-efs-csi-driver-2.0.3-parameters}
 
-| Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | true | N/A |
-| AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | true | N/A |
-{: caption="2.0.3 parameter reference" caption-side="bottom"}
+| Display name | CLI option | Type | Description | Default value | 
+| --- | --- | --- | --- | --- |
+| AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | N/A |
+| AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | N/A |
+{: caption="Table 4. 2.0.3 parameter reference" caption-side="bottom"}
+
 
 
 
