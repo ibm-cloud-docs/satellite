@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-10"
+  years: 2020, 2025
+lastupdated: "2025-07-09"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -210,46 +210,47 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 ### 22.04 parameter reference
 {: #netapp-ontap-san-22.04-parameters}
 
-| Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- | --- |
-| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | true | N/A |
-| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | true | N/A |
-| SVM | `svm` | Config | The name of the SVM. | true | N/A |
-| User Name | `username` | Secret | The username to connect to the storage device. | true | N/A |
-| User Password | `password` | Secret | The password to connect to the storage device. | true | N/A |
-| Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | true | `50Gi` |
-| Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is greater than this percentage. | true | `80%` |
-{: caption="22.04 parameter reference" caption-side="bottom"}
+| Display name | CLI option | Type | Description | Default value | 
+| --- | --- | --- | --- | --- |
+| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | N/A |
+| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | N/A |
+| SVM | `svm` | Config | The name of the SVM. | N/A |
+| User Name | `username` | Secret | The username to connect to the storage device. | N/A |
+| User Password | `password` | Secret | The password to connect to the storage device. | N/A |
+| Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | `50Gi` |
+| Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is greater than this percentage. | `80%` |
+{: caption="Table 1. 22.04 parameter reference" caption-side="bottom"}
 
 
 ### 22.10 parameter reference
 {: #netapp-ontap-san-22.10-parameters}
 
-| Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- | --- |
-| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | true | N/A |
-| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | true | N/A |
-| SVM | `svm` | Config | The name of the SVM. | true | N/A |
-| User Name | `username` | Secret | The username to connect to the storage device. | true | N/A |
-| User Password | `password` | Secret | The password to connect to the storage device. | true | N/A |
-| Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | true | `50Gi` |
-| Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is greater than this percentage. | true | `80%` |
-{: caption="22.10 parameter reference" caption-side="bottom"}
+| Display name | CLI option | Type | Description | Default value | 
+| --- | --- | --- | --- | --- |
+| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | N/A |
+| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | N/A |
+| SVM | `svm` | Config | The name of the SVM. | N/A |
+| User Name | `username` | Secret | The username to connect to the storage device. | N/A |
+| User Password | `password` | Secret | The password to connect to the storage device. | N/A |
+| Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | `50Gi` |
+| Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is greater than this percentage. | `80%` |
+{: caption="Table 2. 22.10 parameter reference" caption-side="bottom"}
 
 
 ### 24.02 parameter reference
 {: #netapp-ontap-san-24.02-parameters}
 
-| Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- | --- |
-| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | true | N/A |
-| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | true | N/A |
-| SVM | `svm` | Config | The name of the SVM. | true | N/A |
-| User Name | `username` | Secret | The username to connect to the storage device. | true | N/A |
-| User Password | `password` | Secret | The password to connect to the storage device. | true | N/A |
-| Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | true | `50Gi` |
-| Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is greater than this percentage. | true | `80%` |
-{: caption="24.02 parameter reference" caption-side="bottom"}
+| Display name | CLI option | Type | Description | Default value | 
+| --- | --- | --- | --- | --- |
+| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | N/A |
+| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | N/A |
+| SVM | `svm` | Config | The name of the SVM. | N/A |
+| User Name | `username` | Secret | The username to connect to the storage device. | N/A |
+| User Password | `password` | Secret | The password to connect to the storage device. | N/A |
+| Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | `50Gi` |
+| Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is greater than this percentage. | `80%` |
+{: caption="Table 3. 24.02 parameter reference" caption-side="bottom"}
+
 
 
 ## Storage class reference for NetApp ONTAP-SAN

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-07-07"
+lastupdated: "2025-07-09"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2356,6 +2356,8 @@ subcollection: satellite
 
     * [1.23.0 parameter reference](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=cli#azuredisk-csi-driver-1.23.0-parameters)
 
+    * [1.30.3 parameter reference](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=cli#azuredisk-csi-driver-1.30.3-parameters)
+
 * [Storage class reference for Azure Disk](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=cli#azure-disk-sc-ref)
 
 * [Getting help and support for Azure Disk storage](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=cli#sat-azure-disk-support)
@@ -2403,6 +2405,8 @@ subcollection: satellite
     * [1.18.0 parameter reference](/docs/satellite?topic=satellite-storage-azurefile-csi-driver&interface=cli#azurefile-csi-driver-1.18.0-parameters)
 
     * [1.22.0 parameter reference](/docs/satellite?topic=satellite-storage-azurefile-csi-driver&interface=cli#azurefile-csi-driver-1.22.0-parameters)
+
+    * [1.31.2 parameter reference](/docs/satellite?topic=satellite-storage-azurefile-csi-driver&interface=cli#azurefile-csi-driver-1.31.2-parameters)
 
 * [Storage class reference for Azure File](/docs/satellite?topic=satellite-storage-azurefile-csi-driver&interface=cli#azure-file-sc-ref)
 
@@ -2924,6 +2928,12 @@ subcollection: satellite
 
     * [4.15 parameter reference](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#odf-local-4.15-parameters)
 
+    * [4.16 parameter reference](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#odf-local-4.16-parameters)
+
+    * [4.17 parameter reference](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#odf-local-4.17-parameters)
+
+    * [4.18 parameter reference](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#odf-local-4.18-parameters)
+
 * [Storage class reference for ODF](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#sat-storage-odf-local-sc-ref)
 
 [OpenShift Data Foundation for remote devices](/docs/satellite?topic=satellite-storage-odf-remote#storage-odf-remote)
@@ -2973,6 +2983,12 @@ subcollection: satellite
     * [4.14 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-4.14-parameters)
 
     * [4.15 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-4.15-parameters)
+
+    * [4.16 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-4.16-parameters)
+
+    * [4.17 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-4.17-parameters)
+
+    * [4.18 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-4.18-parameters)
 
 * [Storage class reference for OpenShift Data Foundation for remote devices](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#sat-storage-odf-remote-sc-ref)
 
