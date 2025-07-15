@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-07-09"
+lastupdated: "2025-07-15"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -175,6 +175,14 @@ subcollection: satellite
 * [How many instances of Connector agent can I run?](/docs/satellite?topic=satellite-connector-faq#connector-faq-instance-limits)
 
 * [Can I deploy {{site.data.keyword.satelliteshort}} Connectors within {{site.data.keyword.cloud_notm}}?](/docs/satellite?topic=satellite-connector-faq#connector-ibm-cloud)
+
+* [What version of TLS does Connector use?](/docs/satellite?topic=satellite-connector-faq#conector-faq-tls)
+
+* [How does load balancing work across Satellite connector?](/docs/satellite?topic=satellite-connector-faq#conector-faq-lbs)
+
+* [What are the failover or disaster recovery expectations of agents and Connector?](/docs/satellite?topic=satellite-connector-faq#conector-faq-dr)
+
+* [What happens when an agent goes down?](/docs/satellite?topic=satellite-connector-faq#conector-faq-recover)
 
 
 ## Supported Satellite-enabled IBM Cloud services
