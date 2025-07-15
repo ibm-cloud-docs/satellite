@@ -22,10 +22,10 @@ content-type: release-note
 Review the latest changes to the {{site.data.keyword.satellitelong}} documentation.
 {: shortdesc}
 
-## Julu 2025
+## July 2025
 {: #satellite-july25}
 
-### 15 June 2025
+### 15 July 2025
 {: #satellite-july1525}
 {: release-note}
 

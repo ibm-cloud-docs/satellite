@@ -200,9 +200,9 @@ subcollection: satellite
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
-* [Julu 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july25)
+* [July 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july25)
 
-    * [15 June 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july1525)
+    * [15 July 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july1525)
 
         * New! RHEL 9 control plane host support for non CoreOS-enabled locations.
 
