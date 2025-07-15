@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-09-26"
+  years: 2020, 2025
+lastupdated: "2025-07-15"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -42,6 +42,20 @@ Is my {{site.data.keyword.satelliteshort}} location control plane subdomain stil
 :    If your location subdomain was created automatically for you, the host IP addresses that are registered for the subdomain are automatically managed for you, such as during an update. 
 :    If you manually registered the host IP addresses for the location subdomain with the `ibmcloud sat location dns register` command when you created the {{site.data.keyword.satelliteshort}} location control plane, make sure that you attach three hosts to the control plane before you begin, and manually register these host IPs for the subdomain. Now, these new hosts process requests for the location. Then, you can update the hosts that were previously used for the subdomain.
 
+
+How can I check the control plane version?
+:   Run the `ibmcloud sat location get --location <locationID> --json` and review the `masterKubeVersion` field.
+
+What version is applied when replacing control plane nodes?
+:   The new nodes minor version matches the control plane's minor version. The patch version is the latest worker patch version which contains the most recent vulnerability fixes.
+
+How can I avoid downtime when upating the control plane?
+:   By following the control process, you ensure that all control plane components are able to run on a node and there won't be any distruptions. Ensure that you only update one worker at a time and leave enough time for a node to fully functional before starting the next one.
+
+How often should I update the control plane hosts?
+:   It's recommended to update control plane hosts when a new worker node fix pack is available to pick up all the recent vulnerability fixes.
+
+
 ## Updating control plane hosts
 {: #host-update-cp-procedure}
 
@@ -62,6 +76,9 @@ As part of the bootstrapping process, the latest images and {{site.data.keyword.
 
 ## Updating the Kubernetes API Server
 {: #update-api-server}
+
+Updating your Kubernetes API does not update your control plane hosts.
+{: note}
 
 To update your Kubernetes API server, run the [`cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command. 
 
