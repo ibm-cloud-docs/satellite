@@ -200,6 +200,12 @@ subcollection: satellite
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
+* [July 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july25)
+
+    * [15 July 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july1525)
+
+        * New! RHEL 9 control plane host support for non CoreOS-enabled locations.
+
 * [June 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june25)
 
     * [26 June 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june2625)
@@ -1739,7 +1745,7 @@ subcollection: satellite
 
 * [Resetting the host key](/docs/satellite?topic=satellite-host-update-location#host-key-reset)
 
-* [Migrating your control plane from RHEL 7 to RHEL 8](/docs/satellite?topic=satellite-host-update-location#migrate-cp-rhel8)
+* [Migrating your control plane to a new RHEL version](/docs/satellite?topic=satellite-host-update-location#migrate-cp-rhel)
 
 [Updating hosts that are assigned as worker nodes](/docs/satellite?topic=satellite-host-update-workers#host-update-workers)
 
