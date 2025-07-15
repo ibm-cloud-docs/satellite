@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-02-23"
+  years: 2020, 2025
+lastupdated: "2025-07-15"
 
 keywords: satellite, hybrid, multicloud, registration script, registration script fails
 
@@ -38,6 +38,13 @@ Repository 'rhel-8-for-x86_64-baseos-rpms' is enabled for this system.
 ```
 {: screen}
 
+For RHEL 9
+```sh
+Repository 'rhel-9-for-x86_64-appstream-rpms' is enabled for this system.
+Repository 'rhel-9-for-x86_64-baseos-rpms' is enabled for this system.
+```
+{: screen}
+
 To resolve this issue, follow these steps.
 {: tsResolve}
 
@@ -61,5 +68,3 @@ To resolve this issue, follow these steps.
 
 2. Make sure that your machine meets the other [host minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as minimum CPU and memory sizes.
 3. [Run the registration script](/docs/satellite?topic=satellite-attach-hosts) on your machine again.
-
-

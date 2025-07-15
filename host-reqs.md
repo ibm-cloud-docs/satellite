@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-03"
+lastupdated: "2025-07-15"
 
 keywords: satellite, hybrid, multicloud, endpoint capacity, endpoint limits, location endpoint limits, location endpoints, cloud endpoints
 
@@ -36,7 +36,7 @@ You can verify your host setup with the `satellite-host-check` script. For more 
 - Hosts must run the latest Red Hat Enterprise Linux 8, or the latest Red Hat CoreOS with the kernel that is distributed with those versions. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or IBM Power; and other kernel versions are not supported.
     - For the latest RHEL 8 version information, see [Red Hat Enterprise Linux Release Dates](https://access.redhat.com/articles/3078#RHEL8){: external}.
     - For the latest Red Hat CoreOS version information, see [Red Hat CoreOS mirrors](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/){: external}.
-- Make sure that you use minimal RHEL images. Do not install the LAMP stack. Do not install virtualization technologies on the hosts, including `libvirtd` or `docker`. Note that support for RHEL 7 hosts in your control plane ends on March 2nd, 2023. [Follow the steps](/docs/satellite?topic=satellite-host-update-location#migrate-cp-rhel8) to migrate your hosts to RHEL 8.
+- Make sure that you use minimal RHEL images. Do not install the LAMP stack. Do not install virtualization technologies on the hosts, including `libvirtd` or `docker`.
 - Hosts can be physical or virtual machines. However, if your hosts are cloned virtual machines, be sure that each one has a unique network identity. For more information, see [Why aren't my hosts attaching to my location?](/docs/satellite?topic=satellite-host-not-attaching).
 - Red Hat CoreOS hosts must meet [minimum sizing requirements](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhcos) and [sufficient storage capacity](/docs/satellite?topic=satellite-reqs-host-storage). 
 - RHEL hosts must meet [minimum sizing requirements](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhel) and [sufficient storage capacity](/docs/satellite?topic=satellite-reqs-host-storage). 
@@ -59,13 +59,17 @@ You can verify your host setup with the `satellite-host-check` script. For more 
 Hosts must have access to RHEL updates and the following packages. 
 {: shortdesc}
 
-These updates are required for hosts that are running RHEL. If your hosts are running Red Hat CoreOS images, you do not need to update the packages.
-{: note}
-
 For RHEL 8
 ```sh
 Repository 'rhel-8-for-x86_64-appstream-rpms' is enabled for this system.
 Repository 'rhel-8-for-x86_64-baseos-rpms' is enabled for this system.
+```
+{: screen}
+
+For RHEL 9
+```sh
+Repository 'rhel-9-for-x86_64-appstream-rpms' is enabled for this system.
+Repository 'rhel-9-for-x86_64-baseos-rpms' is enabled for this system.
 ```
 {: screen}
 
@@ -96,6 +100,13 @@ You might need to refresh your packages on the host machine. For example, in {{s
     ```sh
     subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms
     subscription-manager repos --enable rhel-8-for-x86_64-baseos-rpms
+    ```
+    {: pre}
+
+    RHEL 9:
+    ```sh
+    subscription-manager repos --enable rhel-9-for-x86_64-appstream-rpms
+    subscription-manager repos --enable rhel-9-for-x86_64-baseos-rpms
     ```
     {: pre}
 

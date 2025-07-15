@@ -101,17 +101,15 @@ ibmcloud sat host attach --location <location_name> --reset-key
 If you are using Terraform with your {{site.data.keyword.satelliteshort}} location and your host key is reset, either because it expired or you manually reset it, you are then prompted to replace all your hosts, including hosts that are assigned. You can avoid this issue by updating your Terraform script. For more information, see [Why is my host attach script triggering a state change in Terraform?](/docs/satellite?topic=satellite-ts-host-terraform).
 {: note}
 
-## Migrating your control plane from RHEL 7 to RHEL 8
-{: #migrate-cp-rhel8}
+## Migrating your control plane to a new RHEL version
+{: #migrate-cp-rhel}
 
-Support for RHEL 7 for Satellite control plane hosts is deprecated and reaches end-of-life on March 2nd, 2023. After that date, you cannot assign any RHEL 7 hosts to the control plane of a location. Existing RHEL 7 hosts cannot be updated and must be replaced with RHEL 8 hosts. 
+To replace your control plane hosts on an older verison of RHEL, you must first add a hosts at the newer version of RHEL that you want to use. After you attach new hosts to your location and assign them to the control plane, you can remove the old hosts in the same zone from the control plane. 
 
-To replace your RHEL 7 control plane hosts, you must first add a RHEL 8 host to replace it. After you attach a RHEL 8 host to your location and assign it to the control plane, you can remove a RHEL 7 host in the same zone from the control plane. 
-
-Before migrating to RHEL 8, note that Red Hat CoreOS (RHCOS) is now a supported OS in RHCOS enabled locations. RHCOS is a minimal, secure OS with tight integration into the {{site.data.keyword.redhat_openshift_notm}} ecosystem and is capable of doing in-place upgrades of major versions. Before you can use RHCOS hosts in your location, you must create a Red Hat CoreOS enabled location. If you already have a location that is RHCOS enabled, consider adding RHCOS hosts instead. To create a Red Hat CoreOS enabled Satellite location, see [Understanding locations](/docs/satellite?topic=satellite-location-host).
+Before migrating to a newer version of RHEL, note that Red Hat CoreOS (RHCOS) is now a supported OS in RHCOS enabled locations. RHCOS is a minimal, secure OS with tight integration into the {{site.data.keyword.redhat_openshift_notm}} ecosystem and is capable of doing in-place upgrades of major versions. Before you can use RHCOS hosts in your location, you must create a Red Hat CoreOS enabled location. If you already have a location that is RHCOS enabled, consider adding RHCOS hosts instead. To create a Red Hat CoreOS enabled Satellite location, see [Understanding locations](/docs/satellite?topic=satellite-location-host).
 {: tip}
 
-1. Identify which hosts you want to replace and which zones they are located in by running the following command. Look for the `"os": "RHEL7"` label or a host without an `os` label in the output file.
+1. Identify which hosts you want to replace and which zones they are located in by running the following command. Look for the `"os"` label or a host without an `os` label in the output file.
     ```sh
     ibmcloud sat hosts --location LOCATION_ID --output json 
     ```
@@ -147,23 +145,20 @@ Before migrating to RHEL 8, note that Red Hat CoreOS (RHCOS) is now a supported 
     ```
     {: pre}
     
-3. Provision a RHEL 8 host for your Satellite location in the identified zone and run the host attach script on that host. This process varies, depending on your infrastructure. For more information, see [Attaching hosts to your location](/docs/satellite?topic=satellite-attach-hosts).
+3. Provision a new RHEL host for your Satellite location in the identified zone and run the host attach script on that host. This process varies, depending on your infrastructure. For more information, see [Attaching hosts to your location](/docs/satellite?topic=satellite-attach-hosts).
 
-4. After your RHEL 8 host is attached to the location, you can assign it to the location control plane by using the `host assign` command.
+4. After your host is attached to the location, you can assign it to the location control plane by using the `host assign` command.
     ```sh
     ibmcloud sat host assign --host HOST_NAME --location LOCATION_ID --cluster infrastructure --zone ZONE
     ```
     {: pre}
     
 
-5. After you assign the RHEL 8 host to the control plane, you can remove a RHEL 7 host from the same zone that the RHEL 8 host was added to.
+5. After you assign the new host to the control plane, you can remove the old host from the same zone that the new host was added to.
 
     ```sh
     ibmcloud sat host rm --location LOCATION_ID --host HOST_NAME
     ```
     {: pre}
 
-Repeat these steps until all your RHEL 7 control plane hosts are replaced by RHEL 8 hosts and removed from the location. 
-
-If you have clusters running RHEL 7 hosts in your location, you might need to migrate your worker nodes. For more information, follow the [migration guide](/docs/openshift?topic=openshift-rhel_migrate) for your cluster version.
-{: tip}
+Repeat these steps until all your old control plane hosts are replaced with new hosts and removed from the location. 
