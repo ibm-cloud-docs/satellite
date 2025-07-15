@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-10-30"
+  years: 2023, 2025
+lastupdated: "2025-07-15"
 
 keywords: satellite, connector, faq, frequently asked questions
 
@@ -65,3 +65,26 @@ As a best practice, run no more than 6 agents per Connector.
 {: #connector-ibm-cloud}
 
 Connectors are generally not recommended for use within {{site.data.keyword.cloud_notm}} except for specific use cases. Contact your IBM account team if you believe you need this support for your solution.
+
+## What version of TLS does Connector use?
+{: #conector-faq-tls}
+
+Connector uses TLS version 1.3.
+
+
+
+
+## How does load balancing work across Satellite connector?
+{: #conector-faq-lbs}
+
+The TCP streams flowing through Satellite Connector are round robin through the agents connected. Multiple TCP streams are required to take the most advantage of the agents.
+
+## What are the failover or disaster recovery expectations of agents and Connector?
+{: #conector-faq-dr}
+
+IBM manages the Cloud side of the service which is split across IBM Cloud Multi-Zone Regions (MZRs) so the agents automatically have redundancy talking to different resources in each zone. For Connector agents, it is recommended that you deploy at least 3 in whatever availability zone fits your model. For exaxmple, 3 VMware hosts if you're on VMware or aligning to another cloud providers availability zones.
+
+## What happens when an agent goes down?
+{: #conector-faq-recover}
+
+The tunnel and agent have recurring heartbeat message. When an agent goes down, the tunnel will drop the connection to the agent and stop routing traffic through that agent. Existing live TCP streams will be interrupted but retries and reconnects use the other agents.

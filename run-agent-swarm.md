@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-04-17"
+lastupdated: "2025-07-15"
 
 keywords: satellite, connector
 
@@ -22,7 +22,17 @@ In addition to running the container stand-alone as shown in the previous exampl
 To configure {{site.data.keyword.satelliteshort}} Connectors, you must have Administrator access to the **Satellite** service in IAM access policies.
 {: note}
 
-1. Create a {{site.data.keyword.satelliteshort}} Connector agent compose file called `satellite-connector-agent.yaml` on your Swarm manager system and copy the following content to it:
+- Satellite Connector treats all the agents connected to a Connector as equal.
+- The TCP sessions are round robin through all the agents.
+- It is recommended to use a minimum of 3 agents for redundancy. This makes Satellite Connector service more reliable and there is no additonal charge for additional agents. On windows, this means using multiple Windows hosts.
+- If you are using containers make sure your containers aren't all on the same VM or hardware as that's not redundant.
+- If you're running a high bandwidth workload it's recommended to use at least 6 agents because that brings more hosts and more bandwidth.
+- The maximum agents per Connector is 9, but this setup is not recommend because containers and virtual machines are ephemeral and there might be a delay in noticing when one container disappeared and a new one is trying to connect. Instead, it is recommend to leave at least 3 open slots to allow for containers and VMs to stop and start.
+
+1. Create a {{site.data.keyword.satelliteshort}} Connector agent compose file called `connector-agent.yaml` on your Swarm manager system and copy the following content to it.
+    If you have multiple environments, you create multiple config files and name them by environment. For example, create a `connector-agent-prod.yaml` for production and a `connector-agent-staging.yaml` for staging. Then, include the Connector ID that you want to use for each environment in the respective file.
+    {: tip}
+
     ```yaml
     version: '3.9'
     services:
@@ -31,7 +41,7 @@ To configure {{site.data.keyword.satelliteshort}} Connectors, you must have Admi
         environment:
         - SATELLITE_CONNECTOR_ID=/satellite-connector-id
         - SATELLITE_CONNECTOR_IAM_APIKEY=/run/secrets/satellite-connector-iam-apikey
-        - SATELLITE_CONNECTOR_TAGS={{.Node.Hostname}}
+        - SATELLITE_CONNECTOR_TAGS={{.Node.Hostname}} # You also can add other details in this field. For example, SATELLITE_CONNECTOR_TAGS="Some text"
         deploy:
           replicas: 3
           restart_policy:
