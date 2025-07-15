@@ -50,7 +50,7 @@ What version is applied when replacing control plane nodes?
 :   The new nodes minor version matches the control plane's minor version. The patch version is the latest worker patch version which contains the most recent vulnerability fixes.
 
 How can I avoid downtime when upating the control plane?
-:   By following the control process, you ensure that all control plane components are able to run on a node and there won't be any distruptions. Ensure that you only update one worker at a time and leave enough time for a node to fully functional before starting the next one.
+:   By following the update process, you ensure that all control plane components are able to run on a node and there won't be any distruptions. Make sure that you only update one worker at a time and leave enough time for a node to fully functional before starting the next one.
 
 How often should I update the control plane hosts?
 :   It's recommended to update control plane hosts when a new worker node fix pack is available to pick up all the recent vulnerability fixes.
