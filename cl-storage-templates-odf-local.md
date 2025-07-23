@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-06-24"
+lastupdated: "2025-07-23"
 
 
 keywords: change log, version history, odf-local
@@ -29,6 +29,12 @@ Review the version history for `odf-local`.
 {: #cl-storage-templates-odf-local-4.18}
 
 
+### Revision 2, released 23 July 2025
+{: #cl-storage-templates-odf-local-4.18-2}
+
+- Resolves the following CVEs: [CVE-2024-23337](https://nvd.nist.gov/vuln/detail/CVE-2024-23337){: external}, and [CVE-2025-48060](https://nvd.nist.gov/vuln/detail/CVE-2025-48060){: external}.
+- Updates Go to version `1.23.11`.
+
 ### Revision 1, released 24 June 2025
 {: #cl-storage-templates-odf-local-4.18-1}
 
@@ -40,6 +46,12 @@ Review the version history for `odf-local`.
 ## Version 4.17
 {: #cl-storage-templates-odf-local-4.17}
 
+
+### Revision 6, released 23 July 2025
+{: #cl-storage-templates-odf-local-4.17-6}
+
+- Resolves the following CVEs: [CVE-2024-23337](https://nvd.nist.gov/vuln/detail/CVE-2024-23337){: external}, and [CVE-2025-48060](https://nvd.nist.gov/vuln/detail/CVE-2025-48060){: external}.
+- Updates Go to version `1.23.11`.
 
 ### Revision 5, released 24 June 2025
 {: #cl-storage-templates-odf-local-4.17-5}
@@ -60,6 +72,12 @@ Review the version history for `odf-local`.
 {: #cl-storage-templates-odf-local-4.16}
 
 
+### Revision 8, released 23 July 2025
+{: #cl-storage-templates-odf-local-4.16-8}
+
+- Resolves the following CVEs: [CVE-2024-23337](https://nvd.nist.gov/vuln/detail/CVE-2024-23337){: external}, and [CVE-2025-48060](https://nvd.nist.gov/vuln/detail/CVE-2025-48060){: external}.
+- Updates Go to version `1.23.11`.
+
 ### Revision 7, released 24 June 2025
 {: #cl-storage-templates-odf-local-4.16-7}
 
@@ -78,6 +96,12 @@ Review the version history for `odf-local`.
 ## Version 4.15
 {: #cl-storage-templates-odf-local-4.15}
 
+
+### Revision 13, released 23 July 2025
+{: #cl-storage-templates-odf-local-4.15-13}
+
+- Resolves the following CVEs: [CVE-2024-23337](https://nvd.nist.gov/vuln/detail/CVE-2024-23337){: external}, and [CVE-2025-48060](https://nvd.nist.gov/vuln/detail/CVE-2025-48060){: external}.
+- Updates Go to version `1.23.11`.
 
 ### Revision 12, released 24 June 2025
 {: #cl-storage-templates-odf-local-4.15-12}
@@ -126,6 +150,12 @@ Review the version history for `odf-local`.
 ## Version 4.14
 {: #cl-storage-templates-odf-local-4.14}
 
+
+### Revision 16, released 23 July 2025
+{: #cl-storage-templates-odf-local-4.14-16}
+
+- Resolves the following CVEs: [CVE-2024-23337](https://nvd.nist.gov/vuln/detail/CVE-2024-23337){: external}, and [CVE-2025-48060](https://nvd.nist.gov/vuln/detail/CVE-2025-48060){: external}.
+- Updates Go to version `1.23.11`.
 
 ### Revision 15, released 24 June 2025
 {: #cl-storage-templates-odf-local-4.14-15}
@@ -198,6 +228,12 @@ Review the version history for `odf-local`.
 ## Version 4.13
 {: #cl-storage-templates-odf-local-4.13}
 
+
+### Revision 18, released 23 July 2025
+{: #cl-storage-templates-odf-local-4.13-18}
+
+- Resolves the following CVEs: [CVE-2024-23337](https://nvd.nist.gov/vuln/detail/CVE-2024-23337){: external}, [CVE-2025-48060](https://nvd.nist.gov/vuln/detail/CVE-2025-48060){: external}, [CVE-2025-22874](https://nvd.nist.gov/vuln/detail/CVE-2025-22874){: external}, [CVE-2025-3576](https://nvd.nist.gov/vuln/detail/CVE-2025-3576){: external}, and [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}.
+- Updates Go to version `1.23.11`.
 
 ### Revision 17, released 05 June 2025
 {: #cl-storage-templates-odf-local-4.13-17}
