@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2024
-lastupdated: "2024-01-03"
+  years: 2025
+lastupdated: "2025-07-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -30,7 +30,7 @@ cat /var/lib/dbus/machine-id
 ```
 {: pre}
 
-If the IDs match, then you must take steps to resolve this issue.
+If the IDs match a host's IDs that are already attached, then you must take steps to resolve this issue.
 
 To resolve this issue, follow these steps.
 {: tsResolve}
