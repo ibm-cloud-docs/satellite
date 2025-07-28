@@ -202,6 +202,10 @@ subcollection: satellite
 
 * [July 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july25)
 
+    * [28 June 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june2825)
+
+        * Satellite Connector agent image version `1.2.3`.
+
     * [15 July 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july1525)
 
         * New! RHEL 9 control plane host support for non CoreOS-enabled locations.
