@@ -33,7 +33,7 @@ Compute capacity
 Plan to keep **at least 3 extra hosts** attached and unassigned to your location. When you have extra hosts, then {{site.data.keyword.IBM_notm}} can assign the hosts to your {{site.data.keyword.satelliteshort}} location control plane automatically when the location reaches the warning capacity threshold or an unhealthy host needs to be replaced.
 {: note}
 
-The [Satellite Location Sizing Requirements](/docs/satellite?topic=satellite-location-sizing) for hosting {[product_name_notm]} version 4.18 clusters are now the same regardless of whether the location is RHEL (non-CoreOS) or CoreOS-enabled. The requirements for location nodes are the same as those for [CoreOS-enabled locations](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhcos).
+The [Satellite Location Sizing Requirements](/docs/satellite?topic=satellite-location-sizing) for hosting version 4.18 clusters are now the same regardless of whether the location is RHEL (non-CoreOS) or CoreOS-enabled. The requirements for location nodes are the same as those for [CoreOS-enabled locations](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhcos).
 {: important}
 
 
