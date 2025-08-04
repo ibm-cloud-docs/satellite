@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-17"
+lastupdated: "2025-08-04"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch, host, update, host update
 
@@ -183,7 +183,7 @@ You can roll out updates to all your worker node hosts with a ConfigMap. Specify
       ibm-cloud.kubernetes.io/iaas-provider: upi
       ibm-cloud.kubernetes.io/internal-ip: 10.241.0.4
       ibm-cloud.kubernetes.io/machine-type: upi
-      ibm-cloud.kubernetes.io/os: REDHAT_7_64
+      ibm-cloud.kubernetes.io/os: REDHAT_8_64
       ibm-cloud.kubernetes.io/region: us-east
       ibm-cloud.kubernetes.io/worker-id: sat-satellitei-5bd83963cdfedc7668c9040879c88113a134c4e7
       ibm-cloud.kubernetes.io/worker-pool-id: cbtljodw089nltg8k210-9a3f763

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-15"
+lastupdated: "2025-08-04"
 
 keywords: satellite, hybrid, multicloud, endpoint capacity, endpoint limits, location endpoint limits, location endpoints, cloud endpoints
 
@@ -85,16 +85,6 @@ You might need to refresh your packages on the host machine. For example, in {{s
     {: pre}
 
 2. Enable the package repositories on your machine.
-
-   RHEL 7:
-    ```sh
-    subscription-manager repos --enable rhel-server-rhscl-7-rpms
-    subscription-manager repos --enable rhel-7-server-optional-rpms
-    subscription-manager repos --enable rhel-7-server-rh-common-rpms
-    subscription-manager repos --enable rhel-7-server-supplementary-rpms
-    subscription-manager repos --enable rhel-7-server-extras-rpms
-    ```
-    {: pre}
     
    RHEL 8:
     ```sh

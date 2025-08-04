@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-02-23"
+  years: 2020, 2025
+lastupdated: "2025-08-04"
 
 keywords: satellite, hybrid, multicloud, microsoft azure, azure, azure host
 
@@ -58,39 +58,14 @@ To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location,
     2. Optional: Add host labels that are used later to [automatically assign](/docs/satellite?topic=satellite-host-autoassign-ov) hosts to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services in the location. Labels must be provided as key-value pairs, and must match the request from the service. By default, your hosts get a `cpu`, `os`, and `memory` label, but you might want to add more to control the auto assignment, such as `env=prod` or `service=database`.
     3. Enter a file name for your script or use the name that is generated for you.
     4. Click **Download script** to generate the host script and download the script to your local machine. Note that the token in the script is an API key, which should be treated and protected as sensitive information.
-3. **RHEL 7 only** Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
-    ```sh
-    # Grow the base volume group first
-    echo -e "r\ne\ny\nw\ny\ny\n" | gdisk /dev/sda
-    # Mark result as true as this returns a non-0 RC when syncing disks
-    echo -e "n\n\n\n\n\nw\n" | fdisk /dev/sda || true
-    partx -l /dev/sda || true
-    partx -v -a /dev/sda || true
-    pvcreate /dev/sda5
-    vgextend rootvg /dev/sda5
-    # Grow the TMP LV
-    lvextend -L+10G /dev/rootvg/tmplv
-    xfs_growfs /dev/rootvg/tmplv
-    # Grow the var LV
-    lvextend -L+20G /dev/rootvg/varlv
-    xfs_growfs /dev/rootvg/varlv
 
-    # Enable Azure RHEL Updates
-    yum update --disablerepo=* --enablerepo="*microsoft*" -y
-    yum-config-manager --enable '*'
-    yum repolist all
-    yum install container-selinux -y
-    echo "repos enabled"
-    ```
-    {: codeblock}
-
-4. From your local command line, [sign in to your Azure account](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli?view=azure-cli-latest){: external}.
+3. From your local command line, [sign in to your Azure account](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli?view=azure-cli-latest){: external}.
     ```sh
     az login
     ```
     {: pre}
 
-5. Create a network security group that meets the host networking requirements for {{site.data.keyword.satelliteshort}}.
+4. Create a network security group that meets the host networking requirements for {{site.data.keyword.satelliteshort}}.
     1. Create a network security group in your resource group. For more information, see the [Azure CLI documentation](https://learn.microsoft.com/en-us/cli/azure/network/nsg?view=azure-cli-latest#az_network_nsg_create){: external}.
         ```sh
         az network nsg create --name <network_security_group_name> --resource-group <resource_group_name>
@@ -111,7 +86,7 @@ To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location,
 
     4. Optional: Verify that your network security group meets the host networking requirements, such as in the [example settings](#azure-reqs-firewall).
     
-6. Create virtual machines to serve as the hosts for your {{site.data.keyword.satelliteshort}} location resources, including the control plane and any {{site.data.keyword.redhat_openshift_notm}} clusters that you want to create. The following command creates 6 VMs at the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for compute, disks, and image. The VMs are created in the resource group and network security group that you previously created. For more information, see the [Azure CLI documentation](https://learn.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest#az_vm_create){: external}.
+5. Create virtual machines to serve as the hosts for your {{site.data.keyword.satelliteshort}} location resources, including the control plane and any {{site.data.keyword.redhat_openshift_notm}} clusters that you want to create. The following command creates 6 VMs at the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for compute, disks, and image. The VMs are created in the resource group and network security group that you previously created. For more information, see the [Azure CLI documentation](https://learn.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest#az_vm_create){: external}.
     
     - Create Red Hat Enterprise Linux hosts
         ```sh
@@ -128,8 +103,8 @@ To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location,
     If you don't want to pass the `--custom-data` command option during VM creation, you can run the host registration script on each VM after provisioning.
     {: tip}
 
-7. Wait for the instances to create. During the creation of your instance, the script runs automatically. This process takes a few minutes to complete.
-8. Monitor the progress of the registration script.
+6. Wait for the instances to create. During the creation of your instance, the script runs automatically. This process takes a few minutes to complete.
+7. Monitor the progress of the registration script.
     1.  Get the public IP address of one of your instances. For more information, see the [Azure CLI documentation](https://learn.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest#az_vm_list_ip_addresses){: external}.
         ```sh
         az vm list-ip-addresses -g <resource_group> -n <vm_name>
@@ -148,9 +123,9 @@ To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location,
         ```
         {: pre}
 
-9. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, check that your hosts are shown in the **Hosts** tab of your location. All hosts show a **Health** status of `Ready` when a connection to the machine can be established, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
+8. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, check that your hosts are shown in the **Hosts** tab of your location. All hosts show a **Health** status of `Ready` when a connection to the machine can be established, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
 
-10. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-assigning-hosts).
+9. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-assigning-hosts).
 
 
 
@@ -229,10 +204,3 @@ Now that you added hosts to your location, you can assign them to your location 
 5. Learn more about the [{{site.data.keyword.satelliteshort}} Link component](/docs/satellite?topic=satellite-link-location-cloud) and how you can use endpoints to manage the network traffic between your location and {{site.data.keyword.cloud_notm}}.
 
 Need help? Check out [Getting support](/docs/satellite?topic=satellite-get-help) where you can find information about cloud status, issues, and logging; contacting support; and setting your email notification preferences for {{site.data.keyword.cloud_notm}} platform-related items.
-
-
-
-
-
-
-
