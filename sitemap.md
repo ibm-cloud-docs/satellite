@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-07-28"
+lastupdated: "2025-08-12"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -181,6 +181,8 @@ subcollection: satellite
 * [How does load balancing work across Satellite connector?](/docs/satellite?topic=satellite-connector-faq#conector-faq-lbs)
 
 * [What are the failover or disaster recovery expectations of agents and Connector?](/docs/satellite?topic=satellite-connector-faq#conector-faq-dr)
+
+* [How do I measure and monitor connections that are using Satellite Connector?](/docs/satellite?topic=satellite-connector-faq#conector-faq-connections)
 
 * [What happens when an agent goes down?](/docs/satellite?topic=satellite-connector-faq#conector-faq-recover)
 
@@ -3774,6 +3776,8 @@ subcollection: satellite
 [CLI change log](/docs/satellite?topic=satellite-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/satellite?topic=satellite-cs_cli_changelog#10)
+
+* [Version v1.0.714](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010714)
 
 * [Version v1.0.706](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010706)
 
