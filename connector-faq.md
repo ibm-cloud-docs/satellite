@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-07-15"
+lastupdated: "2025-08-12"
 
 keywords: satellite, connector, faq, frequently asked questions
 
@@ -83,6 +83,11 @@ The TCP streams flowing through Satellite Connector are round robin through the 
 {: #conector-faq-dr}
 
 IBM manages the Cloud side of the service which is split across IBM Cloud Multi-Zone Regions (MZRs) so the agents automatically have redundancy talking to different resources in each zone. For Connector agents, it is recommended that you deploy at least 3 in whatever availability zone fits your model. For exaxmple, 3 VMware hosts if you're on VMware or aligning to another cloud providers availability zones.
+
+## How do I measure and monitor connections that are using Satellite Connector?
+{: #conector-faq-connections}
+
+There are many options to monitor Satellite Connector and the things that use Satellite Connector. Specifically, you can use [IBM Cloud Monitoring](https://cloud.ibm.com/docs/monitoring) and [Cloud Logs](https://cloud.ibm.com/docs/cloud-logs) which can provide many metrics. The logs always have "flowlog" entries which are meant to track traffic using Satellite Connector. Agents are either containers or running on a Windows host and both of these platforms offer methods of observing traffic flowing through the Satellite Connector service.
 
 ## What happens when an agent goes down?
 {: #conector-faq-recover}
