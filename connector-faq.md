@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-08-13"
 
 keywords: satellite, connector, faq, frequently asked questions
 
@@ -82,7 +82,7 @@ The TCP streams flowing through Satellite Connector are round robin through the 
 ## What are the failover or disaster recovery expectations of agents and Connector?
 {: #conector-faq-dr}
 
-IBM manages the Cloud side of the service which is split across IBM Cloud Multi-Zone Regions (MZRs) so the agents automatically have redundancy talking to different resources in each zone. For Connector agents, it is recommended that you deploy at least 3 in whatever availability zone fits your model. For exaxmple, 3 VMware hosts if you're on VMware or aligning to another cloud providers availability zones.
+IBM manages the Cloud side of the service which is split across IBM Cloud Multi-Zone Regions (MZRs) so the agents automatically have redundancy talking to different resources in each zone. For Connector agents, it is recommended that you deploy at least 3 in whatever availability zone fits your model. For example, 3 VMware hosts if you're on VMware or aligning to another cloud providers availability zones.
 
 ## How do I measure and monitor connections that are using Satellite Connector?
 {: #conector-faq-connections}
