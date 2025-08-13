@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-07-15"
+lastupdated: "2025-08-13"
 
 keywords: satellite, connector
 
@@ -24,7 +24,7 @@ To configure {{site.data.keyword.satelliteshort}} Connectors, you must have Admi
 
 - Satellite Connector treats all the agents connected to a Connector as equal.
 - The TCP sessions are round robin through all the agents.
-- It is recommended to use a minimum of 3 agents for redundancy. This makes Satellite Connector service more reliable and there is no additonal charge for additional agents. On windows, this means using multiple Windows hosts.
+- It is recommended to use a minimum of 3 agents for redundancy. This makes Satellite Connector service more reliable and there is no additional charge for additional agents. On windows, this means using multiple Windows hosts.
 - If you are using containers make sure your containers aren't all on the same VM or hardware as that's not redundant.
 - If you're running a high bandwidth workload it's recommended to use at least 6 agents because that brings more hosts and more bandwidth.
 - The maximum agents per Connector is 9, but this setup is not recommend because containers and virtual machines are ephemeral and there might be a delay in noticing when one container disappeared and a new one is trying to connect. Instead, it is recommend to leave at least 3 open slots to allow for containers and VMs to stop and start.

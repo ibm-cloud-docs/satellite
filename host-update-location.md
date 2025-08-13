@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-15"
+lastupdated: "2025-08-13"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -49,8 +49,8 @@ How can I check the control plane version?
 What version is applied when replacing control plane nodes?
 :   The new nodes minor version matches the control plane's minor version. The patch version is the latest worker patch version which contains the most recent vulnerability fixes.
 
-How can I avoid downtime when upating the control plane?
-:   By following the update process, you ensure that all control plane components are able to run on a node and there won't be any distruptions. Make sure that you only update one worker at a time and leave enough time for a node to fully functional before starting the next one.
+How can I avoid downtime when updating the control plane?
+:   By following the update process, you ensure that all control plane components are able to run on a node and there won't be any disruptions. Make sure that you only update one worker at a time and leave enough time for a node to fully functional before starting the next one.
 
 How often should I update the control plane hosts?
 :   It's recommended to update control plane hosts when a new worker node fix pack is available to pick up all the recent vulnerability fixes.
@@ -104,7 +104,7 @@ If you are using Terraform with your {{site.data.keyword.satelliteshort}} locati
 ## Migrating your control plane to a new RHEL version
 {: #migrate-cp-rhel}
 
-To replace your control plane hosts on an older verison of RHEL, you must first add a hosts at the newer version of RHEL that you want to use. After you attach new hosts to your location and assign them to the control plane, you can remove the old hosts in the same zone from the control plane. 
+To replace your control plane hosts on an older version of RHEL, you must first add a hosts at the newer version of RHEL that you want to use. After you attach new hosts to your location and assign them to the control plane, you can remove the old hosts in the same zone from the control plane. 
 
 Before migrating to a newer version of RHEL, note that Red Hat CoreOS (RHCOS) is now a supported OS in RHCOS enabled locations. RHCOS is a minimal, secure OS with tight integration into the {{site.data.keyword.redhat_openshift_notm}} ecosystem and is capable of doing in-place upgrades of major versions. Before you can use RHCOS hosts in your location, you must create a Red Hat CoreOS enabled location. If you already have a location that is RHCOS enabled, consider adding RHCOS hosts instead. To create a Red Hat CoreOS enabled Satellite location, see [Understanding locations](/docs/satellite?topic=satellite-location-host).
 {: tip}
