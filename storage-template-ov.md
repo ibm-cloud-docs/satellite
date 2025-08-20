@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-23"
+lastupdated: "2025-08-19"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -127,22 +127,22 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 | [AWS EFS CSI Driver](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver) | `aws-efs-csi-driver` | Version: 1.3.7, Patch: 4 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver) 
 | [AWS EFS CSI Driver](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver) | `aws-efs-csi-driver` | Version: 1.4.2 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver) 
 | [AWS EFS CSI Driver](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver) | `aws-efs-csi-driver` | Version: 2.0.3, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver) 
-| [Azure Disk CSI Driver](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver) | `azuredisk-csi-driver` | Version: 1.4.0, Patch: 5 | Supported | [Change log](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver) 
-| [Azure Disk CSI Driver](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver) | `azuredisk-csi-driver` | Version: 1.18.0, Patch: 5 | Supported | [Change log](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver) 
-| [Azure Disk CSI Driver](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver) | `azuredisk-csi-driver` | Version: 1.23.0 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver) 
-| [Azure Disk CSI Driver](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver) | `azuredisk-csi-driver` | Version: 1.30.3, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver) 
-| [Azure File CSI Driver](/docs/satellite?topic=satellite-storage-azurefile-csi-driver) | `azurefile-csi-driver` | Version: 1.9.0, Patch: 4 | Supported | [Change log](/docs/satellite?topic=satellite-cl-azurefile-csi-driver) 
-| [Azure File CSI Driver](/docs/satellite?topic=satellite-storage-azurefile-csi-driver) | `azurefile-csi-driver` | Version: 1.18.0, Patch: 4 | Supported | [Change log](/docs/satellite?topic=satellite-cl-azurefile-csi-driver) 
-| [Azure File CSI Driver](/docs/satellite?topic=satellite-storage-azurefile-csi-driver) | `azurefile-csi-driver` | Version: 1.22.0 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-azurefile-csi-driver) 
-| [Azure File CSI Driver](/docs/satellite?topic=satellite-storage-azurefile-csi-driver) | `azurefile-csi-driver` | Version: 1.31.2, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-azurefile-csi-driver) 
+| [Azure Disk CSI Driver](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver) | `azuredisk-csi-driver` | Version: 1.4.0, Patch: 5 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver) 
+| [Azure Disk CSI Driver](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver) | `azuredisk-csi-driver` | Version: 1.18.0, Patch: 5 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver) 
+| [Azure Disk CSI Driver](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver) | `azuredisk-csi-driver` | Version: 1.23.0, Patch: 1 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver) 
+| [Azure Disk CSI Driver](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver) | `azuredisk-csi-driver` | Version: 1.30.3 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver) 
+| [Azure File CSI Driver](/docs/satellite?topic=satellite-storage-azurefile-csi-driver) | `azurefile-csi-driver` | Version: 1.9.0, Patch: 4 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-azurefile-csi-driver) 
+| [Azure File CSI Driver](/docs/satellite?topic=satellite-storage-azurefile-csi-driver) | `azurefile-csi-driver` | Version: 1.18.0, Patch: 4 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-azurefile-csi-driver) 
+| [Azure File CSI Driver](/docs/satellite?topic=satellite-storage-azurefile-csi-driver) | `azurefile-csi-driver` | Version: 1.22.0, Patch: 1 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-azurefile-csi-driver) 
+| [Azure File CSI Driver](/docs/satellite?topic=satellite-storage-azurefile-csi-driver) | `azurefile-csi-driver` | Version: 1.31.2 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-azurefile-csi-driver) 
 | [GCP Compute Persistent Disk CSI Driver](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver) | `gcp-compute-persistent-disk-csi-driver` | Version: 1.0.4, Patch: 4 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-gcp-compute-persistent-disk-csi-driver) 
 | [GCP Compute Persistent Disk CSI Driver](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver) | `gcp-compute-persistent-disk-csi-driver` | Version: 1.7.1, Patch: 5 | Supported | [Change log](/docs/satellite?topic=satellite-cl-gcp-compute-persistent-disk-csi-driver) 
 | [GCP Compute Persistent Disk CSI Driver](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver) | `gcp-compute-persistent-disk-csi-driver` | Version: 1.8.0 (Default), Patch: 2 | Supported | [Change log](/docs/satellite?topic=satellite-cl-gcp-compute-persistent-disk-csi-driver) 
-| [IBM Object Storage Plugin](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin) | `ibm-object-storage-plugin` | Version: 2.2 (Default), Patch: 29 | Supported | [Change log](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin) 
+| [IBM Object Storage Plugin](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin) | `ibm-object-storage-plugin` | Version: 2.2 (Default), Patch: 30 | Supported | [Change log](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin) 
 | [IBM System Storage Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver) | `ibm-system-storage-block-csi-driver` | Version: 1.10.0, Patch: 1 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver) 
 | [IBM System Storage Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver) | `ibm-system-storage-block-csi-driver` | Version: 1.11.1 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver) 
 | [IBM System Storage Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver) | `ibm-system-storage-block-csi-driver` | Version: 1.11.2, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver) 
-| [[Beta] IBM VPC Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver) | `ibm-vpc-block-csi-driver` | Version: 5.1 (Default), Patch: 11 | Supported | [Change log](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver) 
+| [[Beta] IBM VPC Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver) | `ibm-vpc-block-csi-driver` | Version: 5.1 (Default), Patch: 12 | Supported | [Change log](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver) 
 | [[Beta] Local Storage File and/or Block](/docs/satellite?topic=satellite-storage-local-storage) | `local-storage` | Version: 1.0.0 (Default), Patch: 2 | Supported | [Change log](/docs/satellite?topic=satellite-cl-local-storage) 
 | [Local Storage Operator](/docs/satellite?topic=satellite-storage-local-storage-operator) | `local-storage-operator` | Version: 1.0.0 (Default), Patch: 2 | Supported | [Change log](/docs/satellite?topic=satellite-cl-local-storage-operator) 
 | [[Deprecated] Local Storage Operator - Block](/docs/satellite?topic=satellite-storage-local-volume-block) | `local-volume-block` | Version: 4.9, Patch: 4 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-local-volume-block) 
