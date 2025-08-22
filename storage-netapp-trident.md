@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-07-26"
+  years: 2020, 2025
+lastupdated: "2025-08-22"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -14,7 +14,7 @@ subcollection: satellite
 # NetApp Trident Operator
 {: #storage-netapp-trident}
 
-Set up [NetApp Trident storage](https://docs.netapp.com/us-en/netapp-solutions/containers/rh-os-n_overview_trident.html){: external} for {{site.data.keyword.satellitelong}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
+Set up [NetApp Trident storage](https://docs.netapp.com/us-en/netapp-solutions-containers/openshift/os-trident-overview.html){: external} for {{site.data.keyword.satellitelong}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
 You must deploy the NetApp Trident template to your clusters before you can create configurations with the NetApp ONTAP-NAS or NetApp ONTAP-SAN templates.
@@ -227,5 +227,3 @@ Use the CLI to remove a storage assignment and storage configuration.
 {: #sat-trident-support}
 
 If you run into an issue with NetApp Trident, you can visit the [NetApp support page](https://mysupport.netapp.com/site/){: external}. 
-
-
