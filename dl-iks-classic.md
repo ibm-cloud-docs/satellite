@@ -160,11 +160,11 @@ The following steps include editing and using local YAML files to create a Confi
     ```
     {: pre}
 
-    In this example output, the tunnel server endpoint is `c-04.private.us-east.link.satellite.cloud.ibm.com`. Do not include a port.
+    In this example output, the tunnel server endpoint is `c-04.private.us-east.link.satellite.cloud.ibm.com`. Replace `c-01`, `c-02`, or `c-03` with `d-01-ws`, `d-02-ws, or `d-02-ws`. Do not include a port.
     ```sh
     ID                           Name                                            Destination Type   Address
-    c1hnscnw0h7i5uf0t8eg_zE6Nx   openshift-api-c1muom3w0kfdne2kb37g              location           TCP   d-04-ws.private.us-east.link.satellite.cloud.ibm.com:33809
-    c1hnscnw0h7i5uf0t8eg_2F3Xo   openshift-api-c2e3ishw0sdo08f5902g              location           TCP   d-04-ws.private.us-east.link.satellite.cloud.ibm.com:34222
+    c1hnscnw0h7i5uf0t8eg_zE6Nx   openshift-api-c1muom3w0kfdne2kb37g              location           TCP   c-04.private.us-east.link.satellite.cloud.ibm.com:33809
+    c1hnscnw0h7i5uf0t8eg_2F3Xo   openshift-api-c2e3ishw0sdo08f5902g              location           TCP   c-04-.private.us-east.link.satellite.cloud.ibm.com:34222
     c1hnscnw0h7i5uf0t8eg_EczUw   satellite-cos-c1hnscnw0h7i5uf0t8eg              cloud              TLS   m65f0b26d6c5f695647f5-6b64a6ccc9c596bf59a86625d8fa2202-c000.us-east.satellite.appdomain.cloud:30235
     c1hnscnw0h7i5uf0t8eg_56zpT   satellite-cosCrossRegion-c1hnscnw0h7i5uf0t8eg   cloud              TLS   m65f0b26d6c5f695647f5-6b64a6ccc9c596bf59a86625d8fa2202-c000.us-east.satellite.appdomain.cloud:31774
     ...
