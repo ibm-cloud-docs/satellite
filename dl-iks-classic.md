@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-06-05"
+lastupdated: "2025-09-02"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -109,30 +109,30 @@ Set up the private Ingress application load balancers (ALBs) for the {{site.data
 
 5. Define an Ingress resource file that uses your custom domain to route incoming network traffic to an `nginxsvc` that you create in subsequent steps. Replace `<custom_ingress_domain>` with the domain that you registered, and `<secret_name>` with the secret that you created for your domain's TLS certificate.
     ```yaml
-    apiVersion: networking.k8s.io/v1beta1
+    apiVersion: networking.k8s.io/v1
     kind: Ingress
     metadata:
       name: dl-ingress-resource
       annotations:
-        kubernetes.io/ingress.class: "private-iks-k8s-nginx"
         nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
         nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
     spec:
+      ingressClassName: "private-iks-k8s-nginx"
       tls:
       - hosts:
         - <custom_ingress_domain>
         secretName: <secret_name>
       rules:
       - host: <custom_ingress_domain>
-      http:
-        paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: nginxsvc
-              port:
-                number: 80
+        http:
+          paths:
+          - path: /
+            pathType: Prefix 
+            backend:
+              service:
+                name: nginxsvc
+                port:
+                  number: 80
     ```
     {: codeblock}
 
@@ -160,11 +160,11 @@ The following steps include editing and using local YAML files to create a Confi
     ```
     {: pre}
 
-    In this example output, the tunnel server endpoint is `c-04.private.us-east.link.satellite.cloud.ibm.com`. Do not include a port.
+    In this example output, the tunnel server endpoint is `c-04.private.us-east.link.satellite.cloud.ibm.com`. Replace `c-01`, `c-02`, or `c-03` with `d-01-ws`, `d-02-ws`, or `d-02-ws`. Do not include a port.
     ```sh
     ID                           Name                                            Destination Type   Address
-    c1hnscnw0h7i5uf0t8eg_zE6Nx   openshift-api-c1muom3w0kfdne2kb37g              location           TCP   d-04-ws.private.us-east.link.satellite.cloud.ibm.com:33809
-    c1hnscnw0h7i5uf0t8eg_2F3Xo   openshift-api-c2e3ishw0sdo08f5902g              location           TCP   d-04-ws.private.us-east.link.satellite.cloud.ibm.com:34222
+    c1hnscnw0h7i5uf0t8eg_zE6Nx   openshift-api-c1muom3w0kfdne2kb37g              location           TCP   c-04.private.us-east.link.satellite.cloud.ibm.com:33809
+    c1hnscnw0h7i5uf0t8eg_2F3Xo   openshift-api-c2e3ishw0sdo08f5902g              location           TCP   c-04-.private.us-east.link.satellite.cloud.ibm.com:34222
     c1hnscnw0h7i5uf0t8eg_EczUw   satellite-cos-c1hnscnw0h7i5uf0t8eg              cloud              TLS   m65f0b26d6c5f695647f5-6b64a6ccc9c596bf59a86625d8fa2202-c000.us-east.satellite.appdomain.cloud:30235
     c1hnscnw0h7i5uf0t8eg_56zpT   satellite-cosCrossRegion-c1hnscnw0h7i5uf0t8eg   cloud              TLS   m65f0b26d6c5f695647f5-6b64a6ccc9c596bf59a86625d8fa2202-c000.us-east.satellite.appdomain.cloud:31774
     ...
