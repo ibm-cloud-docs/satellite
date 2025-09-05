@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-09"
+lastupdated: "2025-09-05"
 
 
 keywords: satellite storage, features, overview
@@ -56,12 +56,10 @@ subcollection: satellite
 | [Deprecated] Local Storage Operator - File | 4.11 | AWS,IBM | False | False | False | Zonal | False |
 | [Deprecated] Local Storage Operator - File | 4.12 | AWS,IBM | False | False | False | Zonal | False |
 | [Deprecated] Local Storage Operator - File | 4.13 | AWS,IBM | False | False | False | Zonal | False |
-| NetApp Ontap-NAS Driver | 22.04 | AWS,Azure,IBM | True | True | True | Zonal | True |
-| NetApp Ontap-NAS Driver | 22.10 | AWS,Azure,IBM | True | True | True | Zonal | True |
 | NetApp Ontap-NAS Driver | 24.02 | AWS,Azure,IBM | True | True | True | Zonal | True |
-| NetApp Ontap-SAN Driver | 22.04 | AWS,Azure,IBM | True | True | True | Zonal | True |
-| NetApp Ontap-SAN Driver | 22.10 | AWS,Azure,IBM | True | True | True | Zonal | True |
+| NetApp Ontap-NAS Driver | 25.06 | AWS, Azure, IBM, GCP | True | True | True | Zonal | True |
 | NetApp Ontap-SAN Driver | 24.02 | AWS,Azure,IBM | True | True | True | Zonal | True |
+| NetApp Ontap-SAN Driver | 25.06 | AWS, Azure, IBM, GCP | True | True | True | Zonal | True |
 | OpenShift Data Foundation for local devices | 4.12 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for local devices | 4.13 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for local devices | 4.14 | OpenShift Container Platform | True | True | False | Regional | True |

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2025
-lastupdated: "2025-08-22"
+lastupdated: "2025-09-05"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -112,26 +112,18 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-create-cli).
 
 
-    Example command to create a version 22.04 configuration.
-
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-ontap-san --template-version 22.04 --param "managementLIF=MANAGEMENTLIF"  --param "dataLIF=DATALIF"  --param "svm=SVM"  --param "username=USERNAME"  --param "password=PASSWORD"  --param "limitVolumeSize=LIMITVOLUMESIZE"  --param "limitAggregateUsage=LIMITAGGREGATEUSAGE" 
-    ```
-    {: pre}
-
-
-    Example command to create a version 22.10 configuration.
-
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-ontap-san --template-version 22.10 --param "managementLIF=MANAGEMENTLIF"  --param "dataLIF=DATALIF"  --param "svm=SVM"  --param "username=USERNAME"  --param "password=PASSWORD"  --param "limitVolumeSize=LIMITVOLUMESIZE"  --param "limitAggregateUsage=LIMITAGGREGATEUSAGE" 
-    ```
-    {: pre}
-
-
     Example command to create a version 24.02 configuration.
 
     ```sh
     ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-ontap-san --template-version 24.02 --param "managementLIF=MANAGEMENTLIF"  --param "dataLIF=DATALIF"  --param "svm=SVM"  --param "username=USERNAME"  --param "password=PASSWORD"  --param "limitVolumeSize=LIMITVOLUMESIZE"  --param "limitAggregateUsage=LIMITAGGREGATEUSAGE" 
+    ```
+    {: pre}
+
+
+    Example command to create a version 25.06 configuration.
+
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-ontap-san --template-version 25.06 --param "managementLIF=MANAGEMENTLIF"  --param "dataLIF=DATALIF"  --param "svm=SVM"  --param "username=USERNAME"  --param "password=PASSWORD"  --param "limitVolumeSize=LIMITVOLUMESIZE"  --param "limitAggregateUsage=LIMITAGGREGATEUSAGE" 
     ```
     {: pre}
 
@@ -159,26 +151,18 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 1. Copy one of the following example requests and replace the variables that you want to use.
 
 
-    Example request to create a version 22.04 configuration.
-
-    ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"netapp-ontap-san\", \"storage-template-version\": \"22.04\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"MANAGEMENTLIF\", { \"entry.name\": \"DATALIF\", { \"entry.name\": \"SVM\", { \"entry.name\": \"LIMITVOLUMESIZE\", { \"entry.name\": \"LIMITAGGREGATEUSAGE\",\"user-secret-parameters\": { \"entry.name\": \"USERNAME\",{ \"entry.name\": \"PASSWORD\",}
-    ```
-    {: pre}
-
-
-    Example request to create a version 22.10 configuration.
-
-    ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"netapp-ontap-san\", \"storage-template-version\": \"22.10\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"MANAGEMENTLIF\", { \"entry.name\": \"DATALIF\", { \"entry.name\": \"SVM\", { \"entry.name\": \"LIMITVOLUMESIZE\", { \"entry.name\": \"LIMITAGGREGATEUSAGE\",\"user-secret-parameters\": { \"entry.name\": \"USERNAME\",{ \"entry.name\": \"PASSWORD\",}
-    ```
-    {: pre}
-
-
     Example request to create a version 24.02 configuration.
 
     ```sh
     curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"netapp-ontap-san\", \"storage-template-version\": \"24.02\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"MANAGEMENTLIF\", { \"entry.name\": \"DATALIF\", { \"entry.name\": \"SVM\", { \"entry.name\": \"LIMITVOLUMESIZE\", { \"entry.name\": \"LIMITAGGREGATEUSAGE\",\"user-secret-parameters\": { \"entry.name\": \"USERNAME\",{ \"entry.name\": \"PASSWORD\",}
+    ```
+    {: pre}
+
+
+    Example request to create a version 25.06 configuration.
+
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"netapp-ontap-san\", \"storage-template-version\": \"25.06\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"MANAGEMENTLIF\", { \"entry.name\": \"DATALIF\", { \"entry.name\": \"SVM\", { \"entry.name\": \"LIMITVOLUMESIZE\", { \"entry.name\": \"LIMITAGGREGATEUSAGE\",\"user-secret-parameters\": { \"entry.name\": \"USERNAME\",{ \"entry.name\": \"PASSWORD\",}
     ```
     {: pre}
 
@@ -207,36 +191,6 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 ## Parameter reference
 {: #netapp-ontap-san-parameter-reference}
 
-### 22.04 parameter reference
-{: #netapp-ontap-san-22.04-parameters}
-
-| Display name | CLI option | Type | Description | Default value | 
-| --- | --- | --- | --- | --- |
-| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | N/A |
-| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | N/A |
-| SVM | `svm` | Config | The name of the SVM. | N/A |
-| User Name | `username` | Secret | The username to connect to the storage device. | N/A |
-| User Password | `password` | Secret | The password to connect to the storage device. | N/A |
-| Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | `50Gi` |
-| Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is greater than this percentage. | `80%` |
-{: caption="Table 1. 22.04 parameter reference" caption-side="bottom"}
-
-
-### 22.10 parameter reference
-{: #netapp-ontap-san-22.10-parameters}
-
-| Display name | CLI option | Type | Description | Default value | 
-| --- | --- | --- | --- | --- |
-| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | N/A |
-| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | N/A |
-| SVM | `svm` | Config | The name of the SVM. | N/A |
-| User Name | `username` | Secret | The username to connect to the storage device. | N/A |
-| User Password | `password` | Secret | The password to connect to the storage device. | N/A |
-| Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | `50Gi` |
-| Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is greater than this percentage. | `80%` |
-{: caption="Table 2. 22.10 parameter reference" caption-side="bottom"}
-
-
 ### 24.02 parameter reference
 {: #netapp-ontap-san-24.02-parameters}
 
@@ -249,7 +203,22 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 | User Password | `password` | Secret | The password to connect to the storage device. | N/A |
 | Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | `50Gi` |
 | Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is greater than this percentage. | `80%` |
-{: caption="Table 3. 24.02 parameter reference" caption-side="bottom"}
+{: caption="Table 1. 24.02 parameter reference" caption-side="bottom"}
+
+
+### 25.06 parameter reference
+{: #netapp-ontap-san-25.06-parameters}
+
+| Display name | CLI option | Type | Description | Default value | 
+| --- | --- | --- | --- | --- |
+| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | N/A |
+| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | N/A |
+| SVM | `svm` | Config | The name of the SVM. | N/A |
+| User Name | `username` | Secret | The username to connect to the storage device. | N/A |
+| User Password | `password` | Secret | The password to connect to the storage device. | N/A |
+| Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | `50Gi` |
+| Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is greater than this percentage. | `80%` |
+{: caption="Table 2. 25.06 parameter reference" caption-side="bottom"}
 
 
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-06-24"
+lastupdated: "2025-09-05"
 
 
 keywords: change log, version history, netapp-trident
@@ -22,6 +22,17 @@ subcollection: "satellite"
 
 Review the version history for `netapp-trident`.
 {: shortdesc}
+
+
+
+## Version 25.06
+{: #cl-storage-templates-netapp-trident-25.06}
+
+
+### Revision 1, released 04 September 2025
+{: #cl-storage-templates-netapp-trident-25.06-1}
+
+- Initial release
 
 
 
