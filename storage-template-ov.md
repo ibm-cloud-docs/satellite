@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-08-28"
+lastupdated: "2025-09-05"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -155,29 +155,28 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 | [[Deprecated] Local Storage Operator - File](/docs/satellite?topic=satellite-storage-local-volume-file) | `local-volume-file` | Version: 4.11, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-file) 
 | [[Deprecated] Local Storage Operator - File](/docs/satellite?topic=satellite-storage-local-volume-file) | `local-volume-file` | Version: 4.12, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-file) 
 | [[Deprecated] Local Storage Operator - File](/docs/satellite?topic=satellite-storage-local-volume-file) | `local-volume-file` | Version: 4.13 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-file)  |
-| [NetApp Ontap-NAS Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-nas) | `netapp-ontap-nas` | Version: 22.04, Patch: 29 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas) 
-| [NetApp Ontap-NAS Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-nas) | `netapp-ontap-nas` | Version: 22.10, Patch: 16 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas) 
-| [NetApp Ontap-NAS Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-nas) | `netapp-ontap-nas` | Version: 24.02 (Default), Patch: 5 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas)  |
-| [NetApp Ontap-SAN Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-san) | `netapp-ontap-san` | Version: 22.04, Patch: 29 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san) 
-| [NetApp Ontap-SAN Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-san) | `netapp-ontap-san` | Version: 22.10, Patch: 16 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san) 
-| [NetApp Ontap-SAN Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-san) | `netapp-ontap-san` | Version: 24.02 (Default), Patch: 5 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san)  |
-| [NetApp Trident Operator](/docs/satellite?topic=satellite-storage-netapp-trident) | `netapp-trident` | Version: 22.04, Patch: 4 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident) 
-| [NetApp Trident Operator](/docs/satellite?topic=satellite-storage-netapp-trident) | `netapp-trident` | Version: 22.10, Patch: 2 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident) 
-| [NetApp Trident Operator](/docs/satellite?topic=satellite-storage-netapp-trident) | `netapp-trident` | Version: 24.02 (Default), Patch: 3 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident)  |
+| [NetApp Ontap-NAS Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-nas) | `netapp-ontap-nas` | Version: 24.02 (Default), Patch: 6 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas) 
+| [NetApp Ontap-NAS Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-nas) | `netapp-ontap-nas` | Version: 25.06, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas)  |
+| [NetApp Ontap-SAN Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-san) | `netapp-ontap-san` | Version: 24.02 (Default), Patch: 6 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san) 
+| [NetApp Ontap-SAN Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-san) | `netapp-ontap-san` | Version: 25.06, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san)  |
+| [NetApp Trident Operator](/docs/satellite?topic=satellite-storage-netapp-trident) | `netapp-trident` | Version: 22.04, Patch: 4 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident) 
+| [NetApp Trident Operator](/docs/satellite?topic=satellite-storage-netapp-trident) | `netapp-trident` | Version: 22.10, Patch: 2 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident) 
+| [NetApp Trident Operator](/docs/satellite?topic=satellite-storage-netapp-trident) | `netapp-trident` | Version: 24.02 (Default), Patch: 3 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident) 
+| [NetApp Trident Operator](/docs/satellite?topic=satellite-storage-netapp-trident) | `netapp-trident` | Version: 25.06, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident)  |
 | [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.12, Patch: 20 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
-| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.13, Patch: 18 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
-| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.14, Patch: 16 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
-| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.15, Patch: 13 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
-| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.16 (Default), Patch: 8 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
-| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.17, Patch: 6 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
-| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.18, Patch: 2 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local)  |
+| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.13, Patch: 19 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
+| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.14, Patch: 17 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
+| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.15, Patch: 14 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
+| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.16 (Default), Patch: 9 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
+| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.17, Patch: 7 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
+| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.18, Patch: 3 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local)  |
 | [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.12, Patch: 20 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote) 
-| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.13, Patch: 18 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote) 
-| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.14, Patch: 16 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote) 
-| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.15, Patch: 13 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote) 
-| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.16 (Default), Patch: 8 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote) 
-| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.17, Patch: 6 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote) 
-| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.18, Patch: 2 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote)  |
+| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.13, Patch: 19 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote) 
+| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.14, Patch: 17 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote) 
+| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.15, Patch: 14 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote) 
+| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.16 (Default), Patch: 9 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote) 
+| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.17, Patch: 7 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote) 
+| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.18, Patch: 3 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote)  |
 | [VMware CSI Driver](/docs/satellite?topic=satellite-storage-vsphere-csi-driver) | `vsphere-csi-driver` | Version: 2.5.1, Patch: 6 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-vsphere-csi-driver) 
 | [VMware CSI Driver](/docs/satellite?topic=satellite-storage-vsphere-csi-driver) | `vsphere-csi-driver` | Version: 2.7.0 (Default), Patch: 3 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-vsphere-csi-driver)  |
 {: caption="Storage template versions" caption-side="bottom"}

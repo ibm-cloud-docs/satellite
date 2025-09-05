@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-08-20"
+lastupdated: "2025-09-05"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2677,11 +2677,9 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-nas&interface=ui#netapp-ontap-nas-parameter-reference)
 
-    * [22.04 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-nas&interface=ui#netapp-ontap-nas-22.04-parameters)
-
-    * [22.10 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-nas&interface=ui#netapp-ontap-nas-22.10-parameters)
-
     * [24.02 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-nas&interface=ui#netapp-ontap-nas-24.02-parameters)
+
+    * [25.06 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-nas&interface=ui#netapp-ontap-nas-25.06-parameters)
 
 * [Storage class reference for NetApp ONTAP-NAS](/docs/satellite?topic=satellite-storage-netapp-ontap-nas&interface=ui#netapp-sc-reference-nas-2104)
 
@@ -2713,11 +2711,9 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san&interface=api#netapp-ontap-san-parameter-reference)
 
-    * [22.04 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san&interface=api#netapp-ontap-san-22.04-parameters)
-
-    * [22.10 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san&interface=api#netapp-ontap-san-22.10-parameters)
-
     * [24.02 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san&interface=api#netapp-ontap-san-24.02-parameters)
+
+    * [25.06 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san&interface=api#netapp-ontap-san-25.06-parameters)
 
 * [Storage class reference for NetApp ONTAP-SAN](/docs/satellite?topic=satellite-storage-netapp-ontap-san&interface=api#netapp-sc-reference-san-2104)
 
@@ -3776,6 +3772,8 @@ subcollection: satellite
 [CLI change log](/docs/satellite?topic=satellite-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/satellite?topic=satellite-cs_cli_changelog#10)
+
+* [Version v1.0.717](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010717)
 
 * [Version v1.0.715](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010715)
 
