@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-04-28"
+lastupdated: "2025-09-17"
 
 
 keywords: satellite, connector, agent, windows, change log, version history
@@ -25,6 +25,14 @@ Only the most recent version of the Connector Windows agent is supported and has
 
 ## Version 1.2
 {: #connector-windows-agent-1.2-change-log}
+
+### Version 1.2.1, released 16 Sep 2025
+{: #connector-windows-agent-1.2.1-change-log}
+
+- Upgrades to Nodejs 22.
+- Fixes security vulnerabilities.
+- Removes hard requirement for .NET Framework 3.5.
+- sha512sum: 6001aaaf28bb5bfbb83ab5e13df2446df689e0dba83d0536df1cac7617d8163b7168d0e23c070de97dc374327742a091c1205877985337093a42710199ef5914
 
 
 ### Version 1.2.0, released 28 Apr 2025
