@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-05-01"
+lastupdated: "2025-09-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -17,7 +17,7 @@ subcollection: satellite
 {: #connector-multiple-windows-agent}
 
 
-Beginning with Windows agent version 1.2.0, multiple agents on a single Windows host are now supported. Microsoft .NET 3.5 is required on the Server to use version `>= 1.2.0` of the Windows agent.
+Beginning with Windows agent version 1.2.0, multiple agents on a single Windows host are now supported. Microsoft .NET >= 3.5 is required on the Server to use version >= 1.2.0 of the Windows agent.
 
 
 Running multiple agents on the same Windows host is not supported for Satellite Connector **Cloud** [endpoints](/docs/satellite?topic=satellite-connector-create-endpoints&interface=cli#configure-connector-oncloud-port ) because the Cloud endpoint ingress is the Windows host that runs the agent. Cloud endpoints and running multiple Windows agents on a single host are mutually exclusive features. If you need to use Cloud endpoints with Windows agents, it is recommended that you install 1 agent per Windows host. 
