@@ -204,6 +204,10 @@ subcollection: satellite
 
 * [September 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep25)
 
+    * [16 September 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep1625)
+
+        * Satellite Connector agent for Windows version `1.2.1`.
+
     * [05 September 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep0525)
 
         * {{site.data.keyword.satelliteshort}} storage template patch updates are available.
