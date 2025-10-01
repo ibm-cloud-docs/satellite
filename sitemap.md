@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-10-01"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3783,6 +3783,8 @@ subcollection: satellite
 
 * [Version 1.0](/docs/satellite?topic=satellite-cs_cli_changelog#10)
 
+* [Version v1.0.718](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01078)
+
 * [Version v1.0.717](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010717)
 
 * [Version v1.0.715](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010715)
@@ -5330,19 +5332,17 @@ subcollection: satellite
 
 [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug#ts-hosts-debug)
 
-[Logging in to a RHEL host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login#ts-hosts-login)
+[Debugging host connectivity issues](/docs/satellite?topic=satellite-ts-hosts-login#ts-hosts-login)
 
 * [First boot did not complete successfully](/docs/satellite?topic=satellite-ts-hosts-login#ts-hosts-login-first-boot)
 
 * [Host registration script fails](/docs/satellite?topic=satellite-ts-hosts-login#ts-hosts-login-host-script)
 
-* [Machine cannot be reached on the network](/docs/satellite?topic=satellite-ts-hosts-login#ts-hosts-login-cannot-reach)
-
 * [Host is attempting to register with the location](/docs/satellite?topic=satellite-ts-hosts-login#ts-hosts-login-host-register)
 
-[Logging in to a RHCOS host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login-rhcos#ts-hosts-login-rhcos)
+* [RHCOS Machine cannot be reached on the network](/docs/satellite?topic=satellite-ts-hosts-login#ts-hosts-login-cannot-reach-rhcos)
 
-* [Machine cannot be reached on the network](/docs/satellite?topic=satellite-ts-hosts-login-rhcos#ts-hosts-login-cannot-reach-rhcos)
+* [RHEL machine cannot be reached on the network](/docs/satellite?topic=satellite-ts-hosts-login#ts-hosts-login-cannot-reach)
 
 [Why can't I SSH into my host machines?](/docs/satellite?topic=satellite-ssh-login-denied#ssh-login-denied)
 

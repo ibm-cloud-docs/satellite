@@ -1,9 +1,8 @@
 ---
 
-
 copyright:
   years: 2025, 2025
-lastupdated: "2025-02-14"
+lastupdated: "2025-10-01"
 
 keywords: satellite, hybrid, multicloud, hosts, ssh
 
@@ -31,6 +30,8 @@ Review the following sections for steps on enabling SSH access to your hosts.
 ## Enabling non-root SSH on RHCOS hosts before assignment
 {: #non-root-ssh-before-coreos}
 
+[RHCOS]{: tag-red}
+
 Because root SSH access is typically disabled on CoreOS hosts and both `root` and `core` SSH access is disabled as part of the host assignment, you can grant SSH access by adding a new, non-root user that isn't the default `core` user.
 
 These instructions describe how to enable SSH access for a new user on a Red Hat CoreOS host before assigning it to a cluster or the control plane.
@@ -40,7 +41,7 @@ Revert these steps and disable SSH access after you finish troubleshooting.
 
 1. Create a new `satellite` user in the host attach ignition file that you used when you created the CoreOS host. Edit `passwd` section of the ignition file as follows.
 
-    ```json
+    ```txt
         "passwd": {
             "users": [
                 {
@@ -63,22 +64,39 @@ Revert these steps and disable SSH access after you finish troubleshooting.
     ```
     {: codeblock}
 
-1. Add an SSH public key as shown. To create an SSH key pair, you can run the `ssh-keygen`. For example:
+1. Add an SSH public key. To create an SSH key pair, you can run the `ssh-keygen` command.
     ```sh
     ssh-keygen -f ~/.ssh/sat-host-access -t rsa -b 4096 -C sat-host-access -P ''
     ```
     {: pre}
-    
 
 1. The `sat-host-access.pub` file has the key to add to the ignition file. Add the entire contents of the file to the ignition script by replacing `ssh-rsa AAA... KEYNAME` in the example above. The `sat-host-access` private key is what you use to SSH to the host.
 
-Anyone with the private key (that corresponds to the public key you just added to this host) and network access to the nodes can SSH into this system.
-{: note}
+    Anyone with the private key that corresponds to the public key you just added to this host and network access to the nodes can SSH into this system.
+    {: note}
 
+1. **Optional**: Run the following `journalctl` commands to gather logs for debugging.
+
+    ```sh
+    journalctl -u ibm-host-attach --no-pager
+    ```
+    {: pre}
+
+    ```sh
+    journalctl -u ibm-host-agent --no-pager
+    ```
+    {: pre}
+    
+    ```sh
+    journalctl -u ibm-firstboot-ignition --no-pager
+    ```
+    {: pre}
 
 
 ## Enabling non-root SSH on RHEL hosts before assignment
 {: #non-root-ssh-before-rhel}
+
+[RHEL]{: tag-warm-gray}
 
 These instructions describe how to temporarily enable non-root SSH access to a RHEL 8 cluster worker node.
 
@@ -92,6 +110,7 @@ Before you begin, make sure you have root SSH access to the unassigned host.
     ssh-keygen -f ~/.ssh/sat-host-access -t rsa -b 4096 -C sat-host-access -P ''`
     ```
     {: pre}
+
 
 Run the remaining steps on the host itself, so SSH into the host with root authority before continuing.
 
@@ -128,8 +147,8 @@ Run the remaining steps on the host itself, so SSH into the host with root autho
     
     You can also configure the user to have more limited authority, configure that on the host instead. We recommend that for troubleshooting purposes you give this user full sudo access. Once you are done troubleshooting you can remove the user or limit its authority.
 
-Now anyone with the private key that corresponds to the public key you just added to this host and network access to the nodes can SSH into this system with root authority.
-{: important}
+    Now anyone with the private key that corresponds to the public key you just added to this host and network access to the nodes can SSH into this system with root authority.
+    {: important}
 
 1. Log in to the node as the new user to verify it is working.
     ```sh
@@ -143,9 +162,39 @@ Now anyone with the private key that corresponds to the public key you just adde
     ```
     {: pre}
 
+1. **Optional:** Check the various log output files from the host registration and host bootstrapping processes. Replace `<filepath>` with the following files to check in order. Depending on the issue, certain log files might or might not files be present on the host.
+
+    1. The `nohup.out` logs from the host registration attempt.
+    1. The `/var/log/firstboot.log` for the first bootstrapping attempt. If the host registration failed, you do not have this file.
+    1. The `/tmp/bootstrap/bootstrap_base.log` for the base bootstrapping process, if the first boot was unsuccessful. If the host registration failed, you do not have this file.
+
+        ```sh
+        tail <filepath>
+        ```
+        {: pre}
+
+    1. Run the `journalctl` commands to gather logs for debugging.
+
+        ```sh
+        journalctl -u ibm-host-agent --no-pager
+        ```
+        {: pre}
+        
+        ```sh
+        journalctl -u ibm-firstboot --no-pager
+        ```
+        {: pre}
+        
+        ```sh
+        journalctl -u ibm-host-attach --no-pager
+        ```
+        {: pre}
+
 
 ## Enabling root SSH on hosts after assignment
 {: #root-ssh-after-assignemnt}
+
+[RHCOS]{: tag-red} [RHEL]{: tag-warm-gray}
 
 Occasionally there might be a need to SSH directly into a host that is already assigned as a worker node in a cluster. For example, there might be a problem with cluster worker nodes losing connectivity to the cluster master. These instructions describe how to temporarily enable root SSH access to either a Red Hat CoreOS or RHEL 8 cluster worker node in a Satellite cluster.
 
@@ -153,6 +202,7 @@ Revert these steps and disable SSH access after you finish troubleshooting.
 {: note}
 
 Before you begin, make sure you have the following.
+
 - Access to a system that has direct access to the cluster workers, to use as the SSH client system.
 - Admin access to this cluster so you can run `oc debug node/NODE-NAME`.
 
@@ -226,7 +276,7 @@ Before you begin, make sure you have the following.
     {: pre}
 
 1. Run the following commands to restart and exit.
-    ```ssh
+    ```sh
     systemctl restart sshd
     ```
     {: pre}
@@ -237,4 +287,3 @@ Before you begin, make sure you have the following.
     {: pre}
 
 At this point, root SSH access from the SSH client system is enabled by using the private key you created earlier. Note that anyone with this private key and access to the nodes can SSH into this system as root. Use the following command to SSH to the node: `ssh -i ~/.ssh/sat-host-access root@NODE-IP`.
-
