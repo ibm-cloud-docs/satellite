@@ -10,386 +10,385 @@ toc:
     version: 2
     console-page: /satellite
     product-page: https://www.ibm.com/products/satellite
-  entries: 
-  - navgroup: 
+  entries:
+  - navgroup:
       id: learn
       topics:
       - getting-started.md
       - topicgroup:
           label: Understanding Satellite use cases
           topics:
-            - use-case.md
-            - tenancy-model.md
-            - edge-usecase.md
+          - use-case.md
+          - tenancy-model.md
+          - edge-usecase.md
       - location-host.md
       - topicgroup:
           label: Understanding Satellite Connector
           topics:
-            - connector-understand.md
-            - connector-faq.md
+          - connector-understand.md
+          - connector-faq.md
       - managed-services.md
       - release-notes.md
   - navgroup:
       id: tutorial
       topics:
-        - link:
-            label: Tutorial library for Satellite
-            href: https://cloud.ibm.com/docs?tab=tutorials&page=1&pageSize=20&tags=satellite
-        - sat-toolchain-tutorial.md
-        - begin-sat-config-tutorial.md
-        - direct-link-vpe.md
-        - direct-link-tutorial.md
-        - dl-iks-classic.md
-        - odf-tutorial.md
-        - assign-bare-metal.md
-        - virtualization-location.md
+      - link:
+          label: Tutorial library for Satellite
+          href: https://cloud.ibm.com/docs?tab=tutorials&page=1&pageSize=20&tags=satellite
+      - sat-toolchain-tutorial.md
+      - begin-sat-config-tutorial.md
+      - direct-link-vpe.md
+      - direct-link-tutorial.md
+      - dl-iks-classic.md
+      - odf-tutorial.md
+      - assign-bare-metal.md
+      - virtualization-location.md
   - navgroup:
       id: howto
       topics:
-        - topicgroup:
-            label: Installing the CLI
-            topics:
-              - cli-install.md
-              - include: ../openshift/cli-update.md
-              - include: ../cli/reference/ibmcloud/uninstall_cli.md
-        - infrastructure-plan.md
-        - api-setup.md
-        - topicgroup:
-            label: Preparing your host infrastructure
-            topics:
-              - host-reqs.md
-              - reqs-host-storage.md
-              - reqs-host-network.md
-              - reqs-host-network-outbound.md
-              - topicgroup:
-                  label: Host outbound connectivity for Dallas
-                  topics:
-                    - reqs-host-rhcos-outbound-dal.md
-                    - reqs-host-network-outbound-dal.md
-                    - reqs-host-lal-outbound-dal.md
-              - topicgroup:
-                  label: Host outbound connectivity for Frankfurt
-                  topics:
-                    - reqs-host-rhcos-outbound-fra.md
-                    - reqs-host-network-outbound-fra.md
-                    - reqs-host-lal-outbound-fra.md
-              - topicgroup:
-                  label: Host outbound connectivity for London
-                  topics:
-                    - reqs-host-rhcos-outbound-lon.md
-                    - reqs-host-network-outbound-lon.md
-                    - reqs-host-lal-outbound-lon.md
-              - topicgroup:
-                  label: Host outbound connectivity for Madrid
-                  topics:
-                    - reqs-host-rhcos-outbound-mad.md
-                    - reqs-host-network-outbound-mad.md
-                    - reqs-host-lal-outbound-mad.md
-              - topicgroup:
-                  label: Host outbound connectivity for Osaka
-                  topics:
-                    - reqs-host-rhcos-outbound-osa.md
-                    - reqs-host-network-outbound-osa.md
-                    - reqs-host-lal-outbound-osa.md
-              - topicgroup:
-                  label: Host outbound connectivity for Sao Paulo
-                  topics:
-                    - reqs-host-rhcos-outbound-sao.md
-                    - reqs-host-network-outbound-sao.md
-                    - reqs-host-lal-outbound-sao.md
-              - topicgroup:
-                  label: Host outbound connectivity for Sydney
-                  topics:
-                    - reqs-host-rhcos-outbound-syd.md
-                    - reqs-host-network-outbound-syd.md
-                    - reqs-host-lal-outbound-syd.md
-              - topicgroup:
-                  label: Host outbound connectivity for Tokyo
-                  topics:
-                    - reqs-host-rhcos-outbound-tok.md
-                    - reqs-host-network-outbound-tok.md
-                    - reqs-host-lal-outbound-tok.md
-              - topicgroup:
-                  label: Host outbound connectivity for Toronto
-                  topics:
-                    - reqs-host-rhcos-outbound-tor.md
-                    - reqs-host-network-outbound-tor.md
-                    - reqs-host-lal-outbound-tor.md
-              - topicgroup:
-                  label: Host outbound connectivity for Washington D.C.
-                  topics:
-                    - reqs-host-rhcos-outbound-wdc.md
-                    - reqs-host-network-outbound-wdc.md
-                    - reqs-host-lal-outbound-wdc.md
-              - host-latency-test.md
-              - host-network-check.md
-        - topicgroup:
-            label: Creating locations
-            topics:
-              - locations.md
-              - multi-infra.md
-              - topicgroup:
-                  label: Creating a location with a template
-                  topics:
-                  - loc-aws-create-auto.md
-                  - loc-azure-create-auto.md
-                  - loc-gcp-create-auto.md
-                  - loc-vmware-create-auto.md
-              - coreos-reduced-firewall.md
-              - location-create-manual.md
-              - setup-control-plane.md
-              - location-sizing.md
-        - topicgroup:
-            label: Attaching hosts to a location
-            topics:
-              - host-attach-download.md
-              - host-on-prem.md
-              - host-aws.md
-              - host-gcp.md
-              - host-azure.md
-              - host-ibm.md
-              - host-storage-fusion.md
-              - host-baremetal.md
-              - host-alibaba.md
-        - topicgroup:
-            label: Managing hosts and locations
-            topics:              
-              - topicgroup:
-                  label: Assigning hosts to worker pools
-                  topics:
-                  - host-autoassign-ov.md
-                  - assigning-hosts.md
-              - host-update-location.md
-              - host-update-workers.md
-              - location-copy.md
-              - config-http-proxy.md
-              - config-custom-ntp.md
-              - host-remove.md
-        - topicgroup:
-            label: Creating connectors
-            topics:
-              - create-connector.md
-              - run-agent-locally.md
-              - connector-agent-path.md
-              - run-agent-swarm.md
-              - connector-create-endpoints.md
-              - connector_endpoint_auth.md
-              - end-to-end.md
-              - connector-multiple-windows-agent.md
-        - topicgroup:
-            label: Managing apps with Satellite Config
-            topics:
-              - cluster-config.md
-              - topicgroup:
-                  label: Setting up clusters to use with Satellite Config
-                  topics:
-                  - setup-clusters-satconfig.md
-                  - setup-clusters-satconfig-groups.md
-                  - register-openshift-clusters.md
-              - satconfig-verify-cluster-status.md
-              - sat-sub-identity-sync.md
-              - topicgroup:
-                  label: Creating and managing Satellite configurations
-                  topics:
-                    - satcon-manage-gitops.md
-                    - satcon-manage-direct-upload.md
-              - remove-satconfig.md
-              - satcon-resources.md
-        - topicgroup:
-            label: Connecting Satellite locations with external services by using Link endpoints
-            topics:
-              - link-location-cloud.md
-              - default-link-endpoints.md
-              - link-cloud-create.md
-              - location_endpoint_auth.md
-              - link-endpoint-secure.md
-              - link-cloud-monitor.md
-        - topicgroup:
-            label: Logging and monitoring
-            topics:
-              - health.md
-              - monitor.md
-              - at-events.md
-        - topicgroup:
-            label: Setting up storage
-            topics: 
-              - storage-template-ov.md
-              - storage-template-features.md
-              - topicgroup:
-                  label: AWS storage templates
-                  topics:
-                    - storage-aws-ebs-csi-driver.md
-                    - storage-aws-efs-csi-driver.md
-              - topicgroup:
-                  label: Azure storage templates
-                  topics:
-                    - storage-azuredisk-csi-driver.md
-                    - storage-azurefile-csi-driver.md
-              - topicgroup:
-                  label: Google storage templates
-                  topics:
-                  - storage-gcp-compute-persistent-disk-csi-driver.md
-              - topicgroup:
-                  label: IBM storage templates
-                  topics:
-                    - storage-ibm-system-storage-block-csi-driver.md 
-                    - storage-ibm-object-storage-plugin.md
-                    - storage-ibm-vpc-block-csi-driver.md
-              - topicgroup:
-                  label: NetApp storage templates
-                  topics:
-                    - storage-netapp-trident.md
-                    - storage-netapp-ontap-nas.md
-                    - storage-netapp-ontap-san.md
-              - topicgroup:
-                  label: Red Hat storage templates
-                  topics:
-                    - storage-local-storage-operator.md
-                    - storage-local-storage.md
-                    - storage-local-volume-block.md
-                    - storage-local-volume-file.md
-                    - storage-odf-local.md
-                    - storage-odf-remote.md
-                    - sat-storage-odf-update.md
-                    - sat-storage-odf-debug.md
-              - topicgroup: 
-                  label: VMware storage templates
-                  topics:
-                    - storage-vsphere-csi-driver.md 
-              - storage-class-ref.md
-        - terraform.md
-        - topicgroup:
-            label: Enhancing security
-            topics:
-              - topicgroup: 
-                  label: Managing access
-                  topics:
-                    - iam.md 
-                    - iam-assign-access.md
-                    - iam-platform-access.md
-                    - iam-api-key.md
-                    - iam-common.md
-              - service-architecture.md
-              - compliance.md
-              - service-connection.md
-              - data-security.md
+      - topicgroup:
+          label: Installing the CLI
+          topics:
+          - cli-install.md
+          - include: ../openshift/cli-update.md
+          - include: ../cli/reference/ibmcloud/uninstall_cli.md
+      - infrastructure-plan.md
+      - api-setup.md
+      - topicgroup:
+          label: Preparing your host infrastructure
+          topics:
+          - host-reqs.md
+          - reqs-host-storage.md
+          - reqs-host-network.md
+          - reqs-host-network-outbound.md
+          - topicgroup:
+              label: Host outbound connectivity for Dallas
+              topics:
+              - reqs-host-rhcos-outbound-dal.md
+              - reqs-host-network-outbound-dal.md
+              - reqs-host-lal-outbound-dal.md
+          - topicgroup:
+              label: Host outbound connectivity for Frankfurt
+              topics:
+              - reqs-host-rhcos-outbound-fra.md
+              - reqs-host-network-outbound-fra.md
+              - reqs-host-lal-outbound-fra.md
+          - topicgroup:
+              label: Host outbound connectivity for London
+              topics:
+              - reqs-host-rhcos-outbound-lon.md
+              - reqs-host-network-outbound-lon.md
+              - reqs-host-lal-outbound-lon.md
+          - topicgroup:
+              label: Host outbound connectivity for Madrid
+              topics:
+              - reqs-host-rhcos-outbound-mad.md
+              - reqs-host-network-outbound-mad.md
+              - reqs-host-lal-outbound-mad.md
+          - topicgroup:
+              label: Host outbound connectivity for Osaka
+              topics:
+              - reqs-host-rhcos-outbound-osa.md
+              - reqs-host-network-outbound-osa.md
+              - reqs-host-lal-outbound-osa.md
+          - topicgroup:
+              label: Host outbound connectivity for Sao Paulo
+              topics:
+              - reqs-host-rhcos-outbound-sao.md
+              - reqs-host-network-outbound-sao.md
+              - reqs-host-lal-outbound-sao.md
+          - topicgroup:
+              label: Host outbound connectivity for Sydney
+              topics:
+              - reqs-host-rhcos-outbound-syd.md
+              - reqs-host-network-outbound-syd.md
+              - reqs-host-lal-outbound-syd.md
+          - topicgroup:
+              label: Host outbound connectivity for Tokyo
+              topics:
+              - reqs-host-rhcos-outbound-tok.md
+              - reqs-host-network-outbound-tok.md
+              - reqs-host-lal-outbound-tok.md
+          - topicgroup:
+              label: Host outbound connectivity for Toronto
+              topics:
+              - reqs-host-rhcos-outbound-tor.md
+              - reqs-host-network-outbound-tor.md
+              - reqs-host-lal-outbound-tor.md
+          - topicgroup:
+              label: Host outbound connectivity for Washington D.C.
+              topics:
+              - reqs-host-rhcos-outbound-wdc.md
+              - reqs-host-network-outbound-wdc.md
+              - reqs-host-lal-outbound-wdc.md
+          - host-latency-test.md
+          - host-network-check.md
+      - topicgroup:
+          label: Creating locations
+          topics:
+          - locations.md
+          - multi-infra.md
+          - topicgroup:
+              label: Creating a location with a template
+              topics:
+              - loc-aws-create-auto.md
+              - loc-azure-create-auto.md
+              - loc-gcp-create-auto.md
+              - loc-vmware-create-auto.md
+          - coreos-reduced-firewall.md
+          - location-create-manual.md
+          - setup-control-plane.md
+          - location-sizing.md
+      - topicgroup:
+          label: Attaching hosts to a location
+          topics:
+          - host-attach-download.md
+          - host-on-prem.md
+          - host-aws.md
+          - host-gcp.md
+          - host-azure.md
+          - host-ibm.md
+          - host-storage-fusion.md
+          - host-baremetal.md
+          - host-alibaba.md
+      - topicgroup:
+          label: Managing hosts and locations
+          topics:
+          - topicgroup:
+              label: Assigning hosts to worker pools
+              topics:
+              - host-autoassign-ov.md
+              - assigning-hosts.md
+          - host-update-location.md
+          - host-update-workers.md
+          - location-copy.md
+          - config-http-proxy.md
+          - config-custom-ntp.md
+          - host-remove.md
+      - topicgroup:
+          label: Creating connectors
+          topics:
+          - create-connector.md
+          - run-agent-locally.md
+          - connector-agent-path.md
+          - run-agent-swarm.md
+          - connector-create-endpoints.md
+          - connector_endpoint_auth.md
+          - end-to-end.md
+          - connector-multiple-windows-agent.md
+      - topicgroup:
+          label: Managing apps with Satellite Config
+          topics:
+          - cluster-config.md
+          - topicgroup:
+              label: Setting up clusters to use with Satellite Config
+              topics:
+              - setup-clusters-satconfig.md
+              - setup-clusters-satconfig-groups.md
+              - register-openshift-clusters.md
+          - satconfig-verify-cluster-status.md
+          - sat-sub-identity-sync.md
+          - topicgroup:
+              label: Creating and managing Satellite configurations
+              topics:
+              - satcon-manage-gitops.md
+              - satcon-manage-direct-upload.md
+          - remove-satconfig.md
+          - satcon-resources.md
+      - topicgroup:
+          label: Connecting Satellite locations with external services by using Link endpoints
+          topics:
+          - link-location-cloud.md
+          - default-link-endpoints.md
+          - link-cloud-create.md
+          - location_endpoint_auth.md
+          - link-endpoint-secure.md
+          - link-cloud-monitor.md
+      - topicgroup:
+          label: Logging and monitoring
+          topics:
+          - health.md
+          - monitor.md
+          - at-events.md
+      - topicgroup:
+          label: Setting up storage
+          topics:
+          - storage-template-ov.md
+          - storage-template-features.md
+          - topicgroup:
+              label: AWS storage templates
+              topics:
+              - storage-aws-ebs-csi-driver.md
+              - storage-aws-efs-csi-driver.md
+          - topicgroup:
+              label: Azure storage templates
+              topics:
+              - storage-azuredisk-csi-driver.md
+              - storage-azurefile-csi-driver.md
+          - topicgroup:
+              label: Google storage templates
+              topics:
+              - storage-gcp-compute-persistent-disk-csi-driver.md
+          - topicgroup:
+              label: IBM storage templates
+              topics:
+              - storage-ibm-system-storage-block-csi-driver.md
+              - storage-ibm-object-storage-plugin.md
+              - storage-ibm-vpc-block-csi-driver.md
+          - topicgroup:
+              label: NetApp storage templates
+              topics:
+              - storage-netapp-trident.md
+              - storage-netapp-ontap-nas.md
+              - storage-netapp-ontap-san.md
+          - topicgroup:
+              label: Red Hat storage templates
+              topics:
+              - storage-local-storage-operator.md
+              - storage-local-storage.md
+              - storage-local-volume-block.md
+              - storage-local-volume-file.md
+              - storage-odf-local.md
+              - storage-odf-remote.md
+              - sat-storage-odf-update.md
+              - sat-storage-odf-debug.md
+          - topicgroup:
+              label: VMware storage templates
+              topics:
+              - storage-vsphere-csi-driver.md
+          - storage-class-ref.md
+      - terraform.md
+      - topicgroup:
+          label: Enhancing security
+          topics:
+          - topicgroup:
+              label: Managing access
+              topics:
+              - iam.md
+              - iam-assign-access.md
+              - iam-platform-access.md
+              - iam-api-key.md
+              - iam-common.md
+          - service-architecture.md
+          - compliance.md
+          - service-connection.md
+          - data-security.md
   - navgroup:
       id: reference
-      topics: 
-        - link:
-                label: API reference
-                href: https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2#createsatellitecluster
-        - topicgroup:
-            label: CLI plug-in reference
-            topics:
-              - icsat-map.md
-              - satellite-cli-reference-v2.md
-              - include: ../openshift/cli-changelog.md
-        - requirements.md
-        - sat-regions.md
-        - hadr.md
-        - pricing.md
-        - responsibilities.md
-        - disconnected-use.md
-        - sat-notices.md
-        - data-portability.md
-        - topicgroup:
-            label: Version history
-            topics:
-              - cl-connector-agent-image.md
-              - cl-connector-windows-agent.md
-              - topicgroup:
-                  label: Storage template version history
-                  topics:
-                    - cl-storage-templates-aws-ebs-csi-driver.md
-                    - cl-storage-templates-aws-efs-csi-driver.md
-                    - cl-storage-templates-azuredisk-csi-driver.md
-                    - cl-storage-templates-azurefile-csi-driver.md
-                    - cl-storage-templates-gcp-compute-persistent-disk-csi-driver.md
-                    - cl-storage-templates-ibm-object-storage-plugin.md
-                    - cl-storage-templates-ibm-spectrum-fusion.md
-                    - cl-storage-templates-ibm-system-storage-block-csi-driver.md
-                    - cl-storage-templates-ibm-vpc-block-csi-driver.md
-                    - cl-storage-templates-local-storage-operator.md
-                    - cl-storage-templates-local-storage.md
-                    - cl-storage-templates-local-volume-block.md
-                    - cl-storage-templates-local-volume-file.md
-                    - cl-storage-templates-netapp-ontap-nas.md
-                    - cl-storage-templates-netapp-ontap-san.md
-                    - cl-storage-templates-netapp-trident.md
-                    - cl-storage-templates-odf-local.md
-                    - cl-storage-templates-odf-remote.md
-                    - cl-storage-templates-ridge-csi-driver.md
-                    - cl-storage-templates-vsphere-csi-driver.md        
+      topics:
+      - link:
+          label: API reference
+          href: https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2#createsatellitecluster
+      - topicgroup:
+          label: CLI plug-in reference
+          topics:
+          - icsat-map.md
+          - satellite-cli-reference-v2.md
+          - include: ../openshift/cli-changelog.md
+      - requirements.md
+      - sat-regions.md
+      - hadr.md
+      - pricing.md
+      - responsibilities.md
+      - disconnected-use.md
+      - sat-notices.md
+      - data-portability.md
+      - topicgroup:
+          label: Version history
+          topics:
+          - cl-connector-agent-image.md
+          - cl-connector-windows-agent.md
+          - topicgroup:
+              label: Storage template version history
+              topics:
+              - cl-storage-templates-aws-ebs-csi-driver.md
+              - cl-storage-templates-aws-efs-csi-driver.md
+              - cl-storage-templates-azuredisk-csi-driver.md
+              - cl-storage-templates-azurefile-csi-driver.md
+              - cl-storage-templates-gcp-compute-persistent-disk-csi-driver.md
+              - cl-storage-templates-ibm-object-storage-plugin.md
+              - cl-storage-templates-ibm-spectrum-fusion.md
+              - cl-storage-templates-ibm-system-storage-block-csi-driver.md
+              - cl-storage-templates-ibm-vpc-block-csi-driver.md
+              - cl-storage-templates-local-storage-operator.md
+              - cl-storage-templates-local-storage.md
+              - cl-storage-templates-local-volume-block.md
+              - cl-storage-templates-local-volume-file.md
+              - cl-storage-templates-netapp-ontap-nas.md
+              - cl-storage-templates-netapp-ontap-san.md
+              - cl-storage-templates-netapp-trident.md
+              - cl-storage-templates-odf-local.md
+              - cl-storage-templates-odf-remote.md
+              - cl-storage-templates-ridge-csi-driver.md
+              - cl-storage-templates-vsphere-csi-driver.md
   - navgroup:
       id: help
       topics:
-        - faqs.md
-        - get-help.md
-        - topicgroup:
-            label: Troubleshooting
-            topics:
-              - include: ../account/status-bps.md
-              - ts-locations-debug.md
-              - ts-recover-location.md
-              - ts-recovery-validation.md
-              - topicgroup:
-                  label: Locations
-                  topics:
-                    - ts-locations-control-plane.md
-                    - ts-location-subdomain.md
-                    - ts-dl-r0043.md
-                    - ts-location-healthcheck.md
-                    - ts-location-missing-location.md
-              - topicgroup:
-                  label: Hosts
-                  topics:
-                    - enabling-ssh-on-hosts.md
-                    - ts-hosts-debug.md
-                    - ts-hosts-login.md
-                    - ts-hosts-login-rhcos.md
-                    - ts-ssh-login-denied.md
-                    - ts-host-not-attaching.md
-                    - ts-host-registration-script-fails.md
-                    - ts-assign-fails.md
-                    - ts-host-assign-file-system.md
-                    - ts-sat-host-reattach-fail.md
-                    - ts-http-proxy.md
-                    - ts-host-expired-token.md
-                    - ts-host-unassigned-unknown.md
-                    - ts-terraform.md
-              - topicgroup:
-                  label: Connectors
-                  topics:
-                    - debug-connector.md
-                    - ts-connector-cannot-reach.md
-                    - ts-connector-not-in-list.md
-                    - ts-connector-api.md
-                    - ts-connector-delete-apikey.md
-                    - ts-connector-tunnel.md
-                    - ts-connector-endpoint-acls.md
-              - topicgroup:
-                  label: Clusters
-                  topics:
-                    - ts-clusters-debug.md
-                    - ts-satconfig-cluster-access-error.md
-                    - ts-console-fail.md
-                    - ts-cluster-operations-blocked.md
-                    - ts-addon-errors.md
-                    - ts-degraded-ingress.md
-                    - ts-sat-ocp-console.md
-                    - ts-cluster-ocdebug.md
-                    - ts-link-endpoint-secure.md
-              - topicgroup:
-                  label: Storage
-                  topics:
-                    - storage-must-gather.md
-                    - debug-storage.md
-                    - ts-storage-namespace-terminating.md
-                    - ts-authentication-failure.md
-                    - ts-node-register-failure.md
-              - topicgroup:
-                  label: Satellite Config
-                  topics:
-                    - ts-satconfig-subid-perms.md                  
-        - sitemap.md
+      - faqs.md
+      - get-help.md
+      - topicgroup:
+          label: Troubleshooting
+          topics:
+          - include: ../account/status-bps.md
+          - ts-locations-debug.md
+          - ts-recover-location.md
+          - ts-recovery-validation.md
+          - topicgroup:
+              label: Locations
+              topics:
+              - ts-locations-control-plane.md
+              - ts-location-subdomain.md
+              - ts-dl-r0043.md
+              - ts-location-healthcheck.md
+              - ts-location-missing-location.md
+          - topicgroup:
+              label: Hosts
+              topics:
+              - enabling-ssh-on-hosts.md
+              - ts-hosts-debug.md
+              - ts-hosts-login.md
+              - ts-ssh-login-denied.md
+              - ts-host-not-attaching.md
+              - ts-host-registration-script-fails.md
+              - ts-assign-fails.md
+              - ts-host-assign-file-system.md
+              - ts-sat-host-reattach-fail.md
+              - ts-http-proxy.md
+              - ts-host-expired-token.md
+              - ts-host-unassigned-unknown.md
+              - ts-terraform.md
+          - topicgroup:
+              label: Connectors
+              topics:
+              - debug-connector.md
+              - ts-connector-cannot-reach.md
+              - ts-connector-not-in-list.md
+              - ts-connector-api.md
+              - ts-connector-delete-apikey.md
+              - ts-connector-tunnel.md
+              - ts-connector-endpoint-acls.md
+          - topicgroup:
+              label: Clusters
+              topics:
+              - ts-clusters-debug.md
+              - ts-satconfig-cluster-access-error.md
+              - ts-console-fail.md
+              - ts-cluster-operations-blocked.md
+              - ts-addon-errors.md
+              - ts-degraded-ingress.md
+              - ts-sat-ocp-console.md
+              - ts-cluster-ocdebug.md
+              - ts-link-endpoint-secure.md
+          - topicgroup:
+              label: Storage
+              topics:
+              - storage-must-gather.md
+              - debug-storage.md
+              - ts-storage-namespace-terminating.md
+              - ts-authentication-failure.md
+              - ts-node-register-failure.md
+          - topicgroup:
+              label: Satellite Config
+              topics:
+              - ts-satconfig-subid-perms.md
+      - sitemap.md

@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2025
+lastupdated: "2025-10-02"
 
 keywords: satellite, hybrid, attaching hosts, hosts, attach hosts, attach hosts to location
 
@@ -82,7 +82,7 @@ To attach Red Hat CoreOS (RHCOS) hosts that reside in your on-premises data cent
 4. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
 
 
-If your host is not attaching to your location, you can log in to the host to debug it. For more information, see [Logging in to a RHCOS host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login-rhcos).
+If your host is not attaching to your location, you can log in to the host to debug it. For more information, see [Enabling SSH on Satellite hosts](/docs/satellite?topic=satellite-enabling-ssh-on-hosts).
 {: tip}
 
 After you attach a host to your location, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host as root with SSH for security purposes. You might see error messages if you try to SSH as root into a host that is attached successfully to a location. To restore the ability to SSH into the machine, you can [remove the host](/docs/satellite?topic=satellite-host-remove) and reload the operating system.
@@ -101,5 +101,3 @@ Now that you added hosts to your location, you can assign them to your location 
 5. Learn more about the [{{site.data.keyword.satelliteshort}} Link component](/docs/satellite?topic=satellite-link-location-cloud) and how you can use endpoints to manage the network traffic between your location and {{site.data.keyword.cloud_notm}}.
 
 Need help? Check out [Getting support](/docs/satellite?topic=satellite-get-help) where you can find information about cloud status, issues, and logging; contacting support; and setting your email notification preferences for {{site.data.keyword.cloud_notm}} platform-related items.
-
-

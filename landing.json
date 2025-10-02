@@ -1,58 +1,57 @@
 {
-    "version": 2,
-    "title": "Satellite",
-    "introduction": "Explore the capabilities of IBM Cloud Satellite and discover the tools to manage your locations, hosts, and app workloads.",
-    "product_page": "https://www.ibm.com/products/satellite",
-    "console_page": "/satellite",
-    "section_topics": {
-      "links": [
-        {
-            "title": "See what's new",
-            "href": "/docs/satellite?topic=satellite-satellite-relnotes"
-          },  
-          {
-            "title": "Understand Satellite",
-            "href": "/docs/satellite?topic=satellite-faqs" 
-          },
-          {
-            "title": "Get started with Satellite",
-            "href": "/docs/satellite?topic=satellite-getting-started"
-          },
-          {
-            "title": "Prepare your infrastructure environment",
-            "href": "/docs/satellite?topic=satellite-infrastructure-plan"
-          },
-          {
-            "title": "Set up Satellite locations",
-            "href": "/docs/satellite?topic=satellite-locations"
-          },
-          {
-            "title": "Add storage",
-            "href": "/docs/satellite?topic=satellite-storage-template-ov"
-          }
-      ]
-    },
-    "section_highlights": [
+  "version": 2,
+  "title": "Satellite",
+  "introduction": "Explore the capabilities of IBM Cloud Satellite and discover the tools to manage your locations, hosts, and app workloads.",
+  "product_page": "https://www.ibm.com/products/satellite",
+  "console_page": "/satellite",
+  "section_topics": {
+    "links": [
       {
-        "title": "What is IBM Cloud Satellite?",
-        "description": "Deploy and run apps consistently across on-premises, edge computing and public cloud environments, enabled by secure and auditable communications with IBM Cloud.",
-        "href": "https://www.ibm.com/products/satellite",
-        "type": "training"
+        "title": "See what's new",
+        "href": "/docs/satellite?topic=satellite-satellite-relnotes"
       },
       {
-        "title": "Training",
-        "description": "Find courses to guide you through using Red Hat OpenShift on IBM Cloud.",
-        "href": "https://www.ibm.com/training/search?query=Satellite",
-        "type": "training"
+        "title": "Understand Satellite",
+        "href": "/docs/satellite?topic=satellite-faqs"
+      },
+      {
+        "title": "Get started with Satellite",
+        "href": "/docs/satellite?topic=satellite-getting-started"
+      },
+      {
+        "title": "Prepare your infrastructure environment",
+        "href": "/docs/satellite?topic=satellite-infrastructure-plan"
+      },
+      {
+        "title": "Set up Satellite locations",
+        "href": "/docs/satellite?topic=satellite-locations"
+      },
+      {
+        "title": "Add storage",
+        "href": "/docs/satellite?topic=satellite-storage-template-ov"
       }
-    ],
-    "section_devtools": {
-      "api": "/apidocs/kubernetes/containers-v1-v2", 
-      "cli": "/docs/satellite?topic=satellite-icsat_map", 
-      "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/satellite_cluster"
+    ]
+  },
+  "section_highlights": [
+    {
+      "title": "What is IBM Cloud Satellite?",
+      "description": "Deploy and run apps consistently across on-premises, edge computing and public cloud environments, enabled by secure and auditable communications with IBM Cloud.",
+      "href": "https://www.ibm.com/products/satellite",
+      "type": "training"
     },
-    "section_updates": {
-        "view_more": "/docs/satellite?topic=satellite-satellite-relnotes"
+    {
+      "title": "Training",
+      "description": "Find courses to guide you through using Red Hat OpenShift on IBM Cloud.",
+      "href": "https://www.ibm.com/training/search?query=Satellite",
+      "type": "training"
     }
-
+  ],
+  "section_devtools": {
+    "api": "/apidocs/kubernetes/containers-v1-v2",
+    "cli": "/docs/satellite?topic=satellite-icsat_map",
+    "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/satellite_cluster"
+  },
+  "section_updates": {
+    "view_more": "/docs/satellite?topic=satellite-satellite-relnotes"
   }
+}

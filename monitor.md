@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-07"
+lastupdated: "2025-10-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -92,7 +92,7 @@ You can review the host health from the **Hosts** table in the [{{site.data.keyw
 | --- | --- |
 | `assigned` | The host is assigned to a {{site.data.keyword.satelliteshort}} resource, such as a location control plane or cluster. View the status for more information. If the status is `-`, the hosts did not complete the bootstrapping process to the {{site.data.keyword.satelliteshort}} resource. For hosts that you just assigned, wait an hour or so for the process to complete. If you still see the status, [log in to the host to continue debugging](/docs/satellite?topic=satellite-ts-hosts-login).|
 | `health-pending` | The host is assigned and bootstrapped into the cluster as worker nodes that are provisioned and deployed. However, the health components that {{site.data.keyword.IBM_notm}} sets up in the host cannot communicate status back to {{site.data.keyword.cloud_notm}}. Make sure that your hosts meet the [minimum host and network connectivity requirements](/docs/satellite?topic=satellite-reqs-host-network) and that the hosts are not blocked by a firewall in your infrastructure provider. |
-| `provisioning` | The host is attached to the {{site.data.keyword.satelliteshort}} location and is in the process of bootstrapping to become part of a {{site.data.keyword.satelliteshort}} resource, such as the worker node of a {{site.data.keyword.openshiftlong_notm}} cluster. While the host reports a `provisioning` state, the worker node goes through the states of provisioning and deploying. You can log in to the host while in this state to view logs. See [Logging in to a RHEL host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login) and [Logging in to a RHCOS host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login-rhcos). |
+| `provisioning` | The host is attached to the {{site.data.keyword.satelliteshort}} location and is in the process of bootstrapping to become part of a {{site.data.keyword.satelliteshort}} resource, such as the worker node of a {{site.data.keyword.openshiftlong_notm}} cluster. While the host reports a `provisioning` state, the worker node goes through the states of provisioning and deploying. You can log in to the host while in this state to view logs. See [Enabling SSH on Satellite hosts](/docs/satellite?topic=satellite-enabling-ssh-on-hosts). |
 | `ready` | The host is attached to the {{site.data.keyword.satelliteshort}} location and ready to be [assigned to a {{site.data.keyword.satelliteshort}} resource](/docs/satellite?topic=satellite-assigning-hosts).|
 | `normal` | The host is assigned to a {{site.data.keyword.satelliteshort}} resource, such as a location control plane or cluster, and ready for usage. |
 | `reload-required` | The host is attached to the {{site.data.keyword.satelliteshort}} location, but requires a reload before it can be assigned to a {{site.data.keyword.satelliteshort}} resource. For example, you might have deleted a {{site.data.keyword.satelliteshort}} cluster, and now all the hosts from the cluster require a reload. To reload a host, you must [remove the host from the location](/docs/satellite?topic=satellite-host-remove), reload the operating system in the underlying infrastructure provider, and [attach the host](/docs/satellite?topic=satellite-attach-hosts) back to the location. |
