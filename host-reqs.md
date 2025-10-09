@@ -28,10 +28,11 @@ You can add hosts from other cloud providers to your location. For more informat
 You can verify your host setup with the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
 
-Review the following operating system support table for each Location type.
 
 ## Host operating system support
 {: #host-os-support-table}
+
+Review the following operating system support table for each Location type.
 
 | Host OS | Satellite Control Plane support | Worker node OS support |
 | --- | --- | --- |
