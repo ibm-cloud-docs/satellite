@@ -38,7 +38,7 @@ RHEL 9 control plane host support is available for non CoreOS-enabled locations 
 - Hosts must support x86-64-v2 architecture.
 - Hosts must run the latest RHEL 8, RHEL 9, or the latest Red Hat CoreOS with the kernel that is distributed with those versions. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or IBM Power; and other kernel versions are not supported.
     - For the latest RHEL 8 version information, see [Red Hat Enterprise Linux Release Dates](https://access.redhat.com/articles/3078#RHEL8){: external}.
-    - [Non Core-OS enabled Locations only]{: tag-red} For the latest RHEL 9 version information, see [Red Hat Enterprise Linux Release Dates](https://access.redhat.com/articles/3078#RHEL9){: external}.
+    - [Non Core-OS enabled locations]{: tag-red} For the latest RHEL 9 version information, see [Red Hat Enterprise Linux Release Dates](https://access.redhat.com/articles/3078#RHEL9){: external}.
     - For the latest Red Hat CoreOS version information, see [Red Hat CoreOS mirrors](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/){: external}.
 - Make sure that you use minimal RHEL images. Do not install the LAMP stack. Do not install virtualization technologies on the hosts, including `libvirtd` or `docker`.
 - Hosts can be physical or virtual machines. However, if your hosts are cloned virtual machines, be sure that each one has a unique network identity. For more information, see [Why aren't my hosts attaching to my location?](/docs/satellite?topic=satellite-host-not-attaching).
