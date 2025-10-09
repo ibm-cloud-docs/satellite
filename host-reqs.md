@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-08-04"
+lastupdated: "2025-10-09"
 
 keywords: satellite, hybrid, multicloud, endpoint capacity, endpoint limits, location endpoint limits, location endpoints, cloud endpoints
 
@@ -66,12 +66,7 @@ Repository 'rhel-8-for-x86_64-baseos-rpms' is enabled for this system.
 ```
 {: screen}
 
-For RHEL 9
-```sh
-Repository 'rhel-9-for-x86_64-appstream-rpms' is enabled for this system.
-Repository 'rhel-9-for-x86_64-baseos-rpms' is enabled for this system.
-```
-{: screen}
+
 
 After the host is created, do not install any additional packages, configuration, or other customizations to your hosts. For more information, see [Why can't I install extra software like vulnerability scanning tools on my host?](/docs/satellite?topic=satellite-faqs#host-software).
 {: important}
@@ -93,11 +88,6 @@ You might need to refresh your packages on the host machine. For example, in {{s
     ```
     {: pre}
 
-    RHEL 9:
-    ```sh
-    subscription-manager repos --enable rhel-9-for-x86_64-appstream-rpms
-    subscription-manager repos --enable rhel-9-for-x86_64-baseos-rpms
-    ```
-    {: pre}
+
 
 For more information about how to enable the RHEL packages in hosts that you add from other cloud providers, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).
