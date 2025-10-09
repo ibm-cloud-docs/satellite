@@ -37,24 +37,26 @@ Review the following operating system support table for each Location type.
 | Host OS | Satellite Control Plane support | Worker node OS support |
 | --- | --- | --- |
 | RHEL 8 | Yes | Yes |
-| RHEL 9 | Yes | Yes |
-| RHCOS | No | No |
+| RHEL 9 | No | OpenShift 4.17 and later only |
+| RHCOS | Yes | Yes |
 {: class="simple-tab-table"}
-{: caption="Non-CoreOS enabled locations" caption-side="bottom"}
+{: caption="CoreOS enabled locations" caption-side="bottom"}
 {: #os-support-1}
-{: tab-title="Non-CoreOS enabled locations"}
+{: tab-title="CoreOS enabled locations"}
 {: tab-group="os-table"}
 
 | Host OS | Satellite Control Plane support | Worker node OS support |
 | --- | --- | --- |
 | RHEL 8 | Yes | Yes |
-| RHEL 9 | No | OpenShift 4.17 and later only |
-| RHCOS | Yes | Yes |
+| RHEL 9 | Yes | Yes |
+| RHCOS | No | No |
 {: class="simple-tab-table"}
-{: caption="CoreOS enabled locations" caption-side="bottom"}
+{: caption="Non-CoreOS enabled locations" caption-side="bottom"}
 {: #os-support-2}
-{: tab-title="CoreOS enabled locations"}
+{: tab-title="Non-CoreOS enabled locations"}
 {: tab-group="os-table"}
+
+
 
 ## Computing characteristics
 {: #reqs-host-compute}
