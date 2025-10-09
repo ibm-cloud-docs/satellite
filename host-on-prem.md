@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-10-02"
+lastupdated: "2025-10-09"
 
 keywords: satellite, hybrid, attaching hosts, hosts, attach hosts, attach hosts to location
 
@@ -34,7 +34,7 @@ Not sure how many hosts to attach to your location? See [Sizing your {{site.data
 
 To attach RHEL hosts that reside in your on-premises data center to your location, follow these general steps to run the host attachment script.
 
-1. [Download the host script](#attach-hosts) for your location. To attach a host with a RHEL operating system, the attachment script is a Shell script.
+1. [Download the host script](/docs/satellite?topic=satellite-host-attach-download) for your location. To attach a host with a RHEL operating system, the attachment script is a Shell script.
 2. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.      
 3. Copy the script from your local machine to your host.
     ```sh
