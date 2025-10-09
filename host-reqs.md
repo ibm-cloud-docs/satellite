@@ -55,7 +55,7 @@ You can verify your host setup with the `satellite-host-check` script. For more 
 {: #reqs-host-compute}
 
 - Hosts must support x86-64-v2 architecture.
-- Hosts must run the latest RHEL 8, RHEL 9, or the latest Red Hat CoreOS with the kernel that is distributed with those versions. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or IBM Power; and other kernel versions are not supported.
+- Hosts must run the latest OS with the kernel that is distributed with those versions. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or IBM Power; and other kernel versions are not supported.
     - For the latest RHEL 8 version information, see [Red Hat Enterprise Linux Release Dates](https://access.redhat.com/articles/3078#RHEL8){: external}.
     - For the latest RHEL 9 version information, see [Red Hat Enterprise Linux Release Dates](https://access.redhat.com/articles/3078#RHEL9){: external}.
     - For the latest Red Hat CoreOS version information, see [Red Hat CoreOS mirrors](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/){: external}.
