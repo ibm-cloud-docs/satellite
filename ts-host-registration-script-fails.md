@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-15"
+lastupdated: "2025-10-09"
 
 keywords: satellite, hybrid, multicloud, registration script, registration script fails
 
@@ -38,12 +38,7 @@ Repository 'rhel-8-for-x86_64-baseos-rpms' is enabled for this system.
 ```
 {: screen}
 
-For RHEL 9
-```sh
-Repository 'rhel-9-for-x86_64-appstream-rpms' is enabled for this system.
-Repository 'rhel-9-for-x86_64-baseos-rpms' is enabled for this system.
-```
-{: screen}
+
 
 To resolve this issue, follow these steps.
 {: tsResolve}
