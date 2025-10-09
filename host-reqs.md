@@ -37,7 +37,7 @@ You can verify your host setup with the `satellite-host-check` script. For more 
 {: class="simple-tab-table"}
 {: caption="Non-CoreOS enabled locations" caption-side="bottom"}
 {: #os-support-1}
-{: tab-title="{{site.data.keyword.satelliteshort}}"}
+{: tab-title="Non-CoreOS enabled locations"}
 {: tab-group="os-table"}
 
 | Host OS | Satellite Control Plane support | Worker node OS support |
@@ -48,7 +48,7 @@ You can verify your host setup with the `satellite-host-check` script. For more 
 {: class="simple-tab-table"}
 {: caption="CoreOS enabled locations" caption-side="bottom"}
 {: #os-support-2}
-{: tab-title="{{site.data.keyword.satelliteshort}}"}
+{: tab-title="CoreOS enabled locations"}
 {: tab-group="os-table"}
 
 ## Computing characteristics
