@@ -32,7 +32,7 @@ You can verify your host setup with the `satellite-host-check` script. For more 
 | Host OS | Satellite Control Plane support | Worker node OS support |
 | --- | --- | --- |
 | RHEL 8 | Yes | Yes |
-| RHEL 9 | Non CoreOS-enabled locations only | 
+| RHEL 9 | Yes | Yes |
 | RHCOS | No | No |
 {: class="simple-tab-table"}
 {: caption="Non-CoreOS enabled locations" caption-side="bottom"}
