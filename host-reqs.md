@@ -32,9 +32,13 @@ You can verify your host setup with the `satellite-host-check` script. For more 
 ## Computing characteristics
 {: #reqs-host-compute}
 
+RHEL 9 control plane host support is available for non CoreOS-enabled locations only.
+{: note}
+
 - Hosts must support x86-64-v2 architecture.
-- Hosts must run the latest Red Hat Enterprise Linux 8, or the latest Red Hat CoreOS with the kernel that is distributed with those versions. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or IBM Power; and other kernel versions are not supported.
+- Hosts must run the latest RHEL 8, RHEL 9, or the latest Red Hat CoreOS with the kernel that is distributed with those versions. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or IBM Power; and other kernel versions are not supported.
     - For the latest RHEL 8 version information, see [Red Hat Enterprise Linux Release Dates](https://access.redhat.com/articles/3078#RHEL8){: external}.
+    - [Non Core-OS enabled Locations only]{: tag-red} For the latest RHEL 9 version information, see [Red Hat Enterprise Linux Release Dates](https://access.redhat.com/articles/3078#RHEL9){: external}.
     - For the latest Red Hat CoreOS version information, see [Red Hat CoreOS mirrors](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/){: external}.
 - Make sure that you use minimal RHEL images. Do not install the LAMP stack. Do not install virtualization technologies on the hosts, including `libvirtd` or `docker`.
 - Hosts can be physical or virtual machines. However, if your hosts are cloned virtual machines, be sure that each one has a unique network identity. For more information, see [Why aren't my hosts attaching to my location?](/docs/satellite?topic=satellite-host-not-attaching).
@@ -66,7 +70,12 @@ Repository 'rhel-8-for-x86_64-baseos-rpms' is enabled for this system.
 ```
 {: screen}
 
-
+For RHEL 9
+```sh
+Repository 'rhel-9-for-x86_64-appstream-rpms' is enabled for this system.
+Repository 'rhel-9-for-x86_64-baseos-rpms' is enabled for this system.
+```
+{: screen}
 
 After the host is created, do not install any additional packages, configuration, or other customizations to your hosts. For more information, see [Why can't I install extra software like vulnerability scanning tools on my host?](/docs/satellite?topic=satellite-faqs#host-software).
 {: important}
@@ -88,6 +97,11 @@ You might need to refresh your packages on the host machine. For example, in {{s
     ```
     {: pre}
 
-
+    RHEL 9:
+    ```sh
+    subscription-manager repos --enable rhel-9-for-x86_64-appstream-rpms
+    subscription-manager repos --enable rhel-9-for-x86_64-baseos-rpms
+    ```
+    {: pre}
 
 For more information about how to enable the RHEL packages in hosts that you add from other cloud providers, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).

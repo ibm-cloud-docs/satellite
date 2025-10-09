@@ -38,7 +38,12 @@ Repository 'rhel-8-for-x86_64-baseos-rpms' is enabled for this system.
 ```
 {: screen}
 
-
+For RHEL 9
+```sh
+Repository 'rhel-9-for-x86_64-appstream-rpms' is enabled for this system.
+Repository 'rhel-9-for-x86_64-baseos-rpms' is enabled for this system.
+```
+{: screen}
 
 To resolve this issue, follow these steps.
 {: tsResolve}
