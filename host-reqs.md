@@ -30,6 +30,8 @@ You can verify your host setup with the `satellite-host-check` script. For more 
 
 Review the following operating system support table for each Location type.
 
+## Host operating system support
+{: #host-os-support-table}
 
 | Host OS | Satellite Control Plane support | Worker node OS support |
 | --- | --- | --- |

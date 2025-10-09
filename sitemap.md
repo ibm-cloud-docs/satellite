@@ -1386,6 +1386,8 @@ subcollection: satellite
 
 [Host system requirements](/docs/satellite?topic=satellite-host-reqs#host-reqs)
 
+* [Host operating system support](/docs/satellite?topic=satellite-host-reqs#host-os-support-table)
+
 * [Computing characteristics](/docs/satellite?topic=satellite-host-reqs#reqs-host-compute)
 
 * [Red Hat CoreOS (RHCOS) packages and other machine configurations](/docs/satellite?topic=satellite-host-reqs#reqs-host-packages-rhcos)
