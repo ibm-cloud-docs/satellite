@@ -28,6 +28,8 @@ You can add hosts from other cloud providers to your location. For more informat
 You can verify your host setup with the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
 
+Review the following operating system support table for each Location type.
+
 
 | Host OS | Satellite Control Plane support | Worker node OS support |
 | --- | --- | --- |
@@ -43,7 +45,7 @@ You can verify your host setup with the `satellite-host-check` script. For more 
 | Host OS | Satellite Control Plane support | Worker node OS support |
 | --- | --- | --- |
 | RHEL 8 | Yes | Yes |
-| RHEL 9 | No | Yes, for OpenShift 4.17 and later only |
+| RHEL 9 | No | OpenShift 4.17 and later only |
 | RHCOS | Yes | Yes |
 {: class="simple-tab-table"}
 {: caption="CoreOS enabled locations" caption-side="bottom"}
