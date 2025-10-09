@@ -29,16 +29,42 @@ You can verify your host setup with the `satellite-host-check` script. For more 
 {: tip}
 
 
+## Host operating system support
+{: #host-os-support-table}
+
+Review the following operating system support table for each Location type.
+
+| Host OS | Satellite Control Plane support | Worker node OS support |
+| --- | --- | --- |
+| RHEL 8 | Yes | Yes |
+| RHEL 9 | No | OpenShift 4.17 and later only |
+| RHCOS | Yes | Yes |
+{: class="simple-tab-table"}
+{: caption="CoreOS enabled locations" caption-side="bottom"}
+{: #os-support-1}
+{: tab-title="CoreOS enabled locations"}
+{: tab-group="os-table"}
+
+| Host OS | Satellite Control Plane support | Worker node OS support |
+| --- | --- | --- |
+| RHEL 8 | Yes | Yes |
+| RHEL 9 | Yes | Yes |
+| RHCOS | No | No |
+{: class="simple-tab-table"}
+{: caption="Non-CoreOS enabled locations" caption-side="bottom"}
+{: #os-support-2}
+{: tab-title="Non-CoreOS enabled locations"}
+{: tab-group="os-table"}
+
+
+
 ## Computing characteristics
 {: #reqs-host-compute}
 
-RHEL 9 control plane host support is available for non CoreOS-enabled locations only.
-{: note}
-
 - Hosts must support x86-64-v2 architecture.
-- Hosts must run the latest RHEL 8, RHEL 9, or the latest Red Hat CoreOS with the kernel that is distributed with those versions. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or IBM Power; and other kernel versions are not supported.
+- Hosts must run the latest OS with the kernel that is distributed with those versions. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or IBM Power; and other kernel versions are not supported.
     - For the latest RHEL 8 version information, see [Red Hat Enterprise Linux Release Dates](https://access.redhat.com/articles/3078#RHEL8){: external}.
-    - [Non Core-OS enabled locations]{: tag-red} For the latest RHEL 9 version information, see [Red Hat Enterprise Linux Release Dates](https://access.redhat.com/articles/3078#RHEL9){: external}.
+    - For the latest RHEL 9 version information, see [Red Hat Enterprise Linux Release Dates](https://access.redhat.com/articles/3078#RHEL9){: external}.
     - For the latest Red Hat CoreOS version information, see [Red Hat CoreOS mirrors](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/){: external}.
 - Make sure that you use minimal RHEL images. Do not install the LAMP stack. Do not install virtualization technologies on the hosts, including `libvirtd` or `docker`.
 - Hosts can be physical or virtual machines. However, if your hosts are cloned virtual machines, be sure that each one has a unique network identity. For more information, see [Why aren't my hosts attaching to my location?](/docs/satellite?topic=satellite-host-not-attaching).
