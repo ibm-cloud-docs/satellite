@@ -49,7 +49,12 @@ Satellite Connector agent for Windows version `1.2.1`.
 Satellite Connector agent image version `1.2.3`.
 :   For more information, see the [change log](/docs/satellite?topic=satellite-cl-connector-agent-image) and [Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally#pull-agent-image).
 
+### 15 July 2025
+{: #satellite-july1525}
+{: release-note}
 
+New! RHEL 9 control plane host support for non CoreOS-enabled locations.
+:   You can now use RHEL 9 hosts in your location control plane in non-CoreOS-enabled locations. For more information, see [Attaching hosts](/docs/satellite?topic=satellite-setup-control-plane).
 
 ## June 2025
 {: #satellite-june25}
