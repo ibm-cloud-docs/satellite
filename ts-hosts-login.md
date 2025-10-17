@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-10-01"
+lastupdated: "2025-10-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -25,9 +25,9 @@ You can SSH into the host machine if you did not assign the host to a cluster, o
 
 Log in to your host by completing the following steps for your host type and and host assignment status.
 
-- [Enabling non-root SSH on RHCOS hosts before assignment](/docs/satellite?topic=enabling-ssh-on-hosts#non-root-ssh-before-coreos).
-- [Enabling non-root SSH on RHEL hosts before assignment](/docs/satellite?topic=enabling-ssh-on-hosts#non-root-ssh-before-rhel).
-- [Enabling root SSH on hosts after assignment](/docs/satellite?topic=enabling-ssh-on-hosts#root-ssh-after-assignemnt).
+- [Enabling non-root SSH on RHCOS hosts before assignment](/docs/satellite?topic=satellite-enabling-ssh-on-hosts#non-root-ssh-before-coreos).
+- [Enabling non-root SSH on RHEL hosts before assignment](/docs/satellite?topic=satellite-enabling-ssh-on-hosts#non-root-ssh-before-rhel).
+- [Enabling root SSH on hosts after assignment](/docs/satellite?topic=satellite-enabling-ssh-on-hosts#root-ssh-after-assignemnt).
 
 
 
