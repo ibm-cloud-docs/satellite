@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-09-02"
+lastupdated: "2025-10-28"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -23,6 +23,9 @@ completion-time: 2h
 {: toc-content-type="tutorial"}
 {: toc-services="satellite, containers, dl"}
 {: toc-completion-time="2h"}
+
+The following steps are deprecated. For the latest steps, see [Connecting to IBM Cloud via the private network by using Satellite Connector and Direct Link 2.0](/docs/satellite?topic=satellite-direct-link-vpe).
+{: deprecated}
 
 Follow these steps to set up the `dl-reverse-proxy` for {{site.data.keyword.dl_full}} by using {{site.data.keyword.containerlong_notm}} on classic. 
 {: shortdesc}
