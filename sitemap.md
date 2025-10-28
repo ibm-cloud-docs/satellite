@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-10-16"
+lastupdated: "2025-10-28"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3785,6 +3785,8 @@ subcollection: satellite
 
 * [Version 1.0](/docs/satellite?topic=satellite-cs_cli_changelog#10)
 
+* [Version v1.0.727](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01727)
+
 * [Version v1.0.724](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01724)
 
 * [Version v1.0.718](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01078)
@@ -4057,6 +4059,24 @@ subcollection: satellite
 
 
 [Service dependency map for IBM Cloud Satellite](/docs/satellite?topic=satellite-service-dependencies#service-dependencies)
+
+* [Data and Control plane deployment for an MZR](/docs/satellite?topic=satellite-service-dependencies#data-and-control-plane-deployment-for-an-mzr)
+
+* [Understanding service dependency data](/docs/satellite?topic=satellite-service-dependencies#understand-dependency-data)
+
+    * [What is the expected impact to the functions described?](/docs/satellite?topic=satellite-service-dependencies#expected-impact)
+
+    * [What services does my service depend on?](/docs/satellite?topic=satellite-service-dependencies#dependent-services)
+
+    * [What function does the dependency impact?](/docs/satellite?topic=satellite-service-dependencies#function-impact)
+
+    * [What does customer provided mean for dependencies?](/docs/satellite?topic=satellite-service-dependencies#customer-provided-dep)
+
+    * [Where do dependency services need to be deployed regarding my service?](/docs/satellite?topic=satellite-service-dependencies#deploy-dependencies)
+
+    * [Where are the separate control plane and data plane located, if applicable?](/docs/satellite?topic=satellite-service-dependencies#separate-plans)
+
+* [Additional resources](/docs/satellite?topic=satellite-service-dependencies#additional-resources)
 
 
 ## Version history
