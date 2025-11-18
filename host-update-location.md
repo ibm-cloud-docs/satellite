@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-08-13"
+lastupdated: "2025-11-14"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -42,12 +42,14 @@ Is my {{site.data.keyword.satelliteshort}} location control plane subdomain stil
 :    If your location subdomain was created automatically for you, the host IP addresses that are registered for the subdomain are automatically managed for you, such as during an update. 
 :    If you manually registered the host IP addresses for the location subdomain with the `ibmcloud sat location dns register` command when you created the {{site.data.keyword.satelliteshort}} location control plane, make sure that you attach three hosts to the control plane before you begin, and manually register these host IPs for the subdomain. Now, these new hosts process requests for the location. Then, you can update the hosts that were previously used for the subdomain.
 
-
 How can I check the control plane version?
 :   Run the `ibmcloud sat location get --location <locationID> --json` and review the `masterKubeVersion` field.
 
 What version is applied when replacing control plane nodes?
 :   The new nodes minor version matches the control plane's minor version. The patch version is the latest worker patch version which contains the most recent vulnerability fixes.
+
+Does the control plane version need to match the cluster version?
+:    No. The Satellite location version used in the control plane might not always match the version used in cluster hosts because they are managed separately.
 
 How can I avoid downtime when updating the control plane?
 :   By following the update process, you ensure that all control plane components are able to run on a node and there won't be any disruptions. Make sure that you only update one worker at a time and leave enough time for a node to fully functional before starting the next one.
