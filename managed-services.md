@@ -1,9 +1,9 @@
 ---
 
-
 copyright:
   years: 2022, 2025
-lastupdated: "2025-07-07"
+
+lastupdated: "2025-11-19"
 
 keywords: satellite, hybrid, multicloud, managed services, enabled service, satellite-enabled
 
@@ -12,6 +12,7 @@ subcollection: satellite
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Supported Satellite-enabled IBM Cloud services

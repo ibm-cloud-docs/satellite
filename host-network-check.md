@@ -1,9 +1,9 @@
 ---
 
-
 copyright:
   years: 2022, 2025
-lastupdated: "2025-10-28"
+
+lastupdated: "2025-11-19"
 
 keywords: satellite, networking, connectivity, host check, host setup
 
@@ -12,7 +12,7 @@ subcollection: satellite
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
+<!--<qna:host-setup>-->
 
 # Checking your host setup
 {: #host-network-check}
@@ -85,7 +85,7 @@ There is currently a bug with the `sat-host-check` script that causes it to fail
     ```sh
     sudo ./sat-host-check --region us-south
     ```
-    {: pre}
+    {: pre}<!--</qna:host-setup>-->
     
     Example output for checking a host in `us-south`.
     ```sh

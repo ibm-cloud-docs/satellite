@@ -1,9 +1,9 @@
 ---
 
-
 copyright:
   years: 2023, 2025
-lastupdated: "2025-08-22"
+
+lastupdated: "2025-11-19"
 
 keywords: satellite, connector, faq, frequently asked questions
 
@@ -16,6 +16,8 @@ subcollection: satellite
 
 # {{site.data.keyword.satelliteshort}} Connector FAQ
 {: #connector-faq}
+
+<!--<qna:connector>-->
 
 ## Does {{site.data.keyword.satelliteshort}} Connector support Cloud Endpoints?
 {: #connector-faq-endpoints}
@@ -55,6 +57,8 @@ You can have a maximum of 25 Connectors per account per region.
 
 `location` endpoints
 :   25 total. For example, you might create up to 20 TLS endpoints and 5 HTTP endpoints through which clients outside of your location network can connect to resources inside the location.
+
+<!--</qna:connector>-->
 
 ## How many instances of Connector agent can I run?
 {: #connector-faq-instance-limits}

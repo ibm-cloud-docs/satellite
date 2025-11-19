@@ -1,9 +1,9 @@
 ---
 
-
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-10"
+  years: 2020, 2025
+
+lastupdated: "2025-11-19"
 
 keywords: satellite, hybrid, multicloud, assigning hosts, host auto assignment, host auto assignment, host labels
 
@@ -11,7 +11,7 @@ subcollection: satellite
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}
+{{site.data.keyword.attribute-definition-list}}<!--<qna:hosts>-->
 
 # Manually assigning hosts to worker pools
 {: #assigning-hosts}
@@ -41,7 +41,7 @@ Before you begin,
 6. Repeat these steps to ensure that hosts are assigned as worker nodes in each zone of the default worker pool in your cluster.
 
     After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until {{site.data.keyword.IBM_notm}} monitoring is properly set up for your location. In addition, a DNS record is created for your location and the IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you might see intermittent errors, such as `Satellite is attempting to recover` or `Verify that the Satellite location has a DNS record for load balancing requests to the location control plane`.
-    {: note}
+    {: note}<!--</qna:hosts>-->
 
 ## Assigning hosts from the CLI
 {: #assigning-hosts-cli}

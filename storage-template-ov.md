@@ -2,7 +2,8 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-09-05"
+
+lastupdated: "2025-11-19"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -19,6 +20,8 @@ Before you can decide what type of storage is correct for your {{site.data.keywo
 
 Before you can use storage templates and configurations to manage your storage resources across locations and clusters, make sure you [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig) in your location.
 {: note}
+
+<!--<qna:storage-sat-templates-and-confg>-->
 
 ## What are {{site.data.keyword.satelliteshort}} storage templates?
 {: #storage-sat-templates}
@@ -54,6 +57,8 @@ Bring your own Operators, drivers, and plug-ins
 
 While bringing your own drivers or operators to your {{site.data.keyword.satelliteshort}} clusters is possible, if you want to deploy {{site.data.keyword.cloud_notm}} services that use storage make sure you use one of the provided storage templates.
 {: note}
+
+<!--</qna:storage-sat-templates-and-confg>-->
 
 ## Which deployment option should I use?
 {: #storage-template-services}
