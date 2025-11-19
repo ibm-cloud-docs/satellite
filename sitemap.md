@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-11-14"
+lastupdated: "2025-11-19"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1375,9 +1375,9 @@ subcollection: satellite
 
 * [Generating an IAM token](/docs/satellite?topic=satellite-api_setup#api-setup-include-iamtoken)
 
-* [Passing an {{site.data.keyword.Bluemix_notm}} IAM token to authenticate with a service's API](/docs/satellite?topic=satellite-api_setup#api-setup-include-token_auth)
+* [Passing an {{site.data.keyword.cloud_notm}} IAM token to authenticate with a service's API](/docs/satellite?topic=satellite-api_setup#api-setup-include-token_auth)
 
-* [Passing an {{site.data.keyword.Bluemix_notm}} API key to authenticate with a service API](/docs/satellite?topic=satellite-api_setup#api-setup-include-apikey_auth)
+* [Passing an {{site.data.keyword.cloud_notm}} API key to authenticate with a service API](/docs/satellite?topic=satellite-api_setup#api-setup-include-apikey_auth)
 
 
 ## Preparing your host infrastructure
@@ -5247,7 +5247,7 @@ subcollection: satellite
 
 * [Check for current maintenance windows or an incident in progress](/docs/satellite?topic=satellite-best-practices#monbp-checcurmaninprog)
 
-* [Take advantage of multiple {{site.data.keyword.Bluemix_notm}} locations](/docs/satellite?topic=satellite-best-practices#monbp-multpreg)
+* [Take advantage of multiple {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-best-practices#monbp-multpreg)
 
 * [Subscribing to email notifications](/docs/satellite?topic=satellite-best-practices#monbp-subscribing)
 
