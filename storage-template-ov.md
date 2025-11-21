@@ -21,7 +21,7 @@ Before you can decide what type of storage is correct for your {{site.data.keywo
 Before you can use storage templates and configurations to manage your storage resources across locations and clusters, make sure you [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig) in your location.
 {: note}
 
-<!--<qna:storage-sat-templates-and-confg>-->
+<!--<qna:storage-sat-templates-and-config>-->
 
 ## What are {{site.data.keyword.satelliteshort}} storage templates?
 {: #storage-sat-templates}
@@ -53,12 +53,11 @@ You have two options when configuring storage in {{site.data.keyword.satellitesh
 :   You can create storage configurations by [using the {{site.data.keyword.satelliteshort}} storage template for the storage provider or driver](#storage-template-ov-providers) that you want to use. After you create a storage configuration by using a template, you can assign your storage configuration to your clusters or services. By using storage templates, you can create storage configurations that can be consistently assigned, updated, and managed across the clusters, service clusters, and cluster groups in your location.
 
 Bring your own Operators, drivers, and plug-ins
-:   You can also bring your own storage drivers to {{site.data.keyword.satelliteshort}} by installing them from the Catalog, OperatorHub, Helm charts, or by using your preferred method of deploying images to your clusters including images and drivers from various {{site.data.keyword.cloud_notm}} storage and partner solutions, for example Portworx. Bringing your own storage driver is functionally supported, but you are responsible for the entire lifecycle operations, installation, troubleshooting, and support.
+:   You can also bring your own storage drivers to {{site.data.keyword.satelliteshort}} by installing them from the Catalog, OperatorHub, Helm charts, or by using your preferred method of deploying images to your clusters including images and drivers from various {{site.data.keyword.cloud_notm}} storage and partner solutions, for example Portworx. Bringing your own storage driver is functionally supported, but you are responsible for the entire lifecycle operations, installation, troubleshooting, and support.<!--</qna:storage-sat-templates-and-config>-->
 
 While bringing your own drivers or operators to your {{site.data.keyword.satelliteshort}} clusters is possible, if you want to deploy {{site.data.keyword.cloud_notm}} services that use storage make sure you use one of the provided storage templates.
 {: note}
 
-<!--</qna:storage-sat-templates-and-confg>-->
 
 ## Which deployment option should I use?
 {: #storage-template-services}
