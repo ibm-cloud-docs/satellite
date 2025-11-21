@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-09-05"
+lastupdated: "2025-11-21"
 
 
 keywords: change log, version history, netapp-ontap-san
@@ -29,6 +29,13 @@ Review the version history for `netapp-ontap-san`.
 {: #cl-storage-templates-netapp-ontap-san-25.06}
 
 
+### Revision 2, released 14 November 2025
+{: #cl-storage-templates-netapp-ontap-san-25.06-2}
+
+- Resolves the following CVEs: [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/CVE-2025-58185){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/CVE-2025-58189){: external}, and [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/CVE-2025-61723){: external}.
+- Updates Go to version `1.25.2`.
+- Mark the Data LIF custom parameter as optional 
+
 ### Revision 1, released 04 September 2025
 {: #cl-storage-templates-netapp-ontap-san-25.06-1}
 
@@ -40,6 +47,13 @@ Review the version history for `netapp-ontap-san`.
 ## Version 24.02
 {: #cl-storage-templates-netapp-ontap-san-24.02}
 
+
+### Revision 7, released 14 November 2025
+{: #cl-storage-templates-netapp-ontap-san-24.02-7}
+
+- Resolves the following CVEs: [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/CVE-2025-58185){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/CVE-2025-58189){: external}, and [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/CVE-2025-61723){: external}.
+- Updates Go to version `1.25.2`.
+- Mark the Data LIF custom parameter as optional 
 
 ### Revision 6, released 04 September 2025
 {: #cl-storage-templates-netapp-ontap-san-24.02-6}
