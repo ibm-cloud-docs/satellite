@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-05-13"
+lastupdated: "2025-11-21"
 
 
 keywords: change log, version history, aws-ebs-csi-driver
@@ -36,6 +36,7 @@ Review the version history for `aws-ebs-csi-driver`.
 
 
 
+
 ## Version 1.12.0
 {: #cl-storage-templates-aws-ebs-csi-driver-1.12.0}
 
@@ -45,10 +46,12 @@ Review the version history for `aws-ebs-csi-driver`.
 
 - Add the ebs-csi-node-role cluster role 
 
+
 ### Revision 2, released 16 January 2023
 {: #cl-storage-templates-aws-ebs-csi-driver-1.12.0-2}
 
 - Uses the `policy/v1` API version for setting the `PodDisruptionBudget`. 
+
 
 
 
@@ -60,6 +63,7 @@ Review the version history for `aws-ebs-csi-driver`.
 {: #cl-storage-templates-aws-ebs-csi-driver-1.5.1-5}
 
 - Uses the `policy/v1` API version for setting the `PodDisruptionBudget`. 
+
 
 
 

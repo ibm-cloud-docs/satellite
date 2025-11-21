@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-09-05"
+lastupdated: "2025-11-21"
 
 
 keywords: change log, version history, netapp-trident
@@ -36,6 +36,7 @@ Review the version history for `netapp-trident`.
 
 
 
+
 ## Version 24.02
 {: #cl-storage-templates-netapp-trident-24.02}
 
@@ -45,15 +46,18 @@ Review the version history for `netapp-trident`.
 
 - Support ROKS 4.16 
 
+
 ### Revision 2, released 13 December 2024
 {: #cl-storage-templates-netapp-trident-24.02-2}
 
 - Fix issue with NetApp Trident operator cleanup 
 
+
 ### Revision 1, released 29 April 2024
 {: #cl-storage-templates-netapp-trident-24.02-1}
 
 - Initial Release
+
 
 
 
@@ -67,6 +71,7 @@ Review the version history for `netapp-trident`.
 
 
 
+
 ## Version 22.10
 {: #cl-storage-templates-netapp-trident-22.10}
 
@@ -76,6 +81,7 @@ Review the version history for `netapp-trident`.
 
 - Fix issue with NetApp Trident operator cleanup 
 
+
 ### Revision 1, released 20 February 2023
 {: #cl-storage-templates-netapp-trident-22.10-1}
 
@@ -83,6 +89,7 @@ Review the version history for `netapp-trident`.
 - Updates the UBI to version `8.7-1049.1675784874`.
 - Updates Go to version `1.18.9`.
 - Initial release.
+
 
 
 
@@ -95,10 +102,12 @@ Review the version history for `netapp-trident`.
 
 - Fix issue with NetApp Trident operator cleanup 
 
+
 ### Revision 3, released 23 January 2023
 {: #cl-storage-templates-netapp-trident-22.04-3}
 
 - Removes the `PodSecurityPolicy` as Kubernetes v1.25+ doesn't support PSPs. 
+
 
 
 

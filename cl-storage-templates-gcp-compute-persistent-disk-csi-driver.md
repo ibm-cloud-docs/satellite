@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-05-13"
+lastupdated: "2025-11-21"
 
 
 keywords: change log, version history, gcp-compute-persistent-disk-csi-driver
@@ -36,6 +36,7 @@ Review the version history for `gcp-compute-persistent-disk-csi-driver`.
 
 
 
+
 ## Version 1.7.1
 {: #cl-storage-templates-gcp-compute-persistent-disk-csi-driver-1.7.1}
 
@@ -44,6 +45,7 @@ Review the version history for `gcp-compute-persistent-disk-csi-driver`.
 {: #cl-storage-templates-gcp-compute-persistent-disk-csi-driver-1.7.1-5}
 
 - Removes the `PodSecurityPolicy` as Kubernetes v1.25+ doesn't support PSPs. 
+
 
 
 
