@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-10-17"
+lastupdated: "2025-12-04"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 
@@ -62,7 +62,7 @@ Getting started options
          - [Alibaba regions and zones](https://www.alibabacloud.com/help/en/ecs/user-guide/regions-and-zones){: external}, such as `us-east-1a` and `us-east-1b`.
          - [AWS regions and zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html){: external}, such as `us-east-1a`, `us-east-1b`, and `us-east-1c`.
          - [Azure `topology.kubernetes.io/zone` labels](https://learn.microsoft.com/en-us/azure/aks/availability-zones#verify-node-distribution-across-zones){: external}, such as `eastus-1`, `eastus-2`, and `eastus-3`. **Don't** use only the location name (`eastus`) or the zone number (`1`).
-         - [GCP regions and zones](https://cloud.google.com/compute/docs/regions-zones){: external}, such as `us-west1-a`, `us-west1-b`, and `us-west1-c`.
+         - [GCP regions and zones](https://docs.cloud.google.com/compute/docs/regions-zones){: external}, such as `us-west1-a`, `us-west1-b`, and `us-west1-c`.
  
 :    - **Red Hat CoreOS Support**: {{site.data.keyword.satelliteshort}} supports hosts that are running either **RHEL** or **RHCOS**. For more information, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os). 
 :    - **Object Storage**: The exact name of an existing {{site.data.keyword.cos_full_notm}} bucket that you want to use to back up {{site.data.keyword.satelliteshort}} location control plane data. Otherwise, a new bucket is automatically created in an {{site.data.keyword.cos_short}} instance in your account. **Do not delete** your {{site.data.keyword.cos_short}} instance or this bucket. If the service instance or bucket is deleted, your {{site.data.keyword.satelliteshort}} location control plane data cannot be backed up.
@@ -128,7 +128,7 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI,
          1. [Alibaba regions and zones](https://www.alibabacloud.com/help/en/ecs/user-guide/regions-and-zones){: external}, such as `us-east-1` and `us-west-1`.
          2. [AWS regions and zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html){: external}, such as `us-east-1a`, `us-east-1b`, `us-east-1c`.
          3. [Azure `topology.kubernetes.io/zone` labels](https://learn.microsoft.com/en-us/azure/aks/availability-zones#verify-node-distribution-across-zones){: external}, such as `eastus-1`, `eastus-2`, and `eastus-3`. Do **not** use only the location name (`eastus`) or the zone number (`1`).
-         4. [GCP regions and zones](https://cloud.google.com/compute/docs/regions-zones){: external}, such as `us-west1-a`, `us-west1-b`, and `us-west1-c`.
+         4. [GCP regions and zones](https://docs.cloud.google.com/compute/docs/regions-zones){: external}, such as `us-west1-a`, `us-west1-b`, and `us-west1-c`.
 
     :    Optional: If you use this option, zone names must be specified in three repeated options. If you do not use this option, the zones in your location are assigned names, such as `zone-1`.
 

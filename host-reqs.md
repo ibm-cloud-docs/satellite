@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-10-09"
+lastupdated: "2025-12-04"
 
 keywords: satellite, hybrid, multicloud, endpoint capacity, endpoint limits, location endpoint limits, location endpoints, cloud endpoints
 
@@ -63,8 +63,8 @@ Review the following operating system support table for each Location type.
 
 - Hosts must support x86-64-v2 architecture.
 - Hosts must run the latest OS with the kernel that is distributed with those versions. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or IBM Power; and other kernel versions are not supported.
-    - For the latest RHEL 8 version information, see [Red Hat Enterprise Linux Release Dates](https://access.redhat.com/articles/3078#RHEL8){: external}.
-    - For the latest RHEL 9 version information, see [Red Hat Enterprise Linux Release Dates](https://access.redhat.com/articles/3078#RHEL9){: external}.
+    - For the latest RHEL 8 version information, see [Red Hat Enterprise Linux Release Dates](https://access.redhat.com/articles/red-hat-enterprise-linux-release-dates#RHEL8){: external}.
+    - For the latest RHEL 9 version information, see [Red Hat Enterprise Linux Release Dates](https://access.redhat.com/articles/red-hat-enterprise-linux-release-dates#RHEL9){: external}.
     - For the latest Red Hat CoreOS version information, see [Red Hat CoreOS mirrors](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/){: external}.
 - Make sure that you use minimal RHEL images. Do not install the LAMP stack. Do not install virtualization technologies on the hosts, including `libvirtd` or `docker`.
 - Hosts can be physical or virtual machines. However, if your hosts are cloned virtual machines, be sure that each one has a unique network identity. For more information, see [Why aren't my hosts attaching to my location?](/docs/satellite?topic=satellite-host-not-attaching).

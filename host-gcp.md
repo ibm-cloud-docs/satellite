@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-02-23"
+  years: 2020, 2025
+lastupdated: "2025-12-04"
 
 keywords: satellite, hybrid, multicloud, gcp, google cloud platform
 
@@ -36,7 +36,7 @@ Not sure how many hosts to attach to your location? See [Sizing your {{site.data
 You can create your {{site.data.keyword.satelliteshort}} location by using hosts that you added from Google Cloud Platform (GCP).
 {: shortdesc}
 
-If you want to use Red Hat CoreOS (RHCOS) hosts in your location, provide your RHCOS image file to your Google account. For more information, see [Creating custom images](https://cloud.google.com/compute/docs/images/create-custom){: external}. To find RHCOS images, see the list of [available images](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/). Note that you must use at least version 4.9.
+If you want to use Red Hat CoreOS (RHCOS) hosts in your location, provide your RHCOS image file to your Google account. For more information, see [Creating custom images](https://docs.cloud.google.com/compute/docs/images/create-custom){: external}. To find RHCOS images, see the list of [available images](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/). Note that you must use at least version 4.9.
 {: important}
 
 Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
@@ -61,7 +61,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 5. Click **Create instance template**.
 6. Enter the details for your instance template as follows.
 
-    For an overview of available options when creating an instance template, see the [GCP documentation](https://cloud.google.com/compute/docs/instance-templates/create-instance-templates){: external}.
+    For an overview of available options when creating an instance template, see the [GCP documentation](https://docs.cloud.google.com/compute/docs/instance-templates/create-instance-templates){: external}.
     {: tip}
 
     1. Enter a name for your instance template.
@@ -84,7 +84,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 ## Manually ordering hosts with the `gcloud` CLI
 {: #gcp-manual-cli}
 
-When you order your instances, pass the `--metadata-from-file user-data` option and include your attach script. For more information, see the `gcloud compute instances create` [command reference](https://cloud.google.com/sdk/gcloud/reference/compute/instances/create){: external}. 
+When you order your instances, pass the `--metadata-from-file user-data` option and include your attach script. For more information, see the `gcloud compute instances create` [command reference](https://docs.cloud.google.com/sdk/gcloud/reference/compute/instances/create){: external}. 
 
 Example command to order and attach GCP VMs to your {{site.data.keyword.satelliteshort}} location.
 
@@ -125,7 +125,7 @@ udp:30000-32767
 ```
 {: screen}
 
-For more information, see [VPC firewall rules overview](https://cloud.google.com/firewall/docs/firewalls){: external} in the Google Cloud Platform documentation.
+For more information, see [VPC firewall rules overview](https://docs.cloud.google.com/firewall/docs/firewalls){: external} in the Google Cloud Platform documentation.
 
 
 
@@ -142,8 +142,3 @@ Now that you added hosts to your location, you can assign them to your location 
 5. Learn more about the [{{site.data.keyword.satelliteshort}} Link component](/docs/satellite?topic=satellite-link-location-cloud) and how you can use endpoints to manage the network traffic between your location and {{site.data.keyword.cloud_notm}}.
 
 Need help? Check out [Getting support](/docs/satellite?topic=satellite-get-help) where you can find information about cloud status, issues, and logging; contacting support; and setting your email notification preferences for {{site.data.keyword.cloud_notm}} platform-related items.
-
-
-
-
-
