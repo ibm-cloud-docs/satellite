@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-08-21"
+lastupdated: "2025-12-04"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 
@@ -194,7 +194,7 @@ Retrieve the Microsoft Azure credentials that {{site.data.keyword.satelliteshort
 Retrieve the Google Cloud Platform (GCP) credentials that {{site.data.keyword.satelliteshort}} can use to create {{site.data.keyword.satelliteshort}} resources in your GCP cloud on your behalf.
 {: shortdesc}
 
-1. [Create a service account and service account key](https://cloud.google.com/docs/authentication/client-libraries#creating_a_service_account){: external} with at least the required [GCP permissions](/docs/satellite?topic=satellite-iam-common#permissions-gcp). As part of creating the service account, a JSON key file is downloaded to your local machine.
+1. [Create a service account and service account key](https://docs.cloud.google.com/docs/authentication/client-libraries#creating_a_service_account){: external} with at least the required [GCP permissions](/docs/satellite?topic=satellite-iam-common#permissions-gcp). As part of creating the service account, a JSON key file is downloaded to your local machine.
 2. Open the JSON key file on your local machine, and verify that the format matches the following example. You can provide this JSON key file as your GCP credentials for actions such as creating a {{site.data.keyword.satelliteshort}} location.
     ```json
     {

@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2025
+lastupdated: "2025-12-04"
 
 keywords: satellite, hybrid, multicloud, gcp, google cloud platform
 
@@ -44,7 +44,7 @@ Do not reuse the same name for multiple locations, even after the other location
     1. Click **Manage in Schematics**. If you see an error, navigate to the [{{site.data.keyword.bpshort}} workspaces console](https://cloud.ibm.com/schematics/workspaces){: external} and click the name of your workspace, such as `us.east.cartOrder...`.
     1. From the **Activity** tab, find the current activity row and click **View log** to review the log details.
     1. Wait for the {{site.data.keyword.bpshort}} action to finish and the workspace to enter an **Active** state.
-1. Optional: If you need to setup SSH access to your hosts in GCP, see [Choose your access method](https://cloud.google.com/compute/docs/instances/access-overview){: external} in the Google documentation. GCP recommends using the OS Login technology. You can also use the `gcloud` CLI or the built-in SSH client in the web UI to access your VMs.
+1. Optional: If you need to setup SSH access to your hosts in GCP, see [Choose your access method](https://docs.cloud.google.com/compute/docs/instances/access-overview){: external} in the Google documentation. GCP recommends using the OS Login technology. You can also use the `gcloud` CLI or the built-in SSH client in the web UI to access your VMs.
 
 The GCP VPC created by the Quick Start template does not have port 22 open externally for SSH and so you might need to add a firewall rule before you can use SSH. If you add a firewall rule to open port 22 externally, you must remove this firewall rule before you specify the **Destroy resources** option in {{site.data.keyword.bpshort}} to clean up your location.
 {: note}
@@ -78,7 +78,7 @@ If you are using this template for demonstration purposes, do not assign all you
 Retrieve the Google Cloud Platform (GCP) credentials that {{site.data.keyword.satelliteshort}} can use to create {{site.data.keyword.satelliteshort}} resources in your GCP cloud on your behalf.
 {: shortdesc}
 
-1. [Create a service account and service account key](https://cloud.google.com/docs/authentication/client-libraries#creating_a_service_account){: external} with at least the required [GCP permissions](/docs/satellite?topic=satellite-iam-common#permissions-gcp). As part of creating the service account, a JSON key file is downloaded to your local machine.
+1. [Create a service account and service account key](https://docs.cloud.google.com/docs/authentication/client-libraries#creating_a_service_account){: external} with at least the required [GCP permissions](/docs/satellite?topic=satellite-iam-common#permissions-gcp). As part of creating the service account, a JSON key file is downloaded to your local machine.
 2. Open the JSON key file on your local machine, and verify that the format matches the following example. You can provide this JSON key file as your GCP credentials for actions such as creating a {{site.data.keyword.satelliteshort}} location.
     ```json
     {

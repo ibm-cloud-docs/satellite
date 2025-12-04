@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-07-07"
+lastupdated: "2025-12-04"
 
 
 keywords: high availability, disaster recover, HA, DR, responsibilities
@@ -121,7 +121,7 @@ Change management includes tasks such as upgrades, configuration changes, and de
 
 - Use the API, CLI, or console tools to apply the provided worker node updates that include operating system patches, or to request that worker nodes are rebooted, reloaded, or replaced.
 
-- Use the API, CLI, or console tools to apply the provided [updates](/docs/openshift?topic=openshift-openshift_versions#os-satellite-without-coreos) for any Satellite clusters you own. Make sure to review the information and requirements for each version update to prevent issues or downtime. 
+- Use the API, CLI, or console tools to apply the provided [updates](/docs/openshift?topic=openshift-openshift_versions#os-sat) for any Satellite clusters you own. Make sure to review the information and requirements for each version update to prevent issues or downtime. 
 
 - Make sure your cluster components stay [updated](/docs/openshift?topic=openshift-update&interface=ui) and run the latest available versions.
 
