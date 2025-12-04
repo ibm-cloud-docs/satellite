@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-11-21"
+lastupdated: "2025-12-04"
 
 
 keywords: change log, version history, ibm-object-storage-plug-in
@@ -27,6 +27,13 @@ Review the version history for `ibm-object-storage-plugin`.
 
 ## Version 2.2
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2}
+
+
+### Revision 32, released 04 December 2025
+{: #cl-storage-templates-ibm-object-storage-plugin-2.2-32}
+
+- Updates Go to version `1.25.4`.
+- Fix the glibc error on rhel8 clusters for charts 2.2.42, 2.2.43, 2.2.44 
 
 
 ### Revision 31, released 13 November 2025
