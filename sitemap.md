@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-12-04"
+lastupdated: "2025-12-05"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -5593,6 +5593,8 @@ subcollection: satellite
     * [ST0051 error message](/docs/satellite?topic=satellite-debug-storage#st0051)
 
     * [ST0052 error message](/docs/satellite?topic=satellite-debug-storage#st0052)
+
+[Why do I see `unable to fetch header secret data` when creating a Satellite storage assignment?](/docs/satellite?topic=satellite-ts-session-timeout-odf#ts-session-timeout-odf)
 
 [Why is the namespace where my storage operator was deployed stuck in **Terminating** status?](/docs/satellite?topic=satellite-storage-namespace-terminating#storage-namespace-terminating)
 

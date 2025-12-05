@@ -385,6 +385,7 @@ toc:
               topics:
               - storage-must-gather.md
               - debug-storage.md
+              - ts-session-timeout-odf.md
               - ts-storage-namespace-terminating.md
               - ts-authentication-failure.md
               - ts-node-register-failure.md
