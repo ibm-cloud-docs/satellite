@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-10-28"
+lastupdated: "2025-12-08"
 
 keywords:
 
@@ -56,7 +56,7 @@ The following dependencies apply to the following deployment locations: Dallas (
 {: tab-title="Critical dependencies"}
 {: tab-group="service-dependency-data-for-satellite-Data-and-Control-plane-deployment-for-an-MZR"}
 {: class="comparison-tab-table"}
-{: #critical-deps}
+{: #critical-deps-data-and-control-plane-deployment-for-an-mzr}
 {: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
@@ -73,7 +73,7 @@ The following dependencies apply to the following deployment locations: Dallas (
 {: tab-title="Significant dependencies"}
 {: tab-group="service-dependency-data-for-satellite-Data-and-Control-plane-deployment-for-an-MZR"}
 {: class="comparison-tab-table"}
-{: #significant-deps}
+{: #significant-deps-data-and-control-plane-deployment-for-an-mzr}
 {: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
@@ -88,7 +88,7 @@ The following dependencies apply to the following deployment locations: Dallas (
 {: tab-title="Minimal dependencies"}
 {: tab-group="service-dependency-data-for-satellite-Data-and-Control-plane-deployment-for-an-MZR"}
 {: class="comparison-tab-table"}
-{: #minimal-deps}
+{: #minimal-deps-data-and-control-plane-deployment-for-an-mzr}
 {: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
 
 
