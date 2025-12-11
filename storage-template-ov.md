@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2025
 
-lastupdated: "2025-12-04"
+lastupdated: "2025-12-11"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -166,19 +166,21 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 | [NetApp Trident Operator](/docs/satellite?topic=satellite-storage-netapp-trident) | `netapp-trident` | Version: 24.02 (Default), Patch: 3 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident) 
 | [NetApp Trident Operator](/docs/satellite?topic=satellite-storage-netapp-trident) | `netapp-trident` | Version: 25.06, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident)  |
 | [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.12, Patch: 20 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
-| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.13, Patch: 19 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
-| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.14, Patch: 17 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
-| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.15, Patch: 14 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
-| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.16 (Default), Patch: 9 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
-| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.17, Patch: 7 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
-| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.18, Patch: 3 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local)  |
+| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.13, Patch: 20 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
+| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.14, Patch: 18 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
+| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.15, Patch: 15 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
+| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.16 (Default), Patch: 10 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
+| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.17, Patch: 8 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
+| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.18, Patch: 4 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
+| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.19, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local)  |
 | [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.12, Patch: 20 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote) 
-| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.13, Patch: 19 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote) 
-| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.14, Patch: 17 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote) 
-| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.15, Patch: 14 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote) 
-| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.16 (Default), Patch: 9 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote) 
-| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.17, Patch: 7 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote) 
-| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.18, Patch: 3 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote)  |
+| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.13, Patch: 20 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote) 
+| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.14, Patch: 18 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote) 
+| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.15, Patch: 15 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote) 
+| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.16 (Default), Patch: 10 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote) 
+| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.17, Patch: 8 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote) 
+| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.18, Patch: 4 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote) 
+| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.19, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote)  |
 | [VMware CSI Driver](/docs/satellite?topic=satellite-storage-vsphere-csi-driver) | `vsphere-csi-driver` | Version: 2.5.1, Patch: 6 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-vsphere-csi-driver) 
 | [VMware CSI Driver](/docs/satellite?topic=satellite-storage-vsphere-csi-driver) | `vsphere-csi-driver` | Version: 2.7.0 (Default), Patch: 3 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-vsphere-csi-driver)  |
 {: caption="Storage template versions" caption-side="bottom"}

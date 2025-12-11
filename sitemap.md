@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-12-05"
+lastupdated: "2025-12-11"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2968,6 +2968,8 @@ subcollection: satellite
 
     * [4.18 parameter reference](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#odf-local-4.18-parameters)
 
+    * [4.19 parameter reference](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#odf-local-4.19-parameters)
+
 * [Storage class reference for ODF](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#sat-storage-odf-local-sc-ref)
 
 [OpenShift Data Foundation for remote devices](/docs/satellite?topic=satellite-storage-odf-remote#storage-odf-remote)
@@ -3023,6 +3025,8 @@ subcollection: satellite
     * [4.17 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-4.17-parameters)
 
     * [4.18 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-4.18-parameters)
+
+    * [4.19 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-4.19-parameters)
 
 * [Storage class reference for OpenShift Data Foundation for remote devices](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#sat-storage-odf-remote-sc-ref)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-09-05"
+lastupdated: "2025-12-11"
 
 
 keywords: satellite storage, features, overview
@@ -67,6 +67,7 @@ subcollection: satellite
 | OpenShift Data Foundation for local devices | 4.16 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for local devices | 4.17 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for local devices | 4.18 | OpenShift Container Platform | True | True | False | Regional | True |
+| OpenShift Data Foundation for local devices | 4.19 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for remote storage | 4.12 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for remote storage | 4.13 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for remote storage | 4.14 | OpenShift Container Platform | True | True | False | Regional | True |
@@ -74,6 +75,7 @@ subcollection: satellite
 | OpenShift Data Foundation for remote storage | 4.16 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for remote storage | 4.17 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for remote storage | 4.18 | OpenShift Container Platform | True | True | False | Regional | True |
+| OpenShift Data Foundation for remote storage | 4.19 | OpenShift Container Platform | True | True | False | Regional | True |
 | VMware CSI Driver | 2.5.1 | VMware,IBM | False | False | True | Zonal | False |
 | VMware CSI Driver | 2.7.0 | VMware,IBM | False | False | True | Zonal | False |
 {: caption="Storage template feature comparison" caption-side="bottom"}
