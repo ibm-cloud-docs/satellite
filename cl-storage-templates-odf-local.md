@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-11-21"
+lastupdated: "2025-12-11"
 
 
 keywords: change log, version history, odf-local
@@ -25,8 +25,28 @@ Review the version history for `odf-local`.
 
 
 
+## Version 4.19
+{: #cl-storage-templates-odf-local-4.19}
+
+
+### Revision 1, released 21 October 2025
+{: #cl-storage-templates-odf-local-4.19-1}
+
+- Updates Go to version `1.25`.
+- ODF 4.19 initial release
+
+
+
+
 ## Version 4.18
 {: #cl-storage-templates-odf-local-4.18}
+
+
+### Revision 4, released 08 December 2025
+{: #cl-storage-templates-odf-local-4.18-4}
+
+- Resolves the following CVEs: [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/CVE-2025-58185){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/CVE-2025-58189){: external}, [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/CVE-2025-61723){: external}, and [CVE-2025-61725](https://nvd.nist.gov/vuln/detail/CVE-2025-61725){: external}.
+- Updates Go to version `1.25`.
 
 
 ### Revision 3, released 04 September 2025
@@ -54,6 +74,13 @@ Review the version history for `odf-local`.
 
 ## Version 4.17
 {: #cl-storage-templates-odf-local-4.17}
+
+
+### Revision 8, released 08 December 2025
+{: #cl-storage-templates-odf-local-4.17-8}
+
+- Resolves the following CVEs: [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/CVE-2025-58185){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/CVE-2025-58189){: external}, [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/CVE-2025-61723){: external}, and [CVE-2025-61725](https://nvd.nist.gov/vuln/detail/CVE-2025-61725){: external}.
+- Updates Go to version `1.25`.
 
 
 ### Revision 7, released 04 September 2025
@@ -91,6 +118,13 @@ Review the version history for `odf-local`.
 {: #cl-storage-templates-odf-local-4.16}
 
 
+### Revision 10, released 08 December 2025
+{: #cl-storage-templates-odf-local-4.16-10}
+
+- Resolves the following CVEs: [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/CVE-2025-58185){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/CVE-2025-58189){: external}, [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/CVE-2025-61723){: external}, and [CVE-2025-61725](https://nvd.nist.gov/vuln/detail/CVE-2025-61725){: external}.
+- Updates Go to version `1.25`.
+
+
 ### Revision 9, released 04 September 2025
 {: #cl-storage-templates-odf-local-4.16-9}
 
@@ -124,6 +158,13 @@ Review the version history for `odf-local`.
 
 ## Version 4.15
 {: #cl-storage-templates-odf-local-4.15}
+
+
+### Revision 15, released 08 December 2025
+{: #cl-storage-templates-odf-local-4.15-15}
+
+- Resolves the following CVEs: [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/CVE-2025-58185){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/CVE-2025-58189){: external}, [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/CVE-2025-61723){: external}, and [CVE-2025-61725](https://nvd.nist.gov/vuln/detail/CVE-2025-61725){: external}.
+- Updates Go to version `1.25`.
 
 
 ### Revision 14, released 04 September 2025
@@ -193,6 +234,13 @@ Review the version history for `odf-local`.
 
 ## Version 4.14
 {: #cl-storage-templates-odf-local-4.14}
+
+
+### Revision 18, released 08 December 2025
+{: #cl-storage-templates-odf-local-4.14-18}
+
+- Resolves the following CVEs: [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/CVE-2025-58185){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/CVE-2025-58189){: external}, [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/CVE-2025-61723){: external}, and [CVE-2025-61725](https://nvd.nist.gov/vuln/detail/CVE-2025-61725){: external}.
+- Updates Go to version `1.25`.
 
 
 ### Revision 17, released 04 September 2025
@@ -289,6 +337,13 @@ Review the version history for `odf-local`.
 
 ## Version 4.13
 {: #cl-storage-templates-odf-local-4.13}
+
+
+### Revision 20, released 08 December 2025
+{: #cl-storage-templates-odf-local-4.13-20}
+
+- Resolves the following CVEs: [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/CVE-2025-58185){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/CVE-2025-58189){: external}, [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/CVE-2025-61723){: external}, and [CVE-2025-61725](https://nvd.nist.gov/vuln/detail/CVE-2025-61725){: external}.
+- Updates Go to version `1.25`.
 
 
 ### Revision 19, released 04 September 2025
