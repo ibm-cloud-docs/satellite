@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-05-13"
+lastupdated: "2025-12-12"
 
 
 keywords: change log, version history, ridge-csi-driver
@@ -22,7 +22,6 @@ subcollection: "satellite"
 
 Review the version history for `ridge-csi-driver`.
 {: shortdesc}
-
 
 
 ## Version 1.0.0

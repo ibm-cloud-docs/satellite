@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-11-21"
+lastupdated: "2025-12-12"
 
 
 keywords: change log, version history, vsphere-csi-driver
@@ -22,7 +22,6 @@ subcollection: "satellite"
 
 Review the version history for `vsphere-csi-driver`.
 {: shortdesc}
-
 
 
 ## Version 2.7.0
@@ -45,8 +44,6 @@ Review the version history for `vsphere-csi-driver`.
 {: #cl-storage-templates-vsphere-csi-driver-2.7.0-1}
 
 - Initial release
-
-
 
 
 ## Version 2.5.1

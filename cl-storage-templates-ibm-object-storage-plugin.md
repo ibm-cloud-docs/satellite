@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-12-04"
+lastupdated: "2025-12-12"
 
 
 keywords: change log, version history, ibm-object-storage-plug-in
@@ -22,7 +22,6 @@ subcollection: "satellite"
 
 Review the version history for `ibm-object-storage-plugin`.
 {: shortdesc}
-
 
 
 ## Version 2.2
