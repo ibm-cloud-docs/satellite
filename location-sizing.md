@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-08-04"
+lastupdated: "2025-12-15"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
 
@@ -40,11 +40,7 @@ The [Satellite Location Sizing Requirements](/docs/satellite?topic=satellite-loc
 ## Location size for non Red Hat CoreOS enabled location
 {: #control-plane-how-many-clusters-rhel}
 
-The following tables show sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in a non Red Hat CoreOS enabled location. These sizings are for reference only.  Your sizing requirements can change depending on the amount of workload running in a cluster. For more information, see [What types of changes can increase my location sizing requirements?](#types-changes-sizing-increase). 
-
-Generally, a cluster with six 8 vCPU x 32 GB RAM hosts is recommended as an initial size to run heavier components, such as Istio, and still have capacity to scale your workload up. However, you might choose a smaller or larger size based on your expected workload. Guidance for additional sizing options is included in this section. 
-{: note}
-
+The following tables show sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in a non Red Hat CoreOS enabled location. These sizings are for reference only.
 
 
 
@@ -55,8 +51,8 @@ Generally, a cluster with six 8 vCPU x 32 GB RAM hosts is recommended as an init
 | 12 hosts |  Up to 11 clusters | 60 workers across 11 clusters, or 200 workers across 4 clusters | 60 workers per cluster |
 {: caption="Sizing guidance for the {{site.data.keyword.satelliteshort}} location control plane" caption-side="bottom"}
 {: class="simple-tab-table"}
-{: #4cpu-16ram}
-{: tab-title="4 vCPU, 16 GB RAM"}
+{: #8cpu-32ram}
+{: tab-title="8 vCPU, 32 GB RAM"}
 {: tab-group="loc-size"}
 
 | Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
@@ -73,8 +69,7 @@ Generally, a cluster with six 8 vCPU x 32 GB RAM hosts is recommended as an init
 ## Location size for Red Hat CoreOS (RHCOS) enabled location
 {: #control-plane-how-many-clusters-rhcos}
 
-The following tables show sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in a Red Hat CoreOS enabled location. These sizings are for reference only.  Your sizing requirements can change depending on the amount of workload running in a cluster. For more information, see [What types of changes can increase my location sizing requirements?](#types-changes-sizing-increase).
-
+The following tables show sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in a Red Hat CoreOS enabled location. These sizings are for reference only. Your sizing requirements can change depending on the amount of workload running in a cluster. For more information, see [What types of changes can increase my location sizing requirements?](#types-changes-sizing-increase).
 
 
 
@@ -85,8 +80,8 @@ The following tables show sizing guidance for the number of hosts that the {{sit
 | 12 hosts | Up to 8 clusters | 60 workers across 8 clusters, or 200 workers across 4 clusters | 60 workers per cluster |
 {: caption="Sizing guidance for the {{site.data.keyword.satelliteshort}} location control plane" caption-side="bottom"}
 {: class="simple-tab-table"}
-{: #4cpu-16ram-coreos}
-{: tab-title="4 vCPU, 16 GB RAM"}
+{: #8cpu-32ram-coreos}
+{: tab-title="8 vCPU, 32 GB RAM"}
 {: tab-group="loc-sizerhcos"}
 
 | Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
