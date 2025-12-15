@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-12-11"
+lastupdated: "2025-12-12"
 
 
 keywords: change log, version history, odf-local
@@ -24,7 +24,6 @@ Review the version history for `odf-local`.
 {: shortdesc}
 
 
-
 ## Version 4.19
 {: #cl-storage-templates-odf-local-4.19}
 
@@ -34,8 +33,6 @@ Review the version history for `odf-local`.
 
 - Updates Go to version `1.25`.
 - ODF 4.19 initial release
-
-
 
 
 ## Version 4.18
@@ -68,8 +65,6 @@ Review the version history for `odf-local`.
 
 - Updates Go to version `1.23.10`.
 - ODF 4.18 initial release
-
-
 
 
 ## Version 4.17
@@ -112,8 +107,6 @@ Review the version history for `odf-local`.
 - Updates Go to version `1.23.8`.
 
 
-
-
 ## Version 4.16
 {: #cl-storage-templates-odf-local-4.16}
 
@@ -152,8 +145,6 @@ Review the version history for `odf-local`.
 
 - Resolves the following CVEs: [CVE-2025-22872](https://nvd.nist.gov/vuln/detail/CVE-2025-22872){: external}, [CVE-2025-22871](https://nvd.nist.gov/vuln/detail/CVE-2025-22871){: external}, and [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/CVE-2025-0395){: external}.
 - Updates Go to version `1.23.8`.
-
-
 
 
 ## Version 4.15
@@ -228,8 +219,6 @@ Review the version history for `odf-local`.
 
 - Updates Go to version `1.21.9`.
 - Initial Release
-
-
 
 
 ## Version 4.14
@@ -331,8 +320,6 @@ Review the version history for `odf-local`.
 - Updates the UBI to version `8.9-1029`.
 - Updates Go to version `1.20.11`.
 - Initial Release
-
-
 
 
 ## Version 4.13
@@ -470,8 +457,6 @@ Review the version history for `odf-local`.
 - ODF 4.13 initial release
 
 
-
-
 ## Version 4.12
 {: #cl-storage-templates-odf-local-4.12}
 
@@ -607,8 +592,6 @@ Review the version history for `odf-local`.
 - Initial release
 
 
-
-
 ## Version 4.11
 {: #cl-storage-templates-odf-local-4.11}
 
@@ -727,8 +710,6 @@ Review the version history for `odf-local`.
 - Updates Go to version `1.18.9`.
 
 
-
-
 ## Version 4.10
 {: #cl-storage-templates-odf-local-4.10}
 
@@ -823,8 +804,6 @@ Review the version history for `odf-local`.
 - Updates Go to version `1.18.9`.
 
 
-
-
 ## Version 4.9
 {: #cl-storage-templates-odf-local-4.9}
 
@@ -894,8 +873,6 @@ Review the version history for `odf-local`.
 - Updates Go to version `1.18.9`.
 
 
-
-
 ## Version 4.8
 {: #cl-storage-templates-odf-local-4.8}
 
@@ -931,8 +908,6 @@ Review the version history for `odf-local`.
 - Resolves the following CVEs: [CVE-2022-47629](https://nvd.nist.gov/vuln/detail/CVE-2022-47629){: external}.
 - Updates the UBI to version `8.7-1049.1675784874`.
 - Updates Go to version `1.18.9`.
-
-
 
 
 ## Version 4.7

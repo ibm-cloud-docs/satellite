@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-11-21"
+lastupdated: "2025-12-12"
 
 
 keywords: change log, version history, ibm-system-storage-block-csi-driver
@@ -24,7 +24,6 @@ Review the version history for `ibm-system-storage-block-csi-driver`.
 {: shortdesc}
 
 
-
 ## Version 1.11.2
 {: #cl-storage-templates-ibm-system-storage-block-csi-driver-1.11.2}
 
@@ -33,8 +32,6 @@ Review the version history for `ibm-system-storage-block-csi-driver`.
 {: #cl-storage-templates-ibm-system-storage-block-csi-driver-1.11.2-1}
 
 - Initial release
-
-
 
 
 ## Version 1.11.1
@@ -47,8 +44,6 @@ Review the version history for `ibm-system-storage-block-csi-driver`.
 - Initial release
 
 
-
-
 ## Version 1.10.0
 {: #cl-storage-templates-ibm-system-storage-block-csi-driver-1.10.0}
 
@@ -59,8 +54,6 @@ Review the version history for `ibm-system-storage-block-csi-driver`.
 - Initial release
 
 
-
-
 ## Version 1.5.0
 {: #cl-storage-templates-ibm-system-storage-block-csi-driver-1.5.0}
 
@@ -69,8 +62,6 @@ Review the version history for `ibm-system-storage-block-csi-driver`.
 {: #cl-storage-templates-ibm-system-storage-block-csi-driver-1.5.0-2}
 
 - Adds a new storage class parameter for `storage-class-preference`.
-
-
 
 
 ## Version 1.4.0

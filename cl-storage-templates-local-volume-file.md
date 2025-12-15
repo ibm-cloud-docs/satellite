@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-11-21"
+lastupdated: "2025-12-12"
 
 
 keywords: change log, version history, local-volume-file
@@ -24,7 +24,6 @@ Review the version history for `local-volume-file`.
 {: shortdesc}
 
 
-
 ## Version 4.13
 {: #cl-storage-templates-local-volume-file-4.13}
 
@@ -33,8 +32,6 @@ Review the version history for `local-volume-file`.
 {: #cl-storage-templates-local-volume-file-4.13-1}
 
 - Initial release
-
-
 
 
 ## Version 4.12
@@ -47,8 +44,6 @@ Review the version history for `local-volume-file`.
 - Initial release.
 
 
-
-
 ## Version 4.11
 {: #cl-storage-templates-local-volume-file-4.11}
 
@@ -57,8 +52,6 @@ Review the version history for `local-volume-file`.
 {: #cl-storage-templates-local-volume-file-4.11-1}
 
 - Initial release.
-
-
 
 
 ## Version 4.10
@@ -71,8 +64,6 @@ Review the version history for `local-volume-file`.
 - Added support for auto cleanup of resources while uninstalling the plug-in
 
 
-
-
 ## Version 4.9
 {: #cl-storage-templates-local-volume-file-4.9}
 
@@ -81,8 +72,6 @@ Review the version history for `local-volume-file`.
 {: #cl-storage-templates-local-volume-file-4.9-4}
 
 - Added support for auto cleanup of resources while uninstalling the plug-in
-
-
 
 
 ## Version 4.8

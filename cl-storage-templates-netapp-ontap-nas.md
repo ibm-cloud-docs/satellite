@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-11-21"
+lastupdated: "2025-12-12"
 
 
 keywords: change log, version history, netapp-ontap-nas
@@ -24,7 +24,6 @@ Review the version history for `netapp-ontap-nas`.
 {: shortdesc}
 
 
-
 ## Version 25.06
 {: #cl-storage-templates-netapp-ontap-nas-25.06}
 
@@ -42,8 +41,6 @@ Review the version history for `netapp-ontap-nas`.
 
 - Updates Go to version `1.25.0`.
 - Initial release
-
-
 
 
 ## Version 24.02
@@ -98,8 +95,6 @@ Review the version history for `netapp-ontap-nas`.
 - Initial Release
 
 
-
-
 ## Version 23.10
 {: #cl-storage-templates-netapp-ontap-nas-23.10}
 
@@ -116,8 +111,6 @@ Review the version history for `netapp-ontap-nas`.
 
 - Resolves the following CVEs: [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/CVE-2025-0395){: external}.
 - Updates Go to version `1.23.8`.
-
-
 
 
 ## Version 22.10
@@ -238,8 +231,6 @@ Review the version history for `netapp-ontap-nas`.
 - Initial release.
 
 
-
-
 ## Version 22.04
 {: #cl-storage-templates-netapp-ontap-nas-22.04}
 
@@ -356,8 +347,6 @@ Review the version history for `netapp-ontap-nas`.
 - Updates the UBI to version `8.7-1049.1675784874`.
 - Updates Go to version `1.18.9`.
 - Updates the `tridentctl` pod as to run as non-root. 
-
-
 
 
 ## Version 21.04
