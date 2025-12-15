@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-12-11"
+lastupdated: "2025-12-15"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -203,6 +203,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [December 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec25)
+
+    * [12 December 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec1225)
+
+        * New! RHEL 9 control plane host support for CoreOS-enabled locations.
 
     * [02 December 2025](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec0125)
 

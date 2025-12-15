@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-12-03"
+lastupdated: "2025-12-15"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -24,6 +24,13 @@ Review the latest changes to the {{site.data.keyword.satellitelong}} documentati
 
 ## December 2025
 {: #satellite-dec25}
+
+### 12 December 2025
+{: #satellite-dec1225}
+{: release-note}
+
+New! RHEL 9 control plane host support for CoreOS-enabled locations.
+:   You can now use RHEL 9 hosts in your location control plane in CoreOS-enabled locations. For more information, see [Attaching hosts](/docs/satellite?topic=satellite-setup-control-plane).
 
 ### 02 December 2025
 {: #satellite-dec0125}

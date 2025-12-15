@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-12-04"
+lastupdated: "2025-12-15"
 
 keywords: satellite, hybrid, multicloud, endpoint capacity, endpoint limits, location endpoint limits, location endpoints, cloud endpoints
 
@@ -37,7 +37,7 @@ Review the following operating system support table for each Location type.
 | Host OS | Satellite Control Plane support | Worker node OS support |
 | --- | --- | --- |
 | RHEL 8 | Yes | Yes |
-| RHEL 9 | No | OpenShift 4.17 and later only |
+| RHEL 9 | Yes | OpenShift 4.17 and later only |
 | RHCOS | Yes | Yes |
 {: class="simple-tab-table"}
 {: caption="CoreOS enabled locations" caption-side="bottom"}
