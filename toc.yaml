@@ -358,6 +358,7 @@ toc:
               - ts-host-expired-token.md
               - ts-host-unassigned-unknown.md
               - ts-terraform.md
+              - ts-host-assign-416.md
           - topicgroup:
               label: Connectors
               topics:

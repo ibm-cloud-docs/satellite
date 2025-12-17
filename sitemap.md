@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-12-15"
+lastupdated: "2025-12-17"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1642,9 +1642,7 @@ subcollection: satellite
 
 [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-location-sizing#location-sizing)
 
-* [Location size for non Red Hat CoreOS enabled location](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhel)
-
-* [Location size for Red Hat CoreOS (RHCOS) enabled location](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhcos)
+* [Location sizing](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhel)
 
 * [Location size for testing](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-test)
 
@@ -5460,6 +5458,8 @@ subcollection: satellite
 [Why do my unassigned hosts have an `Unresponsive` status?](/docs/satellite?topic=satellite-ts-host-unassigned-unknown#ts-host-unassigned-unknown)
 
 [Why is my host attach script triggering a state change in Terraform?](/docs/satellite?topic=satellite-ts-host-terraform#ts-host-terraform)
+
+[Why can't I assign a RHEL 9 host to a 4.16 cluster?](/docs/satellite?topic=satellite-host-assign-416#host-assign-416)
 
 
 ### Connectors
