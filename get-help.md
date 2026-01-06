@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-06-05"
+  years: 2020, 2026
+lastupdated: "2026-01-06"
 
 keywords: satellite, hybrid, multicloud
 
@@ -85,9 +85,6 @@ See [Getting help](/docs/account?topic=account-using-avatar) for more details ab
 
     2. For any hosts, include relevant details about the underlying infrastructure provider, such as if the host is in an Amazon Web Services, Google Cloud Platform, Microsoft Azure, or other environment.
     3. For issues with resources within your cluster such as pods or services, log in to the cluster and use the Kubernetes API to get more information about them. If the resources are managed by {{site.data.keyword.satelliteshort}} configuration, get the details of your configuration and subscription.
-
-    You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/containers?topic=containers-debug-tool) to gather and export pertinent information to share with {{site.data.keyword.IBM_notm}} Support.
-    {: tip}
 
 2. Contact {{site.data.keyword.IBM_notm}} Support by [opening a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}. To learn about opening an {{site.data.keyword.IBM_notm}} support case, or about support levels and case severities, see [Contacting support](/docs/account?topic=account-using-avatar).
 3. For the **Problem type**, search for or select **{{site.data.keyword.satelliteshort}}**.
