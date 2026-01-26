@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2017, 2025
-lastupdated: "2025-12-17"
+  years: 2017, 2026
+lastupdated: "2026-01-26"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2285,10 +2285,6 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=cli#aws-ebs-csi-driver-parameter-reference)
 
-    * [1.1.0 parameter reference](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=cli#aws-ebs-csi-driver-1.1.0-parameters)
-
-    * [1.5.1 parameter reference](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=cli#aws-ebs-csi-driver-1.5.1-parameters)
-
     * [1.12.0 parameter reference](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=cli#aws-ebs-csi-driver-1.12.0-parameters)
 
     * [1.31.0 parameter reference](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=cli#aws-ebs-csi-driver-1.31.0-parameters)
@@ -2334,10 +2330,6 @@ subcollection: satellite
     * [Removing the AWS EFS storage configuration from the CLI](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=cli#aws-efs-template-rm-cli)
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=cli#aws-efs-csi-driver-parameter-reference)
-
-    * [1.3.1 parameter reference](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=cli#aws-efs-csi-driver-1.3.1-parameters)
-
-    * [1.3.7 parameter reference](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=cli#aws-efs-csi-driver-1.3.7-parameters)
 
     * [1.4.2 parameter reference](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=cli#aws-efs-csi-driver-1.4.2-parameters)
 
@@ -2390,10 +2382,6 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=cli#azuredisk-csi-driver-parameter-reference)
 
-    * [1.4.0 parameter reference](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=cli#azuredisk-csi-driver-1.4.0-parameters)
-
-    * [1.18.0 parameter reference](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=cli#azuredisk-csi-driver-1.18.0-parameters)
-
     * [1.23.0 parameter reference](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=cli#azuredisk-csi-driver-1.23.0-parameters)
 
     * [1.30.3 parameter reference](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=cli#azuredisk-csi-driver-1.30.3-parameters)
@@ -2439,10 +2427,6 @@ subcollection: satellite
     * [Removing the Azure File storage configuration from the CLI](/docs/satellite?topic=satellite-storage-azurefile-csi-driver&interface=cli#azure-file-template-rm-cli)
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-azurefile-csi-driver&interface=cli#azurefile-csi-driver-parameter-reference)
-
-    * [1.9.0 parameter reference](/docs/satellite?topic=satellite-storage-azurefile-csi-driver&interface=cli#azurefile-csi-driver-1.9.0-parameters)
-
-    * [1.18.0 parameter reference](/docs/satellite?topic=satellite-storage-azurefile-csi-driver&interface=cli#azurefile-csi-driver-1.18.0-parameters)
 
     * [1.22.0 parameter reference](/docs/satellite?topic=satellite-storage-azurefile-csi-driver&interface=cli#azurefile-csi-driver-1.22.0-parameters)
 
@@ -3796,6 +3780,8 @@ subcollection: satellite
 [CLI change log](/docs/satellite?topic=satellite-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/satellite?topic=satellite-cs_cli_changelog#10)
+
+* [Version v1.0.745](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01745)
 
 * [Version v1.0.732](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01732)
 

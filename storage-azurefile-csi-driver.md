@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-07-09"
+  years: 2020, 2026
+lastupdated: "2026-01-26"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file, azure file
 
@@ -147,22 +147,6 @@ If you manually assigned your Azure hosts to your location and did not use an au
 1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-create-cli).
 
 
-    Example command to create a version 1.9.0 configuration.
-
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name azurefile-csi-driver --template-version 1.9.0 --param "tenantId=TENANTID"  --param "subscriptionId=SUBSCRIPTIONID"  --param "aadClientId=AADCLIENTID"  --param "location=LOCATION"  --param "aadClientSecret=AADCLIENTSECRET"  --param "resourceGroup=RESOURCEGROUP"  --param "vmType=VMTYPE"  --param "securityGroupName=SECURITYGROUPNAME"  --param "vnetName=VNETNAME"  --param "subnetName=SUBNETNAME" 
-    ```
-    {: pre}
-
-
-    Example command to create a version 1.18.0 configuration.
-
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name azurefile-csi-driver --template-version 1.18.0 --param "tenantId=TENANTID"  --param "subscriptionId=SUBSCRIPTIONID"  --param "aadClientId=AADCLIENTID"  --param "location=LOCATION"  --param "aadClientSecret=AADCLIENTSECRET"  --param "resourceGroup=RESOURCEGROUP"  --param "vmType=VMTYPE"  --param "securityGroupName=SECURITYGROUPNAME"  --param "vnetName=VNETNAME"  --param "subnetName=SUBNETNAME" 
-    ```
-    {: pre}
-
-
     Example command to create a version 1.22.0 configuration.
 
     ```sh
@@ -200,22 +184,6 @@ If you manually assigned your Azure hosts to your location and did not use an au
 
 
 1. Copy one of the following example requests and replace the variables that you want to use.
-
-
-    Example request to create a version 1.9.0 configuration.
-
-    ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"azurefile-csi-driver\", \"storage-template-version\": \"1.9.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"LOCATION\", { \"entry.name\": \"RESOURCEGROUP\", { \"entry.name\": \"VMTYPE\", { \"entry.name\": \"SECURITYGROUPNAME\", { \"entry.name\": \"VNETNAME\", { \"entry.name\": \"SUBNETNAME\",\"user-secret-parameters\": { \"entry.name\": \"TENANTID\",{ \"entry.name\": \"SUBSCRIPTIONID\",{ \"entry.name\": \"AADCLIENTID\",{ \"entry.name\": \"AADCLIENTSECRET\",}
-    ```
-    {: pre}
-
-
-    Example request to create a version 1.18.0 configuration.
-
-    ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"azurefile-csi-driver\", \"storage-template-version\": \"1.18.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"LOCATION\", { \"entry.name\": \"RESOURCEGROUP\", { \"entry.name\": \"VMTYPE\", { \"entry.name\": \"SECURITYGROUPNAME\", { \"entry.name\": \"VNETNAME\", { \"entry.name\": \"SUBNETNAME\",\"user-secret-parameters\": { \"entry.name\": \"TENANTID\",{ \"entry.name\": \"SUBSCRIPTIONID\",{ \"entry.name\": \"AADCLIENTID\",{ \"entry.name\": \"AADCLIENTSECRET\",}
-    ```
-    {: pre}
 
 
     Example request to create a version 1.22.0 configuration.
@@ -537,42 +505,6 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 ## Parameter reference
 {: #azurefile-csi-driver-parameter-reference}
 
-### 1.9.0 parameter reference
-{: #azurefile-csi-driver-1.9.0-parameters}
-
-| Display name | CLI option | Type | Description | Default value | 
-| --- | --- | --- | --- | --- |
-| Tenant ID | `tenantId` | Secret | Tenant ID : The Azure tenant ID that you want to use for your configuration. You can find your tenant ID in the Azure portal or by running the `az account tenant list` command. | N/A |
-| Subscription ID | `subscriptionId` | Secret | Your Azure subscription ID. From the Azure portal, search for `Subscription` to find a list of your subscriptions. You can also find your subscription ID by running the `az account subscription list` command. | N/A |
-| Azure Active Directory Client ID | `aadClientId` | Secret | Your Azure Active Directory Client ID. You can find your Client ID in the Azure portal or by running the `az ad sp list --display-name appDisplayName` command. | N/A |
-| Location | `location` | Config | The location of your Azure hosts. You can find the location of your virtual machines in the Azure portal or by running the `az vm list` command. Example location: `useast`. | N/A |
-| Azure Active Directory Client Secret | `aadClientSecret` | Secret | Your Azure Active Directory Client Secret. You can find your client secret in the Azure portal under the `App registrations` menu. | N/A |
-| Resource Group | `resourceGroup` | Config | The name of your Azure resource group. You can find your resource group detail in the Azure portal or by running the `az group list` command. | N/A |
-| Virtual Machine Type | `vmType` | Config | You can find your virtual machine type in the Azure portal or by running the `az vm list` command. Example types: `standard` or `VMSS`. | N/A |
-| Network Security Group Name | `securityGroupName` | Config | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | N/A |
-| Virtual Network Name | `vnetName` | Config | The name of the virtual network. You can find the name of your virtual network in the Azure portal or by running the `az network vnet list` command. | N/A |
-| Subnet Name | `subnetName` | Config | Name of one the of the subnets under the provided VNet | N/A |
-{: caption="Table 1. 1.9.0 parameter reference" caption-side="bottom"}
-
-
-### 1.18.0 parameter reference
-{: #azurefile-csi-driver-1.18.0-parameters}
-
-| Display name | CLI option | Type | Description | Default value | 
-| --- | --- | --- | --- | --- |
-| Tenant ID | `tenantId` | Secret | Tenant ID : The Azure tenant ID that you want to use for your configuration. You can find your tenant ID in the Azure portal or by running the `az account tenant list` command. | N/A |
-| Subscription ID | `subscriptionId` | Secret | Your Azure subscription ID. From the Azure portal, search for `Subscription` to find a list of your subscriptions. You can also find your subscription ID by running the `az account subscription list` command. | N/A |
-| Azure Active Directory Client ID | `aadClientId` | Secret | Your Azure Active Directory Client ID. You can find your Client ID in the Azure portal or by running the `az ad sp list --display-name appDisplayName` command. | N/A |
-| Location | `location` | Config | The location of your Azure hosts. You can find the location of your virtual machines in the Azure portal or by running the `az vm list` command. Example location: `useast`. | N/A |
-| Azure Active Directory Client Secret | `aadClientSecret` | Secret | Your Azure Active Directory Client Secret. You can find your client secret in the Azure portal under the `App registrations` menu. | N/A |
-| Resource Group | `resourceGroup` | Config | The name of your Azure resource group. You can find your resource group detail in the Azure portal or by running the `az group list` command. | N/A |
-| Virtual Machine Type | `vmType` | Config | You can find your virtual machine type in the Azure portal or by running the `az vm list` command. Example types: `standard` or `VMSS`. | N/A |
-| Network Security Group Name | `securityGroupName` | Config | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | N/A |
-| Virtual Network Name | `vnetName` | Config | The name of the virtual network. You can find the name of your virtual network in the Azure portal or by running the `az network vnet list` command. | N/A |
-| Subnet Name | `subnetName` | Config | Name of one the of the subnets under the provided VNet | N/A |
-{: caption="Table 2. 1.18.0 parameter reference" caption-side="bottom"}
-
-
 ### 1.22.0 parameter reference
 {: #azurefile-csi-driver-1.22.0-parameters}
 
@@ -588,7 +520,7 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 | Network Security Group Name | `securityGroupName` | Config | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | N/A |
 | Virtual Network Name | `vnetName` | Config | The name of the virtual network. You can find the name of your virtual network in the Azure portal or by running the `az network vnet list` command. | N/A |
 | Subnet Name | `subnetName` | Config | Name of one the of the subnets under the provided VNet | N/A |
-{: caption="Table 3. 1.22.0 parameter reference" caption-side="bottom"}
+{: caption="Table 1. 1.22.0 parameter reference" caption-side="bottom"}
 
 
 ### 1.31.2 parameter reference
@@ -606,7 +538,7 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 | Network Security Group Name | `securityGroupName` | Config | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | N/A |
 | Virtual Network Name | `vnetName` | Config | The name of the virtual network. You can find the name of your virtual network in the Azure portal or by running the `az network vnet list` command. | N/A |
 | Subnet Name | `subnetName` | Config | Name of one the of the subnets under the provided VNet | N/A |
-{: caption="Table 4. 1.31.2 parameter reference" caption-side="bottom"}
+{: caption="Table 2. 1.31.2 parameter reference" caption-side="bottom"}
 
 
 
