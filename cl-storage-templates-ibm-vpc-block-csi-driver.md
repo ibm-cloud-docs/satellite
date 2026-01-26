@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2024, 2025
+  years: 2024, 2026
 
-lastupdated: "2025-12-12"
+lastupdated: "2026-01-26"
 
 
 keywords: change log, version history, ibm-vpc-block-csi-driver
@@ -26,6 +26,14 @@ Review the version history for `ibm-vpc-block-csi-driver`.
 
 ## Version 5.1
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1}
+
+
+### Revision 13, released 20 January 2026
+{: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-13}
+
+- Resolves the following CVEs: [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/CVE-2025-61727){: external}, [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/CVE-2025-61729){: external}, [CVE-2025-4598](https://nvd.nist.gov/vuln/detail/CVE-2025-4598){: external}, and [CVE-2025-13281](https://nvd.nist.gov/vuln/detail/CVE-2025-13281){: external}.
+- Updates Go to version `1.25.3`.
+- Updates K8s client libraries from 1.32.8 to 1.32.10 in iks-vpc-block-driver container 
 
 
 ### Revision 12, released 18 August 2025
