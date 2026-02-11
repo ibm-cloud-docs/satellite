@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2023, 2025
+  years: 2023, 2026
 
-lastupdated: "2025-12-03"
+lastupdated: "2026-02-11"
 
 
 keywords: satellite, connector, agent, image, change log, version history
@@ -25,6 +25,11 @@ Only the most recent version of the Connector agent image (identified by the ver
 
 ## Version 1.2
 {: #connector-agent-1.2-change-log}
+
+### Version 1.2.5, released 10 Feb 2025
+{: #connector-agent-1.2.5-change-log}
+
+- Fixes security vulnerabilities.
 
 ### Version 1.2.4, released 2 Dec 2025
 {: #connector-agent-1.2.4-change-log}

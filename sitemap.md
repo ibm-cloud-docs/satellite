@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-01-26"
+lastupdated: "2026-02-11"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -202,7 +202,13 @@ subcollection: satellite
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
-* [January 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-ja26)
+* [February 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb26)
+
+    * [10 February 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb1026)
+
+        * Satellite Connector agent image version `1.2.5`.
+
+* [January 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan26)
 
     * [23 January 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan2326)
 
@@ -4092,6 +4098,8 @@ subcollection: satellite
 [Connector agent image change log](/docs/satellite?topic=satellite-cl-connector-agent-image#cl-connector-agent-image)
 
 * [Version 1.2](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2-change-log)
+
+    * [Version 1.2.5, released 10 Feb 2025](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2.5-change-log)
 
     * [Version 1.2.4, released 2 Dec 2025](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2.4-change-log)
 
