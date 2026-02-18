@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-02-11"
+lastupdated: "2026-02-16"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -203,6 +203,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [February 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb26)
+
+    * [18 February 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-fe1826)
+
+        * {{site.data.keyword.satelliteshort}} storage template patch updates are available.
 
     * [10 February 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb1026)
 
@@ -4257,6 +4261,8 @@ subcollection: satellite
 [`ibm-object-storage-plugin` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin)
 
 * [Version 2.2](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2)
+
+    * [Revision 34, released 18 February 2026](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-34)
 
     * [Revision 33, released 23 January 2026](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-33)
 

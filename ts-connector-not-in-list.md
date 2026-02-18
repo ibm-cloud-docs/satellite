@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-04-22"
+  years: 2023, 2026
+lastupdated: "2026-02-16"
 
 keywords: satellite, hybrid, multicloud
 
@@ -24,7 +24,8 @@ My agent is running but it does not show up in the list of Active Agents in the 
 This can be caused by several reasons. Check the following list to determine the cause.
 {: tsCauses}
 
-- There is a small delay (approximately several seconds) before a running Connector agent shows up in the list.
+There is a small delay (approximately several seconds) before a running Connector agent shows up in the list.
+{: tsResolve}
 
 - Make sure the Connector ID your agent is using matches the Connector ID you are connecting to.
 
@@ -33,7 +34,6 @@ This can be caused by several reasons. Check the following list to determine the
 - Check the logs of the agent to determine if there are any errors.
 
 - Make sure the Connector service and processes are running (Windows agent only).
-  - From the **Services** control panel, all services with a name that starts with `SatelliteConnectorService` or `Satellite Connector Service` (< 1.2.0) must have the `Running` status and the `Automatic` startup type.
-  - From TaskManager, verify that there are two `Node.js JavaScript Runtime(32 bit)` processes and one `Windows Service Wrapper` process for each agent.
+    - From the **Services** control panel, all services with a name that starts with `SatelliteConnectorService` or `Satellite Connector Service` (< 1.2.0) must have the `Running` status and the `Automatic` startup type.
+    - From TaskManager, verify that there are two `Node.js JavaScript Runtime(32 bit)` processes and one `Windows Service Wrapper` process for each agent.
     
-{: tsResolve}

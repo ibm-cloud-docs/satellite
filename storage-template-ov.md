@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2026
 
-lastupdated: "2026-01-26"
+lastupdated: "2026-02-16"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -134,7 +134,7 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 | [GCP Compute Persistent Disk CSI Driver](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver) | `gcp-compute-persistent-disk-csi-driver` | Version: 1.0.4, Patch: 4 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-gcp-compute-persistent-disk-csi-driver) 
 | [GCP Compute Persistent Disk CSI Driver](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver) | `gcp-compute-persistent-disk-csi-driver` | Version: 1.7.1, Patch: 5 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-gcp-compute-persistent-disk-csi-driver) 
 | [GCP Compute Persistent Disk CSI Driver](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver) | `gcp-compute-persistent-disk-csi-driver` | Version: 1.8.0 (Default), Patch: 2 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-gcp-compute-persistent-disk-csi-driver)  |
-| [IBM Object Storage Plugin](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin) | `ibm-object-storage-plugin` | Version: 2.2 (Default), Patch: 33 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin)  |
+| [IBM Object Storage Plugin](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin) | `ibm-object-storage-plugin` | Version: 2.2 (Default), Patch: 34 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin)  |
 | [IBM System Storage Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver) | `ibm-system-storage-block-csi-driver` | Version: 1.10.0, Patch: 1 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-ibm-system-storage-block-csi-driver) 
 | [IBM System Storage Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver) | `ibm-system-storage-block-csi-driver` | Version: 1.11.1 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-ibm-system-storage-block-csi-driver) 
 | [IBM System Storage Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver) | `ibm-system-storage-block-csi-driver` | Version: 1.11.2, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-ibm-system-storage-block-csi-driver)  |

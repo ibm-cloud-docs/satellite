@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-02-11"
+lastupdated: "2026-02-16"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -24,6 +24,14 @@ Review the latest changes to the {{site.data.keyword.satellitelong}} documentati
 
 ## February 2026
 {: #satellite-feb26}
+
+### 18 February 2026
+{: #satellite-fe1826}
+{: release-note}
+
+{{site.data.keyword.satelliteshort}} storage template patch updates are available.
+:   You can update your {{site.data.keyword.satelliteshort}} storage configurations and assignments to the latest patch from the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, or by running the  command. For more information, see [Which storage templates are available?](/docs/satellite?topic=satellite-storage-template-ov#storage-template-ov-providers) and the [CLI reference](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-patch-cli).
+
 
 ### 10 February 2026
 {: #satellite-feb1026}

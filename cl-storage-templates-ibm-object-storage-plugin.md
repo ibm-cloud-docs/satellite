@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-01-26"
+lastupdated: "2026-02-16"
 
 
 keywords: change log, version history, ibm-object-storage-plug-in
@@ -26,6 +26,14 @@ Review the version history for `ibm-object-storage-plugin`.
 
 ## Version 2.2
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2}
+
+
+### Revision 34, released 18 February 2026
+{: #cl-storage-templates-ibm-object-storage-plugin-2.2-34}
+
+- Resolves the following CVEs: [CVE-2025-15467](https://nvd.nist.gov/vuln/detail/CVE-2025-15467){: external}, [CVE-2025-11187](https://nvd.nist.gov/vuln/detail/CVE-2025-11187){: external}, [CVE-2025-15468](https://nvd.nist.gov/vuln/detail/CVE-2025-15468){: external}, [CVE-2025-15469](https://nvd.nist.gov/vuln/detail/CVE-2025-15469){: external}, [CVE-2025-66199](https://nvd.nist.gov/vuln/detail/CVE-2025-66199){: external}, [CVE-2025-68160](https://nvd.nist.gov/vuln/detail/CVE-2025-68160){: external}, [CVE-2025-69418](https://nvd.nist.gov/vuln/detail/CVE-2025-69418){: external}, [CVE-2025-69419](https://nvd.nist.gov/vuln/detail/CVE-2025-69419){: external}, [CVE-2025-69420](https://nvd.nist.gov/vuln/detail/CVE-2025-69420){: external}, [CVE-2025-69421](https://nvd.nist.gov/vuln/detail/CVE-2025-69421){: external}, [CVE-2026-22795](https://nvd.nist.gov/vuln/detail/CVE-2026-22795){: external}, and [CVE-2026-22796](https://nvd.nist.gov/vuln/detail/CVE-2026-22796){: external}.
+- Updates Go to version `1.25.5`.
+- cos plugin support on iks 1.35
 
 
 ### Revision 33, released 23 January 2026
