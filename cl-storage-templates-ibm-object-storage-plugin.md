@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-02-16"
+lastupdated: "2026-02-26"
 
 
 keywords: change log, version history, ibm-object-storage-plug-in
@@ -19,6 +19,7 @@ subcollection: "satellite"
 
 # `ibm-object-storage-plugin` storage template version change log
 {: #cl-storage-templates-ibm-object-storage-plugin}
+
 
 Review the version history for `ibm-object-storage-plugin`.
 {: shortdesc}

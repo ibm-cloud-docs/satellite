@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2024, 2025
+  years: 2024, 2026
 
-lastupdated: "2025-12-12"
+lastupdated: "2026-02-26"
 
 
 keywords: change log, version history, local-storage-operator
@@ -19,6 +19,7 @@ subcollection: "satellite"
 
 # `local-storage-operator` storage template version change log
 {: #cl-storage-templates-local-storage-operator}
+
 
 Review the version history for `local-storage-operator`.
 {: shortdesc}

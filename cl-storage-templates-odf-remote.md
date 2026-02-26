@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-01-26"
+lastupdated: "2026-02-26"
 
 
 keywords: change log, version history, odf-remote
@@ -19,6 +19,7 @@ subcollection: "satellite"
 
 # `odf-remote` storage template version change log
 {: #cl-storage-templates-odf-remote}
+
 
 Review the version history for `odf-remote`.
 {: shortdesc}

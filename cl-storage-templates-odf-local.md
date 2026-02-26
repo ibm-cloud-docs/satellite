@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-01-26"
+lastupdated: "2026-02-26"
 
 
 keywords: change log, version history, odf-local
@@ -19,6 +19,7 @@ subcollection: "satellite"
 
 # `odf-local` storage template version change log
 {: #cl-storage-templates-odf-local}
+
 
 Review the version history for `odf-local`.
 {: shortdesc}
