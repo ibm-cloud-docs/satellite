@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-26"
+lastupdated: "2026-03-06"
 
 
 keywords: satellite storage, features, overview
@@ -23,6 +23,7 @@ subcollection: satellite
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | AWS EBS CSI Driver | 1.12.0 | AWS | True | True | True | Zonal | True |
 | AWS EBS CSI Driver | 1.31.0 | AWS | True | True | True | Zonal | True |
+| AWS EBS CSI Driver | 1.55.0 | AWS | True | True | True | Zonal | True |
 | AWS EFS CSI Driver | 1.4.2 | AWS | True | True | False | Regional | False |
 | AWS EFS CSI Driver | 2.0.3 | AWS | True | True | False | Regional | False |
 | Azure Disk CSI Driver | 1.23.0 | Azure | True | True | False | Zonal | False |
@@ -60,6 +61,7 @@ subcollection: satellite
 | OpenShift Data Foundation for local devices | 4.17 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for local devices | 4.18 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for local devices | 4.19 | OpenShift Container Platform | True | True | False | Regional | True |
+| OpenShift Data Foundation for local devices | 4.20 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for remote storage | 4.12 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for remote storage | 4.13 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for remote storage | 4.14 | OpenShift Container Platform | True | True | False | Regional | True |
@@ -68,6 +70,7 @@ subcollection: satellite
 | OpenShift Data Foundation for remote storage | 4.17 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for remote storage | 4.18 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for remote storage | 4.19 | OpenShift Container Platform | True | True | False | Regional | True |
+| OpenShift Data Foundation for remote storage | 4.20 | OpenShift Container Platform | True | True | False | Regional | True |
 | VMware CSI Driver | 2.5.1 | VMware,IBM | False | False | True | Zonal | False |
 | VMware CSI Driver | 2.7.0 | VMware,IBM | False | False | True | Zonal | False |
 {: caption="Storage template feature comparison" caption-side="bottom"}
