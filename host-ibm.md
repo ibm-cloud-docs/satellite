@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-07-15"
+  years: 2020, 2026
+lastupdated: "2026-03-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -109,23 +109,6 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     {: pre}
             
 1. Enable the package repositories on your machine.    
-    
-    - RHEL 8 classic:
-        ```sh
-        subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms
-        subscription-manager repos --enable rhel-8-for-x86_64-baseos-rpms
-        ```
-        {: pre}
-            
-    - RHEL 8 VPC:
-        ```sh
-        subscription-manager release --set=8
-        subscription-manager repos --enable rhel-8-for-x86_64-baseos-rpms 
-        subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms
-        subscription-manager repos --disable='*eus*'
-        ```
-        {: pre}
-
 
     - RHEL 9 VPC:
         ```sh
@@ -140,6 +123,22 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
         ```sh
         subscription-manager repos --enable rhel-9-for-x86_64-baseos-rpms
         subscription-manager repos --enable rhel-9-for-x86_64-appstream-rpms
+        ```
+        {: pre}
+
+    - RHEL 8 classic:
+        ```sh
+        subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms
+        subscription-manager repos --enable rhel-8-for-x86_64-baseos-rpms
+        ```
+        {: pre}
+
+    - RHEL 8 VPC:
+        ```sh
+        subscription-manager release --set=8
+        subscription-manager repos --enable rhel-8-for-x86_64-baseos-rpms 
+        subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms
+        subscription-manager repos --disable='*eus*'
         ```
         {: pre}
 

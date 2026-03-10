@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025, 2025
-lastupdated: "2025-10-01"
+  years: 2025, 2026
+lastupdated: "2026-03-10"
 
 keywords: satellite, hybrid, multicloud, hosts, ssh
 
@@ -98,7 +98,7 @@ Revert these steps and disable SSH access after you finish troubleshooting.
 
 [RHEL]{: tag-warm-gray}
 
-These instructions describe how to temporarily enable non-root SSH access to a RHEL 8 cluster worker node.
+These instructions describe how to temporarily enable non-root SSH access to a RHEL cluster worker node.
 
 Revert these steps and disable SSH access after you finish troubleshooting.
 {: note}
@@ -196,7 +196,7 @@ Run the remaining steps on the host itself, so SSH into the host with root autho
 
 [RHCOS]{: tag-red} [RHEL]{: tag-warm-gray}
 
-Occasionally there might be a need to SSH directly into a host that is already assigned as a worker node in a cluster. For example, there might be a problem with cluster worker nodes losing connectivity to the cluster master. These instructions describe how to temporarily enable root SSH access to either a Red Hat CoreOS or RHEL 8 cluster worker node in a Satellite cluster.
+Occasionally there might be a need to SSH directly into a host that is already assigned as a worker node in a cluster. For example, there might be a problem with cluster worker nodes losing connectivity to the cluster master. These instructions describe how to temporarily enable root SSH access to either a Red Hat CoreOS or RHEL cluster worker node in a Satellite cluster.
 
 Revert these steps and disable SSH access after you finish troubleshooting.
 {: note}
@@ -251,7 +251,7 @@ Before you begin, make sure you have the following.
     ```
     {: pre}
     
-    Example command for RHEL 8 workers.
+    Example command for RHEL 9 workers.
     ```sh
     export SSHD_CONFIG_FILE="/etc/ssh/sshd_config"
     ```

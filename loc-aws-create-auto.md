@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2026
+lastupdated: "2026-03-10"
 
 keywords: satellite, hybrid, multicloud, aws, amazon web services, satellite location
 
@@ -55,7 +55,7 @@ The following resources are created by the template in your AWS cloud account.
 - 1 virtual private cloud (VPC).
 - 1 subnet for each of the 3 zones in the region.
 - 1 security group to meet the host networking requirements for {{site.data.keyword.satelliteshort}}.
-- 6 RHEL 8 EC2 instances, spread evenly across zones, or the number of hosts that you specified.
+- 6 RHEL 9 EC2 instances, spread evenly across zones, or the number of hosts that you specified.
 
 The following resources are created by the template in your {{site.data.keyword.cloud_notm}} account.
 
@@ -99,5 +99,3 @@ Now that your {{site.data.keyword.satelliteshort}} location is set up, you are r
 5. Learn more about the [{{site.data.keyword.satelliteshort}} Link component](/docs/satellite?topic=satellite-link-location-cloud) and how you can use endpoints to manage the network traffic between your location and {{site.data.keyword.cloud_notm}}.
 
 Need help? Check out [Getting support](/docs/satellite?topic=satellite-get-help) where you can find information about cloud status, issues, and logging; contacting support; and setting your email notification preferences for {{site.data.keyword.cloud_notm}} platform-related items.
-
-

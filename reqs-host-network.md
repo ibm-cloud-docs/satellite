@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-10-01"
+  years: 2020, 2026
+lastupdated: "2026-03-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -47,8 +47,7 @@ All hosts must meet the following network requirements:
     ```
     {: screen}
 
-- For RHEL 8 hosts, ensure they are configured properly to pull packages from Red Hat repositories. This requires outbound access to Red Hat repositories, for example: `cdn.redhat.com`
-- Host IP addresses must remain static and cannot change over time, such as due to a reboot or other potential infrastructure updates.
+
 - If you are provisioning your host on-prem, you must configure your host to use a public DNS server, such as `8.8.8.8`. You can use a private DNS server, but it must be able to resolve hostnames on the public Internet.
 
 Hosts assigned to a specific {{site.data.keyword.redhat_openshift_notm}} cluster or to the control plane must share some properties, which can be different across clusters.

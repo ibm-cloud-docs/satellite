@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-12-15"
+  years: 2020, 2026
+lastupdated: "2026-03-10"
 
 keywords: satellite, hybrid, multicloud, endpoint capacity, endpoint limits, location endpoint limits, location endpoints, cloud endpoints
 
@@ -36,9 +36,9 @@ Review the following operating system support table for each Location type.
 
 | Host OS | Satellite Control Plane support | Worker node OS support |
 | --- | --- | --- |
-| RHEL 8 | Yes | Yes |
-| RHEL 9 | Yes | OpenShift 4.17 and later only |
 | RHCOS | Yes | Yes |
+| RHEL 9 | Yes | OpenShift 4.17 and later |
+| RHEL 8 | No | OpenShift 4.17 and earlier |
 {: class="simple-tab-table"}
 {: caption="CoreOS enabled locations" caption-side="bottom"}
 {: #os-support-1}
@@ -47,9 +47,9 @@ Review the following operating system support table for each Location type.
 
 | Host OS | Satellite Control Plane support | Worker node OS support |
 | --- | --- | --- |
-| RHEL 8 | Yes | Yes |
-| RHEL 9 | Yes | Yes |
 | RHCOS | No | No |
+| RHEL 9 | Yes | OpenShift 4.17 and later |
+| RHEL 8 | No | OpenShift 4.17 and earlier |
 {: class="simple-tab-table"}
 {: caption="Non-CoreOS enabled locations" caption-side="bottom"}
 {: #os-support-2}
@@ -63,7 +63,6 @@ Review the following operating system support table for each Location type.
 
 - Hosts must support x86-64-v2 architecture.
 - Hosts must run the latest OS with the kernel that is distributed with those versions. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or IBM Power; and other kernel versions are not supported.
-    - For the latest RHEL 8 version information, see [Red Hat Enterprise Linux Release Dates](https://access.redhat.com/articles/red-hat-enterprise-linux-release-dates#RHEL8){: external}.
     - For the latest RHEL 9 version information, see [Red Hat Enterprise Linux Release Dates](https://access.redhat.com/articles/red-hat-enterprise-linux-release-dates#RHEL9){: external}.
     - For the latest Red Hat CoreOS version information, see [Red Hat CoreOS mirrors](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/){: external}.
 - Make sure that you use minimal RHEL images. Do not install the LAMP stack. Do not install virtualization technologies on the hosts, including `libvirtd` or `docker`.
@@ -89,12 +88,6 @@ Review the following operating system support table for each Location type.
 Hosts must have access to RHEL updates and the following packages. 
 {: shortdesc}
 
-For RHEL 8
-```sh
-Repository 'rhel-8-for-x86_64-appstream-rpms' is enabled for this system.
-Repository 'rhel-8-for-x86_64-baseos-rpms' is enabled for this system.
-```
-{: screen}
 
 For RHEL 9
 ```sh
@@ -115,18 +108,18 @@ You might need to refresh your packages on the host machine. For example, in {{s
     {: pre}
 
 2. Enable the package repositories on your machine.
-    
-   RHEL 8:
-    ```sh
-    subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms
-    subscription-manager repos --enable rhel-8-for-x86_64-baseos-rpms
-    ```
-    {: pre}
 
     RHEL 9:
     ```sh
     subscription-manager repos --enable rhel-9-for-x86_64-appstream-rpms
     subscription-manager repos --enable rhel-9-for-x86_64-baseos-rpms
+    ```
+    {: pre}
+
+    RHEL 8:
+    ```sh
+    subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms
+    subscription-manager repos --enable rhel-8-for-x86_64-baseos-rpms
     ```
     {: pre}
 

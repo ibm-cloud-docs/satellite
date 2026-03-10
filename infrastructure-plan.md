@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-12-04"
+  years: 2022, 2026
+lastupdated: "2026-03-10"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 
@@ -81,8 +81,8 @@ Choose your operating system for your hosts. You can choose Red Hat Enterprise L
 The type of location that you create dictates the type of operating systems that can run on your hosts. If your location is RHCOS enabled, then you can attach hosts that are running either RHEL and RHCOS. If your location isn't RHCOS enabled, then you can attach only hosts that are running RHEL. You can check whether your [location is RHCOS enabled](/docs/satellite?topic=satellite-locations#verify-coreos-location).
 {: note}
 
-Red Hat Enterprise Linux 8 (RHEL 8)
-:    RHEL 8 is default operating system that is supported for {{site.data.keyword.satelliteshort}} hosts running {{site.data.keyword.redhat_openshift_notm}} version 4.9 or later and on infrastructure hosts.
+Red Hat Enterprise Linux 9
+:    RHEL 9 is a high-performance Linux platform with security and management features to help run your hybrid cloud workloads.
 
 Red Hat CoreOS (RHCOS)
 :    RHCOS is a minimal operating system for running containerized workloads securely and at scale. It is based on RHEL and includes automated, remote upgrade features. For more information about the key benefits of RHCOS, see [Red Hat Enterprise Linux CoreOS (RHCOS)](https://docs.redhat.com/en/documentation/openshift_container_platform/4.10/html/architecture/architecture-rhcos){: external}. RHCOS is supported for {{site.data.keyword.satelliteshort}} hosts on {{site.data.keyword.redhat_openshift_notm}} version 4.9 or later. Red Hat CoreOS hosts don't support all services. For more information, see [Supported Satellite-enabled IBM Cloud services](/docs/satellite?topic=satellite-managed-services). To attach RHCOS hosts, your location must be [enabled for RHCOS](/docs/satellite?topic=satellite-locations#verify-coreos-location).

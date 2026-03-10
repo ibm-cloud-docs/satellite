@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-12-04"
+  years: 2020, 2026
+lastupdated: "2026-03-10"
 
 keywords: satellite, hybrid, multicloud, gcp, google cloud platform
 
@@ -59,7 +59,7 @@ The following resources are created by the template in the resource group of you
 
 - 1 virtual network that spans the region.
 - 1 network security group to meet the host networking requirements for {{site.data.keyword.satelliteshort}}.
-- 1 virtual machine running RHEL 8 for each host that you specified, spread evenly across the region. By default, 6 virtual machines are created.
+- 1 virtual machine running RHEL 9 for each host that you specified, spread evenly across the region. By default, 6 virtual machines are created.
 - 1 network interface for each virtual machine.
 - 1 disk for each virtual machine.
 

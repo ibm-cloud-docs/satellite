@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-10-09"
+  years: 2020, 2026
+lastupdated: "2026-03-10"
 
 keywords: satellite, hybrid, multicloud, registration script, registration script fails
 
@@ -28,15 +28,9 @@ Error: Nothing to do
 {: screen}
 
 
-Your machine does not meet the minimum requirements to become a {{site.data.keyword.satelliteshort}} host. In particular, you must have the following packages installed on your RHEL 7 or 8 machine.
+Your machine does not meet the minimum requirements to become a {{site.data.keyword.satelliteshort}} host. In particular, you must have the following packages installed on your RHEL.
 {: tsCauses}
 
-For RHEL 8
-```sh
-Repository 'rhel-8-for-x86_64-appstream-rpms' is enabled for this system.
-Repository 'rhel-8-for-x86_64-baseos-rpms' is enabled for this system.
-```
-{: screen}
 
 For RHEL 9
 ```sh
@@ -58,11 +52,18 @@ To resolve this issue, follow these steps.
         If you see an error such as `Network error, unable to connect to server. Please see /var/log/rhsm/rhsm.log for more information.`, check the security group and other network settings for your machine to make sure that you have connectivity to the internet.
         {: tip}
 
-    2. Enable the package repositories on your machine. For example, enable RHEL 8 package requirements.
-        ```sh
-        subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms
-        subscription-manager repos --enable rhel-8-for-x86_64-baseos-rpms
+    2. Enable the package repositories on your machine. For example, enable RHEL 9 package requirements.
 
+        RHEL 9
+	    ```txt
+        subscription-manager repos --enable rhel-9-for-x86_64-appstream-rpms && subscription-manager repos --enable rhel-9-for-x86_64-baseos-rpms
+	    ```
+	    {: pre}
+		
+        RHEL 8
+        ```txt
+        subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms &&
+        subscription-manager repos --enable rhel-8-for-x86_64-baseos-rpms
         ```
         {: pre}
 
