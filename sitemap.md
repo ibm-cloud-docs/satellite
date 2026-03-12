@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-03-10"
+lastupdated: "2026-03-12"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3411,7 +3411,7 @@ subcollection: satellite
 
 * [Version 1.2](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2-change-log)
 
-    * [Version 1.2.5, released 10 Feb 2025](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2.5-change-log)
+    * [Version 1.2.5, released 10 Feb 2026](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2.5-change-log)
 
     * [Version 1.2.4, released 2 Dec 2025](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2.4-change-log)
 
