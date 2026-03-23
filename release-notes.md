@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-03-10"
+lastupdated: "2026-03-23"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -23,7 +23,15 @@ Review the latest changes to the {{site.data.keyword.satellitelong}} documentati
 {: shortdesc}
 
 ## March 2026
-{: #satellite-mar26}
+{: #satellite-ma26}
+
+### 20 March 2026
+{: #satellite-ma2026}
+{: release-note}
+
+{{site.data.keyword.satelliteshort}} storage template patch updates are available.
+:   You can update your {{site.data.keyword.satelliteshort}} storage configurations and assignments to the latest patch from the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, or by running the  command. For more information, see [Which storage templates are available?](/docs/satellite?topic=satellite-storage-template-ov#storage-template-ov-providers) and the [CLI reference](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-patch-cli).
+
 
 ### 10 March 2026
 {: #satellite-mar1026}
@@ -31,6 +39,7 @@ Review the latest changes to the {{site.data.keyword.satellitelong}} documentati
 
 Red Hat Enterprise Linux 8 is no longer supported for Location control plane hosts.
 :   Update your location to use RHEL 9 control plane hosts as soon as possible. For more information, see the [hosts requirements](/docs/satellite?topic=satellite-host-reqs).
+
 
 
 ### 03 March 2026
