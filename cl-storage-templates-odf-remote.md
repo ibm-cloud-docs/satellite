@@ -29,13 +29,11 @@ Review the version history for `odf-remote`.
 {: #cl-storage-templates-odf-remote-4.20}
 
 
-
 ### Revision 2, released 20 March 2026
 {: #cl-storage-templates-odf-remote-4.20-2}
 
 - Resolves the following CVEs: [CVE-2026-27141](https://nvd.nist.gov/vuln/detail/CVE-2026-27141){: external}.
 - Updates Go to version `1.25.7`.
-
 
 
 ### Revision 1, released 03 March 2026
@@ -49,13 +47,11 @@ Review the version history for `odf-remote`.
 {: #cl-storage-templates-odf-remote-4.19}
 
 
-
 ### Revision 4, released 20 March 2026
 {: #cl-storage-templates-odf-remote-4.19-4}
 
 - Resolves the following CVEs: [CVE-2026-27141](https://nvd.nist.gov/vuln/detail/CVE-2026-27141){: external}.
 - Updates Go to version `1.25.7`.
-
 
 
 ### Revision 3, released 03 March 2026
@@ -81,6 +77,7 @@ Review the version history for `odf-remote`.
 
 ## Version 4.18
 {: #cl-storage-templates-odf-remote-4.18}
+
 
 ### Revision 7, released 20 March 2026
 {: #cl-storage-templates-odf-remote-4.18-7}
@@ -135,13 +132,11 @@ Review the version history for `odf-remote`.
 {: #cl-storage-templates-odf-remote-4.17}
 
 
-
 ### Revision 11, released 20 March 2026
 {: #cl-storage-templates-odf-remote-4.17-11}
 
 - Resolves the following CVEs: [CVE-2026-27141](https://nvd.nist.gov/vuln/detail/CVE-2026-27141){: external}.
 - Updates Go to version `1.25.7`.
-
 
 
 ### Revision 10, released 03 March 2026
@@ -198,13 +193,11 @@ Review the version history for `odf-remote`.
 {: #cl-storage-templates-odf-remote-4.16}
 
 
-
 ### Revision 13, released 20 March 2026
 {: #cl-storage-templates-odf-remote-4.16-13}
 
 - Resolves the following CVEs: [CVE-2026-27141](https://nvd.nist.gov/vuln/detail/CVE-2026-27141){: external}.
 - Updates Go to version `1.25.7`.
-
 
 
 ### Revision 12, released 03 March 2026
@@ -266,7 +259,6 @@ Review the version history for `odf-remote`.
 
 - Resolves the following CVEs: [CVE-2026-27141](https://nvd.nist.gov/vuln/detail/CVE-2026-27141){: external}.
 - Updates Go to version `1.25.7`.
-
 
 
 ### Revision 17, released 03 March 2026
