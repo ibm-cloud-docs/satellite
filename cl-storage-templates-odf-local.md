@@ -29,7 +29,6 @@ Review the version history for `odf-local`.
 {: #cl-storage-templates-odf-local-4.20}
 
 
-
 ### Revision 2, released 20 March 2026
 {: #cl-storage-templates-odf-local-4.20-2}
 
@@ -80,13 +79,11 @@ Review the version history for `odf-local`.
 {: #cl-storage-templates-odf-local-4.18}
 
 
-
 ### Revision 7, released 20 March 2026
 {: #cl-storage-templates-odf-local-4.18-7}
 
 - Resolves the following CVEs: [CVE-2026-27141](https://nvd.nist.gov/vuln/detail/CVE-2026-27141){: external}.
 - Updates Go to version `1.25.7`.
-
 
 
 ### Revision 6, released 03 March 2026
@@ -142,7 +139,6 @@ Review the version history for `odf-local`.
 - Updates Go to version `1.25.7`.
 
 
-
 ### Revision 10, released 03 March 2026
 {: #cl-storage-templates-odf-local-4.17-10}
 
@@ -195,7 +191,6 @@ Review the version history for `odf-local`.
 
 ## Version 4.16
 {: #cl-storage-templates-odf-local-4.16}
-
 
 
 ### Revision 13, released 20 March 2026
@@ -259,13 +254,11 @@ Review the version history for `odf-local`.
 {: #cl-storage-templates-odf-local-4.15}
 
 
-
 ### Revision 18, released 20 March 2026
 {: #cl-storage-templates-odf-local-4.15-18}
 
 - Resolves the following CVEs: [CVE-2026-27141](https://nvd.nist.gov/vuln/detail/CVE-2026-27141){: external}.
 - Updates Go to version `1.25.7`.
-
 
 
 ### Revision 17, released 03 March 2026
