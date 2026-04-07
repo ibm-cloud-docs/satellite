@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2020, 2025
+  years: 2020, 2026
 
-lastupdated: "2025-11-19"
+lastupdated: "2026-04-07"
 
 keywords: satellite, hybrid, multicloud, assigning hosts, host auto assignment, host auto assignment, host labels
 
@@ -52,7 +52,7 @@ Before you begin,
     ```
     {: pre}
 
-2. Assign at least 3 compute hosts from your location as worker nodes to your {{site.data.keyword.satelliteshort}} control plane or an existing {{site.data.keyword.openshiftlong_notm}} cluster. When you assign the host, {{site.data.keyword.IBM_notm}} bootstraps your machine. This process might take a few minutes to complete. You can choose to assign a host by using the host ID, or you can also define the label that the host must have to be assigned to the location.
+1. Assign at least 3 compute hosts from your location as worker nodes to your {{site.data.keyword.satelliteshort}} control plane or an existing {{site.data.keyword.openshiftlong_notm}} cluster. When you assign the host, {{site.data.keyword.IBM_notm}} bootstraps your machine. This process might take a few minutes to complete. You can choose to assign a host by using the host ID, or you can also define the label that the host must have to be assigned to the location.
 
     - The following example assigns a host by using the host ID.
         ```sh
@@ -65,10 +65,10 @@ Before you begin,
         ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --host-label "use:satcluster" --worker-pool default --zone us-east-1
         ```
         {: pre}
-    
-        | Component             | Description      | 
+
+        | Component | Description |
         |--------------------|------------------|
-        | `--location <location_name_or_ID>` | Enter the name or ID of the location where you created the cluster. To retrieve the location name or ID, run `ibmcloud sat location ls`.  | 
+        | `--location <location_name_or_ID>` | Enter the name or ID of the location where you created the cluster. To retrieve the location name or ID, run `ibmcloud sat location ls`. |
         | `--cluster <cluster_name_or_ID>` | Enter the name or ID of the {{site.data.keyword.openshiftlong_notm}} cluster that you created earlier. To retrieve the cluster name or ID, run `ibmcloud ks cluster ls`. If you want to assign hosts to the {{site.data.keyword.satelliteshort}} control plane, you must enter the location ID as your cluster ID. To retrieve the location ID, run `ibmcloud sat location ls`. |
         | `--host <host_name_or_ID>` | Enter the host ID to assign as worker nodes to the {{site.data.keyword.satelliteshort}} resource. To view the host ID, run `ibmcloud sat host ls --location <location_name>`. You can also use the `--host-label` option to identify the host that you want to assign to your cluster. |
         | `--host-label <label>` | Enter the label that you want to use to identify the host that you want to assign. The label must be a key-value pair, and must exist on the host machine. When you run this command with the `label` option, the first host that is in an `unassigned` state and matches the label is assigned to your {{site.data.keyword.satelliteshort}} resource. |
@@ -76,15 +76,14 @@ Before you begin,
         | `--zone <zone>` | The name of the zone where you want to assign the compute host. To see the zone names for your location, run `ibmcloud sat location get --location` and look for the `Host Zones` field. |
         {: caption="Understanding this command's components" caption-side="bottom"}
 
-        
     - The following example assigns a host by using the `os=RHCOS` host label.
         ```sh
         ibmcloud sat host assign --location <location_name_or_ID>  --cluster <cluster_name_or_ID> --host-label os=RHCOS --zone <zone>
         ```
         {: pre}
 
-3. Repeat the previous step for all compute hosts that you want to assign as worker nodes to your {{site.data.keyword.satelliteshort}} resource.
-4. Wait a few minutes until the bootstrapping process for all computes hosts is complete and your hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource. All hosts are assigned a cluster, a worker node ID, and an IP address.
+1. Repeat the previous step for all compute hosts that you want to assign as worker nodes to your {{site.data.keyword.satelliteshort}} resource.
+1. Wait a few minutes until the bootstrapping process for all computes hosts is complete and your hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource. All hosts are assigned a cluster, a worker node ID, and an IP address.
 
     You can monitor the bootstrapping process of your compute hosts by running `ibmcloud ks worker get --cluster <cluster_name_or_ID> --worker <worker_ID>`.
     {: tip}
@@ -101,7 +100,7 @@ Before you begin,
     Name              ID                     State      Status   Cluster             Worker ID                                                 Worker IP   
     satcluster        brkijjq20r3nd89b1sog   assigned   Ready    satcluster          sat-satc-dd629ca11947c4aaec1a0208e0a37ca790475ee0   169.62.196.24   
     satcluster2       brkiku2202thnmhb1sp0   assigned   Ready    satcluster          sat-satc-69f2410d3ecfea9127aeec07f01475f241728a16   169.62.196.22   
-    satcluster3       brkiltb20m0oqr29mo2g   assigned   Ready    satcluster          sat-satc-9985014f499827ddde3ce3e5bedad26af5a73263   169.62.196.29   
+    satcluster3       brkiltb20m0oqr29mo2g   assigned   Ready    satcluster          sat-satc-9985014f499827ddde3ce3e5bedad26af5a73263   169.62.196.29
     controlplane01    brjrgp920bg4u254brr0   assigned   Ready    infrastructure      sat-virtualser-4d7fa07cd3446b1f9d8131420f7011e60d372ca2   169.62.196.30   
     controlplane02    brjrdmd20dfjgaai4vc0   assigned   Ready    infrastructure      sat-virtualser-9826f0927254b12b4018a95327bd0b45d0513f59   169.62.196.23   
     controlplane03    brjs18u20ohqh54svnog   assigned   Ready    infrastructure      sat-virtualser-948b454ea091bd9aeb8f0542c2e8c19b82c5bf7a   169.62.196.20   
