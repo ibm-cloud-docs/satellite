@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-01-03"
+  years: 2022, 2026
+lastupdated: "2026-04-07"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -25,7 +25,7 @@ completion-time: 2hr
 {: toc-services="satellite"}
 {: toc-completion-time="2hr"}
 
-You can attach bare metal hosts to your {{site.data.keyword.satelliteshort}} location. After your hosts are attached, you can [set up  {{site.data.keyword.redhat_openshift_notm}} virtualization](/docs/satellite?topic=satellite-virtualization-location) in your {{site.data.keyword.satelliteshort}} location. By using virtualization, you can provision Windows or other virtual machines on your {{site.data.keyword.baremetal_short}} in a managed {{site.data.keyword.redhat_openshift_notm}} space. 
+You can attach bare metal hosts to your {{site.data.keyword.satelliteshort}} location. After your hosts are attached, you can [set up {{site.data.keyword.redhat_openshift_notm}} virtualization](/docs/satellite?topic=satellite-virtualization-location) in your {{site.data.keyword.satelliteshort}} location. By using virtualization, you can provision Windows or other virtual machines on your {{site.data.keyword.baremetal_short}} in a managed {{site.data.keyword.redhat_openshift_notm}} space.
 {: shortdesc}
 
 Supported host operating systems
@@ -49,12 +49,12 @@ In addition, the {{site.data.keyword.baremetal_short}} used in this example requ
 
 - If you plan to have multiple VLANs for your cluster, multiple subnets on the same VLAN, or are planning for a multizone classic cluster, [enable VRF in your account](/docs/account?topic=account-vrf-service-endpoint).
 - [Create two VLAN pairs](/docs/cli?topic=cli-manage-classic-vlans#sl_vlan_create) (public and private) in the same {{site.data.keyword.cloud_notm}} data center pod for each zone for your bare metal host.
-- Later in this tutorial, you deploy [OpenShift Data Foundation for local disks](/docs/satellite?topic=satellite-storage-odf-local&interface=ui). This solution requires additional storage devices on the worker nodes. 
+- Later in this tutorial, you deploy [OpenShift Data Foundation for local disks](/docs/satellite?topic=satellite-storage-odf-local&interface=ui). This solution requires additional storage devices on the worker nodes.
 
 ## {{site.data.keyword.baremetal_short_sing}} requirements
 {: #setup-bare-metal}
 
-To attach a bare metal host, your {{site.data.keyword.baremetal_short_sing}} must meet the following requirements. 
+To attach a bare metal host, your {{site.data.keyword.baremetal_short_sing}} must meet the following requirements.
 
 - Must support virtualization technology.
     - For Intel CPUs, support for virtualization is referred to as `Intel VT` or `VT-x`.
@@ -92,14 +92,14 @@ For this specific {{site.data.keyword.baremetal_short_sing}}, you must use a bro
 1. Click **Plug in**.
 1. Enter `exit` to access the BIOS login prompt.
 1. Enter your Softlayer password at the BIOS prompt. 
-1. On the **Advanced** tab, look for virtualization settings and enable them. 
+1. On the **Advanced** tab, look for virtualization settings and enable them.
     1. Select **CPU Configuration**.
-    2. Look for `VTD` or `Intel Virtualization Technology` and make sure to enable it. For Intel CPUs, support is referred to as `Intel VT` or `VT-x`. For AMD CPUs, supported is referred to as `AMD Virtualization` or `AMD-V`. For more information, consult your hardware manufacturer documentation.
-    3. Enable `VTD` if not enabled. For more information, consult your hardware provider documentation.
+    1. Look for `VTD` or `Intel Virtualization Technology` and make sure to enable it. For Intel CPUs, support is referred to as `Intel VT` or `VT-x`. For AMD CPUs, support is referred to as `AMD Virtualization` or `AMD-V`. For more information, consult your hardware manufacturer documentation.
+    1. Enable `VTD` if not enabled. For more information, consult your hardware provider documentation.
 1. Configure the boot order. For example, to install this {{site.data.keyword.baremetal_short_sing}}, you can use a virtual ISO file. Your specific case might use a different external boot device.
     1. Select **Boot**.
-    2. Select the option to Boot from Virtual ISO. 
-    3. Ensure that `Hard Drive` is also an option in boot order.
+    1. Select the option to Boot from Virtual ISO.
+    1. Ensure that `Hard Drive` is also an option in boot order.
 1. Save your choices and exit. For example, for this {{site.data.keyword.baremetal_short_sing}}, click **Save and Exit**.
 1. Save your changes and start the installation process. For example, for this {{site.data.keyword.baremetal_short_sing}}, click **Save Changes and Reset**.
 
@@ -118,7 +118,7 @@ After RHCOS is booted into memory, the `core@localhost` prompt is available. Fol
 
 1. At the `core@localhost` prompt, run `ifconfig` to determine which interface is your public interface. Depending on the flavor of the bare-metal, the setup of the wired connections might be different. In this set up, the public interfaces were wired connections 3 and 5 and the private interfaces were wired connections 2 and 4. You can find this information in the output of the **`ifconfig`** command.
 1. At the `core@localhost` prompt, enter `sudo nmtui`.
-1. Click **Edit a Connection**. 
+1. Click **Edit a Connection**.
 1. For each wired connection that you want to activate, click **IPv4 Configuration > Manual**.
 1. Select **Show**.
 1. Enter your CIDR for **Addresses**. The CIDR is the IP address and the subnet mask for that subnet.
@@ -149,7 +149,7 @@ You must configure a separate ignition file for each bare metal host that you ar
 1.  Open your ignition file and add the host name information to the `"storage":{"files":[` section. Replace `<hostname>` with the base64 encoded output from the previous step.
 
     ```sh
-      {"overwrite": true,"path": "/etc/hostname","mode": 600,"contents": {"source": "data:text/plain;base64,<hostname>"},},],}
+      {"overwrite": true,"path": "/etc/hostname","mode": 600,"contents": {"source": "data:text/plain;base64,<hostname>"}}
     ```
     {: codeblock}
     
@@ -184,22 +184,22 @@ You must configure a separate ignition file for each bare metal host that you ar
     For example:
     
       ```sh
-      echo '[connection]
-      id=eno1
-      type=ethernet
-      interface-name=eno1
-      [ipv4]
-      never-default=true
-      address1=10.190.196.9/26,10.190.196.129
-      dns=10.0.80.11;10.0.80.12;
-      route1=10.0.0.0/8,10.190.96.129
-      route2=161.26.0.0/16,10.190.96.129
-      route3=166.8.0.0/14,10.190.96.129
-      dns-search=
-      may-fail=false
-      method=manual' | base64
-      ```
-      {: screen}
+    echo '[connection]
+    id=eno1
+    type=ethernet
+    interface-name=eno1
+    [ipv4]
+    never-default=true
+    address1=10.190.196.9/26,10.190.196.129
+    dns=10.0.80.11;10.0.80.12;
+    route1=10.0.0.0/8,10.190.96.129
+    route2=161.26.0.0/16,10.190.96.129
+    route3=166.8.0.0/14,10.190.96.129
+    dns-search=
+    may-fail=false
+    method=manual' | base64
+    ```
+    {: screen}
 
 1. Add these connection details to your ignition file. Replace `<private_interface>` with your private interface name, for example `eno1`. Replace `<private_connection_details>` with the base64 encoded output from the previous step.
 
@@ -211,7 +211,7 @@ You must configure a separate ignition file for each bare metal host that you ar
     For example, to add the networking information from the previous step, enter the following code sample.
     
     ```sh
-    { "overwrite": true,"path": "/etc/NetworkManager/system-connections/en01.nmconnection","mode": 256,"contents": {     "source": "data:text/plain;base64,W2Nvbm5lY3Rpb25dCiAgICAgIGlkPWVubzEKICAgICAgdHlwZT1ldGhlcm5ldAogICAgICBpbnRlcmZhY2UtbmFtZT1lbm8xCiAgICAgIFtpcHY0XQogICAgICBuZXZlci1kZWZhdWx0PXRydWUKICAgICAgYWRkcmVzczE9MTAuMTkwLjE5Ni45LzI2LDEwLjE5MC4xOTYuMTI5CiAgICAgIGRucz0xMC4wLjgwLjExOzEwLjAuODAuMTI7CiAgICAgIHJvdXRlMT0xMC4wLjAuMC84LDEwLjE5MC45Ni4xMjkKICAgICAgcm91dGUyPTE2MS4yNi4wLjAvMTYsMTAuMTkwLjk2LjEyOQogICAgICByb3V0ZTM9MTY2LjguMC4wLzE0LDEwLjE5MC45Ni4xMjkKICAgICAgZG5zLXNlYXJjaD0KICAgICAgbWF5LWZhaWw9ZmFsc2UKICAgICAgbWV0aG9kPW1hbnVhbAo="}},
+    {"overwrite": true,"path": "/etc/NetworkManager/system-connections/en01.nmconnection","mode": 256,"contents": {"source": "data:text/plain;base64,W2Nvbm5lY3Rpb25dCiAgICAgIGlkPWVubzEKICAgICAgdHlwZT1ldGhlcm5ldAogICAgICBpbnRlcmZhY2UtbmFtZT1lbm8xCiAgICAgIFtpcHY0XQogICAgICBuZXZlci1kZWZhdWx0PXRydWUKICAgICAgYWRkcmVzczE9MTAuMTkwLjE5Ni45LzI2LDEwLjE5MC4xOTYuMTI5CiAgICAgIGRucz0xMC4wLjgwLjExOzEwLjAuODAuMTI7CiAgICAgIHJvdXRlMT0xMC4wLjAuMC84LDEwLjE5MC45Ni4xMjkKICAgICAgcm91dGUyPTE2MS4yNi4wLjAvMTYsMTAuMTkwLjk2LjEyOQogICAgICByb3V0ZTM9MTY2LjguMC4wLzE0LDEwLjE5MC45Ni4xMjkKICAgICAgZG5zLXNlYXJjaD0KICAgICAgbWF5LWZhaWw9ZmFsc2UKICAgICAgbWV0aG9kPW1hbnVhbAo="}},
     ```
     {: screen}
 
@@ -257,8 +257,7 @@ You must configure a separate ignition file for each bare metal host that you ar
     For example, to add the networking information from the previous step, enter the following code sample, immediately following the private interface code sample.
     
     ```sh
-    {"path": "/etc/NetworkManager/system-connections/en02.nmconnection","mode": 256,"contents": {"source": "data:text/plain;base64,W2Nvbm5lY3Rpb25dCiAgICBpZD1lbm8yCiAgICB0eXBlPWV0aGVybmV0CiAgICBpbnRlcmZhY2UtbmFtZT1lbm8yCiAgICBbaXB2NF0KICAgIGFkZHJlc3MxPTUyLjExNy4xMDguMjQvMjgsNTIuMTE3LjEwOC4xNwogICAgZG5zPTguOC44Ljg7NC40LjQuNDsKICAgIGRucy1zZWFyY2g9CiAgICBtYXktZmFpbD1mYWxzZQogICAgbWV0aG9kPW1hbnVhbAo="}},
-    
+    {"path": "/etc/NetworkManager/system-connections/en02.nmconnection","mode": 256,"contents": {"source": "data:text/plain;base64,W2Nvbm5lY3Rpb25dCiAgICBpZD1lbm8yCiAgICB0eXBlPWV0aGVybmV0CiAgICBpbnRlcmZhY2UtbmFtZT1lbm8yCiAgICBbaXB2NF0KICAgIGFkZHJlc3MxPTUyLjExNy4xMDguMjQvMjgsNTIuMTE3LjEwOC4xNwogICAgZG5zPTguOC44Ljg7NC40LjQuNDsKICAgIGRucy1zZWFyY2g9CiAgICBtYXktZmFpbD1mYWxzZQogICAgbWV0aG9kPW1hbnVhbAo="}}
     ```
     {: screen}
 
@@ -346,7 +345,7 @@ Download the ignition file to your bare metal host, then run it to attach the ba
     ```
     {: codeblock}
 
-1. Identify the disk that you want to install the CoreOS operating system to. To identify disks, run `lsblk`
+1. Identify the disk that you want to install the CoreOS operating system to. To identify disks, run `lsblk`.
 
     ```sh
     lsblk
@@ -359,12 +358,12 @@ Download the ignition file to your bare metal host, then run it to attach the ba
     NAME  MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
     loop0   7:0    0  15.5G  0 loop  /run/ephemeral
     loop1   7:1    0 979.1M  1 loop  /sysroot
-    sda     8:0    0   1.8T  0 disk  
-    sr0    11:0    1   1.1G  0 rom.  /run/media/iso  
+    sda     8:0    0   1.8T  0 disk
+    sr0    11:0    1   1.1G  0 rom   /run/media/iso
     ```
     {: screen}
     
-    From this output, choose to install on the `sda` disk. 
+    From this output, choose to install on the `sda` disk.
 
 1. Run the following `install` command to start the ignition file. Replace `<diskName>` with the full path of the disk that you retrieved from `lsblk` and replace `<filename>` with the name of the file you downloaded from {{site.data.keyword.cos_full_notm}}.
 
@@ -380,25 +379,25 @@ Download the ignition file to your bare metal host, then run it to attach the ba
     ```
     {: pre}
 
-    The installation process can take an hour or two to complete. 
+    The installation process can take an hour or two to complete.
     {: note}
 
-1. After the installation completes, unplug your RHCOS ISO file and reboot from your hard disk. 
+1. After the installation completes, unplug your RHCOS ISO file and reboot from your hard disk.
     1. Enter `exit` to access BIOS log in.
-    2. Enter your Softlayer password at BIOS prompt. 
-    3. Select **Boot**.
-    4. Select to boot from hard disk drive.
-    5. Click **Save and Exit**.
-    6. Click **Save Changes and Reset**.
-1. Check your {{site.data.keyword.satelliteshort}} location to confirm that your bare metal server is attached. 
+    1. Enter your Softlayer password at BIOS prompt.
+    1. Select **Boot**.
+    1. Select to boot from hard disk drive.
+    1. Click **Save and Exit**.
+    1. Click **Save Changes and Reset**.
+1. Check your {{site.data.keyword.satelliteshort}} location to confirm that your bare metal server is attached.
 
-Congratulations! Your {{site.data.keyword.baremetal_short_sing}} is now attached to your location. 
+Congratulations! Your {{site.data.keyword.baremetal_short_sing}} is now attached to your location.
  
 ## Assigning a {{site.data.keyword.baremetal_short_sing}} host to your {{site.data.keyword.redhat_openshift_notm}} cluster
 {: #assign-bare-metal-to-cluster}
 {: step}
 
-After your {{site.data.keyword.baremetal_short_sing}} is attached to your location, you can assign it to a {{site.data.keyword.redhat_openshift_notm}} cluster worker pool. 
+After your {{site.data.keyword.baremetal_short_sing}} is attached to your location, you can assign it to a {{site.data.keyword.redhat_openshift_notm}} cluster worker pool.
 
 1. Find the hosts to add to your {{site.data.keyword.redhat_openshift_notm}} cluster worker pool.
 
@@ -407,7 +406,7 @@ After your {{site.data.keyword.baremetal_short_sing}} is attached to your locati
     ```
     {: pre}
 
-2. Assign the {{site.data.keyword.baremetal_short_sing}} to the {{site.data.keyword.redhat_openshift_notm}} cluster worker pool
+1. Assign the {{site.data.keyword.baremetal_short_sing}} to the {{site.data.keyword.redhat_openshift_notm}} cluster worker pool.
 
     ```sh
     ibmcloud sat host assign --location <locationID> --cluster <clusterID> --host <hostID> --worker-pool default --zone <zone>
@@ -418,6 +417,3 @@ Repeat this tutorial to attach more {{site.data.keyword.baremetal_short}} to you
 {: tip}
 
 Now that your {{site.data.keyword.baremetal_short_sing}} is assigned to a worker pool, you can [set up {{site.data.keyword.redhat_openshift_notm}} virtualization](/docs/satellite?topic=satellite-virtualization-location).
-
-
-

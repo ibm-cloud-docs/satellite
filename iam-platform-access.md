@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-02-08"
+  years: 2020, 2026
+lastupdated: "2026-04-07"
 
 keywords: satellite, hybrid, multicloud, platform access for satellite, satellite iam access, platform access roles for satellite
 
@@ -25,6 +25,8 @@ You cannot scope access policies to a particular {{site.data.keyword.satellitesh
 {{site.data.keyword.satelliteshort}} Config uses a [custom IAM service access role](/docs/account?topic=account-custom-roles), **Deployer**, in addition to the standard **Reader**, **Writer**, and **Manager** roles. You can assign users the **Deployer** role so that they can deploy existing configurations to your clusters, but cannot add or edit the actual configurations for your apps.
 {: note}
 
+
+
+
+
 {{../account/iam-service-roles.md#satellite-roles}}
-
-

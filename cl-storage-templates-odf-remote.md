@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-03-23"
+lastupdated: "2026-04-07"
 
 
 keywords: change log, version history, odf-remote
@@ -29,6 +29,13 @@ Review the version history for `odf-remote`.
 {: #cl-storage-templates-odf-remote-4.20}
 
 
+### Revision 3, released 02 April 2026
+{: #cl-storage-templates-odf-remote-4.20-3}
+
+- Resolves the following CVEs: [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/CVE-2026-33186){: external}, [CVE-2026-25679](https://nvd.nist.gov/vuln/detail/CVE-2026-25679){: external}, [CVE-2026-27139](https://nvd.nist.gov/vuln/detail/CVE-2026-27139){: external}, and [CVE-2026-27142](https://nvd.nist.gov/vuln/detail/CVE-2026-27142){: external}.
+- Updates Go to version `1.25.8`.
+
+
 ### Revision 2, released 20 March 2026
 {: #cl-storage-templates-odf-remote-4.20-2}
 
@@ -45,6 +52,13 @@ Review the version history for `odf-remote`.
 
 ## Version 4.19
 {: #cl-storage-templates-odf-remote-4.19}
+
+
+### Revision 5, released 02 April 2026
+{: #cl-storage-templates-odf-remote-4.19-5}
+
+- Resolves the following CVEs: [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/CVE-2026-33186){: external}, [CVE-2026-25679](https://nvd.nist.gov/vuln/detail/CVE-2026-25679){: external}, [CVE-2026-27139](https://nvd.nist.gov/vuln/detail/CVE-2026-27139){: external}, and [CVE-2026-27142](https://nvd.nist.gov/vuln/detail/CVE-2026-27142){: external}.
+- Updates Go to version `1.25.8`.
 
 
 ### Revision 4, released 20 March 2026
@@ -77,6 +91,13 @@ Review the version history for `odf-remote`.
 
 ## Version 4.18
 {: #cl-storage-templates-odf-remote-4.18}
+
+
+### Revision 8, released 02 April 2026
+{: #cl-storage-templates-odf-remote-4.18-8}
+
+- Resolves the following CVEs: [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/CVE-2026-33186){: external}, [CVE-2026-25679](https://nvd.nist.gov/vuln/detail/CVE-2026-25679){: external}, [CVE-2026-27139](https://nvd.nist.gov/vuln/detail/CVE-2026-27139){: external}, and [CVE-2026-27142](https://nvd.nist.gov/vuln/detail/CVE-2026-27142){: external}.
+- Updates Go to version `1.25.8`.
 
 
 ### Revision 7, released 20 March 2026
@@ -130,6 +151,13 @@ Review the version history for `odf-remote`.
 
 ## Version 4.17
 {: #cl-storage-templates-odf-remote-4.17}
+
+
+### Revision 12, released 02 April 2026
+{: #cl-storage-templates-odf-remote-4.17-12}
+
+- Resolves the following CVEs: [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/CVE-2026-33186){: external}, [CVE-2026-25679](https://nvd.nist.gov/vuln/detail/CVE-2026-25679){: external}, [CVE-2026-27139](https://nvd.nist.gov/vuln/detail/CVE-2026-27139){: external}, and [CVE-2026-27142](https://nvd.nist.gov/vuln/detail/CVE-2026-27142){: external}.
+- Updates Go to version `1.25.8`.
 
 
 ### Revision 11, released 20 March 2026
@@ -193,6 +221,13 @@ Review the version history for `odf-remote`.
 {: #cl-storage-templates-odf-remote-4.16}
 
 
+### Revision 14, released 02 April 2026
+{: #cl-storage-templates-odf-remote-4.16-14}
+
+- Resolves the following CVEs: [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/CVE-2026-33186){: external}, [CVE-2026-25679](https://nvd.nist.gov/vuln/detail/CVE-2026-25679){: external}, [CVE-2026-27139](https://nvd.nist.gov/vuln/detail/CVE-2026-27139){: external}, and [CVE-2026-27142](https://nvd.nist.gov/vuln/detail/CVE-2026-27142){: external}.
+- Updates Go to version `1.25.8`.
+
+
 ### Revision 13, released 20 March 2026
 {: #cl-storage-templates-odf-remote-4.16-13}
 
@@ -252,6 +287,13 @@ Review the version history for `odf-remote`.
 
 ## Version 4.15
 {: #cl-storage-templates-odf-remote-4.15}
+
+
+### Revision 19, released 02 April 2026
+{: #cl-storage-templates-odf-remote-4.15-19}
+
+- Resolves the following CVEs: [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/CVE-2026-33186){: external}, [CVE-2026-25679](https://nvd.nist.gov/vuln/detail/CVE-2026-25679){: external}, [CVE-2026-27139](https://nvd.nist.gov/vuln/detail/CVE-2026-27139){: external}, and [CVE-2026-27142](https://nvd.nist.gov/vuln/detail/CVE-2026-27142){: external}.
+- Updates Go to version `1.25.8`.
 
 
 ### Revision 18, released 20 March 2026
