@@ -23,22 +23,22 @@ Review the latest changes to the {{site.data.keyword.satellitelong}} documentati
 {: shortdesc}
 
 ## April 2026
-{: #satellite-ap26}
+{: #satellite-apr26}
 
 
 
 ### 02 April 2026
-{: #satellite-ap0226}
+{: #satellite-apr0226}
 {: release-note}
 
 {{site.data.keyword.satelliteshort}} storage template patch updates are available.
 :   You can update your {{site.data.keyword.satelliteshort}} storage configurations and assignments to the latest patch from the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, or by running the  command. For more information, see [Which storage templates are available?](/docs/satellite?topic=satellite-storage-template-ov#storage-template-ov-providers) and the [CLI reference](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-patch-cli).
 
 ## March 2026
-{: #satellite-ma26}
+{: #satellite-mar26}
 
 ### 20 March 2026
-{: #satellite-ma2026}
+{: #satellite-mar2026}
 {: release-note}
 
 {{site.data.keyword.satelliteshort}} storage template patch updates are available.

@@ -202,15 +202,15 @@ subcollection: satellite
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
-* [April 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-ap26)
+* [April 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr26)
 
-    * [02 April 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-ap0226)
+    * [02 April 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr0226)
 
         * {{site.data.keyword.satelliteshort}} storage template patch updates are available.
 
-* [March 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-ma26)
+* [March 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar26)
 
-    * [20 March 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-ma2026)
+    * [20 March 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar2026)
 
         * {{site.data.keyword.satelliteshort}} storage template patch updates are available.
 

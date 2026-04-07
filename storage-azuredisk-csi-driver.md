@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-26"
+lastupdated: "2026-04-07"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, azure disk csi, azure disk
 
@@ -546,8 +546,8 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 | Network Security Group Name | `securityGroupName` | Config | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | N/A |
 | Virtual Network Name | `vnetName` | Config | The name of the virtual network. You can find the name of your virtual network in the Azure portal or by running the `az network vnet list` command. | N/A |
 | Use Workload Identity | `useWorkloadIdentity` | Config | Set to `true` if you want to use Microsoft Entra Workload ID. If enabled, you will also need to specify the client and tenant ID for the workload. | `false` |
-| Workload Identity Client ID | `workloadIdentityClientId` | Secret | The client ID of the Azure Active Directory (AAD) application or user-assigned managed identity. You can find client ID of the AAD application by running the `az ad sp list --display-name APPLICATION_NAME --query `[0].appId` -otsv` command and client ID of the user-assigned managed identity by running the `az identity show --name USER_ASSIGNED_IDENTITY_NAME --resource-group IDENTITY_RESOURCE_GROUP --query `clientId` -otsv` command. | N/A |
-| Workload Identity Tenant ID | `workloadIdentityTenantId` | Secret | The tenant ID of the Azure Active Directory (AAD) application or user-assigned managed identity. If the AAD application or user-assigned managed identity is not in the same tenant as the cluster then, set the tenantID of the AAD application or user-assigned managed identity respectively. You can find tenant ID of the AAD application by running the `az ad sp list --display-name APPLICATION_NAME --query `[0].appOwnerOrganizationId` -otsv` command and tenant ID of the user-assigned managed identity by running the `az identity show --name USER_ASSIGNED_IDENTITY_NAME --resource-group IDENTITY_RESOURCE_GROUP --query `tenantId` -otsv` command. | N/A |
+| Workload Identity Client ID | `workloadIdentityClientId` | Secret | The client ID of the Azure Active Directory (AAD) application or user-assigned managed identity. You can find client ID of the AAD application by running the `az ad sp list --display-name APPLICATION_NAME --query '[0].appId' -otsv` command and client ID of the user-assigned managed identity by running the `az identity show --name USER_ASSIGNED_IDENTITY_NAME --resource-group IDENTITY_RESOURCE_GROUP --query 'clientId' -otsv` command. | N/A |
+| Workload Identity Tenant ID | `workloadIdentityTenantId` | Secret | The tenant ID of the Azure Active Directory (AAD) application or user-assigned managed identity. If the AAD application or user-assigned managed identity is not in the same tenant as the cluster then, set the tenantID of the AAD application or user-assigned managed identity respectively. You can find tenant ID of the AAD application by running the `az ad sp list --display-name APPLICATION_NAME --query '[0].appOwnerOrganizationId' -otsv` command and tenant ID of the user-assigned managed identity by running the `az identity show --name USER_ASSIGNED_IDENTITY_NAME --resource-group IDENTITY_RESOURCE_GROUP --query 'tenantId' -otsv` command. | N/A |
 | Enable OpenTelemetry Tracing | `enableOtelTracing` | Config | Set to `true` if you want to enable OpenTelemetry tracing. If enabled, you will also need to specify a OpenTelemetry service name and exporter endpoint. | `false` |
 | OpenTelemetry Service Name | `otelServiceName` | Config | Service name for OpenTelemetry tracing | N/A |
 | OpenTelemetry Exporter Endpoint | `otelExporterEndpoint` | Config | Endpoint of the OpenTelemetry exporter | N/A |
