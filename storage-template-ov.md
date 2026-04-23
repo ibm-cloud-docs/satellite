@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2026
 
-lastupdated: "2026-04-07"
+lastupdated: "2026-04-23"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -156,8 +156,8 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 | [NetApp Ontap-NAS Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-nas) | `netapp-ontap-nas` | Version: 25.06, Patch: 2 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas)  |
 | [NetApp Ontap-SAN Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-san) | `netapp-ontap-san` | Version: 24.02 (Default), Patch: 7 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san) 
 | [NetApp Ontap-SAN Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-san) | `netapp-ontap-san` | Version: 25.06, Patch: 2 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san)  |
-| [NetApp Trident Operator](/docs/satellite?topic=satellite-storage-netapp-trident) | `netapp-trident` | Version: 24.02 (Default), Patch: 3 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident) 
-| [NetApp Trident Operator](/docs/satellite?topic=satellite-storage-netapp-trident) | `netapp-trident` | Version: 25.06, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident)  |
+| [NetApp Trident Operator](/docs/satellite?topic=satellite-storage-netapp-trident) | `netapp-trident` | Version: 24.02 (Default), Patch: 4 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident) 
+| [NetApp Trident Operator](/docs/satellite?topic=satellite-storage-netapp-trident) | `netapp-trident` | Version: 25.06, Patch: 2 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident)  |
 | [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.12, Patch: 20 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
 | [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.13, Patch: 20 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 
 | [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.14, Patch: 18 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local) 

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-04-07"
+lastupdated: "2026-04-23"
 
 keywords: satellite, api, iam, tokens, refresh
 
@@ -50,18 +50,16 @@ Cluster, worker node, and worker-pool responses
 
 
 
-
-
-{{../account/iam-apikeys.md#work-with-apikeys}} 
-
-
-
-{{../account/iam-apikey_iamtoken.md#iamtoken}}
+{{../iam/iam-apikeys.md#work-with-apikeys}} 
 
 
 
-{{../account/iam-apikeys_services.md#token_auth}}
+{{../iam/iam-apikey_iamtoken.md#iamtoken}}
 
 
 
-{{../account/iam-apikeys_services.md#apikey_auth}}
+{{../iam/iam-apikeys_services.md#token_auth}}
+
+
+
+{{../iam/iam-apikeys_services.md#apikey_auth}}

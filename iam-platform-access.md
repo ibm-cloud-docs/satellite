@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-04-07"
+lastupdated: "2026-04-23"
 
 keywords: satellite, hybrid, multicloud, platform access for satellite, satellite iam access, platform access roles for satellite
 
@@ -27,6 +27,4 @@ You cannot scope access policies to a particular {{site.data.keyword.satellitesh
 
 
 
-
-
-{{../account/iam-service-roles.md#satellite-roles}}
+{{../iam/iam-service-roles.md#satellite-roles}}
