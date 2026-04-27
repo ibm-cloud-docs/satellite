@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-04-27"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3115,6 +3115,8 @@ subcollection: satellite
 
 * [Version 1.0](/docs/satellite?topic=satellite-cs_cli_changelog#10)
 
+* [Version v1.0.762](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01762)
+
 * [Version v1.0.760](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01760)
 
 * [Version v1.0.759](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01759)
@@ -4036,9 +4038,13 @@ subcollection: satellite
 
 * [Version 25.06](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-25.06)
 
+    * [Revision 2, released 16 May 2026](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-25.06-2)
+
     * [Revision 1, released 04 September 2025](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-25.06-1)
 
 * [Version 24.02](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-24.02)
+
+    * [Revision 4, released 16 May 2026](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-24.02-4)
 
     * [Revision 3, released 24 June 2025](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-24.02-3)
 
