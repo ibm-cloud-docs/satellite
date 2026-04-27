@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-02-26"
+lastupdated: "2026-04-27"
 
 
 keywords: change log, version history, netapp-trident
@@ -29,6 +29,12 @@ Review the version history for `netapp-trident`.
 {: #cl-storage-templates-netapp-trident-25.06}
 
 
+### Revision 2, released 16 May 2026
+{: #cl-storage-templates-netapp-trident-25.06-2}
+
+- Use docker.io registry for trident-operator image 
+
+
 ### Revision 1, released 04 September 2025
 {: #cl-storage-templates-netapp-trident-25.06-1}
 
@@ -37,6 +43,12 @@ Review the version history for `netapp-trident`.
 
 ## Version 24.02
 {: #cl-storage-templates-netapp-trident-24.02}
+
+
+### Revision 4, released 16 May 2026
+{: #cl-storage-templates-netapp-trident-24.02-4}
+
+- Use docker.io registry for trident-operator image 
 
 
 ### Revision 3, released 24 June 2025
