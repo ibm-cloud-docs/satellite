@@ -224,13 +224,13 @@ subcollection: satellite
 
         * Red Hat Enterprise Linux 8 is no longer supported for Location control plane hosts.
 
-    * [03 March 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-ma0326)
+    * [03 March 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar0326)
 
         * {{site.data.keyword.satelliteshort}} storage template patch updates are available.
 
 * [February 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb26)
 
-    * [18 February 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-fe1826)
+    * [18 February 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb1826)
 
         * {{site.data.keyword.satelliteshort}} storage template patch updates are available.
 
