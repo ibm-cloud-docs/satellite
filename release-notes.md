@@ -65,7 +65,7 @@ Red Hat Enterprise Linux 8 is no longer supported for Location control plane hos
 
 
 ### 03 March 2026
-{: #satellite-ma0326}
+{: #satellite-mar0326}
 {: release-note}
 
 {{site.data.keyword.satelliteshort}} storage template patch updates are available.
@@ -76,7 +76,7 @@ Red Hat Enterprise Linux 8 is no longer supported for Location control plane hos
 {: #satellite-feb26}
 
 ### 18 February 2026
-{: #satellite-fe1826}
+{: #satellite-feb1826}
 {: release-note}
 
 {{site.data.keyword.satelliteshort}} storage template patch updates are available.
