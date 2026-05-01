@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-03-06"
+lastupdated: "2026-05-01"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote devices, odf, openshift data foundation
 
@@ -559,324 +559,324 @@ Use the command line to remove a storage assignment.
 ### 4.12 parameter reference
 {: #odf-remote-4.12-parameters}
 
-| Display name | CLI option | Type | Description | Default value | 
+| Display name | CLI option | Type | Description | Default value |
 | --- | --- | --- | --- | --- |
-| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi(Use 512Gi or more). The default value is `512Gi`. | `512Gi` |
+| OSD pod volume size | `osd-size`| Config | The OSD storage size in Gi(Use 512Gi or more). The default value is '512Gi'. |`512Gi` |
 | OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | N/A |
-| Number of OSD volumes | `num-of-osd` | Config | The number of storage device replicas to create. The default value is `1`, which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of `1`. | `1` |
-| Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | N/A |
-| Upgrade | `odf-upgrade` | Config | If you are upgrading an existing ODF installation, set to `true`. | `false` |
-| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | `advanced` |
+| Number of OSD volumes | `num-of-osd`| Config | The number of storage device replicas to create. The default value is '1', which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of '1'. |`1` |
+| Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running 'oc get nodes'. | N/A |
+| Upgrade | `odf-upgrade`| Config | If you are upgrading an existing ODF installation, set to 'true'. |`false` |
+| Billing type | `billing-type`| Config | The billing type you want to use. Choose from 'essentials' or 'advanced'. |`advanced` |
 | IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | N/A |
-| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | N/A |
+| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example 'us-east-standard'. | N/A |
 | Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | N/A |
 | Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | N/A |
-| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | `false` |
+| Encryption enabled | `cluster-encryption`| Config | Set to 'true' if you want to enable cluster-wide encryption. |`false` |
 | IAM API key | `iam-api-key` | Secret | Your IAM API key. | N/A |
-| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion. | `false` |
-| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storage class encryption. | `false` |
-| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, `-`, `_` or `.` and start and end with an alphanumeric character. | N/A |
+| Perform Cleanup | `perform-cleanup`| Config | Set to 'true' if you want to perform complete cleanup of ODF on assignment deletion. |`false` |
+| KMS encryption | `kms-encryption`| Config | Set to 'true' if you want to enable storage class encryption. |`false` |
+| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, '-', '_' or '.' and start and end with an alphanumeric character. | N/A |
 | KMS instance id | `kms-instance-id` | Config | Your KMS instance id. | N/A |
 | KMS instance Base URL | `kms-base-url` | Config | Your KMS instance public URL to connect to the instance. | N/A |
 | KMS instance API key token URL | `kms-token-url` | Config | API key token URL to generate token for KMS instance. | N/A |
 | KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | N/A |
 | KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | N/A |
-| Ignore Noobaa | `ignore-noobaa` | Config | Set to `false` if you want to deploy MultiCloud Object Gateway (Noobaa) | `true` |
+| Ignore Noobaa | `ignore-noobaa`| Config | Set to 'false' if you want to deploy MultiCloud Object Gateway (Noobaa) |`true` |
 {: caption="Table 1. 4.12 parameter reference" caption-side="bottom"}
 
 
 ### 4.13 parameter reference
 {: #odf-remote-4.13-parameters}
 
-| Display name | CLI option | Type | Description | Default value | 
+| Display name | CLI option | Type | Description | Default value |
 | --- | --- | --- | --- | --- |
-| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi(Use 512Gi or more). The default value is `512Gi`. | `512Gi` |
+| OSD pod volume size | `osd-size`| Config | The OSD storage size in Gi(Use 512Gi or more). The default value is '512Gi'. |`512Gi` |
 | OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | N/A |
-| Number of OSD volumes | `num-of-osd` | Config | The number of storage device replicas to create. The default value is `1`, which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of `1`. | `1` |
-| Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | N/A |
-| Upgrade | `odf-upgrade` | Config | If you are upgrading an existing ODF installation, set to `true`. | `false` |
-| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | `advanced` |
+| Number of OSD volumes | `num-of-osd`| Config | The number of storage device replicas to create. The default value is '1', which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of '1'. |`1` |
+| Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running 'oc get nodes'. | N/A |
+| Upgrade | `odf-upgrade`| Config | If you are upgrading an existing ODF installation, set to 'true'. |`false` |
+| Billing type | `billing-type`| Config | The billing type you want to use. Choose from 'essentials' or 'advanced'. |`advanced` |
 | IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | N/A |
-| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | N/A |
+| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example 'us-east-standard'. | N/A |
 | Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | N/A |
 | Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | N/A |
-| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | `false` |
+| Encryption enabled | `cluster-encryption`| Config | Set to 'true' if you want to enable cluster-wide encryption. |`false` |
 | IAM API key | `iam-api-key` | Secret | Your IAM API key. | N/A |
-| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion. | `false` |
-| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storage class encryption. | `false` |
-| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, `-`, `_` or `.` and start and end with an alphanumeric character. | N/A |
+| Perform Cleanup | `perform-cleanup`| Config | Set to 'true' if you want to perform complete cleanup of ODF on assignment deletion. |`false` |
+| KMS encryption | `kms-encryption`| Config | Set to 'true' if you want to enable storage class encryption. |`false` |
+| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, '-', '_' or '.' and start and end with an alphanumeric character. | N/A |
 | KMS instance id | `kms-instance-id` | Config | Your KMS instance id. | N/A |
 | KMS instance Base URL | `kms-base-url` | Config | Your KMS instance public URL to connect to the instance. | N/A |
 | KMS instance API key token URL | `kms-token-url` | Config | API key token URL to generate token for KMS instance. | N/A |
 | KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | N/A |
 | KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | N/A |
-| Ignore Noobaa | `ignore-noobaa` | Config | Set to `false` if you want to deploy MultiCloud Object Gateway (Noobaa) | `true` |
-| Disable Noobaa LB | `disable-noobaa-LB` | Config | Set to `true` if you want to disable Noobaa public load balancer | `false` |
-| In-transit Encryption | `encryption-intransit` | Config | Set to `true` if you want to enable in-transit encryption | `false` |
-| Taint Nodes | `taint-nodes` | Config | When set the selected worker nodes will be dedicated to Data Foundation use only | `false` |
+| Ignore Noobaa | `ignore-noobaa`| Config | Set to 'false' if you want to deploy MultiCloud Object Gateway (Noobaa) |`true` |
+| Disable Noobaa LB | `disable-noobaa-LB`| Config | Set to 'true' if you want to disable Noobaa public load balancer |`false` |
+| In-transit Encryption | `encryption-intransit`| Config | Set to 'true' if you want to enable in-transit encryption |`false` |
+| Taint Nodes | `taint-nodes`| Config | When set the selected worker nodes will be dedicated to Data Foundation use only |`false` |
 {: caption="Table 2. 4.13 parameter reference" caption-side="bottom"}
 
 
 ### 4.14 parameter reference
 {: #odf-remote-4.14-parameters}
 
-| Display name | CLI option | Type | Description | Default value | 
+| Display name | CLI option | Type | Description | Default value |
 | --- | --- | --- | --- | --- |
-| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi(Use 512Gi or more). The default value is `512Gi`. | `512Gi` |
+| OSD pod volume size | `osd-size`| Config | The OSD storage size in Gi(Use 512Gi or more). The default value is '512Gi'. |`512Gi` |
 | OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | N/A |
-| Number of OSD volumes | `num-of-osd` | Config | The number of storage device replicas to create. The default value is `1`, which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of `1`. | `1` |
-| Worker pools names/IDs | `worker-pools` | Config | Specify a comma separated list of either the names or the IDs of the worker pools you want to use for ODF. Leave this field blank if you want to use `worker-nodes`. If you want to use all the worker nodes in your cluster for ODF, then leave `worker-pools` and `worker-nodes` blank. | N/A |
-| Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank if you want to use `worker-pools`. If you want to use all the worker nodes in your cluster for ODF, then then leave `worker-nodes` and `worker-pools` blank. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | N/A |
-| Upgrade | `odf-upgrade` | Config | If you are upgrading an existing ODF installation, set to `true`. | `false` |
-| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | `advanced` |
+| Number of OSD volumes | `num-of-osd`| Config | The number of storage device replicas to create. The default value is '1', which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of '1'. |`1` |
+| Worker pools names/IDs | `worker-pools` | Config | Specify a comma separated list of either the names or the IDs of the worker pools you want to use for ODF. Leave this field blank if you want to use 'worker-nodes'. If you want to use all the worker nodes in your cluster for ODF, then leave 'worker-pools' and 'worker-nodes' blank. | N/A |
+| Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank if you want to use 'worker-pools'. If you want to use all the worker nodes in your cluster for ODF, then then leave 'worker-nodes' and 'worker-pools' blank. The minimum number of worker nodes is 3. You can find your worker node names by running 'oc get nodes'. | N/A |
+| Upgrade | `odf-upgrade`| Config | If you are upgrading an existing ODF installation, set to 'true'. |`false` |
+| Billing type | `billing-type`| Config | The billing type you want to use. Choose from 'essentials' or 'advanced'. |`advanced` |
 | IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | N/A |
-| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | N/A |
+| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example 'us-east-standard'. | N/A |
 | Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | N/A |
 | Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | N/A |
-| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | `false` |
+| Encryption enabled | `cluster-encryption`| Config | Set to 'true' if you want to enable cluster-wide encryption. |`false` |
 | IAM API key | `iam-api-key` | Secret | Your IAM API key. | N/A |
-| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion. | `false` |
-| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storage class encryption. | `false` |
-| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, `-`, `_` or `.` and start and end with an alphanumeric character. | N/A |
+| Perform Cleanup | `perform-cleanup`| Config | Set to 'true' if you want to perform complete cleanup of ODF on assignment deletion. |`false` |
+| KMS encryption | `kms-encryption`| Config | Set to 'true' if you want to enable storage class encryption. |`false` |
+| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, '-', '_' or '.' and start and end with an alphanumeric character. | N/A |
 | KMS instance id | `kms-instance-id` | Config | Your KMS instance id. | N/A |
 | KMS instance Base URL | `kms-base-url` | Config | Your KMS instance public URL to connect to the instance. | N/A |
 | KMS instance API key token URL | `kms-token-url` | Config | API key token URL to generate token for KMS instance. | N/A |
 | KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | N/A |
 | KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | N/A |
-| Ignore Noobaa | `ignore-noobaa` | Config | Set to `false` if you want to deploy MultiCloud Object Gateway (Noobaa) | `true` |
-| Disable Noobaa LB | `disable-noobaa-LB` | Config | Set to `true` if you want to disable Noobaa public load balancer | `false` |
-| In-transit Encryption | `encryption-intransit` | Config | Set to `true` if you want to enable in-transit encryption | `false` |
-| Add Single Replica Pool(once enabled, cannot be disabled) | `add-single-replica-pool` | Config | Enabling this feature creates a single replica pool without data replication, increasing the risk of data loss, data corruption, and potential system instability. Once it is enabled, it cannot be disabled | `false` |
-| Taint Nodes | `taint-nodes` | Config | When set the selected worker nodes will be dedicated to Data Foundation use only | `false` |
-| Prepare for Disaster Recovery | `prepare-for-disaster-recovery` | Config | Enabling this will set up the storage system for disaster recovery service with the essential configurations in place. This will subsequently allow seamless implementation of DR strategies for your workloads | `false` |
+| Ignore Noobaa | `ignore-noobaa`| Config | Set to 'false' if you want to deploy MultiCloud Object Gateway (Noobaa) |`true` |
+| Disable Noobaa LB | `disable-noobaa-LB`| Config | Set to 'true' if you want to disable Noobaa public load balancer |`false` |
+| In-transit Encryption | `encryption-intransit`| Config | Set to 'true' if you want to enable in-transit encryption |`false` |
+| Add Single Replica Pool(once enabled, cannot be disabled) | `add-single-replica-pool`| Config | Enabling this feature creates a single replica pool without data replication, increasing the risk of data loss, data corruption, and potential system instability. Once it is enabled, it cannot be disabled |`false` |
+| Taint Nodes | `taint-nodes`| Config | When set the selected worker nodes will be dedicated to Data Foundation use only |`false` |
+| Prepare for Disaster Recovery | `prepare-for-disaster-recovery`| Config | Enabling this will set up the storage system for disaster recovery service with the essential configurations in place. This will subsequently allow seamless implementation of DR strategies for your workloads |`false` |
 {: caption="Table 3. 4.14 parameter reference" caption-side="bottom"}
 
 
 ### 4.15 parameter reference
 {: #odf-remote-4.15-parameters}
 
-| Display name | CLI option | Type | Description | Default value | 
+| Display name | CLI option | Type | Description | Default value |
 | --- | --- | --- | --- | --- |
-| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi(Use 512Gi or more). The default value is `512Gi`. | `512Gi` |
+| OSD pod volume size | `osd-size`| Config | The OSD storage size in Gi(Use 512Gi or more). The default value is '512Gi'. |`512Gi` |
 | OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | N/A |
-| Number of OSD volumes | `num-of-osd` | Config | The number of storage device replicas to create. The default value is `1`, which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of `1`. | `1` |
-| Worker pools names/IDs | `worker-pools` | Config | Specify a comma separated list of either the names or the IDs of the worker pools you want to use for ODF. Leave this field blank if you want to use `worker-nodes`. If you want to use all the worker nodes in your cluster for ODF, then leave `worker-pools` and `worker-nodes` blank. | N/A |
-| Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank if you want to use `worker-pools`. If you want to use all the worker nodes in your cluster for ODF, then then leave `worker-nodes` and `worker-pools` blank. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | N/A |
-| Upgrade | `odf-upgrade` | Config | If you are upgrading an existing ODF installation, set to `true`. | `false` |
-| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | `advanced` |
+| Number of OSD volumes | `num-of-osd`| Config | The number of storage device replicas to create. The default value is '1', which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of '1'. |`1` |
+| Worker pools names/IDs | `worker-pools` | Config | Specify a comma separated list of either the names or the IDs of the worker pools you want to use for ODF. Leave this field blank if you want to use 'worker-nodes'. If you want to use all the worker nodes in your cluster for ODF, then leave 'worker-pools' and 'worker-nodes' blank. | N/A |
+| Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank if you want to use 'worker-pools'. If you want to use all the worker nodes in your cluster for ODF, then then leave 'worker-nodes' and 'worker-pools' blank. The minimum number of worker nodes is 3. You can find your worker node names by running 'oc get nodes'. | N/A |
+| Upgrade | `odf-upgrade`| Config | If you are upgrading an existing ODF installation, set to 'true'. |`false` |
+| Billing type | `billing-type`| Config | The billing type you want to use. Choose from 'essentials' or 'advanced'. |`advanced` |
 | IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | N/A |
-| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | N/A |
+| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example 'us-east-standard'. | N/A |
 | Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | N/A |
 | Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | N/A |
-| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | `false` |
+| Encryption enabled | `cluster-encryption`| Config | Set to 'true' if you want to enable cluster-wide encryption. |`false` |
 | IAM API key | `iam-api-key` | Secret | Your IAM API key. | N/A |
-| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion. | `false` |
-| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storage class encryption. | `false` |
-| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, `-`, `_` or `.` and start and end with an alphanumeric character. | N/A |
+| Perform Cleanup | `perform-cleanup`| Config | Set to 'true' if you want to perform complete cleanup of ODF on assignment deletion. |`false` |
+| KMS encryption | `kms-encryption`| Config | Set to 'true' if you want to enable storage class encryption. |`false` |
+| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, '-', '_' or '.' and start and end with an alphanumeric character. | N/A |
 | KMS instance id | `kms-instance-id` | Config | Your KMS instance id. | N/A |
 | KMS instance Base URL | `kms-base-url` | Config | Your KMS instance public URL to connect to the instance. | N/A |
 | KMS instance API key token URL | `kms-token-url` | Config | API key token URL to generate token for KMS instance. | N/A |
 | KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | N/A |
 | KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | N/A |
-| Ignore Noobaa | `ignore-noobaa` | Config | Set to `false` if you want to deploy MultiCloud Object Gateway (Noobaa) | `true` |
-| Disable Noobaa LB | `disable-noobaa-LB` | Config | Set to `true` if you want to disable Noobaa public load balancer | `false` |
-| In-transit Encryption | `encryption-intransit` | Config | Set to `true` if you want to enable in-transit encryption | `false` |
-| Add Single Replica Pool(once enabled, cannot be disabled) | `add-single-replica-pool` | Config | Enabling this feature creates a single replica pool without data replication, increasing the risk of data loss, data corruption, and potential system instability. Once it is enabled, it cannot be disabled | `false` |
-| Taint Nodes | `taint-nodes` | Config | When set the selected worker nodes will be dedicated to Data Foundation use only | `false` |
-| Prepare for Disaster Recovery | `prepare-for-disaster-recovery` | Config | Enabling this will set up the storage system for disaster recovery service with the essential configurations in place. This will subsequently allow seamless implementation of DR strategies for your workloads | `false` |
-| Enable NFS | `enable-nfs` | Config | Allow exports from the Network File System (NFS) that can then be accessed internally or externally from the OpenShift cluster | `false` |
-| Use Ceph RBD As Default Storage Class | `use-ceph-rbd-as-default-storage-class` | Config | Set the Ceph RADOS block device (RBD) storage class as the default storage class during the deployment of OpenShift Data Foundation | `false` |
-| Resource Profile | `resource-profile` | Config | Choose a resource profile based on the availability of resources during deployment. Choose between `lean`, `balanced` and `performance`. | `balanced` |
+| Ignore Noobaa | `ignore-noobaa`| Config | Set to 'false' if you want to deploy MultiCloud Object Gateway (Noobaa) |`true` |
+| Disable Noobaa LB | `disable-noobaa-LB`| Config | Set to 'true' if you want to disable Noobaa public load balancer |`false` |
+| In-transit Encryption | `encryption-intransit`| Config | Set to 'true' if you want to enable in-transit encryption |`false` |
+| Add Single Replica Pool(once enabled, cannot be disabled) | `add-single-replica-pool`| Config | Enabling this feature creates a single replica pool without data replication, increasing the risk of data loss, data corruption, and potential system instability. Once it is enabled, it cannot be disabled |`false` |
+| Taint Nodes | `taint-nodes`| Config | When set the selected worker nodes will be dedicated to Data Foundation use only |`false` |
+| Prepare for Disaster Recovery | `prepare-for-disaster-recovery`| Config | Enabling this will set up the storage system for disaster recovery service with the essential configurations in place. This will subsequently allow seamless implementation of DR strategies for your workloads |`false` |
+| Enable NFS | `enable-nfs`| Config | Allow exports from the Network File System (NFS) that can then be accessed internally or externally from the OpenShift cluster |`false` |
+| Use Ceph RBD As Default Storage Class | `use-ceph-rbd-as-default-storage-class`| Config | Set the Ceph RADOS block device (RBD) storage class as the default storage class during the deployment of OpenShift Data Foundation |`false` |
+| Resource Profile | `resource-profile`| Config | Choose a resource profile based on the availability of resources during deployment. Choose between 'lean', 'balanced' and 'performance'. |`balanced` |
 {: caption="Table 4. 4.15 parameter reference" caption-side="bottom"}
 
 
 ### 4.16 parameter reference
 {: #odf-remote-4.16-parameters}
 
-| Display name | CLI option | Type | Description | Default value | 
+| Display name | CLI option | Type | Description | Default value |
 | --- | --- | --- | --- | --- |
-| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi(Use 512Gi or more). The default value is `512Gi`. | `512Gi` |
+| OSD pod volume size | `osd-size`| Config | The OSD storage size in Gi(Use 512Gi or more). The default value is '512Gi'. |`512Gi` |
 | OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | N/A |
-| Number of OSD volumes | `num-of-osd` | Config | The number of storage device replicas to create. The default value is `1`, which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of `1`. | `1` |
-| Worker pools names/IDs | `worker-pools` | Config | Specify a comma separated list of either the names or the IDs of the worker pools you want to use for ODF. Leave this field blank if you want to use `worker-nodes`. If you want to use all the worker nodes in your cluster for ODF, then leave `worker-pools` and `worker-nodes` blank. | N/A |
-| Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank if you want to use `worker-pools`. If you want to use all the worker nodes in your cluster for ODF, then then leave `worker-nodes` and `worker-pools` blank. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | N/A |
-| Upgrade | `odf-upgrade` | Config | If you are upgrading an existing ODF installation, set to `true`. | `false` |
-| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | `advanced` |
+| Number of OSD volumes | `num-of-osd`| Config | The number of storage device replicas to create. The default value is '1', which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of '1'. |`1` |
+| Worker pools names/IDs | `worker-pools` | Config | Specify a comma separated list of either the names or the IDs of the worker pools you want to use for ODF. Leave this field blank if you want to use 'worker-nodes'. If you want to use all the worker nodes in your cluster for ODF, then leave 'worker-pools' and 'worker-nodes' blank. | N/A |
+| Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank if you want to use 'worker-pools'. If you want to use all the worker nodes in your cluster for ODF, then then leave 'worker-nodes' and 'worker-pools' blank. The minimum number of worker nodes is 3. You can find your worker node names by running 'oc get nodes'. | N/A |
+| Upgrade | `odf-upgrade`| Config | If you are upgrading an existing ODF installation, set to 'true'. |`false` |
+| Billing type | `billing-type`| Config | The billing type you want to use. Choose from 'essentials' or 'advanced'. |`advanced` |
 | IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | N/A |
-| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | N/A |
+| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example 'us-east-standard'. | N/A |
 | Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | N/A |
 | Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | N/A |
-| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | `false` |
+| Encryption enabled | `cluster-encryption`| Config | Set to 'true' if you want to enable cluster-wide encryption. |`false` |
 | IAM API key | `iam-api-key` | Secret | Your IAM API key. | N/A |
-| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion. | `false` |
-| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storage class encryption. | `false` |
-| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, `-`, `_` or `.` and start and end with an alphanumeric character. | N/A |
+| Perform Cleanup | `perform-cleanup`| Config | Set to 'true' if you want to perform complete cleanup of ODF on assignment deletion. |`false` |
+| KMS encryption | `kms-encryption`| Config | Set to 'true' if you want to enable storage class encryption. |`false` |
+| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, '-', '_' or '.' and start and end with an alphanumeric character. | N/A |
 | KMS instance id | `kms-instance-id` | Config | Your KMS instance id. | N/A |
 | KMS instance Base URL | `kms-base-url` | Config | Your KMS instance public URL to connect to the instance. | N/A |
 | KMS instance API key token URL | `kms-token-url` | Config | API key token URL to generate token for KMS instance. | N/A |
 | KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | N/A |
 | KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | N/A |
-| Ignore Noobaa | `ignore-noobaa` | Config | Set to `false` if you want to deploy MultiCloud Object Gateway (Noobaa) | `true` |
-| Disable Noobaa LB | `disable-noobaa-LB` | Config | Set to `true` if you want to disable Noobaa public load balancer | `false` |
-| In-transit Encryption | `encryption-intransit` | Config | Set to `true` if you want to enable in-transit encryption | `false` |
-| Add Single Replica Pool(once enabled, cannot be disabled) | `add-single-replica-pool` | Config | Enabling this feature creates a single replica pool without data replication, increasing the risk of data loss, data corruption, and potential system instability. Once it is enabled, it cannot be disabled | `false` |
-| Taint Nodes | `taint-nodes` | Config | When set the selected worker nodes will be dedicated to Data Foundation use only | `false` |
-| Prepare for Disaster Recovery | `prepare-for-disaster-recovery` | Config | Enabling this will set up the storage system for disaster recovery service with the essential configurations in place. This will subsequently allow seamless implementation of DR strategies for your workloads | `false` |
-| Enable NFS | `enable-nfs` | Config | Allow exports from the Network File System (NFS) that can then be accessed internally or externally from the OpenShift cluster | `false` |
-| Use Ceph RBD As Default Storage Class | `use-ceph-rbd-as-default-storage-class` | Config | Set the Ceph RADOS block device (RBD) storage class as the default storage class during the deployment of OpenShift Data Foundation | `false` |
-| Resource Profile | `resource-profile` | Config | Choose a resource profile based on the availability of resources during deployment. Choose between `lean`, `balanced` and `performance`. | `balanced` |
+| Ignore Noobaa | `ignore-noobaa`| Config | Set to 'false' if you want to deploy MultiCloud Object Gateway (Noobaa) |`true` |
+| Disable Noobaa LB | `disable-noobaa-LB`| Config | Set to 'true' if you want to disable Noobaa public load balancer |`false` |
+| In-transit Encryption | `encryption-intransit`| Config | Set to 'true' if you want to enable in-transit encryption |`false` |
+| Add Single Replica Pool(once enabled, cannot be disabled) | `add-single-replica-pool`| Config | Enabling this feature creates a single replica pool without data replication, increasing the risk of data loss, data corruption, and potential system instability. Once it is enabled, it cannot be disabled |`false` |
+| Taint Nodes | `taint-nodes`| Config | When set the selected worker nodes will be dedicated to Data Foundation use only |`false` |
+| Prepare for Disaster Recovery | `prepare-for-disaster-recovery`| Config | Enabling this will set up the storage system for disaster recovery service with the essential configurations in place. This will subsequently allow seamless implementation of DR strategies for your workloads |`false` |
+| Enable NFS | `enable-nfs`| Config | Allow exports from the Network File System (NFS) that can then be accessed internally or externally from the OpenShift cluster |`false` |
+| Use Ceph RBD As Default Storage Class | `use-ceph-rbd-as-default-storage-class`| Config | Set the Ceph RADOS block device (RBD) storage class as the default storage class during the deployment of OpenShift Data Foundation |`false` |
+| Resource Profile | `resource-profile`| Config | Choose a resource profile based on the availability of resources during deployment. Choose between 'lean', 'balanced' and 'performance'. |`balanced` |
 {: caption="Table 5. 4.16 parameter reference" caption-side="bottom"}
 
 
 ### 4.17 parameter reference
 {: #odf-remote-4.17-parameters}
 
-| Display name | CLI option | Type | Description | Default value | 
+| Display name | CLI option | Type | Description | Default value |
 | --- | --- | --- | --- | --- |
-| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi(Use 512Gi or more). The default value is `512Gi`. | `512Gi` |
+| OSD pod volume size | `osd-size`| Config | The OSD storage size in Gi(Use 512Gi or more). The default value is '512Gi'. |`512Gi` |
 | OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | N/A |
-| Number of OSD volumes | `num-of-osd` | Config | The number of storage device replicas to create. The default value is `1`, which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of `1`. | `1` |
-| Worker pools names/IDs | `worker-pools` | Config | Specify a comma separated list of either the names or the IDs of the worker pools you want to use for ODF. Leave this field blank if you want to use `worker-nodes`. If you want to use all the worker nodes in your cluster for ODF, then leave `worker-pools` and `worker-nodes` blank. | N/A |
-| Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank if you want to use `worker-pools`. If you want to use all the worker nodes in your cluster for ODF, then then leave `worker-nodes` and `worker-pools` blank. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | N/A |
-| Upgrade | `odf-upgrade` | Config | If you are upgrading an existing ODF installation, set to `true`. | `false` |
-| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | `advanced` |
+| Number of OSD volumes | `num-of-osd`| Config | The number of storage device replicas to create. The default value is '1', which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of '1'. |`1` |
+| Worker pools names/IDs | `worker-pools` | Config | Specify a comma separated list of either the names or the IDs of the worker pools you want to use for ODF. Leave this field blank if you want to use 'worker-nodes'. If you want to use all the worker nodes in your cluster for ODF, then leave 'worker-pools' and 'worker-nodes' blank. | N/A |
+| Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank if you want to use 'worker-pools'. If you want to use all the worker nodes in your cluster for ODF, then then leave 'worker-nodes' and 'worker-pools' blank. The minimum number of worker nodes is 3. You can find your worker node names by running 'oc get nodes'. | N/A |
+| Upgrade | `odf-upgrade`| Config | If you are upgrading an existing ODF installation, set to 'true'. |`false` |
+| Billing type | `billing-type`| Config | The billing type you want to use. Choose from 'essentials' or 'advanced'. |`advanced` |
 | IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | N/A |
-| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | N/A |
+| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example 'us-east-standard'. | N/A |
 | Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | N/A |
 | Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | N/A |
-| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | `false` |
+| Encryption enabled | `cluster-encryption`| Config | Set to 'true' if you want to enable cluster-wide encryption. |`false` |
 | IAM API key | `iam-api-key` | Secret | Your IAM API key. | N/A |
-| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion. | `false` |
-| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storage class encryption. | `false` |
-| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, `-`, `_` or `.` and start and end with an alphanumeric character. | N/A |
+| Perform Cleanup | `perform-cleanup`| Config | Set to 'true' if you want to perform complete cleanup of ODF on assignment deletion. |`false` |
+| KMS encryption | `kms-encryption`| Config | Set to 'true' if you want to enable storage class encryption. |`false` |
+| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, '-', '_' or '.' and start and end with an alphanumeric character. | N/A |
 | KMS instance id | `kms-instance-id` | Config | Your KMS instance id. | N/A |
 | KMS instance Base URL | `kms-base-url` | Config | Your KMS instance public URL to connect to the instance. | N/A |
 | KMS instance API key token URL | `kms-token-url` | Config | API key token URL to generate token for KMS instance. | N/A |
 | KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | N/A |
 | KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | N/A |
-| Ignore Noobaa | `ignore-noobaa` | Config | Set to `false` if you want to deploy MultiCloud Object Gateway (Noobaa) | `true` |
-| Disable Noobaa LB | `disable-noobaa-LB` | Config | Set to `true` if you want to disable Noobaa public load balancer | `false` |
-| In-transit Encryption | `encryption-intransit` | Config | Set to `true` if you want to enable in-transit encryption | `false` |
-| Add Single Replica Pool(once enabled, cannot be disabled) | `add-single-replica-pool` | Config | Enabling this feature creates a single replica pool without data replication, increasing the risk of data loss, data corruption, and potential system instability. Once it is enabled, it cannot be disabled | `false` |
-| Taint Nodes | `taint-nodes` | Config | When set the selected worker nodes will be dedicated to Data Foundation use only | `false` |
-| Prepare for Disaster Recovery | `prepare-for-disaster-recovery` | Config | Enabling this will set up the storage system for disaster recovery service with the essential configurations in place. This will subsequently allow seamless implementation of DR strategies for your workloads | `false` |
-| Enable NFS | `enable-nfs` | Config | Allow exports from the Network File System (NFS) that can then be accessed internally or externally from the OpenShift cluster | `false` |
-| Use Ceph RBD As Default Storage Class | `use-ceph-rbd-as-default-storage-class` | Config | Set the Ceph RADOS block device (RBD) storage class as the default storage class during the deployment of OpenShift Data Foundation | `false` |
-| Resource Profile | `resource-profile` | Config | Choose a resource profile based on the availability of resources during deployment. Choose between `lean`, `balanced` and `performance`. | `balanced` |
+| Ignore Noobaa | `ignore-noobaa`| Config | Set to 'false' if you want to deploy MultiCloud Object Gateway (Noobaa) |`true` |
+| Disable Noobaa LB | `disable-noobaa-LB`| Config | Set to 'true' if you want to disable Noobaa public load balancer |`false` |
+| In-transit Encryption | `encryption-intransit`| Config | Set to 'true' if you want to enable in-transit encryption |`false` |
+| Add Single Replica Pool(once enabled, cannot be disabled) | `add-single-replica-pool`| Config | Enabling this feature creates a single replica pool without data replication, increasing the risk of data loss, data corruption, and potential system instability. Once it is enabled, it cannot be disabled |`false` |
+| Taint Nodes | `taint-nodes`| Config | When set the selected worker nodes will be dedicated to Data Foundation use only |`false` |
+| Prepare for Disaster Recovery | `prepare-for-disaster-recovery`| Config | Enabling this will set up the storage system for disaster recovery service with the essential configurations in place. This will subsequently allow seamless implementation of DR strategies for your workloads |`false` |
+| Enable NFS | `enable-nfs`| Config | Allow exports from the Network File System (NFS) that can then be accessed internally or externally from the OpenShift cluster |`false` |
+| Use Ceph RBD As Default Storage Class | `use-ceph-rbd-as-default-storage-class`| Config | Set the Ceph RADOS block device (RBD) storage class as the default storage class during the deployment of OpenShift Data Foundation |`false` |
+| Resource Profile | `resource-profile`| Config | Choose a resource profile based on the availability of resources during deployment. Choose between 'lean', 'balanced' and 'performance'. |`balanced` |
 {: caption="Table 6. 4.17 parameter reference" caption-side="bottom"}
 
 
 ### 4.18 parameter reference
 {: #odf-remote-4.18-parameters}
 
-| Display name | CLI option | Type | Description | Default value | 
+| Display name | CLI option | Type | Description | Default value |
 | --- | --- | --- | --- | --- |
-| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi(Use 512Gi or more). The default value is `512Gi`. | `512Gi` |
+| OSD pod volume size | `osd-size`| Config | The OSD storage size in Gi(Use 512Gi or more). The default value is '512Gi'. |`512Gi` |
 | OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | N/A |
-| Number of OSD volumes | `num-of-osd` | Config | The number of storage device replicas to create. The default value is `1`, which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of `1`. | `1` |
-| Worker pools names/IDs | `worker-pools` | Config | Specify a comma separated list of either the names or the IDs of the worker pools you want to use for ODF. Leave this field blank if you want to use `worker-nodes`. If you want to use all the worker nodes in your cluster for ODF, then leave `worker-pools` and `worker-nodes` blank. | N/A |
-| Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank if you want to use `worker-pools`. If you want to use all the worker nodes in your cluster for ODF, then then leave `worker-nodes` and `worker-pools` blank. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | N/A |
-| Upgrade | `odf-upgrade` | Config | If you are upgrading an existing ODF installation, set to `true`. | `false` |
-| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | `advanced` |
+| Number of OSD volumes | `num-of-osd`| Config | The number of storage device replicas to create. The default value is '1', which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of '1'. |`1` |
+| Worker pools names/IDs | `worker-pools` | Config | Specify a comma separated list of either the names or the IDs of the worker pools you want to use for ODF. Leave this field blank if you want to use 'worker-nodes'. If you want to use all the worker nodes in your cluster for ODF, then leave 'worker-pools' and 'worker-nodes' blank. | N/A |
+| Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank if you want to use 'worker-pools'. If you want to use all the worker nodes in your cluster for ODF, then then leave 'worker-nodes' and 'worker-pools' blank. The minimum number of worker nodes is 3. You can find your worker node names by running 'oc get nodes'. | N/A |
+| Upgrade | `odf-upgrade`| Config | If you are upgrading an existing ODF installation, set to 'true'. |`false` |
+| Billing type | `billing-type`| Config | The billing type you want to use. Choose from 'essentials' or 'advanced'. |`advanced` |
 | IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | N/A |
-| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | N/A |
+| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example 'us-east-standard'. | N/A |
 | Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | N/A |
 | Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | N/A |
-| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | `false` |
+| Encryption enabled | `cluster-encryption`| Config | Set to 'true' if you want to enable cluster-wide encryption. |`false` |
 | IAM API key | `iam-api-key` | Secret | Your IAM API key. | N/A |
-| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion. | `false` |
-| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storage class encryption. | `false` |
-| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, `-`, `_` or `.` and start and end with an alphanumeric character. | N/A |
+| Perform Cleanup | `perform-cleanup`| Config | Set to 'true' if you want to perform complete cleanup of ODF on assignment deletion. |`false` |
+| KMS encryption | `kms-encryption`| Config | Set to 'true' if you want to enable storage class encryption. |`false` |
+| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, '-', '_' or '.' and start and end with an alphanumeric character. | N/A |
 | KMS instance id | `kms-instance-id` | Config | Your KMS instance id. | N/A |
 | KMS instance Base URL | `kms-base-url` | Config | Your KMS instance public URL to connect to the instance. | N/A |
 | KMS instance API key token URL | `kms-token-url` | Config | API key token URL to generate token for KMS instance. | N/A |
 | KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | N/A |
 | KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | N/A |
-| Ignore Noobaa | `ignore-noobaa` | Config | Set to `false` if you want to deploy MultiCloud Object Gateway (Noobaa) | `true` |
-| Disable Noobaa LB | `disable-noobaa-LB` | Config | Set to `true` if you want to disable Noobaa public load balancer | `false` |
-| In-transit Encryption | `encryption-intransit` | Config | Set to `true` if you want to enable in-transit encryption | `false` |
-| Add Single Replica Pool(once enabled, cannot be disabled) | `add-single-replica-pool` | Config | Enabling this feature creates a single replica pool without data replication, increasing the risk of data loss, data corruption, and potential system instability. Once it is enabled, it cannot be disabled | `false` |
-| Taint Nodes | `taint-nodes` | Config | When set the selected worker nodes will be dedicated to Data Foundation use only | `false` |
-| Enable NFS | `enable-nfs` | Config | Allow exports from the Network File System (NFS) that can then be accessed internally or externally from the OpenShift cluster | `false` |
-| Use Ceph RBD As Default Storage Class | `use-ceph-rbd-as-default-storage-class` | Config | Set the Ceph RADOS block device (RBD) storage class as the default storage class during the deployment of OpenShift Data Foundation | `false` |
-| Resource Profile | `resource-profile` | Config | Choose a resource profile based on the availability of resources during deployment. Choose between `lean`, `balanced` and `performance`. | `balanced` |
+| Ignore Noobaa | `ignore-noobaa`| Config | Set to 'false' if you want to deploy MultiCloud Object Gateway (Noobaa) |`true` |
+| Disable Noobaa LB | `disable-noobaa-LB`| Config | Set to 'true' if you want to disable Noobaa public load balancer |`false` |
+| In-transit Encryption | `encryption-intransit`| Config | Set to 'true' if you want to enable in-transit encryption |`false` |
+| Add Single Replica Pool(once enabled, cannot be disabled) | `add-single-replica-pool`| Config | Enabling this feature creates a single replica pool without data replication, increasing the risk of data loss, data corruption, and potential system instability. Once it is enabled, it cannot be disabled |`false` |
+| Taint Nodes | `taint-nodes`| Config | When set the selected worker nodes will be dedicated to Data Foundation use only |`false` |
+| Enable NFS | `enable-nfs`| Config | Allow exports from the Network File System (NFS) that can then be accessed internally or externally from the OpenShift cluster |`false` |
+| Use Ceph RBD As Default Storage Class | `use-ceph-rbd-as-default-storage-class`| Config | Set the Ceph RADOS block device (RBD) storage class as the default storage class during the deployment of OpenShift Data Foundation |`false` |
+| Resource Profile | `resource-profile`| Config | Choose a resource profile based on the availability of resources during deployment. Choose between 'lean', 'balanced' and 'performance'. |`balanced` |
 {: caption="Table 7. 4.18 parameter reference" caption-side="bottom"}
 
 
 ### 4.19 parameter reference
 {: #odf-remote-4.19-parameters}
 
-| Display name | CLI option | Type | Description | Default value | 
+| Display name | CLI option | Type | Description | Default value |
 | --- | --- | --- | --- | --- |
-| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi(Use 512Gi or more). The default value is `512Gi`. | `512Gi` |
+| OSD pod volume size | `osd-size`| Config | The OSD storage size in Gi(Use 512Gi or more). The default value is '512Gi'. |`512Gi` |
 | OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | N/A |
-| Number of OSD volumes | `num-of-osd` | Config | The number of storage device replicas to create. The default value is `1`, which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of `1`. | `1` |
-| Worker pools names/IDs | `worker-pools` | Config | Specify a comma separated list of either the names or the IDs of the worker pools you want to use for ODF. Leave this field blank if you want to use `worker-nodes`. If you want to use all the worker nodes in your cluster for ODF, then leave `worker-pools` and `worker-nodes` blank. | N/A |
-| Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank if you want to use `worker-pools`. If you want to use all the worker nodes in your cluster for ODF, then then leave `worker-nodes` and `worker-pools` blank. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | N/A |
-| Upgrade | `odf-upgrade` | Config | If you are upgrading an existing ODF installation, set to `true`. | `false` |
-| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | `advanced` |
+| Number of OSD volumes | `num-of-osd`| Config | The number of storage device replicas to create. The default value is '1', which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of '1'. |`1` |
+| Worker pools names/IDs | `worker-pools` | Config | Specify a comma separated list of either the names or the IDs of the worker pools you want to use for ODF. Leave this field blank if you want to use 'worker-nodes'. If you want to use all the worker nodes in your cluster for ODF, then leave 'worker-pools' and 'worker-nodes' blank. | N/A |
+| Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank if you want to use 'worker-pools'. If you want to use all the worker nodes in your cluster for ODF, then then leave 'worker-nodes' and 'worker-pools' blank. The minimum number of worker nodes is 3. You can find your worker node names by running 'oc get nodes'. | N/A |
+| Upgrade | `odf-upgrade`| Config | If you are upgrading an existing ODF installation, set to 'true'. |`false` |
+| Billing type | `billing-type`| Config | The billing type you want to use. Choose from 'essentials' or 'advanced'. |`advanced` |
 | IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | N/A |
-| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | N/A |
+| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example 'us-east-standard'. | N/A |
 | Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | N/A |
 | Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | N/A |
-| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | `false` |
+| Encryption enabled | `cluster-encryption`| Config | Set to 'true' if you want to enable cluster-wide encryption. |`false` |
 | IAM API key | `iam-api-key` | Secret | Your IAM API key. | N/A |
-| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion. | `false` |
-| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storage class encryption. | `false` |
-| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, `-`, `_` or `.` and start and end with an alphanumeric character. | N/A |
+| Perform Cleanup | `perform-cleanup`| Config | Set to 'true' if you want to perform complete cleanup of ODF on assignment deletion. |`false` |
+| KMS encryption | `kms-encryption`| Config | Set to 'true' if you want to enable storage class encryption. |`false` |
+| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, '-', '_' or '.' and start and end with an alphanumeric character. | N/A |
 | KMS instance id | `kms-instance-id` | Config | Your KMS instance id. | N/A |
 | KMS instance Base URL | `kms-base-url` | Config | Your KMS instance public URL to connect to the instance. | N/A |
 | KMS instance API key token URL | `kms-token-url` | Config | API key token URL to generate token for KMS instance. | N/A |
 | KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | N/A |
 | KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | N/A |
-| Ignore Noobaa | `ignore-noobaa` | Config | Set to `false` if you want to deploy MultiCloud Object Gateway (Noobaa) | `true` |
-| Disable Noobaa LB | `disable-noobaa-LB` | Config | Set to `true` if you want to disable Noobaa public load balancer | `false` |
-| In-transit Encryption | `encryption-intransit` | Config | Set to `true` if you want to enable in-transit encryption | `false` |
-| Add Single Replica Pool(once enabled, cannot be disabled) | `add-single-replica-pool` | Config | Enabling this feature creates a single replica pool without data replication, increasing the risk of data loss, data corruption, and potential system instability. Once it is enabled, it cannot be disabled | `false` |
-| Taint Nodes | `taint-nodes` | Config | When set the selected worker nodes will be dedicated to Data Foundation use only | `false` |
-| Enable NFS | `enable-nfs` | Config | Allow exports from the Network File System (NFS) that can then be accessed internally or externally from the OpenShift cluster | `false` |
-| Use Ceph RBD As Default Storage Class | `use-ceph-rbd-as-default-storage-class` | Config | Set the Ceph RADOS block device (RBD) storage class as the default storage class during the deployment of OpenShift Data Foundation | `false` |
-| Resource Profile | `resource-profile` | Config | Choose a resource profile based on the availability of resources during deployment. Choose between `lean`, `balanced` and `performance`. | `balanced` |
+| Ignore Noobaa | `ignore-noobaa`| Config | Set to 'false' if you want to deploy MultiCloud Object Gateway (Noobaa) |`true` |
+| Disable Noobaa LB | `disable-noobaa-LB`| Config | Set to 'true' if you want to disable Noobaa public load balancer |`false` |
+| In-transit Encryption | `encryption-intransit`| Config | Set to 'true' if you want to enable in-transit encryption |`false` |
+| Add Single Replica Pool(once enabled, cannot be disabled) | `add-single-replica-pool`| Config | Enabling this feature creates a single replica pool without data replication, increasing the risk of data loss, data corruption, and potential system instability. Once it is enabled, it cannot be disabled |`false` |
+| Taint Nodes | `taint-nodes`| Config | When set the selected worker nodes will be dedicated to Data Foundation use only |`false` |
+| Enable NFS | `enable-nfs`| Config | Allow exports from the Network File System (NFS) that can then be accessed internally or externally from the OpenShift cluster |`false` |
+| Use Ceph RBD As Default Storage Class | `use-ceph-rbd-as-default-storage-class`| Config | Set the Ceph RADOS block device (RBD) storage class as the default storage class during the deployment of OpenShift Data Foundation |`false` |
+| Resource Profile | `resource-profile`| Config | Choose a resource profile based on the availability of resources during deployment. Choose between 'lean', 'balanced' and 'performance'. |`balanced` |
 {: caption="Table 8. 4.19 parameter reference" caption-side="bottom"}
 
 
 ### 4.20 parameter reference
 {: #odf-remote-4.20-parameters}
 
-| Display name | CLI option | Type | Description | Default value | 
+| Display name | CLI option | Type | Description | Default value |
 | --- | --- | --- | --- | --- |
-| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi(Use 512Gi or more). The default value is `512Gi`. | `512Gi` |
+| OSD pod volume size | `osd-size`| Config | The OSD storage size in Gi(Use 512Gi or more). The default value is '512Gi'. |`512Gi` |
 | OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | N/A |
-| Number of OSD volumes | `num-of-osd` | Config | The number of storage device replicas to create. The default value is `1`, which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of `1`. | `1` |
-| Worker pools names/IDs | `worker-pools` | Config | Specify a comma separated list of either the names or the IDs of the worker pools you want to use for ODF. Leave this field blank if you want to use `worker-nodes`. If you want to use all the worker nodes in your cluster for ODF, then leave `worker-pools` and `worker-nodes` blank. | N/A |
-| Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank if you want to use `worker-pools`. If you want to use all the worker nodes in your cluster for ODF, then then leave `worker-nodes` and `worker-pools` blank. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | N/A |
-| Upgrade | `odf-upgrade` | Config | If you are upgrading an existing ODF installation, set to `true`. | `false` |
-| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | `advanced` |
+| Number of OSD volumes | `num-of-osd`| Config | The number of storage device replicas to create. The default value is '1', which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of '1'. |`1` |
+| Worker pools names/IDs | `worker-pools` | Config | Specify a comma separated list of either the names or the IDs of the worker pools you want to use for ODF. Leave this field blank if you want to use 'worker-nodes'. If you want to use all the worker nodes in your cluster for ODF, then leave 'worker-pools' and 'worker-nodes' blank. | N/A |
+| Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank if you want to use 'worker-pools'. If you want to use all the worker nodes in your cluster for ODF, then then leave 'worker-nodes' and 'worker-pools' blank. The minimum number of worker nodes is 3. You can find your worker node names by running 'oc get nodes'. | N/A |
+| Upgrade | `odf-upgrade`| Config | If you are upgrading an existing ODF installation, set to 'true'. |`false` |
+| Billing type | `billing-type`| Config | The billing type you want to use. Choose from 'essentials' or 'advanced'. |`advanced` |
 | IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | N/A |
-| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | N/A |
+| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example 'us-east-standard'. | N/A |
 | Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | N/A |
 | Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | N/A |
-| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | `false` |
+| Encryption enabled | `cluster-encryption`| Config | Set to 'true' if you want to enable cluster-wide encryption. |`false` |
 | IAM API key | `iam-api-key` | Secret | Your IAM API key. | N/A |
-| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion. | `false` |
-| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storage class encryption. | `false` |
-| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, `-`, `_` or `.` and start and end with an alphanumeric character. | N/A |
+| Perform Cleanup | `perform-cleanup`| Config | Set to 'true' if you want to perform complete cleanup of ODF on assignment deletion. |`false` |
+| KMS encryption | `kms-encryption`| Config | Set to 'true' if you want to enable storage class encryption. |`false` |
+| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, '-', '_' or '.' and start and end with an alphanumeric character. | N/A |
 | KMS instance id | `kms-instance-id` | Config | Your KMS instance id. | N/A |
 | KMS instance Base URL | `kms-base-url` | Config | Your KMS instance public URL to connect to the instance. | N/A |
 | KMS instance API key token URL | `kms-token-url` | Config | API key token URL to generate token for KMS instance. | N/A |
 | KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | N/A |
 | KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | N/A |
-| Ignore Noobaa | `ignore-noobaa` | Config | Set to `false` if you want to deploy MultiCloud Object Gateway (Noobaa) | `true` |
-| Disable Noobaa LB | `disable-noobaa-LB` | Config | Set to `true` if you want to disable Noobaa public load balancer | `false` |
-| In-transit Encryption | `encryption-intransit` | Config | Set to `true` if you want to enable in-transit encryption | `false` |
-| Add Single Replica Pool(once enabled, cannot be disabled) | `add-single-replica-pool` | Config | Enabling this feature creates a single replica pool without data replication, increasing the risk of data loss, data corruption, and potential system instability. Once it is enabled, it cannot be disabled | `false` |
-| Taint Nodes | `taint-nodes` | Config | When set the selected worker nodes will be dedicated to Data Foundation use only | `false` |
-| Enable NFS | `enable-nfs` | Config | Allow exports from the Network File System (NFS) that can then be accessed internally or externally from the OpenShift cluster | `false` |
-| Use Ceph RBD As Default Storage Class | `use-ceph-rbd-as-default-storage-class` | Config | Set the Ceph RADOS block device (RBD) storage class as the default storage class during the deployment of OpenShift Data Foundation | `false` |
-| Resource Profile | `resource-profile` | Config | Choose a resource profile based on the availability of resources during deployment. Choose between `lean`, `balanced` and `performance`. | `balanced` |
-| Set default StorageClass for virtualization | `set-default-storage-class-for-virtualization` | Config | If enabled, RBD virtualization StorageClass will be marked as the default for KubeVirt VM disks (persistent volumes) upon installation. | `false` |
-| Enable automatic capacity scaling | `enable-automatic-capacity-scaling` | Config | To automatically add additional raw capacity equivalent to the configured deployment size whenever used capacity reaches 70%. | `false` |
-| Cluster expansion limit | `cluster-expansion-limit` | Config | The maximum limit to which the cluster can expand in the cloud. Automatic capacity scaling is suspended if exceeded. | `12Ti` |
+| Ignore Noobaa | `ignore-noobaa`| Config | Set to 'false' if you want to deploy MultiCloud Object Gateway (Noobaa) |`true` |
+| Disable Noobaa LB | `disable-noobaa-LB`| Config | Set to 'true' if you want to disable Noobaa public load balancer |`false` |
+| In-transit Encryption | `encryption-intransit`| Config | Set to 'true' if you want to enable in-transit encryption |`false` |
+| Add Single Replica Pool(once enabled, cannot be disabled) | `add-single-replica-pool`| Config | Enabling this feature creates a single replica pool without data replication, increasing the risk of data loss, data corruption, and potential system instability. Once it is enabled, it cannot be disabled |`false` |
+| Taint Nodes | `taint-nodes`| Config | When set the selected worker nodes will be dedicated to Data Foundation use only |`false` |
+| Enable NFS | `enable-nfs`| Config | Allow exports from the Network File System (NFS) that can then be accessed internally or externally from the OpenShift cluster |`false` |
+| Use Ceph RBD As Default Storage Class | `use-ceph-rbd-as-default-storage-class`| Config | Set the Ceph RADOS block device (RBD) storage class as the default storage class during the deployment of OpenShift Data Foundation |`false` |
+| Resource Profile | `resource-profile`| Config | Choose a resource profile based on the availability of resources during deployment. Choose between 'lean', 'balanced' and 'performance'. |`balanced` |
+| Set default StorageClass for virtualization | `set-default-storage-class-for-virtualization`| Config | If enabled, RBD virtualization StorageClass will be marked as the default for KubeVirt VM disks (persistent volumes) upon installation. |`false` |
+| Enable automatic capacity scaling | `enable-automatic-capacity-scaling`| Config | To automatically add additional raw capacity equivalent to the configured deployment size whenever used capacity reaches 70%. |`false` |
+| Cluster expansion limit | `cluster-expansion-limit`| Config | The maximum limit to which the cluster can expand in the cloud. Automatic capacity scaling is suspended if exceeded. |`12Ti` |
 {: caption="Table 9. 4.20 parameter reference" caption-side="bottom"}
 
 

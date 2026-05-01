@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-12-04"
+  years: 2020, 2026
+lastupdated: "2026-05-01"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce, compute engine
 
@@ -470,7 +470,7 @@ Use the console to remove a storage configuration.
 ### 1.0.4 parameter reference
 {: #gcp-compute-persistent-disk-csi-driver-1.0.4-parameters}
 
-| Display name | CLI option | Type | Description | Default value | 
+| Display name | CLI option | Type | Description | Default value |
 | --- | --- | --- | --- | --- |
 | Google Cloud project ID. | `project_id` | Secret | Google Cloud project ID. You can find your Project ID from the Google Cloud dashboard. | N/A |
 | Google Cloud private key ID | `private_key_id` | Secret | Google Cloud private key ID. You can find this in the JSON service account key file. | N/A |
@@ -487,7 +487,7 @@ Use the console to remove a storage configuration.
 ### 1.7.1 parameter reference
 {: #gcp-compute-persistent-disk-csi-driver-1.7.1-parameters}
 
-| Display name | CLI option | Type | Description | Default value | 
+| Display name | CLI option | Type | Description | Default value |
 | --- | --- | --- | --- | --- |
 | Google Cloud project ID | `project_id` | Secret | Google Cloud project ID. You can find your Project ID from the Google Cloud dashboard. | N/A |
 | Google Cloud private key ID | `private_key_id` | Secret | Google Cloud private key ID. You can find this in the JSON service account key file. | N/A |
@@ -504,7 +504,7 @@ Use the console to remove a storage configuration.
 ### 1.8.0 parameter reference
 {: #gcp-compute-persistent-disk-csi-driver-1.8.0-parameters}
 
-| Display name | CLI option | Type | Description | Default value | 
+| Display name | CLI option | Type | Description | Default value |
 | --- | --- | --- | --- | --- |
 | Google Cloud project ID | `project_id` | Secret | Google Cloud project ID. You can find your Project ID from the Google Cloud dashboard. | N/A |
 | Google Cloud private key ID | `private_key_id` | Secret | Google Cloud private key ID. You can find this in the JSON service account key file. | N/A |
