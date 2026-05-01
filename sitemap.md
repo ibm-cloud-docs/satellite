@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-04-27"
+lastupdated: "2026-05-01"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -203,6 +203,12 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [April 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr26)
+
+    * [30 April 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr3026)
+
+        * Satellite Connector agent image version `1.2.6`.
+
+        * Satellite Connector agent for Windows version `1.2.2`.
 
     * [02 April 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr0226)
 
@@ -3115,6 +3121,10 @@ subcollection: satellite
 
 * [Version 1.0](/docs/satellite?topic=satellite-cs_cli_changelog#10)
 
+* [Version v1.0.765](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01765)
+
+* [Version v1.0.763](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01763)
+
 * [Version v1.0.762](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01762)
 
 * [Version v1.0.760](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01760)
@@ -3429,6 +3439,8 @@ subcollection: satellite
 
 * [Version 1.2](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2-change-log)
 
+    * [Version 1.2.6, released 30 Apr 2026](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2.6-change-log)
+
     * [Version 1.2.5, released 10 Feb 2026](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2.5-change-log)
 
     * [Version 1.2.4, released 2 Dec 2025](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2.4-change-log)
@@ -3466,6 +3478,8 @@ subcollection: satellite
 [Connector Windows agent change log](/docs/satellite?topic=satellite-cl-connector-windows-agent#cl-connector-windows-agent)
 
 * [Version 1.2](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.2-change-log)
+
+    * [Version 1.2.2, released 30 Apr 2026](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.2.2-change-log)
 
     * [Version 1.2.1, released 16 Sep 2025](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.2.1-change-log)
 
