@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-03-06"
+lastupdated: "2026-05-01"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration
 
@@ -500,7 +500,7 @@ Note that you must delete your storage assignments before you can successfully d
 ### 1.12.0 parameter reference
 {: #aws-ebs-csi-driver-1.12.0-parameters}
 
-| Display name | CLI option | Type | Description | Default value | 
+| Display name | CLI option | Type | Description | Default value |
 | --- | --- | --- | --- | --- |
 | AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | N/A |
 | AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | N/A |
@@ -510,7 +510,7 @@ Note that you must delete your storage assignments before you can successfully d
 ### 1.31.0 parameter reference
 {: #aws-ebs-csi-driver-1.31.0-parameters}
 
-| Display name | CLI option | Type | Description | Default value | 
+| Display name | CLI option | Type | Description | Default value |
 | --- | --- | --- | --- | --- |
 | AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | N/A |
 | AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | N/A |
@@ -520,7 +520,7 @@ Note that you must delete your storage assignments before you can successfully d
 ### 1.55.0 parameter reference
 {: #aws-ebs-csi-driver-1.55.0-parameters}
 
-| Display name | CLI option | Type | Description | Default value | 
+| Display name | CLI option | Type | Description | Default value |
 | --- | --- | --- | --- | --- |
 | AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | N/A |
 | AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | N/A |

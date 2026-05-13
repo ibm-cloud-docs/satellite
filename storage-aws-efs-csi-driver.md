@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-26"
+lastupdated: "2026-05-01"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -533,7 +533,7 @@ Note that you must delete your storage assignments before you can successfully d
 ### 1.4.2 parameter reference
 {: #aws-efs-csi-driver-1.4.2-parameters}
 
-| Display name | CLI option | Type | Description | Default value | 
+| Display name | CLI option | Type | Description | Default value |
 | --- | --- | --- | --- | --- |
 | AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | N/A |
 | AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | N/A |
@@ -543,7 +543,7 @@ Note that you must delete your storage assignments before you can successfully d
 ### 2.0.3 parameter reference
 {: #aws-efs-csi-driver-2.0.3-parameters}
 
-| Display name | CLI option | Type | Description | Default value | 
+| Display name | CLI option | Type | Description | Default value |
 | --- | --- | --- | --- | --- |
 | AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | N/A |
 | AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | N/A |

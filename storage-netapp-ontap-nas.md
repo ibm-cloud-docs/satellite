@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-09-05"
+  years: 2020, 2026
+lastupdated: "2026-05-01"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, netapp nas trident
 
@@ -448,34 +448,34 @@ Use the console to remove a storage assignment and storage configuration.
 ### 24.02 parameter reference
 {: #netapp-ontap-nas-24.02-parameters}
 
-| Display name | CLI option | Type | Description | Default value | 
+| Display name | CLI option | Type | Description | Default value |
 | --- | --- | --- | --- | --- |
 | Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | N/A |
 | Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | N/A |
 | SVM | `svm` | Config | The name of the SVM. | N/A |
 | User Name | `username` | Secret | The username to connect to the storage device. | N/A |
 | User Password | `password` | Secret | The password to connect to the storage device. | N/A |
-| Export Policy | `exportPolicy` | Config | The NAS option for the NFS export policy. | `default` |
-| Limit Volume Size | `limitVolumeSize` | Config | Maximum requestable volume size (in Gibibytes) and qtree parent volume size | `50Gi` |
-| Limit AggregateUsage | `limitAggregateUsage` | Config | Fail provisioning if usage is greater than this percentage. | `80%` |
-| NFS Mount Options | `nfsMountOptions` | Config | The NFS mount options. | `nfsvers=4` |
+| Export Policy | `exportPolicy`| Config | The NAS option for the NFS export policy. |`default` |
+| Limit Volume Size | `limitVolumeSize`| Config | Maximum requestable volume size (in Gibibytes) and qtree parent volume size |`50Gi` |
+| Limit AggregateUsage | `limitAggregateUsage`| Config | Fail provisioning if usage is greater than this percentage. |`80%` |
+| NFS Mount Options | `nfsMountOptions`| Config | The NFS mount options. |`nfsvers=4` |
 {: caption="Table 1. 24.02 parameter reference" caption-side="bottom"}
 
 
 ### 25.06 parameter reference
 {: #netapp-ontap-nas-25.06-parameters}
 
-| Display name | CLI option | Type | Description | Default value | 
+| Display name | CLI option | Type | Description | Default value |
 | --- | --- | --- | --- | --- |
 | Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | N/A |
 | Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | N/A |
 | SVM | `svm` | Config | The name of the SVM. | N/A |
 | User Name | `username` | Secret | The username to connect to the storage device. | N/A |
 | User Password | `password` | Secret | The password to connect to the storage device. | N/A |
-| Export Policy | `exportPolicy` | Config | The NAS option for the NFS export policy. | `default` |
-| Limit Volume Size | `limitVolumeSize` | Config | Maximum requestable volume size (in Gibibytes) and qtree parent volume size | `50Gi` |
-| Limit AggregateUsage | `limitAggregateUsage` | Config | Fail provisioning if usage is greater than this percentage. | `80%` |
-| NFS Mount Options | `nfsMountOptions` | Config | The NFS mount options. | `nfsvers=4` |
+| Export Policy | `exportPolicy`| Config | The NAS option for the NFS export policy. |`default` |
+| Limit Volume Size | `limitVolumeSize`| Config | Maximum requestable volume size (in Gibibytes) and qtree parent volume size |`50Gi` |
+| Limit AggregateUsage | `limitAggregateUsage`| Config | Fail provisioning if usage is greater than this percentage. |`80%` |
+| NFS Mount Options | `nfsMountOptions`| Config | The NFS mount options. |`nfsvers=4` |
 {: caption="Table 2. 25.06 parameter reference" caption-side="bottom"}
 
 

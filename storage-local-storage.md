@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-07-09"
+  years: 2023, 2026
+lastupdated: "2026-05-01"
 
 keywords: satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -584,17 +584,17 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
 ### 1.0.0 parameter reference
 {: #local-storage-1.0.0-parameters}
 
-| Display name | CLI option | Type | Description | Default value | 
+| Display name | CLI option | Type | Description | Default value |
 | --- | --- | --- | --- | --- |
-| Install file storage driver | `install-local-storage-file` | Config | Set to `true` to install the file storage driver. | `true` |
-| Automatic volume discovery for file storage | `auto-discover-devices-file` | Config | Set to `true` if you want to automatically discover and use the volumes on your worker nodes for file storage. | `false` |
-| File storage worker node label key | `file-nodes-label-key` | Config | The `key` of the worker node `key=value` label that you want to use for file storage. | N/A |
-| File storage worker node label value | `file-nodes-label-value` | Config | The `value` of the worker node `key=value` label that you want to use for file storage. | N/A |
-| Device path for file storage | `file-devicepath` | Config | The path to the storage devices on your worker node that you want to use for file storage. Example: `/dev/sdc`. This option is required when `auto-discover-devices-file` is set to `false`. | N/A |
-| File system type | `fstype` | Config | The file system type. Specify `ext3`, `ext4`, or `xfs`. | `ext4` |
-| Install block storage driver | `install-local-storage-block` | Config | Set to `true` to install the block storage driver. | `true` |
-| Automatic volume discovery for block storage | `auto-discover-devices-block` | Config | Set to `true` if you want to automatically discover and use the volumes on your worker nodes for block storage. | `false` |
-| Block storage worker node label key | `block-nodes-label-key` | Config | The `key` of the worker node `key=value` label that you want to use for block storage. | N/A |
-| Block storage worker node label value | `block-nodes-label-value` | Config | The `value` of the worker node `key=value` label that you want to use for block storage. | N/A |
-| Device Path for Local Storage Block | `block-devicepath` | Config | The path to the storage devices on your worker node that you want to use for block storage. Example: `/dev/sdc`. This option is required when `auto-discover-devices-block` is set to false. | N/A |
+| Install file storage driver | `install-local-storage-file`| Config | Set to 'true' to install the file storage driver. |`true` |
+| Automatic volume discovery for file storage | `auto-discover-devices-file`| Config | Set to 'true' if you want to automatically discover and use the volumes on your worker nodes for file storage. |`false` |
+| File storage worker node label key | `file-nodes-label-key` | Config | The 'key' of the worker node 'key=value' label that you want to use for file storage. | N/A |
+| File storage worker node label value | `file-nodes-label-value` | Config | The 'value' of the worker node 'key=value' label that you want to use for file storage. | N/A |
+| Device path for file storage | `file-devicepath` | Config | The path to the storage devices on your worker node that you want to use for file storage. Example: '/dev/sdc'. This option is required when 'auto-discover-devices-file' is set to 'false'. | N/A |
+| File system type | `fstype`| Config | The file system type. Specify 'ext3', 'ext4', or 'xfs'. |`ext4` |
+| Install block storage driver | `install-local-storage-block`| Config | Set to 'true' to install the block storage driver. |`true` |
+| Automatic volume discovery for block storage | `auto-discover-devices-block`| Config | Set to 'true' if you want to automatically discover and use the volumes on your worker nodes for block storage. |`false` |
+| Block storage worker node label key | `block-nodes-label-key` | Config | The 'key' of the worker node 'key=value' label that you want to use for block storage. | N/A |
+| Block storage worker node label value | `block-nodes-label-value` | Config | The 'value' of the worker node 'key=value' label that you want to use for block storage. | N/A |
+| Device Path for Local Storage Block | `block-devicepath` | Config | The path to the storage devices on your worker node that you want to use for block storage. Example: '/dev/sdc'. This option is required when 'auto-discover-devices-block' is set to false. | N/A |
 {: caption="Table 1. 1.0.0 parameter reference" caption-side="bottom"}
