@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-05-01"
+lastupdated: "2026-06-02"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -22,8 +22,25 @@ content-type: release-note
 Review the latest changes to the {{site.data.keyword.satellitelong}} documentation.
 {: shortdesc}
 
+## June 2026
+{: #satellite-jun26}
+
+
+### 02 June 2026
+{: #satellite-jun0226}
+{: release-note}
+
+Satellite Connector agent image version `1.2.7`.
+:   For more information, see the [change log](/docs/satellite?topic=satellite-cl-connector-agent-image) and [Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally#pull-agent-image).
+
+{{site.data.keyword.satelliteshort}} storage template patch updates are available.
+:   You can update your {{site.data.keyword.satelliteshort}} storage configurations and assignments to the latest patch from the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, or by running the  command. For more information, see [Which storage templates are available?](/docs/satellite?topic=satellite-storage-template-ov#storage-template-ov-providers) and the [CLI reference](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-patch-cli).
+
+
+
 ## April 2026
 {: #satellite-apr26}
+
 
 
 ### 30 April 2026
@@ -41,8 +58,7 @@ Satellite Connector agent for Windows version `1.2.2`.
 {: #satellite-apr0226}
 {: release-note}
 
-{{site.data.keyword.satelliteshort}} storage template patch updates are available.
-:   You can update your {{site.data.keyword.satelliteshort}} storage configurations and assignments to the latest patch from the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, or by running the  command. For more information, see [Which storage templates are available?](/docs/satellite?topic=satellite-storage-template-ov#storage-template-ov-providers) and the [CLI reference](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-patch-cli).
+
 
 ## March 2026
 {: #satellite-mar26}

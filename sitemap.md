@@ -202,6 +202,14 @@ subcollection: satellite
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
+* [June 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jun26)
+
+    * [02 June 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jun0226)
+
+        * Satellite Connector agent image version `1.2.7`.
+
+        * {{site.data.keyword.satelliteshort}} storage template patch updates are available.
+
 * [April 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr26)
 
     * [30 April 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr3026)
@@ -211,8 +219,6 @@ subcollection: satellite
         * Satellite Connector agent for Windows version `1.2.2`.
 
     * [02 April 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr0226)
-
-        * {{site.data.keyword.satelliteshort}} storage template patch updates are available.
 
 * [March 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar26)
 
