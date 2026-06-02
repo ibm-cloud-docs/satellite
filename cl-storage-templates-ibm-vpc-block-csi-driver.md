@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-04-07"
+lastupdated: "2026-06-02"
 
 
 keywords: change log, version history, ibm-vpc-block-csi-driver
@@ -27,6 +27,13 @@ Review the version history for `ibm-vpc-block-csi-driver`.
 
 ## Version 5.1
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1}
+
+
+### Revision 16, released 27 May 2026
+{: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-16}
+
+- Resolves the following CVEs: [CVE-2026-32281](https://nvd.nist.gov/vuln/detail/CVE-2026-32281){: external}, [CVE-2026-32280](https://nvd.nist.gov/vuln/detail/CVE-2026-32280){: external}, [CVE-2026-32283](https://nvd.nist.gov/vuln/detail/CVE-2026-32283){: external}, [CVE-2026-32289](https://nvd.nist.gov/vuln/detail/CVE-2026-32289){: external}, [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/CVE-2026-33186){: external}, [CVE-2026-29181](https://nvd.nist.gov/vuln/detail/CVE-2026-29181){: external}, [CVE-2026-4878](https://nvd.nist.gov/vuln/detail/CVE-2026-4878){: external}, [CVE-2026-29111](https://nvd.nist.gov/vuln/detail/CVE-2026-29111){: external}, [CVE-2026-33814](https://nvd.nist.gov/vuln/detail/CVE-2026-33814){: external}, [CVE-2026-39836](https://nvd.nist.gov/vuln/detail/CVE-2026-39836){: external}, [CVE-2026-42499](https://nvd.nist.gov/vuln/detail/CVE-2026-42499){: external}, [CVE-2026-33811](https://nvd.nist.gov/vuln/detail/CVE-2026-33811){: external}, [CVE-2026-39820](https://nvd.nist.gov/vuln/detail/CVE-2026-39820){: external}, and [CVE-2026-31790](https://nvd.nist.gov/vuln/detail/CVE-2026-31790){: external}.
+- Updates Go to version `1.25.10`.
 
 
 ### Revision 15, released 02 April 2026
