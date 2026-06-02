@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-06-02"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -715,7 +715,9 @@ subcollection: satellite
 
 * [Working with API keys](/docs/satellite?topic=satellite-api_setup#api-setup-include-work-with-apikeys)
 
-    * [Required access for managing API keys](/docs/satellite?topic=satellite-api_setup#api-setup-include-API-key-access)
+    * [API key expiration](/docs/satellite?topic=satellite-api_setup#api-setup-include-apikey-expiration)
+
+    * [Leaked API key protection](/docs/satellite?topic=satellite-api_setup#api-setup-include-leaked-apikey-protection)
 
 * [Generating an IAM token](/docs/satellite?topic=satellite-api_setup#api-setup-include-iamtoken)
 
@@ -1619,8 +1621,6 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=cli#aws-ebs-csi-driver-parameter-reference)
 
-    * [1.12.0 parameter reference](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=cli#aws-ebs-csi-driver-1.12.0-parameters)
-
     * [1.31.0 parameter reference](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=cli#aws-ebs-csi-driver-1.31.0-parameters)
 
     * [1.55.0 parameter reference](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=cli#aws-ebs-csi-driver-1.55.0-parameters)
@@ -1812,10 +1812,6 @@ subcollection: satellite
     * [Removing the Google Compute Engine storage configuration from the CLI](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver&interface=cli#gcp-template-rm-cli)
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver&interface=cli#gcp-compute-persistent-disk-csi-driver-parameter-reference)
-
-    * [1.0.4 parameter reference](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver&interface=cli#gcp-compute-persistent-disk-csi-driver-1.0.4-parameters)
-
-    * [1.7.1 parameter reference](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver&interface=cli#gcp-compute-persistent-disk-csi-driver-1.7.1-parameters)
 
     * [1.8.0 parameter reference](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver&interface=cli#gcp-compute-persistent-disk-csi-driver-1.8.0-parameters)
 
@@ -2432,8 +2428,6 @@ subcollection: satellite
     * [Removing the VMWare storage configuration using the command line](/docs/satellite?topic=satellite-storage-vsphere-csi-driver&interface=cli#vmware-csi-rm-cli)
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-vsphere-csi-driver&interface=cli#vsphere-csi-driver-parameter-reference)
-
-    * [2.5.1 parameter reference](/docs/satellite?topic=satellite-storage-vsphere-csi-driver&interface=cli#vsphere-csi-driver-2.5.1-parameters)
 
     * [2.7.0 parameter reference](/docs/satellite?topic=satellite-storage-vsphere-csi-driver&interface=cli#vsphere-csi-driver-2.7.0-parameters)
 
@@ -3120,6 +3114,8 @@ subcollection: satellite
 [CLI change log](/docs/satellite?topic=satellite-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/satellite?topic=satellite-cs_cli_changelog#10)
+
+* [Version v1.0.773](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01773)
 
 * [Version v1.0.770](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01770)
 

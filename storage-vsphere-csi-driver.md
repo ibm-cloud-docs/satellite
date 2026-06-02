@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2026
-lastupdated: "2026-05-01"
+lastupdated: "2026-06-02"
 
 keywords: satellite storage, VMware, satellite config, satellite configurations, vsphere
 
@@ -99,14 +99,6 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-create-cli).
 
 
-    Example command to create a version 2.5.1 configuration.
-
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name vsphere-csi-driver --template-version 2.5.1 --param "vcenter-username=VCENTER-USERNAME"  --param "vcenter-password=VCENTER-PASSWORD"  --param "insecure-flag=INSECURE-FLAG"  --param "host=HOST"  --param "datacenters=DATACENTERS"  --param "thumbprint=THUMBPRINT" 
-    ```
-    {: pre}
-
-
     Example command to create a version 2.7.0 configuration.
 
     ```sh
@@ -136,14 +128,6 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 
 
 1. Copy one of the following example requests and replace the variables that you want to use.
-
-
-    Example request to create a version 2.5.1 configuration.
-
-    ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"vsphere-csi-driver\", \"storage-template-version\": \"2.5.1\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"INSECURE-FLAG\", { \"entry.name\": \"HOST\", { \"entry.name\": \"DATACENTERS\",\"user-secret-parameters\": { \"entry.name\": \"VCENTER-USERNAME\",{ \"entry.name\": \"VCENTER-PASSWORD\",{ \"entry.name\": \"THUMBPRINT\",}
-    ```
-    {: pre}
 
 
     Example request to create a version 2.7.0 configuration.
@@ -429,20 +413,6 @@ Removing the storage configuration removes the driver from all assigned clusters
 ## Parameter reference
 {: #vsphere-csi-driver-parameter-reference}
 
-### 2.5.1 parameter reference
-{: #vsphere-csi-driver-2.5.1-parameters}
-
-| Display name | CLI option | Type | Description | Default value |
-| --- | --- | --- | --- | --- |
-| vCenter username | `vcenter-username` | Secret | The vCenter username. You must specify the username along with the domain name. For example: 'Administrator@vsphere.local'. | N/A |
-| vCenter password | `vcenter-password` | Secret | The vCenter server user password. | N/A |
-| Insecure connection | `insecure-flag`| Config | Include the 'insecure-flag'. 'true' indicates that you want to include the flag, which uses self-signed certificate for login. 'false' indicates that you use a secure connection. If you select 'false', you must provide an SSL thumbprint. |`false` |
-| vCenter host | `host` | Config | The vCenter server IP address. | N/A |
-| vCenter data centers | `datacenters` | Config | List all data center paths where host VMs are present, separated by commas. Provide the name of the data center when it is located at the root. When it is placed in the folder, you need to specify the path as folder/data-center-name | N/A |
-| SSL certificate thumbprint | `thumbprint` | Secret | The SSL thumbprint to be used to establish a secure connection to VC. | N/A |
-{: caption="Table 1. 2.5.1 parameter reference" caption-side="bottom"}
-
-
 ### 2.7.0 parameter reference
 {: #vsphere-csi-driver-2.7.0-parameters}
 
@@ -454,7 +424,7 @@ Removing the storage configuration removes the driver from all assigned clusters
 | vCenter host | `host` | Config | The vCenter server IP address. | N/A |
 | vCenter data centers | `datacenters` | Config | List all data center paths where host VMs are present, separated by commas. Provide the name of the data center when it is located at the root. When it is placed in the folder, you need to specify the path as folder/data-center-name | N/A |
 | SSL certificate thumbprint | `thumbprint` | Secret | The SSL thumbprint to be used to establish a secure connection to VC. | N/A |
-{: caption="Table 2. 2.7.0 parameter reference" caption-side="bottom"}
+{: caption="Table 1. 2.7.0 parameter reference" caption-side="bottom"}
 
 
 
