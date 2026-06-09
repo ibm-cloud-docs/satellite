@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-05-01"
+lastupdated: "2026-06-02"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce, compute engine
 
@@ -96,22 +96,6 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-create-cli).
 
 
-    Example command to create a version 1.0.4 configuration.
-
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name gcp-compute-persistent-disk-csi-driver --template-version 1.0.4 --param "project_id=PROJECT_ID"  --param "private_key_id=PRIVATE_KEY_ID"  --param "private_key=PRIVATE_KEY"  --param "client_email=CLIENT_EMAIL"  --param "client_id=CLIENT_ID"  --param "auth_uri=AUTH_URI"  --param "token_uri=TOKEN_URI"  --param "auth_provider_x509_cert_url=AUTH_PROVIDER_X509_CERT_URL"  --param "client_x509_cert_url=CLIENT_X509_CERT_URL" 
-    ```
-    {: pre}
-
-
-    Example command to create a version 1.7.1 configuration.
-
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name gcp-compute-persistent-disk-csi-driver --template-version 1.7.1 --param "project_id=PROJECT_ID"  --param "private_key_id=PRIVATE_KEY_ID"  --param "private_key=PRIVATE_KEY"  --param "client_email=CLIENT_EMAIL"  --param "client_id=CLIENT_ID"  --param "auth_uri=AUTH_URI"  --param "token_uri=TOKEN_URI"  --param "auth_provider_x509_cert_url=AUTH_PROVIDER_X509_CERT_URL"  --param "client_x509_cert_url=CLIENT_X509_CERT_URL" 
-    ```
-    {: pre}
-
-
     Example command to create a version 1.8.0 configuration.
 
     ```sh
@@ -141,22 +125,6 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 
 
 1. Copy one of the following example requests and replace the variables that you want to use.
-
-
-    Example request to create a version 1.0.4 configuration.
-
-    ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"gcp-compute-persistent-disk-csi-driver\", \"storage-template-version\": \"1.0.4\", \"update-assignments\": true, \"user-config-parameters\":\"user-secret-parameters\": { \"entry.name\": \"PROJECT_ID\",{ \"entry.name\": \"PRIVATE_KEY_ID\",{ \"entry.name\": \"PRIVATE_KEY\",{ \"entry.name\": \"CLIENT_EMAIL\",{ \"entry.name\": \"CLIENT_ID\",{ \"entry.name\": \"AUTH_URI\",{ \"entry.name\": \"TOKEN_URI\",{ \"entry.name\": \"AUTH_PROVIDER_X509_CERT_URL\",{ \"entry.name\": \"CLIENT_X509_CERT_URL\",}
-    ```
-    {: pre}
-
-
-    Example request to create a version 1.7.1 configuration.
-
-    ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"gcp-compute-persistent-disk-csi-driver\", \"storage-template-version\": \"1.7.1\", \"update-assignments\": true, \"user-config-parameters\":\"user-secret-parameters\": { \"entry.name\": \"PROJECT_ID\",{ \"entry.name\": \"PRIVATE_KEY_ID\",{ \"entry.name\": \"PRIVATE_KEY\",{ \"entry.name\": \"CLIENT_EMAIL\",{ \"entry.name\": \"CLIENT_ID\",{ \"entry.name\": \"AUTH_URI\",{ \"entry.name\": \"TOKEN_URI\",{ \"entry.name\": \"AUTH_PROVIDER_X509_CERT_URL\",{ \"entry.name\": \"CLIENT_X509_CERT_URL\",}
-    ```
-    {: pre}
 
 
     Example request to create a version 1.8.0 configuration.
@@ -467,40 +435,6 @@ Use the console to remove a storage configuration.
 ## Parameter reference
 {: #gcp-compute-persistent-disk-csi-driver-parameter-reference}
 
-### 1.0.4 parameter reference
-{: #gcp-compute-persistent-disk-csi-driver-1.0.4-parameters}
-
-| Display name | CLI option | Type | Description | Default value |
-| --- | --- | --- | --- | --- |
-| Google Cloud project ID. | `project_id` | Secret | Google Cloud project ID. You can find your Project ID from the Google Cloud dashboard. | N/A |
-| Google Cloud private key ID | `private_key_id` | Secret | Google Cloud private key ID. You can find this in the JSON service account key file. | N/A |
-| Private key of the service account. | `private_key` | Secret | Private key of the service account. You can find the service account key on the Service Account section of the project dashboard. | N/A |
-| Client email | `client_email` | Secret | The email of the service account can be found in the IAM & Admin section of the project dashboard. | N/A |
-| Client ID | `client_id` | Secret | Client ID. You can find the Client ID in the APIs & Services section of the project dashboard. | N/A |
-| Authorization URI | `auth_uri` | Secret | Authorization URI for the service account. You can find this in the JSON service account key file. | N/A |
-| Token URI | `token_uri` | Secret | Token URI for the service account. You can find this in the JSON service account key file. | N/A |
-| URL for the authorization provider certificate | `auth_provider_x509_cert_url` | Secret | URL for the authorization provider certificate. You can find this in the JSON service account key file. | N/A |
-| URL for the client certificate | `client_x509_cert_url` | Secret | URL for the client certificate. You can find this in the JSON service account key file. | N/A |
-{: caption="Table 1. 1.0.4 parameter reference" caption-side="bottom"}
-
-
-### 1.7.1 parameter reference
-{: #gcp-compute-persistent-disk-csi-driver-1.7.1-parameters}
-
-| Display name | CLI option | Type | Description | Default value |
-| --- | --- | --- | --- | --- |
-| Google Cloud project ID | `project_id` | Secret | Google Cloud project ID. You can find your Project ID from the Google Cloud dashboard. | N/A |
-| Google Cloud private key ID | `private_key_id` | Secret | Google Cloud private key ID. You can find this in the JSON service account key file. | N/A |
-| Private key of the service account | `private_key` | Secret | Private key of the service account. You can find the service account key on the Service Account section of the project dashboard. | N/A |
-| Client email | `client_email` | Secret | The email of the service account can be found in the IAM & Admin section of the project dashboard. | N/A |
-| Client ID | `client_id` | Secret | Client ID. You can find the Client ID in the APIs & Services section of the project dashboard. | N/A |
-| Authorization URI | `auth_uri` | Secret | Authorization URI for the service account. You can find this in the JSON service account key file. | N/A |
-| Token URI | `token_uri` | Secret | Token URI for the service account. You can find this in the JSON service account key file. | N/A |
-| URL for the authorization provider certificate | `auth_provider_x509_cert_url` | Secret | URL for the authorization provider certificate. You can find this in the JSON service account key file. | N/A |
-| URL for the client certificate | `client_x509_cert_url` | Secret | URL for the client certificate. You can find this in the JSON service account key file. | N/A |
-{: caption="Table 2. 1.7.1 parameter reference" caption-side="bottom"}
-
-
 ### 1.8.0 parameter reference
 {: #gcp-compute-persistent-disk-csi-driver-1.8.0-parameters}
 
@@ -515,7 +449,7 @@ Use the console to remove a storage configuration.
 | Token URI | `token_uri` | Secret | Token URI for the service account. You can find this in the JSON service account key file. | N/A |
 | URL for the authorization provider certificate | `auth_provider_x509_cert_url` | Secret | URL for the authorization provider certificate. You can find this in the JSON service account key file. | N/A |
 | URL for the client certificate | `client_x509_cert_url` | Secret | URL for the client certificate. You can find this in the JSON service account key file. | N/A |
-{: caption="Table 3. 1.8.0 parameter reference" caption-side="bottom"}
+{: caption="Table 1. 1.8.0 parameter reference" caption-side="bottom"}
 
 
 
