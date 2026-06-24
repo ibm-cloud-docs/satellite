@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-04-27"
+lastupdated: "2026-06-24"
 
 
 keywords: change log, version history, netapp-trident
@@ -35,6 +35,18 @@ Review the version history for `netapp-trident`.
 - Use docker.io registry for trident-operator image 
 
 
+### Revision 2, released 16 May 2026
+{: #cl-storage-templates-netapp-trident-25.06-2}
+
+- Use docker.io registry for trident-operator image 
+
+
+### Revision 1, released 04 September 2025
+{: #cl-storage-templates-netapp-trident-25.06-1}
+
+- Initial release
+
+
 ### Revision 1, released 04 September 2025
 {: #cl-storage-templates-netapp-trident-25.06-1}
 
@@ -51,6 +63,18 @@ Review the version history for `netapp-trident`.
 - Use docker.io registry for trident-operator image 
 
 
+### Revision 4, released 16 May 2026
+{: #cl-storage-templates-netapp-trident-24.02-4}
+
+- Use docker.io registry for trident-operator image 
+
+
+### Revision 3, released 24 June 2025
+{: #cl-storage-templates-netapp-trident-24.02-3}
+
+- Support ROKS 4.16 
+
+
 ### Revision 3, released 24 June 2025
 {: #cl-storage-templates-netapp-trident-24.02-3}
 
@@ -61,6 +85,18 @@ Review the version history for `netapp-trident`.
 {: #cl-storage-templates-netapp-trident-24.02-2}
 
 - Fix issue with NetApp Trident operator cleanup 
+
+
+### Revision 2, released 13 December 2024
+{: #cl-storage-templates-netapp-trident-24.02-2}
+
+- Fix issue with NetApp Trident operator cleanup 
+
+
+### Revision 1, released 29 April 2024
+{: #cl-storage-templates-netapp-trident-24.02-1}
+
+- Initial Release
 
 
 ### Revision 1, released 29 April 2024
@@ -77,6 +113,10 @@ Review the version history for `netapp-trident`.
 {: #cl-storage-templates-netapp-trident-23.10-1}
 
 
+### Revision 1, released 13 December 2024
+{: #cl-storage-templates-netapp-trident-23.10-1}
+
+
 ## Version 22.10
 {: #cl-storage-templates-netapp-trident-22.10}
 
@@ -87,17 +127,13 @@ Review the version history for `netapp-trident`.
 - Fix issue with NetApp Trident operator cleanup 
 
 
-### Revision 1, released 20 February 2023
-{: #cl-storage-templates-netapp-trident-22.10-1}
+### Revision 2, released 13 December 2024
+{: #cl-storage-templates-netapp-trident-22.10-2}
 
-- Resolves the following CVEs: [CVE-2022-47629](https://nvd.nist.gov/vuln/detail/CVE-2022-47629){: external}.
-- Updates the UBI to version `8.7-1049.1675784874`.
-- Updates Go to version `1.18.9`.
-- Initial release.
+- Fix issue with NetApp Trident operator cleanup 
 
 
-## Version 22.04
-{: #cl-storage-templates-netapp-trident-22.04}
+
 
 
 ### Revision 4, released 13 December 2024
@@ -106,17 +142,7 @@ Review the version history for `netapp-trident`.
 - Fix issue with NetApp Trident operator cleanup 
 
 
-### Revision 3, released 23 January 2023
-{: #cl-storage-templates-netapp-trident-22.04-3}
+### Revision 4, released 13 December 2024
+{: #cl-storage-templates-netapp-trident-22.04-4}
 
-- Removes the `PodSecurityPolicy` as Kubernetes v1.25+ doesn't support PSPs. 
-
-
-## Version 21.04
-{: #cl-storage-templates-netapp-trident-21.04}
-
-
-### Revision 4, released 23 January 2023
-{: #cl-storage-templates-netapp-trident-21.04-4}
-
-- Removes the `PodSecurityPolicy` as Kubernetes v1.25+ doesn't support PSPs. 
+- Fix issue with NetApp Trident operator cleanup 

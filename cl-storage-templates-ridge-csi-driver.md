@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-02-26"
+lastupdated: "2026-06-24"
 
 
 keywords: change log, version history, ridge-csi-driver
@@ -27,9 +27,3 @@ Review the version history for `ridge-csi-driver`.
 
 ## Version 1.0.0
 {: #cl-storage-templates-ridge-csi-driver-1.0.0}
-
-
-### Revision 1, released 11 October 2022
-{: #cl-storage-templates-ridge-csi-driver-1.0.0-1}
-
-- Initial release.
