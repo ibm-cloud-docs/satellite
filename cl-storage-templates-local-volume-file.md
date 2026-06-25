@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-24"
+lastupdated: "2026-06-25"
 
 
 keywords: change log, version history, local-volume-file
@@ -29,13 +29,7 @@ Review the version history for `local-volume-file`.
 {: #cl-storage-templates-local-volume-file-4.13}
 
 
-### Revision 1, released 18 October 2023
-{: #cl-storage-templates-local-volume-file-4.13-1}
-
-- Initial release
-
-
-### Revision 1, released 18 October 2023
+### Version 4.13 - Revision 1, released 18 October 2023
 {: #cl-storage-templates-local-volume-file-4.13-1}
 
 - Initial release
