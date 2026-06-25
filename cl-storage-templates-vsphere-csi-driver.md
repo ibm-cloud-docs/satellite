@@ -35,28 +35,10 @@ Review the version history for `vsphere-csi-driver`.
 - Added required labels for namespaces in deployment 
 
 
-### Version 2.7.0 - Revision 3, released 09 May 2024
-{: #cl-storage-templates-vsphere-csi-driver-2.7.0-3}
-
-- Added required labels for namespaces in deployment 
-
-
 ### Version 2.7.0 - Revision 2, released 18 October 2023
 {: #cl-storage-templates-vsphere-csi-driver-2.7.0-2}
 
 - Added Pod Security Admission(PSA) labels to 'vmware-system-csi' & 'vmware-system-vdo' namespaces 
-
-
-### Version 2.7.0 - Revision 2, released 18 October 2023
-{: #cl-storage-templates-vsphere-csi-driver-2.7.0-2}
-
-- Added Pod Security Admission(PSA) labels to 'vmware-system-csi' & 'vmware-system-vdo' namespaces 
-
-
-### Version 2.7.0 - Revision 1, released 31 July 2023
-{: #cl-storage-templates-vsphere-csi-driver-2.7.0-1}
-
-- Initial release
 
 
 ### Version 2.7.0 - Revision 1, released 31 July 2023

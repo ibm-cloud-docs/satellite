@@ -53,9 +53,3 @@ Review the version history for `aws-ebs-csi-driver`.
 {: #cl-storage-templates-aws-ebs-csi-driver-1.12.0-3}
 
 - Add the ebs-csi-node-role cluster role 
-
-
-### Version 1.12.0 - Revision 3, released 05 June 2024
-{: #cl-storage-templates-aws-ebs-csi-driver-1.12.0-3}
-
-- Add the ebs-csi-node-role cluster role 
