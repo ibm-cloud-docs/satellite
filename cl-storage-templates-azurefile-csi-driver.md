@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-24"
+lastupdated: "2026-06-25"
 
 
 keywords: change log, version history, azurefile-csi-driver
@@ -29,13 +29,7 @@ Review the version history for `azurefile-csi-driver`.
 {: #cl-storage-templates-azurefile-csi-driver-1.31.2}
 
 
-### Revision 1, released 27 February 2025
-{: #cl-storage-templates-azurefile-csi-driver-1.31.2-1}
-
-- Initial release
-
-
-### Revision 1, released 27 February 2025
+### Version 1.31.2 - Revision 1, released 27 February 2025
 {: #cl-storage-templates-azurefile-csi-driver-1.31.2-1}
 
 - Initial release

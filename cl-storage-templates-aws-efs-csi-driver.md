@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-24"
+lastupdated: "2026-06-25"
 
 
 keywords: change log, version history, aws-efs-csi-driver
@@ -29,13 +29,7 @@ Review the version history for `aws-efs-csi-driver`.
 {: #cl-storage-templates-aws-efs-csi-driver-2.0.3}
 
 
-### Revision 1, released 20 June 2024
-{: #cl-storage-templates-aws-efs-csi-driver-2.0.3-1}
-
-- Initial release
-
-
-### Revision 1, released 20 June 2024
+### Version 2.0.3 - Revision 1, released 20 June 2024
 {: #cl-storage-templates-aws-efs-csi-driver-2.0.3-1}
 
 - Initial release

@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-24"
+lastupdated: "2026-06-25"
 
 
 keywords: change log, version history, azuredisk-csi-driver
@@ -29,13 +29,7 @@ Review the version history for `azuredisk-csi-driver`.
 {: #cl-storage-templates-azuredisk-csi-driver-1.30.3}
 
 
-### Revision 1, released 13 December 2024
-{: #cl-storage-templates-azuredisk-csi-driver-1.30.3-1}
-
-- Initial release
-
-
-### Revision 1, released 13 December 2024
+### Version 1.30.3 - Revision 1, released 13 December 2024
 {: #cl-storage-templates-azuredisk-csi-driver-1.30.3-1}
 
 - Initial release
