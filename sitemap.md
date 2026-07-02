@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-06-25"
+lastupdated: "2026-07-02"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3884,9 +3884,7 @@ subcollection: satellite
 
     * [Version 23.10 - Revision 1, released 13 December 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-23.10-1)
 
-* [Version 22.10](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-22.10)
-
-    * [Version 22.10 - Revision 2, released 13 December 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-22.10-2)
+* [Version 22.04](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-22.04)
 
     * [Version 22.04 - Revision 4, released 13 December 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-22.04-4)
 
