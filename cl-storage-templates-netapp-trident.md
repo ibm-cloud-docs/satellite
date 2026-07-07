@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-25"
+lastupdated: "2026-07-02"
 
 
 keywords: change log, version history, netapp-trident
@@ -89,16 +89,8 @@ Review the version history for `netapp-trident`.
 {: #cl-storage-templates-netapp-trident-23.10-1}
 
 
-## Version 22.10
-{: #cl-storage-templates-netapp-trident-22.10}
-
-
-### Version 22.10 - Revision 2, released 13 December 2024
-{: #cl-storage-templates-netapp-trident-22.10-2}
-
-- Fix issue with NetApp Trident operator cleanup 
-
-
+## Version 22.04
+{: #cl-storage-templates-netapp-trident-22.04}
 
 
 ### Version 22.04 - Revision 4, released 13 December 2024
