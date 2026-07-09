@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-07-02"
+lastupdated: "2026-07-09"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -202,6 +202,12 @@ subcollection: satellite
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
+* [July 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jun26)
+
+    * [09 July 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jul0926)
+
+        * Satellite Connector agent image version `1.2.8`.
+
 * [June 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jun26)
 
     * [02 June 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jun0226)
@@ -219,6 +225,10 @@ subcollection: satellite
         * Satellite Connector agent for Windows version `1.2.2`.
 
 * [March 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar26)
+
+    * [27 March 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar2726)
+
+        * New! CLI upgrade indicators and console control plane health status for {{site.data.keyword.satelliteshort}} hosts.
 
     * [20 March 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar2026)
 
@@ -1104,6 +1114,12 @@ subcollection: satellite
 [Updating {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-update-location#host-update-location)
 
 * [Considerations before you update control plane hosts](/docs/satellite?topic=satellite-host-update-location#host-update-considerations)
+
+* [Identifying control plane hosts that need updating](/docs/satellite?topic=satellite-host-update-location#host-update-identify-cli)
+
+    * [CLI upgrade indicators](/docs/satellite?topic=satellite-host-update-location#host-update-cli-symbols)
+
+    * [Console upgrade indicators](/docs/satellite?topic=satellite-host-update-location#host-update-console-indicators)
 
 * [Updating control plane hosts](/docs/satellite?topic=satellite-host-update-location#host-update-cp-procedure)
 
@@ -3139,6 +3155,8 @@ subcollection: satellite
 
 * [Version v1.0.756](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01756)
 
+* [Version v1.0.753](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01753)
+
 * [Version v1.0.745](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01745)
 
 * [Version v1.0.732](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01732)
@@ -3444,6 +3462,8 @@ subcollection: satellite
 [Connector agent image change log](/docs/satellite?topic=satellite-cl-connector-agent-image#cl-connector-agent-image)
 
 * [Version 1.2](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2-change-log)
+
+    * [Version 1.2.8, released 8 Jul 2026](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2.8-change-log)
 
     * [Version 1.2.7, released 1 Jun 2026](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2.7-change-log)
 
