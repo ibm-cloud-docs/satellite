@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-11-19"
+  years: 2020, 2026
+lastupdated: "2026-07-09"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -30,6 +30,7 @@ Review the following considerations before you update your {{site.data.keyword.s
 How can I tell if a version update is available?
 :    Version updates for hosts become available as the {{site.data.keyword.openshiftlong_notm}} team packages new versions for worker nodes. Typically, worker node version updates are released every two weeks. 
 :    You might check for a version update to meet your required security cadence, such as updates on a monthly or bi-monthly basis. To review available version updates, see the [Version change log for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_versions).
+:    You can also use the CLI to quickly identify which control plane hosts need updating. When you run `ibmcloud sat location ls`, `ibmcloud sat location get`, `ibmcloud sat hosts`, or `ibmcloud sat host get`, look for symbols in the **Status** or **State** column that indicate outdated hosts. For more information, see [Identifying control plane hosts that need updating](#host-update-identify-cli).
 
 Does updating the hosts impact the cluster masters that run in the {{site.data.keyword.satelliteshort}} location control plane?
 :    Yes. Because the cluster masters run in your {{site.data.keyword.satelliteshort}} location control plane, make sure that you have enough extra hosts in your control plane before you update any hosts. To attach extra hosts, see [Attaching capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-attach-hosts).
@@ -57,6 +58,56 @@ How can I avoid downtime when updating the control plane?
 How often should I update the control plane hosts?
 :   It's recommended to update control plane hosts when a new worker node fix pack is available to pick up all the recent vulnerability fixes.
 
+
+## Identifying control plane hosts that need updating
+{: #host-update-identify-cli}
+
+The CLI and console provide visual indicators to help you quickly identify control plane hosts that are running outdated versions, so you can prioritize updates before they become critical.
+
+### CLI upgrade indicators
+{: #host-update-cli-symbols}
+
+When you run certain `ibmcloud sat` commands, symbols appear in the **Status** or **State** column to indicate that one or more control plane hosts are running an outdated version.
+
+The following commands display upgrade indicators:
+
+- `ibmcloud sat location ls` — location-level indicators
+- `ibmcloud sat location get --location <name>` — location detail indicators  
+- `ibmcloud sat hosts --location <name>` — host-level indicators
+- `ibmcloud sat host get --location <name> --host <name>` — host detail indicators
+
+The following table describes the meaning of each symbol.
+
+| Symbol | Meaning |
+| ------ | ------- |
+| `*` | One or more control plane hosts are at least one patch version behind the latest available version. Update your hosts to pick up the latest security and stability fixes. |
+| `‡` | One or more control plane hosts are at least one major or minor version behind. Update your hosts as soon as possible to maintain support. |
+{: caption="CLI upgrade indicator symbols for control plane hosts" caption-side="bottom"}
+
+When you see either symbol, [update your control plane hosts](#host-update-cp-procedure) at your earliest opportunity.
+
+### Console upgrade indicators
+{: #host-update-console-indicators}
+
+The {{site.data.keyword.satelliteshort}} console surfaces control plane host upgrade status in two places.
+
+**Locations table:**
+A new **Control plane health** column displays a color-coded status icon based on the `hostUpdateSeverity` API field.
+
+- Green icon — All control plane hosts are up to date.
+- Yellow icon — One or more control plane hosts are at least one patch version behind (`*` equivalent).
+- Red icon — One or more control plane hosts are at least one major or minor version behind (`‡` equivalent).
+
+**Hosts table:**
+The following updated status labels apply to control plane hosts that need attention.
+
+| Status label | Meaning |
+| ------------ | ------- |
+| **Action required** | The host requires your attention. This status replaces the former **Warning** label. Review the host details and the tooltip for guidance on the required action. |
+| **Replacement required** | The host is significantly out of date and must be replaced. The status displays with an orange caution icon. Click the tooltip link in the console to open the [host update procedure](/docs/satellite?topic=satellite-host-update-location#host-update-cp-procedure). |
+{: caption="Updated Hosts table status labels for control plane hosts" caption-side="bottom"}
+
+All non-normal host statuses in the console include a tooltip that links directly to the host update documentation.
 
 ## Updating control plane hosts
 {: #host-update-cp-procedure}

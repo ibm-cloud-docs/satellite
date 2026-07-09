@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-24"
+lastupdated: "2026-07-09"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -58,6 +58,15 @@ Satellite Connector agent for Windows version `1.2.2`.
 
 ## March 2026
 {: #satellite-mar26}
+
+
+
+### 27 March 2026
+{: #satellite-mar2726}
+{: release-note}
+
+New! CLI upgrade indicators and console control plane health status for {{site.data.keyword.satelliteshort}} hosts.
+:   The CLI and {{site.data.keyword.satelliteshort}} console now surface upgrade indicators for control plane hosts. In the CLI, a `*` symbol in the **Status** column indicates that one or more control plane hosts are at least one patch version behind, and a `‡` symbol indicates that one or more hosts are at least one major or minor version behind. In the console, a new **Control plane health** column in the Locations table displays color-coded status icons, and the Hosts table shows updated status labels: **Action required** (formerly **Warning**) and a new **Replacement required** status. All non-normal host statuses include a tooltip that links to the host update documentation. For more information, see [Identifying control plane hosts that need updating](/docs/satellite?topic=satellite-host-update-location#host-update-identify-cli).
 
 ### 20 March 2026
 {: #satellite-mar2026}
