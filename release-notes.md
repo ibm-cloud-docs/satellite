@@ -22,9 +22,19 @@ content-type: release-note
 Review the latest changes to the {{site.data.keyword.satellitelong}} documentation.
 {: shortdesc}
 
-## June 2026
+## July 2026
 {: #satellite-jun26}
 
+
+### 09 July 2026
+{: #satellite-jul0926}
+{: release-note}
+
+Satellite Connector agent image version `1.2.8`.
+:   For more information, see the [change log](/docs/satellite?topic=satellite-cl-connector-agent-image) and [Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally#pull-agent-image).
+
+## June 2026
+{: #satellite-jun26}
 
 ### 02 June 2026
 {: #satellite-jun0226}

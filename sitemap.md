@@ -202,6 +202,12 @@ subcollection: satellite
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
+* [July 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jun26)
+
+    * [09 July 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jul0926)
+
+        * Satellite Connector agent image version `1.2.8`.
+
 * [June 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jun26)
 
     * [02 June 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jun0226)
