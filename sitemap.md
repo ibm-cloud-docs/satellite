@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-07-14"
+lastupdated: "2026-07-20"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1691,6 +1691,8 @@ subcollection: satellite
 
     * [2.0.3 parameter reference](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=cli#aws-efs-csi-driver-2.0.3-parameters)
 
+    * [2.3.0 parameter reference](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=cli#aws-efs-csi-driver-2.3.0-parameters)
+
 * [Getting help and support for AWS EFS](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=cli#sat-efs-support)
 
 
@@ -2292,12 +2294,6 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#odf-local-parameter-reference)
 
-    * [4.12 parameter reference](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#odf-local-4.12-parameters)
-
-    * [4.13 parameter reference](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#odf-local-4.13-parameters)
-
-    * [4.14 parameter reference](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#odf-local-4.14-parameters)
-
     * [4.15 parameter reference](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#odf-local-4.15-parameters)
 
     * [4.16 parameter reference](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#odf-local-4.16-parameters)
@@ -2351,12 +2347,6 @@ subcollection: satellite
     * [Removing the ODF remote storage assignment from the command line](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-template-rm-cli)
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-parameter-reference)
-
-    * [4.12 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-4.12-parameters)
-
-    * [4.13 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-4.13-parameters)
-
-    * [4.14 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-4.14-parameters)
 
     * [4.15 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-4.15-parameters)
 
