@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-25"
+lastupdated: "2026-07-21"
 
 
 keywords: change log, version history, odf-remote
@@ -27,6 +27,13 @@ Review the version history for `odf-remote`.
 
 ## Version 4.20
 {: #cl-storage-templates-odf-remote-4.20}
+
+
+### Version 4.20 - Revision 5, released 10 July 2026
+{: #cl-storage-templates-odf-remote-4.20-5}
+
+- Resolves the following CVEs: [CVE-2026-4438](https://nvd.nist.gov/vuln/detail/CVE-2026-4438){: external}, [CVE-2026-4437](https://nvd.nist.gov/vuln/detail/CVE-2026-4437){: external}, [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/CVE-2026-4046){: external}, [CVE-2026-28390](https://nvd.nist.gov/vuln/detail/CVE-2026-28390){: external}, [CVE-2026-34182](https://nvd.nist.gov/vuln/detail/CVE-2026-34182){: external}, [CVE-2026-45446](https://nvd.nist.gov/vuln/detail/CVE-2026-45446){: external}, [CVE-2026-7383](https://nvd.nist.gov/vuln/detail/CVE-2026-7383){: external}, [CVE-2026-45447](https://nvd.nist.gov/vuln/detail/CVE-2026-45447){: external}, [CVE-2026-42764](https://nvd.nist.gov/vuln/detail/CVE-2026-42764){: external}, [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/CVE-2026-39821){: external}, [CVE-2026-2303](https://nvd.nist.gov/vuln/detail/CVE-2026-2303){: external}, [CVE-2025-5278](https://nvd.nist.gov/vuln/detail/CVE-2025-5278){: external}, and [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}.
+- Updates Go to version `1.26.4`.
 
 
 ### Version 4.20 - Revision 4, released 27 May 2026
@@ -59,6 +66,13 @@ Review the version history for `odf-remote`.
 
 ## Version 4.19
 {: #cl-storage-templates-odf-remote-4.19}
+
+
+### Version 4.19 - Revision 7, released 10 July 2026
+{: #cl-storage-templates-odf-remote-4.19-7}
+
+- Resolves the following CVEs: [CVE-2026-4438](https://nvd.nist.gov/vuln/detail/CVE-2026-4438){: external}, [CVE-2026-4437](https://nvd.nist.gov/vuln/detail/CVE-2026-4437){: external}, [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/CVE-2026-4046){: external}, [CVE-2026-28390](https://nvd.nist.gov/vuln/detail/CVE-2026-28390){: external}, [CVE-2026-34182](https://nvd.nist.gov/vuln/detail/CVE-2026-34182){: external}, [CVE-2026-45446](https://nvd.nist.gov/vuln/detail/CVE-2026-45446){: external}, [CVE-2026-7383](https://nvd.nist.gov/vuln/detail/CVE-2026-7383){: external}, [CVE-2026-45447](https://nvd.nist.gov/vuln/detail/CVE-2026-45447){: external}, [CVE-2026-42764](https://nvd.nist.gov/vuln/detail/CVE-2026-42764){: external}, [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/CVE-2026-39821){: external}, [CVE-2026-2303](https://nvd.nist.gov/vuln/detail/CVE-2026-2303){: external}, [CVE-2025-5278](https://nvd.nist.gov/vuln/detail/CVE-2025-5278){: external}, and [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}.
+- Updates Go to version `1.26.4`.
 
 
 ### Version 4.19 - Revision 6, released 27 May 2026
@@ -105,6 +119,13 @@ Review the version history for `odf-remote`.
 
 ## Version 4.18
 {: #cl-storage-templates-odf-remote-4.18}
+
+
+### Version 4.18 - Revision 10, released 10 July 2026
+{: #cl-storage-templates-odf-remote-4.18-10}
+
+- Resolves the following CVEs: [CVE-2026-4438](https://nvd.nist.gov/vuln/detail/CVE-2026-4438){: external}, [CVE-2026-4437](https://nvd.nist.gov/vuln/detail/CVE-2026-4437){: external}, [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/CVE-2026-4046){: external}, [CVE-2026-28390](https://nvd.nist.gov/vuln/detail/CVE-2026-28390){: external}, [CVE-2026-34182](https://nvd.nist.gov/vuln/detail/CVE-2026-34182){: external}, [CVE-2026-45446](https://nvd.nist.gov/vuln/detail/CVE-2026-45446){: external}, [CVE-2026-7383](https://nvd.nist.gov/vuln/detail/CVE-2026-7383){: external}, [CVE-2026-45447](https://nvd.nist.gov/vuln/detail/CVE-2026-45447){: external}, [CVE-2026-42764](https://nvd.nist.gov/vuln/detail/CVE-2026-42764){: external}, [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/CVE-2026-39821){: external}, [CVE-2026-2303](https://nvd.nist.gov/vuln/detail/CVE-2026-2303){: external}, [CVE-2025-5278](https://nvd.nist.gov/vuln/detail/CVE-2025-5278){: external}, and [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}.
+- Updates Go to version `1.26.4`.
 
 
 ### Version 4.18 - Revision 9, released 27 May 2026
@@ -172,6 +193,13 @@ Review the version history for `odf-remote`.
 
 ## Version 4.17
 {: #cl-storage-templates-odf-remote-4.17}
+
+
+### Version 4.17 - Revision 14, released 10 July 2026
+{: #cl-storage-templates-odf-remote-4.17-14}
+
+- Resolves the following CVEs: [CVE-2026-4438](https://nvd.nist.gov/vuln/detail/CVE-2026-4438){: external}, [CVE-2026-4437](https://nvd.nist.gov/vuln/detail/CVE-2026-4437){: external}, [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/CVE-2026-4046){: external}, [CVE-2026-28390](https://nvd.nist.gov/vuln/detail/CVE-2026-28390){: external}, [CVE-2026-34182](https://nvd.nist.gov/vuln/detail/CVE-2026-34182){: external}, [CVE-2026-45446](https://nvd.nist.gov/vuln/detail/CVE-2026-45446){: external}, [CVE-2026-7383](https://nvd.nist.gov/vuln/detail/CVE-2026-7383){: external}, [CVE-2026-45447](https://nvd.nist.gov/vuln/detail/CVE-2026-45447){: external}, [CVE-2026-42764](https://nvd.nist.gov/vuln/detail/CVE-2026-42764){: external}, [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/CVE-2026-39821){: external}, [CVE-2026-2303](https://nvd.nist.gov/vuln/detail/CVE-2026-2303){: external}, [CVE-2025-5278](https://nvd.nist.gov/vuln/detail/CVE-2025-5278){: external}, and [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}.
+- Updates Go to version `1.26.4`.
 
 
 ### Version 4.17 - Revision 13, released 27 May 2026
@@ -249,6 +277,13 @@ Review the version history for `odf-remote`.
 {: #cl-storage-templates-odf-remote-4.16}
 
 
+### Version 4.16 - Revision 16, released 10 July 2026
+{: #cl-storage-templates-odf-remote-4.16-16}
+
+- Resolves the following CVEs: [CVE-2026-4438](https://nvd.nist.gov/vuln/detail/CVE-2026-4438){: external}, [CVE-2026-4437](https://nvd.nist.gov/vuln/detail/CVE-2026-4437){: external}, [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/CVE-2026-4046){: external}, [CVE-2026-28390](https://nvd.nist.gov/vuln/detail/CVE-2026-28390){: external}, [CVE-2026-34182](https://nvd.nist.gov/vuln/detail/CVE-2026-34182){: external}, [CVE-2026-45446](https://nvd.nist.gov/vuln/detail/CVE-2026-45446){: external}, [CVE-2026-7383](https://nvd.nist.gov/vuln/detail/CVE-2026-7383){: external}, [CVE-2026-45447](https://nvd.nist.gov/vuln/detail/CVE-2026-45447){: external}, [CVE-2026-42764](https://nvd.nist.gov/vuln/detail/CVE-2026-42764){: external}, [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/CVE-2026-39821){: external}, [CVE-2026-2303](https://nvd.nist.gov/vuln/detail/CVE-2026-2303){: external}, [CVE-2025-5278](https://nvd.nist.gov/vuln/detail/CVE-2025-5278){: external}, and [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}.
+- Updates Go to version `1.26.4`.
+
+
 ### Version 4.16 - Revision 15, released 27 May 2026
 {: #cl-storage-templates-odf-remote-4.16-15}
 
@@ -322,6 +357,13 @@ Review the version history for `odf-remote`.
 
 ## Version 4.15
 {: #cl-storage-templates-odf-remote-4.15}
+
+
+### Version 4.15 - Revision 21, released 10 July 2026
+{: #cl-storage-templates-odf-remote-4.15-21}
+
+- Resolves the following CVEs: [CVE-2026-4438](https://nvd.nist.gov/vuln/detail/CVE-2026-4438){: external}, [CVE-2026-4437](https://nvd.nist.gov/vuln/detail/CVE-2026-4437){: external}, [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/CVE-2026-4046){: external}, [CVE-2026-28390](https://nvd.nist.gov/vuln/detail/CVE-2026-28390){: external}, [CVE-2026-34182](https://nvd.nist.gov/vuln/detail/CVE-2026-34182){: external}, [CVE-2026-45446](https://nvd.nist.gov/vuln/detail/CVE-2026-45446){: external}, [CVE-2026-7383](https://nvd.nist.gov/vuln/detail/CVE-2026-7383){: external}, [CVE-2026-45447](https://nvd.nist.gov/vuln/detail/CVE-2026-45447){: external}, [CVE-2026-42764](https://nvd.nist.gov/vuln/detail/CVE-2026-42764){: external}, [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/CVE-2026-39821){: external}, [CVE-2026-2303](https://nvd.nist.gov/vuln/detail/CVE-2026-2303){: external}, [CVE-2025-5278](https://nvd.nist.gov/vuln/detail/CVE-2025-5278){: external}, and [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}.
+- Updates Go to version `1.26.4`.
 
 
 ### Version 4.15 - Revision 20, released 27 May 2026
