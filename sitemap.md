@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-07-21"
+lastupdated: "2026-07-22"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -205,6 +205,10 @@ subcollection: satellite
 * [July 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jun26)
 
     * [09 July 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jul0926)
+
+        * Satellite Connector agent image version `1.2.9`.
+
+    * [08 July 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jul0826)
 
         * Satellite Connector agent image version `1.2.8`.
 
