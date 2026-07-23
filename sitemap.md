@@ -2681,487 +2681,419 @@ subcollection: satellite
 
 * [ibmcloud sat commands](/docs/satellite?topic=satellite-satellite-cli-reference#cli_commands)
 
-* [`ibmcloud sat acl create`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-create-cli)
+    * [`ibmcloud sat acl create`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-create-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#acl-create-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#acl-create-examples)
 
-* [`ibmcloud sat acl endpoint add`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-endpoint-add-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#acl-endpoint-add-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#acl-endpoint-add-examples)
-
-* [`ibmcloud sat acl endpoint ls`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-endpoint-ls-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#acl-endpoint-ls-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#acl-endpoint-ls-examples)
 
-* [`ibmcloud sat acl endpoint rm`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-endpoint-rm-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#acl-endpoint-rm-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#acl-endpoint-rm-examples)
 
-* [`ibmcloud sat acl get`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-get-cli)
+    * [`ibmcloud sat acl get`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-get-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#acl-get-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#acl-get-examples)
 
-* [`ibmcloud sat acl ls`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-ls-cli)
+    * [`ibmcloud sat acl ls`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-ls-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#acl-ls-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#acl-ls-examples)
 
-* [`ibmcloud sat acl rm`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-rm-cli)
+    * [`ibmcloud sat acl rm`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-rm-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#acl-rm-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#acl-rm-examples)
 
-* [`ibmcloud sat acl subnet add`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-subnet-add-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#acl-subnet-add-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#acl-subnet-add-examples)
-
-* [`ibmcloud sat acl subnet rm`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-subnet-rm-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#acl-subnet-rm-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#acl-subnet-rm-examples)
 
-* [`ibmcloud sat acl update`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-update-cli)
+    * [`ibmcloud sat acl update`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-update-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#acl-update-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#acl-update-examples)
 
-* [`ibmcloud sat agent attach`](/docs/satellite?topic=satellite-satellite-cli-reference#agent-attach-cli)
+    * [`ibmcloud sat agent attach`](/docs/satellite?topic=satellite-satellite-cli-reference#agent-attach-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#agent-attach-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#agent-attach-examples)
 
-* [`ibmcloud sat agent ls`](/docs/satellite?topic=satellite-satellite-cli-reference#agent-ls-cli)
+    * [`ibmcloud sat agent ls`](/docs/satellite?topic=satellite-satellite-cli-reference#agent-ls-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#agent-ls-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#agent-ls-examples)
 
-* [`ibmcloud sat cluster get`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-get-cli)
+    * [`ibmcloud sat cluster get`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-get-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-get-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-get-examples)
 
-* [`ibmcloud sat cluster ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-ls-cli)
+    * [`ibmcloud sat cluster ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-ls-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-ls-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-ls-examples)
 
-* [`ibmcloud sat cluster register`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-register-cli)
+    * [`ibmcloud sat cluster register`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-register-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-register-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-register-examples)
 
-* [`ibmcloud sat cluster unregister`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-unregister-cli)
+    * [`ibmcloud sat cluster unregister`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-unregister-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-unregister-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-unregister-examples)
 
-* [`ibmcloud sat config create`](/docs/satellite?topic=satellite-satellite-cli-reference#config-create-cli)
+    * [`ibmcloud sat config create`](/docs/satellite?topic=satellite-satellite-cli-reference#config-create-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#config-create-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#config-create-examples)
 
-* [`ibmcloud sat config get`](/docs/satellite?topic=satellite-satellite-cli-reference#config-get-cli)
+    * [`ibmcloud sat config get`](/docs/satellite?topic=satellite-satellite-cli-reference#config-get-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#config-get-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#config-get-examples)
 
-* [`ibmcloud sat config ls`](/docs/satellite?topic=satellite-satellite-cli-reference#config-ls-cli)
+    * [`ibmcloud sat config ls`](/docs/satellite?topic=satellite-satellite-cli-reference#config-ls-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#config-ls-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#config-ls-examples)
 
-* [`ibmcloud sat config rename`](/docs/satellite?topic=satellite-satellite-cli-reference#config-rename-cli)
+    * [`ibmcloud sat config rename`](/docs/satellite?topic=satellite-satellite-cli-reference#config-rename-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#config-rename-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#config-rename-examples)
 
-* [`ibmcloud sat config rm`](/docs/satellite?topic=satellite-satellite-cli-reference#config-rm-cli)
+    * [`ibmcloud sat config rm`](/docs/satellite?topic=satellite-satellite-cli-reference#config-rm-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#config-rm-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#config-rm-examples)
 
-* [`ibmcloud sat config version create`](/docs/satellite?topic=satellite-satellite-cli-reference#config-version-create-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#config-version-create-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#config-version-create-examples)
-
-* [`ibmcloud sat config version get`](/docs/satellite?topic=satellite-satellite-cli-reference#config-version-get-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#config-version-get-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#config-version-get-examples)
 
-* [`ibmcloud sat config version rm`](/docs/satellite?topic=satellite-satellite-cli-reference#config-version-rm-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#config-version-rm-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#config-version-rm-examples)
 
-* [`ibmcloud sat connector create`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-create-cli)
+    * [`ibmcloud sat connector create`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-create-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#connector-create-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#connector-create-examples)
 
-* [`ibmcloud sat connector get`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-get-cli)
+    * [`ibmcloud sat connector get`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-get-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#connector-get-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#connector-get-examples)
 
-* [`ibmcloud sat connector ls`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-ls-cli)
+    * [`ibmcloud sat connector ls`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-ls-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#connector-ls-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#connector-ls-examples)
 
-* [`ibmcloud sat connector rm`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-rm-cli)
+    * [`ibmcloud sat connector rm`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-rm-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#connector-rm-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#connector-rm-examples)
 
-* [`ibmcloud sat endpoint authn get`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-authn-get-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-authn-get-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-authn-get-examples)
-
-* [`ibmcloud sat endpoint authn rotate`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-authn-rotate-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-authn-rotate-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-authn-rotate-examples)
 
-* [`ibmcloud sat endpoint authn set`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-authn-set-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-authn-set-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-authn-set-examples)
 
-* [`ibmcloud sat endpoint create`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-create-cli)
+    * [`ibmcloud sat endpoint create`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-create-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-create-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-create-examples)
 
-* [`ibmcloud sat endpoint disable`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-disable-cli)
+    * [`ibmcloud sat endpoint disable`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-disable-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-disable-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-disable-examples)
 
-* [`ibmcloud sat endpoint enable`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-enable-cli)
+    * [`ibmcloud sat endpoint enable`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-enable-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-enable-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-enable-examples)
 
-* [`ibmcloud sat endpoint get`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-get-cli)
+    * [`ibmcloud sat endpoint get`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-get-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-get-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-get-examples)
 
-* [`ibmcloud sat endpoint ls`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-ls-cli)
+    * [`ibmcloud sat endpoint ls`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-ls-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-ls-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-ls-examples)
 
-* [`ibmcloud sat endpoint rm`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-rm-cli)
+    * [`ibmcloud sat endpoint rm`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-rm-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-rm-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-rm-examples)
 
-* [`ibmcloud sat endpoint update`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-update-cli)
+    * [`ibmcloud sat endpoint update`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-update-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-update-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-update-examples)
 
-* [`ibmcloud sat experimental acl create`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-create-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-create-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-create-examples)
-
-* [`ibmcloud sat experimental acl endpoint add`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-endpoint-add-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-endpoint-add-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-endpoint-add-examples)
 
-* [`ibmcloud sat experimental acl endpoint ls`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-endpoint-ls-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-endpoint-ls-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-endpoint-ls-examples)
-
-* [`ibmcloud sat experimental acl endpoint rm`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-endpoint-rm-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-endpoint-rm-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-endpoint-rm-examples)
 
-* [`ibmcloud sat experimental acl get`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-get-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-get-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-get-examples)
-
-* [`ibmcloud sat experimental acl ls`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-ls-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-ls-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-ls-examples)
 
-* [`ibmcloud sat experimental acl rm`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-rm-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-rm-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-rm-examples)
-
-* [`ibmcloud sat experimental acl subnet add`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-subnet-add-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-subnet-add-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-subnet-add-examples)
 
-* [`ibmcloud sat experimental acl subnet rm`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-subnet-rm-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-subnet-rm-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-subnet-rm-examples)
-
-* [`ibmcloud sat experimental acl update`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-update-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-update-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-update-examples)
 
-* [`ibmcloud sat experimental agent attach`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-agent-attach-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-agent-attach-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-agent-attach-examples)
-
-* [`ibmcloud sat experimental agent ls`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-agent-ls-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-agent-ls-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-agent-ls-examples)
 
-* [`ibmcloud sat experimental connector create`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-create-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-create-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-create-examples)
-
-* [`ibmcloud sat experimental connector get`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-get-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-get-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-get-examples)
 
-* [`ibmcloud sat experimental connector ls`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-ls-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-ls-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-ls-examples)
-
-* [`ibmcloud sat experimental connector rm`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-rm-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-rm-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-rm-examples)
 
-* [`ibmcloud sat experimental endpoint authn get`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-get-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-get-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-get-examples)
-
-* [`ibmcloud sat experimental endpoint authn rotate`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-rotate-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-rotate-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-rotate-examples)
 
-* [`ibmcloud sat experimental endpoint authn set`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-set-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-set-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-set-examples)
-
-* [`ibmcloud sat experimental location update`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-location-update-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-location-update-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-location-update-examples)
 
-* [`ibmcloud sat group attach`](/docs/satellite?topic=satellite-satellite-cli-reference#group-attach-cli)
+    * [`ibmcloud sat group attach`](/docs/satellite?topic=satellite-satellite-cli-reference#group-attach-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#group-attach-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#group-attach-examples)
 
-* [`ibmcloud sat group create`](/docs/satellite?topic=satellite-satellite-cli-reference#group-create-cli)
+    * [`ibmcloud sat group create`](/docs/satellite?topic=satellite-satellite-cli-reference#group-create-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#group-create-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#group-create-examples)
 
-* [`ibmcloud sat group detach`](/docs/satellite?topic=satellite-satellite-cli-reference#group-detach-cli)
+    * [`ibmcloud sat group detach`](/docs/satellite?topic=satellite-satellite-cli-reference#group-detach-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#group-detach-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#group-detach-examples)
 
-* [`ibmcloud sat group get`](/docs/satellite?topic=satellite-satellite-cli-reference#group-get-cli)
+    * [`ibmcloud sat group get`](/docs/satellite?topic=satellite-satellite-cli-reference#group-get-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#group-get-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#group-get-examples)
 
-* [`ibmcloud sat group ls`](/docs/satellite?topic=satellite-satellite-cli-reference#group-ls-cli)
+    * [`ibmcloud sat group ls`](/docs/satellite?topic=satellite-satellite-cli-reference#group-ls-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#group-ls-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#group-ls-examples)
 
-* [`ibmcloud sat group rm`](/docs/satellite?topic=satellite-satellite-cli-reference#group-rm-cli)
+    * [`ibmcloud sat group rm`](/docs/satellite?topic=satellite-satellite-cli-reference#group-rm-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#group-rm-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#group-rm-examples)
 
-* [`ibmcloud sat host assign`](/docs/satellite?topic=satellite-satellite-cli-reference#host-assign-cli)
+    * [`ibmcloud sat host assign`](/docs/satellite?topic=satellite-satellite-cli-reference#host-assign-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#host-assign-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#host-assign-examples)
 
-* [`ibmcloud sat host attach`](/docs/satellite?topic=satellite-satellite-cli-reference#host-attach-cli)
+    * [`ibmcloud sat host attach`](/docs/satellite?topic=satellite-satellite-cli-reference#host-attach-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#host-attach-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#host-attach-examples)
 
-* [`ibmcloud sat host get`](/docs/satellite?topic=satellite-satellite-cli-reference#host-get-cli)
+    * [`ibmcloud sat host get`](/docs/satellite?topic=satellite-satellite-cli-reference#host-get-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#host-get-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#host-get-examples)
 
-* [`ibmcloud sat host ls`](/docs/satellite?topic=satellite-satellite-cli-reference#host-ls-cli)
+    * [`ibmcloud sat host ls`](/docs/satellite?topic=satellite-satellite-cli-reference#host-ls-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#host-ls-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#host-ls-examples)
 
-* [`ibmcloud sat host rm`](/docs/satellite?topic=satellite-satellite-cli-reference#host-rm-cli)
+    * [`ibmcloud sat host rm`](/docs/satellite?topic=satellite-satellite-cli-reference#host-rm-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#host-rm-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#host-rm-examples)
 
-* [`ibmcloud sat host update`](/docs/satellite?topic=satellite-satellite-cli-reference#host-update-cli)
+    * [`ibmcloud sat host update`](/docs/satellite?topic=satellite-satellite-cli-reference#host-update-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#host-update-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#host-update-examples)
 
-* [`ibmcloud sat key ls`](/docs/satellite?topic=satellite-satellite-cli-reference#key-ls-cli)
+    * [`ibmcloud sat key ls`](/docs/satellite?topic=satellite-satellite-cli-reference#key-ls-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#key-ls-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#key-ls-examples)
 
-* [`ibmcloud sat key rm`](/docs/satellite?topic=satellite-satellite-cli-reference#key-rm-cli)
+    * [`ibmcloud sat key rm`](/docs/satellite?topic=satellite-satellite-cli-reference#key-rm-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#key-rm-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#key-rm-examples)
 
-* [`ibmcloud sat key rotate`](/docs/satellite?topic=satellite-satellite-cli-reference#key-rotate-cli)
+    * [`ibmcloud sat key rotate`](/docs/satellite?topic=satellite-satellite-cli-reference#key-rotate-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#key-rotate-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#key-rotate-examples)
 
-* [`ibmcloud sat location create`](/docs/satellite?topic=satellite-satellite-cli-reference#location-create-cli)
+    * [`ibmcloud sat location create`](/docs/satellite?topic=satellite-satellite-cli-reference#location-create-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#location-create-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#location-create-examples)
 
-* [`ibmcloud sat location dns get`](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-get-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-get-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-get-examples)
-
-* [`ibmcloud sat location dns ls`](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-ls-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-ls-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-ls-examples)
 
-* [`ibmcloud sat location dns register`](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-register-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-register-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-register-examples)
 
-* [`ibmcloud sat location get`](/docs/satellite?topic=satellite-satellite-cli-reference#location-get-cli)
+    * [`ibmcloud sat location get`](/docs/satellite?topic=satellite-satellite-cli-reference#location-get-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#location-get-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#location-get-examples)
 
-* [`ibmcloud sat location ls`](/docs/satellite?topic=satellite-satellite-cli-reference#location-ls-cli)
+    * [`ibmcloud sat location ls`](/docs/satellite?topic=satellite-satellite-cli-reference#location-ls-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#location-ls-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#location-ls-examples)
 
-* [`ibmcloud sat location rm`](/docs/satellite?topic=satellite-satellite-cli-reference#location-rm-cli)
+    * [`ibmcloud sat location rm`](/docs/satellite?topic=satellite-satellite-cli-reference#location-rm-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#location-rm-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#location-rm-examples)
 
-* [`ibmcloud sat location update`](/docs/satellite?topic=satellite-satellite-cli-reference#location-update-cli)
+    * [`ibmcloud sat location update`](/docs/satellite?topic=satellite-satellite-cli-reference#location-update-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#location-update-options)
 
@@ -3173,175 +3105,133 @@ subcollection: satellite
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#messages-examples)
 
-* [`ibmcloud sat resource get`](/docs/satellite?topic=satellite-satellite-cli-reference#resource-get-cli)
+    * [`ibmcloud sat resource get`](/docs/satellite?topic=satellite-satellite-cli-reference#resource-get-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#resource-get-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#resource-get-examples)
 
-* [`ibmcloud sat resource history get`](/docs/satellite?topic=satellite-satellite-cli-reference#resource-history-get-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#resource-history-get-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#resource-history-get-examples)
 
-* [`ibmcloud sat resource ls`](/docs/satellite?topic=satellite-satellite-cli-reference#resource-ls-cli)
+    * [`ibmcloud sat resource ls`](/docs/satellite?topic=satellite-satellite-cli-reference#resource-ls-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#resource-ls-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#resource-ls-examples)
 
-* [`ibmcloud sat service ls`](/docs/satellite?topic=satellite-satellite-cli-reference#service-ls-cli)
+    * [`ibmcloud sat service ls`](/docs/satellite?topic=satellite-satellite-cli-reference#service-ls-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#service-ls-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#service-ls-examples)
 
-* [`ibmcloud sat storage assignment autopatch disable`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-autopatch-disable-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-autopatch-disable-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-autopatch-disable-examples)
-
-* [`ibmcloud sat storage assignment autopatch enable`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-autopatch-enable-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-autopatch-enable-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-autopatch-enable-examples)
 
-* [`ibmcloud sat storage assignment create`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-create-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-create-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-create-examples)
-
-* [`ibmcloud sat storage assignment get`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-get-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-get-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-get-examples)
 
-* [`ibmcloud sat storage assignment ls`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-ls-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-ls-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-ls-examples)
-
-* [`ibmcloud sat storage assignment patch`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-patch-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-patch-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-patch-examples)
 
-* [`ibmcloud sat storage assignment rm`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-rm-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-rm-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-rm-examples)
-
-* [`ibmcloud sat storage assignment update`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-update-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-update-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-update-examples)
 
-* [`ibmcloud sat storage config class add`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-class-add-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-class-add-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-class-add-examples)
-
-* [`ibmcloud sat storage config class get`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-class-get-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-class-get-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-class-get-examples)
 
-* [`ibmcloud sat storage config class ls`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-class-ls-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-class-ls-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-class-ls-examples)
-
-* [`ibmcloud sat storage config create`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-create-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-create-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-create-examples)
 
-* [`ibmcloud sat storage config get`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-get-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-get-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-get-examples)
-
-* [`ibmcloud sat storage config ls`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-ls-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-ls-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-ls-examples)
 
-* [`ibmcloud sat storage config param set`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-param-set-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-param-set-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-param-set-examples)
-
-* [`ibmcloud sat storage config patch`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-patch-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-patch-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-patch-examples)
 
-* [`ibmcloud sat storage config rm`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-rm-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-rm-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-rm-examples)
-
-* [`ibmcloud sat storage template get`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-template-get-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#storage-template-get-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#storage-template-get-examples)
 
-* [`ibmcloud sat storage template ls`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-template-ls-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#storage-template-ls-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#storage-template-ls-examples)
 
-* [`ibmcloud sat subscription create`](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-create-cli)
+    * [`ibmcloud sat subscription create`](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-create-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-create-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-create-examples)
 
-* [`ibmcloud sat subscription get`](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-get-cli)
+    * [`ibmcloud sat subscription get`](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-get-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-get-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-get-examples)
 
-* [`ibmcloud sat subscription identity set`](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-identity-set-cli)
-
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-identity-set-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-identity-set-examples)
 
-* [`ibmcloud sat subscription ls`](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-ls-cli)
+    * [`ibmcloud sat subscription ls`](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-ls-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-ls-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-ls-examples)
 
-* [`ibmcloud sat subscription rm`](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-rm-cli)
+    * [`ibmcloud sat subscription rm`](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-rm-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-rm-options)
 
     * [Examples](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-rm-examples)
 
-* [`ibmcloud sat subscription update`](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-update-cli)
+    * [`ibmcloud sat subscription update`](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-update-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-update-options)
 

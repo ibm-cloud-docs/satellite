@@ -53,7 +53,7 @@ The following tables list the `ibmcloud sat` command groups. For a complete list
 {: caption="ibmcloud sat CLI command groups" caption-side="bottom"}
 
 
-## `ibmcloud sat acl create`
+### `ibmcloud sat acl create`
 {: #acl-create-cli}
 
 
@@ -66,8 +66,6 @@ ibmcloud sat acl create --name NAME --subnet SUBNET [--subnet SUBNET ...] [--end
 ```
 {: pre}
 {: #acl-create-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #acl-create-options}
@@ -102,7 +100,7 @@ ibmcloud sat acl create --location <location> --connector-id <connector_id> --na
 {: pre}
 
 
-## `ibmcloud sat acl endpoint add`
+#### `ibmcloud sat acl endpoint add`
 {: #acl-endpoint-add-cli}
 
 
@@ -115,8 +113,6 @@ ibmcloud sat acl endpoint add --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOI
 ```
 {: pre}
 {: #acl-endpoint-add-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #acl-endpoint-add-options}
@@ -151,7 +147,7 @@ ibmcloud sat acl endpoint add \
 {: pre}
 
 
-## `ibmcloud sat acl endpoint ls`
+#### `ibmcloud sat acl endpoint ls`
 {: #acl-endpoint-ls-cli}
 
 
@@ -164,8 +160,6 @@ ibmcloud sat acl endpoint ls --acl-id ID [--output OUTPUT] [-q] (--connector-id 
 ```
 {: pre}
 {: #acl-endpoint-ls-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #acl-endpoint-ls-options}
@@ -200,7 +194,7 @@ ibmcloud sat acl endpoint ls \
 {: pre}
 
 
-## `ibmcloud sat acl endpoint rm`
+#### `ibmcloud sat acl endpoint rm`
 {: #acl-endpoint-rm-cli}
 
 
@@ -213,8 +207,6 @@ ibmcloud sat acl endpoint rm --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOIN
 ```
 {: pre}
 {: #acl-endpoint-rm-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #acl-endpoint-rm-options}
@@ -249,7 +241,7 @@ ibmcloud sat acl endpoint rm \
 {: pre}
 
 
-## `ibmcloud sat acl get`
+### `ibmcloud sat acl get`
 {: #acl-get-cli}
 
 
@@ -262,8 +254,6 @@ ibmcloud sat acl get --acl-id ID [--output OUTPUT] [-q] (--connector-id ID | --l
 ```
 {: pre}
 {: #acl-get-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #acl-get-options}
@@ -295,7 +285,7 @@ ibmcloud sat acl get --location <location> --connector-id <connector_id> --acl-i
 {: pre}
 
 
-## `ibmcloud sat acl ls`
+### `ibmcloud sat acl ls`
 {: #acl-ls-cli}
 
 
@@ -308,8 +298,6 @@ ibmcloud sat acl ls [--output OUTPUT] [-q] (--connector-id ID | --location LOCAT
 ```
 {: pre}
 {: #acl-ls-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #acl-ls-options}
@@ -338,7 +326,7 @@ ibmcloud sat acl ls --location <location> --connector-id <connector_id> --output
 {: pre}
 
 
-## `ibmcloud sat acl rm`
+### `ibmcloud sat acl rm`
 {: #acl-rm-cli}
 
 
@@ -351,8 +339,6 @@ ibmcloud sat acl rm --acl-id ID [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
 {: #acl-rm-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #acl-rm-options}
@@ -381,7 +367,7 @@ ibmcloud sat acl rm --location <location> --connector-id <connector_id> --acl-id
 {: pre}
 
 
-## `ibmcloud sat acl subnet add`
+#### `ibmcloud sat acl subnet add`
 {: #acl-subnet-add-cli}
 
 
@@ -394,8 +380,6 @@ ibmcloud sat acl subnet add --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-
 ```
 {: pre}
 {: #acl-subnet-add-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #acl-subnet-add-options}
@@ -430,7 +414,7 @@ ibmcloud sat acl subnet add \
 {: pre}
 
 
-## `ibmcloud sat acl subnet rm`
+#### `ibmcloud sat acl subnet rm`
 {: #acl-subnet-rm-cli}
 
 
@@ -443,8 +427,6 @@ ibmcloud sat acl subnet rm --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q
 ```
 {: pre}
 {: #acl-subnet-rm-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #acl-subnet-rm-options}
@@ -479,7 +461,7 @@ ibmcloud sat acl subnet rm \
 {: pre}
 
 
-## `ibmcloud sat acl update`
+### `ibmcloud sat acl update`
 {: #acl-update-cli}
 
 
@@ -492,8 +474,6 @@ ibmcloud sat acl update --acl-id ID --name NAME [-q] (--connector-id ID | --loca
 ```
 {: pre}
 {: #acl-update-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #acl-update-options}
@@ -528,7 +508,7 @@ ibmcloud sat acl update \
 {: pre}
 
 
-## `ibmcloud sat agent attach`
+### `ibmcloud sat agent attach`
 {: #agent-attach-cli}
 
 
@@ -541,8 +521,6 @@ ibmcloud sat agent attach --platform PLATFORM [-q]
 ```
 {: pre}
 {: #agent-attach-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #agent-attach-options}
@@ -565,7 +543,7 @@ ibmcloud sat agent attach --platform <platform> -q
 {: pre}
 
 
-## `ibmcloud sat agent ls`
+### `ibmcloud sat agent ls`
 {: #agent-ls-cli}
 
 
@@ -578,8 +556,6 @@ ibmcloud sat agent ls --connector-id ID [--output OUTPUT] [-q]
 ```
 {: pre}
 {: #agent-ls-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #agent-ls-options}
@@ -605,7 +581,7 @@ ibmcloud sat agent ls --connector-id <connector_id> --output json -q
 {: pre}
 
 
-## `ibmcloud sat cluster get`
+### `ibmcloud sat cluster get`
 {: #cluster-get-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -618,8 +594,6 @@ ibmcloud sat cluster get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 {: #cluster-get-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #cluster-get-options}
@@ -645,7 +619,7 @@ ibmcloud sat cluster get --cluster <cluster_name_or_id> --output json -q
 {: pre}
 
 
-## `ibmcloud sat cluster ls`
+### `ibmcloud sat cluster ls`
 {: #cluster-ls-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -658,8 +632,6 @@ ibmcloud sat cluster ls [--filter FILTER] [--limit LIMIT] [--output OUTPUT] [-q]
 ```
 {: pre}
 {: #cluster-ls-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #cluster-ls-options}
@@ -688,7 +660,7 @@ ibmcloud sat cluster ls --filter <filter> --limit <limit> --output json
 {: pre}
 
 
-## `ibmcloud sat cluster register`
+### `ibmcloud sat cluster register`
 {: #cluster-register-cli}
 
 
@@ -701,8 +673,6 @@ ibmcloud sat cluster register --name NAME [-q] [--silent]
 ```
 {: pre}
 {: #cluster-register-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #cluster-register-options}
@@ -728,7 +698,7 @@ ibmcloud sat cluster register --silent <silent> --name <name> -q
 {: pre}
 
 
-## `ibmcloud sat cluster unregister`
+### `ibmcloud sat cluster unregister`
 {: #cluster-unregister-cli}
 
 
@@ -741,8 +711,6 @@ ibmcloud sat cluster unregister --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
 {: #cluster-unregister-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #cluster-unregister-options}
@@ -768,7 +736,7 @@ ibmcloud sat cluster unregister --cluster <cluster_name_or_id> -f -q
 {: pre}
 
 
-## `ibmcloud sat config create`
+### `ibmcloud sat config create`
 {: #config-create-cli}
 
 
@@ -781,8 +749,6 @@ ibmcloud sat config create --name NAME [-q] (--data-location LOCATION | --provid
 ```
 {: pre}
 {: #config-create-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #config-create-options}
@@ -814,7 +780,7 @@ ibmcloud sat config create \
 {: pre}
 
 
-## `ibmcloud sat config get`
+### `ibmcloud sat config get`
 {: #config-get-cli}
 
 
@@ -827,8 +793,6 @@ ibmcloud sat config get --config CONFIG [--output OUTPUT] [-q]
 ```
 {: pre}
 {: #config-get-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #config-get-options}
@@ -854,7 +818,7 @@ ibmcloud sat config get --config <config> --output json -q
 {: pre}
 
 
-## `ibmcloud sat config ls`
+### `ibmcloud sat config ls`
 {: #config-ls-cli}
 
 
@@ -867,8 +831,6 @@ ibmcloud sat config ls [--output OUTPUT] [-q]
 ```
 {: pre}
 {: #config-ls-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #config-ls-options}
@@ -891,7 +853,7 @@ ibmcloud sat config ls --output json -q
 {: pre}
 
 
-## `ibmcloud sat config rename`
+### `ibmcloud sat config rename`
 {: #config-rename-cli}
 
 
@@ -904,8 +866,6 @@ ibmcloud sat config rename --config CONFIG --name NAME [-q]
 ```
 {: pre}
 {: #config-rename-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #config-rename-options}
@@ -931,7 +891,7 @@ ibmcloud sat config rename --config <config> --name <name> -q
 {: pre}
 
 
-## `ibmcloud sat config rm`
+### `ibmcloud sat config rm`
 {: #config-rm-cli}
 
 
@@ -944,8 +904,6 @@ ibmcloud sat config rm --config CONFIG [-f] [-q]
 ```
 {: pre}
 {: #config-rm-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #config-rm-options}
@@ -971,7 +929,7 @@ ibmcloud sat config rm --config <config> -f -q
 {: pre}
 
 
-## `ibmcloud sat config version create`
+#### `ibmcloud sat config version create`
 {: #config-version-create-cli}
 
 
@@ -984,8 +942,6 @@ ibmcloud sat config version create --config CONFIG --file-format FORMAT --name N
 ```
 {: pre}
 {: #config-version-create-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #config-version-create-options}
@@ -1023,7 +979,7 @@ ibmcloud sat config version create \
 {: pre}
 
 
-## `ibmcloud sat config version get`
+#### `ibmcloud sat config version get`
 {: #config-version-get-cli}
 
 
@@ -1036,8 +992,6 @@ ibmcloud sat config version get --config CONFIG --version VERSION [--output OUTP
 ```
 {: pre}
 {: #config-version-get-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #config-version-get-options}
@@ -1072,7 +1026,7 @@ ibmcloud sat config version get \
 {: pre}
 
 
-## `ibmcloud sat config version rm`
+#### `ibmcloud sat config version rm`
 {: #config-version-rm-cli}
 
 
@@ -1085,8 +1039,6 @@ ibmcloud sat config version rm --config CONFIG --version VERSION [-f] [-q]
 ```
 {: pre}
 {: #config-version-rm-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #config-version-rm-options}
@@ -1115,7 +1067,7 @@ ibmcloud sat config version rm --config <config> --version <version> -f
 {: pre}
 
 
-## `ibmcloud sat connector create`
+### `ibmcloud sat connector create`
 {: #connector-create-cli}
 
 
@@ -1128,8 +1080,6 @@ ibmcloud sat connector create --name NAME --region REGION [-q]
 ```
 {: pre}
 {: #connector-create-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #connector-create-options}
@@ -1155,7 +1105,7 @@ ibmcloud sat connector create --name <name> --region <region> -q
 {: pre}
 
 
-## `ibmcloud sat connector get`
+### `ibmcloud sat connector get`
 {: #connector-get-cli}
 
 
@@ -1168,8 +1118,6 @@ ibmcloud sat connector get --connector-id ID [--output OUTPUT] [-q]
 ```
 {: pre}
 {: #connector-get-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #connector-get-options}
@@ -1195,7 +1143,7 @@ ibmcloud sat connector get --connector-id <connector_id> --output json -q
 {: pre}
 
 
-## `ibmcloud sat connector ls`
+### `ibmcloud sat connector ls`
 {: #connector-ls-cli}
 
 
@@ -1208,8 +1156,6 @@ ibmcloud sat connector ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q]
 ```
 {: pre}
 {: #connector-ls-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #connector-ls-options}
@@ -1238,7 +1184,7 @@ ibmcloud sat connector ls --after <after> --first <first> --output json
 {: pre}
 
 
-## `ibmcloud sat connector rm`
+### `ibmcloud sat connector rm`
 {: #connector-rm-cli}
 
 
@@ -1251,8 +1197,6 @@ ibmcloud sat connector rm --connector-id ID [-f] [-q]
 ```
 {: pre}
 {: #connector-rm-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #connector-rm-options}
@@ -1278,7 +1222,7 @@ ibmcloud sat connector rm --connector-id <connector_id> -f -q
 {: pre}
 
 
-## `ibmcloud sat endpoint authn get`
+#### `ibmcloud sat endpoint authn get`
 {: #endpoint-authn-get-cli}
 
 
@@ -1291,8 +1235,6 @@ ibmcloud sat endpoint authn get --endpoint ENDPOINT [--output OUTPUT] [-q] (--co
 ```
 {: pre}
 {: #endpoint-authn-get-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #endpoint-authn-get-options}
@@ -1327,7 +1269,7 @@ ibmcloud sat endpoint authn get \
 {: pre}
 
 
-## `ibmcloud sat endpoint authn rotate`
+#### `ibmcloud sat endpoint authn rotate`
 {: #endpoint-authn-rotate-cli}
 
 
@@ -1340,8 +1282,6 @@ ibmcloud sat endpoint authn rotate --endpoint ENDPOINT [--dest-ca-cert-file FILE
 ```
 {: pre}
 {: #endpoint-authn-rotate-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #endpoint-authn-rotate-options}
@@ -1391,7 +1331,7 @@ ibmcloud sat endpoint authn rotate \
 {: pre}
 
 
-## `ibmcloud sat endpoint authn set`
+#### `ibmcloud sat endpoint authn set`
 {: #endpoint-authn-set-cli}
 
 
@@ -1404,8 +1344,6 @@ ibmcloud sat endpoint authn set --endpoint ENDPOINT [--dest-ca-cert-file FILE] [
 ```
 {: pre}
 {: #endpoint-authn-set-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #endpoint-authn-set-options}
@@ -1461,7 +1399,7 @@ ibmcloud sat endpoint authn set \
 {: pre}
 
 
-## `ibmcloud sat endpoint create`
+### `ibmcloud sat endpoint create`
 {: #endpoint-create-cli}
 
 
@@ -1474,8 +1412,6 @@ ibmcloud sat endpoint create --dest-hostname HOSTNAME --dest-port PORT --dest-ty
 ```
 {: pre}
 {: #endpoint-create-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #endpoint-create-options}
@@ -1531,7 +1467,7 @@ ibmcloud sat endpoint create \
 {: pre}
 
 
-## `ibmcloud sat endpoint disable`
+### `ibmcloud sat endpoint disable`
 {: #endpoint-disable-cli}
 
 
@@ -1544,8 +1480,6 @@ ibmcloud sat endpoint disable --endpoint ENDPOINT [-f] [-q] (--connector-id ID |
 ```
 {: pre}
 {: #endpoint-disable-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #endpoint-disable-options}
@@ -1580,7 +1514,7 @@ ibmcloud sat endpoint disable \
 {: pre}
 
 
-## `ibmcloud sat endpoint enable`
+### `ibmcloud sat endpoint enable`
 {: #endpoint-enable-cli}
 
 
@@ -1593,8 +1527,6 @@ ibmcloud sat endpoint enable --endpoint ENDPOINT [-f] [-q] (--connector-id ID | 
 ```
 {: pre}
 {: #endpoint-enable-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #endpoint-enable-options}
@@ -1629,7 +1561,7 @@ ibmcloud sat endpoint enable \
 {: pre}
 
 
-## `ibmcloud sat endpoint get`
+### `ibmcloud sat endpoint get`
 {: #endpoint-get-cli}
 
 
@@ -1642,8 +1574,6 @@ ibmcloud sat endpoint get --endpoint ENDPOINT [--output OUTPUT] [-q] (--connecto
 ```
 {: pre}
 {: #endpoint-get-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #endpoint-get-options}
@@ -1678,7 +1608,7 @@ ibmcloud sat endpoint get \
 {: pre}
 
 
-## `ibmcloud sat endpoint ls`
+### `ibmcloud sat endpoint ls`
 {: #endpoint-ls-cli}
 
 
@@ -1691,8 +1621,6 @@ ibmcloud sat endpoint ls [--output OUTPUT] [-q] (--connector-id ID | --location 
 ```
 {: pre}
 {: #endpoint-ls-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #endpoint-ls-options}
@@ -1721,7 +1649,7 @@ ibmcloud sat endpoint ls --location <location> --connector-id <connector_id> --o
 {: pre}
 
 
-## `ibmcloud sat endpoint rm`
+### `ibmcloud sat endpoint rm`
 {: #endpoint-rm-cli}
 
 
@@ -1734,8 +1662,6 @@ ibmcloud sat endpoint rm --endpoint ENDPOINT [-q] (--connector-id ID | --locatio
 ```
 {: pre}
 {: #endpoint-rm-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #endpoint-rm-options}
@@ -1767,7 +1693,7 @@ ibmcloud sat endpoint rm \
 {: pre}
 
 
-## `ibmcloud sat endpoint update`
+### `ibmcloud sat endpoint update`
 {: #endpoint-update-cli}
 
 
@@ -1780,8 +1706,6 @@ ibmcloud sat endpoint update --endpoint ENDPOINT [--dest-hostname HOSTNAME] [--d
 ```
 {: pre}
 {: #endpoint-update-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #endpoint-update-options}
@@ -1834,7 +1758,7 @@ ibmcloud sat endpoint update \
 {: pre}
 
 
-## `ibmcloud sat experimental acl create`
+#### `ibmcloud sat experimental acl create`
 {: #experimental-acl-create-cli}
 
 
@@ -1847,8 +1771,6 @@ ibmcloud sat experimental acl create --name NAME --subnet SUBNET [--subnet SUBNE
 ```
 {: pre}
 {: #experimental-acl-create-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #experimental-acl-create-options}
@@ -1886,7 +1808,7 @@ ibmcloud sat experimental acl create \
 {: pre}
 
 
-## `ibmcloud sat experimental acl endpoint add`
+#### `ibmcloud sat experimental acl endpoint add`
 {: #experimental-acl-endpoint-add-cli}
 
 
@@ -1899,8 +1821,6 @@ ibmcloud sat experimental acl endpoint add --acl-id ID --endpoint ENDPOINT [--en
 ```
 {: pre}
 {: #experimental-acl-endpoint-add-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #experimental-acl-endpoint-add-options}
@@ -1935,7 +1855,7 @@ ibmcloud sat experimental acl endpoint add \
 {: pre}
 
 
-## `ibmcloud sat experimental acl endpoint ls`
+#### `ibmcloud sat experimental acl endpoint ls`
 {: #experimental-acl-endpoint-ls-cli}
 
 
@@ -1948,8 +1868,6 @@ ibmcloud sat experimental acl endpoint ls --acl-id ID [--output OUTPUT] [-q] (--
 ```
 {: pre}
 {: #experimental-acl-endpoint-ls-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #experimental-acl-endpoint-ls-options}
@@ -1984,7 +1902,7 @@ ibmcloud sat experimental acl endpoint ls \
 {: pre}
 
 
-## `ibmcloud sat experimental acl endpoint rm`
+#### `ibmcloud sat experimental acl endpoint rm`
 {: #experimental-acl-endpoint-rm-cli}
 
 
@@ -1997,8 +1915,6 @@ ibmcloud sat experimental acl endpoint rm --acl-id ID --endpoint ENDPOINT [--end
 ```
 {: pre}
 {: #experimental-acl-endpoint-rm-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #experimental-acl-endpoint-rm-options}
@@ -2033,7 +1949,7 @@ ibmcloud sat experimental acl endpoint rm \
 {: pre}
 
 
-## `ibmcloud sat experimental acl get`
+#### `ibmcloud sat experimental acl get`
 {: #experimental-acl-get-cli}
 
 
@@ -2046,8 +1962,6 @@ ibmcloud sat experimental acl get --acl-id ID [--output OUTPUT] [-q] (--connecto
 ```
 {: pre}
 {: #experimental-acl-get-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #experimental-acl-get-options}
@@ -2082,7 +1996,7 @@ ibmcloud sat experimental acl get \
 {: pre}
 
 
-## `ibmcloud sat experimental acl ls`
+#### `ibmcloud sat experimental acl ls`
 {: #experimental-acl-ls-cli}
 
 
@@ -2095,8 +2009,6 @@ ibmcloud sat experimental acl ls [--output OUTPUT] [-q] (--connector-id ID | --l
 ```
 {: pre}
 {: #experimental-acl-ls-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #experimental-acl-ls-options}
@@ -2128,7 +2040,7 @@ ibmcloud sat experimental acl ls \
 {: pre}
 
 
-## `ibmcloud sat experimental acl rm`
+#### `ibmcloud sat experimental acl rm`
 {: #experimental-acl-rm-cli}
 
 
@@ -2141,8 +2053,6 @@ ibmcloud sat experimental acl rm --acl-id ID [-q] (--connector-id ID | --locatio
 ```
 {: pre}
 {: #experimental-acl-rm-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #experimental-acl-rm-options}
@@ -2174,7 +2084,7 @@ ibmcloud sat experimental acl rm \
 {: pre}
 
 
-## `ibmcloud sat experimental acl subnet add`
+#### `ibmcloud sat experimental acl subnet add`
 {: #experimental-acl-subnet-add-cli}
 
 
@@ -2187,8 +2097,6 @@ ibmcloud sat experimental acl subnet add --acl-id ID --subnet SUBNET [--subnet S
 ```
 {: pre}
 {: #experimental-acl-subnet-add-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #experimental-acl-subnet-add-options}
@@ -2223,7 +2131,7 @@ ibmcloud sat experimental acl subnet add \
 {: pre}
 
 
-## `ibmcloud sat experimental acl subnet rm`
+#### `ibmcloud sat experimental acl subnet rm`
 {: #experimental-acl-subnet-rm-cli}
 
 
@@ -2236,8 +2144,6 @@ ibmcloud sat experimental acl subnet rm --acl-id ID --subnet SUBNET [--subnet SU
 ```
 {: pre}
 {: #experimental-acl-subnet-rm-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #experimental-acl-subnet-rm-options}
@@ -2272,7 +2178,7 @@ ibmcloud sat experimental acl subnet rm \
 {: pre}
 
 
-## `ibmcloud sat experimental acl update`
+#### `ibmcloud sat experimental acl update`
 {: #experimental-acl-update-cli}
 
 
@@ -2285,8 +2191,6 @@ ibmcloud sat experimental acl update --acl-id ID --name NAME [-q] (--connector-i
 ```
 {: pre}
 {: #experimental-acl-update-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #experimental-acl-update-options}
@@ -2321,7 +2225,7 @@ ibmcloud sat experimental acl update \
 {: pre}
 
 
-## `ibmcloud sat experimental agent attach`
+#### `ibmcloud sat experimental agent attach`
 {: #experimental-agent-attach-cli}
 
 
@@ -2334,8 +2238,6 @@ ibmcloud sat experimental agent attach --platform PLATFORM [-q]
 ```
 {: pre}
 {: #experimental-agent-attach-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #experimental-agent-attach-options}
@@ -2358,7 +2260,7 @@ ibmcloud sat experimental agent attach --platform <platform> -q
 {: pre}
 
 
-## `ibmcloud sat experimental agent ls`
+#### `ibmcloud sat experimental agent ls`
 {: #experimental-agent-ls-cli}
 
 
@@ -2371,8 +2273,6 @@ ibmcloud sat experimental agent ls --connector-id ID [--output OUTPUT] [-q]
 ```
 {: pre}
 {: #experimental-agent-ls-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #experimental-agent-ls-options}
@@ -2398,7 +2298,7 @@ ibmcloud sat experimental agent ls --connector-id <connector_id> --output json -
 {: pre}
 
 
-## `ibmcloud sat experimental connector create`
+#### `ibmcloud sat experimental connector create`
 {: #experimental-connector-create-cli}
 
 
@@ -2411,8 +2311,6 @@ ibmcloud sat experimental connector create --name NAME --region REGION [-q]
 ```
 {: pre}
 {: #experimental-connector-create-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #experimental-connector-create-options}
@@ -2438,7 +2336,7 @@ ibmcloud sat experimental connector create --name <name> --region <region> -q
 {: pre}
 
 
-## `ibmcloud sat experimental connector get`
+#### `ibmcloud sat experimental connector get`
 {: #experimental-connector-get-cli}
 
 
@@ -2451,8 +2349,6 @@ ibmcloud sat experimental connector get --connector-id ID [--output OUTPUT] [-q]
 ```
 {: pre}
 {: #experimental-connector-get-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #experimental-connector-get-options}
@@ -2478,7 +2374,7 @@ ibmcloud sat experimental connector get --connector-id <connector_id> --output j
 {: pre}
 
 
-## `ibmcloud sat experimental connector ls`
+#### `ibmcloud sat experimental connector ls`
 {: #experimental-connector-ls-cli}
 
 
@@ -2491,8 +2387,6 @@ ibmcloud sat experimental connector ls [--after AFTER] [--first FIRST] [--output
 ```
 {: pre}
 {: #experimental-connector-ls-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #experimental-connector-ls-options}
@@ -2521,7 +2415,7 @@ ibmcloud sat experimental connector ls --after <after> --first <first> --output 
 {: pre}
 
 
-## `ibmcloud sat experimental connector rm`
+#### `ibmcloud sat experimental connector rm`
 {: #experimental-connector-rm-cli}
 
 
@@ -2534,8 +2428,6 @@ ibmcloud sat experimental connector rm --connector-id ID [-f] [-q]
 ```
 {: pre}
 {: #experimental-connector-rm-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #experimental-connector-rm-options}
@@ -2561,7 +2453,7 @@ ibmcloud sat experimental connector rm --connector-id <connector_id> -f -q
 {: pre}
 
 
-## `ibmcloud sat experimental endpoint authn get`
+#### `ibmcloud sat experimental endpoint authn get`
 {: #experimental-endpoint-authn-get-cli}
 
 
@@ -2574,8 +2466,6 @@ ibmcloud sat experimental endpoint authn get --endpoint ENDPOINT [--output OUTPU
 ```
 {: pre}
 {: #experimental-endpoint-authn-get-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #experimental-endpoint-authn-get-options}
@@ -2610,7 +2500,7 @@ ibmcloud sat experimental endpoint authn get \
 {: pre}
 
 
-## `ibmcloud sat experimental endpoint authn rotate`
+#### `ibmcloud sat experimental endpoint authn rotate`
 {: #experimental-endpoint-authn-rotate-cli}
 
 
@@ -2623,8 +2513,6 @@ ibmcloud sat experimental endpoint authn rotate --endpoint ENDPOINT [--dest-ca-c
 ```
 {: pre}
 {: #experimental-endpoint-authn-rotate-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #experimental-endpoint-authn-rotate-options}
@@ -2674,7 +2562,7 @@ ibmcloud sat experimental endpoint authn rotate \
 {: pre}
 
 
-## `ibmcloud sat experimental endpoint authn set`
+#### `ibmcloud sat experimental endpoint authn set`
 {: #experimental-endpoint-authn-set-cli}
 
 
@@ -2687,8 +2575,6 @@ ibmcloud sat experimental endpoint authn set --endpoint ENDPOINT [--dest-ca-cert
 ```
 {: pre}
 {: #experimental-endpoint-authn-set-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #experimental-endpoint-authn-set-options}
@@ -2744,7 +2630,7 @@ ibmcloud sat experimental endpoint authn set \
 {: pre}
 
 
-## `ibmcloud sat experimental location update`
+#### `ibmcloud sat experimental location update`
 {: #experimental-location-update-cli}
 
 
@@ -2757,8 +2643,6 @@ ibmcloud sat experimental location update --location-id ID [--description DESCRI
 ```
 {: pre}
 {: #experimental-location-update-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #experimental-location-update-options}
@@ -2790,7 +2674,7 @@ ibmcloud sat experimental location update \
 {: pre}
 
 
-## `ibmcloud sat group attach`
+### `ibmcloud sat group attach`
 {: #group-attach-cli}
 
 
@@ -2803,8 +2687,6 @@ ibmcloud sat group attach --cluster CLUSTER [--cluster CLUSTER ...] --group GROU
 ```
 {: pre}
 {: #group-attach-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #group-attach-options}
@@ -2830,7 +2712,7 @@ ibmcloud sat group attach --group <group> --cluster <cluster_name_or_id> -q
 {: pre}
 
 
-## `ibmcloud sat group create`
+### `ibmcloud sat group create`
 {: #group-create-cli}
 
 
@@ -2843,8 +2725,6 @@ ibmcloud sat group create --name NAME [--cluster CLUSTER ...] [-q]
 ```
 {: pre}
 {: #group-create-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #group-create-options}
@@ -2870,7 +2750,7 @@ ibmcloud sat group create --name <name> --cluster <cluster_name_or_id> -q
 {: pre}
 
 
-## `ibmcloud sat group detach`
+### `ibmcloud sat group detach`
 {: #group-detach-cli}
 
 
@@ -2883,8 +2763,6 @@ ibmcloud sat group detach --cluster CLUSTER [--cluster CLUSTER ...] --group GROU
 ```
 {: pre}
 {: #group-detach-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #group-detach-options}
@@ -2913,7 +2791,7 @@ ibmcloud sat group detach --group <group> --cluster <cluster_name_or_id> -f
 {: pre}
 
 
-## `ibmcloud sat group get`
+### `ibmcloud sat group get`
 {: #group-get-cli}
 
 
@@ -2926,8 +2804,6 @@ ibmcloud sat group get --group GROUP [--output OUTPUT] [-q]
 ```
 {: pre}
 {: #group-get-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #group-get-options}
@@ -2953,7 +2829,7 @@ ibmcloud sat group get --group <group> --output json -q
 {: pre}
 
 
-## `ibmcloud sat group ls`
+### `ibmcloud sat group ls`
 {: #group-ls-cli}
 
 
@@ -2966,8 +2842,6 @@ ibmcloud sat group ls [--output OUTPUT] [-q]
 ```
 {: pre}
 {: #group-ls-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #group-ls-options}
@@ -2990,7 +2864,7 @@ ibmcloud sat group ls --output json -q
 {: pre}
 
 
-## `ibmcloud sat group rm`
+### `ibmcloud sat group rm`
 {: #group-rm-cli}
 
 
@@ -3003,8 +2877,6 @@ ibmcloud sat group rm --group GROUP [-f] [-q]
 ```
 {: pre}
 {: #group-rm-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #group-rm-options}
@@ -3030,7 +2902,7 @@ ibmcloud sat group rm --group <group> -f -q
 {: pre}
 
 
-## `ibmcloud sat host assign`
+### `ibmcloud sat host assign`
 {: #host-assign-cli}
 
 
@@ -3043,8 +2915,6 @@ ibmcloud sat host assign --location LOCATION [--cluster CLUSTER] [--host HOST] [
 ```
 {: pre}
 {: #host-assign-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #host-assign-options}
@@ -3085,7 +2955,7 @@ ibmcloud sat host assign \
 {: pre}
 
 
-## `ibmcloud sat host attach`
+### `ibmcloud sat host attach`
 {: #host-attach-cli}
 
 
@@ -3098,8 +2968,6 @@ ibmcloud sat host attach --location LOCATION [--host-label LABEL ...] [--host-li
 ```
 {: pre}
 {: #host-attach-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #host-attach-options}
@@ -3137,7 +3005,7 @@ ibmcloud sat host attach \
 {: pre}
 
 
-## `ibmcloud sat host get`
+### `ibmcloud sat host get`
 {: #host-get-cli}
 
 
@@ -3150,8 +3018,6 @@ ibmcloud sat host get --host HOST --location LOCATION [--output OUTPUT] [-q]
 ```
 {: pre}
 {: #host-get-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #host-get-options}
@@ -3180,7 +3046,7 @@ ibmcloud sat host get --location <location> --host <hostname> --output json
 {: pre}
 
 
-## `ibmcloud sat host ls`
+### `ibmcloud sat host ls`
 {: #host-ls-cli}
 
 
@@ -3193,8 +3059,6 @@ ibmcloud sat host ls --location LOCATION [--output OUTPUT] [-q]
 ```
 {: pre}
 {: #host-ls-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #host-ls-options}
@@ -3220,7 +3084,7 @@ ibmcloud sat host ls --location <location> --output json -q
 {: pre}
 
 
-## `ibmcloud sat host rm`
+### `ibmcloud sat host rm`
 {: #host-rm-cli}
 
 
@@ -3233,8 +3097,6 @@ ibmcloud sat host rm --host HOST --location LOCATION [-f] [-q]
 ```
 {: pre}
 {: #host-rm-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #host-rm-options}
@@ -3263,7 +3125,7 @@ ibmcloud sat host rm --location <location> --host <hostname> -f
 {: pre}
 
 
-## `ibmcloud sat host update`
+### `ibmcloud sat host update`
 {: #host-update-cli}
 
 
@@ -3276,8 +3138,6 @@ ibmcloud sat host update --host HOST --location LOCATION [--host-label LABEL ...
 ```
 {: pre}
 {: #host-update-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #host-update-options}
@@ -3309,7 +3169,7 @@ ibmcloud sat host update --location <location> --host-label <hostname> --zone <z
 {: pre}
 
 
-## `ibmcloud sat key ls`
+### `ibmcloud sat key ls`
 {: #key-ls-cli}
 
 
@@ -3322,8 +3182,6 @@ ibmcloud sat key ls [--output OUTPUT] [-q]
 ```
 {: pre}
 {: #key-ls-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #key-ls-options}
@@ -3346,7 +3204,7 @@ ibmcloud sat key ls --output json -q
 {: pre}
 
 
-## `ibmcloud sat key rm`
+### `ibmcloud sat key rm`
 {: #key-rm-cli}
 
 
@@ -3359,8 +3217,6 @@ ibmcloud sat key rm --key KEY [-f] [-q]
 ```
 {: pre}
 {: #key-rm-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #key-rm-options}
@@ -3386,7 +3242,7 @@ ibmcloud sat key rm --key <key> -f -q
 {: pre}
 
 
-## `ibmcloud sat key rotate`
+### `ibmcloud sat key rotate`
 {: #key-rotate-cli}
 
 
@@ -3399,8 +3255,6 @@ ibmcloud sat key rotate --name NAME [-f] [-q]
 ```
 {: pre}
 {: #key-rotate-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #key-rotate-options}
@@ -3426,7 +3280,7 @@ ibmcloud sat key rotate --name <name> -f -q
 {: pre}
 
 
-## `ibmcloud sat location create`
+### `ibmcloud sat location create`
 {: #location-create-cli}
 
 
@@ -3439,8 +3293,6 @@ ibmcloud sat location create --managed-from REGION --name NAME [--capability CAP
 ```
 {: pre}
 {: #location-create-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #location-create-options}
@@ -3505,7 +3357,7 @@ ibmcloud sat location create \
 {: pre}
 
 
-## `ibmcloud sat location dns get`
+#### `ibmcloud sat location dns get`
 {: #location-dns-get-cli}
 
 
@@ -3518,8 +3370,6 @@ ibmcloud sat location dns get --location LOCATION --subdomain SUBDOMAIN [--outpu
 ```
 {: pre}
 {: #location-dns-get-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #location-dns-get-options}
@@ -3548,7 +3398,7 @@ ibmcloud sat location dns get --location <location> --subdomain <domain> --outpu
 {: pre}
 
 
-## `ibmcloud sat location dns ls`
+#### `ibmcloud sat location dns ls`
 {: #location-dns-ls-cli}
 
 
@@ -3561,8 +3411,6 @@ ibmcloud sat location dns ls --location LOCATION [--output OUTPUT] [-q]
 ```
 {: pre}
 {: #location-dns-ls-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #location-dns-ls-options}
@@ -3588,7 +3436,7 @@ ibmcloud sat location dns ls --location <location> --output json -q
 {: pre}
 
 
-## `ibmcloud sat location dns register`
+#### `ibmcloud sat location dns register`
 {: #location-dns-register-cli}
 
 
@@ -3601,8 +3449,6 @@ ibmcloud sat location dns register --ip IP [--ip IP ...] --location LOCATION [--
 ```
 {: pre}
 {: #location-dns-register-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #location-dns-register-options}
@@ -3631,7 +3477,7 @@ ibmcloud sat location dns register --location <location> --ip <ip_address> --out
 {: pre}
 
 
-## `ibmcloud sat location get`
+### `ibmcloud sat location get`
 {: #location-get-cli}
 
 
@@ -3644,8 +3490,6 @@ ibmcloud sat location get --location LOCATION [--output OUTPUT] [-q]
 ```
 {: pre}
 {: #location-get-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #location-get-options}
@@ -3671,7 +3515,7 @@ ibmcloud sat location get --location <location> --output json -q
 {: pre}
 
 
-## `ibmcloud sat location ls`
+### `ibmcloud sat location ls`
 {: #location-ls-cli}
 
 
@@ -3684,8 +3528,6 @@ ibmcloud sat location ls [--output OUTPUT] [-q]
 ```
 {: pre}
 {: #location-ls-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #location-ls-options}
@@ -3708,7 +3550,7 @@ ibmcloud sat location ls --output json -q
 {: pre}
 
 
-## `ibmcloud sat location rm`
+### `ibmcloud sat location rm`
 {: #location-rm-cli}
 
 
@@ -3721,8 +3563,6 @@ ibmcloud sat location rm --location LOCATION [-f] [-q]
 ```
 {: pre}
 {: #location-rm-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #location-rm-options}
@@ -3748,7 +3588,7 @@ ibmcloud sat location rm --location <location> -f -q
 {: pre}
 
 
-## `ibmcloud sat location update`
+### `ibmcloud sat location update`
 {: #location-update-cli}
 
 
@@ -3761,8 +3601,6 @@ ibmcloud sat location update --location-id ID [--description DESCRIPTION] [--nam
 ```
 {: pre}
 {: #location-update-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #location-update-options}
@@ -3808,8 +3646,6 @@ ibmcloud sat messages [-q]
 {: pre}
 {: #messages-usage}
 
-**Aliases:** 
-
 ### Command options
 {: #messages-options}
 
@@ -3828,7 +3664,7 @@ ibmcloud sat messages -q
 {: pre}
 
 
-## `ibmcloud sat resource get`
+### `ibmcloud sat resource get`
 {: #resource-get-cli}
 
 
@@ -3841,8 +3677,6 @@ ibmcloud sat resource get --resource RESOURCE [--history HISTORY] [--output OUTP
 ```
 {: pre}
 {: #resource-get-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #resource-get-options}
@@ -3877,7 +3711,7 @@ ibmcloud sat resource get \
 {: pre}
 
 
-## `ibmcloud sat resource history get`
+#### `ibmcloud sat resource history get`
 {: #resource-history-get-cli}
 
 
@@ -3890,8 +3724,6 @@ ibmcloud sat resource history get --resource RESOURCE [--limit LIMIT] [--output 
 ```
 {: pre}
 {: #resource-history-get-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #resource-history-get-options}
@@ -3920,7 +3752,7 @@ ibmcloud sat resource history get --resource <resource> --limit <limit> --output
 {: pre}
 
 
-## `ibmcloud sat resource ls`
+### `ibmcloud sat resource ls`
 {: #resource-ls-cli}
 
 
@@ -3933,8 +3765,6 @@ ibmcloud sat resource ls [--limit LIMIT] [--output OUTPUT] [-q] [--search SEARCH
 ```
 {: pre}
 {: #resource-ls-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #resource-ls-options}
@@ -3969,7 +3799,7 @@ ibmcloud sat resource ls --search <search> --limit <limit> --cluster <cluster_na
 {: pre}
 
 
-## `ibmcloud sat service ls`
+### `ibmcloud sat service ls`
 {: #service-ls-cli}
 
 
@@ -3982,8 +3812,6 @@ ibmcloud sat service ls --location LOCATION [--output OUTPUT] [-q]
 ```
 {: pre}
 {: #service-ls-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #service-ls-options}
@@ -4009,7 +3837,7 @@ ibmcloud sat service ls --location <location> --output json -q
 {: pre}
 
 
-## `ibmcloud sat storage assignment autopatch disable`
+#### `ibmcloud sat storage assignment autopatch disable`
 {: #storage-assignment-autopatch-disable-cli}
 
 The `storage assignment autopatch disable` command is a beta feature.
@@ -4025,8 +3853,6 @@ ibmcloud sat storage assignment autopatch disable --config CONFIG [-q] (--all | 
 ```
 {: pre}
 {: #storage-assignment-autopatch-disable-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #storage-assignment-autopatch-disable-options}
@@ -4058,7 +3884,7 @@ ibmcloud sat storage assignment autopatch disable \
 {: pre}
 
 
-## `ibmcloud sat storage assignment autopatch enable`
+#### `ibmcloud sat storage assignment autopatch enable`
 {: #storage-assignment-autopatch-enable-cli}
 
 The `storage assignment autopatch enable` command is a beta feature.
@@ -4074,8 +3900,6 @@ ibmcloud sat storage assignment autopatch enable --config CONFIG [-q] (--all | -
 ```
 {: pre}
 {: #storage-assignment-autopatch-enable-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #storage-assignment-autopatch-enable-options}
@@ -4107,7 +3931,7 @@ ibmcloud sat storage assignment autopatch enable \
 {: pre}
 
 
-## `ibmcloud sat storage assignment create`
+#### `ibmcloud sat storage assignment create`
 {: #storage-assignment-create-cli}
 
 
@@ -4120,8 +3944,6 @@ ibmcloud sat storage assignment create --config CONFIG [--name NAME] [-q] (--clu
 ```
 {: pre}
 {: #storage-assignment-create-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #storage-assignment-create-options}
@@ -4159,7 +3981,7 @@ ibmcloud sat storage assignment create \
 {: pre}
 
 
-## `ibmcloud sat storage assignment get`
+#### `ibmcloud sat storage assignment get`
 {: #storage-assignment-get-cli}
 
 
@@ -4172,8 +3994,6 @@ ibmcloud sat storage assignment get --assignment ASSIGNMENT [--output OUTPUT] [-
 ```
 {: pre}
 {: #storage-assignment-get-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #storage-assignment-get-options}
@@ -4199,7 +4019,7 @@ ibmcloud sat storage assignment get --assignment <assignment> --output json -q
 {: pre}
 
 
-## `ibmcloud sat storage assignment ls`
+#### `ibmcloud sat storage assignment ls`
 {: #storage-assignment-ls-cli}
 
 
@@ -4218,8 +4038,6 @@ ibmcloud sat storage assignment ls [--output OUTPUT] [-q] (--cluster CLUSTER | -
 ```
 {: pre}
 {: #storage-assignment-ls-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #storage-assignment-ls-options}
@@ -4257,7 +4075,7 @@ ibmcloud sat storage assignment ls \
 {: pre}
 
 
-## `ibmcloud sat storage assignment patch`
+#### `ibmcloud sat storage assignment patch`
 {: #storage-assignment-patch-cli}
 
 
@@ -4297,7 +4115,7 @@ ibmcloud sat storage assignment patch --assignment <assignment> -f -q
 {: pre}
 
 
-## `ibmcloud sat storage assignment rm`
+#### `ibmcloud sat storage assignment rm`
 {: #storage-assignment-rm-cli}
 
 
@@ -4310,8 +4128,6 @@ ibmcloud sat storage assignment rm --assignment ASSIGNMENT [-f] [-q]
 ```
 {: pre}
 {: #storage-assignment-rm-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #storage-assignment-rm-options}
@@ -4337,7 +4153,7 @@ ibmcloud sat storage assignment rm --assignment <assignment> -f -q
 {: pre}
 
 
-## `ibmcloud sat storage assignment update`
+#### `ibmcloud sat storage assignment update`
 {: #storage-assignment-update-cli}
 
 
@@ -4350,8 +4166,6 @@ ibmcloud sat storage assignment update --assignment ASSIGNMENT [-f] [--group GRO
 ```
 {: pre}
 {: #storage-assignment-update-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #storage-assignment-update-options}
@@ -4386,7 +4200,7 @@ ibmcloud sat storage assignment update \
 {: pre}
 
 
-## `ibmcloud sat storage config class add`
+#### `ibmcloud sat storage config class add`
 {: #storage-config-class-add-cli}
 
 
@@ -4429,7 +4243,7 @@ ibmcloud sat storage config class add --name <name> --config-name <name> --param
 {: pre}
 
 
-## `ibmcloud sat storage config class get`
+#### `ibmcloud sat storage config class get`
 {: #storage-config-class-get-cli}
 
 
@@ -4472,7 +4286,7 @@ ibmcloud sat storage config class get --class <class> --config <config> --output
 {: pre}
 
 
-## `ibmcloud sat storage config class ls`
+#### `ibmcloud sat storage config class ls`
 {: #storage-config-class-ls-cli}
 
 
@@ -4518,7 +4332,7 @@ ibmcloud sat storage config class ls \
 {: pre}
 
 
-## `ibmcloud sat storage config create`
+#### `ibmcloud sat storage config create`
 {: #storage-config-create-cli}
 
 
@@ -4531,8 +4345,6 @@ ibmcloud sat storage config create --location LOCATION --name NAME --template-na
 ```
 {: pre}
 {: #storage-config-create-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #storage-config-create-options}
@@ -4570,7 +4382,7 @@ ibmcloud sat storage config create \
 {: pre}
 
 
-## `ibmcloud sat storage config get`
+#### `ibmcloud sat storage config get`
 {: #storage-config-get-cli}
 
 
@@ -4583,8 +4395,6 @@ ibmcloud sat storage config get --config CONFIG [--output OUTPUT] [-q]
 ```
 {: pre}
 {: #storage-config-get-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #storage-config-get-options}
@@ -4610,7 +4420,7 @@ ibmcloud sat storage config get --config <config> --output json -q
 {: pre}
 
 
-## `ibmcloud sat storage config ls`
+#### `ibmcloud sat storage config ls`
 {: #storage-config-ls-cli}
 
 
@@ -4623,8 +4433,6 @@ ibmcloud sat storage config ls [--location LOCATION] [--output OUTPUT] [-q]
 ```
 {: pre}
 {: #storage-config-ls-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #storage-config-ls-options}
@@ -4650,7 +4458,7 @@ ibmcloud sat storage config ls --location <location> --output json -q
 {: pre}
 
 
-## `ibmcloud sat storage config param set`
+#### `ibmcloud sat storage config param set`
 {: #storage-config-param-set-cli}
 
 
@@ -4663,8 +4471,6 @@ ibmcloud sat storage config param set --config CONFIG --param PARAM [--param PAR
 ```
 {: pre}
 {: #storage-config-param-set-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #storage-config-param-set-options}
@@ -4696,7 +4502,7 @@ ibmcloud sat storage config param set --config <config> --param <param> --apply 
 {: pre}
 
 
-## `ibmcloud sat storage config patch`
+#### `ibmcloud sat storage config patch`
 {: #storage-config-patch-cli}
 
 
@@ -4742,7 +4548,7 @@ ibmcloud sat storage config patch \
 {: pre}
 
 
-## `ibmcloud sat storage config rm`
+#### `ibmcloud sat storage config rm`
 {: #storage-config-rm-cli}
 
 
@@ -4755,8 +4561,6 @@ ibmcloud sat storage config rm --config CONFIG [-f] [--include-assignments] [-q]
 ```
 {: pre}
 {: #storage-config-rm-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #storage-config-rm-options}
@@ -4788,7 +4592,7 @@ ibmcloud sat storage config rm \
 {: pre}
 
 
-## `ibmcloud sat storage template get`
+#### `ibmcloud sat storage template get`
 {: #storage-template-get-cli}
 
 
@@ -4801,8 +4605,6 @@ ibmcloud sat storage template get --name NAME --version VERSION [--output OUTPUT
 ```
 {: pre}
 {: #storage-template-get-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #storage-template-get-options}
@@ -4831,7 +4633,7 @@ ibmcloud sat storage template get --name <name> --version <version> --output jso
 {: pre}
 
 
-## `ibmcloud sat storage template ls`
+#### `ibmcloud sat storage template ls`
 {: #storage-template-ls-cli}
 
 
@@ -4844,8 +4646,6 @@ ibmcloud sat storage template ls [-q]
 ```
 {: pre}
 {: #storage-template-ls-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #storage-template-ls-options}
@@ -4865,7 +4665,7 @@ ibmcloud sat storage template ls -q
 {: pre}
 
 
-## `ibmcloud sat subscription create`
+### `ibmcloud sat subscription create`
 {: #subscription-create-cli}
 
 
@@ -4878,8 +4678,6 @@ ibmcloud sat subscription create --config CONFIG --group GROUP [--group GROUP ..
 ```
 {: pre}
 {: #subscription-create-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #subscription-create-options}
@@ -4930,7 +4728,7 @@ ibmcloud sat subscription create \
 {: pre}
 
 
-## `ibmcloud sat subscription get`
+### `ibmcloud sat subscription get`
 {: #subscription-get-cli}
 
 
@@ -4943,8 +4741,6 @@ ibmcloud sat subscription get --subscription SUBSCRIPTION [--output OUTPUT] [-q]
 ```
 {: pre}
 {: #subscription-get-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #subscription-get-options}
@@ -4970,7 +4766,7 @@ ibmcloud sat subscription get --subscription <ip_address> --output json -q
 {: pre}
 
 
-## `ibmcloud sat subscription identity set`
+#### `ibmcloud sat subscription identity set`
 {: #subscription-identity-set-cli}
 
 
@@ -4983,8 +4779,6 @@ ibmcloud sat subscription identity set --subscription SUBSCRIPTION [-f] [-q]
 ```
 {: pre}
 {: #subscription-identity-set-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #subscription-identity-set-options}
@@ -5010,7 +4804,7 @@ ibmcloud sat subscription identity set --subscription <ip_address> -f -q
 {: pre}
 
 
-## `ibmcloud sat subscription ls`
+### `ibmcloud sat subscription ls`
 {: #subscription-ls-cli}
 
 
@@ -5023,8 +4817,6 @@ ibmcloud sat subscription ls [--cluster CLUSTER] [--output OUTPUT] [-q]
 ```
 {: pre}
 {: #subscription-ls-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #subscription-ls-options}
@@ -5050,7 +4842,7 @@ ibmcloud sat subscription ls --cluster <cluster_name_or_id> --output json -q
 {: pre}
 
 
-## `ibmcloud sat subscription rm`
+### `ibmcloud sat subscription rm`
 {: #subscription-rm-cli}
 
 
@@ -5063,8 +4855,6 @@ ibmcloud sat subscription rm --subscription SUBSCRIPTION [-f] [-q]
 ```
 {: pre}
 {: #subscription-rm-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #subscription-rm-options}
@@ -5090,7 +4880,7 @@ ibmcloud sat subscription rm --subscription <ip_address> -f -q
 {: pre}
 
 
-## `ibmcloud sat subscription update`
+### `ibmcloud sat subscription update`
 {: #subscription-update-cli}
 
 
@@ -5103,8 +4893,6 @@ ibmcloud sat subscription update --subscription SUBSCRIPTION [-f] [--group GROUP
 ```
 {: pre}
 {: #subscription-update-usage}
-
-**Aliases:** 
 
 ### Command options
 {: #subscription-update-options}
