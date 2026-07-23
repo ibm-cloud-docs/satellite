@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-05-01"
+lastupdated: "2026-07-23"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -68,6 +68,7 @@ ibmcloud sat acl create --name NAME --subnet SUBNET [--subnet SUBNET ...] [--end
 {: #acl-create-options-dl}
 
 
+
 ## `ibmcloud sat acl endpoint add`
 {: #acl-endpoint-add-cli}
 
@@ -97,6 +98,7 @@ ibmcloud sat acl endpoint add --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOI
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #acl-endpoint-add-options-dl}
+
 
 
 ## `ibmcloud sat acl endpoint ls`
@@ -130,6 +132,7 @@ ibmcloud sat acl endpoint ls --acl-id ID [--output OUTPUT] [-q] (--connector-id 
 {: #acl-endpoint-ls-options-dl}
 
 
+
 ## `ibmcloud sat acl endpoint rm`
 {: #acl-endpoint-rm-cli}
 
@@ -159,6 +162,7 @@ ibmcloud sat acl endpoint rm --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOIN
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #acl-endpoint-rm-options-dl}
+
 
 
 ## `ibmcloud sat acl get`
@@ -192,6 +196,7 @@ ibmcloud sat acl get --acl-id ID [--output OUTPUT] [-q] (--connector-id ID | --l
 {: #acl-get-options-dl}
 
 
+
 ## `ibmcloud sat acl ls`
 {: #acl-ls-cli}
 
@@ -220,6 +225,7 @@ ibmcloud sat acl ls [--output OUTPUT] [-q] (--connector-id ID | --location LOCAT
 {: #acl-ls-options-dl}
 
 
+
 ## `ibmcloud sat acl rm`
 {: #acl-rm-cli}
 
@@ -246,6 +252,7 @@ ibmcloud sat acl rm --acl-id ID [-q] (--connector-id ID | --location LOCATION)
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #acl-rm-options-dl}
+
 
 
 ## `ibmcloud sat acl subnet add`
@@ -279,6 +286,7 @@ ibmcloud sat acl subnet add --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-
 {: #acl-subnet-add-options-dl}
 
 
+
 ## `ibmcloud sat acl subnet rm`
 {: #acl-subnet-rm-cli}
 
@@ -308,6 +316,7 @@ ibmcloud sat acl subnet rm --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q
 `--subnet SUBNET`
 :    An IP or CIDR block allowed by this ACL. Value must be fully contained in the following CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
 {: #acl-subnet-rm-options-dl}
+
 
 
 ## `ibmcloud sat acl update`
@@ -341,6 +350,7 @@ ibmcloud sat acl update --acl-id ID --name NAME [-q] (--connector-id ID | --loca
 {: #acl-update-options-dl}
 
 
+
 ## `ibmcloud sat agent attach`
 {: #agent-attach-cli}
 
@@ -361,6 +371,7 @@ ibmcloud sat agent attach --platform PLATFORM [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #agent-attach-options-dl}
+
 
 
 ## `ibmcloud sat agent ls`
@@ -388,6 +399,7 @@ ibmcloud sat agent ls --connector-id ID [--output OUTPUT] [-q]
 {: #agent-ls-options-dl}
 
 
+
 ## `ibmcloud sat cluster get`
 {: #cluster-get-cli}
 
@@ -411,6 +423,7 @@ ibmcloud sat cluster get --cluster CLUSTER [--output OUTPUT] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #cluster-get-options-dl}
+
 
 
 ## `ibmcloud sat cluster ls`
@@ -441,6 +454,7 @@ ibmcloud sat cluster ls [--filter FILTER] [--limit LIMIT] [--output OUTPUT] [-q]
 {: #cluster-ls-options-dl}
 
 
+
 ## `ibmcloud sat cluster register`
 {: #cluster-register-cli}
 
@@ -466,6 +480,7 @@ ibmcloud sat cluster register --name NAME [-q] [--silent]
 {: #cluster-register-options-dl}
 
 
+
 ## `ibmcloud sat cluster unregister`
 {: #cluster-unregister-cli}
 
@@ -489,6 +504,7 @@ ibmcloud sat cluster unregister --cluster CLUSTER [-f] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #cluster-unregister-options-dl}
+
 
 
 ## `ibmcloud sat config create`
@@ -519,6 +535,7 @@ ibmcloud sat config create --name NAME [-q] (--data-location LOCATION | --provid
 {: #config-create-options-dl}
 
 
+
 ## `ibmcloud sat config get`
 {: #config-get-cli}
 
@@ -544,6 +561,7 @@ ibmcloud sat config get --config CONFIG [--output OUTPUT] [-q]
 {: #config-get-options-dl}
 
 
+
 ## `ibmcloud sat config ls`
 {: #config-ls-cli}
 
@@ -564,6 +582,7 @@ ibmcloud sat config ls [--output OUTPUT] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #config-ls-options-dl}
+
 
 
 ## `ibmcloud sat config rename`
@@ -591,6 +610,7 @@ ibmcloud sat config rename --config CONFIG --name NAME [-q]
 {: #config-rename-options-dl}
 
 
+
 ## `ibmcloud sat config rm`
 {: #config-rm-cli}
 
@@ -614,6 +634,7 @@ ibmcloud sat config rm --config CONFIG [-f] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #config-rm-options-dl}
+
 
 
 ## `ibmcloud sat config version create`
@@ -650,6 +671,7 @@ ibmcloud sat config version create --config CONFIG --file-format FORMAT --name N
 {: #config-version-create-options-dl}
 
 
+
 ## `ibmcloud sat config version get`
 {: #config-version-get-cli}
 
@@ -681,6 +703,7 @@ ibmcloud sat config version get --config CONFIG --version VERSION [--output OUTP
 {: #config-version-get-options-dl}
 
 
+
 ## `ibmcloud sat config version rm`
 {: #config-version-rm-cli}
 
@@ -709,6 +732,7 @@ ibmcloud sat config version rm --config CONFIG --version VERSION [-f] [-q]
 {: #config-version-rm-options-dl}
 
 
+
 ## `ibmcloud sat connector create`
 {: #connector-create-cli}
 
@@ -734,6 +758,7 @@ ibmcloud sat connector create --name NAME --region REGION [-q]
 {: #connector-create-options-dl}
 
 
+
 ## `ibmcloud sat connector get`
 {: #connector-get-cli}
 
@@ -757,6 +782,7 @@ ibmcloud sat connector get --connector-id ID [--output OUTPUT] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #connector-get-options-dl}
+
 
 
 ## `ibmcloud sat connector ls`
@@ -787,6 +813,7 @@ ibmcloud sat connector ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q]
 {: #connector-ls-options-dl}
 
 
+
 ## `ibmcloud sat connector rm`
 {: #connector-rm-cli}
 
@@ -810,6 +837,7 @@ ibmcloud sat connector rm --connector-id ID [-f] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #connector-rm-options-dl}
+
 
 
 ## `ibmcloud sat endpoint authn get`
@@ -841,6 +869,7 @@ ibmcloud sat endpoint authn get --endpoint ENDPOINT [--output OUTPUT] [-q] (--co
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #endpoint-authn-get-options-dl}
+
 
 
 ## `ibmcloud sat endpoint authn rotate`
@@ -887,6 +916,7 @@ ibmcloud sat endpoint authn rotate --endpoint ENDPOINT [--dest-ca-cert-file FILE
 `--source-key-file FILE`
 :    The server private key used to encrypt the server certificate. For example `myKey.pem`.
 {: #endpoint-authn-rotate-options-dl}
+
 
 
 ## `ibmcloud sat endpoint authn set`
@@ -941,6 +971,7 @@ ibmcloud sat endpoint authn set --endpoint ENDPOINT [--dest-ca-cert-file FILE] [
 {: #endpoint-authn-set-options-dl}
 
 
+
 ## `ibmcloud sat endpoint create`
 {: #endpoint-create-cli}
 
@@ -993,6 +1024,7 @@ ibmcloud sat endpoint create --dest-hostname HOSTNAME --dest-port PORT --dest-ty
 {: #endpoint-create-options-dl}
 
 
+
 ## `ibmcloud sat endpoint disable`
 {: #endpoint-disable-cli}
 
@@ -1022,6 +1054,7 @@ ibmcloud sat endpoint disable --endpoint ENDPOINT [-f] [-q] (--connector-id ID |
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #endpoint-disable-options-dl}
+
 
 
 ## `ibmcloud sat endpoint enable`
@@ -1055,6 +1088,7 @@ ibmcloud sat endpoint enable --endpoint ENDPOINT [-f] [-q] (--connector-id ID | 
 {: #endpoint-enable-options-dl}
 
 
+
 ## `ibmcloud sat endpoint get`
 {: #endpoint-get-cli}
 
@@ -1086,6 +1120,7 @@ ibmcloud sat endpoint get --endpoint ENDPOINT [--output OUTPUT] [-q] (--connecto
 {: #endpoint-get-options-dl}
 
 
+
 ## `ibmcloud sat endpoint ls`
 {: #endpoint-ls-cli}
 
@@ -1114,6 +1149,7 @@ ibmcloud sat endpoint ls [--output OUTPUT] [-q] (--connector-id ID | --location 
 {: #endpoint-ls-options-dl}
 
 
+
 ## `ibmcloud sat endpoint rm`
 {: #endpoint-rm-cli}
 
@@ -1140,6 +1176,7 @@ ibmcloud sat endpoint rm --endpoint ENDPOINT [-q] (--connector-id ID | --locatio
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #endpoint-rm-options-dl}
+
 
 
 ## `ibmcloud sat endpoint update`
@@ -1191,6 +1228,7 @@ ibmcloud sat endpoint update --endpoint ENDPOINT [--dest-hostname HOSTNAME] [--d
 {: #endpoint-update-options-dl}
 
 
+
 ## `ibmcloud sat experimental acl create`
 {: #experimental-acl-create-cli}
 
@@ -1225,6 +1263,7 @@ ibmcloud sat experimental acl create --name NAME --subnet SUBNET [--subnet SUBNE
 {: #experimental-acl-create-options-dl}
 
 
+
 ## `ibmcloud sat experimental acl endpoint add`
 {: #experimental-acl-endpoint-add-cli}
 
@@ -1254,6 +1293,7 @@ ibmcloud sat experimental acl endpoint add --acl-id ID --endpoint ENDPOINT [--en
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #experimental-acl-endpoint-add-options-dl}
+
 
 
 ## `ibmcloud sat experimental acl endpoint ls`
@@ -1287,6 +1327,7 @@ ibmcloud sat experimental acl endpoint ls --acl-id ID [--output OUTPUT] [-q] (--
 {: #experimental-acl-endpoint-ls-options-dl}
 
 
+
 ## `ibmcloud sat experimental acl endpoint rm`
 {: #experimental-acl-endpoint-rm-cli}
 
@@ -1316,6 +1357,7 @@ ibmcloud sat experimental acl endpoint rm --acl-id ID --endpoint ENDPOINT [--end
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #experimental-acl-endpoint-rm-options-dl}
+
 
 
 ## `ibmcloud sat experimental acl get`
@@ -1349,6 +1391,7 @@ ibmcloud sat experimental acl get --acl-id ID [--output OUTPUT] [-q] (--connecto
 {: #experimental-acl-get-options-dl}
 
 
+
 ## `ibmcloud sat experimental acl ls`
 {: #experimental-acl-ls-cli}
 
@@ -1377,6 +1420,7 @@ ibmcloud sat experimental acl ls [--output OUTPUT] [-q] (--connector-id ID | --l
 {: #experimental-acl-ls-options-dl}
 
 
+
 ## `ibmcloud sat experimental acl rm`
 {: #experimental-acl-rm-cli}
 
@@ -1403,6 +1447,7 @@ ibmcloud sat experimental acl rm --acl-id ID [-q] (--connector-id ID | --locatio
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #experimental-acl-rm-options-dl}
+
 
 
 ## `ibmcloud sat experimental acl subnet add`
@@ -1436,6 +1481,7 @@ ibmcloud sat experimental acl subnet add --acl-id ID --subnet SUBNET [--subnet S
 {: #experimental-acl-subnet-add-options-dl}
 
 
+
 ## `ibmcloud sat experimental acl subnet rm`
 {: #experimental-acl-subnet-rm-cli}
 
@@ -1465,6 +1511,7 @@ ibmcloud sat experimental acl subnet rm --acl-id ID --subnet SUBNET [--subnet SU
 `--subnet SUBNET`
 :    An IP or CIDR block allowed by this ACL. Value must be fully contained in the following CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
 {: #experimental-acl-subnet-rm-options-dl}
+
 
 
 ## `ibmcloud sat experimental acl update`
@@ -1498,6 +1545,7 @@ ibmcloud sat experimental acl update --acl-id ID --name NAME [-q] (--connector-i
 {: #experimental-acl-update-options-dl}
 
 
+
 ## `ibmcloud sat experimental agent attach`
 {: #experimental-agent-attach-cli}
 
@@ -1518,6 +1566,7 @@ ibmcloud sat experimental agent attach --platform PLATFORM [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #experimental-agent-attach-options-dl}
+
 
 
 ## `ibmcloud sat experimental agent ls`
@@ -1545,6 +1594,7 @@ ibmcloud sat experimental agent ls --connector-id ID [--output OUTPUT] [-q]
 {: #experimental-agent-ls-options-dl}
 
 
+
 ## `ibmcloud sat experimental connector create`
 {: #experimental-connector-create-cli}
 
@@ -1570,6 +1620,7 @@ ibmcloud sat experimental connector create --name NAME --region REGION [-q]
 {: #experimental-connector-create-options-dl}
 
 
+
 ## `ibmcloud sat experimental connector get`
 {: #experimental-connector-get-cli}
 
@@ -1593,6 +1644,7 @@ ibmcloud sat experimental connector get --connector-id ID [--output OUTPUT] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #experimental-connector-get-options-dl}
+
 
 
 ## `ibmcloud sat experimental connector ls`
@@ -1623,6 +1675,7 @@ ibmcloud sat experimental connector ls [--after AFTER] [--first FIRST] [--output
 {: #experimental-connector-ls-options-dl}
 
 
+
 ## `ibmcloud sat experimental connector rm`
 {: #experimental-connector-rm-cli}
 
@@ -1646,6 +1699,7 @@ ibmcloud sat experimental connector rm --connector-id ID [-f] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #experimental-connector-rm-options-dl}
+
 
 
 ## `ibmcloud sat experimental endpoint authn get`
@@ -1677,6 +1731,7 @@ ibmcloud sat experimental endpoint authn get --endpoint ENDPOINT [--output OUTPU
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #experimental-endpoint-authn-get-options-dl}
+
 
 
 ## `ibmcloud sat experimental endpoint authn rotate`
@@ -1723,6 +1778,7 @@ ibmcloud sat experimental endpoint authn rotate --endpoint ENDPOINT [--dest-ca-c
 `--source-key-file FILE`
 :    The server private key used to encrypt the server certificate. For example `myKey.pem`.
 {: #experimental-endpoint-authn-rotate-options-dl}
+
 
 
 ## `ibmcloud sat experimental endpoint authn set`
@@ -1777,6 +1833,7 @@ ibmcloud sat experimental endpoint authn set --endpoint ENDPOINT [--dest-ca-cert
 {: #experimental-endpoint-authn-set-options-dl}
 
 
+
 ## `ibmcloud sat experimental location update`
 {: #experimental-location-update-cli}
 
@@ -1805,6 +1862,7 @@ ibmcloud sat experimental location update --location-id ID [--description DESCRI
 {: #experimental-location-update-options-dl}
 
 
+
 ## `ibmcloud sat group attach`
 {: #group-attach-cli}
 
@@ -1830,6 +1888,7 @@ ibmcloud sat group attach --cluster CLUSTER [--cluster CLUSTER ...] --group GROU
 {: #group-attach-options-dl}
 
 
+
 ## `ibmcloud sat group create`
 {: #group-create-cli}
 
@@ -1853,6 +1912,7 @@ ibmcloud sat group create --name NAME [--cluster CLUSTER ...] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #group-create-options-dl}
+
 
 
 ## `ibmcloud sat group detach`
@@ -1883,6 +1943,7 @@ ibmcloud sat group detach --cluster CLUSTER [--cluster CLUSTER ...] --group GROU
 {: #group-detach-options-dl}
 
 
+
 ## `ibmcloud sat group get`
 {: #group-get-cli}
 
@@ -1908,6 +1969,7 @@ ibmcloud sat group get --group GROUP [--output OUTPUT] [-q]
 {: #group-get-options-dl}
 
 
+
 ## `ibmcloud sat group ls`
 {: #group-ls-cli}
 
@@ -1928,6 +1990,7 @@ ibmcloud sat group ls [--output OUTPUT] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #group-ls-options-dl}
+
 
 
 ## `ibmcloud sat group rm`
@@ -1953,6 +2016,7 @@ ibmcloud sat group rm --group GROUP [-f] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #group-rm-options-dl}
+
 
 
 ## `ibmcloud sat host assign`
@@ -1992,6 +2056,7 @@ ibmcloud sat host assign --location LOCATION [--cluster CLUSTER] [--host HOST] [
 {: #host-assign-options-dl}
 
 
+
 ## `ibmcloud sat host attach`
 {: #host-attach-cli}
 
@@ -2026,6 +2091,7 @@ ibmcloud sat host attach --location LOCATION [--host-label LABEL ...] [--host-li
 {: #host-attach-options-dl}
 
 
+
 ## `ibmcloud sat host get`
 {: #host-get-cli}
 
@@ -2054,6 +2120,7 @@ ibmcloud sat host get --host HOST --location LOCATION [--output OUTPUT] [-q]
 {: #host-get-options-dl}
 
 
+
 ## `ibmcloud sat host ls`
 {: #host-ls-cli}
 
@@ -2077,6 +2144,7 @@ ibmcloud sat host ls --location LOCATION [--output OUTPUT] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #host-ls-options-dl}
+
 
 
 ## `ibmcloud sat host rm`
@@ -2105,6 +2173,7 @@ ibmcloud sat host rm --host HOST --location LOCATION [-f] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #host-rm-options-dl}
+
 
 
 ## `ibmcloud sat host update`
@@ -2138,6 +2207,7 @@ ibmcloud sat host update --host HOST --location LOCATION [--host-label LABEL ...
 {: #host-update-options-dl}
 
 
+
 ## `ibmcloud sat key ls`
 {: #key-ls-cli}
 
@@ -2158,6 +2228,7 @@ ibmcloud sat key ls [--output OUTPUT] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #key-ls-options-dl}
+
 
 
 ## `ibmcloud sat key rm`
@@ -2185,6 +2256,7 @@ ibmcloud sat key rm --key KEY [-f] [-q]
 {: #key-rm-options-dl}
 
 
+
 ## `ibmcloud sat key rotate`
 {: #key-rotate-cli}
 
@@ -2208,6 +2280,7 @@ ibmcloud sat key rotate --name NAME [-f] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #key-rotate-options-dl}
+
 
 
 ## `ibmcloud sat location create`
@@ -2271,6 +2344,7 @@ ibmcloud sat location create --managed-from REGION --name NAME [--capability CAP
 {: #location-create-options-dl}
 
 
+
 ## `ibmcloud sat location dns get`
 {: #location-dns-get-cli}
 
@@ -2299,6 +2373,7 @@ ibmcloud sat location dns get --location LOCATION --subdomain SUBDOMAIN [--outpu
 {: #location-dns-get-options-dl}
 
 
+
 ## `ibmcloud sat location dns ls`
 {: #location-dns-ls-cli}
 
@@ -2322,6 +2397,7 @@ ibmcloud sat location dns ls --location LOCATION [--output OUTPUT] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #location-dns-ls-options-dl}
+
 
 
 ## `ibmcloud sat location dns register`
@@ -2352,6 +2428,7 @@ ibmcloud sat location dns register --ip IP [--ip IP ...] --location LOCATION [--
 {: #location-dns-register-options-dl}
 
 
+
 ## `ibmcloud sat location get`
 {: #location-get-cli}
 
@@ -2377,6 +2454,7 @@ ibmcloud sat location get --location LOCATION [--output OUTPUT] [-q]
 {: #location-get-options-dl}
 
 
+
 ## `ibmcloud sat location ls`
 {: #location-ls-cli}
 
@@ -2397,6 +2475,7 @@ ibmcloud sat location ls [--output OUTPUT] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #location-ls-options-dl}
+
 
 
 ## `ibmcloud sat location rm`
@@ -2422,6 +2501,7 @@ ibmcloud sat location rm --location LOCATION [-f] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #location-rm-options-dl}
+
 
 
 ## `ibmcloud sat location update`
@@ -2452,6 +2532,7 @@ ibmcloud sat location update --location-id ID [--description DESCRIPTION] [--nam
 {: #location-update-options-dl}
 
 
+
 ## `ibmcloud sat messages`
 {: #messages-cli}
 
@@ -2469,6 +2550,7 @@ ibmcloud sat messages [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #messages-options-dl}
+
 
 
 ## `ibmcloud sat resource get`
@@ -2502,6 +2584,7 @@ ibmcloud sat resource get --resource RESOURCE [--history HISTORY] [--output OUTP
 {: #resource-get-options-dl}
 
 
+
 ## `ibmcloud sat resource history get`
 {: #resource-history-get-cli}
 
@@ -2528,6 +2611,7 @@ ibmcloud sat resource history get --resource RESOURCE [--limit LIMIT] [--output 
 `--resource RESOURCE`
 :    The Kubernetes resource ID.
 {: #resource-history-get-options-dl}
+
 
 
 ## `ibmcloud sat resource ls`
@@ -2564,6 +2648,7 @@ ibmcloud sat resource ls [--limit LIMIT] [--output OUTPUT] [-q] [--search SEARCH
 {: #resource-ls-options-dl}
 
 
+
 ## `ibmcloud sat service ls`
 {: #service-ls-cli}
 
@@ -2587,6 +2672,7 @@ ibmcloud sat service ls --location LOCATION [--output OUTPUT] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #service-ls-options-dl}
+
 
 
 ## `ibmcloud sat storage assignment autopatch disable`
@@ -2620,6 +2706,7 @@ ibmcloud sat storage assignment autopatch disable --config CONFIG [-q] (--all | 
 {: #storage-assignment-autopatch-disable-options-dl}
 
 
+
 ## `ibmcloud sat storage assignment autopatch enable`
 {: #storage-assignment-autopatch-enable-cli}
 
@@ -2649,6 +2736,7 @@ ibmcloud sat storage assignment autopatch enable --config CONFIG [-q] (--all | -
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #storage-assignment-autopatch-enable-options-dl}
+
 
 
 ## `ibmcloud sat storage assignment create`
@@ -2685,6 +2773,7 @@ ibmcloud sat storage assignment create --config CONFIG [--name NAME] [-q] (--clu
 {: #storage-assignment-create-options-dl}
 
 
+
 ## `ibmcloud sat storage assignment get`
 {: #storage-assignment-get-cli}
 
@@ -2708,6 +2797,7 @@ ibmcloud sat storage assignment get --assignment ASSIGNMENT [--output OUTPUT] [-
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #storage-assignment-get-options-dl}
+
 
 
 ## `ibmcloud sat storage assignment ls`
@@ -2750,6 +2840,7 @@ ibmcloud sat storage assignment ls [--output OUTPUT] [-q] (--cluster CLUSTER | -
 {: #storage-assignment-ls-options-dl}
 
 
+
 ## `ibmcloud sat storage assignment patch`
 {: #storage-assignment-patch-cli}
 
@@ -2775,6 +2866,7 @@ ibmcloud sat storage assignment patch --assignment ASSIGNMENT [-f] [-q]
 {: #storage-assignment-patch-options-dl}
 
 
+
 ## `ibmcloud sat storage assignment rm`
 {: #storage-assignment-rm-cli}
 
@@ -2798,6 +2890,7 @@ ibmcloud sat storage assignment rm --assignment ASSIGNMENT [-f] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #storage-assignment-rm-options-dl}
+
 
 
 ## `ibmcloud sat storage assignment update`
@@ -2831,6 +2924,7 @@ ibmcloud sat storage assignment update --assignment ASSIGNMENT [-f] [--group GRO
 {: #storage-assignment-update-options-dl}
 
 
+
 ## `ibmcloud sat storage config class add`
 {: #storage-config-class-add-cli}
 
@@ -2857,6 +2951,7 @@ ibmcloud sat storage config class add --config-name NAME --name NAME --param PAR
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #storage-config-class-add-options-dl}
+
 
 
 ## `ibmcloud sat storage config class get`
@@ -2887,6 +2982,7 @@ ibmcloud sat storage config class get --class CLASS --config CONFIG [--output OU
 {: #storage-config-class-get-options-dl}
 
 
+
 ## `ibmcloud sat storage config class ls`
 {: #storage-config-class-ls-cli}
 
@@ -2913,6 +3009,7 @@ ibmcloud sat storage config class ls --config CONFIG [--output OUTPUT] [-q] [--s
 `--show-params`
 :    Include this option to list all storage class parameter details.
 {: #storage-config-class-ls-options-dl}
+
 
 
 ## `ibmcloud sat storage config create`
@@ -2949,6 +3046,7 @@ ibmcloud sat storage config create --location LOCATION --name NAME --template-na
 {: #storage-config-create-options-dl}
 
 
+
 ## `ibmcloud sat storage config get`
 {: #storage-config-get-cli}
 
@@ -2974,6 +3072,7 @@ ibmcloud sat storage config get --config CONFIG [--output OUTPUT] [-q]
 {: #storage-config-get-options-dl}
 
 
+
 ## `ibmcloud sat storage config ls`
 {: #storage-config-ls-cli}
 
@@ -2997,6 +3096,7 @@ ibmcloud sat storage config ls [--location LOCATION] [--output OUTPUT] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #storage-config-ls-options-dl}
+
 
 
 ## `ibmcloud sat storage config param set`
@@ -3030,6 +3130,7 @@ ibmcloud sat storage config param set --config CONFIG --param PARAM [--param PAR
 {: #storage-config-param-set-options-dl}
 
 
+
 ## `ibmcloud sat storage config patch`
 {: #storage-config-patch-cli}
 
@@ -3056,6 +3157,7 @@ ibmcloud sat storage config patch --config CONFIG [-f] [--include-assignments] [
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #storage-config-patch-options-dl}
+
 
 
 ## `ibmcloud sat storage config rm`
@@ -3086,6 +3188,7 @@ ibmcloud sat storage config rm --config CONFIG [-f] [--include-assignments] [-q]
 {: #storage-config-rm-options-dl}
 
 
+
 ## `ibmcloud sat storage template get`
 {: #storage-template-get-cli}
 
@@ -3114,6 +3217,7 @@ ibmcloud sat storage template get --name NAME --version VERSION [--output OUTPUT
 {: #storage-template-get-options-dl}
 
 
+
 ## `ibmcloud sat storage template ls`
 {: #storage-template-ls-cli}
 
@@ -3131,6 +3235,7 @@ ibmcloud sat storage template ls [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #storage-template-ls-options-dl}
+
 
 
 ## `ibmcloud sat subscription create`
@@ -3179,6 +3284,7 @@ ibmcloud sat subscription create --config CONFIG --group GROUP [--group GROUP ..
 {: #subscription-create-options-dl}
 
 
+
 ## `ibmcloud sat subscription get`
 {: #subscription-get-cli}
 
@@ -3202,6 +3308,7 @@ ibmcloud sat subscription get --subscription SUBSCRIPTION [--output OUTPUT] [-q]
 `--subscription SUBSCRIPTION`
 :    Enter the name or ID of a Satellite subscription. To find subscriptions, run `ibmcloud sat subscription ls`.
 {: #subscription-get-options-dl}
+
 
 
 ## `ibmcloud sat subscription identity set`
@@ -3229,6 +3336,7 @@ ibmcloud sat subscription identity set --subscription SUBSCRIPTION [-f] [-q]
 {: #subscription-identity-set-options-dl}
 
 
+
 ## `ibmcloud sat subscription ls`
 {: #subscription-ls-cli}
 
@@ -3254,6 +3362,7 @@ ibmcloud sat subscription ls [--cluster CLUSTER] [--output OUTPUT] [-q]
 {: #subscription-ls-options-dl}
 
 
+
 ## `ibmcloud sat subscription rm`
 {: #subscription-rm-cli}
 
@@ -3277,6 +3386,7 @@ ibmcloud sat subscription rm --subscription SUBSCRIPTION [-f] [-q]
 `--subscription SUBSCRIPTION`
 :    Provide the name or ID of a Satellite subscription. To list subscriptions, run `ibmcloud sat subscription ls`.
 {: #subscription-rm-options-dl}
+
 
 
 ## `ibmcloud sat subscription update`
@@ -3326,5 +3436,6 @@ ibmcloud sat subscription update --subscription SUBSCRIPTION [-f] [--group GROUP
 `--version VERSION`
 :    Indicate the existing configuration version to use for the Satellite subscription. Strategy: Direct Upload.
 {: #subscription-update-options-dl}
+
 
   
