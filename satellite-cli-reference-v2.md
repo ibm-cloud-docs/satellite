@@ -27,6 +27,7 @@ Refer to these commands when you want to automate the creation and management of
 To install the CLI, see [Installing the the CLI](/docs/satellite?topic=satellite-cli-install). To view a high-level map of all the {{site.data.keyword.satellitelong_notm}} commands, see the [CLI map](/docs/satellite?topic=satellite-icsat_map).
 {: tip}
 
+
 ## ibmcloud sat commands
 {: #cli_commands}
 
