@@ -18,6 +18,7 @@ content-type: cli-docs
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # CLI reference for {{site.data.keyword.satelliteshort}} commands
 {: #satellite-cli-reference}
 
