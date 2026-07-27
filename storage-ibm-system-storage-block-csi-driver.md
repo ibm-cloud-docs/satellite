@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-05-01"
+lastupdated: "2026-07-27"
 
 keywords: satellite storage, satellite config, satellite configurations, 
 
@@ -98,7 +98,7 @@ Be sure to complete all prerequisite and installation steps before assigning hos
 1. If you use a resource group other than `default`, target it.
 
     ```sh
-    ibmcloud target -g <resource-group>
+    ibmcloud target -g RESOURCE_GROUP
     ```
     {: pre}
     

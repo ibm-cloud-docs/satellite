@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-09"
+lastupdated: "2026-07-27"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -147,7 +147,7 @@ When you create a location, an API key is generated that the {{site.data.keyword
 You can reset the existing host key before the key expires. To reset your host key for your {{site.data.keyword.satelliteshort}} location, run the `ibmcloud sat host attach` command with the `--reset-key` option.
 
 ```sh
-ibmcloud sat host attach --location <location_name> --reset-key
+ibmcloud sat host attach --location LOCATION_NAME --reset-key
 ```
 {: pre}
 

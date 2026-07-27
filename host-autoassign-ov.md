@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-08-23"
+  years: 2020, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite, hybrid, multicloud, assigning hosts, host auto assignment, host auto assignment, host labels
 
@@ -83,13 +83,13 @@ Before you begin, make sure that you create a {{site.data.keyword.satelliteshort
 
     2. List the available (unassigned) hosts in your location, and note the IDs of the hosts that you want to check the labels for.
         ```sh
-        ibmcloud sat host ls --location <location_name_or_ID> | grep unassigned
+        ibmcloud sat host ls --location LOCATION_NAME_OR_ID | grep unassigned
         ```
         {: pre}
 
     3. For each host that you want to check, get the host details and note the **Labels** in the output.
         ```sh
-        ibmcloud sat host get --location <location_name_or_ID> --host <host_name_or_ID>
+        ibmcloud sat host get --location LOCATION_NAME_OR_ID --host HOST_NAME_OR_ID
         ```
         {: pre}
 

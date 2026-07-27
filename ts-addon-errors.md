@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -36,11 +36,9 @@ Take the following steps to troubleshoot the add-on.
 1. Check that the [add-on is supported](/docs/openshift?topic=openshift-managed-addons#addons-satellite). If not, uninstall the add-on.
 2. If the add-on is misconfigured, refresh the cluster master to restore the add-on to the default settings. 
     ```sh
-    ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
+    ibmcloud oc cluster master refresh -c CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
 3. If the add-on is in critical state, review the {{site.data.keyword.cos_full_notm}} instance and bucket that backs up the cluster data. The instance and endpoint must have matching endpoints, such as a **Global** instance with a **Cross Region** bucket (`us-geo` endpoint), or a **Regional** instance with a **Regional** bucket (`us-east` endpoint). If the endpoints do not match, you must re-create the {{site.data.keyword.satelliteshort}} location with matching {{site.data.keyword.cos_full_notm}} instance and bucket endpoints.
 4. For more information, [review the add-on state and statuses](/docs/openshift?topic=openshift-debug_addons).
-
-

@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-07-09"
+  years: 2020, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -38,7 +38,7 @@ Follow these steps to resolve your issue
 
 1. Review the location subdomains and check the **Records** for the IP addresses of the hosts that are registered in the DNS for the subdomain.
     ```sh
-    ibmcloud sat location dns ls --location <location_name_or_ID>
+    ibmcloud sat location dns ls --location LOCATION_NAME_OR_ID
     ```
     {: pre}
 
@@ -72,4 +72,3 @@ Follow these steps to resolve your issue
         {: screen}
 
 3. If are still unable to resolve the issue, [open a support case](/docs/satellite?topic=satellite-get-help#help-support). In the support case description, include all debugging steps that you followed and the output from these steps.
-

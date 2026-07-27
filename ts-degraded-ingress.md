@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-01-03"
+  years: 2021, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -23,7 +23,7 @@ When you look at the status of your Ingress setup, you see an error message simi
 {: tsSymptoms}
 
 ```sh
-ibmcloud ks ingress status --cluster <cluster_name_or_ID>
+ibmcloud ks ingress status --cluster CLUSTER_NAME_OR_ID
 ```
 {: pre}
 

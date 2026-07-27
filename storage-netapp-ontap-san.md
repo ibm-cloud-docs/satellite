@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2026
-lastupdated: "2026-05-01"
+lastupdated: "2026-07-27"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -105,7 +105,7 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 1. If you use a resource group other than `default`, target it.
 
     ```sh
-    ibmcloud target -g <resource-group>
+    ibmcloud target -g RESOURCE_GROUP
     ```
     {: pre}
     

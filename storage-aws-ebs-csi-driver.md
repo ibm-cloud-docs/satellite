@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-02"
+lastupdated: "2026-07-27"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration
 
@@ -103,7 +103,7 @@ To use the AWS EBS storage template, complete the following tasks:
 1. If you use a resource group other than `default`, target it.
 
     ```sh
-    ibmcloud target -g <resource-group>
+    ibmcloud target -g RESOURCE_GROUP
     ```
     {: pre}
     

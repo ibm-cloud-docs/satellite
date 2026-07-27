@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-08-04"
+  years: 2020, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch, host, update, host update
 
@@ -55,7 +55,7 @@ To review the changes that are included in each version update, see the [Version
 
 3. List the worker nodes in the cluster that you want to update the version for. In the output, check for an asterisk `*` with a message that indicates a version update is available.
     ```sh
-    ibmcloud ks worker ls -c <cluster_name_or_ID>
+    ibmcloud ks worker ls -c CLUSTER_NAME_OR_ID
     ```
     {: pre}
 

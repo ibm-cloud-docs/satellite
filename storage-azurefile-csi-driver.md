@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-05-01"
+lastupdated: "2026-07-27"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file, azure file
 
@@ -140,7 +140,7 @@ If you manually assigned your Azure hosts to your location and did not use an au
 1. If you use a resource group other than `default`, target it.
 
     ```sh
-    ibmcloud target -g <resource-group>
+    ibmcloud target -g RESOURCE_GROUP
     ```
     {: pre}
     

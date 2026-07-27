@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-07-26"
+  years: 2023, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite storage, local file storage, local block storage satellite config, satellite configurations,
 
@@ -77,7 +77,7 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 1. If you use a resource group other than `default`, target it.
 
     ```sh
-    ibmcloud target -g <resource-group>
+    ibmcloud target -g RESOURCE_GROUP
     ```
     {: pre}
     
@@ -132,17 +132,3 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 {{site.data.content.assignment-autopatch-cli}}
 {{site.data.content.assignment-upgrade-api}}
 {{site.data.content.assignment-autopatch-api}}
-
-
-
-
-
-
-
-
-
-
-
-
-
-

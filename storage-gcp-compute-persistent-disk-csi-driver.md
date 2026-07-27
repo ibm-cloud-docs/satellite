@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-02"
+lastupdated: "2026-07-27"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce, compute engine
 
@@ -89,7 +89,7 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 1. If you use a resource group other than `default`, target it.
 
     ```sh
-    ibmcloud target -g <resource-group>
+    ibmcloud target -g RESOURCE_GROUP
     ```
     {: pre}
     

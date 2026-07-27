@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-20"
+lastupdated: "2026-07-27"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -223,7 +223,7 @@ Want to use Terraform to deploy OpenShift Data Foundation? For more information,
 1. If you use a resource group other than `default`, target it.
 
     ```sh
-    ibmcloud target -g <resource-group>
+    ibmcloud target -g RESOURCE_GROUP
     ```
     {: pre}
     

@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-11-05"
+  years: 2020, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -74,7 +74,7 @@ See [View your usage](/docs/account?topic=account-viewingusage#viewingusage) and
     Example command to list {{site.data.keyword.satelliteshort}} services.
     
     ```sh
-    ibmcloud sat service ls --location <location>
+    ibmcloud sat service ls --location LOCATION
     ```
     {: pre}
 

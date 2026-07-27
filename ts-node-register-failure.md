@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-01-03"
+  years: 2022, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite, node, azure, file, disk
 
@@ -48,7 +48,7 @@ If you manually assigned your Azure hosts to your location and did not use an au
 1. If you use a resource group other than `default`, target it.
 
     ```sh
-    ibmcloud target -g <resource-group>
+    ibmcloud target -g RESOURCE_GROUP
     ```
     {: pre}
     

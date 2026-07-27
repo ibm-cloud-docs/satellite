@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-04-17"
+  years: 2020, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite storage, satellite config, debug, troubleshoot, must gather
 
@@ -46,7 +46,7 @@ Complete the following steps to debug your Satellite storage configurations.
 1. If you use a resource group other than `default`, target it.
 
     ```sh
-    ibmcloud target -g <resource-group>
+    ibmcloud target -g RESOURCE_GROUP
     ```
     {: pre}
     
@@ -64,7 +64,7 @@ Complete the following steps to debug your Satellite storage configurations.
 
 1. Get the details of the storage configuration you want to troubleshoot and take note of the `storage-template-version` field. 
     ```sh
-    ibmcloud sat storage config get --config <CONFIG_NAME> --json
+    ibmcloud sat storage config get --config CONFIG_NAME --json
     ```
     {: pre}
 
@@ -76,13 +76,13 @@ Complete the following steps to debug your Satellite storage configurations.
 
 1. Get the details of the storage assignment that uses your configuration and check that the `version` field matches your configuration version. 
     ```sh
-    ibmcloud sat storage assignment get --assignment <ASSINGMENT_ID> --json
+    ibmcloud sat storage assignment get --assignment ASSIGNMENT_ID --json
     ```
     {: pre}
 
 1. If the `storage-template-version` and your assignment `version` do not match, upgrade the storage assignment. 
     ```sh
-    ibmcloud sat storage assignment upgrade --assignment <ASSIGNMENT_ID>
+    ibmcloud sat storage assignment upgrade --assignment ASSIGNMENT_ID
     ```
     {: pre}
 

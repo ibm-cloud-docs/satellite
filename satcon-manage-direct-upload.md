@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -73,19 +73,19 @@ To create the configuration:
 
     2. Add the cluster to your cluster group.    
         ```sh
-        ibmcloud sat group attach --cluster <cluster_ID> --group <cluster_group_name>
+        ibmcloud sat group attach --cluster CLUSTER_ID --group CLUSTER_GROUP_NAME
         ```
         {: pre}
 
     3. Verify that your cluster is successfully added to your cluster group.
         ```sh
-        ibmcloud sat group get --group <cluster_group_name>
+        ibmcloud sat group get --group CLUSTER_GROUP_NAME
         ```
         {: pre}
 
 3. Create a **{{site.data.keyword.satelliteshort}} configuration**.
     ```sh
-    ibmcloud sat config create --name <config_name> [--data-location <location>] [-q]
+    ibmcloud sat config create --name CONFIG_NAME [--data-location <location>] [-q]
     ```
     {: pre}
     
@@ -213,6 +213,3 @@ Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to upload 
     {: screen}
 
 3. Follow step 5 in [Creating {{site.data.keyword.satelliteshort}} configurations from the console](/docs/satellite?topic=satellite-setup-clusters-satconfig) to review the rollout status of your Kubernetes resources.
-
-
-

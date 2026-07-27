@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-07-23"
+lastupdated: "2026-07-27"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2679,6 +2679,8 @@ subcollection: satellite
 
 [CLI reference for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-satellite-cli-reference#satellite-cli-reference)
 
+* [Before you begin](/docs/satellite?topic=satellite-satellite-cli-reference#satellite-cli-prereq)
+
 * [ibmcloud sat commands](/docs/satellite?topic=satellite-satellite-cli-reference#cli_commands)
 
     * [`ibmcloud sat acl create`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-create-cli)
@@ -3350,6 +3352,8 @@ subcollection: satellite
 [CLI change log](/docs/satellite?topic=satellite-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/satellite?topic=satellite-cs_cli_changelog#10)
+
+* [Version v1.0.804](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01804)
 
 * [Version v1.0.796](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01796)
 

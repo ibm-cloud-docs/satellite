@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-01-03"
+  years: 2023, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite, hybrid, multicloud, storage errors
 
@@ -67,7 +67,7 @@ Complete the following steps to debug your OpenShift Data Foundation storage con
 
 1. Change the names of the worker assigned to ODF.
     ```sh
-    ibmcloud sat storage config param set --config <your_storage_config_name> --param "worker-nodes=<node-name-1>,<node-name-2>,<node-name-3>" --apply
+    ibmcloud sat storage config param set --config YOUR_STORAGE_CONFIG_NAME --param "worker-nodes=<node-name-1>,<node-name-2>,<node-name-3>" --apply
     ```
     {: codeblock}
 
@@ -77,10 +77,3 @@ Complete the following steps to debug your OpenShift Data Foundation storage con
 
 
 1. [Review the troubleshooting documentation for steps to solve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_openshift_data_foundation). 
-
-
-
-
-
-
-

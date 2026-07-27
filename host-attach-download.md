@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-02-07"
+  years: 2020, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite, hybrid, attaching hosts, hosts, attach hosts, attach hosts to location
 
@@ -42,14 +42,14 @@ Generate the host attachment script to from the CLI with the **`sat host attach`
 The following example `host attach` command downloads a script for an RHCOS host.
             
 ```sh
-ibmcloud sat host attach --location <location_name> [-hl "use=satloc"] --operating-system RHCOS
+ibmcloud sat host attach --location LOCATION_NAME [-hl "use=satloc"] --operating-system RHCOS
 ```
 {: pre}
 
 The following example `host attach` command downloads a script for a RHEL host.
 
 ```sh
-ibmcloud sat host attach --location <location_name> [-hl "use=satloc"] --operating-system RHEL
+ibmcloud sat host attach --location LOCATION_NAME [-hl "use=satloc"] --operating-system RHEL
 ```
 {: pre}
             
@@ -64,5 +64,3 @@ The script to attach hosts to Satellite location 'mylocation' was downloaded to 
      
 
 If your hosts are RHEL hosts, you must update the [required packages](/docs/satellite?topic=satellite-host-reqs) on your hosts before you can run the script. If your hosts are running the latest Red Hat CoreOS images, you do not need to update the packages.
-
-

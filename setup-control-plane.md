@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-07-07"
+  years: 2023, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite, control plane, location control plane, location, satellite location, create location, create control plane
 
@@ -52,7 +52,7 @@ To attach hosts as worker nodes to the control plane,
 8. Verify that the IP addresses of all your hosts were registered and added to the DNS record of your location. Check that the cert status is **created** and that the records are populated with the subdomains.
 
     ```sh
-    ibmcloud sat location dns ls --location <location_ID_or_name>
+    ibmcloud sat location dns ls --location LOCATION_ID_OR_NAME
     ```
     {: pre}
 
@@ -87,7 +87,7 @@ To create the control plane,
 1. Identify the hosts that you want to use as worker nodes for your {{site.data.keyword.satelliteshort}} control plane. All hosts must be in an `unassigned` state.
 
     ```sh
-    ibmcloud sat host ls --location <location_name_or_ID>
+    ibmcloud sat host ls --location LOCATION_NAME_OR_ID
     ```
     {: pre}
 
@@ -104,7 +104,7 @@ To create the control plane,
 2. Optional: If you want to assign hosts to your control plane by using a host label, retrieve the details of your host. Available labels that you can use are listed in the **Labels** section of your CLI output.
 
     ```sh
-    ibmcloud sat host get --location <location_name_or_ID> --host <host_ID>
+    ibmcloud sat host get --location LOCATION_NAME_OR_ID --host HOST_ID
     ```
     {: pre}
 
@@ -139,14 +139,14 @@ To create the control plane,
     Example for assigning a host by using the host ID.
 
     ```sh
-    ibmcloud sat host assign --location <location_name_or_ID>  --cluster <location_ID> --host <host_ID>  --zone <zone>
+    ibmcloud sat host assign --location LOCATION_NAME_OR_ID  --cluster LOCATION_ID --host HOST_ID  --zone ZONE
     ```
     {: pre}
 
     Example for assigning a host by using the `use:satloc` label.
 
     ```sh
-    ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --host-label "use:satloc" --zone <zone>
+    ibmcloud sat host assign --location LOCATION_NAME_OR_ID --cluster LOCATION_ID --host-label "use:satloc" --zone ZONE
     ```
     {: pre}
 
@@ -209,7 +209,7 @@ To create the control plane,
 7. Verify that the IP addresses of all your hosts were registered and added to the DNS record of your location. Check that the cert status is **created** and that the records are populated with the subdomains.
 
     ```sh
-    ibmcloud sat location dns ls --location <location_ID_or_name>
+    ibmcloud sat location dns ls --location LOCATION_ID_OR_NAME
     ```
     {: pre}
 

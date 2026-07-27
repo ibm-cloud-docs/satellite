@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-04-02"
+  years: 2022, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -74,7 +74,7 @@ Follow these general steps to attach your bare metal servers to your location. T
 7. Download the ignition script for your {{site.data.keyword.satelliteshort}} location.
     
     ```sh
-    ibmcloud sat host attach --location <location_name> --operating-system RHCOS
+    ibmcloud sat host attach --location LOCATION_NAME --operating-system RHCOS
     ```
     {: pre}
     
@@ -111,14 +111,14 @@ After your {{site.data.keyword.baremetal_short_sing}} is attached to your locati
 1. Find the hosts to add to your {{site.data.keyword.redhat_openshift_notm}} cluster worker pool.
 
     ```sh
-    ibmcloud sat hosts --location <locationID>
+    ibmcloud sat hosts --location LOCATION_ID
     ```
     {: pre}
 
 2. Assign the {{site.data.keyword.baremetal_short_sing}} to the {{site.data.keyword.redhat_openshift_notm}} cluster worker pool.
 
     ```sh
-    ibmcloud sat host assign --location <locationID> --cluster <clusterID> --host <hostID> --worker-pool default --zone <zone>
+    ibmcloud sat host assign --location LOCATION_ID --cluster CLUSTER_ID --host HOST_ID --worker-pool default --zone ZONE
     ```
     {: pre}
 
