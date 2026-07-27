@@ -3,7 +3,7 @@
 copyright:
   years: 2022, 2026
 
-lastupdated: "2026-03-10"
+lastupdated: "2026-07-27"
 
 keywords: satellite, networking, connectivity, host check, host setup
 
@@ -64,13 +64,13 @@ There is currently a bug with the `sat-host-check` script that causes it to fail
 
 1. Download the script and make it executable.
     ```sh
-    curl https://origin.<region>.containers.cloud.ibm.com/satellite-health/sat-host-check -o sat-host-check && chmod +x sat-host-check
+    curl https://<region>.containers.cloud.ibm.com/satellite-health/sat-host-check -o sat-host-check && chmod +x sat-host-check
     ```
     {: pre}
     
     Example command for `us-south`.
     ```sh
-    curl https://origin.us-south.containers.cloud.ibm.com/satellite-health/sat-host-check -o sat-host-check && chmod +x sat-host-check
+    curl https://us-south.containers.cloud.ibm.com/satellite-health/sat-host-check -o sat-host-check && chmod +x sat-host-check
     ```
     {: pre}
     
