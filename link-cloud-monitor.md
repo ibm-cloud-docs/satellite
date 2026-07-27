@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-06-05"
+  years: 2020, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -54,7 +54,7 @@ Before you begin, install a packet capture tool, such as [`tcpdump`](https://www
 
 1. Get the host name and port for your endpoint in the **Address** field. For cloud endpoints, the host name is the {{site.data.keyword.satelliteshort}} Link connector host name. For location endpoints, the host name is the {{site.data.keyword.satelliteshort}} Link tunnel server host name.
     ```sh
-    ibmcloud sat endpoint ls --location <location_ID>
+    ibmcloud sat endpoint ls --location LOCATION_ID
     ```
     {: pre}
 

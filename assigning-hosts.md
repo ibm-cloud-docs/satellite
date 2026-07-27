@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2026
 
-lastupdated: "2026-04-07"
+lastupdated: "2026-07-27"
 
 keywords: satellite, hybrid, multicloud, assigning hosts, host auto assignment, host auto assignment, host labels
 
@@ -48,7 +48,7 @@ Before you begin,
 
 1. List the hosts in your location and find the ones that are in an **unassigned** status.
     ```sh
-    ibmcloud sat host ls --location <location_name_or_ID>
+    ibmcloud sat host ls --location LOCATION_NAME_OR_ID
     ```
     {: pre}
 
@@ -56,13 +56,13 @@ Before you begin,
 
     - The following example assigns a host by using the host ID.
         ```sh
-        ibmcloud sat host assign --location <location_name_or_ID>  --cluster <cluster_name_or_ID> --host <host_ID> --worker-pool default --zone <zone>
+        ibmcloud sat host assign --location LOCATION_NAME_OR_ID  --cluster CLUSTER_NAME_OR_ID --host HOST_ID --worker-pool default --zone ZONE
         ```
         {: pre}
 
     - The following example assigns a host by using the `use:satcluster` label.
         ```sh
-        ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --host-label "use:satcluster" --worker-pool default --zone us-east-1
+        ibmcloud sat host assign --location LOCATION_NAME_OR_ID --cluster LOCATION_ID --host-label "use:satcluster" --worker-pool default --zone us-east-1
         ```
         {: pre}
 
@@ -78,7 +78,7 @@ Before you begin,
 
     - The following example assigns a host by using the `os=RHCOS` host label.
         ```sh
-        ibmcloud sat host assign --location <location_name_or_ID>  --cluster <cluster_name_or_ID> --host-label os=RHCOS --zone <zone>
+        ibmcloud sat host assign --location LOCATION_NAME_OR_ID  --cluster CLUSTER_NAME_OR_ID --host-label os=RHCOS --zone ZONE
         ```
         {: pre}
 

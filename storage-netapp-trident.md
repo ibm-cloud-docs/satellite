@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-11-21"
+  years: 2020, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -81,7 +81,7 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 1. If you use a resource group other than `default`, target it.
 
     ```sh
-    ibmcloud target -g <resource-group>
+    ibmcloud target -g RESOURCE_GROUP
     ```
     {: pre}
     
@@ -179,7 +179,7 @@ Use the CLI to remove a storage assignment and storage configuration.
 
 2. Remove the assignment. After the assignment is removed, the NetApp Trident driver pods and storage class are removed from all clusters that were part of the storage assignment.
     ```sh
-    ibmcloud sat storage assignment rm --assignment <assignment_ID>
+    ibmcloud sat storage assignment rm --assignment ASSIGNMENT_ID
     ```
     {: pre}
 
@@ -205,7 +205,7 @@ Use the CLI to remove a storage assignment and storage configuration.
     {: pre}
 
     ```sh
-    ibmcloud sat storage config rm --config <config_name>
+    ibmcloud sat storage config rm --config CONFIG_NAME
     ```
     {: pre}
 

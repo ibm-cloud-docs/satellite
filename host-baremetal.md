@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-01-03"
+  years: 2023, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite, hybrid, multicloud, bare metal host, bare metal, baremetal
 
@@ -51,7 +51,7 @@ Follow these general steps to attach your bare metal servers to your location. T
 7. Download the ignition script for your {{site.data.keyword.satelliteshort}} location.
     
     ```sh
-    ibmcloud sat host attach --location <location_name> --operating-system RHCOS
+    ibmcloud sat host attach --location LOCATION_NAME --operating-system RHCOS
     ```
     {: pre}
     
@@ -91,5 +91,3 @@ Now that you added hosts to your location, you can assign them to your location 
 5. Learn more about the [{{site.data.keyword.satelliteshort}} Link component](/docs/satellite?topic=satellite-link-location-cloud) and how you can use endpoints to manage the network traffic between your location and {{site.data.keyword.cloud_notm}}.
 
 Need help? Check out [Getting support](/docs/satellite?topic=satellite-get-help) where you can find information about cloud status, issues, and logging; contacting support; and setting your email notification preferences for {{site.data.keyword.cloud_notm}} platform-related items.
-
-

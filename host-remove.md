@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -76,7 +76,7 @@ Removing a host cannot be undone. Before you remove a host, make sure that your 
 
 4. List your hosts. If the host is assigned to a cluster (and not to **infrastructure**) note the worker **ID** of the host that you want to remove.
     ```sh
-    ibmcloud sat host ls --location <location_name_or_ID>
+    ibmcloud sat host ls --location LOCATION_NAME_OR_ID
     ```
     {: pre}
 

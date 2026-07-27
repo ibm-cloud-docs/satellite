@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-10-17"
+  years: 2020, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -75,7 +75,7 @@ The host is attempting to register with the location.
 1. Find the {{site.data.keyword.satelliteshort}} control plane endpoint.
 
     ```sh
-    ibmcloud sat location get --location <LOCATION_ID>
+    ibmcloud sat location get --location LOCATION_ID
     ```
     {: pre}
     

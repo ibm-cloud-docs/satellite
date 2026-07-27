@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-20"
+lastupdated: "2026-07-27"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -94,7 +94,7 @@ To use the AWS EFS storage template, complete the following tasks:
 1. If you use a resource group other than `default`, target it.
 
     ```sh
-    ibmcloud target -g <resource-group>
+    ibmcloud target -g RESOURCE_GROUP
     ```
     {: pre}
     
@@ -200,13 +200,13 @@ You can't add storage classes to {{site.data.keyword.satelliteshort}} storage co
 
 1. List the storage class parameters for the template that you used to create your configuration and decide how you want to create your storage class.
     ```sh
-    ibmcloud sat storage template get --name aws-efs-csi-driver --version <version>
+    ibmcloud sat storage template get --name aws-efs-csi-driver --version VERSION
     ```
     {: pre}
 
 2. Create the storage class and pass in any custom parameters. Enter the name of the storage configuration you created earlier, the storage class name, and the custom parameters that you want to provide.
     ```sh
-    ibmcloud sat storage config sc add --config-name <config-name> --name <storage-class-name> --param "key=value"
+    ibmcloud sat storage config sc add --config-name CONFIG_NAME --name STORAGE_CLASS_NAME --param "key=value"
     ```
     {: pre}
     

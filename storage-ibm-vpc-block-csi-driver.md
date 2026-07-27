@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-05-01"
+lastupdated: "2026-07-27"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -96,7 +96,7 @@ There is currently an issue with autocomplete in some browsers. If you don't see
 1. If you use a resource group other than `default`, target it.
 
     ```sh
-    ibmcloud target -g <resource-group>
+    ibmcloud target -g RESOURCE_GROUP
     ```
     {: pre}
     

@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -22,35 +22,35 @@ To copy your {{site.data.keyword.satelliteshort}} location to a new location, yo
 1. Get your location details and optionally save the details to a local file.
 
     ```sh
-    ibmcloud sat location get --location <location_ID> [> mylocation.txt]
+    ibmcloud sat location get --location LOCATION_ID [> mylocation.txt]
     ```
     {: pre}
 
 2. List the hosts in your location.
 
     ```sh
-    ibmcloud sat host ls --location <location_ID>
+    ibmcloud sat host ls --location LOCATION_ID
     ```
     {: pre}
 
 3. Get the details of a host and optionally save the details to a local file. In particular, note the labels for **CPU** and **memory** so that you know your host configuration. Repeat this step for each host in your location.
 
     ```sh
-    ibmcloud sat host get --location <location_ID> --host <host_ID> [> host1.txt]
+    ibmcloud sat host get --location LOCATION_ID --host HOST_ID [> host1.txt]
     ```
     {: pre}
 
 4. List your {{site.data.keyword.satelliteshort}} Link endpoints. A certain set of endpoints are created [by default](/docs/satellite?topic=satellite-default-link-endpoints), but note your other endpoints.
 
     ```sh
-    ibmcloud sat endpoint ls --location <location_ID>
+    ibmcloud sat endpoint ls --location LOCATION_ID
     ```
     {: pre}
 
 5. Get the details of an endpoint and optionally save the details to a local file. Repeat this step for each endpoint in your location.
 
     ```sh
-    ibmcloud sat endpoint get --location <location_ID> --endpoint <endpoint_ID> [> endpoint1.txt]
+    ibmcloud sat endpoint get --location LOCATION_ID --endpoint ENDPOINT_ID [> endpoint1.txt]
     ```
     {: pre}
 

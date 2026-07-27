@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-06"
+lastupdated: "2026-07-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -74,12 +74,12 @@ See [Getting help](/docs/account?topic=account-using-avatar) for more details ab
 1. Before you open a support case, gather relevant information about your {{site.data.keyword.satelliteshort}} environment.
     1. Get the details of the resource that you want help with troubleshooting, such as your {{site.data.keyword.satelliteshort}} location or a host.
         ```sh
-        ibmcloud sat location get --location <location_name_or_ID>
+        ibmcloud sat location get --location LOCATION_NAME_OR_ID
         ```
         {: pre}
 
         ```sh
-        ibmcloud sat host get --location <location_name_or_ID> --host <host_ID>
+        ibmcloud sat host get --location LOCATION_NAME_OR_ID --host HOST_ID
         ```
         {: pre}
 

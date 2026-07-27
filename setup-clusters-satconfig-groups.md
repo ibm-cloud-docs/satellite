@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -29,12 +29,12 @@ If you want to use the console to create {{site.data.keyword.satelliteshort}} co
 
 2. Add the cluster to your cluster group.    
     ```sh
-    ibmcloud sat group attach --cluster <cluster_ID> --group <cluster_group_name>
+    ibmcloud sat group attach --cluster CLUSTER_ID --group CLUSTER_GROUP_NAME
     ```
     {: pre}
 
 3. Verify that your cluster is successfully added to your cluster group.
     ```sh
-    ibmcloud sat group get --group <cluster_group_name>
+    ibmcloud sat group get --group CLUSTER_GROUP_NAME
     ```
     {: pre}

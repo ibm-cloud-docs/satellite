@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-10-28"
+  years: 2020, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -66,7 +66,7 @@ Create an {{site.data.keyword.containerlong_notm}} cluster in your {{site.data.k
 
 1. Set the {{site.data.keyword.containerlong_notm}} cluster as the context for this session.
     ```sh
-    ibmcloud ks cluster config --cluster <cluster_name_or_ID>
+    ibmcloud ks cluster config --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
@@ -85,19 +85,19 @@ Set up the private Ingress application load balancers (ALBs) for the {{site.data
 
 1. Verify that at least one ALB with a **Type** of `private` exists in each zone.
     ```sh
-    ibmcloud ks alb ls -c <cluster_name_or_ID>
+    ibmcloud ks alb ls -c CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
 2. Ensure that the private ALBs have a **Status** of `enabled`. If they are disabled, run the following command to enable each private ALB.
     ```sh
-    ibmcloud ks ingress alb enable classic --alb <ALB_ID> -c <cluster_name_or_ID> --version 0.45.0_1228_iks
+    ibmcloud ks ingress alb enable classic --alb ALB_ID -c CLUSTER_NAME_OR_ID --version 0.45.0_1228_iks
     ```
     {: pre}
 
 3. Optional: Disable each public ALB.
     ```sh
-    ibmcloud ks ingress alb disable classic --alb <ALB_ID> -c <cluster_name_or_ID>
+    ibmcloud ks ingress alb disable classic --alb ALB_ID -c CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
@@ -106,7 +106,7 @@ Set up the private Ingress application load balancers (ALBs) for the {{site.data
     2. Map your custom domain to the private ALBs by adding their IP addresses as A records (classic clusters) or their VPC hostname as a CNAME (VPC clusters). To find the ALB IP addresses (classic) or hostname (VPC), run `ibmcloud ks ingress alb ls -c <cluster_name_or_ID>`. Note that in VPC clusters, a hostname is assigned to the ALBs because the `10.X.X.X` IP addresses are not static and might change over time.
     3. To use TLS termination, create a secret in the `dl-reverse-proxy` namespace that contains a TLS certificate for your custom domain. For example, if a TLS certificate is stored in {{site.data.keyword.cloudcerts_long_notm}} that you want to use, you can import its associated secret into your cluster by running the following command. For more information, see [Custom domains with Ingress](/docs/containers?topic=containers-ingress-domains).
         ```sh
-        ibmcloud ks ingress secret create --name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn> --namespace dl-reverse-proxy
+        ibmcloud ks ingress secret create --name SECRET_NAME --cluster CLUSTER_NAME_OR_ID --cert-crn CERTIFICATE_CRN --namespace dl-reverse-proxy
         ```
         {: pre}
 
@@ -159,7 +159,7 @@ The following steps include editing and using local YAML files to create a Confi
 
 1. Get the private service endpoint for the Link tunnel server. In the output, look for the `Address` that is listed for an endpoint of type `location`.
     ```sh
-    ibmcloud sat endpoint ls --location <location_ID>
+    ibmcloud sat endpoint ls --location LOCATION_ID
     ```
     {: pre}
 

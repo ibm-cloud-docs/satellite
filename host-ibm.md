@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-03-10"
+lastupdated: "2026-07-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -48,7 +48,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 1. Wait for your virtual server instance to be provisioned.
 1. Get the registration script to attach hosts to your {{site.data.keyword.satellitelong_notm}} location. Note that the token in the script is an API key, which should be treated and protected as sensitive information. Make a note of the location of the attach script. Also note that for RHEL-based hosts, the attach script is a Shell script. 
     ```sh
-    ibmcloud sat host attach --location <location_name_or_ID>
+    ibmcloud sat host attach --location LOCATION_NAME_OR_ID
     ```
     {: pre}
     
@@ -179,7 +179,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 
 1. Get the registration script to attach hosts to your {{site.data.keyword.satellitelong_notm}} location. Note that the token in the script is an API key, which should be treated and protected as sensitive information. Make a note of the location of the attach script. Also note that for RHCOS hosts, the attach script is a RHCOS ignition file. 
     ```sh
-    ibmcloud sat host attach --location <location_name_or_ID>
+    ibmcloud sat host attach --location LOCATION_NAME_OR_ID
     ```
     {: pre}
 

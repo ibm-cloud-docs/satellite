@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -27,7 +27,7 @@ When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellit
 
 2. List the **Hostnames** of the subdomains for your location control plane hosts.
     ```sh
-    ibmcloud sat location dns ls --location <location_name_or_ID>
+    ibmcloud sat location dns ls --location LOCATION_NAME_OR_ID
     ```
     {: pre}
 
@@ -105,5 +105,3 @@ When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellit
 5. [Add a host to the control plane](/docs/satellite?topic=satellite-setup-control-plane) in the same zone so that the location control plane has enough compute resources to continue running when you remove the unhealthy host.
 6. [Remove the unhealthy host from the location control plane](/docs/satellite?topic=satellite-host-remove).
 7. Optional: You can reload the operating system on the unhealthy host and try to attach and assign the host to {{site.data.keyword.satellitelong_notm}} again.
-
-

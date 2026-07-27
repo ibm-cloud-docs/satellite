@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-04-17"
+  years: 2022, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite config gitops, satellite configuration gitops, satellite gitops
 
@@ -117,7 +117,7 @@ To create the configuration:
 
 1. Create a **{{site.data.keyword.satelliteshort}} configuration**.
     ```sh
-    ibmcloud sat config create --name <config_name> [--provider <provider>] [-q]
+    ibmcloud sat config create --name CONFIG_NAME [--provider <provider>] [-q]
     ```
     {: pre}
     

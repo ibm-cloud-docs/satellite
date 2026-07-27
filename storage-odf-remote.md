@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-20"
+lastupdated: "2026-07-27"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote devices, odf, openshift data foundation
 
@@ -131,7 +131,7 @@ Want to use Terraform to deploy OpenShift Data Foundation? For more information,
 1. If you use a resource group other than `default`, target it.
 
     ```sh
-    ibmcloud target -g <resource-group>
+    ibmcloud target -g RESOURCE_GROUP
     ```
     {: pre}
     
@@ -278,7 +278,7 @@ Want to use Terraform to deploy OpenShift Data Foundation? For more information,
 
 1. Add more worker nodes to your ODF configuration.
     ```sh
-    ibmcloud sat storage config param set --config <config-name> -p "worker-nodes=<comma-separated values of new worker-nodes followed by list of old worker-nodes>" --apply
+    ibmcloud sat storage config param set --config CONFIG_NAME -p "worker-nodes=<comma-separated values of new worker-nodes followed by list of old worker-nodes>" --apply
     ```
     {: pre}
 

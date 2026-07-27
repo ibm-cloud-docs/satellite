@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-07-23"
+lastupdated: "2026-07-27"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -26,6 +26,16 @@ Refer to these commands when you want to automate the creation and management of
 
 To install the CLI, see [Installing the the CLI](/docs/satellite?topic=satellite-cli-install). To view a high-level map of all the {{site.data.keyword.satellitelong_notm}} commands, see the [CLI map](/docs/satellite?topic=satellite-icsat_map).
 {: tip}
+
+## Before you begin
+{: #satellite-cli-prereq}
+
+Install the required CLI plug-ins.
+
+```sh
+ibmcloud plugin install oc
+```
+{: pre}
 
 
 ## ibmcloud sat commands

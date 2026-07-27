@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-05-01"
+lastupdated: "2026-07-27"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -196,7 +196,7 @@ After you have [retrieved the device paths for the disks that you want to use in
 1. If you use a resource group other than `default`, target it.
 
     ```sh
-    ibmcloud target -g <resource-group>
+    ibmcloud target -g RESOURCE_GROUP
     ```
     {: pre}
     

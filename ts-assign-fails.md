@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-08-21"
+  years: 2020, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -54,7 +54,7 @@ Otherwise, remove the host, reload the operating system, and attach the host bac
     3. Check access to the required [{{site.data.keyword.cloud_notm}} multizone metro endpoints](#endpoints-to-verify).
     4. For hosts that are assigned to clusters, get the details of the cluster master endpoint.
         ```sh
-        ibmcloud ks cluster get -c <cluster_name_or_ID> | grep "Master URL"
+        ibmcloud ks cluster get -c CLUSTER_NAME_OR_ID | grep "Master URL"
         ```
         {: pre}
 

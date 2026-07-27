@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-09"
+lastupdated: "2026-07-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -28,7 +28,7 @@ You can verify your host setup with the `satellite-host-check` script. For more 
 
 1. Review the health and status of your hosts. From the CLI, list your hosts in a location. From the console, click your location, and then click the **Hosts** tab.
     ```sh
-    ibmcloud sat host ls --location <location_name_or_ID>
+    ibmcloud sat host ls --location LOCATION_NAME_OR_ID
     ```
     {: pre}
 

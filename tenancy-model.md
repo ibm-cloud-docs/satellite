@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-12-04"
+  years: 2022, 2026
+lastupdated: "2026-07-27"
 
 keywords: satellite, hybrid, multicloud, tenancy, resellers, satellite reseller, satellite use case
 
@@ -179,7 +179,7 @@ To attach hosts as worker nodes to the control plane,
 8. Verify that the IP addresses of all your hosts were registered and added to the DNS record of your location. Check that the cert status is **created** and that the records are populated with the subdomains.
 
     ```sh
-    ibmcloud sat location dns ls --location <location_ID_or_name>
+    ibmcloud sat location dns ls --location LOCATION_ID_OR_NAME
     ```
     {: pre}
 
