@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2024, 2024
-lastupdated: "2024-08-05"
+  years: 2024, 2026
+lastupdated: "2026-07-28"
 
 keywords: satellite config, subscription, id, permissions, not authorized
 
@@ -48,7 +48,7 @@ Change the subscription identity to use a different user ID. That user becomes t
     razee-logs:
         error:
         e2da78e5642c34f1b4f7916ab960a37571db4a9d: '1 errors occurred: Error applying
-            file to kubernetes. StatusCode: 403 url: https://config.satellite.test.cloud.ibm.com/api/v1/channels/UploadedApp1/55a55aaa-5a5a-555a
+            file to kubernetes. StatusCode: 403 url: https://config.satellite.cloud.ibm.com/api/v1/channels/UploadedApp1/55a55aaa-5a5a-555a
             message: user does not have permissions to create resources of type ConfigMap'
     ```
     {: screen}
