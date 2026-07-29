@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-07-28"
 
 keywords: satellite, node, azure, file, disk
 
@@ -19,6 +19,8 @@ content-type: troubleshoot
 
 Your worker nodes are failing to register when creating an Azure Disk or Azure File storage configuration. 
 {: tsSymptoms}
+
+
 
 
 If you manually assigned your Azure hosts to your location and did not use an automated deployment such as deploying from the console or a Terraform template, then you must label your worker nodes before creating your storage configuration. If your nodes are failing to register when creating a Azure Disk or Azure File {{site.data.keyword.satelliteshort}} storage configuration, verify that your worker nodes are labeled with the proper zone. Follow the steps to verify that your worker nodes have the proper labels:
