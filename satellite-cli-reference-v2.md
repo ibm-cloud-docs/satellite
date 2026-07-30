@@ -34,24 +34,10 @@ To install the CLI, see [Installing the the CLI](/docs/satellite?topic=satellite
 Install the required CLI plug-ins.
 
 ```sh
-ibmcloud plugin install oc
+ibmcloud plugin install ks
 ```
 {: pre}
 
-
-## Prerequisites
-{: #sat-cli-prereq}
-
-* Install the [{{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-cli-install).
-* Install the `ks` plug-in by running the following command:
-
-   ```sh
-   ibmcloud plugin install ks
-   ```
-   {: pre}
-
-You're notified on the command line when updates to the  CLI and plug-ins are available. Be sure to keep your CLI up to date so that you can use the latest commands. You can view the current version of all installed plug-ins by running **`ibmcloud plugin list`**.
-{: tip}
 
 ## ibmcloud sat commands
 {: #cli_commands}
@@ -5065,5 +5051,3 @@ ibmcloud sat subscription update \
   --group GROUP
 ```
 {: pre}
-
-  
