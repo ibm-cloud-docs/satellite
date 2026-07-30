@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2026
 
-lastupdated: "2026-07-20"
+lastupdated: "2026-07-30"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -123,18 +123,13 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 
 | Template name | Template CLI name | Version, Patch | Supported status | Change log |
 | --- | --- | --- | --- | --- |
-| [AWS EBS CSI Driver](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver) | `aws-ebs-csi-driver` | Version: 1.31.0, Patch: 1 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-aws-ebs-csi-driver) 
 | [AWS EBS CSI Driver](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver) | `aws-ebs-csi-driver` | Version: 1.55.0 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-aws-ebs-csi-driver)  |
-| [AWS EFS CSI Driver](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver) | `aws-efs-csi-driver` | Version: 1.4.2, Patch: 1 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-aws-efs-csi-driver) 
-| [AWS EFS CSI Driver](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver) | `aws-efs-csi-driver` | Version: 2.0.3, Patch: 1 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-aws-efs-csi-driver) 
 | [AWS EFS CSI Driver](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver) | `aws-efs-csi-driver` | Version: 2.3.0 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-aws-efs-csi-driver)  |
-| [Azure Disk CSI Driver](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver) | `azuredisk-csi-driver` | Version: 1.23.0, Patch: 1 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-azuredisk-csi-driver) 
 | [Azure Disk CSI Driver](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver) | `azuredisk-csi-driver` | Version: 1.30.3 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-azuredisk-csi-driver)  |
-| [Azure File CSI Driver](/docs/satellite?topic=satellite-storage-azurefile-csi-driver) | `azurefile-csi-driver` | Version: 1.22.0, Patch: 1 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-azurefile-csi-driver) 
 | [Azure File CSI Driver](/docs/satellite?topic=satellite-storage-azurefile-csi-driver) | `azurefile-csi-driver` | Version: 1.31.2 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-azurefile-csi-driver)  |
 | [GCP Compute Persistent Disk CSI Driver](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver) | `gcp-compute-persistent-disk-csi-driver` | Version: 1.8.0 (Default), Patch: 2 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-gcp-compute-persistent-disk-csi-driver)  |
-| [IBM Object Storage Plugin](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin) | `ibm-object-storage-plugin` | Version: 2.2 (Default), Patch: 40 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin)  |
-| [[Beta] IBM VPC Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver) | `ibm-vpc-block-csi-driver` | Version: 5.1 (Default), Patch: 17 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver)  |
+| [IBM Object Storage Plugin](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin) | `ibm-object-storage-plugin` | Version: 2.2 (Default), Patch: 41 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin)  |
+| [[Beta] IBM VPC Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver) | `ibm-vpc-block-csi-driver` | Version: 5.1 (Default), Patch: 18 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver)  |
 | [[Beta] Local Storage File and/or Block](/docs/satellite?topic=satellite-storage-local-storage) | `local-storage` | Version: 1.0.0 (Default), Patch: 2 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-local-storage)  |
 | [Local Storage Operator](/docs/satellite?topic=satellite-storage-local-storage-operator) | `local-storage-operator` | Version: 1.0.0 (Default), Patch: 2 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-local-storage-operator)  |
 | [NetApp Ontap-NAS Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-nas) | `netapp-ontap-nas` | Version: 24.02 (Default), Patch: 7 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas) 

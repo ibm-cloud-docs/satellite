@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-20"
+lastupdated: "2026-07-30"
 
 
 keywords: satellite storage, features, overview
@@ -21,14 +21,9 @@ subcollection: satellite
 
 | Name | Version | Supported providers | Encryption at rest | Encryption in transit | Snapshot support | Availability | Volume expansion |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| AWS EBS CSI Driver | 1.31.0 | AWS | True | True | True | Zonal | True |
 | AWS EBS CSI Driver | 1.55.0 | AWS | True | True | True | Zonal | True |
-| AWS EFS CSI Driver | 1.4.2 | AWS | True | True | False | Regional | False |
-| AWS EFS CSI Driver | 2.0.3 | AWS | True | True | False | Regional | False |
 | AWS EFS CSI Driver | 2.3.0 | AWS | True | True | False | Regional | False |
-| Azure Disk CSI Driver | 1.23.0 | Azure | True | True | False | Zonal | False |
 | Azure Disk CSI Driver | 1.30.3 | Azure | True | True | False | Zonal | False |
-| Azure File CSI Driver | 1.22.0 | Azure | True | True | False | Regional | False |
 | Azure File CSI Driver | 1.31.2 | Azure | True | True | True | Regional | True |
 | GCP Compute Persistent Disk CSI Driver | 1.8.0 | Google | True | True | True | Zonal | False |
 | IBM Object Storage Plugin | 2.2 | IBM | 

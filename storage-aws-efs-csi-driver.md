@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-07-30"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -101,22 +101,6 @@ To use the AWS EFS storage template, complete the following tasks:
 1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-create-cli).
 
 
-    Example command to create a version 1.4.2 configuration.
-
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-efs-csi-driver --template-version 1.4.2 --param "aws-access-key=AWS-ACCESS-KEY"  --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
-    ```
-    {: pre}
-
-
-    Example command to create a version 2.0.3 configuration.
-
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-efs-csi-driver --template-version 2.0.3 --param "aws-access-key=AWS-ACCESS-KEY"  --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
-    ```
-    {: pre}
-
-
     Example command to create a version 2.3.0 configuration.
 
     ```sh
@@ -146,22 +130,6 @@ To use the AWS EFS storage template, complete the following tasks:
 
 
 1. Copy one of the following example requests and replace the variables that you want to use.
-
-
-    Example request to create a version 1.4.2 configuration.
-
-    ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"aws-efs-csi-driver\", \"storage-template-version\": \"1.4.2\", \"update-assignments\": true, \"user-config-parameters\":\"user-secret-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\",{ \"entry.name\": \"AWS-SECRET-ACCESS-KEY\",}
-    ```
-    {: pre}
-
-
-    Example request to create a version 2.0.3 configuration.
-
-    ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"aws-efs-csi-driver\", \"storage-template-version\": \"2.0.3\", \"update-assignments\": true, \"user-config-parameters\":\"user-secret-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\",{ \"entry.name\": \"AWS-SECRET-ACCESS-KEY\",}
-    ```
-    {: pre}
 
 
     Example request to create a version 2.3.0 configuration.
@@ -546,26 +514,6 @@ Note that you must delete your storage assignments before you can successfully d
 ## Parameter reference
 {: #aws-efs-csi-driver-parameter-reference}
 
-### 1.4.2 parameter reference
-{: #aws-efs-csi-driver-1.4.2-parameters}
-
-| Display name | CLI option | Type | Description | Default value |
-| --- | --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | N/A |
-| AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | N/A |
-{: caption="Table 1. 1.4.2 parameter reference" caption-side="bottom"}
-
-
-### 2.0.3 parameter reference
-{: #aws-efs-csi-driver-2.0.3-parameters}
-
-| Display name | CLI option | Type | Description | Default value |
-| --- | --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | N/A |
-| AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | N/A |
-{: caption="Table 2. 2.0.3 parameter reference" caption-side="bottom"}
-
-
 ### 2.3.0 parameter reference
 {: #aws-efs-csi-driver-2.3.0-parameters}
 
@@ -573,7 +521,7 @@ Note that you must delete your storage assignments before you can successfully d
 | --- | --- | --- | --- | --- |
 | AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | N/A |
 | AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | N/A |
-{: caption="Table 3. 2.3.0 parameter reference" caption-side="bottom"}
+{: caption="Table 1. 2.3.0 parameter reference" caption-side="bottom"}
 
 
 
