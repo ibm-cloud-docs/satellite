@@ -64,6 +64,12 @@ The following tables list the `ibmcloud sat` command groups. For a complete list
 | [`ibmcloud sat subscription`](#subscription-cli) | View and manage Satellite subscriptions to deploy Kubernetes configuration files to your clusters. |
 {: caption="ibmcloud sat CLI command groups" caption-side="bottom"}
 
+
+## `ibmcloud sat acl` commands
+{: #acl-cli}
+
+View and manage Satellite access control lists (ACLs).
+
 ### `ibmcloud sat acl create`
 {: #acl-create-cli}
 
@@ -519,6 +525,12 @@ ibmcloud sat acl update \
 {: pre}
 
 
+
+## `ibmcloud sat agent` commands
+{: #agent-cli}
+
+Attach or view Satellite Connector Agents.
+
 ### `ibmcloud sat agent attach`
 {: #agent-attach-cli}
 
@@ -591,6 +603,12 @@ ibmcloud sat agent ls --connector-id CONNECTOR_ID --output json -q
 ```
 {: pre}
 
+
+
+## `ibmcloud sat cluster` commands
+{: #cluster-cli}
+
+Register and manage clusters for use with Satellite configurations.
 
 ### `ibmcloud sat cluster get`
 {: #cluster-get-cli}
@@ -746,6 +764,12 @@ ibmcloud sat cluster unregister --cluster CLUSTER_NAME_OR_ID -f -q
 ```
 {: pre}
 
+
+
+## `ibmcloud sat config` commands
+{: #config-cli}
+
+View and manage Satellite Configuration.
 
 ### `ibmcloud sat config create`
 {: #config-create-cli}
@@ -1078,6 +1102,12 @@ ibmcloud sat config version rm --config CONFIG --version VERSION -f
 {: pre}
 
 
+
+## `ibmcloud sat connector` commands
+{: #connector-cli}
+
+Create, view, and modify Satellite connectors.
+
 ### `ibmcloud sat connector create`
 {: #connector-create-cli}
 
@@ -1232,6 +1262,12 @@ ibmcloud sat connector rm --connector-id CONNECTOR_ID -f -q
 ```
 {: pre}
 
+
+
+## `ibmcloud sat endpoint` commands
+{: #endpoint-cli}
+
+View and manage Satellite endpoints.
 
 ### `ibmcloud sat endpoint authn get`
 {: #endpoint-authn-get-cli}
@@ -1768,6 +1804,12 @@ ibmcloud sat endpoint update \
 ```
 {: pre}
 
+
+
+## `ibmcloud sat experimental` commands
+{: #experimental-cli}
+
+[Expires on 2024-11-25] Experiment with new commands. IMPORTANT: Commands here will retire after the [date] in their description.
 
 ### `ibmcloud sat experimental acl create`
 {: #experimental-acl-create-cli}
@@ -2685,6 +2727,12 @@ ibmcloud sat experimental location update \
 {: pre}
 
 
+
+## `ibmcloud sat group` commands
+{: #group-cli}
+
+View and manage Satellite cluster groups. Cluster groups are used to subscribe clusters to Satellite configurations of Kubernetes resources.
+
 ### `ibmcloud sat group attach`
 {: #group-attach-cli}
 
@@ -2912,6 +2960,12 @@ ibmcloud sat group rm --group GROUP -f -q
 ```
 {: pre}
 
+
+
+## `ibmcloud sat host` commands
+{: #host-cli}
+
+View and modify Satellite hosts.
 
 ### `ibmcloud sat host assign`
 {: #host-assign-cli}
@@ -3180,6 +3234,12 @@ ibmcloud sat host update --location LOCATION --host-label HOSTNAME --zone ZONE
 {: pre}
 
 
+
+## `ibmcloud sat key` commands
+{: #key-cli}
+
+View and manage Satellite Config keys.
+
 ### `ibmcloud sat key ls`
 {: #key-ls-cli}
 
@@ -3290,6 +3350,12 @@ ibmcloud sat key rotate --name NAME -f -q
 ```
 {: pre}
 
+
+
+## `ibmcloud sat location` commands
+{: #location-cli}
+
+Create, view, and modify Satellite locations.
 
 ### `ibmcloud sat location create`
 {: #location-create-cli}
@@ -3643,7 +3709,13 @@ ibmcloud sat location update \
 {: pre}
 
 
-## `ibmcloud sat messages`
+
+## `ibmcloud sat messages` commands
+{: #messages-cli}
+
+View the current user messages.
+
+### `ibmcloud sat messages`
 {: #messages-cli}
 
 
@@ -3674,6 +3746,12 @@ ibmcloud sat messages -q
 ```
 {: pre}
 
+
+
+## `ibmcloud sat resource` commands
+{: #resource-cli}
+
+Search and view Kubernetes resources that are managed by a Satellite configuration.
 
 ### `ibmcloud sat resource get`
 {: #resource-get-cli}
@@ -3810,6 +3888,12 @@ ibmcloud sat resource ls --search SEARCH --limit LIMIT --cluster CLUSTER_NAME_OR
 {: pre}
 
 
+
+## `ibmcloud sat service` commands
+{: #service-cli}
+
+View Satellite service clusters.
+
 ### `ibmcloud sat service ls`
 {: #service-ls-cli}
 
@@ -3847,6 +3931,12 @@ ibmcloud sat service ls --location LOCATION --output json -q
 ```
 {: pre}
 
+
+
+## `ibmcloud sat storage` commands
+{: #storage-cli}
+
+View and manage Satellite storage resources.
 
 ### `ibmcloud sat storage assignment autopatch disable`
 {: #storage-assignment-autopatch-disable-cli}
@@ -4675,6 +4765,12 @@ ibmcloud sat storage template ls -q
 ```
 {: pre}
 
+
+
+## `ibmcloud sat subscription` commands
+{: #subscription-cli}
+
+View and manage Satellite subscriptions to deploy Kubernetes configuration files to your clusters.
 
 ### `ibmcloud sat subscription create`
 {: #subscription-create-cli}
