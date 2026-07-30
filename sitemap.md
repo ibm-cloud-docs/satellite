@@ -2633,7 +2633,7 @@ subcollection: satellite
 {: #sitemap_cli_plug-in_reference}
 
 
-[{{site.data.keyword.satellitelong_notm}} CLI map](/docs/satellite?topic=satellite-icsat_map#icsat_map)
+[ CLI map](/docs/satellite?topic=satellite-icsat_map#icsat_map)
 
 * [`acl` commands](/docs/satellite?topic=satellite-icsat_map#icks_map_acl)
 
@@ -2669,7 +2669,7 @@ subcollection: satellite
 
 [CLI reference for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-satellite-cli-reference#satellite-cli-reference)
 
-* [Before you begin](/docs/satellite?topic=satellite-satellite-cli-reference#satellite-cli-prereq)
+* [Prerequisites](/docs/satellite?topic=satellite-satellite-cli-reference#sat-cli-prereq)
 
 * [ibmcloud sat commands](/docs/satellite?topic=satellite-satellite-cli-reference#cli_commands)
 
