@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-07-21"
+lastupdated: "2026-07-30"
 
 
 keywords: change log, version history, ibm-vpc-block-csi-driver
@@ -27,6 +27,13 @@ Review the version history for `ibm-vpc-block-csi-driver`.
 
 ## Version 5.1
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1}
+
+
+### Version 5.1 - Revision 18, released 30 July 2026
+{: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-18}
+
+- Resolves the following CVEs: [CVE-2026-2303](https://nvd.nist.gov/vuln/detail/CVE-2026-2303){: external}, [CVE-2026-15308](https://nvd.nist.gov/vuln/detail/CVE-2026-15308){: external}, [CVE-2025-5278](https://nvd.nist.gov/vuln/detail/CVE-2025-5278){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}, [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/CVE-2025-58185){: external}, [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/CVE-2025-61727){: external}, [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/CVE-2025-61729){: external}, [CVE-2025-47912](https://nvd.nist.gov/vuln/detail/CVE-2025-47912){: external}, [CVE-2025-58187](https://nvd.nist.gov/vuln/detail/CVE-2025-58187){: external}, [CVE-2025-58188](https://nvd.nist.gov/vuln/detail/CVE-2025-58188){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/CVE-2025-58189){: external}, [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/CVE-2025-61723){: external}, [CVE-2025-61724](https://nvd.nist.gov/vuln/detail/CVE-2025-61724){: external}, [CVE-2025-61726](https://nvd.nist.gov/vuln/detail/CVE-2025-61726){: external}, [CVE-2025-61730](https://nvd.nist.gov/vuln/detail/CVE-2025-61730){: external}, [CVE-2025-68121](https://nvd.nist.gov/vuln/detail/CVE-2025-68121){: external}, [CVE-2025-47906](https://nvd.nist.gov/vuln/detail/CVE-2025-47906){: external}, and [CVE-2025-22870](https://nvd.nist.gov/vuln/detail/CVE-2025-22870){: external}.
+- Updates Go to version `1.26.3`.
 
 
 ### Version 5.1 - Revision 17, released 10 July 2026
