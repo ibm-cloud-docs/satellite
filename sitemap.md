@@ -2633,7 +2633,7 @@ subcollection: satellite
 {: #sitemap_cli_plug-in_reference}
 
 
-[ CLI map](/docs/satellite?topic=satellite-icsat_map#icsat_map)
+[{{site.data.keyword.satellitelong_notm}} CLI map](/docs/satellite?topic=satellite-icsat_map#icsat_map)
 
 * [`acl` commands](/docs/satellite?topic=satellite-icsat_map#icks_map_acl)
 
