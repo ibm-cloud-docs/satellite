@@ -2673,6 +2673,8 @@ subcollection: satellite
 
 * [ibmcloud sat commands](/docs/satellite?topic=satellite-satellite-cli-reference#cli_commands)
 
+* [`ibmcloud sat acl` commands](/docs/satellite?topic=satellite-satellite-cli-reference#acl-cli)
+
     * [`ibmcloud sat acl create`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-create-cli)
 
     * [`ibmcloud sat acl endpoint add`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-endpoint-add-cli)
@@ -2693,9 +2695,13 @@ subcollection: satellite
 
     * [`ibmcloud sat acl update`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-update-cli)
 
+* [`ibmcloud sat agent` commands](/docs/satellite?topic=satellite-satellite-cli-reference#agent-cli)
+
     * [`ibmcloud sat agent attach`](/docs/satellite?topic=satellite-satellite-cli-reference#agent-attach-cli)
 
     * [`ibmcloud sat agent ls`](/docs/satellite?topic=satellite-satellite-cli-reference#agent-ls-cli)
+
+* [`ibmcloud sat cluster` commands](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-cli)
 
     * [`ibmcloud sat cluster get`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-get-cli)
 
@@ -2704,6 +2710,8 @@ subcollection: satellite
     * [`ibmcloud sat cluster register`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-register-cli)
 
     * [`ibmcloud sat cluster unregister`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-unregister-cli)
+
+* [`ibmcloud sat config` commands](/docs/satellite?topic=satellite-satellite-cli-reference#config-cli)
 
     * [`ibmcloud sat config create`](/docs/satellite?topic=satellite-satellite-cli-reference#config-create-cli)
 
@@ -2721,6 +2729,8 @@ subcollection: satellite
 
     * [`ibmcloud sat config version rm`](/docs/satellite?topic=satellite-satellite-cli-reference#config-version-rm-cli)
 
+* [`ibmcloud sat connector` commands](/docs/satellite?topic=satellite-satellite-cli-reference#connector-cli)
+
     * [`ibmcloud sat connector create`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-create-cli)
 
     * [`ibmcloud sat connector get`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-get-cli)
@@ -2728,6 +2738,8 @@ subcollection: satellite
     * [`ibmcloud sat connector ls`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-ls-cli)
 
     * [`ibmcloud sat connector rm`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-rm-cli)
+
+* [`ibmcloud sat endpoint` commands](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-cli)
 
     * [`ibmcloud sat endpoint authn get`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-authn-get-cli)
 
@@ -2748,6 +2760,8 @@ subcollection: satellite
     * [`ibmcloud sat endpoint rm`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-rm-cli)
 
     * [`ibmcloud sat endpoint update`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-update-cli)
+
+* [`ibmcloud sat experimental` commands](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-cli)
 
     * [`ibmcloud sat experimental acl create`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-create-cli)
 
@@ -2789,6 +2803,8 @@ subcollection: satellite
 
     * [`ibmcloud sat experimental location update`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-location-update-cli)
 
+* [`ibmcloud sat group` commands](/docs/satellite?topic=satellite-satellite-cli-reference#group-cli)
+
     * [`ibmcloud sat group attach`](/docs/satellite?topic=satellite-satellite-cli-reference#group-attach-cli)
 
     * [`ibmcloud sat group create`](/docs/satellite?topic=satellite-satellite-cli-reference#group-create-cli)
@@ -2800,6 +2816,8 @@ subcollection: satellite
     * [`ibmcloud sat group ls`](/docs/satellite?topic=satellite-satellite-cli-reference#group-ls-cli)
 
     * [`ibmcloud sat group rm`](/docs/satellite?topic=satellite-satellite-cli-reference#group-rm-cli)
+
+* [`ibmcloud sat host` commands](/docs/satellite?topic=satellite-satellite-cli-reference#host-cli)
 
     * [`ibmcloud sat host assign`](/docs/satellite?topic=satellite-satellite-cli-reference#host-assign-cli)
 
@@ -2813,11 +2831,15 @@ subcollection: satellite
 
     * [`ibmcloud sat host update`](/docs/satellite?topic=satellite-satellite-cli-reference#host-update-cli)
 
+* [`ibmcloud sat key` commands](/docs/satellite?topic=satellite-satellite-cli-reference#key-cli)
+
     * [`ibmcloud sat key ls`](/docs/satellite?topic=satellite-satellite-cli-reference#key-ls-cli)
 
     * [`ibmcloud sat key rm`](/docs/satellite?topic=satellite-satellite-cli-reference#key-rm-cli)
 
     * [`ibmcloud sat key rotate`](/docs/satellite?topic=satellite-satellite-cli-reference#key-rotate-cli)
+
+* [`ibmcloud sat location` commands](/docs/satellite?topic=satellite-satellite-cli-reference#location-cli)
 
     * [`ibmcloud sat location create`](/docs/satellite?topic=satellite-satellite-cli-reference#location-create-cli)
 
@@ -2835,7 +2857,11 @@ subcollection: satellite
 
     * [`ibmcloud sat location update`](/docs/satellite?topic=satellite-satellite-cli-reference#location-update-cli)
 
-* [`ibmcloud sat messages`](/docs/satellite?topic=satellite-satellite-cli-reference#messages-cli)
+* [`ibmcloud sat messages` commands](/docs/satellite?topic=satellite-satellite-cli-reference#messages-cli)
+
+    * [`ibmcloud sat messages`](/docs/satellite?topic=satellite-satellite-cli-reference#messages-cli)
+
+* [`ibmcloud sat resource` commands](/docs/satellite?topic=satellite-satellite-cli-reference#resource-cli)
 
     * [`ibmcloud sat resource get`](/docs/satellite?topic=satellite-satellite-cli-reference#resource-get-cli)
 
@@ -2843,7 +2869,11 @@ subcollection: satellite
 
     * [`ibmcloud sat resource ls`](/docs/satellite?topic=satellite-satellite-cli-reference#resource-ls-cli)
 
+* [`ibmcloud sat service` commands](/docs/satellite?topic=satellite-satellite-cli-reference#service-cli)
+
     * [`ibmcloud sat service ls`](/docs/satellite?topic=satellite-satellite-cli-reference#service-ls-cli)
+
+* [`ibmcloud sat storage` commands](/docs/satellite?topic=satellite-satellite-cli-reference#storage-cli)
 
     * [`ibmcloud sat storage assignment autopatch disable`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-autopatch-disable-cli)
 
@@ -2882,6 +2912,8 @@ subcollection: satellite
     * [`ibmcloud sat storage template get`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-template-get-cli)
 
     * [`ibmcloud sat storage template ls`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-template-ls-cli)
+
+* [`ibmcloud sat subscription` commands](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-cli)
 
     * [`ibmcloud sat subscription create`](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-create-cli)
 
