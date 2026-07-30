@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-07-21"
+lastupdated: "2026-07-30"
 
 
 keywords: change log, version history, odf-remote
@@ -701,16 +701,6 @@ Review the version history for `odf-remote`.
 - Updates Go to version `1.20.6`.
 
 
-### Version 4.13 - Revision 1, released 24 July 2023
-{: #cl-storage-templates-odf-remote-4.13-1}
-
-- Updates the UBI to version `8.8-860`.
-- Updates Go to version `1.20.5`.
-- ODF 4.13 initial release
-
-
-## Version 4.12
-{: #cl-storage-templates-odf-remote-4.12}
 
 
 ### Version 4.12 - Revision 20, released 05 June 2025
