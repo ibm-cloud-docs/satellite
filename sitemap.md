@@ -2669,7 +2669,7 @@ subcollection: satellite
 
 [CLI reference for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-satellite-cli-reference#satellite-cli-reference)
 
-* [Before you begin](/docs/satellite?topic=satellite-satellite-cli-reference#satellite-cli-prereq)
+* [Prerequisites](/docs/satellite?topic=satellite-satellite-cli-reference#sat-cli-prereq)
 
 * [ibmcloud sat commands](/docs/satellite?topic=satellite-satellite-cli-reference#cli_commands)
 
