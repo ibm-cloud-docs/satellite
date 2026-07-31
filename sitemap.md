@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-07-31"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3392,6 +3392,8 @@ subcollection: satellite
 
 * [Version 2.2](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2)
 
+    * [Version 2.2 - Revision 41, released 31 July 2026](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-41)
+
     * [Version 2.2 - Revision 40, released 10 July 2026](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-40)
 
     * [Version 2.2 - Revision 39, released 27 May 2026](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-39)
@@ -3493,8 +3495,6 @@ subcollection: satellite
     * [Version 5.0 - Revision 14, released 30 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.0-14)
 
     * [Version 5.0 - Revision 13, released 19 September 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.0-13)
-
-    * [Version 5.0 - Revision 12, released 01 August 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.0-12)
 
 [`local-storage-operator` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-local-storage-operator#cl-storage-templates-local-storage-operator)
 
