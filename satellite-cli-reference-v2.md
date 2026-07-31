@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-07-31"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -81,7 +81,7 @@ Create an ACL.
 {: shortdesc}
 
 ```sh
-ibmcloud sat acl create --name NAME --subnet SUBNET [--subnet SUBNET ...] [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat acl create --name NAME --subnet SUBNET [--subnet SUBNET ...] [--endpoint ENDPOINT ...] [-q] --connector-id ID
 ```
 {: pre}
 
@@ -128,7 +128,7 @@ Add one or more enabled endpoints to an ACL.
 {: shortdesc}
 
 ```sh
-ibmcloud sat acl endpoint add --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat acl endpoint add --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...] [-q] --connector-id ID
 ```
 {: pre}
 
@@ -175,7 +175,7 @@ List all enabled endpoints for an ACL.
 {: shortdesc}
 
 ```sh
-ibmcloud sat acl endpoint ls --acl-id ID [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat acl endpoint ls --acl-id ID [--output OUTPUT] [-q] --connector-id ID
 ```
 {: pre}
 
@@ -222,7 +222,7 @@ Remove one or more enabled endpoints from an ACL.
 {: shortdesc}
 
 ```sh
-ibmcloud sat acl endpoint rm --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat acl endpoint rm --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...] [-q] --connector-id ID
 ```
 {: pre}
 
@@ -269,7 +269,7 @@ View the details of an ACL.
 {: shortdesc}
 
 ```sh
-ibmcloud sat acl get --acl-id ID [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat acl get --acl-id ID [--output OUTPUT] [-q] --connector-id ID
 ```
 {: pre}
 
@@ -313,7 +313,7 @@ List all ACLs for a Satellite connector or location.
 {: shortdesc}
 
 ```sh
-ibmcloud sat acl ls [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat acl ls [--output OUTPUT] [-q] --connector-id ID
 ```
 {: pre}
 
@@ -354,7 +354,7 @@ Delete an ACL.
 {: shortdesc}
 
 ```sh
-ibmcloud sat acl rm --acl-id ID [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat acl rm --acl-id ID [-q] --connector-id ID
 ```
 {: pre}
 
@@ -395,7 +395,7 @@ Add one or more subnets to an ACL.
 {: shortdesc}
 
 ```sh
-ibmcloud sat acl subnet add --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat acl subnet add --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q] --connector-id ID
 ```
 {: pre}
 
@@ -442,7 +442,7 @@ Remove one or more subnets from an ACL.
 {: shortdesc}
 
 ```sh
-ibmcloud sat acl subnet rm --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat acl subnet rm --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q] --connector-id ID
 ```
 {: pre}
 
@@ -489,7 +489,7 @@ Update the name of an ACL.
 {: shortdesc}
 
 ```sh
-ibmcloud sat acl update --acl-id ID --name NAME [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat acl update --acl-id ID --name NAME [-q] --connector-id ID
 ```
 {: pre}
 
@@ -782,7 +782,7 @@ Create a configuration to specify what Kubernetes resources you want to deploy t
 {: shortdesc}
 
 ```sh
-ibmcloud sat config create --name NAME [-q] (--data-location LOCATION | --provider PROVIDER)
+ibmcloud sat config create --name NAME [-q] --data-location LOCATION
 ```
 {: pre}
 
@@ -1280,7 +1280,7 @@ Get the authentication settings for an endpoint.
 {: shortdesc}
 
 ```sh
-ibmcloud sat endpoint authn get --endpoint ENDPOINT [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat endpoint authn get --endpoint ENDPOINT [--output OUTPUT] [-q] --connector-id ID
 ```
 {: pre}
 
@@ -1327,7 +1327,7 @@ Replace existing authentication certificates with new ones. There are two TLS co
 {: shortdesc}
 
 ```sh
-ibmcloud sat endpoint authn rotate --endpoint ENDPOINT [--dest-ca-cert-file FILE] [--dest-cert-file FILE] [--dest-key-file FILE] [-q] [--source-ca-cert-file FILE] [--source-cert-file FILE] [--source-key-file FILE] (--connector-id ID | --location LOCATION)
+ibmcloud sat endpoint authn rotate --endpoint ENDPOINT [--dest-ca-cert-file FILE] [--dest-cert-file FILE] [--dest-key-file FILE] [-q] [--source-ca-cert-file FILE] [--source-cert-file FILE] [--source-key-file FILE] --connector-id ID
 ```
 {: pre}
 
@@ -1389,7 +1389,7 @@ Set authentication settings for an endpoint. There are two TLS connections in th
 {: shortdesc}
 
 ```sh
-ibmcloud sat endpoint authn set --endpoint ENDPOINT [--dest-ca-cert-file FILE] [--dest-cert-file FILE] [--dest-key-file FILE] [--dest-tls-mode MODE] [-q] [--source-ca-cert-file FILE] [--source-cert-file FILE] [--source-key-file FILE] [--source-tls-mode MODE] (--connector-id ID | --location LOCATION)
+ibmcloud sat endpoint authn set --endpoint ENDPOINT [--dest-ca-cert-file FILE] [--dest-cert-file FILE] [--dest-key-file FILE] [--dest-tls-mode MODE] [-q] [--source-ca-cert-file FILE] [--source-cert-file FILE] [--source-key-file FILE] [--source-tls-mode MODE] --connector-id ID
 ```
 {: pre}
 
@@ -1457,7 +1457,7 @@ Create an endpoint.
 {: shortdesc}
 
 ```sh
-ibmcloud sat endpoint create --dest-hostname HOSTNAME --dest-port PORT --dest-type TYPE --name NAME --source-protocol PROTOCOL [--dest-protocol PROTOCOL] [--idle-timeout-seconds SECONDS] [--output OUTPUT] [-q] [--sni SNI] (--connector-id ID | --location LOCATION)
+ibmcloud sat endpoint create --dest-hostname HOSTNAME --dest-port PORT --dest-type TYPE --name NAME --source-protocol PROTOCOL [--dest-protocol PROTOCOL] [--idle-timeout-seconds SECONDS] [--output OUTPUT] [-q] [--sni SNI] --connector-id ID
 ```
 {: pre}
 
@@ -1525,7 +1525,7 @@ Disable an endpoint.
 {: shortdesc}
 
 ```sh
-ibmcloud sat endpoint disable --endpoint ENDPOINT [-f] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat endpoint disable --endpoint ENDPOINT [-f] [-q] --connector-id ID
 ```
 {: pre}
 
@@ -1572,7 +1572,7 @@ Enable an endpoint.
 {: shortdesc}
 
 ```sh
-ibmcloud sat endpoint enable --endpoint ENDPOINT [-f] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat endpoint enable --endpoint ENDPOINT [-f] [-q] --connector-id ID
 ```
 {: pre}
 
@@ -1619,7 +1619,7 @@ View the details of an endpoint.
 {: shortdesc}
 
 ```sh
-ibmcloud sat endpoint get --endpoint ENDPOINT [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat endpoint get --endpoint ENDPOINT [--output OUTPUT] [-q] --connector-id ID
 ```
 {: pre}
 
@@ -1666,7 +1666,7 @@ List all endpoints in a Satellite location.
 {: shortdesc}
 
 ```sh
-ibmcloud sat endpoint ls [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat endpoint ls [--output OUTPUT] [-q] --connector-id ID
 ```
 {: pre}
 
@@ -1707,7 +1707,7 @@ Delete an endpoint.
 {: shortdesc}
 
 ```sh
-ibmcloud sat endpoint rm --endpoint ENDPOINT [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat endpoint rm --endpoint ENDPOINT [-q] --connector-id ID
 ```
 {: pre}
 
@@ -1751,7 +1751,7 @@ Update an endpoint. Only the options that you specify are updated.
 {: shortdesc}
 
 ```sh
-ibmcloud sat endpoint update --endpoint ENDPOINT [--dest-hostname HOSTNAME] [--dest-port PORT] [--dest-protocol PROTOCOL] [--idle-timeout-seconds SECONDS] [--name NAME] [-q] [--sni SNI] [--source-protocol PROTOCOL] (--connector-id ID | --location LOCATION)
+ibmcloud sat endpoint update --endpoint ENDPOINT [--dest-hostname HOSTNAME] [--dest-port PORT] [--dest-protocol PROTOCOL] [--idle-timeout-seconds SECONDS] [--name NAME] [-q] [--sni SNI] [--source-protocol PROTOCOL] --connector-id ID
 ```
 {: pre}
 
@@ -1822,7 +1822,7 @@ ibmcloud sat endpoint update \
 {: shortdesc}
 
 ```sh
-ibmcloud sat experimental acl create --name NAME --subnet SUBNET [--subnet SUBNET ...] [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat experimental acl create --name NAME --subnet SUBNET [--subnet SUBNET ...] [--endpoint ENDPOINT ...] [-q] --connector-id ID
 ```
 {: pre}
 
@@ -1872,7 +1872,7 @@ ibmcloud sat experimental acl create \
 {: shortdesc}
 
 ```sh
-ibmcloud sat experimental acl endpoint add --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat experimental acl endpoint add --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...] [-q] --connector-id ID
 ```
 {: pre}
 
@@ -1919,7 +1919,7 @@ ibmcloud sat experimental acl endpoint add \
 {: shortdesc}
 
 ```sh
-ibmcloud sat experimental acl endpoint ls --acl-id ID [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat experimental acl endpoint ls --acl-id ID [--output OUTPUT] [-q] --connector-id ID
 ```
 {: pre}
 
@@ -1966,7 +1966,7 @@ ibmcloud sat experimental acl endpoint ls \
 {: shortdesc}
 
 ```sh
-ibmcloud sat experimental acl endpoint rm --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat experimental acl endpoint rm --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...] [-q] --connector-id ID
 ```
 {: pre}
 
@@ -2013,7 +2013,7 @@ ibmcloud sat experimental acl endpoint rm \
 {: shortdesc}
 
 ```sh
-ibmcloud sat experimental acl get --acl-id ID [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat experimental acl get --acl-id ID [--output OUTPUT] [-q] --connector-id ID
 ```
 {: pre}
 
@@ -2060,7 +2060,7 @@ ibmcloud sat experimental acl get \
 {: shortdesc}
 
 ```sh
-ibmcloud sat experimental acl ls [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat experimental acl ls [--output OUTPUT] [-q] --connector-id ID
 ```
 {: pre}
 
@@ -2104,7 +2104,7 @@ ibmcloud sat experimental acl ls \
 {: shortdesc}
 
 ```sh
-ibmcloud sat experimental acl rm --acl-id ID [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat experimental acl rm --acl-id ID [-q] --connector-id ID
 ```
 {: pre}
 
@@ -2148,7 +2148,7 @@ ibmcloud sat experimental acl rm \
 {: shortdesc}
 
 ```sh
-ibmcloud sat experimental acl subnet add --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat experimental acl subnet add --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q] --connector-id ID
 ```
 {: pre}
 
@@ -2195,7 +2195,7 @@ ibmcloud sat experimental acl subnet add \
 {: shortdesc}
 
 ```sh
-ibmcloud sat experimental acl subnet rm --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat experimental acl subnet rm --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q] --connector-id ID
 ```
 {: pre}
 
@@ -2242,7 +2242,7 @@ ibmcloud sat experimental acl subnet rm \
 {: shortdesc}
 
 ```sh
-ibmcloud sat experimental acl update --acl-id ID --name NAME [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat experimental acl update --acl-id ID --name NAME [-q] --connector-id ID
 ```
 {: pre}
 
@@ -2517,7 +2517,7 @@ ibmcloud sat experimental connector rm --connector-id CONNECTOR_ID -f -q
 {: shortdesc}
 
 ```sh
-ibmcloud sat experimental endpoint authn get --endpoint ENDPOINT [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat experimental endpoint authn get --endpoint ENDPOINT [--output OUTPUT] [-q] --connector-id ID
 ```
 {: pre}
 
@@ -2564,7 +2564,7 @@ ibmcloud sat experimental endpoint authn get \
 {: shortdesc}
 
 ```sh
-ibmcloud sat experimental endpoint authn rotate --endpoint ENDPOINT [--dest-ca-cert-file FILE] [--dest-cert-file FILE] [--dest-key-file FILE] [-q] [--source-ca-cert-file FILE] [--source-cert-file FILE] [--source-key-file FILE] (--connector-id ID | --location LOCATION)
+ibmcloud sat experimental endpoint authn rotate --endpoint ENDPOINT [--dest-ca-cert-file FILE] [--dest-cert-file FILE] [--dest-key-file FILE] [-q] [--source-ca-cert-file FILE] [--source-cert-file FILE] [--source-key-file FILE] --connector-id ID
 ```
 {: pre}
 
@@ -2626,7 +2626,7 @@ ibmcloud sat experimental endpoint authn rotate \
 {: shortdesc}
 
 ```sh
-ibmcloud sat experimental endpoint authn set --endpoint ENDPOINT [--dest-ca-cert-file FILE] [--dest-cert-file FILE] [--dest-key-file FILE] [--dest-tls-mode MODE] [-q] [--source-ca-cert-file FILE] [--source-cert-file FILE] [--source-key-file FILE] [--source-tls-mode MODE] (--connector-id ID | --location LOCATION)
+ibmcloud sat experimental endpoint authn set --endpoint ENDPOINT [--dest-ca-cert-file FILE] [--dest-cert-file FILE] [--dest-key-file FILE] [--dest-tls-mode MODE] [-q] [--source-ca-cert-file FILE] [--source-cert-file FILE] [--source-key-file FILE] [--source-tls-mode MODE] --connector-id ID
 ```
 {: pre}
 
@@ -3852,7 +3852,7 @@ Search Kubernetes resources that are managed by Satellite.
 {: shortdesc}
 
 ```sh
-ibmcloud sat resource ls [--limit LIMIT] [--output OUTPUT] [-q] [--search SEARCH] (--cluster CLUSTER | --subscription SUBSCRIPTION)
+ibmcloud sat resource ls [--limit LIMIT] [--output OUTPUT] [-q] [--search SEARCH] --cluster CLUSTER
 ```
 {: pre}
 
@@ -3952,7 +3952,7 @@ Disable automatic patches for a Satellite storage assignment.
 {: shortdesc}
 
 ```sh
-ibmcloud sat storage assignment autopatch disable --config CONFIG [-q] (--all | --assignment ASSIGNMENT)
+ibmcloud sat storage assignment autopatch disable --config CONFIG [-q] --all
 ```
 {: pre}
 
@@ -3999,7 +3999,7 @@ Enable automatic patches for a Satellite storage assignment.
 {: shortdesc}
 
 ```sh
-ibmcloud sat storage assignment autopatch enable --config CONFIG [-q] (--all | --assignment ASSIGNMENT)
+ibmcloud sat storage assignment autopatch enable --config CONFIG [-q] --all
 ```
 {: pre}
 
@@ -4043,7 +4043,7 @@ Create an assignment to deploy your storage configurations to clusters in your S
 {: shortdesc}
 
 ```sh
-ibmcloud sat storage assignment create --config CONFIG [--name NAME] [-q] (--cluster CLUSTER | --group GROUP | --service-cluster-id CLUSTER)
+ibmcloud sat storage assignment create --config CONFIG [--name NAME] [-q] --cluster CLUSTER
 ```
 {: pre}
 
@@ -4137,7 +4137,7 @@ To list all assignments for a configuration: ibmcloud sat storage assignment ls 
 {: shortdesc}
 
 ```sh
-ibmcloud sat storage assignment ls [--output OUTPUT] [-q] (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER)
+ibmcloud sat storage assignment ls [--output OUTPUT] [-q] --cluster CLUSTER
 ```
 {: pre}
 
@@ -4783,7 +4783,7 @@ Create a Satellite subscription for clusters. After you create the subscription,
 {: shortdesc}
 
 ```sh
-ibmcloud sat subscription create --config CONFIG --group GROUP [--group GROUP ...] --name NAME [-q] (--auth-required --gitref GITREF --gitref-type TYPE --path PATH --repository REPOSITORY | --version VERSION)
+ibmcloud sat subscription create --config CONFIG --group GROUP [--group GROUP ...] --name NAME [-q] --auth-required --gitref GITREF --gitref-type TYPE --path PATH --repository REPOSITORY
 ```
 {: pre}
 
@@ -4998,7 +4998,7 @@ Update a Satellite subscription.
 {: shortdesc}
 
 ```sh
-ibmcloud sat subscription update --subscription SUBSCRIPTION [-f] [--group GROUP] [--name NAME] [-q] (--auth-required --gitref GITREF --gitref-type TYPE --path PATH --repository REPOSITORY | --version VERSION)
+ibmcloud sat subscription update --subscription SUBSCRIPTION [-f] [--group GROUP] [--name NAME] [-q] --auth-required --gitref GITREF --gitref-type TYPE --path PATH --repository REPOSITORY
 ```
 {: pre}
 
