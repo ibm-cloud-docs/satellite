@@ -2,10 +2,10 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2026
+lastupdated: "2026-08-03"
 
-keywords: satellite, hybrid, multicloud, storage error messages, error message
+keywords: satellite, hybrid, multicloud, storage error messages, error message, cloud storage, cluster storage, debug storage
 
 subcollection: satellite
 content-type: troubleshoot
@@ -14,10 +14,10 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Storage error messages
+# Troubleshooting storage error messages in {{site.data.keyword.satellitelong_notm}}
 {: #debug-storage}
 
-You can debug storage on {{site.data.keyword.satellitelong}} by reviewing the provided health information.
+Debug storage issues on {{site.data.keyword.satellitelong_notm}} by reviewing health information and resolving common cloud storage and cluster storage error messages in your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
 ## Reviewing error messages and logs
@@ -521,7 +521,3 @@ Unable to create or update storage configuration. Multiple storage classes defin
 Error type: Bad request
 
 Response code: `400`
-
-
-
-

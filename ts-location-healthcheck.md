@@ -2,10 +2,10 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-06-05"
+  years: 2020, 2026
+lastupdated: "2026-08-03"
 
-keywords: satellite, hybrid, multicloud
+keywords: satellite, hybrid, multicloud, IBM Cloud, Satellite, location health check, health check endpoint, location control plane
 
 subcollection: satellite
 content-type: troubleshoot
@@ -15,9 +15,11 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Why is {{site.data.keyword.cloud_notm}} unable to check my location's health?
+# Troubleshooting {{site.data.keyword.cloud_notm}} location health checks
 {: #ts-location-healthcheck}
 
+Resolve issues where {{site.data.keyword.cloud_notm}} cannot check your {{site.data.keyword.satelliteshort}} location's health by verifying the health check endpoint and the link tunnel server configuration.
+{: shortdesc}
 
 After you assign hosts to your {{site.data.keyword.satelliteshort}} location control plane, you see a message similar to the following.
 {: tsSymptoms}

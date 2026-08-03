@@ -5,7 +5,7 @@ copyright:
   years: 2017, 2026
 lastupdated: "2026-08-03"
 
-keywords: satellite, sitemap
+keywords: satellite, sitemap, IBM Cloud satellite, getting started, data, cloud
 subcollection: satellite
 
 ---
@@ -14,8 +14,11 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Site map
+# {{site.data.keyword.satellitelong_notm}} site map
 {: #sitemap}
+
+Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation, from getting started guides to advanced configuration topics.
+{: shortdesc}
 
 
 
@@ -40,7 +43,7 @@ subcollection: satellite
 {: #sitemap_understanding_satellite_use_cases}
 
 
-[{{site.data.keyword.satelliteshort}} use cases](/docs/satellite?topic=satellite-use-case#use-case)
+[{{site.data.keyword.satelliteshort}} use cases for hybrid and multicloud environments](/docs/satellite?topic=satellite-use-case#use-case)
 
 * [Benefits of using {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-use-case#benefits)
 
@@ -196,11 +199,11 @@ subcollection: satellite
 * [Setting up access for Satellite-enabled services](/docs/satellite?topic=satellite-managed-services#managed-services-iam)
 
 
-## Release notes
-{: #sitemap_release_notes}
+## {{site.data.keyword.satellitelong_notm}} release notes
+{: #sitemap__release_notes}
 
 
-[Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
+[{{site.data.keyword.satellitelong_notm}} release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [July 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jun26)
 
@@ -748,7 +751,7 @@ subcollection: satellite
 {: #sitemap_preparing_your_host_infrastructure}
 
 
-[Host system requirements](/docs/satellite?topic=satellite-host-reqs#host-reqs)
+[Host system requirements for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-host-reqs#host-reqs)
 
 * [Host operating system support](/docs/satellite?topic=satellite-host-reqs#host-os-support-table)
 
@@ -760,7 +763,7 @@ subcollection: satellite
 
 [Host storage and attached devices](/docs/satellite?topic=satellite-reqs-host-storage#reqs-host-storage)
 
-[Host network requirements](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network)
+[Host network requirements for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network)
 
 * [Networking configurations](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-config)
 
@@ -772,7 +775,7 @@ subcollection: satellite
 
 * [Outbound connectivity requirements for {{site.data.keyword.satelliteshort}} Connector](/docs/satellite?topic=satellite-reqs-host-network#reqs-connector-outbound)
 
-[Required outbound connectivity for hosts overview](/docs/satellite?topic=satellite-reqs-host-network-outbound#reqs-host-network-outbound)
+[Outbound connectivity requirements for {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-reqs-host-network-outbound#reqs-host-network-outbound)
 
 
 ### Host outbound connectivity for Dallas
@@ -1155,7 +1158,7 @@ subcollection: satellite
 
 * [Determining if the worker node version update is a major, minor, or patch update](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-type)
 
-[Copying a location](/docs/satellite?topic=satellite-location-copy#location-copy)
+[Copying an {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-location-copy#location-copy)
 
 [Configuring an HTTP proxy for your {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-config-http-proxy#config-http-proxy)
 
@@ -1607,7 +1610,7 @@ subcollection: satellite
 {: #sitemap_aws_storage_templates}
 
 
-[AWS EBS](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#storage-aws-ebs-csi-driver)
+[Configuring AWS EBS storage for {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#storage-aws-ebs-csi-driver)
 
 * [Prerequisites for using AWS EBS](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-prereq)
 
@@ -1651,7 +1654,7 @@ subcollection: satellite
 
 * [Getting help and support for AWS EBS](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=cli#sat-ebs-support)
 
-[AWS EFS](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#storage-aws-efs-csi-driver)
+[Configuring Amazon Elastic File System (EFS) for {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#storage-aws-efs-csi-driver)
 
 * [Prerequisites for using AWS EFS](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#sat-storage-efs-prereqs)
 
@@ -1876,7 +1879,7 @@ subcollection: satellite
 
 * [Getting help and support for {{site.data.keyword.blockstorageshort}}](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver&interface=api#sat-storage-block-csi-support)
 
-[{{site.data.keyword.cos_full_notm}} Driver](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin)
+[Configuring {{site.data.keyword.cos_full_notm}} driver for {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin)
 
 * [Prerequisites](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin-prereqs)
 
@@ -1916,7 +1919,7 @@ subcollection: satellite
 
 * [Getting help and support for {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin&interface=cli#sat-storage-cos-support)
 
-[{{site.data.keyword.block_storage_is_short}} Container Storage Interface (CSI) Driver](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#storage-ibm-vpc-block-csi-driver)
+[Configuring {{site.data.keyword.block_storage_is_short}} CSI driver for {{site.data.keyword.satelliteshort}} storage](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#storage-ibm-vpc-block-csi-driver)
 
 * [Prerequisites for {{site.data.keyword.block_storage_is_short}}](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#sat-storage-vpc-csi-prereq)
 
@@ -2667,7 +2670,7 @@ subcollection: satellite
 
 * [`subscription` commands](/docs/satellite?topic=satellite-icsat_map#icks_map_subscription)
 
-[CLI reference for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-satellite-cli-reference#satellite-cli-reference)
+[{{site.data.keyword.satelliteshort}} CLI reference for commands](/docs/satellite?topic=satellite-satellite-cli-reference#satellite-cli-reference)
 
 * [Prerequisites](/docs/satellite?topic=satellite-satellite-cli-reference#sat-cli-prereq)
 
@@ -3097,11 +3100,11 @@ subcollection: satellite
 * [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-requirements#reqs-services)
 
 
-## Regions
-{: #sitemap_regions}
+## Supported {{site.data.keyword.cloud_notm}} regions for {{site.data.keyword.satelliteshort}} locations
+{: #sitemap_supported_regions_for_locations}
 
 
-[Regions](/docs/satellite?topic=satellite-sat-regions#sat-regions)
+[Supported {{site.data.keyword.cloud_notm}} regions for {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-sat-regions#sat-regions)
 
 * [{{site.data.keyword.cloud_notm}} regions for {{site.data.keyword.satelliteshort}} FAQs](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions)
 
@@ -3261,7 +3264,7 @@ subcollection: satellite
 {: #sitemap_version_history}
 
 
-[Connector agent image change log](/docs/satellite?topic=satellite-cl-connector-agent-image#cl-connector-agent-image)
+[{{site.data.keyword.satelliteshort}} Connector agent image change log](/docs/satellite?topic=satellite-cl-connector-agent-image#cl-connector-agent-image)
 
 * [Version 1.2](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2-change-log)
 
@@ -4207,11 +4210,11 @@ subcollection: satellite
     * [Version 2.7.0 - Revision 2, released 18 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-vsphere-csi-driver#cl-storage-templates-vsphere-csi-driver-2.7.0-2)
 
 
-## FAQs
-{: #sitemap_faqs}
+## Frequently asked questions for {{site.data.keyword.satellitelong_notm}}
+{: #sitemap_frequently_asked_questions_for_}
 
 
-[FAQs](/docs/satellite?topic=satellite-faqs#faqs)
+[Frequently asked questions for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-faqs#faqs)
 
 * [What is {{site.data.keyword.satellitelong_notm}} and how does it work?](/docs/satellite?topic=satellite-faqs#what-is-satellite)
 
@@ -4366,9 +4369,9 @@ subcollection: satellite
 
 [Why does the location subdomain not route traffic to control plane hosts?](/docs/satellite?topic=satellite-ts-location-subdomain#ts-location-subdomain)
 
-[Why do I get an R0043 error after I set up {{site.data.keyword.dl_short}}?](/docs/satellite?topic=satellite-ts-dl-r0043#ts-dl-r0043)
+[Resolving R0043 errors after setting up {{site.data.keyword.dl_short}} in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-ts-dl-r0043#ts-dl-r0043)
 
-[Why is {{site.data.keyword.cloud_notm}} unable to check my location's health?](/docs/satellite?topic=satellite-ts-location-healthcheck#ts-location-healthcheck)
+[Troubleshooting {{site.data.keyword.cloud_notm}} location health checks](/docs/satellite?topic=satellite-ts-location-healthcheck#ts-location-healthcheck)
 
 [Why can't I see a location that another user gave me access to?](/docs/satellite?topic=satellite-ts-location-missing-location#ts-location-missing-location)
 
@@ -4500,7 +4503,7 @@ subcollection: satellite
 
 * [Contact Support](/docs/satellite?topic=satellite-storage-must-gather#contact-ibm-support)
 
-[Storage error messages](/docs/satellite?topic=satellite-debug-storage#debug-storage)
+[Troubleshooting storage error messages in {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-debug-storage#debug-storage)
 
 * [Reviewing error messages and logs](/docs/satellite?topic=satellite-debug-storage#review-messages-logs-storage)
 
