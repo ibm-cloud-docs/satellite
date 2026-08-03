@@ -5,7 +5,7 @@ copyright:
   years: 2019, 2026
 lastupdated: "2026-08-03"
 
-keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
+keywords: satellite cli reference, satellite commands, satellite cli, satellite reference, IBM Cloud CLI, Satellite CLI commands
 
 subcollection: satellite
 
@@ -17,10 +17,10 @@ content-type: cli-docs
 
 {{site.data.keyword.attribute-definition-list}}
 
-# CLI reference for {{site.data.keyword.satelliteshort}} commands
+# {{site.data.keyword.satelliteshort}} CLI reference for commands
 {: #satellite-cli-reference}
 
-Refer to these commands when you want to automate the creation and management of your {{site.data.keyword.satelliteshort}} location.
+Use {{site.data.keyword.satelliteshort}} CLI commands to automate the creation and management of your {{site.data.keyword.satelliteshort}} location, hosts, clusters, and configurations in IBM Cloud.
 {: shortdesc}
 
 To install the CLI, see [Installing the the CLI](/docs/satellite?topic=satellite-cli-install). To view a high-level map of all the {{site.data.keyword.satellitelong_notm}} commands, see the [CLI map](/docs/satellite?topic=satellite-icsat_map).

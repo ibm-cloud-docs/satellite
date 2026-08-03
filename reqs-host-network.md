@@ -3,9 +3,9 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-03-10"
+lastupdated: "2026-08-03"
 
-keywords: satellite, hybrid, multicloud
+keywords: satellite, hybrid, multicloud, host network requirements, satellite, hybrid multicloud, network configuration, host setup
 
 subcollection: satellite
 
@@ -13,10 +13,10 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Host network requirements
+# Host network requirements for {{site.data.keyword.satelliteshort}}
 {: #reqs-host-network}
 
-Review the following requirements that relate to the network setup of host machines.
+Review the network setup requirements for host machines in {{site.data.keyword.satellitelong_notm}}, including configurations, bandwidth, and connectivity requirements for your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
 

@@ -1,11 +1,11 @@
 ---
 
 copyright:
-  years: 2022, 2025
+  years: 2022, 2026
 
-lastupdated: "2025-11-19"
+lastupdated: "2026-08-03"
 
-keywords: satellite, hybrid, multicloud, managed services, enabled service, satellite-enabled
+keywords: satellite, hybrid, multicloud, managed services, enabled service, satellite-enabled, IBM Cloud satellite services, satellite enabled services, IBM Cloud supported services
 
 subcollection: satellite
 
@@ -18,7 +18,7 @@ subcollection: satellite
 # Supported Satellite-enabled IBM Cloud services
 {: #managed-services}
 
-Learn about what services are supported by {{site.data.keyword.satellitelong_notm}}.
+Learn about the IBM Cloud services that are supported by {{site.data.keyword.satellitelong_notm}}, how to set up access to satellite-enabled IBM Cloud services, and which services support RHCOS hosts.
 {: shortdesc}
 
 | Service | Description of support | Supported by RHCOS hosts |

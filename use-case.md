@@ -2,10 +2,10 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-06-05"
+  years: 2020, 2026
+lastupdated: "2026-08-03"
 
-keywords: satellite, hybrid, multicloud, use case, scenarios, benefits
+keywords: satellite, hybrid, multicloud, use case, scenarios, benefits, data center, hybrid multicloud, cloud services, edge environments
 
 subcollection: satellite
 
@@ -13,10 +13,10 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.satelliteshort}} use cases
+# {{site.data.keyword.satelliteshort}} use cases for hybrid and multicloud environments
 {: #use-case}
 
-These {{site.data.keyword.satellitelong_notm}} uses cases are hypotheses that are designed to explore the solution’s applicability for areas within various industries. These hypotheses are based on the following cross-industry capabilities of {{site.data.keyword.satelliteshort}}.
+Explore {{site.data.keyword.satellitelong_notm}} use cases that enable you to run IBM Cloud services on-premises, in edge environments, or across other cloud providers to meet your data center and hybrid multicloud needs.
 {: shortdesc}
 
 - Use {{site.data.keyword.cloud_notm}} services wherever they are needed.

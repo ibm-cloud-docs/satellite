@@ -3,19 +3,19 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-03"
 
-keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration
+keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration, AWS EBS, Amazon Elastic Block Storage, satellite clusters
 
 subcollection: satellite
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
-# AWS EBS
+# Configuring AWS EBS storage for {{site.data.keyword.satelliteshort}} clusters
 {: #storage-aws-ebs-csi-driver}
 
-Set up [Amazon Elastic Block Storage (EBS)](https://docs.aws.amazon.com/ebs/?id=docs_gateway){: external} for {{site.data.keyword.satellitelong}} clusters by creating a storage configuration in your location. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
+Set up [Amazon Elastic Block Storage (EBS)](https://docs.aws.amazon.com/ebs/?id=docs_gateway){: external} for {{site.data.keyword.satellitelong_notm}} clusters by creating a storage configuration in your location to enable dynamic block storage provisioning.
 {: shortdesc}
 
 When you create your AWS EBS storage configuration, you provide your AWS credentials which are stored as a Kubernetes secret in the clusters that you assign your configuration to. The secret is mounted inside the CSI controller pod so that when you create a PVC by using one of the {{site.data.keyword.IBM_notm}}-provided storage classes, your AWS credentials are used to dynamically provision an EBS instance.
