@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-03"
 
 
 keywords: change log, version history, odf-local
@@ -691,14 +691,6 @@ Review the version history for `odf-local`.
 - Updates Go to version `1.20.7`.
 
 
-### Version 4.13 - Revision 2, released 03 August 2023
-{: #cl-storage-templates-odf-local-4.13-2}
-
-- Resolves the following CVEs: [CVE-2023-29403](https://nvd.nist.gov/vuln/detail/CVE-2023-29403){: external}, [CVE-2023-29404](https://nvd.nist.gov/vuln/detail/CVE-2023-29404){: external}, [CVE-2023-29405](https://nvd.nist.gov/vuln/detail/CVE-2023-29405){: external}, [CVE-2023-29402](https://nvd.nist.gov/vuln/detail/CVE-2023-29402){: external}, [CVE-2023-29406](https://nvd.nist.gov/vuln/detail/CVE-2023-29406){: external}, [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external}, [CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external}, [CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external}, and [CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external}.
-- Updates the UBI to version `8.8-1014`.
-- Updates Go to version `1.20.6`.
-
-
 
 
 ### Version 4.12 - Revision 20, released 05 June 2025
@@ -799,14 +791,6 @@ Review the version history for `odf-local`.
 - Updates Go to version `1.20.7`.
 
 
-### Version 4.12 - Revision 4, released 03 August 2023
-{: #cl-storage-templates-odf-local-4.12-4}
-
-- Resolves the following CVEs: [CVE-2023-29403](https://nvd.nist.gov/vuln/detail/CVE-2023-29403){: external}, [CVE-2023-29404](https://nvd.nist.gov/vuln/detail/CVE-2023-29404){: external}, [CVE-2023-29405](https://nvd.nist.gov/vuln/detail/CVE-2023-29405){: external}, [CVE-2023-29402](https://nvd.nist.gov/vuln/detail/CVE-2023-29402){: external}, [CVE-2023-29406](https://nvd.nist.gov/vuln/detail/CVE-2023-29406){: external}, [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external}, [CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external}, [CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external}, and [CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external}.
-- Updates the UBI to version `8.8-1014`.
-- Updates Go to version `1.20.6`.
-
-
 
 
 ### Version 4.11 - Revision 15, released 07 March 2024
@@ -865,14 +849,6 @@ Review the version history for `odf-local`.
 - Updates Go to version `1.20.7`.
 
 
-### Version 4.11 - Revision 8, released 03 August 2023
-{: #cl-storage-templates-odf-local-4.11-8}
-
-- Resolves the following CVEs: [CVE-2023-29403](https://nvd.nist.gov/vuln/detail/CVE-2023-29403){: external}, [CVE-2023-29404](https://nvd.nist.gov/vuln/detail/CVE-2023-29404){: external}, [CVE-2023-29405](https://nvd.nist.gov/vuln/detail/CVE-2023-29405){: external}, [CVE-2023-29402](https://nvd.nist.gov/vuln/detail/CVE-2023-29402){: external}, [CVE-2023-29406](https://nvd.nist.gov/vuln/detail/CVE-2023-29406){: external}, [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external}, [CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external}, [CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external}, and [CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external}.
-- Updates the UBI to version `8.8-1014`.
-- Updates Go to version `1.20.6`.
-
-
 
 
 ### Version 4.10 - Revision 23, released 27 November 2023
@@ -907,14 +883,6 @@ Review the version history for `odf-local`.
 - Updates Go to version `1.20.7`.
 
 
-### Version 4.10 - Revision 19, released 03 August 2023
-{: #cl-storage-templates-odf-local-4.10-19}
-
-- Resolves the following CVEs: [CVE-2023-29403](https://nvd.nist.gov/vuln/detail/CVE-2023-29403){: external}, [CVE-2023-29404](https://nvd.nist.gov/vuln/detail/CVE-2023-29404){: external}, [CVE-2023-29405](https://nvd.nist.gov/vuln/detail/CVE-2023-29405){: external}, [CVE-2023-29402](https://nvd.nist.gov/vuln/detail/CVE-2023-29402){: external}, [CVE-2023-29406](https://nvd.nist.gov/vuln/detail/CVE-2023-29406){: external}, [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external}, [CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external}, [CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external}, and [CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external}.
-- Updates the UBI to version `8.8-1014`.
-- Updates Go to version `1.20.6`.
-
-
 
 
 ### Version 4.9 - Revision 26, released 19 September 2023
@@ -923,11 +891,3 @@ Review the version history for `odf-local`.
 - Resolves the following CVEs: [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/CVE-2023-28484){: external}, [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/CVE-2023-29469){: external}, [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/CVE-2023-27536){: external}, [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/CVE-2023-28321){: external}, [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/CVE-2023-34969){: external}, [CVE-2023-32681](https://nvd.nist.gov/vuln/detail/CVE-2023-32681){: external}, [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/CVE-2023-2602){: external}, and [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/CVE-2023-2603){: external}.
 - Updates the UBI to version `8.8-1037`.
 - Updates Go to version `1.20.7`.
-
-
-### Version 4.9 - Revision 25, released 03 August 2023
-{: #cl-storage-templates-odf-local-4.9-25}
-
-- Resolves the following CVEs: [CVE-2023-29403](https://nvd.nist.gov/vuln/detail/CVE-2023-29403){: external}, [CVE-2023-29404](https://nvd.nist.gov/vuln/detail/CVE-2023-29404){: external}, [CVE-2023-29405](https://nvd.nist.gov/vuln/detail/CVE-2023-29405){: external}, [CVE-2023-29402](https://nvd.nist.gov/vuln/detail/CVE-2023-29402){: external}, [CVE-2023-29406](https://nvd.nist.gov/vuln/detail/CVE-2023-29406){: external}, [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external}, [CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external}, [CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external}, and [CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external}.
-- Updates the UBI to version `8.8-1014`.
-- Updates Go to version `1.20.6`.
