@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-04"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference, IBM Cloud CLI, Satellite CLI commands
 
@@ -80,7 +80,7 @@ View and manage Satellite access control lists (ACLs).
 Create an ACL.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat acl create --name NAME --subnet SUBNET [--subnet SUBNET ...] [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -127,7 +127,7 @@ ibmcloud sat acl create --location LOCATION --connector-id CONNECTOR_ID --name N
 Add one or more enabled endpoints to an ACL.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat acl endpoint add --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -174,7 +174,7 @@ ibmcloud sat acl endpoint add \
 List all enabled endpoints for an ACL.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat acl endpoint ls --acl-id ID [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -221,7 +221,7 @@ ibmcloud sat acl endpoint ls \
 Remove one or more enabled endpoints from an ACL.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat acl endpoint rm --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -268,7 +268,7 @@ ibmcloud sat acl endpoint rm \
 View the details of an ACL.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat acl get --acl-id ID [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -312,7 +312,7 @@ ibmcloud sat acl get --location LOCATION --connector-id CONNECTOR_ID --acl-id AC
 List all ACLs for a Satellite connector or location.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat acl ls [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -353,7 +353,7 @@ ibmcloud sat acl ls --location LOCATION --connector-id CONNECTOR_ID --output jso
 Delete an ACL.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat acl rm --acl-id ID [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -394,7 +394,7 @@ ibmcloud sat acl rm --location LOCATION --connector-id CONNECTOR_ID --acl-id ACL
 Add one or more subnets to an ACL.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat acl subnet add --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -441,7 +441,7 @@ ibmcloud sat acl subnet add \
 Remove one or more subnets from an ACL.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat acl subnet rm --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -488,7 +488,7 @@ ibmcloud sat acl subnet rm \
 Update the name of an ACL.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat acl update --acl-id ID --name NAME [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -541,7 +541,7 @@ Attach or view Satellite Connector Agents.
 Get a Satellite Connector Agent for a specific platform. Download the Agent `.zip` for Windows or get a link to the documentation for Docker environments.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat agent attach --platform PLATFORM [-q]
 ```
 {: pre}
@@ -576,7 +576,7 @@ ibmcloud sat agent attach --platform PLATFORM -q
 List all Agents for a Satellite Connector.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat agent ls --connector-id ID [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -620,7 +620,7 @@ Register and manage clusters for use with Satellite configurations.
 Get the details of a registered cluster.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat cluster get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -658,7 +658,7 @@ ibmcloud sat cluster get --cluster CLUSTER_NAME_OR_ID --output json -q
 List all registered clusters in your IBM Cloud account.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat cluster ls [--filter FILTER] [--limit LIMIT] [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -699,7 +699,7 @@ ibmcloud sat cluster ls --filter FILTER --limit LIMIT --output json
 Get a `kubectl` command to register your cluster in a Satellite configuration. Log in to your cluster and run this command to install a Satellite Config agent. Clusters that you run in your Satellite location automatically install this agent.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat cluster register --name NAME [-q] [--silent]
 ```
 {: pre}
@@ -737,7 +737,7 @@ ibmcloud sat cluster register --silent SILENT --name NAME -q
 Remove a cluster registration. The cluster is no longer subscribed to a Satellite configuration, but the cluster and its existing resources still run.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat cluster unregister --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
@@ -781,7 +781,7 @@ View and manage Satellite Configuration.
 Create a configuration to specify what Kubernetes resources you want to deploy to your clusters in your Satellite workloads.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat config create --name NAME [-q] (--data-location LOCATION | --provider PROVIDER)
 ```
 {: pre}
@@ -825,7 +825,7 @@ ibmcloud sat config create \
 Get details of a Satellite configuration, such as the versions or subscriptions that are associated with the configuration.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat config get --config CONFIG [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -863,7 +863,7 @@ ibmcloud sat config get --config CONFIG --output json -q
 List all Satellite configurations in your IBM Cloud account.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat config ls [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -898,7 +898,7 @@ ibmcloud sat config ls --output json -q
 Rename a Satellite configuration.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat config rename --config CONFIG --name NAME [-q]
 ```
 {: pre}
@@ -936,7 +936,7 @@ ibmcloud sat config rename --config CONFIG --name NAME -q
 Remove a Satellite configuration. All associated subscriptions must be removed first. All versions are deleted. Back up any resource definitions that you want to keep.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat config rm --config CONFIG [-f] [-q]
 ```
 {: pre}
@@ -974,7 +974,7 @@ ibmcloud sat config rm --config CONFIG -f -q
 Create a configuration version to update existing Kubernetes resources for your Satellite workloads.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat config version create --config CONFIG --file-format FORMAT --name NAME --read-config CONFIG [--description DESCRIPTION] [-q]
 ```
 {: pre}
@@ -1024,7 +1024,7 @@ ibmcloud sat config version create \
 Get details for a Satellite configuration version.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat config version get --config CONFIG --version VERSION [--output OUTPUT] [-q] [--save-config]
 ```
 {: pre}
@@ -1071,7 +1071,7 @@ ibmcloud sat config version get \
 Remove a Satellite configuration version.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat config version rm --config CONFIG --version VERSION [-f] [-q]
 ```
 {: pre}
@@ -1118,7 +1118,7 @@ Create, view, and modify Satellite connectors.
 Create a Satellite connector.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat connector create --name NAME --region REGION [-q]
 ```
 {: pre}
@@ -1156,7 +1156,7 @@ ibmcloud sat connector create --name NAME --region REGION -q
 View the details of a Satellite Connector.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat connector get --connector-id ID [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -1194,7 +1194,7 @@ ibmcloud sat connector get --connector-id CONNECTOR_ID --output json -q
 View the Satellite Connectors in your IBM Cloud account.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat connector ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -1235,7 +1235,7 @@ ibmcloud sat connector ls --after AFTER --first FIRST --output json
 Delete a Satellite connector.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat connector rm --connector-id ID [-f] [-q]
 ```
 {: pre}
@@ -1279,7 +1279,7 @@ View and manage Satellite endpoints.
 Get the authentication settings for an endpoint.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat endpoint authn get --endpoint ENDPOINT [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -1326,7 +1326,7 @@ ibmcloud sat endpoint authn get \
 Replace existing authentication certificates with new ones. There are two TLS connections in the request flow. The `source` options refer to the TLS handshake between the source and the Connector service. The `destination` options refer to the TLS handshake between the Connector service and your destination or target server. You can provide certificates for one or both of these connections. Only the certificates that you specify are replaced.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat endpoint authn rotate --endpoint ENDPOINT [--dest-ca-cert-file FILE] [--dest-cert-file FILE] [--dest-key-file FILE] [-q] [--source-ca-cert-file FILE] [--source-cert-file FILE] [--source-key-file FILE] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -1388,7 +1388,7 @@ ibmcloud sat endpoint authn rotate \
 Set authentication settings for an endpoint. There are two TLS connections in the request flow. The `source` options refer to the TLS handshake between the source and the Connector service. The `destination` options refer to the TLS handshake between the Connector service and your destination or target server. You can provide certificates for one or both of these connections. Unspecified settings are set to their default values.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat endpoint authn set --endpoint ENDPOINT [--dest-ca-cert-file FILE] [--dest-cert-file FILE] [--dest-key-file FILE] [--dest-tls-mode MODE] [-q] [--source-ca-cert-file FILE] [--source-cert-file FILE] [--source-key-file FILE] [--source-tls-mode MODE] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -1456,7 +1456,7 @@ ibmcloud sat endpoint authn set \
 Create an endpoint.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat endpoint create --dest-hostname HOSTNAME --dest-port PORT --dest-type TYPE --name NAME --source-protocol PROTOCOL [--dest-protocol PROTOCOL] [--idle-timeout-seconds SECONDS] [--output OUTPUT] [-q] [--sni SNI] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -1524,7 +1524,7 @@ ibmcloud sat endpoint create \
 Disable an endpoint.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat endpoint disable --endpoint ENDPOINT [-f] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -1571,7 +1571,7 @@ ibmcloud sat endpoint disable \
 Enable an endpoint.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat endpoint enable --endpoint ENDPOINT [-f] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -1618,7 +1618,7 @@ ibmcloud sat endpoint enable \
 View the details of an endpoint.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat endpoint get --endpoint ENDPOINT [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -1665,7 +1665,7 @@ ibmcloud sat endpoint get \
 List all endpoints in a Satellite location.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat endpoint ls [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -1706,7 +1706,7 @@ ibmcloud sat endpoint ls --location LOCATION --connector-id CONNECTOR_ID --outpu
 Delete an endpoint.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat endpoint rm --endpoint ENDPOINT [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -1750,7 +1750,7 @@ ibmcloud sat endpoint rm \
 Update an endpoint. Only the options that you specify are updated.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat endpoint update --endpoint ENDPOINT [--dest-hostname HOSTNAME] [--dest-port PORT] [--dest-protocol PROTOCOL] [--idle-timeout-seconds SECONDS] [--name NAME] [-q] [--sni SNI] [--source-protocol PROTOCOL] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -1821,7 +1821,7 @@ ibmcloud sat endpoint update \
 [Deactivated on 2024-10-01! Use `ibmcloud sat acl create` instead] Create an ACL.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat experimental acl create --name NAME --subnet SUBNET [--subnet SUBNET ...] [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -1871,7 +1871,7 @@ ibmcloud sat experimental acl create \
 [Deactivated on 2024-10-01! Use `ibmcloud sat acl endpoint add` instead] Add one or more enabled endpoints to an ACL.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat experimental acl endpoint add --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -1918,7 +1918,7 @@ ibmcloud sat experimental acl endpoint add \
 [Deactivated on 2024-10-01! Use `ibmcloud sat acl endpoint ls` instead] List all enabled endpoints for an ACL.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat experimental acl endpoint ls --acl-id ID [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -1965,7 +1965,7 @@ ibmcloud sat experimental acl endpoint ls \
 [Deactivated on 2024-10-01! Use `ibmcloud sat acl endpoint rm` instead] Remove one or more enabled endpoints from an ACL.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat experimental acl endpoint rm --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -2012,7 +2012,7 @@ ibmcloud sat experimental acl endpoint rm \
 [Deactivated on 2024-10-01! Use `ibmcloud sat acl get` instead] View the details of an ACL.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat experimental acl get --acl-id ID [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -2059,7 +2059,7 @@ ibmcloud sat experimental acl get \
 [Deactivated on 2024-10-01! Use `ibmcloud sat acl ls` instead] List all ACLs for a Satellite connector or location.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat experimental acl ls [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -2103,7 +2103,7 @@ ibmcloud sat experimental acl ls \
 [Deactivated on 2024-10-01! Use `ibmcloud sat acl rm` instead] Delete an ACL.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat experimental acl rm --acl-id ID [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -2147,7 +2147,7 @@ ibmcloud sat experimental acl rm \
 [Deactivated on 2024-10-01! Use `ibmcloud sat acl subnet add` instead] Add one or more subnets to an ACL.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat experimental acl subnet add --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -2194,7 +2194,7 @@ ibmcloud sat experimental acl subnet add \
 [Deactivated on 2024-10-01! Use `ibmcloud sat acl subnet rm` instead] Remove one or more subnets from an ACL.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat experimental acl subnet rm --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -2241,7 +2241,7 @@ ibmcloud sat experimental acl subnet rm \
 [Deactivated on 2024-10-01! Use `ibmcloud sat acl update` instead] Update the name of an ACL.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat experimental acl update --acl-id ID --name NAME [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -2288,7 +2288,7 @@ ibmcloud sat experimental acl update \
 [Deactivated on 2024-09-01! Use `ibmcloud sat agent attach` instead] Get a Satellite Connector Agent for a specific platform. Download the Agent `.zip` for Windows or get a link to the documentation for Docker environments.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat experimental agent attach --platform PLATFORM [-q]
 ```
 {: pre}
@@ -2323,7 +2323,7 @@ ibmcloud sat experimental agent attach --platform PLATFORM -q
 [Deactivated on 2024-09-01! Use `ibmcloud sat agent ls` instead] List all Agents for a Satellite Connector.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat experimental agent ls --connector-id ID [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -2361,7 +2361,7 @@ ibmcloud sat experimental agent ls --connector-id CONNECTOR_ID --output json -q
 [Deactivated on 2024-11-18! Use `ibmcloud sat connector create` instead] Create a Satellite connector.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat experimental connector create --name NAME --region REGION [-q]
 ```
 {: pre}
@@ -2399,7 +2399,7 @@ ibmcloud sat experimental connector create --name NAME --region REGION -q
 [Deactivated on 2024-11-18! Use `ibmcloud sat connector get` instead] View the details of a Satellite Connector.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat experimental connector get --connector-id ID [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -2437,7 +2437,7 @@ ibmcloud sat experimental connector get --connector-id CONNECTOR_ID --output jso
 [Deactivated on 2024-11-18! Use `ibmcloud sat connector ls` instead] View the Satellite Connectors in your IBM Cloud account.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat experimental connector ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -2478,7 +2478,7 @@ ibmcloud sat experimental connector ls --after AFTER --first FIRST --output json
 [Deactivated on 2024-11-18! Use `ibmcloud sat connector rm` instead] Delete a Satellite connector.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat experimental connector rm --connector-id ID [-f] [-q]
 ```
 {: pre}
@@ -2516,7 +2516,7 @@ ibmcloud sat experimental connector rm --connector-id CONNECTOR_ID -f -q
 [Deactivated on 2024-10-01! Use `ibmcloud sat endpoint authn get` instead] Get the authentication settings for an endpoint.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat experimental endpoint authn get --endpoint ENDPOINT [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -2563,7 +2563,7 @@ ibmcloud sat experimental endpoint authn get \
 [Deactivated on 2024-10-01! Use `ibmcloud sat endpoint authn rotate` instead] Replace existing authentication certificates with new ones. There are two TLS connections in the request flow. The `source` options refer to the TLS handshake between the source and the Connector service. The `destination` options refer to the TLS handshake between the Connector service and your destination or target server. You can provide certificates for one or both of these connections. Only the certificates that you specify are replaced.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat experimental endpoint authn rotate --endpoint ENDPOINT [--dest-ca-cert-file FILE] [--dest-cert-file FILE] [--dest-key-file FILE] [-q] [--source-ca-cert-file FILE] [--source-cert-file FILE] [--source-key-file FILE] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -2625,7 +2625,7 @@ ibmcloud sat experimental endpoint authn rotate \
 [Deactivated on 2024-10-01! Use `ibmcloud sat endpoint authn set` instead] Set authentication settings for an endpoint. There are two TLS connections in the request flow. The `source` options refer to the TLS handshake between the source and the Connector service. The `destination` options refer to the TLS handshake between the Connector service and your destination or target server. You can provide certificates for one or both of these connections. Unspecified settings are set to their default values.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat experimental endpoint authn set --endpoint ENDPOINT [--dest-ca-cert-file FILE] [--dest-cert-file FILE] [--dest-key-file FILE] [--dest-tls-mode MODE] [-q] [--source-ca-cert-file FILE] [--source-cert-file FILE] [--source-key-file FILE] [--source-tls-mode MODE] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
@@ -2693,7 +2693,7 @@ ibmcloud sat experimental endpoint authn set \
 [Deactivated on 2024-11-25! Use `ibmcloud sat location update` instead] Update the name or description of a Satellite location.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat experimental location update --location-id ID [--description DESCRIPTION] [--name NAME] [-q]
 ```
 {: pre}
@@ -2743,7 +2743,7 @@ View and manage Satellite cluster groups. Cluster groups are used to subscribe c
 Add a cluster to your cluster group. The cluster can run in your Satellite location or in IBM Cloud. To add a cluster that runs in IBM Cloud, you must first register the cluster with Satellite Config.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat group attach --cluster CLUSTER [--cluster CLUSTER ...] --group GROUP [-q]
 ```
 {: pre}
@@ -2781,7 +2781,7 @@ ibmcloud sat group attach --group GROUP --cluster CLUSTER_NAME_OR_ID -q
 Create a cluster group. Then, you can subscribe the cluster group to a Satellite configuration.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat group create --name NAME [--cluster CLUSTER ...] [-q]
 ```
 {: pre}
@@ -2819,7 +2819,7 @@ ibmcloud sat group create --name NAME --cluster CLUSTER_NAME_OR_ID -q
 Removes one or more clusters from your Satellite cluster group and deletes the Kubernetes resources that were managed by the group's subscriptions.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat group detach --cluster CLUSTER [--cluster CLUSTER ...] --group GROUP [-f] [-q]
 ```
 {: pre}
@@ -2860,7 +2860,7 @@ ibmcloud sat group detach --group GROUP --cluster CLUSTER_NAME_OR_ID -f
 Get detailed information for a Satellite cluster group.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat group get --group GROUP [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -2898,7 +2898,7 @@ ibmcloud sat group get --group GROUP --output json -q
 List all Satellite cluster groups in your IBM Cloud account.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat group ls [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -2933,7 +2933,7 @@ ibmcloud sat group ls --output json -q
 Remove a Satellite cluster group, which unsubscribes clusters and deletes the Kubernetes resources that were managed by the group's subscriptions.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat group rm --group GROUP [-f] [-q]
 ```
 {: pre}
@@ -2977,7 +2977,7 @@ View and modify Satellite hosts.
 Assign a host to a Satellite location control plane or cluster.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat host assign --location LOCATION [--cluster CLUSTER] [--host HOST] [--host-label LABEL ...] [-q] [--worker-pool POOL] [--zone ZONE]
 ```
 {: pre}
@@ -3030,7 +3030,7 @@ ibmcloud sat host assign \
 Create and download a script that you can run on your hosts to attach them to your location. For RHCOS enabled locations, the script is an ignition file.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat host attach --location LOCATION [--host-label LABEL ...] [--host-link-agent-endpoint ENDPOINT] [--operating-system SYSTEM] [-q] [--reset-key]
 ```
 {: pre}
@@ -3080,7 +3080,7 @@ ibmcloud sat host attach \
 View the details of a Satellite host.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat host get --host HOST --location LOCATION [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -3121,7 +3121,7 @@ ibmcloud sat host get --location LOCATION --host HOSTNAME --output json
 List all hosts that are attached to a Satellite location, including hosts that are assigned to clusters or the control plane.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat host ls --location LOCATION [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -3159,7 +3159,7 @@ ibmcloud sat host ls --location LOCATION --output json -q
 Remove a host from a Satellite location.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat host rm --host HOST --location LOCATION [-f] [-q]
 ```
 {: pre}
@@ -3200,7 +3200,7 @@ ibmcloud sat host rm --location LOCATION --host HOSTNAME -f
 Update host information, such as zones and labels.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat host update --host HOST --location LOCATION [--host-label LABEL ...] [-q] [--zone ZONE]
 ```
 {: pre}
@@ -3250,7 +3250,7 @@ View and manage Satellite Config keys.
 List all Satellite Config keys in your IBM Cloud account.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat key ls [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -3285,7 +3285,7 @@ ibmcloud sat key ls --output json -q
 Remove a Satellite Config key. Any cluster that still uses this key cannot connect to Satellite Config.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat key rm --key KEY [-f] [-q]
 ```
 {: pre}
@@ -3323,7 +3323,7 @@ ibmcloud sat key rm --key KEY -f -q
 Generate a new key for use by managed clusters to connect to Satellite Config.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat key rotate --name NAME [-f] [-q]
 ```
 {: pre}
@@ -3367,7 +3367,7 @@ Create, view, and modify Satellite locations.
 Create a Satellite location. A Satellite location is a representation of an environment in your infrastructure provider. After you create a location, attach hosts from separate zones of your backing infrastructure environment with the `ibmcloud sat host attach` command.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat location create --managed-from REGION --name NAME [--capability CAPABILITY ...] [--coreos-enabled] [--cos-bucket BUCKET] [--description DESCRIPTION] [--ha-zone ZONE ...] [--physical-address ADDRESS] [--pod-network-interface-selection SELECTION] [--pod-subnet SUBNET] [--provider PROVIDER] [--provider-credential CREDENTIAL] [--provider-region REGION] [-q] [--service-subnet SUBNET]
 ```
 {: pre}
@@ -3444,7 +3444,7 @@ ibmcloud sat location create \
 View the details of a registered subdomain in a Satellite location.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat location dns get --location LOCATION --subdomain SUBDOMAIN [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -3485,7 +3485,7 @@ ibmcloud sat location dns get --location LOCATION --subdomain DOMAIN --output js
 List the registered subdomains in a Satellite location.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat location dns ls --location LOCATION [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -3523,7 +3523,7 @@ ibmcloud sat location dns ls --location LOCATION --output json -q
 Set a subdomain for the hosts assigned to the control plane in a Satellite location.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat location dns register --ip IP [--ip IP ...] --location LOCATION [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -3564,7 +3564,7 @@ ibmcloud sat location dns register --location LOCATION --ip IP_ADDRESS --output 
 View the details of a Satellite location.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat location get --location LOCATION [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -3602,7 +3602,7 @@ ibmcloud sat location get --location LOCATION --output json -q
 List all Satellite locations in your IBM Cloud account.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat location ls [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -3637,7 +3637,7 @@ ibmcloud sat location ls --output json -q
 Delete a location. Before you run this command, back up your configurations and remove any hosts and clusters that run in the location. The underlying host infrastructure is not automatically deleted when you delete a location. This action cannot be undone.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat location rm --location LOCATION [-f] [-q]
 ```
 {: pre}
@@ -3675,7 +3675,7 @@ ibmcloud sat location rm --location LOCATION -f -q
 Update the name or description of a Satellite location.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat location update --location-id ID [--description DESCRIPTION] [--name NAME] [-q]
 ```
 {: pre}
@@ -3725,7 +3725,7 @@ View the current user messages.
 View the current user messages.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat messages [-q]
 ```
 {: pre}
@@ -3763,7 +3763,7 @@ Search and view Kubernetes resources that are managed by a Satellite configurati
 View the details of a Kubernetes resource that is managed by a Satellite configuration.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat resource get --resource RESOURCE [--history HISTORY] [--output OUTPUT] [-q] [--save-data]
 ```
 {: pre}
@@ -3810,7 +3810,7 @@ ibmcloud sat resource get \
 Get history for a Kubernetes resource.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat resource history get --resource RESOURCE [--limit LIMIT] [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -3851,7 +3851,7 @@ ibmcloud sat resource history get --resource RESOURCE --limit LIMIT --output jso
 Search Kubernetes resources that are managed by Satellite.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat resource ls [--limit LIMIT] [--output OUTPUT] [-q] [--search SEARCH] (--cluster CLUSTER | --subscription SUBSCRIPTION)
 ```
 {: pre}
@@ -3904,7 +3904,7 @@ View Satellite service clusters.
 List all Satellite service clusters in your location to review details, such as requested host resources.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat service ls --location LOCATION [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -3951,7 +3951,7 @@ The `storage assignment autopatch disable` command is a beta feature.
 Disable automatic patches for a Satellite storage assignment.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat storage assignment autopatch disable --config CONFIG [-q] (--all | --assignment ASSIGNMENT)
 ```
 {: pre}
@@ -3998,7 +3998,7 @@ The `storage assignment autopatch enable` command is a beta feature.
 Enable automatic patches for a Satellite storage assignment.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat storage assignment autopatch enable --config CONFIG [-q] (--all | --assignment ASSIGNMENT)
 ```
 {: pre}
@@ -4042,7 +4042,7 @@ ibmcloud sat storage assignment autopatch enable \
 Create an assignment to deploy your storage configurations to clusters in your Satellite location.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat storage assignment create --config CONFIG [--name NAME] [-q] (--cluster CLUSTER | --group GROUP | --service-cluster-id CLUSTER)
 ```
 {: pre}
@@ -4092,7 +4092,7 @@ ibmcloud sat storage assignment create \
 Get the details of a Satellite storage assignment.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat storage assignment get --assignment ASSIGNMENT [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -4136,7 +4136,7 @@ To list all assignments for a service cluster as Location Admin: ibmcloud sat st
 To list all assignments for a configuration: ibmcloud sat storage assignment ls --config CONFIG.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat storage assignment ls [--output OUTPUT] [-q] (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER)
 ```
 {: pre}
@@ -4186,7 +4186,7 @@ ibmcloud sat storage assignment ls \
 Apply storage configuration changes to the associated assignments.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat storage assignment patch --assignment ASSIGNMENT [-f] [-q]
 ```
 {: pre}
@@ -4226,7 +4226,7 @@ ibmcloud sat storage assignment patch --assignment ASSIGNMENT -f -q
 Remove a Satellite storage assignment. The Kubernetes resources are deleted from all the clusters in your Satellite location, but the configuration remains.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat storage assignment rm --assignment ASSIGNMENT [-f] [-q]
 ```
 {: pre}
@@ -4264,7 +4264,7 @@ ibmcloud sat storage assignment rm --assignment ASSIGNMENT -f -q
 Update a Satellite storage assignment.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat storage assignment update --assignment ASSIGNMENT [-f] [--group GROUP ...] [--name NAME] [-q]
 ```
 {: pre}
@@ -4311,7 +4311,7 @@ ibmcloud sat storage assignment update \
 Create a custom Satellite storage class.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat storage config class add --config-name NAME --name NAME --param PARAM [--param PARAM ...] [-q]
 ```
 {: pre}
@@ -4354,7 +4354,7 @@ ibmcloud sat storage config class add --name NAME --config-name NAME --param PAR
 Get the details of a Satellite storage class.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat storage config class get --class CLASS --config CONFIG [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -4397,7 +4397,7 @@ ibmcloud sat storage config class get --class CLASS --config CONFIG --output jso
 List the storage classes in a Satellite storage configuration
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat storage config class ls --config CONFIG [--output OUTPUT] [-q] [--show-params]
 ```
 {: pre}
@@ -4443,7 +4443,7 @@ ibmcloud sat storage config class ls \
 Create a Satellite storage configuration to install storage drivers in your clusters.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat storage config create --location LOCATION --name NAME --template-name NAME [--param PARAM ...] [-q] [--template-version VERSION]
 ```
 {: pre}
@@ -4493,7 +4493,7 @@ ibmcloud sat storage config create \
 Get the details of a Satellite storage configuration.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat storage config get --config CONFIG [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -4531,7 +4531,7 @@ ibmcloud sat storage config get --config CONFIG --output json -q
 List the Satellite storage configurations in your IBM Cloud account.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat storage config ls [--location LOCATION] [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -4569,7 +4569,7 @@ ibmcloud sat storage config ls --location LOCATION --output json -q
 Set the configuration and secret parameters of a Satellite storage configuration.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat storage config param set --config CONFIG --param PARAM [--param PARAM ...] [--apply] [-f] [-q]
 ```
 {: pre}
@@ -4613,7 +4613,7 @@ ibmcloud sat storage config param set --config CONFIG --param PARAM --apply APPL
 Apply the latest patch updates to a Satellite storage configuration. Patch updates contain vulnerability remediations and bug fixes within the same major version.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat storage config patch --config CONFIG [-f] [--include-assignments] [-q]
 ```
 {: pre}
@@ -4659,7 +4659,7 @@ ibmcloud sat storage config patch \
 Remove a Satellite storage configuration.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat storage config rm --config CONFIG [-f] [--include-assignments] [-q]
 ```
 {: pre}
@@ -4703,7 +4703,7 @@ ibmcloud sat storage config rm \
 Get the details of a Satellite storage template
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat storage template get --name NAME --version VERSION [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -4744,7 +4744,7 @@ ibmcloud sat storage template get --name NAME --version VERSION --output json
 List the available Satellite storage templates.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat storage template ls [-q]
 ```
 {: pre}
@@ -4782,7 +4782,7 @@ View and manage Satellite subscriptions to deploy Kubernetes configuration files
 Create a Satellite subscription for clusters. After you create the subscription, the associated Satellite configuration version is automatically deployed to the subscribed clusters.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat subscription create --config CONFIG --group GROUP [--group GROUP ...] --name NAME [-q] (--auth-required --gitref GITREF --gitref-type TYPE --path PATH --repository REPOSITORY | --version VERSION)
 ```
 {: pre}
@@ -4845,7 +4845,7 @@ ibmcloud sat subscription create \
 Get detailed information for a Satellite subscription.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat subscription get --subscription SUBSCRIPTION [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -4883,7 +4883,7 @@ ibmcloud sat subscription get --subscription IP_ADDRESS --output json -q
 Update the Satellite subscription to use your identity to manage resources.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat subscription identity set --subscription SUBSCRIPTION [-f] [-q]
 ```
 {: pre}
@@ -4921,7 +4921,7 @@ ibmcloud sat subscription identity set --subscription IP_ADDRESS -f -q
 List all Satellite subscriptions in your IBM Cloud account.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat subscription ls [--cluster CLUSTER] [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -4959,7 +4959,7 @@ ibmcloud sat subscription ls --cluster CLUSTER_NAME_OR_ID --output json -q
 Remove a Satellite subscription. The Kubernetes resources are no longer deployed to your clusters.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat subscription rm --subscription SUBSCRIPTION [-f] [-q]
 ```
 {: pre}
@@ -4997,7 +4997,7 @@ ibmcloud sat subscription rm --subscription IP_ADDRESS -f -q
 Update a Satellite subscription.
 {: shortdesc}
 
-```sh
+```txt
 ibmcloud sat subscription update --subscription SUBSCRIPTION [-f] [--group GROUP] [--name NAME] [-q] (--auth-required --gitref GITREF --gitref-type TYPE --path PATH --repository REPOSITORY | --version VERSION)
 ```
 {: pre}
