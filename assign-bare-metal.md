@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-04-07"
+lastupdated: "2026-08-10"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -80,12 +80,12 @@ For this specific {{site.data.keyword.baremetal_short_sing}}, you must use a bro
 1. From the [Device list in the console](https://cloud.ibm.com/gen1/infrastructure/devices){: external}, select your bare metal server.
 1. From the **Overview** page, note the networking values for your server. Find and verify the  CIDR and gateway information.
 1. Click **Remote management** and make note of the `User` and `Password` in the **Management details** section. You use this username and password in later steps.
-1. Click the **Actions** icon ![Actions icon](../icons/action-menu-icon.svg "Actions icon") > **KVM Console** to open your {{site.data.keyword.baremetal_short_sing}} console. Your browser might display a warning of an insecure self-signed certificate. Add the certificate to your browser truststore as a trusted CA certificate to continue.
+1. Click the **Actions** icon ![Actions icon](../icons/action-menu-icon.svg "Actions icon") > **KVM Console** to open your {{site.data.keyword.baremetal_short_sing}} console. Your browser displays a warning about an insecure self-signed certificate. Add the certificate to your browser truststore as a trusted CA certificate to continue.
 1. Log in to your server with the `User` and `Password` that you retrieved earlier.
 1. On the **System** tab, in the **Remote console preview**, click **Settings**.
 1. Select **Java** to change the interface to use Java instead of HTML5.
 1. Click the console preview to download a `launch.jnlp` file.
-1. Open a terminal window and run the `.jnlp` file that you downloaded earlier with the `javaws <path_to_.jnlp>` command. Note that you might be prompted to update Java. If so, follow the prompts to update Java, and then retry the command. If you are prompted to allow input monitoring for the Terminal app or if the Java console window crashes, you must update your system preference setting for Input monitoring. You can update this setting by going to **System preferences > Security & Privacy > Privacy > Input monitoring**. Then, relaunch the Java console with the `javaws <path_to_.jnlp>` command.
+1. Open a terminal window and run the `.jnlp` file that you downloaded earlier with the `javaws <path_to_.jnlp>` command. If you are prompted to update Java, follow the prompts to update Java, and then retry the command. If you are prompted to allow input monitoring for the Terminal app or if the Java console window crashes, you must update your system preference setting for Input monitoring. You can update this setting by going to **System preferences > Security & Privacy > Privacy > Input monitoring**. Then, relaunch the Java console with the `javaws <path_to_.jnlp>` command.
 1. After the console loads, select **Virtual Media > Virtual Storage**. 
 1. In the **Logical Drive Type** section, select **ISO File**.
 1. Click **Open Image** and select the RHCOS ISO file that you downloaded.
@@ -96,7 +96,7 @@ For this specific {{site.data.keyword.baremetal_short_sing}}, you must use a bro
     1. Select **CPU Configuration**.
     1. Look for `VTD` or `Intel Virtualization Technology` and make sure to enable it. For Intel CPUs, support is referred to as `Intel VT` or `VT-x`. For AMD CPUs, support is referred to as `AMD Virtualization` or `AMD-V`. For more information, consult your hardware manufacturer documentation.
     1. Enable `VTD` if not enabled. For more information, consult your hardware provider documentation.
-1. Configure the boot order. For example, to install this {{site.data.keyword.baremetal_short_sing}}, you can use a virtual ISO file. Your specific case might use a different external boot device.
+1. Configure the boot order. For example, to install this {{site.data.keyword.baremetal_short_sing}}, you can use a virtual ISO file. Your setup may use a different external boot device depending on your hardware.
     1. Select **Boot**.
     1. Select the option to Boot from Virtual ISO.
     1. Ensure that `Hard Drive` is also an option in boot order.
@@ -116,7 +116,7 @@ You must set up a public network connection for your bare metal machine to downl
 
 After RHCOS is booted into memory, the `core@localhost` prompt is available. Follow these steps to set up your network connectivity for your bare metal server.
 
-1. At the `core@localhost` prompt, run `ifconfig` to determine which interface is your public interface. Depending on the flavor of the bare-metal, the setup of the wired connections might be different. In this set up, the public interfaces were wired connections 3 and 5 and the private interfaces were wired connections 2 and 4. You can find this information in the output of the **`ifconfig`** command.
+1. At the `core@localhost` prompt, run `ifconfig` to determine which interface is your public interface. The setup of the wired connections varies by bare-metal hardware model. In this set up, the public interfaces were wired connections 3 and 5 and the private interfaces were wired connections 2 and 4. You can find this information in the output of the **`ifconfig`** command.
 1. At the `core@localhost` prompt, enter `sudo nmtui`.
 1. Click **Edit a Connection**.
 1. For each wired connection that you want to activate, click **IPv4 Configuration > Manual**.
