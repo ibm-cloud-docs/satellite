@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-10"
 
 keywords: satellite, hybrid, multicloud, faq, service, host, location, frequently asked questions, IBM Cloud satellite
 
@@ -18,7 +18,7 @@ content-type: faq
 # Frequently asked questions for {{site.data.keyword.satellitelong_notm}}
 {: #faqs}
 
-Get answers to common questions about {{site.data.keyword.satellitelong_notm}}, including how to set up locations, attach hosts, and use satellite-enabled IBM Cloud services in hybrid and multicloud environments.
+Get answers to common questions about {{site.data.keyword.satellitelong_notm}}, including how to set up locations, attach hosts, and use satellite-enabled {{site.data.keyword.cloud_notm}} services in hybrid and multicloud environments.
 {: shortdesc}
 
 

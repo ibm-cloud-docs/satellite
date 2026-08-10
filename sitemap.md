@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-10"
 
 keywords: satellite, sitemap, IBM Cloud satellite, getting started, data, cloud
 subcollection: satellite
@@ -761,7 +761,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Red Hat Enterprise Linux (RHEL) packages and other machine configurations](/docs/satellite?topic=satellite-host-reqs#reqs-host-packages)
 
-[Host storage and attached devices](/docs/satellite?topic=satellite-reqs-host-storage#reqs-host-storage)
+[Storage requirements for {{site.data.keyword.satelliteshort}} hosts and attached devices](/docs/satellite?topic=satellite-reqs-host-storage#reqs-host-storage)
 
 [Host network requirements for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network)
 
@@ -887,7 +887,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 [RHCOS enabled locations with reduced firewall in Washington D.C.](/docs/satellite?topic=satellite-req-minimum-outbound-wdc#req-minimum-outbound-wdc)
 
-[Host latency](/docs/satellite?topic=satellite-host-latency-test#host-latency-test)
+[Network latency requirements for {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-host-latency-test#host-latency-test)
 
 * [{{site.data.keyword.IBM_notm}}-managed master to customer-provided worker nodes for the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-host-latency-test#host-latency-test-master-worker)
 
@@ -3558,11 +3558,11 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 * [Change management](/docs/satellite?topic=satellite-sat-ha-dr#change-management-hadr)
 
 
-## Pricing
-{: #sitemap_pricing}
+## {{site.data.keyword.satelliteshort}} pricing for locations and services
+{: #sitemap__pricing_for_locations_and_services}
 
 
-[Pricing](/docs/satellite?topic=satellite-sat-pricing#sat-pricing)
+[{{site.data.keyword.satelliteshort}} pricing for locations and services](/docs/satellite?topic=satellite-sat-pricing#sat-pricing)
 
 * [{{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-sat-pricing#pricing-satloc)
 
@@ -3573,11 +3573,11 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 * [Can I view and control my current usage?](/docs/satellite?topic=satellite-sat-pricing#pricing-include-usage)
 
 
-## Your responsibilities
-{: #sitemap_your_responsibilities}
+## Your responsibilities with {{site.data.keyword.satelliteshort}}
+{: #sitemap_your_responsibilities_with_}
 
 
-[Your responsibilities](/docs/satellite?topic=satellite-responsibilities#responsibilities)
+[Your responsibilities with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-responsibilities#responsibilities)
 
 * [Overview of shared responsibilities](/docs/satellite?topic=satellite-responsibilities#overview-by-resource)
 
@@ -4895,7 +4895,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 {: #sitemap_storage}
 
 
-[Debugging storage](/docs/satellite?topic=satellite-storage-must-gather#storage-must-gather)
+[Debugging satellite storage configurations](/docs/satellite?topic=satellite-storage-must-gather#storage-must-gather)
 
 * [Log in to your cluster](/docs/satellite?topic=satellite-storage-must-gather#storage-log-in)
 

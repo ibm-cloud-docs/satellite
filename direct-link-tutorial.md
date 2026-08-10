@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-10-28"
+  years: 2020, 2026
+lastupdated: "2026-08-10"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -24,6 +24,9 @@ completion-time: 2h
 {: toc-content-type="tutorial"}
 {: toc-services="satellite, containers, dl"}
 {: toc-completion-time="2h"}
+
+Use a secure {{site.data.keyword.cloud_notm}} connection for {{site.data.keyword.satelliteshort}} Link communications between your services running in a {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}. Learn how to set up a direct link connection for hybrid cloud environments.
+{: shortdesc}
 
 The following steps are deprecated. For the latest steps, see [Connecting to IBM Cloud via the private network by using Satellite Connector and Direct Link 2.0](/docs/satellite?topic=satellite-direct-link-vpe).
 {: deprecated}

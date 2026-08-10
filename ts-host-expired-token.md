@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2026
+lastupdated: "2026-08-10"
 
 keywords: satellite, hybrid, multicloud, registration script, registration script fails
 
@@ -17,6 +17,8 @@ content-type: troubleshoot
 # Why is my host attach failing with error message `A0029` `Access denied to specified controller`?
 {: #ts-host-expired-token}
 
+Troubleshoot and resolve host attach failures with error A0029 caused by an expired `host_queue_token` value in your {{site.data.keyword.satelliteshort}} location.
+{: shortdesc}
 
 When you run the attach host script, your hosts are not attaching and you get a error message similar to the following example.
 {: tsSymptoms}
@@ -47,4 +49,3 @@ Your host attach script is older than one year and the `HOST_QUEUE_TOKEN` value 
 
 When your host attach script expires, your unassigned hosts enter a `Unresponsive` status. For more information, see [Why do my unassigned hosts have an `Unresponsive` status](/docs/satellite?topic=satellite-ts-host-unassigned-unknown)?
 {: note}
-

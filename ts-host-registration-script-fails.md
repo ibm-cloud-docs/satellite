@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-03-10"
+lastupdated: "2026-08-10"
 
 keywords: satellite, hybrid, multicloud, registration script, registration script fails
 
@@ -17,6 +17,8 @@ content-type: troubleshoot
 # Why does the host registration script fail?
 {: #host-registration-script-fails}
 
+Troubleshoot and resolve host registration script failures by ensuring your RHEL machine meets the minimum requirements and follows the correct configuration steps for {{site.data.keyword.satelliteshort}}.
+{: shortdesc}
 
 When you SSH into your own infrastructure machine that you want to attach as a {{site.data.keyword.satelliteshort}} host and run the host registration script, you see a message similar to the following example.
 {: tsSymptoms}
