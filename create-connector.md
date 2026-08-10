@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-10-21"
+  years: 2023, 2026
+lastupdated: "2026-08-10"
 
 keywords: satellite, hybrid, multicloud, connector, create connector
 
@@ -13,7 +13,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Creating a Connector
+# Creating a {{site.data.keyword.satelliteshort}} Connector
 {: #create-connector}
 
 A Connector provides a secure connection between a specific remote location and {{site.data.keyword.cloud_notm}}. Use the {{site.data.keyword.satelliteshort}} console to create your Connector.

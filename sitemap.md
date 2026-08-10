@@ -726,11 +726,11 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
     * [VMWare credentials](/docs/satellite?topic=satellite-infrastructure-plan#sat-infra-creds-vmware)
 
 
-## Setting up the API
+## Setting up the {{site.data.keyword.satelliteshort}} API
 {: #sitemap_setting_up_the_api}
 
 
-[Setting up the API](/docs/satellite?topic=satellite-api_setup#api_setup)
+[Setting up the {{site.data.keyword.satelliteshort}} API](/docs/satellite?topic=satellite-api_setup#api_setup)
 
 * [About the API](/docs/satellite?topic=satellite-api_setup#api_about)
 
@@ -1197,7 +1197,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 {: #sitemap_creating_connectors}
 
 
-[Creating a Connector](/docs/satellite?topic=satellite-create-connector#create-connector)
+[Creating a {{site.data.keyword.satelliteshort}} Connector](/docs/satellite?topic=satellite-create-connector#create-connector)
 
 * [Prerequisites](/docs/satellite?topic=satellite-create-connector&interface=ui#create-connector-prereqs-ui)
 
@@ -1998,7 +1998,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Getting help and support for NetApp Trident](/docs/satellite?topic=satellite-storage-netapp-trident&interface=cli#sat-trident-support)
 
-[NetApp ONTAP-NAS](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#storage-netapp-ontap-nas)
+[NetApp ONTAP-NAS storage for {{site.data.keyword.satellitelong_notm}} clusters](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#storage-netapp-ontap-nas)
 
 * [Prerequisites for NetApp ONTAP-NAS](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-nas-2104-pre)
 
@@ -2040,7 +2040,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Getting help and support for NetApp ONTAP-NAS](/docs/satellite?topic=satellite-storage-netapp-ontap-nas&interface=ui#sat-nas-2104-support)
 
-[NetApp ONTAP-SAN](/docs/satellite?topic=satellite-storage-netapp-ontap-san#storage-netapp-ontap-san)
+[NetApp ONTAP-SAN storage for {{site.data.keyword.satellitelong_notm}} clusters](/docs/satellite?topic=satellite-storage-netapp-ontap-san#storage-netapp-ontap-san)
 
 * [Prerequisites for NetApp ONTAP-SAN storage](/docs/satellite?topic=satellite-storage-netapp-ontap-san#netapp-san-2104-pre)
 
@@ -4657,11 +4657,11 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 * [Does IBM have an infrastructure on-premises compute storage option if I don't already have my own?](/docs/satellite?topic=satellite-faqs#faq-fusion-hci)
 
 
-## Getting help
-{: #sitemap_getting_help}
+## Getting help and support for {{site.data.keyword.satelliteshort}}
+{: #sitemap_getting_help_and_support_for_}
 
 
-[Getting help](/docs/satellite?topic=satellite-get-help#get-help)
+[Getting help and support for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-get-help#get-help)
 
 * [General ways to resolve issues](/docs/satellite?topic=satellite-get-help#help-general)
 

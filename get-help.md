@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -14,7 +14,7 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Getting help
+# Getting help and support for {{site.data.keyword.satelliteshort}}
 {: #get-help}
 
 Still having issues? Review different ways to get help and support for {{site.data.keyword.satelliteshort}}. For questions or feedback, post in Slack.
