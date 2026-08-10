@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-10"
 
 keywords: satellite, hybrid, multicloud, IBM Cloud regions, Satellite locations, cloud management, latency, control plane
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Supported {{site.data.keyword.cloud_notm}} regions for {{site.data.keyword.satelliteshort}} locations
 {: #sat-regions}
 
-Learn about {{site.data.keyword.cloud_notm}} regions for managing {{site.data.keyword.satelliteshort}} locations, including latency requirements for attaching hosts to the location control plane. The hosts that you want to attach to the {{site.data.keyword.satelliteshort}} location control plane must have a low latency connection of less than or equal to 200 milliseconds (`<= 200ms`) round trip time (RTT) to the {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from. As latency increases, you might see impacts to performance, including {{site.data.keyword.satelliteshort}} Link throughput, {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service provisioning time, host failure recovery time, and in extreme cases, the availability of resources that run in the {{site.data.keyword.satelliteshort}} location control plane, such as {{site.data.keyword.redhat_openshift_notm}} cluster masters. For more information, see [Testing the latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-latency-test#host-latency-mzr).
+Learn about the supported {{site.data.keyword.cloud_notm}} regions for managing {{site.data.keyword.satelliteshort}} locations and the latency requirements for attaching hosts to the location control plane.
 {: shortdesc}
 
 

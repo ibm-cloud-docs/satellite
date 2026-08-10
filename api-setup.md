@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-08-10"
 
 keywords: satellite, api, iam, tokens, refresh
 
@@ -13,8 +13,11 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Setting up the API
+# Setting up the {{site.data.keyword.satelliteshort}} API
 {: #api_setup}
+
+Use the {{site.data.keyword.satellitelong_notm}} API to automate the provisioning and management of your locations, hosts, and clusters across hybrid and multicloud environments.
+{: shortdesc}
 
 {{site.data.keyword.satellitelong_notm}} shares the same application programming interface (API) as {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.openshiftlong_notm}}, so that you can use the same methods to consistently create and manage your {{site.data.keyword.satelliteshort}} resources.
 
@@ -23,7 +26,6 @@ subcollection: satellite
 {: #api_about}
 
 The {{site.data.keyword.satelliteshort}} API automates the provisioning and management of {{site.data.keyword.cloud_notm}} infrastructure resources for your clusters so that your apps have the compute, networking, and storage resources that they need to serve your users.
-{: shortdesc}
 
 The API supports the different infrastructure providers that are available for you to create clusters and resources. The `v2` API is designed to avoid breaking existing functionality when possible. However, make sure that you review the following differences between the `v1` and `v2` API.    
 

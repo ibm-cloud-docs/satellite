@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-01-03"
+  years: 2023, 2026
+lastupdated: "2026-08-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -17,6 +17,8 @@ content-type: troubleshoot
 # Why can't I reach my endpoint from {{site.data.keyword.cloud_notm}}?
 {: #ts-connector-cannot-reach}
 
+Resolve issues accessing your {{site.data.keyword.satelliteshort}} Connector endpoint from {{site.data.keyword.cloud_notm}} by checking connector logs, agent logs, firewall settings, and ACL configurations.
+{: shortdesc}
 
 I created an endpoint and I cannot access it from {{site.data.keyword.cloud_notm}}.
 {: tsSymptoms}
@@ -36,4 +38,3 @@ Follow this list to check for errors.
     ```
     {: screen}
   
-

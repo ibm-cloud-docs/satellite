@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-11-19"
+  years: 2020, 2026
+lastupdated: "2026-08-10"
 
 keywords: satellite, hybrid, multicloud, RACI, responsibilities, shared responsibilities
 
@@ -14,10 +14,10 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Your responsibilities
+# Your responsibilities with {{site.data.keyword.satelliteshort}}
 {: #responsibilities}
 
-Learn about the management responsibilities and terms and conditions that you have when you use {{site.data.keyword.satellitelong}}. For a high-level view of the service types in {{site.data.keyword.cloud_notm}} and the breakdown of responsibilities between you as the customer and {{site.data.keyword.IBM_notm}} for each type, see [Shared responsibilities for {{site.data.keyword.cloud_notm}} offerings](/docs/overview?topic=overview-shared-responsibilities).
+Learn about the management responsibilities and terms and conditions that you have when you use {{site.data.keyword.satellitelong}}, including shared responsibilities between you and {{site.data.keyword.IBM_notm}} for {{site.data.keyword.cloud_notm}} services.
 {: shortdesc}
 
 Review the following sections for the specific responsibilities for you and for {{site.data.keyword.IBM_notm}} when you use {{site.data.keyword.satellitelong_notm}}. For the overall terms of use, see [{{site.data.keyword.cloud_notm}} Terms and Notices](/docs/overview?topic=overview-terms). For responsibilities that you have for other {{site.data.keyword.cloud_notm}} services that you use with {{site.data.keyword.satelliteshort}}, refer to the documentation of those services, such as [{{site.data.keyword.openshiftlong_notm}} responsibilities](/docs/openshift?topic=openshift-responsibilities_iks).

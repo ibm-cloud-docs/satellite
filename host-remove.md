@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-10"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Removing hosts and locations
 {: #host-remove}
 
-When you remove a host from your location, the host is unassigned from a {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster or the {{site.data.keyword.satelliteshort}} location control plane, detached from the location, and no longer available to run workloads from {{site.data.keyword.satelliteshort}}. If you delete a {{site.data.keyword.redhat_openshift_notm}} cluster or resize a worker pool, the hosts are still attached to your location, but you must detach and reattach the hosts to use them with another {{site.data.keyword.satelliteshort}} resource.
+Learn how to remove hosts from your {{site.data.keyword.satelliteshort}} location, detaching them from the location control plane or cluster and making them unavailable to run workloads.
 {: shortdesc}
 
 After removal, the host machine still exists in your underlying infrastructure provider. Reload the operating system before using the host machine for another purpose.
