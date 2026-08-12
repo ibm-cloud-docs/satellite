@@ -1,9 +1,8 @@
 ---
 
-
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite, hybrid, multicloud, troubleshoot
 
@@ -17,7 +16,7 @@ content-type: troubleshoot
 # Why can't I log in to my worker nodes or debug them with `oc debug` command?
 {: #ts-cluster-ocdebug}
 
-When you log in to the terminal of worker node or run the `oc debug node` command from the CLI, you receive the following error.
+When you log in to the terminal of a worker node or run the `oc debug node` command from the CLI, you receive the following error.
 {: tsSymptoms}
 
 
@@ -34,7 +33,7 @@ Error from server: error dialing backend: dial tcp 10.200.0.00:12345: connect: c
 ```
 {: screen}
 
-There is a faulty node that is causing DNS issues to the cluster. 
+A faulty node is causing DNS issues in the cluster.
 {: tsCauses}
 
 To resolve this issue, determine which node is causing the error. Then, stop that node and try running `oc debug node`. See [Debugging clusters](/docs/satellite?topic=satellite-ts-clusters-debug).

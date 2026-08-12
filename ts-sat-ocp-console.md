@@ -1,6 +1,5 @@
 ---
 
-
 copyright:
   years: 2021, 2026
 lastupdated: "2026-08-12"

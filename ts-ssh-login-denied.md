@@ -1,9 +1,8 @@
 ---
 
-
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -34,3 +33,4 @@ You cannot SSH into the host. If you need to modify settings on host machines in
 {: tsResolve}
 
 If you remove a host from your location or remove the entire location, you must reload the machine in your host infrastructure provider to SSH into the host again.
+{: note}

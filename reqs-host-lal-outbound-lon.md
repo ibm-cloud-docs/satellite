@@ -1,9 +1,8 @@
 ---
 
-
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-01-03"
+  years: 2023, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -49,5 +48,3 @@ For access to services such as {{site.data.keyword.loganalysislong_notm}} or {{s
   
 
   
-
-

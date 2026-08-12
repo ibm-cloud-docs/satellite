@@ -1,9 +1,8 @@
 ---
 
-
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -29,7 +28,7 @@ When you remove a storage configuration from a cluster, the resources such as op
 Take the following steps to remove the resources and the namespace.
 {: tsResolve}
 
-Do not delete or patch the resource finalizers in the `kube-system` namespace.
+Do not patch or delete resource finalizers in the `kube-system` namespace.
 {: important}
 
 1. Get the namespace that is stuck in `Terminating` status. Make a note of the resources that are listed in the `message: 'Some resources are remaining:` section.
@@ -112,10 +111,3 @@ Do not delete or patch the resource finalizers in the `kube-system` namespace.
     oc get ns
     ```
     {: pre}
-
-
-
-
-
-
-

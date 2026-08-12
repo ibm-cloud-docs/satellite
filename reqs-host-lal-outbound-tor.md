@@ -1,9 +1,8 @@
 ---
 
-
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-01-03"
+  years: 2023, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -38,8 +37,8 @@ Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) se
      
 :    If you don't want to use {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers, you can instead define a [custom NTP server for your RHCOS hosts](/docs/satellite?topic=satellite-config-custom-ntp).
 
-Optional:  Allow hosts to connect to HPCS for encrypting cluster secrets.
-:    * Domain: `api.ca-tor.hs-crypto.cloud.ibm.comm`
+Optional: Allow hosts to connect to HPCS for encrypting cluster secrets.
+:    * Domain: `api.ca-tor.hs-crypto.cloud.ibm.com`
      * Port: 8000-19999 
 
 :    If you have a preconfigured set of instances, you can find the assigned port to your instance in the overview page and allowlist just that port on the domain.

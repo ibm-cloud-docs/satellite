@@ -1,9 +1,8 @@
 ---
 
-
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-01-03"
+  years: 2022, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite, hybrid, multicloud, unassigned, unresponsive
 
@@ -28,7 +27,7 @@ t-ca594kp10egvr0u1usv0-41   67f0bf6701a17c5a0c98   unassigned   Unresponsive   *
 ```
 {: screen}
 
-The host attach script for your location expires one year from the creation date. To make sure that hosts in your location don't have authentication issues, make sure to download a new copy of the host attach script at least once per year and update any unassigned hosts.
+The host attach script for your location expires one year from the creation date. To prevent authentication issues, download a new copy of the host attach script at least once per year and update any unassigned hosts.
 {: tsCauses}
 
 

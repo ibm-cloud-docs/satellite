@@ -1,9 +1,8 @@
 ---
 
-
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-01-03"
+  years: 2022, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite, http proxy, http, proxy, mirror
 
@@ -105,7 +104,7 @@ HTTPS_PROXY: https://my-proxy-endpoint.com:PORT_NUMBER
 ```
 {: screen}
     
-After support processes the ticket, you will receive a notification that your location is updated. If a change is required, a new ticket must be opened stating the new parameters. To find your `LOCATIONID` by running `ibmcloud sat locations`.
+After support processes the ticket, you receive a notification that your location is updated. If a change is required, open a new ticket that states the new parameters. To find your `LOCATIONID`, run `ibmcloud sat locations`.
 
 
 ## Configuring your HTTP proxy
@@ -199,5 +198,3 @@ Amazon Web Service
 :    wildcard: `service.networklayer.com`
 :    dal10: `rhncapdal1001.service.networklayer.com`
 :    `/etc/yum.repos.d/redhat.repo` under `baseurl`
-
-

@@ -1,9 +1,8 @@
 ---
 
-
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-01-03"
+  years: 2022, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite, troubleshoot, multicloud
 
@@ -35,5 +34,3 @@ This message indicates that the system is unable to find the package mirrors.
 
 Double-check your configuration. For more information, see [Configuring an HTTP proxy for your Satellite hosts](/docs/satellite?topic=satellite-config-http-proxy).
 {: tsResolve}
-
-

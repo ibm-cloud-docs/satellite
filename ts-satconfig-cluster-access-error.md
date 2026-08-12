@@ -1,9 +1,8 @@
 ---
 
-
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -26,7 +25,7 @@ To use a cluster to use with {{site.data.keyword.satelliteshort}} Config, the pr
 To resolve this issue, follow these steps.
 {: tsResolve}
 
-1. Re-attach the cluster to {{site.data.keyword.satelliteshort}} Config. For more information, see [Registering existing {{site.data.keyword.openshiftlong_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-register-openshift-clusters).
+1. Reattach the cluster to {{site.data.keyword.satelliteshort}} Config. For more information, see [Registering existing {{site.data.keyword.openshiftlong_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-register-openshift-clusters).
     1. Get a `kubectl` command to register your cluster with {{site.data.keyword.satelliteshort}} Config.
         ```sh
         ibmcloud sat cluster register
@@ -51,5 +50,3 @@ To resolve this issue, follow these steps.
     kubectl create clusterrolebinding razee-cluster-admin --clusterrole=razee-cluster-admin --serviceaccount=razeedeploy:razee-viewer --serviceaccount=razeedeploy:razee-editor --serviceaccount=razeedeploy:razee-satcon
     ```
     {: pre}
-
-

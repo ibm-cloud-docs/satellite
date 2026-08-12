@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-10"
+lastupdated: "2026-08-12"
 
 keywords: satellite, sitemap, IBM Cloud satellite, getting started, data, cloud
 subcollection: satellite
@@ -1180,7 +1180,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Specifying a custom NTP server for an unattached host](/docs/satellite?topic=satellite-config-custom-ntp#custom-ntp-config)
 
-* [Specifying a custom NTP for an attached host](/docs/satellite?topic=satellite-config-custom-ntp#custom-ntp-attached-host)
+* [Specifying a custom NTP server for an attached host](/docs/satellite?topic=satellite-config-custom-ntp#custom-ntp-attached-host)
 
 [Removing hosts and locations](/docs/satellite?topic=satellite-host-remove#host-remove)
 

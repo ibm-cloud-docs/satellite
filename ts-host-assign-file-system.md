@@ -1,9 +1,8 @@
 ---
 
-
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite, hybrid, multicloud, troubleshoot, host assign fail, crio error
 
@@ -33,6 +32,5 @@ Dec 01 11:45:31 satellite.host crio[12190]: time="2021-12-01 11:45:31.837060028-
 The host file system is a type other than ext4.
 {: tsCauses}
 
-Convert the host file system to ext4 or provision a new host with an ext4 file system. 
+Convert the host file system to `ext4` or provision a new host with an `ext4` file system.
 {: tsResolve}
-
