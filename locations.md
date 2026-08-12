@@ -1,9 +1,8 @@
 ---
 
-
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite, hybrid, multicloud, location, satellite location, create location
 
@@ -98,6 +97,3 @@ Konnectivity Server Port:       32157
 {: screen}
 
 To create a Red Hat CoreOS-enabled location, see [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-loc-manual-create).
-
-
-

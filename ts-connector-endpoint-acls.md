@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-10-30"
+  years: 2023, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite, hybrid, multicloud, connector, agent, logs
 
@@ -42,4 +42,4 @@ Endpoints are accessible only from inside IBM Cloud via the private network.
     
 1. If you are running in VPC, you must also add the exit gateways for your applications or VSIs running to your ACLs. You can find these in the VPC dashboard in the **Cloud Service Endpoint source addresses** section.
 
-1. If the issue persists, open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+1. If the issue persists, open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

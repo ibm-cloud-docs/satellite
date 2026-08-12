@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2025, 2025
-lastupdated: "2025-12-17"
+  years: 2025, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite, rhel, rhel 9, openshift 4.16 troubleshoot, host assign fail, 4.16 cluster
 
@@ -37,5 +37,4 @@ Complete the following steps to resovle the issue.
 
 1. Retry assigning the host to your cluster.
 
-1. If the issue persists, open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
-
+1. If the issue persists, open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

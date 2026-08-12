@@ -1,9 +1,8 @@
 ---
 
-
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -33,8 +32,8 @@ Removing {{site.data.keyword.satelliteshort}} Config components automatically re
     ```
     {: pre}
 
-3. Wait a few minutes for the {{site.data.keyword.satelliteshort}} Config components to be removed. 
-4. Verify that your {{site.data.keyword.satelliteshort}} Config components are removed. 
+3. Wait a few minutes for the {{site.data.keyword.satelliteshort}} Config components to be removed.
+4. Verify that your {{site.data.keyword.satelliteshort}} Config components are removed.
     ```sh
     oc get pods -n razeedeploy
     ```

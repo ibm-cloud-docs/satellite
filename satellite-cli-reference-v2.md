@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-08-10"
+lastupdated: "2026-08-12"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -4007,7 +4007,7 @@ Apply storage configuration changes to the associated assignments.
 ibmcloud sat storage assignment patch --assignment ASSIGNMENT [-f] [-q]
 ```
 
-Aliases: `ibmcloud sat storage assignment upgrade`, `ibmcloud sat upgrade`
+Aliases: `ibmcloud sat upgrade`
 
 ### Command options
 {: #storage-assignment-patch-options}
@@ -4129,8 +4129,6 @@ Create a custom Satellite storage class.
 ibmcloud sat storage config class add --config-name NAME --name NAME --param PARAM [--param PARAM ...] [-q]
 ```
 
-Aliases: `ibmcloud sat storage config sc add`
-
 ### Command options
 {: #storage-config-class-add-options}
 
@@ -4171,8 +4169,6 @@ Get the details of a Satellite storage class.
 ibmcloud sat storage config class get --class CLASS --config CONFIG [--output OUTPUT] [-q]
 ```
 
-Aliases: `ibmcloud sat storage config sc get`
-
 ### Command options
 {: #storage-config-class-get-options}
 
@@ -4212,8 +4208,6 @@ List the storage classes in a Satellite storage configuration
 ```sh
 ibmcloud sat storage config class ls --config CONFIG [--output OUTPUT] [-q] [--show-params]
 ```
-
-Aliases: `ibmcloud sat storage config sc ls`
 
 ### Command options
 {: #storage-config-class-ls-options}
@@ -4424,7 +4418,7 @@ Apply the latest patch updates to a Satellite storage configuration. Patch updat
 ibmcloud sat storage config patch --config CONFIG [-f] [--include-assignments] [-q]
 ```
 
-Aliases: `ibmcloud sat storage config upgrade`, `ibmcloud sat upgrade`
+Aliases: `ibmcloud sat upgrade`
 
 ### Command options
 {: #storage-config-patch-options}

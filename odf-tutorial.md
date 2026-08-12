@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-01-19"
+  years: 2022, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite, hybrid, multicloud, odf, openshift data foundation
 
@@ -95,7 +95,7 @@ Follow the steps to create a {{site.data.keyword.satelliteshort}} storage config
 {: #odf-tutorial-verify}
 {: step}
 
-1. [Access your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
+1. [Access your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Verify that the storage configuration resources are deployed. Run the following commands or review the `openshift-storage` namespace in the {{site.data.keyword.redhat_openshift_notm}} console.
 
@@ -165,5 +165,3 @@ Follow the steps to create a {{site.data.keyword.satelliteshort}} storage config
 {: step}
 
 To deploy an example application, see [Deploying an app that uses OpenShift Data Foundation](/docs/satellite?topic=satellite-storage-odf-remote#sat-storage-odf-remote-deploy).
-
-

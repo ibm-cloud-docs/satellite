@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-10"
+lastupdated: "2026-08-12"
 
 keywords: satellite, sitemap, IBM Cloud satellite, getting started, data, cloud
 subcollection: satellite
@@ -205,7 +205,13 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 [{{site.data.keyword.satellitelong_notm}} release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
-* [July 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jun26)
+* [August 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug26)
+
+    * [12 August 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug1226)
+
+        * Satellite Connector agent image version `1.2.10`.
+
+* [July 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jul26)
 
     * [09 July 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jul0926)
 
@@ -1180,7 +1186,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Specifying a custom NTP server for an unattached host](/docs/satellite?topic=satellite-config-custom-ntp#custom-ntp-config)
 
-* [Specifying a custom NTP for an attached host](/docs/satellite?topic=satellite-config-custom-ntp#custom-ntp-attached-host)
+* [Specifying a custom NTP server for an attached host](/docs/satellite?topic=satellite-config-custom-ntp#custom-ntp-attached-host)
 
 [Removing hosts and locations](/docs/satellite?topic=satellite-host-remove#host-remove)
 
@@ -3679,6 +3685,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 [{{site.data.keyword.satelliteshort}} Connector agent image change log](/docs/satellite?topic=satellite-cl-connector-agent-image#cl-connector-agent-image)
 
 * [Version 1.2](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2-change-log)
+
+    * [Version 1.2.10, released 12 Aug 2026](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2.10-change-log)
 
     * [Version 1.2.9, released 9 Jul 2026](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2.9-change-log)
 

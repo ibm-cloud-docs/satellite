@@ -1,9 +1,8 @@
 ---
 
-
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -48,5 +47,3 @@ Alternatively, if your hosts have public network connectivity, you can test acce
 
 If you are still unable to access the {{site.data.keyword.redhat_openshift_notm}} web console after completing these steps, see [Debugging the OpenShift web console](/docs/openshift?topic=openshift-ocp-debug) in the {{site.data.keyword.openshiftlong_notm}} troubleshooting documentation.
 {: note}
-
-

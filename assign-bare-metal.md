@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-10"
+lastupdated: "2026-08-12"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -96,7 +96,7 @@ For this specific {{site.data.keyword.baremetal_short_sing}}, you must use a bro
     1. Select **CPU Configuration**.
     1. Look for `VTD` or `Intel Virtualization Technology` and make sure to enable it. For Intel CPUs, support is referred to as `Intel VT` or `VT-x`. For AMD CPUs, support is referred to as `AMD Virtualization` or `AMD-V`. For more information, consult your hardware manufacturer documentation.
     1. Enable `VTD` if not enabled. For more information, consult your hardware provider documentation.
-1. Configure the boot order. For example, to install this {{site.data.keyword.baremetal_short_sing}}, you can use a virtual ISO file. Your setup may use a different external boot device depending on your hardware.
+1. Configure the boot order. For example, to install this {{site.data.keyword.baremetal_short_sing}}, you can use a virtual ISO file. The external boot device varies by hardware model; consult your hardware manufacturer documentation if your setup uses a device other than a virtual ISO.
     1. Select **Boot**.
     1. Select the option to Boot from Virtual ISO.
     1. Ensure that `Hard Drive` is also an option in boot order.

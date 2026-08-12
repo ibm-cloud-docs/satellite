@@ -1,9 +1,8 @@
 ---
 
-
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-01-03"
+  years: 2023, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite, CoreOS, RHCOS, firewall 
 
@@ -90,7 +89,7 @@ Follow these steps to set up a Red Hat CoreOS enabled Location with reduced fire
     
     In this example, the IP addresses of the tunnel endpoint are `169.61.156.226`, `169.61.31.178`, and `169.46.88.106` on `port 443`. 
     
-1. Configure your firewall to allow outgoing traffic to the IP addresses of the tunnel endpoint on port 443. The IP addresses can be found in the output of the previous step. 
+1. Configure your firewall to allow outgoing traffic to the IP addresses of the tunnel endpoint on port 443. You can find the IP addresses in the output of the previous step.
 
 NTP must also be allowed. You can choose to allow access to the Red Hat network time protocol (NTP) servers listed in [Required outbound connectivity for hosts overview](/docs/satellite?topic=satellite-reqs-host-network-outbound) or you can configure access to a custom Network Time Protocol (NTP) server. See [Specifying a custom Network Time Protocol (NTP) server](/docs/satellite?topic=satellite-config-custom-ntp) if you want to configure a local NTP server.
 {: note}

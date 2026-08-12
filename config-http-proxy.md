@@ -1,9 +1,8 @@
 ---
 
-
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-01-03"
+  years: 2022, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite, http proxy, http, proxy, mirror
 
@@ -63,7 +62,7 @@ You cannot configure an HTTP proxy for worker to master communications or for co
 ## Setting up TCP tunneling
 {: #setup-tcp-http-proxy}
 
-Your proxy must be set up with TCP tunneling. While specific steps might vary depending on your provider, follow these general steps to set up TCP tunneling.
+Your proxy must be set up with TCP tunneling. The following steps cover the general setup for TCP tunneling; refer to your provider's documentation for provider-specific instructions.
 
 1. Set up your HTTP proxy to tunnel traffic for all four of your location public service endpoints. To find your endpoints, 
         
@@ -77,7 +76,7 @@ Your proxy must be set up with TCP tunneling. While specific steps might vary de
 2. Make sure that the listener port on the HTTP proxy is the same as on {{site.data.keyword.cloud_notm}}.
 3. Update the `/etc/hosts` on all your {{site.data.keyword.satelliteshort}} hosts to include the location public service endpoints forward traffic to the proxy, rather than to {{site.data.keyword.cloud_notm}} endpoints.
 
-Your configuration might vary by provider. Consider setting up your proxy outside of the {{site.data.keyword.satelliteshort}} environment to ensure that the configuration works for your infrastructure. Then, configure your proxy in the {{site.data.keyword.satelliteshort}} environment. For more information about setting up and configuring your HTTP proxy, see the blog [`Proxying In Cluster Kube-APIServer Traffic in IBM Cloud Satellite`](https://lisowski0925.medium.com/proxying-in-cluster-kube-apiserver-traffic-in-ibm-cloud-satellite-162ee07d6e0d){: external}.
+Configuration details vary by provider. Set up your proxy outside of the {{site.data.keyword.satelliteshort}} environment first to verify that the configuration works for your infrastructure, then configure your proxy in the {{site.data.keyword.satelliteshort}} environment. For more information about setting up and configuring your HTTP proxy, see the blog [`Proxying In Cluster Kube-APIServer Traffic in IBM Cloud Satellite`](https://lisowski0925.medium.com/proxying-in-cluster-kube-apiserver-traffic-in-ibm-cloud-satellite-162ee07d6e0d){: external}.
 {: tip}
 
 ## Requesting access to the allowlist
@@ -105,7 +104,7 @@ HTTPS_PROXY: https://my-proxy-endpoint.com:PORT_NUMBER
 ```
 {: screen}
     
-After support processes the ticket, you will receive a notification that your location is updated. If a change is required, a new ticket must be opened stating the new parameters. To find your `LOCATIONID` by running `ibmcloud sat locations`.
+After support processes the ticket, you receive a notification that your location is updated. If a change is required, open a new ticket that states the new parameters. To find your `LOCATIONID`, run `ibmcloud sat locations`.
 
 
 ## Configuring your HTTP proxy
@@ -199,5 +198,3 @@ Amazon Web Service
 :    wildcard: `service.networklayer.com`
 :    dal10: `rhncapdal1001.service.networklayer.com`
 :    `/etc/yum.repos.d/redhat.repo` under `baseurl`
-
-

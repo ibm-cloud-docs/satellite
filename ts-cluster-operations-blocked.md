@@ -1,9 +1,8 @@
 ---
 
-
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -25,12 +24,10 @@ Cluster management is not currently available for this Satellite location. The l
 ```
 {: screen}
 
-Your {{site.data.keyword.satelliteshort}} location is currently in an unhealthy state, so cluster operations are blocked to prevent the operation from failing. 
+Your {{site.data.keyword.satelliteshort}} location is currently in an unhealthy state, so cluster operations are blocked to prevent further failures.
 {: tsCauses}
 
-[Debug your location](/docs/satellite?topic=satellite-ts-locations-debug), such as reviewing the platform logs and common error messages to find the reason for the unhealthy state.
+[Debug your location](/docs/satellite?topic=satellite-ts-locations-debug) by reviewing the platform logs and common error messages to find the reason for the unhealthy state.
 {: tsResolve}
 
 When the location is healthy, you can resume managing your cluster.
-
-

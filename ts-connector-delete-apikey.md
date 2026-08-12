@@ -1,9 +1,8 @@
 ---
 
-
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-01-03"
+  years: 2023, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -29,7 +28,5 @@ Failed to get configuration from API /v1/connectors/U2F0ZWxsaXRlQ29ubmVjdG9yOiJj
 If your API key is deleted while a Connector agent is running, the change is detected by the Connector agent after about 45 minutes. Without a valid API key, the Connector agent closes the tunnel. As a result, any application that uses an endpoint receives a communication error.
 {: tsCauses}
 
-You must update your API key and restart the Connector agent before you can use the tunnel or endpoints again.
+Update your API key and restart the Connector agent before you use the tunnel or endpoints again.
 {: tsResolve}
-
-

@@ -1,9 +1,8 @@
 ---
 
-
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-01-03"
+  years: 2023, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite, hybrid, multicloud, troubleshoot terraform, update hosts
 
@@ -27,7 +26,7 @@ Your `attach-host` script requires an update at least once a year. The updated s
 {: tsCauses}
 
 
-To resolve this issue, update your Terraform script to include the following example argument to the script that creates or modifies your host instances. Replace `<host-script>` with the field name you used to supply the `attach-host` script to the host instances.
+To resolve this issue, update your Terraform script to include the following argument in the script that creates or modifies your host instances. Replace `<host-script>` with the field name that you used to supply the `attach-host` script to the host instances.
 {: tsResolve}
 
 ```terraform
@@ -37,7 +36,7 @@ To resolve this issue, update your Terraform script to include the following exa
     ]
   }
 ```
-{: pre}
+{: codeblock}
 
 For example, in the [Azure Terraform scripts](https://github.com/terraform-ibm-modules/terraform-ibm-satellite/tree/main/examples/satellite-azure){: external}, edit the `instance.tf` file and replace `<host-script>` with `custom_data`, which is the name of the field defined by the [`azurerm_linux_virtual_machine` resource](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_virtual_machine#custom_data){: external}.
 
@@ -48,9 +47,6 @@ For example, in the [Azure Terraform scripts](https://github.com/terraform-ibm-m
     ]
   }
 ```
-{: pre}
+{: codeblock}
 
-After you add this code, any hosts that are currently attached to your location, included hosts in an 'unassigned' state are ignored by the Terraform script. Any new hosts that you attach to your location use the updated attach script.
-
-
-
+After you add this code, any hosts that are currently attached to your location, including hosts in an `unassigned` state, are ignored by the Terraform script. Any new hosts that you attach to your location use the updated attach script.

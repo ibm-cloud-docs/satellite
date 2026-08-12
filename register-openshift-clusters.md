@@ -1,9 +1,8 @@
 ---
 
-
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -16,7 +15,7 @@ subcollection: satellite
 # Registering clusters with {{site.data.keyword.satelliteshort}} Config
 {: #register-openshift-clusters}
 
-Clusters that you create in your Satellite Location are automatically registered with {{site.data.keyword.satelliteshort}} Config. You can also manually register other clusters in the public cloud or your existing {{site.data.keyword.openshiftlong_notm}} clusters with {{site.data.keyword.satelliteshort}} Config. Follow the steps to run the registration script in your cluster to set up the {{site.data.keyword.satelliteshort}} Config components and make the cluster visible in {{site.data.keyword.satelliteshort}}. 
+Clusters that you create in your Satellite location are automatically registered with {{site.data.keyword.satelliteshort}} Config. You can also manually register other clusters in the public cloud or your existing {{site.data.keyword.openshiftlong_notm}} clusters with {{site.data.keyword.satelliteshort}} Config. Follow the steps to run the registration script in your cluster to set up the {{site.data.keyword.satelliteshort}} Config components and make the cluster visible in {{site.data.keyword.satelliteshort}}.
 {: shortdesc}
 
 After you complete these steps, the cluster can be added to a cluster group in your location and [subscribed to {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-satcon-manage-direct-upload). However, you must still use {{site.data.keyword.openshiftlong_notm}} to manage the worker nodes for these clusters.
@@ -24,7 +23,7 @@ After you complete these steps, the cluster can be added to a cluster group in y
 
 1. Find the cluster in the public cloud that you want to attach to {{site.data.keyword.satelliteshort}} Config. To list available clusters, run the `ibmcloud oc cluster ls` command or go to the [{{site.data.keyword.redhat_openshift_notm}} cluster dashboard](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
 
-    Do not manually register clusters that you created in a Satellite Location. These clusters are automatically registered with {{site.data.keyword.satelliteshort}} Config. Registering them again manually might cause issues in your Location or cluster. 
+    Do not manually register clusters that you created in a Satellite location. These clusters are automatically registered with {{site.data.keyword.satelliteshort}} Config. Registering them again manually might cause issues in your location or cluster.
     {: note}
 
 2. From the {{site.data.keyword.satelliteshort}} [**Clusters**](https://cloud.ibm.com/satellite/clusters){: external} dashboard, click **Register cluster**.

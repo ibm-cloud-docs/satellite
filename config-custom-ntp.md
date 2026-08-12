@@ -1,9 +1,8 @@
 ---
 
-
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-01-03"
+  years: 2022, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite, hybrid, multicloud, ntp, custom ntp, network time protocol
 
@@ -65,7 +64,7 @@ To configure your hosts to use a custom NTP server before you attach them to a l
     {: pre}
 
    
-3. Download the attach script for your location.  For RHCOS hosts, the attach script is an ignition (.ign) script.
+3. Download the attach script for your location. For RHCOS hosts, the attach script is an ignition (`.ign`) script.
 
     ```sh
     ibmcloud sat host attach --location LOCATION --operating-system RHCOS
@@ -96,7 +95,7 @@ To configure your hosts to use a custom NTP server before you attach them to a l
     
 After your script is validated, you can [attach the hosts](/docs/satellite?topic=satellite-attach-hosts) to your location.
 
-## Specifying a custom NTP for an attached host
+## Specifying a custom NTP server for an attached host
 {: #custom-ntp-attached-host}
 
 You can configure a custom NTP server for your hosts after they are attached to the location.
