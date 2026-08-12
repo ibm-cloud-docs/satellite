@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-01-03"
+  years: 2021, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite, certificate, expired, console
 
@@ -31,7 +31,7 @@ An expired or invalidated security ticket is preventing you from accessing the {
 Follow the steps to validate your certificate.
 {: tsResolve}
 
-1. [Access your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
+1. [Access your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 2. Run the [`master refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh) command.
 
@@ -41,4 +41,3 @@ Follow the steps to validate your certificate.
     {: pre}
 
 3. Wait a few minutes and try to access the console again.
-

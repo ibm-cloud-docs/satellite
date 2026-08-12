@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-03"
+  years: 2020, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -50,7 +50,7 @@ Choose from the following options.
 
 To customize access, or to add access for {{site.data.keyword.satelliteshort}} clusters that you did not opt in for admin access at cluster creation.
 
-1. [Access your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
+1. [Access your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 2. For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}} Config access to manage Kubernetes resources. Choose from the following options: cluster admin access, custom access that is cluster-wide, or custom access that is scoped to a project. For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/reference/access-authn-authz/authorization/){: external}.
 
@@ -139,4 +139,3 @@ Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config
   
 
 Continue to [set up cluster groups](/docs/satellite?topic=satellite-setup-clusters-satconfig-groups) and [register clusters with Satellite Config](/docs/satellite?topic=satellite-register-openshift-clusters).
-

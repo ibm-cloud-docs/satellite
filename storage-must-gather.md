@@ -51,7 +51,7 @@ Complete the following steps to debug your {{site.data.keyword.satelliteshort}} 
     {: pre}
     
 
-1. [Access your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
+1. [Access your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 ## Get your configuration details
 {: #storage-config-details}

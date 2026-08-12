@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-02-07"
+  years: 2022, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -43,7 +43,7 @@ Review the [Watch-keeper collection methods](https://github.com/razee-io/WatchKe
 ### Watch a particular resource that I label in my cluster
 {: #satconfig-enable-watchkeeper-label}
 
-1. [Access your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
+1. [Access your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 2. Individually label the resource that you want {{site.data.keyword.satelliteshort}} Config to watch. For example, the following command watches a deployment that is called `nginx`.
 
     ```sh
@@ -71,4 +71,3 @@ You can review resources in several areas in the console as follows.
 Review resources with the CLI.
 
 Use the **`ibmcloud sat resource ls`** [command](/docs/satellite?topic=satellite-satellite-cli-reference#resource-ls-cli) and its options to list resources. To view the details of a particular resource, use the `ibmcloud sat resource get` [command](/docs/satellite?topic=satellite-satellite-cli-reference#resource-get-cli).
-
