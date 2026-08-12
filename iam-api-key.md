@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-04-11"
+  years: 2020, 2026
+lastupdated: "2026-08-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # API keys in {{site.data.keyword.cloud_notm}} 
 {: #iam-api-key}
 
-{{site.data.keyword.satelliteshort}} uses [API keys](/docs/account?topic=account-manapikey) from {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to authorize various requests.
+{{site.data.keyword.satelliteshort}} uses [API keys](/docs/iam?topic=iam-manapikey) from {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to authorize various requests.
 {: shortdesc}
 
 
@@ -45,6 +45,3 @@ For more information, see the [{{site.data.keyword.openshiftlong_notm}} document
 
 If you create a {{site.data.keyword.satelliteshort}} location from a template, such as an {{site.data.keyword.bplong_notm}} template for AWS, {{site.data.keyword.satelliteshort}} checks for permissions with an API key. The API key must have the [required permissions to create a location](/docs/satellite?topic=satellite-iam#iam-roles-usecases), including to {{site.data.keyword.bplong_notm}}, which is used to automate the infrastructure creation from the template cloud provider.
 {: shortdesc}
-
-
-

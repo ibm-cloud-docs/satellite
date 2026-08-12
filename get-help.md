@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-10"
+lastupdated: "2026-08-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -66,7 +66,7 @@ For questions about {{site.data.keyword.satelliteshort}}, use the tags `ibm-clou
 
 If you have technical questions about developing or deploying clusters or apps with {{site.data.keyword.redhat_openshift_notm}}, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `openshift`, and `containers`.
 
-See [Getting help](/docs/account?topic=account-using-avatar) for more details about using the forums.
+See [Getting help](/docs/support?topic=support-using-avatar) for more details about using the forums.
 
 ## Contacting support
 {: #help-support}
@@ -86,7 +86,7 @@ See [Getting help](/docs/account?topic=account-using-avatar) for more details ab
     2. For any hosts, include relevant details about the underlying infrastructure provider, such as if the host is in an Amazon Web Services, Google Cloud Platform, Microsoft Azure, or other environment.
     3. For issues with resources within your cluster such as pods or services, log in to the cluster and use the Kubernetes API to get more information about them. If the resources are managed by {{site.data.keyword.satelliteshort}} configuration, get the details of your configuration and subscription.
 
-2. Contact {{site.data.keyword.IBM_notm}} Support by [opening a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}. To learn about opening an {{site.data.keyword.IBM_notm}} support case, or about support levels and case severities, see [Contacting support](/docs/account?topic=account-using-avatar).
+2. Contact {{site.data.keyword.IBM_notm}} Support by [opening a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}. To learn about opening an {{site.data.keyword.IBM_notm}} support case, or about support levels and case severities, see [Contacting support](/docs/support?topic=support-using-avatar).
 3. For the **Problem type**, search for or select **{{site.data.keyword.satelliteshort}}**.
 4. For the **Case details**, provide a descriptive title and include the details that you previously gathered. From the **Resources**, you can also select the cluster that the issue is related to, if any.
 
