@@ -205,7 +205,13 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 [{{site.data.keyword.satellitelong_notm}} release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
-* [July 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jun26)
+* [August 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug26)
+
+    * [12 August 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug1226)
+
+        * Satellite Connector agent image version `1.2.10`.
+
+* [July 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jul26)
 
     * [09 July 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jul0926)
 

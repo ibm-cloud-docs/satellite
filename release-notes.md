@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-10"
+lastupdated: "2026-08-12"
 
 keywords: satellite, hybrid, multicloud, release notes, changes, IBM Cloud satellite, updates, storage templates, connector agent
 
@@ -22,8 +22,18 @@ content-type: release-note
 Review the latest changes to the {{site.data.keyword.satellitelong_notm}} documentation, including updates to storage templates, connector agent versions, and new features.
 {: shortdesc}
 
+## August 2026
+{: #satellite-aug26}
+
+### 12 August 2026
+{: #satellite-aug1226}
+{: release-note}
+
+Satellite Connector agent image version `1.2.10`.
+:   For more information, see the [change log](/docs/satellite?topic=satellite-cl-connector-agent-image) and [Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally#pull-agent-image).
+
 ## July 2026
-{: #satellite-jun26}
+{: #satellite-jul26}
 
 
 ### 09 July 2026
