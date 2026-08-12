@@ -3680,6 +3680,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Version 1.2](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2-change-log)
 
+    * [Version 1.2.10, released 12 Aug 2026](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2.10-change-log)
+
     * [Version 1.2.9, released 9 Jul 2026](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2.9-change-log)
 
     * [Version 1.2.8, released 8 Jul 2026](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2.8-change-log)
