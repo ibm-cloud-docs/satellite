@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-13"
 
 keywords: satellite storage, VMware, satellite config, satellite configurations, vsphere
 
@@ -122,7 +122,7 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 {: #vsphere-csi-driver-config-create-api}
 {: api}
 
-1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/account?topic=account-iamtoken_from_apikey).
+1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/iam?topic=iam-iamtoken_from_apikey).
 
 1. Review the [parameter reference](#vsphere-csi-driver-parameter-reference) for the template version that you want to use.
 

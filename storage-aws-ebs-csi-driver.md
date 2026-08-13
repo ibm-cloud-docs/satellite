@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-13"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration, AWS EBS, Amazon Elastic Block Storage, satellite clusters
 
@@ -133,7 +133,7 @@ To use the AWS EBS storage template, complete the following tasks:
 {: #aws-ebs-csi-driver-config-create-api}
 {: api}
 
-1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/account?topic=account-iamtoken_from_apikey).
+1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/iam?topic=iam-iamtoken_from_apikey).
 
 1. Review the [parameter reference](#aws-ebs-csi-driver-parameter-reference) for the template version that you want to use.
 
