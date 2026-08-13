@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-13"
 
 keywords: satellite, hybrid, multicloud, bare metal host, bare metal, baremetal
 
@@ -28,8 +28,8 @@ To attach a bare metal host, your {{site.data.keyword.baremetal_short_sing}} mus
 - Must support virtualization technology.
     - For Intel CPUs, support for virtualization is referred to as `Intel VT` or `VT-x`.
     - For AMD CPUs, support for virtualization is referred to as `AMD Virtualization` or `AMD-V`.
-- Must have a minimum of 8 cores and 32 GB RAM, plus any additional cores that you need for your vCPU overhead. For more information, see [CPU overhead](https://docs.openshift.com/container-platform/4.11/virt/install/preparing-cluster-for-virt.html#CPU-overhead_preparing-cluster-for-virt){: external} in the {{site.data.keyword.redhat_openshift_notm}} docs.
-- Must include enough memory for your workload needs. For example: `360 MiB + (1.002 * requested memory) + 146 MiB + 8 MiB * (number of vCPUs) + 16 MiB * (number of graphics devices)`. For more information, see [Memory overhead](https://docs.openshift.com/container-platform/4.11/virt/install/preparing-cluster-for-virt.html#memory-overhead_preparing-cluster-for-virt){: external} in the {{site.data.keyword.redhat_openshift_notm}} docs.
+- Must have a minimum of 8 cores and 32 GB RAM, plus any additional cores that you need for your vCPU overhead. For more information, see [CPU overhead](https://docs.redhat.com/en/documentation/openshift_container_platform/4.11/html/virtualization/installing#preparing-cluster-for-virt){: external} in the {{site.data.keyword.redhat_openshift_notm}} docs.
+- Must include enough memory for your workload needs. For example: `360 MiB + (1.002 * requested memory) + 146 MiB + 8 MiB * (number of vCPUs) + 16 MiB * (number of graphics devices)`. For more information, see [Memory overhead](https://docs.redhat.com/en/documentation/openshift_container_platform/4.11/html/virtualization/installing#preparing-cluster-for-virt){: external} in the {{site.data.keyword.redhat_openshift_notm}} docs.
 - No operating system installed. The Red Hat CoreOS operating system is installed later in this process.
 - If you want to use OpenShift Data Foundation as your storage solution, add 2 storage disks to each of your {{site.data.keyword.baremetal_short}} when you provision them.
 

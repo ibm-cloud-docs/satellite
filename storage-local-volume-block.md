@@ -258,7 +258,7 @@ After you have [retrieved the device paths for the disks that you want to use in
 {: #local-volume-block-config-create-api}
 {: api}
 
-1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/account?topic=account-iamtoken_from_apikey).
+1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/account?topic=account-iamtoken-from-apikey).
 
 1. Review the [parameter reference](#local-volume-block-parameter-reference) for the template version that you want to use.
 
@@ -741,7 +741,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local block 
 {: #sat-local-block-support}
 
 
-1. Review the FAQs in the [Red Hat OpenShift docs](https://docs.openshift.com/container-platform/4.9/storage/persistent_storage/persistent-storage-local.html){: external}.
+1. Review the FAQs in the [Red Hat OpenShift docs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.9/html/storage/configuring-persistent-storage#persistent-storage-using-local-volume){: external}.
 1. Review the [troubleshooting documentation](/docs/satellite?topic=satellite-storage-must-gather) to troubleshoot and resolve common issues.
 1. Check the status of the {{site.data.keyword.Bluemix_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external}.
 1. Review [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud){: external} to see whether other users experienced the same problem. Tag any questions with ibm-cloud, so that it's seen by the {{site.data.keyword.Bluemix_notm}} development teams.

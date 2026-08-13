@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-13"
 
 keywords: satellite, hybrid, multicloud, vmware, vmware host, satellite location
 
@@ -47,7 +47,7 @@ To connect {{site.data.keyword.satelliteshort}} to your VMware Virtual Data Cent
 ### Networking information
 {: #vmware-network}
 
-Your VMware data center must include a [routed network](https://techdocs.broadcom.com/us/en/vmware-cis/cloud-director/vmware-cloud-director/10-6/-vcloud-api-programming-guide-for-service-providers-10-6/using-extensions-for-cloud-administration-api/creating-and-managing-vdc-templates-api/create-a-vdc-template-with-networking-api.html){: external}. You can also include an edge gateway that is configured and enabled with [distributed routing](https://techdocs.broadcom.com/us/en/vmware-cis/cloud-director/vmware-cloud-director/10-6/vmware-cloud-director-service-provider-portal-guide-10-6/managing-networking-resources-admin/managing-nsx-v-edge-gateways-ag-admin/editing-the-nsx-v-edge-gateway-properties-admin/editing-the-nsx-v-edge-gateway-properties-admin.html){: external} and [DHCP](https://techdocs.broadcom.com/us/en/vmware-cis/cloud-director/vmware-cloud-director/10-6/-nsxp-10-6/edge-gateway-management/edge-dhcp-services.html){: external}. If you include the edge gateway name, then firewall rules are created for full outbound connectivity and a SNAT rule is created for mapping to an external IP address.
+Your VMware data center must include a [routed network](https://techdocs.broadcom.com/us/en/vmware-cis/cloud-director/vmware-cloud-director/10-6/-vcloud-api-programming-guide-for-service-providers-10-6/using-extensions-for-cloud-administration-api/creating-and-managing-vdc-templates-api/create-a-vdc-template-with-networking-api.html){: external}. You can also include an edge gateway that is configured and enabled with [distributed routing](https://techdocs.broadcom.com/us/en/vmware-cis/cloud-director/vmware-cloud-director/10-6/vmware-cloud-director-service-provider-portal-guide-10-6/managing-networking-resources-admin/managing-nsx-v-edge-gateways-ag-admin/){: external} and [DHCP](https://techdocs.broadcom.com/us/en/vmware-cis/cloud-director/vmware-cloud-director/10-6/-nsxp-10-6/edge-gateway-management/edge-dhcp-services.html){: external}. If you include the edge gateway name, then firewall rules are created for full outbound connectivity and a SNAT rule is created for mapping to an external IP address.
   
 Include the following values when you run the template.
   

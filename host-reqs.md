@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-13"
 
 keywords: satellite, hybrid, multicloud, endpoint capacity, endpoint limits, location endpoint limits, location endpoints, cloud endpoints, IBM Cloud Satellite, host setup, host system requirements
 
@@ -66,7 +66,7 @@ Review the following operating system support table for each Location type.
     - For the latest kernel information, see [{{site.data.keyword.redhat_openshift_notm}} on {{site.data.keyword.IBM_notm}} Cloud version information](/docs/openshift?topic=openshift-openshift_versions#os-sat).
 - Make sure that you use minimal RHEL images. Do not install the LAMP stack. Do not install virtualization technologies on the hosts, including `libvirtd` or `docker`.
 - Hosts can be physical or virtual machines. However, if your hosts are cloned virtual machines, be sure that each one has a unique network identity. For more information, see [Why aren't my hosts attaching to my location?](/docs/satellite?topic=satellite-host-not-attaching).
-- Red Hat CoreOS hosts must meet [minimum sizing requirements](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhcos) and [sufficient storage capacity](/docs/satellite?topic=satellite-reqs-host-storage). 
+- Red Hat CoreOS hosts must meet [minimum sizing requirements](/docs/satellite?topic=satellite-location-sizing) and [sufficient storage capacity](/docs/satellite?topic=satellite-reqs-host-storage). 
 - RHEL hosts must meet [minimum sizing requirements](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhel) and [sufficient storage capacity](/docs/satellite?topic=satellite-reqs-host-storage). 
 
 - RHEL hosts must have the `SELINUX=enforcing` policy set. You can verify that this policy is set by running the `sestatus` command and looking for `SELinux status: enabled` in the output.

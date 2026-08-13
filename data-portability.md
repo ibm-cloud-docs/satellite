@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2024
-lastupdated: "2024-11-12"
+  years: 2024, 2026
+lastupdated: "2026-08-13"
 
 keywords: data, portability
 
@@ -48,7 +48,7 @@ For more information, see [Satellite-enabled services](/docs/satellite?topic=sat
 | --- | --- |
 | Red Hat OpenShift on IBM Cloud | For data portability information, see [Understanding data portability for Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-data-portability). |
 | [`Rclone`](https://rclone.org/){: external} | When you create a Satellite location, you provide a COS bucket where your data is stored. You can use `rclone` to move this data from COS to another s3 storage provider. For an example scenario, see the [Migrating Cloud Object Storage (COS) apps and data between IBM Cloud accounts](/docs/openshift?topic=openshift-storage-cos-app-migration) tutorial for steps on using `rclone` to move data in one COS bucket to another COS bucket in IBM Cloud or in another cloud provider. Also, review [Using `rclone`](/docs/cloud-object-storage?topic=cloud-object-storage-rclone). |
-| [OpenShift APIs for Data Protection](https://access.redhat.com/articles/5456281){: external} (OADP) | OADP (OpenShift APIs for Data Protection) is an operator that Red Hat has created to create, backup, and restore APIs for OpenShift clusters. For more information, see [Backup and restore Red Hat OpenShift cluster applications with OADP](https://developer.ibm.com/tutorials/awb-backup-and-restore-redhat-openshift-clusters-with-oadp/){: external} and the [OADP documentation](https://docs.openshift.com/container-platform/4.17/backup_and_restore/application_backup_and_restore/oadp-intro.html){: external} |
+| [OpenShift APIs for Data Protection](https://access.redhat.com/articles/5456281){: external} (OADP) | OADP (OpenShift APIs for Data Protection) is an operator that Red Hat has created to create, backup, and restore APIs for OpenShift clusters. For more information, see [Backup and restore Red Hat OpenShift cluster applications with OADP](https://developer.ibm.com/tutorials/awb-backup-and-restore-redhat-openshift-clusters-with-oadp/){: external} and the [OADP documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/backup_and_restore/oadp-application-backup-and-restore#oadp-introduction){: external} |
 {: caption="Other options for exporting data" caption-side="bottom"}
 
 

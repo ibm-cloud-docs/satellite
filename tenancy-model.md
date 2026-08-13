@@ -234,7 +234,7 @@ After setting up the location and the control plane, create cluster and an API k
 1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, verify that your cluster reaches a **Normal** state.
 1. [Access your cluster](/docs/openshift?topic=openshift-access_cluster) to access the {{site.data.keyword.redhat_openshift_notm}} web console or to run `oc` and `kubectl` commands from the CLI. If you enabled {{site.data.keyword.satelliteshort}} Config access, you must complete this step to synchronize the permissions.
 
-    If your location hosts have private network connectivity only, or if you use Amazon Web Services, Google Cloud Platform, or Microsoft Azure hosts, you must be connected to your hosts' private network, such as through VPN access, to connect to your cluster and access the {{site.data.keyword.redhat_openshift_notm}} web console. Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's and location's DNS records to [use your hosts' public IP addresses](/docs/openshift?topic=openshift-access_cluster#sat_public_access).
+    If your location hosts have private network connectivity only, or if you use Amazon Web Services, Google Cloud Platform, or Microsoft Azure hosts, you must be connected to your hosts' private network, such as through VPN access, to connect to your cluster and access the {{site.data.keyword.redhat_openshift_notm}} web console. Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's and location's DNS records to [use your hosts' public IP addresses](/docs/openshift?topic=openshift-access_cluster#sat_public_ip).
     {: note}
 
 1. **Optional**: Set up an internal container image registry. For more information, see [Setting up the internal container image registry](/docs/openshift?topic=openshift-satellite-clusters-registry) in the {{site.data.keyword.openshiftlong_notm}} docs.
@@ -245,7 +245,7 @@ After setting up the location and the control plane, create cluster and an API k
 {: #create-api-tenancy}
 {: step}
 
-Follow the steps to [create an API that can be used in your client account](/docs/account?topic=account-userapikey&interface=ui).
+Follow the steps to [create an API that can be used in your client account](/docs/account?topic=account-userapikey#create_user_key&interface=ui).
 
 
 ### Setting up cluster admin and developer roles

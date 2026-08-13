@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-06-17"
+  years: 2022, 2026
+lastupdated: "2026-08-13"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -49,7 +49,7 @@ Allow hosts to communicate with {{site.data.keyword.iamshort}}.
 :    Your firewall must be Layer 7 to allow the IAM domain name. IAM does not have specific IP addresses that you can allow. If your firewall does not support Layer 7, you can allow all HTTPS network traffic on port 443.
 
 Allow hosts to communicate with Red Hat Container Registry.
-:    Allow your host machines to access the required sites for OpenShift Container Platform. For more information, see [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.
+:    Allow your host machines to access the required sites for OpenShift Container Platform. For more information, see [Configuring your firewall](https://docs.redhat.com/en/documentation/openshift_container_platform/4.8/html/installing/installation-configuration#configuring-firewall){: external}.
 
 Allow control plane nodes to communicate with the management plane.
 :    * Destination IP addresses:  130.198.65.82, 135.90.66.194, 168.1.58.90
