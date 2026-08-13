@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-13"
 
 keywords: satellite storage, csi, satellite configurations, block storage, CSI driver, IBM VPC block storage, Satellite storage
 
@@ -127,7 +127,7 @@ There is currently an issue with autocomplete in some browsers. If you don't see
 {: #ibm-vpc-block-csi-driver-config-create-api}
 {: api}
 
-1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/account?topic=account-iamtoken_from_apikey).
+1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/iam?topic=iam-iamtoken_from_apikey).
 
 1. Review the [parameter reference](#ibm-vpc-block-csi-driver-parameter-reference) for the template version that you want to use.
 
