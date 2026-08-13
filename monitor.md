@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-09"
+lastupdated: "2026-08-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -78,6 +78,7 @@ You can review the host health from the **Locations** table in the [{{site.data.
 | `provisioning` | The control plane for the {{site.data.keyword.satelliteshort}} is provisioning. You cannot assign hosts to other {{site.data.keyword.satelliteshort}} resources, such as clusters, in the location until the control plane is ready.|
 | `resolving` | {{site.data.keyword.satelliteshort}} is trying to resolve issues for you, such as by assigning available hosts to the control plane to relieve capacity issues. For more information, see the status message. |
 {: caption="Location health states" caption-side="bottom"}
+
 
 
 ### Viewing host health
