@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-30"
+  years: 2020, 2026
+lastupdated: "2026-08-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -122,5 +122,4 @@ Configuration files in {{site.data.keyword.satelliteshort}} Config
 You can have up to 40 instances of a supported {{site.data.keyword.cloud_notm}} service per {{site.data.keyword.satelliteshort}} location. For example, you might have a {{site.data.keyword.satelliteshort}} location that has 40 {{site.data.keyword.openshiftlong_notm}} clusters in it.
 {: shortdesc}
 
-Each supported service might have its own limitations to run in {{site.data.keyword.satelliteshort}}. Check the documentation of the supported service to understand the limitations.
-
+Each supported service can have its own limitations to run in {{site.data.keyword.satelliteshort}}. Check the documentation of the supported service to understand the limitations.

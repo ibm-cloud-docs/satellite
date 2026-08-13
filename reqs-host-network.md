@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-13"
 
 keywords: satellite, hybrid, multicloud, host network requirements, satellite, hybrid multicloud, network configuration, host setup
 
@@ -52,7 +52,7 @@ All hosts must meet the following network requirements:
 
 Hosts assigned to a specific {{site.data.keyword.redhat_openshift_notm}} cluster or to the control plane must share some properties, which can be different across clusters.
 - All {{site.data.keyword.satelliteshort}} hosts must have the same MTU values.
-- Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. You cannot block certain ports that might block communication across hosts.
+- Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. You cannot block certain ports that would block communication across hosts.
 
 ## Host network bandwidth
 {: #reqs-host-network-bandwidth}

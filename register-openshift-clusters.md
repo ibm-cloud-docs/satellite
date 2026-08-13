@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-13"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -23,7 +23,7 @@ After you complete these steps, the cluster can be added to a cluster group in y
 
 1. Find the cluster in the public cloud that you want to attach to {{site.data.keyword.satelliteshort}} Config. To list available clusters, run the `ibmcloud oc cluster ls` command or go to the [{{site.data.keyword.redhat_openshift_notm}} cluster dashboard](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
 
-    Do not manually register clusters that you created in a Satellite location. These clusters are automatically registered with {{site.data.keyword.satelliteshort}} Config. Registering them again manually might cause issues in your location or cluster.
+    Do not manually register clusters that you created in a Satellite location. These clusters are automatically registered with {{site.data.keyword.satelliteshort}} Config. Registering them again manually can cause issues in your location or cluster.
     {: note}
 
 2. From the {{site.data.keyword.satelliteshort}} [**Clusters**](https://cloud.ibm.com/satellite/clusters){: external} dashboard, click **Register cluster**.

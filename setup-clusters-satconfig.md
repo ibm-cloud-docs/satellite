@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-13"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -53,7 +53,7 @@ To customize access, or to add access for {{site.data.keyword.satelliteshort}} c
 
 2. For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}} Config access to manage Kubernetes resources. Choose from the following options: cluster admin access, custom access that is cluster-wide, or custom access that is scoped to a project. For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/reference/access-authn-authz/authorization/){: external}.
 
-    If you choose a custom access option, some {{site.data.keyword.satelliteshort}} Config components might not work. For example, if you grant access to view only certain resources, you cannot use subscriptions to create Kubernetes resources in your cluster group. To view an inventory of your Kubernetes resources in a cluster, {{site.data.keyword.satelliteshort}} Config must have an appropriate role that is bound to the `razee-viewer` service account. To deploy Kubernetes resources to a cluster by using subscriptions, {{site.data.keyword.satelliteshort}} Config must have an appropriate role bound to the `razee-editor` service account.
+    If you choose a custom access option, some {{site.data.keyword.satelliteshort}} Config components do not work. For example, if you grant access to view only certain resources, you cannot use subscriptions to create Kubernetes resources in your cluster group. To view an inventory of your Kubernetes resources in a cluster, {{site.data.keyword.satelliteshort}} Config must have an appropriate role that is bound to the `razee-viewer` service account. To deploy Kubernetes resources to a cluster by using subscriptions, {{site.data.keyword.satelliteshort}} Config must have an appropriate role bound to the `razee-editor` service account.
     {: note}
 
 

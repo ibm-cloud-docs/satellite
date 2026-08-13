@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-06-24"
+lastupdated: "2026-08-13"
 
 keywords:
 
@@ -29,7 +29,7 @@ Significant
 :   When the dependency is down, the service features are impacted.
 
 Medium
-:   When the dependency is down, the service might be impacted and a workaround is possible.
+:   When the dependency is down, the service can be impacted and a workaround is possible.
 
 Minimal
 :   When the dependency is down, the main service features are not impacted.
@@ -132,7 +132,7 @@ The **Dependencies** column lists the services. These are the major service to s
 ### What function does the dependency impact?
 {: #function-impact}
 
-Functions include access management, availability, change management, configuration management, customer responsibility, disaster recovery, instance control, operations, security compliance, or none. If the dependency goes offline, these functions might be impacted. Definitions for each available value are as follows:
+Functions include access management, availability, change management, configuration management, customer responsibility, disaster recovery, instance control, operations, security compliance, or none. If the dependency goes offline, these functions are impacted. Definitions for each available value are as follows:
 
 Access management
 :   Authentication, authorization, and governance of the customer users access to the service and service instances.
@@ -182,7 +182,7 @@ The table shows a standard cloud deployment. If a special deployment is used lik
 ### Where are the separate control plane and data plane located, if applicable?
 {: #separate-plans}
 
-Sometimes, the dependency might have a separate control plane and data plane. In these cases, there are separate lines that show the location in relation to the deployed customer instance of the service where these will be provisioned. The lines might have different impacts and different functions. See the **Control or data plane** column to understand what possible impact this type of outage might have.
+Sometimes, the dependency has a separate control plane and data plane. In these cases, there are separate lines that show the location in relation to the deployed customer instance of the service where these will be provisioned. The lines can have different impacts and different functions. See the **Control or data plane** column to understand what possible impact this type of outage can have.
 
 `Same region` means that the dependent services are in the same region as the provisioned instance. Other values might show `data center` or region names if the service must be used from a specific region, a specific zone, or set of zones. If a service is tied to a specific region or site, and the region goes offline, the service might go offline as well. It is recommended that you go through the high availability and disaster recovery documentation of the dependency to determine if there are any steps that you should take to mitigate these types of risks.
 

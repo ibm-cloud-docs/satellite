@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-04-17"
+  years: 2024, 2026
+lastupdated: "2026-08-13"
 
 keywords: satellite, endpoints, authentication
 
@@ -40,7 +40,7 @@ Review the following authentication options.
 [Mutual authentication between the source and the Satellite Link service as well as Satellite Link and the destination server](#mutual-auth-both-loc)
 :   Requests to both the Satellite Link service and the destination server are authenticated. Two TLS handshakes must be verified before traffic is allowed. For this setup, create an endpoint with a source protocol of TLS or HTTPS and a destination protocol of TLS. Then, provide the certificates needed for both the source and destination mutual authentication cases, as described above.
 
-If you choose to provide your own certificates for endpoint authentication, you are responsible for rotating the certificates and managing expiration dates. If your certificate expires, you might experience disrupted traffic.
+If you choose to provide your own certificates for endpoint authentication, you are responsible for rotating the certificates and managing expiration dates. If your certificate expires, traffic is disrupted.
 {: important}
 
 

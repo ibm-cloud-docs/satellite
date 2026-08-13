@@ -430,7 +430,7 @@ If you no longer need your Azure Disk configuration, you can remove your apps, P
 If you no longer plan on using Azure Disk storage in your cluster, you can use the CLI unassign your cluster from the storage configuration.
 {: shortdesc}
 
-Note that if you remove the storage configuration, the driver is then uninstalled from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
+Note that if you remove the storage configuration, the driver is then uninstalled from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you cannot access your data until you re-install the driver in your cluster again.
 {: important}
 
 

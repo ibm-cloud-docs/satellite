@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-05-10"
+  years: 2023, 2026
+lastupdated: "2026-08-13"
 
 keywords: satellite, connector
 
@@ -152,7 +152,6 @@ This section modifies the previous example to add support for TLS to Nginx.
     ```
     {: pre}
 
-The Nginx container IP address might change when the Nginx container is restarted. If that happens, you must update the Link endpoint destination address. 
+The Nginx container IP address changes when the Nginx container is restarted. If that happens, you must update the Link endpoint destination address. 
 
   
-

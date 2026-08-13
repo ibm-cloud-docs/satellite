@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-10"
+lastupdated: "2026-08-13"
 
 keywords: satellite, hybrid, multicloud, faq, service, host, location, frequently asked questions, IBM Cloud satellite
 
@@ -106,7 +106,7 @@ See the [{{site.data.keyword.cloud_notm}} terms of service](/docs/overview?topic
 
 To view detailed system requirements, you can run a [software product compatibility report for {{site.data.keyword.satellitelong_notm}}](https://www.ibm.com/software/reports/compatibility/clarity/index.html){: external}.
 
-Note that compliance also might depend on the setup of the underlying infrastructure provider that you use for the {{site.data.keyword.satelliteshort}} location control plane and other resources.
+Note that compliance can also depend on the setup of the underlying infrastructure provider that you use for the {{site.data.keyword.satelliteshort}} location control plane and other resources.
 {: important}
 
 {{site.data.keyword.satellitelong_notm}} implements controls commensurate with the following security standards:

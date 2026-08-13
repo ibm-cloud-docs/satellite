@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-13"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch, host, update, host update
 
@@ -23,7 +23,7 @@ Service clusters, which are the underlying platform for all {{site.data.keyword.
 {: note}
 
 What happens to my apps during an update?
-:    If you run apps as part of a deployment on worker nodes that you update, the apps are rescheduled onto other worker nodes in the cluster. These worker nodes might be in a different worker pool, or if you have stand-alone worker nodes, apps might be scheduled onto stand-alone worker nodes. To avoid downtime for your app, you must ensure that you have enough capacity in the cluster to carry the workload.
+:    If you run apps as part of a deployment on worker nodes that you update, the apps are rescheduled onto other worker nodes in the cluster. These worker nodes can be in a different worker pool, or if you have stand-alone worker nodes, apps can be scheduled onto stand-alone worker nodes. To avoid downtime for your app, you must ensure that you have enough capacity in the cluster to carry the workload.
 
 How can I control how many worker nodes go down at a time during an update or reload?
 :    If you need all your worker nodes to be up and running, consider [attaching](/docs/satellite?topic=satellite-attach-hosts) and [assigning](/docs/satellite?topic=satellite-assigning-hosts) additional hosts

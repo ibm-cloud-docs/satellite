@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-13"
 
 keywords: satellite, hybrid, multicloud, securing your data, secure data, information
 
@@ -43,7 +43,7 @@ Sensitive information
 ### Stored information from resources that you create in {{site.data.keyword.satelliteshort}}
 {: #sat-sensitive-data-user-added}
 
-Because {{site.data.keyword.satelliteshort}} is an extension of {{site.data.keyword.cloud_notm}} to your own environment, you create many resources whose metadata might be stored, backed up, and encrypted in {{site.data.keyword.satelliteshort}}.
+Because {{site.data.keyword.satelliteshort}} is an extension of {{site.data.keyword.cloud_notm}} to your own environment, you create many resources whose metadata is stored, backed up, and encrypted in {{site.data.keyword.satelliteshort}}.
 {: shortdesc}
 
 Do not use sensitive or personally identifiable information for the names, labels, tags, or other metadata for the following items.
@@ -98,7 +98,7 @@ You can find information about the data that is stored by your managed service b
 ## Which {{site.data.keyword.cloud_notm}} region is my information stored in?
 {: #sat_data-location}
 
-Where your {{site.data.keyword.satelliteshort}} information is stored depends on the {{site.data.keyword.cloud_notm}} region that manages the control plane of your {{site.data.keyword.satelliteshort}} location. By selecting the {{site.data.keyword.cloud_notm}} region that is closest to the infrastructure provider for your {{site.data.keyword.satelliteshort}} location, your data is automatically spread across zones in that region for high availability. Because the zones of an {{site.data.keyword.cloud_notm}} region might be in a different city or country than the infrastructure hosts that you bring to your {{site.data.keyword.satelliteshort}} location, make sure that your data can be stored in the selected {{site.data.keyword.cloud_notm}} region.
+Where your {{site.data.keyword.satelliteshort}} information is stored depends on the {{site.data.keyword.cloud_notm}} region that manages the control plane of your {{site.data.keyword.satelliteshort}} location. By selecting the {{site.data.keyword.cloud_notm}} region that is closest to the infrastructure provider for your {{site.data.keyword.satelliteshort}} location, your data is automatically spread across zones in that region for high availability. Because the zones of an {{site.data.keyword.cloud_notm}} region can be in a different city or country than the infrastructure hosts that you bring to your {{site.data.keyword.satelliteshort}} location, make sure that your data can be stored in the selected {{site.data.keyword.cloud_notm}} region.
 
 ## How can I remove my information?
 {: #sat-data-removal}

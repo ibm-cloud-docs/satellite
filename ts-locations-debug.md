@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-07-07"
+  years: 2020, 2026
+lastupdated: "2026-08-13"
 
 keywords: satellite, hybrid, multicloud, location error messages, location messages, location errors
 
@@ -363,7 +363,7 @@ Location message
 
 Steps to resolve
 
-:    The etcd data is backed up every 8 hours from your {{site.data.keyword.satelliteshort}} location control plane to a bucket in your {{site.data.keyword.cos_full_notm}} instance. If this backup consecutively fails 3 times over 24 hours, problems might exist with the {{site.data.keyword.cos_short}} bucket or service instance, or with your {{site.data.keyword.satelliteshort}} location's connection to the {{site.data.keyword.cos_short}} instance.
+:    The etcd data is backed up every 8 hours from your {{site.data.keyword.satelliteshort}} location control plane to a bucket in your {{site.data.keyword.cos_full_notm}} instance. If this backup consecutively fails 3 times over 24 hours, problems exist with the {{site.data.keyword.cos_short}} bucket or service instance, or with your {{site.data.keyword.satelliteshort}} location's connection to the {{site.data.keyword.cos_short}} instance.
 
 To determine where your problem exists,
 1. Ensure that the hosts that you assigned to the location control plane are able to access the {{site.data.keyword.cos_full_notm}} endpoint for the {{site.data.keyword.cloud_notm}} region that your location is managed from. For example, in your host firewall, you must allow outbound connectivity from your control plane hosts to the following endpoints.

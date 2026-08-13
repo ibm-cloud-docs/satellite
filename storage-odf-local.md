@@ -720,7 +720,7 @@ If you no longer need your OpenShift Data Foundation, you can remove your PVC, P
 If you no longer plan to use OpenShift Data Foundation in your cluster, you can remove the assignment from your cluster from the storage configuration.
 {: shortdesc}
 
-Note that if you remove the storage configuration, the ODF operators is then uninstalled from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
+Note that if you remove the storage configuration, the ODF operators is then uninstalled from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you cannot access your data until you re-install the driver in your cluster again.
 {: important}
 
 1. Run the following command to delete your ODF storage assignment.

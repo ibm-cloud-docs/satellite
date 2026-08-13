@@ -124,7 +124,7 @@ Adding clusters to {{site.data.keyword.satelliteshort}} Configuration does not a
 ### Viewing {{site.data.keyword.satelliteshort}} Config registration status for clusters
 {: #satconfig-registration-status}
 
-You can view the registration status of clusters that are enabled for use with {{site.data.keyword.satelliteshort}} Config. Keep in mind that some clusters might be in a public cloud location, not your {{site.data.keyword.satelliteshort}} location.
+You can view the registration status of clusters that are enabled for use with {{site.data.keyword.satelliteshort}} Config. Keep in mind that some clusters can be in a public cloud location, not your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
 1. List clusters that are registered with {{site.data.keyword.satelliteshort}} Config. Note the output in the **Status** and **Location** columns.

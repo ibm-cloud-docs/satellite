@@ -346,7 +346,7 @@ If you no longer need your VMware configuration, you can remove your apps, PVCs,
 If you no longer plan on using VMware in your cluster, you can use the CLI unassign your cluster from the storage configuration.
 {: shortdesc}
 
-Removing the storage configuration removes the driver from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
+Removing the storage configuration removes the driver from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you cannot access your data until you re-install the driver in your cluster again.
 {: important}
 
 ### Removing the VMWare storage configuration using the console
