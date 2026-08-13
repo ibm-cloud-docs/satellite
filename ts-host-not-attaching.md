@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2025
-lastupdated: "2025-07-23"
+  years: 2026
+lastupdated: "2026-08-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -21,7 +21,7 @@ content-type: troubleshoot
 When you run your host attach script, some hosts are not attaching to your location, but you do not receive an error message. Your host machines are virtual machine clones.
 {: tsSymptoms}
 
-Network identities of virtual machines that are attached to the same location must be unique. If you are using cloned virtual machines, these clones might not have a unique network identity and Satellite cannot attach them all to the location. To verify that the network identities are not unique, SSH into the host and run the following commands.
+Network identities of virtual machines that are attached to the same location must be unique. If you are using cloned virtual machines, these clones can lack a unique network identity and Satellite cannot attach them all to the location. To verify that the network identities are not unique, SSH into the host and run the following commands.
 {: tsCauses}
 
 ```sh

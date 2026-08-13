@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-13"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -471,7 +471,7 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
 If you no longer plan on using local block storage in your cluster, you can unassign your cluster from the storage configuration. 
 {: shortdesc}
 
-Note that if you remove the storage configuration, the local storage operator resources and the `sat-local-block-gold` storage class are then uninstalled from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again. 
+Note that if you remove the storage configuration, the local storage operator resources and the `sat-local-block-gold` storage class are then uninstalled from all assigned clusters. Your PVCs, PVs and data are not removed. However, you cannot access your data until you re-install the driver in your cluster again. 
 {: important}
 
 

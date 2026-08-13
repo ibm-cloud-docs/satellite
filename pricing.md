@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-10"
+lastupdated: "2026-08-13"
 
 keywords: satellite, hybrid, multicloud, pricing, service, billing, charges
 
@@ -21,7 +21,7 @@ subcollection: satellite
 {: shortdesc}
 
 Flexible consumption
-:    No charges are incurred for hosts that are attached to a location, but not assigned to a resource. You can have as many hosts waiting in your location without being charged for future growth. As soon as you unassign a host from a resource, you are no longer charged for that host. Keep in mind that hosts might be automatically assigned to services, depending on your setup.
+:    No charges are incurred for hosts that are attached to a location, but not assigned to a resource. You can have as many hosts waiting in your location without being charged for future growth. As soon as you unassign a host from a resource, you are no longer charged for that host. Keep in mind that hosts can be automatically assigned to services, depending on your setup.
 
 Application and networking capabilities at no additional charge
 :   You do not have separate charges for {{site.data.keyword.satelliteshort}} management capabilities for the locations, hosts, such as endpoints, configuration versions and subscriptions, or other {{site.data.keyword.satelliteshort}} resources.

@@ -364,7 +364,7 @@ If you no longer need your Google Compute Engine configuration, you can remove y
 If you no longer plan on using your persistent disk storage in your cluster, you can use the CLI unassign your cluster from the storage configuration.
 {: shortdesc}
 
-Note that if you remove the storage configuration, the driver is then uninstalled from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
+Note that if you remove the storage configuration, the driver is then uninstalled from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you cannot access your data until you re-install the driver in your cluster again.
 {: important}
 
 ### Removing the Google Compute Engine storage configuration from the console

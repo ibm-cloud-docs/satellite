@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-02-03"
+  years: 2022, 2026
+lastupdated: "2026-08-13"
 
 keywords: satellite, hybrid, multicloud, disconnected use, disconnected usage, disconnect
 
@@ -41,7 +41,7 @@ Do I have to recover etcd backup?
 :   If you are using RHCOS hosts, you don't need to recover etcd backup. The Location recovers automatically after you reconnect it and re-authenticate. However, locations that use RHEL might need to recover etcd.
 
 What happens if a location stays disconnected for more than 7 days?
-:   After you restore your connection, you might need to replace all hosts across the location with new infrastructure.
+:   After you restore your connection, you must replace all hosts across the location with new infrastructure.
 
 How do I know when to reconnect a location?
 :   You can make a note or set a reminder to reconnect the location before the 7-day window expires. The timer starts when you request the token. 

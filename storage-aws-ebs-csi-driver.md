@@ -398,7 +398,7 @@ If you no longer plan on using AWS EBS storage in your cluster, you can unassign
 Note that you must delete your storage assignments before you can successfully delete your storage configuration. 
 {: important}
 
-Note that if you remove the storage configuration, the driver is then uninstalled from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you reinstall the driver in your cluster again.
+Note that if you remove the storage configuration, the driver is then uninstalled from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you cannot access your data until you reinstall the driver in your cluster again.
 {: important}
 
 

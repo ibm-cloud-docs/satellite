@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-13"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -50,7 +50,7 @@ What version is applied when replacing control plane nodes?
 :   The new nodes minor version matches the control plane's minor version. The patch version is the latest worker patch version which contains the most recent vulnerability fixes.
 
 Does the control plane version need to match the cluster version?
-:    No. The Satellite location version used in the control plane might not always match the version that is used in cluster hosts. While the control plane is updated by you, the latest control plane version available is determined by IBM. The cluster hosts might use a version later than the control plane.
+:    No. The Satellite location version used in the control plane does not always match the version that is used in cluster hosts. While the control plane is updated by you, the latest control plane version available is determined by IBM. The cluster hosts can use a version later than the control plane.
 
 How can I avoid downtime when updating the control plane?
 :   By following the update process, you ensure that all control plane components are able to run on a node and there won't be any disruptions. Make sure that you only update one worker at a time and leave enough time for a node to fully functional before starting the next one.

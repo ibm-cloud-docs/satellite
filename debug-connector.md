@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-06-05"
+  years: 2023, 2026
+lastupdated: "2026-08-13"
 
 keywords: satellite, hybrid, multicloud, connector, create connector
 
@@ -116,9 +116,9 @@ If your agent container is listed in the Active Agents tab on the console, follo
     {: screen}
 
  
-1. If you don’t see any `flowlog`  entries, ensure your {{site.data.keyword.cloud_notm}} application has access to the CSE endpoint and is using the correct endpoint address and port. For example, if you are using a VPC instance or a VPC Kubernetes cluster, a security group might be blocking access. Ensure your security groups allow traffic from your VPC to the CSE endpoint IP and port.
+1. If you don't see any `flowlog`  entries, ensure your {{site.data.keyword.cloud_notm}} application has access to the CSE endpoint and is using the correct endpoint address and port. For example, if you are using a VPC instance or a VPC Kubernetes cluster, a security group can block access. Ensure your security groups allow traffic from your VPC to the CSE endpoint IP and port.
   
-1. Verify that your endpoint is configured correctly and the on-prem application is listening on the configured Destination FQDN or IP and Destination Port. If your on-prem application is using a container, its IP address might have changed. For more information, see [Why can't I reach my endpoint from IBM Cloud](/docs/satellite?topic=satellite-ts-connector-cannot-reach).
+1. Verify that your endpoint is configured correctly and the on-prem application is listening on the configured Destination FQDN or IP and Destination Port. If your on-prem application is using a container, its IP address can change. For more information, see [Why can't I reach my endpoint from IBM Cloud](/docs/satellite?topic=satellite-ts-connector-cannot-reach).
   
 1. If you are running multiple agents to the same Connector, ensure all agents have network access to the endpoint. Each connection request is routed to a random agent and therefore all agents must have network connectivity to the all the on-prem endpoints. There is no mechanism to target an individual agent for a specific Connector.
 

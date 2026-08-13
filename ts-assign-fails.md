@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-10"
+lastupdated: "2026-08-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -60,7 +60,7 @@ Otherwise, remove the host, reload the operating system, and attach the host bac
         ```
         {: pre}
 
-    5. Check connectivity to the cluster master. If the curl request fails, your host might not have access to the endpoint, such as blocked by a security group, firewall, or private network.
+    5. Check connectivity to the cluster master. If the curl request fails, your host does not have access to the endpoint, such as because access is blocked by a security group, firewall, or private network.
         ```sh
         curl -k <master_URL>
         ```
