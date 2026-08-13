@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-13"
 
 keywords: satellite, control plane, location control plane, location, satellite location, create location, create control plane
 
@@ -71,6 +71,7 @@ To attach hosts as worker nodes to the control plane,
     {: screen}
 
 9. To continue to use the location for production workloads, repeat these steps to attach more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts. For more information, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-location-sizing#control-plane-attach-capacity).
+
 
 ## Setting up the control plane from the CLI
 {: #control-plane-cli}
