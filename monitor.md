@@ -105,6 +105,7 @@ You can review the host health from the **Hosts** table in the [{{site.data.keyw
 When you view the **Hosts** table in the {{site.data.keyword.satelliteshort}} console, control plane hosts that need attention display updated status labels. The **Action required** label (formerly **Warning**) indicates that the host needs your attention. The **Replacement required** label indicates that the host is significantly out of date and must be replaced. Both statuses display a tooltip that links to the [host update procedure](/docs/satellite?topic=satellite-host-update-location#host-update-cp-procedure). For more information, see [Identifying control plane hosts that need updating](/docs/satellite?topic=satellite-host-update-location#host-update-identify-cli).
 
 
+
 ### Viewing cluster health
 {: #cluster-health}
 
