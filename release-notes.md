@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, release notes, changes, IBM Cloud satellite, updates, storage templates, connector agent
 

@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-12-04"
+  years: 2022, 2026
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 

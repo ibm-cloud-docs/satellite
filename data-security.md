@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, securing your data, secure data, information
 
@@ -35,10 +35,10 @@ Personal information
 :    The email address of the {{site.data.keyword.cloud_notm}} account that created the location.
 
 Sensitive information
-:    - The TLS certificate and secret that is used for the assigned {{site.data.keyword.satelliteshort}} control plane domain.
-     - The certificate authority that is used for the TLS certificate.
-     - An {{site.data.keyword.IBM_notm}}-owned encryption key for each location that is used to encrypt the TLS certificates, secrets, and certificate authority of the {{site.data.keyword.satelliteshort}} control plane domain.
-     - {{site.data.keyword.satelliteshort}} control plane and {{site.data.keyword.satelliteshort}} cluster data that can be used to restore the control plane and clusters in a disaster.
+:    - The Transport Layer Security (TLS) certificate and secret used for the assigned {{site.data.keyword.satelliteshort}} control plane domain.
+     - The certificate authority (CA) used to sign the TLS certificate.
+     - An {{site.data.keyword.IBM_notm}}-owned encryption key for each location, used to encrypt the TLS certificates, secrets, and CA of the {{site.data.keyword.satelliteshort}} control plane domain.
+     - {{site.data.keyword.satelliteshort}} control plane and cluster data required to restore the control plane and clusters after a disaster.
 
 ### Stored information from resources that you create in {{site.data.keyword.satelliteshort}}
 {: #sat-sensitive-data-user-added}
@@ -75,19 +75,19 @@ Review the following image to see how your personal and sensitive information is
 (2) TLS certificate, TLS secret, and certificate authority to encrypt the {{site.data.keyword.satelliteshort}} control plane domain
 :   Review the location, access, backup, and encryption details for TLS secret and CA information.
     - **Location**: Data is backed up from the {{site.data.keyword.satelliteshort}} persistent storage instance to an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_full_notm}} instance.
-    - **Access and data management**: Access to the {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_full_notm}} service instance is controlled by {{site.data.keyword.iamshort}} (IAM) and granted to the {{site.data.keyword.satelliteshort}} service team and {{site.data.keyword.IBM_notm}} Site Reliability Engineers (SRE) only.
-    - **Backup**: Every hour
-    - **Encryption**: All backup data is protected in transit and at rest by a root key that {{site.data.keyword.IBM_notm}} creates and stores in an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.keymanagementservicelong_notm}} service instance.
+    - **Access and data management**: Access to the {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_full_notm}} service instance is controlled by {{site.data.keyword.iamshort}} (IAM) and restricted to the {{site.data.keyword.satelliteshort}} service team and {{site.data.keyword.IBM_notm}} Site Reliability Engineers (SREs) only.
+    - **Backup frequency**: Every hour
+    - **Encryption**: All backup data is encrypted in transit and at rest using a root key that {{site.data.keyword.IBM_notm}} creates and stores in an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.keymanagementservicelong_notm}} service instance.
     
 (3) All {{site.data.keyword.satelliteshort}} control plane and cluster data
 :   Review the location, access, backup, and encryption details for control plane and cluster data.
-    - **Location**: Cluster data such as etcd data is backed up from the {{site.data.keyword.satelliteshort}} persistent storage instance to a customer-owned {{site.data.keyword.cos_full_notm}} instance. Control plane data such as location data is sent to the {{site.data.keyword.cos_full_notm}}. You must have an existing {{site.data.keyword.cos_full_notm}} instance when you create the location. You can specify an existing bucket in the {{site.data.keyword.cos_full_notm}} instance that you want {{site.data.keyword.satelliteshort}} to use. Otherwise, a new bucket is automatically created in your {{site.data.keyword.cos_short}} instance on your behalf. management plane data is backed up by {{site.data.keyword.IBM_notm}} and stored in an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_short}} instance. {{site.data.keyword.satelliteshort}} cluster master data is backed up to the {{site.data.keyword.cos_short}} instance that you own.
+    - **Location**: Cluster data, including etcd (distributed key-value store) data, is backed up from the {{site.data.keyword.satelliteshort}} persistent storage instance to a customer-owned {{site.data.keyword.cos_full_notm}} instance. Control plane data, including location data, is sent to {{site.data.keyword.cos_full_notm}}. An existing {{site.data.keyword.cos_full_notm}} instance is required when you create the location. Specify an existing bucket in the instance for {{site.data.keyword.satelliteshort}} to use, or a new bucket is automatically created in your {{site.data.keyword.cos_short}} instance. management plane data is backed up by {{site.data.keyword.IBM_notm}} and stored in an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_short}} instance. {{site.data.keyword.satelliteshort}} cluster master data is backed up to the {{site.data.keyword.cos_short}} instance that you own.
     - **Access and data management**: Access to the customer-owned {{site.data.keyword.cos_full_notm}} service instance is controlled by IAM.
-    - **etcd Backup**: Every 8 hours
-    - **Location control plane Backup**: Every hour
-    - **Encryption**: Data is automatically encrypted by using the default built-in encryption mechanisms in {{site.data.keyword.cos_full_notm}}. You can further choose to protect your data by using a root key in {{site.data.keyword.keymanagementservicelong_notm}} and use the key to encrypt the data in your bucket. For more information, see the [{{site.data.keyword.cos_full_notm}} documentation](/docs/cloud-object-storage?topic=cloud-object-storage-encryption).
+    - **etcd backup frequency**: Every 8 hours
+    - **Location control plane backup frequency**: Every hour
+    - **Encryption**: Data is automatically encrypted using the default built-in encryption mechanisms in {{site.data.keyword.cos_full_notm}}. To add an additional layer of protection, enable a customer-managed root key in {{site.data.keyword.keymanagementservicelong_notm}} to encrypt data in your bucket. For more information, see the [{{site.data.keyword.cos_full_notm}} documentation](/docs/cloud-object-storage?topic=cloud-object-storage-encryption).
 
-The time to recover a location or cluster depends on the size of the location or cluster and the network latency between {{site.data.keyword.cloud_notm}} and your host infrastructure. 
+Recovery time for a location or cluster is determined by the size of the environment and the network latency between {{site.data.keyword.cloud_notm}} and your host infrastructure.
 {: note}
 
 ## Where can I find information about the data that my managed services store?

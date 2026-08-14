@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, requirements, outbound, network, allowlist, IBM Cloud Satellite, host network requirements, outbound connectivity
 

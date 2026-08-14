@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, faq, service, host, location, frequently asked questions, IBM Cloud satellite
 
@@ -38,7 +38,7 @@ For more information, see the [{{site.data.keyword.satelliteshort}} product page
 {: faq}
 {: support}
 
-Because you bring your own compute host infrastructure to your {{site.data.keyword.satelliteshort}} location, you can choose to host this infrastructure anywhere you need it. However, to monitor malicious activity and apply updates to your location, these compute hosts are managed by an {{site.data.keyword.cloud_notm}} multizone region that is supported by {{site.data.keyword.satellitelong_notm}}. You can choose any of the supported regions, but to reduce latency between {{site.data.keyword.cloud_notm}} and your {{site.data.keyword.satelliteshort}} location, choose the region that is closest to your compute hosts.
+Because you bring your own compute host infrastructure to your {{site.data.keyword.satelliteshort}} location, you choose where to host that infrastructure. To monitor malicious activity and apply updates, those compute hosts are managed by an {{site.data.keyword.cloud_notm}} multizone region that {{site.data.keyword.satellitelong_notm}} supports. Select the region closest to your compute hosts to minimize round-trip latency between {{site.data.keyword.cloud_notm}} and your {{site.data.keyword.satelliteshort}} location.
 
 For more information, see [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions).
 
@@ -47,14 +47,14 @@ For more information, see [Supported {{site.data.keyword.cloud_notm}} locations]
 {: faq}
 {: support}
 
-The {{site.data.keyword.satellitelong_notm}} service architecture and infrastructure is designed to ensure reliability, low processing latency, and a maximum uptime of the service. By default, every location is managed by a highly available {{site.data.keyword.satelliteshort}} control plane that consists of a management plane and worker nodes. For an overview of potential points of failures and your options to increase the availability of your location and control plane, see [High availability for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-sat-ha-dr).
+The {{site.data.keyword.satellitelong_notm}} service architecture and infrastructure is designed to ensure reliability, low processing latency, and maximum service uptime. Every location is managed by a highly available {{site.data.keyword.satelliteshort}} control plane that consists of a management plane and worker nodes, distributed across three availability zones within one {{site.data.keyword.cloud_notm}} multizone metro. For an overview of potential points of failure and options to increase the availability of your location and control plane, see [High availability for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-sat-ha-dr).
 
 ## What happens if my {{site.data.keyword.satelliteshort}} control plane becomes unavailable?
 {: #control-plane-unavailable}
 {: faq}
 {: support}
 
-Every location is securely connected to the {{site.data.keyword.cloud_notm}} multizone region that manages your location by using the {{site.data.keyword.satelliteshort}} Link component. The link component runs in your control plane and is the main gateway for any communication between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}. If your {{site.data.keyword.satelliteshort}} location cannot communicate with the {{site.data.keyword.cloud_notm}} multizone region anymore, your existing location workloads will continue to run, but you cannot make any configuration changes or roll out updates to the services and apps that run in your location.
+Every location is securely connected to the {{site.data.keyword.cloud_notm}} multizone region that manages it through the {{site.data.keyword.satelliteshort}} Link component. The Link component runs in your control plane and serves as the primary gateway for all communication between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}. When your {{site.data.keyword.satelliteshort}} location loses connectivity to the {{site.data.keyword.cloud_notm}} multizone region, existing location workloads continue to run uninterrupted, but configuration changes and update rollouts to services and apps in your location are blocked until connectivity is restored.
 
 For an overview of your options to make the {{site.data.keyword.satelliteshort}} control plane more highly available to prevent connectivity issues with your {{site.data.keyword.cloud_notm}} multizone region, see [High availability for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-sat-ha-dr).
 
@@ -102,15 +102,17 @@ See the [{{site.data.keyword.cloud_notm}} terms of service](/docs/overview?topic
 {: #standards}
 {: faq}
 
-{{site.data.keyword.cloud_notm}} is built by following many data, finance, health, insurance, privacy, security, technology, and other international compliance standards. For more information, see [{{site.data.keyword.cloud_notm}} compliance](/docs/overview?topic=overview-compliance).
+{{site.data.keyword.cloud_notm}} is built by following data, finance, health, insurance, privacy, security, technology, and other international compliance standards. For more information, see [{{site.data.keyword.cloud_notm}} compliance](/docs/overview?topic=overview-compliance).
 
-To view detailed system requirements, you can run a [software product compatibility report for {{site.data.keyword.satellitelong_notm}}](https://www.ibm.com/software/reports/compatibility/clarity/index.html){: external}.
+To view detailed system requirements, run a [software product compatibility report for {{site.data.keyword.satellitelong_notm}}](https://www.ibm.com/software/reports/compatibility/clarity/index.html){: external}.
 
-Note that compliance can also depend on the setup of the underlying infrastructure provider that you use for the {{site.data.keyword.satelliteshort}} location control plane and other resources.
+Compliance also depends on the setup of the underlying infrastructure provider that you use for the {{site.data.keyword.satelliteshort}} location control plane and other resources. You are responsible for compliance of your own infrastructure.
 {: important}
 
 {{site.data.keyword.satellitelong_notm}} implements controls commensurate with the following security standards:
-- International Organization for Standardization (ISO 27001, ISO 27017, ISO 27018)
+- International Organization for Standardization 27001 (ISO 27001) — information security management
+- ISO 27017 — security controls for cloud services
+- ISO 27018 — protection of personally identifiable information (PII) in public clouds
 
 
 ## What {{site.data.keyword.cloud_notm}} services can I use with {{site.data.keyword.satelliteshort}}?
@@ -120,9 +122,9 @@ Note that compliance can also depend on the setup of the underlying infrastructu
 
 For a complete list of {{site.data.keyword.cloud_notm}} services that you can deploy to your {{site.data.keyword.satelliteshort}} location, see {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services. 
 
-Keep in mind that each service might:
-* Be available for {{site.data.keyword.satelliteshort}} locations that are managed from select {{site.data.keyword.cloud_notm}} regions only, such as from Washington, DC or London.
-* Have its own [limitations for use in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-requirements#reqs-services).
+Each service in the catalog has the following constraints:
+* Availability is limited to {{site.data.keyword.satelliteshort}} locations managed from select {{site.data.keyword.cloud_notm}} regions, such as Washington, DC or London. See the service documentation for supported regions.
+* Service-specific [limitations for use in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-requirements#reqs-services) apply.
 
 
 ## What managed add-ons can I use with {{site.data.keyword.redhat_openshift_notm}} clusters in my {{site.data.keyword.satelliteshort}} location?

@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-10-10"
+  years: 2022, 2026
+lastupdated: "2026-08-14"
 
 keywords: satellite, multicloud, location, locations, control plane, remote workers
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 
 keywords: high availability, disaster recover, HA, DR, responsibilities

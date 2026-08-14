@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite storage, csi, satellite configurations, block storage, CSI driver, IBM VPC block storage, Satellite storage
 

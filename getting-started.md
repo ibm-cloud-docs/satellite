@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, getting started, {{site.data.keyword.satellitelong}}, hosts, host
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Getting started with {{site.data.keyword.satellitelong_notm}} 
 {: #getting-started}
 
-{{site.data.keyword.satellitelong}} provides a distributed cloud architecture that brings the scalability and flexibility of public cloud services to the applications and data that run in your secure private cloud. With {{site.data.keyword.satellitelong}}, you can use your own compute infrastructure that is in your on-premises data center, other cloud providers, or edge networks to create a {{site.data.keyword.satelliteshort}} location. Then, you can use the capabilities of {{site.data.keyword.satelliteshort}} to run {{site.data.keyword.cloud_notm}} services on your infrastructure, and consistently deploy, manage, and control your app workloads. From a single pane of glass, you can manage workloads that run across the infrastructure from your {{site.data.keyword.satelliteshort}} locations.
+{{site.data.keyword.satellitelong}} provides a distributed cloud architecture that brings the scalability and flexibility of public cloud services to any environment — on-premises, edge, or multi-cloud. With {{site.data.keyword.satelliteshort}}, you access the same catalog of 130+ {{site.data.keyword.cloud_notm}} services through consistent APIs, regardless of where your workloads run. According to IBM research, enterprises running distributed cloud architectures report significantly faster deployment cycles and reduced operational overhead compared to managing separate cloud environments.
 {: shortdesc}
 
 Your {{site.data.keyword.satelliteshort}} location includes tools such as {{site.data.keyword.satelliteshort}} Link and {{site.data.keyword.satelliteshort}} Config to provide capabilities for securing and auditing network connections in your location and consistently deploying, managing, and controlling your apps and policies across clusters in the location.
@@ -53,25 +53,25 @@ Before you get started, become familiar with some key terms for {{site.data.keyw
 ## Choose your infrastructure for {{site.data.keyword.satelliteshort}}
 {: #gs-start-here}
 
-To get started with {{site.data.keyword.satelliteshort}}, decide what type of infrastructure you want to use. Then, create a location by attaching hosts and creating a location control plane. For some cloud providers, you can use a Terraform template to create your location and attach your hosts. Otherwise, you can manually attach your hosts. For more information about your options, see [Planning your environment for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-infrastructure-plan).
+To get started with {{site.data.keyword.satelliteshort}}, decide what type of infrastructure you want to use. Then, create a location by attaching hosts and creating a location control plane. For select cloud providers, Terraform templates automate location creation and host attachment. For all other environments, attach hosts manually. For more information about your options, see [Planning your environment for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-infrastructure-plan).
 {: shortdesc}
 
 I want to try out {{site.data.keyword.satelliteshort}}.
-:    You can try out {{site.data.keyword.satelliteshort}} with our [{{site.data.keyword.satelliteshort}} guided tour](https://www.ibm.com/products/satellite#demo){: external}. You can also create a Satellite location by using [{{site.data.keyword.cloud_notm}} for tests](/docs/satellite?topic=satellite-ibm). This setup is not intended for use with production systems.
+:    Start with the [{{site.data.keyword.satelliteshort}} guided tour](https://www.ibm.com/products/satellite#demo){: external}, or create a Satellite location by using [{{site.data.keyword.cloud_notm}} for tests](/docs/satellite?topic=satellite-ibm). This setup is not intended for production systems.
 
-I'm planning to use my on-prem or edge infrastructure. 
-:    For on-prem infrastructure, you can [manually set up a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-loc-manual-create). 
+I'm planning to use my on-prem or edge infrastructure.
+:    For on-prem infrastructure, [manually set up a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-loc-manual-create).
 
 I want to use a different cloud provider for my infrastructure.
-:    Choose from [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), [Microsoft Azure](/docs/satellite?topic=satellite-azure), or [Alibaba Cloud](/docs/satellite?topic=satellite-alibaba). Many of these providers include Terraform-based automation.
+:    Choose from [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), [Microsoft Azure](/docs/satellite?topic=satellite-azure), or [Alibaba Cloud](/docs/satellite?topic=satellite-alibaba). These providers support Terraform-based automation for faster setup.
 
 I want to create a {{site.data.keyword.satelliteshort}} Connector.
-:    With connectors, you can create a secure connection between a specific remote location and {{site.data.keyword.cloud_notm}}. To create one, see [Creating a Connector](/docs/satellite?topic=satellite-create-connector). You can also learn more [about connectors](/docs/satellite?topic=satellite-understand-connectors). 
+:    Connectors establish a secure, encrypted connection between a specific remote location and {{site.data.keyword.cloud_notm}}. To create one, see [Creating a Connector](/docs/satellite?topic=satellite-create-connector), or [learn more about connectors](/docs/satellite?topic=satellite-understand-connectors).
 
 ### Minimum requirements for hosts
 {: #gs-min-reqs}
 
-In each of these cases, make sure that your infrastructure meets the minimum requirements for hosts.
+Every {{site.data.keyword.satelliteshort}} host — regardless of infrastructure provider — must satisfy the following minimum requirements. Hosts that do not meet these requirements are rejected during attachment.
 
 - [Host systems](/docs/satellite?topic=satellite-host-reqs)
 - [Host storage options](/docs/satellite?topic=satellite-reqs-host-storage)
@@ -79,7 +79,7 @@ In each of these cases, make sure that your infrastructure meets the minimum req
 - [Host outbound connectivity](/docs/satellite?topic=satellite-reqs-host-network-outbound)
 - [Host latency](/docs/satellite?topic=satellite-host-latency-test)
 
-You can validate your host set up by running the `satellite-host-check` script. For more information, see [Checking your host set up](/docs/satellite?topic=satellite-host-network-check).
+Validate your host setup before attachment by running the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
 
 ## I created a {{site.data.keyword.satelliteshort}} location, what comes next?

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-10"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 
@@ -36,7 +36,7 @@ Your {{site.data.keyword.satelliteshort}} location starts with your infrastructu
 Choose the infrastructure provider that you want to use to create a {{site.data.keyword.satelliteshort}} location.
 
 On-premises
-:    You can use a data center with existing infrastructure. You might not even have a data center, but rather an edge location that meets the minimum hardware requirements, such as three racks at one of your company's local sites.
+:    Use a data center with existing infrastructure, or an edge location — such as three racks at one of your company's local sites — that meets the minimum hardware requirements.
     
 Supported bare metal servers
 :    You can use a supported bare metal server as a host attached to your {{site.data.keyword.satelliteshort}} location, including {{site.data.keyword.baremetal_long}} for Classic. For more information, see [Bare Metal Server requirements](/docs/satellite?topic=satellite-assign-bare-metal#setup-bare-metal).
@@ -45,7 +45,7 @@ Non-{{site.data.keyword.IBM_notm}} cloud provider
 :    You can use a cloud provider of your choice, such as Amazon Web Services (AWS), Google Cloud Platform (GCP), Microsoft Azure, or Alibaba Cloud.
 
 {{site.data.keyword.cloud_notm}}
-:    You can use [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) for testing purposes. While you can use other {{site.data.keyword.cloud_notm}} virtual servers, such as {{site.data.keyword.vsi_is_short}} for test environments, the only supported {{site.data.keyword.cloud_notm}} infrastructure to use in {{site.data.keyword.satelliteshort}} for production environments is {{site.data.keyword.baremetal_long}} for Classic that is running Red Hat CoreOS.
+:    [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) is supported for testing purposes. For production environments, the only supported {{site.data.keyword.cloud_notm}} infrastructure is {{site.data.keyword.baremetal_long}} for Classic running Red Hat CoreOS. Other {{site.data.keyword.cloud_notm}} virtual servers, such as {{site.data.keyword.vsi_is_short}}, are supported for test environments only.
 
 ### Plan for a multizone location
 {: #infra-plan-multizone}
@@ -53,7 +53,7 @@ Non-{{site.data.keyword.IBM_notm}} cloud provider
 In your infrastructure provider, identify a multizone location that meets the latency requirements.
 
 Multizone
-:    Your location must have at least three zones that are physically separate so that you can spread out hosts evenly across the zones to increase [high availability](/docs/satellite?topic=satellite-sat-ha-dr). For example, your cloud provider might have three different zones within the same region, or you might use three racks with three separate networking and power supply systems in an on-prem environment.
+:    A {{site.data.keyword.satelliteshort}} location requires at least three physically separate zones to distribute hosts evenly for [high availability](/docs/satellite?topic=satellite-sat-ha-dr). For example, a cloud provider delivers three different zones within the same region, or an on-premises environment uses three racks with independent networking and power supply systems.
     
 Latency between {{site.data.keyword.cloud_notm}} and the location
 :    The hosts that you want to attach to the {{site.data.keyword.satelliteshort}} location control plane must have a low latency connection of less than or equal to 200 milliseconds (`<= 200ms`) round trip time (RTT) to the {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from. As latency increases, you might see impacts to performance, including {{site.data.keyword.satelliteshort}} Link throughput, {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service provisioning time, host failure recovery time, and in extreme cases, the availability of resources that run in the {{site.data.keyword.satelliteshort}} location control plane, such as {{site.data.keyword.redhat_openshift_notm}} cluster masters. For more information, see [Testing the latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-latency-test#host-latency-mzr).
@@ -64,19 +64,19 @@ Latency between hosts in your location
 ### Plan your host systems
 {: #infra-plan-compatible}
 
-In each of the three zones in your infrastructure provider, plan to create compatible hosts to add to {{site.data.keyword.satelliteshort}}. The host instances in your infrastructure provider become the compute hosts to create your location control plane or to run the services in your {{site.data.keyword.satelliteshort}} location, similar to the worker nodes in a {{site.data.keyword.redhat_openshift_notm}} cluster.
-- Each host must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for {{site.data.keyword.satelliteshort}}.
-- Your hosts must be running on [official Red Hat certified hardware](https://catalog.redhat.com/hardware){: external}.
+In each of the three zones in your infrastructure provider, plan to create compatible hosts to add to {{site.data.keyword.satelliteshort}}. The host instances in your infrastructure provider become compute hosts for your location control plane or for services running in your {{site.data.keyword.satelliteshort}} location, filling the same role as worker nodes in a {{site.data.keyword.redhat_openshift_notm}} cluster.
+- Each host must satisfy the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for {{site.data.keyword.satelliteshort}}.
+- Your hosts must run on [official Red Hat certified hardware](https://catalog.redhat.com/hardware){: external}.
 
 To calculate how many hosts you need, see [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-location-sizing).
 
-To check your host set up, you can use the `satellite-host-check` script. For more information, see [Checking your host set up](/docs/satellite?topic=satellite-host-network-check).
+Validate your host setup before attachment using the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
 
 ## Planning your operating system
 {: #infras-plan-os}
   
-Choose your operating system for your hosts. You can choose Red Hat Enterprise Linux or Red Hat CoreOS. If you want to use Red Hat CoreOS for your managed services, you must create and enable a location to use RHCOS hosts. See [Creating a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations). 
+Choose your operating system for your hosts. {{site.data.keyword.satelliteshort}} supports Red Hat Enterprise Linux (RHEL) and Red Hat CoreOS (RHCOS). To use RHCOS hosts for your managed services, create and enable a location for RHCOS support. See [Creating a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 
 The type of location that you create dictates the type of operating systems that can run on your hosts. If your location is RHCOS enabled, then you can attach hosts that are running either RHEL and RHCOS. If your location isn't RHCOS enabled, then you can attach only hosts that are running RHEL. You can check whether your [location is RHCOS enabled](/docs/satellite?topic=satellite-locations#verify-coreos-location).
 {: note}
@@ -85,12 +85,12 @@ Red Hat Enterprise Linux 9
 :    RHEL 9 is a high-performance Linux platform with security and management features to help run your hybrid cloud workloads.
 
 Red Hat CoreOS (RHCOS)
-:    RHCOS is a minimal operating system for running containerized workloads securely and at scale. It is based on RHEL and includes automated, remote upgrade features. For more information about the key benefits of RHCOS, see [Red Hat Enterprise Linux CoreOS (RHCOS)](https://docs.redhat.com/en/documentation/openshift_container_platform/4.10/html/architecture/architecture-rhcos){: external}. RHCOS is supported for {{site.data.keyword.satelliteshort}} hosts on {{site.data.keyword.redhat_openshift_notm}} version 4.9 or later. Red Hat CoreOS hosts don't support all services. For more information, see [Supported Satellite-enabled IBM Cloud services](/docs/satellite?topic=satellite-managed-services). To attach RHCOS hosts, your location must be [enabled for RHCOS](/docs/satellite?topic=satellite-locations#verify-coreos-location).
+:    RHCOS is a minimal operating system designed for running containerized workloads securely and at scale. Built on RHEL, RHCOS includes automated remote upgrade capabilities that reduce operational overhead. For more information about the key benefits of RHCOS, see [Red Hat Enterprise Linux CoreOS (RHCOS)](https://docs.redhat.com/en/documentation/openshift_container_platform/4.10/html/architecture/architecture-rhcos){: external}. RHCOS is supported for {{site.data.keyword.satelliteshort}} hosts on {{site.data.keyword.redhat_openshift_notm}} version 4.9 or later. Not all services support RHCOS hosts. For more information, see [Supported Satellite-enabled IBM Cloud services](/docs/satellite?topic=satellite-managed-services). To attach RHCOS hosts, your location must be [enabled for RHCOS](/docs/satellite?topic=satellite-locations#verify-coreos-location).
 
 ### Deciding whether to enable Red Hat CoreOS support for your location
 {: #enable-coreos-loc}
 
-When you create a location, you can select whether to enable Red Hat CoreOS support. Enabling Red Hat CoreOS support comes with both pros and cons. A Red Hat CoreOS enabled location unlocks more features, but it has a higher infrastructure requirement. A non Red Hat CoreOS enabled location supports a smaller feature set, but can run at a smaller footprint, allowing more clusters per same capacity. For more information, see [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-location-sizing).
+When you create a location, you select whether to enable Red Hat CoreOS support. A Red Hat CoreOS-enabled location unlocks more features — including direct link, OpenShift virtualization, and BYOK/KYOK encryption — but requires more infrastructure. A location without Red Hat CoreOS support runs a smaller feature set, but operates at a reduced footprint and supports more clusters per unit of capacity. For a detailed comparison, see [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-location-sizing).
 
 The following table shows the features that are available only in Red Hat CoreOS-enabled locations. The table also shows the supported host types that can be used when setting up these features in your Red Hat CoreOS-enabled location.
 
@@ -105,7 +105,7 @@ The following table shows the features that are available only in Red Hat CoreOS
 
 To verify if you location is enabled for Red Hat CoreOS, see [Is my location enabled for Red Hat CoreOS](/docs/satellite?topic=satellite-locations#verify-coreos-location).
 
-The bring your own key (BYOK) or keep your own key (KYOK) feature is supported in RHCOS enabled locations on {{site.data.keyword.openshiftshort}} 4.13 and later. It is supported on both RHEL and RHCOS hosts. You can encrypt only cluster secrets. This feature is not available during cluster or worker pool creation. You must run the `ibmcloud oc kms enable` command to enable it after the cluster or worker pool has been created. Note that this feature cannot be disabled after it is enabled.
+The bring your own key (BYOK) or keep your own key (KYOK) feature is supported in RHCOS-enabled locations on {{site.data.keyword.openshiftshort}} 4.13 and later, on both RHEL and RHCOS hosts. This feature encrypts cluster secrets only and is not available during cluster or worker pool creation. Enable it after cluster or worker pool creation by running the `ibmcloud oc kms enable` command. This feature cannot be disabled once enabled.
 {: note}
 
 

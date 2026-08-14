@@ -3,7 +3,7 @@
 copyright:
   years: 2023, 2026
 
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-14"
 
 
 keywords: satellite, connector, agent, image, change log, version history, IBM Cloud Satellite, connector version history

@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-01-13"
+  years: 2023, 2026
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, connector, private tunnel
 

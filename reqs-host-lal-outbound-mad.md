@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-08-14"
+  years: 2023, 2026
+lastupdated: "2026-08-14"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos, madrid
 

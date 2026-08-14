@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite, endpoints, authentication
 

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-04-07"
+lastupdated: "2026-08-14"
 
 keywords: satellite, satellite at events, satellite activity tracker, satconfig events, satlink events, events for satellite config, events for satellite link, events for satellite location, events for satellite host
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2026
 
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-14"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 

@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-04-11"
+  years: 2020, 2026
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, access, manage access
 
@@ -152,10 +152,3 @@ Wondering which access roles to assign to your {{site.data.keyword.satelliteshor
 | DevOps operator | **Editor** platform role for the location and link resources. **Deployer** service role for the configurations. **Operator** platform role to {{site.data.keyword.redhat_openshift_notm}} clusters.|
 | Operator or site reliability engineer | **Administrator** platform role for the location and link resources. **Manager** service role for the configuration resources. **Administrator** platform role and **Manager** service role to {{site.data.keyword.redhat_openshift_notm}} clusters. |
 {: caption="Types of roles you might assign to meet different use cases." caption-side="bottom"}
-
-
-
-
-
-
-

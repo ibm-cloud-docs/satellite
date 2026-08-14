@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, satellite security, satellite compliance
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Security and compliance
 {: #compliance}
 
-You can use built-in security features in {{site.data.keyword.satellitelong}} for risk analysis and security protection. These features help you to protect your {{site.data.keyword.satelliteshort}} workloads that run on your location infrastructure and network communication.
+{{site.data.keyword.satellitelong}} provides built-in security features for risk analysis and data protection, including end-to-end encryption for all traffic over {{site.data.keyword.satelliteshort}} Link, automated certificate rotation, and integration with {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM).
 {: shortdesc}
 
 
@@ -34,7 +34,7 @@ See [Securing your data in {{site.data.keyword.satellitelong_notm}}](/docs/satel
 ### How do I make my data secure over {{site.data.keyword.satelliteshort}} Link?
 {: #secure-data-link}
 
-Your {{site.data.keyword.satelliteshort}} location infrastructure is a part of your local network (on-prem hosts) or the network of your cloud provider, but is managed remotely by using secure {{site.data.keyword.satelliteshort}} Link access from {{site.data.keyword.cloud_notm}}. All communication over {{site.data.keyword.satelliteshort}} Link is encrypted by {{site.data.keyword.IBM_notm}}. When you create an endpoint, you can optionally specify an additional data encryption protocol for the endpoint connection between the client source and destination resource. For example, even if the traffic is not encrypted on the source side, you can specify your own additional TLS encryption for the connection that goes over the internet.
+Your {{site.data.keyword.satelliteshort}} location infrastructure is part of your local network (on-premises hosts) or your cloud provider's network, managed remotely through secure {{site.data.keyword.satelliteshort}} Link access from {{site.data.keyword.cloud_notm}}. {{site.data.keyword.IBM_notm}} encrypts all communication over {{site.data.keyword.satelliteshort}} Link. When you create an endpoint, you optionally specify an additional data encryption protocol for the connection between the client source and destination resource. For example, you add Transport Layer Security (TLS) encryption for a connection that traverses the public internet, even when the source side does not encrypt traffic.
 
 To review information about how {{site.data.keyword.satelliteshort}} Link handles each type of connection protocol, see [Encryption protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols). To review other frequently asked questions about {{site.data.keyword.satelliteshort}} Link network security, see [External network requirements and security](/docs/satellite?topic=satellite-link-location-cloud#link-security).
 
@@ -47,7 +47,7 @@ Review the following ways that you can secure access to your location.
 - [Manage access for {{site.data.keyword.satelliteshort}} by using {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM)](/docs/satellite?topic=satellite-iam)
 - Monitor user-initiated activities by [Setting up {{site.data.keyword.logs_full_notm}} for {{site.data.keyword.satelliteshort}} location events](/docs/satellite?topic=satellite-health#setup-at)
 - In the case of a potential security incident, [reset the key that the control plane uses to communicate with all the hosts in the Satellite location](/docs/satellite?topic=satellite-host-update-location#host-key-reset)
-- Protect sensitive data by [Encrypting the Kubernetes secrets by using a KMS provider](/docs/containers?topic=containers-encryption-setup).
+- Protect sensitive data by [encrypting Kubernetes secrets using a Key Management Service (KMS) provider](/docs/containers?topic=containers-encryption-setup).
 
 ## {{site.data.keyword.IBM_notm}} operational access
 {: #operational-access}
@@ -93,9 +93,9 @@ Additionally, you can configure auditing to monitor user-initiated events for Li
 ### What happens if {{site.data.keyword.satelliteshort}} Link becomes unavailable? Can {{site.data.keyword.IBM_notm}} still maintain my {{site.data.keyword.satelliteshort}} location?
 {: #operational-access-availability}
 
-{{site.data.keyword.satelliteshort}} Link depends on the underlying connectivity of your hosts' local network to monitor and maintain the managed services for your {{site.data.keyword.satelliteshort}} location. If {{site.data.keyword.satelliteshort}} Link become unavailable, any requested changes to your {{site.data.keyword.satelliteshort}} location, such as adding hosts or access control requests to {{site.data.keyword.IBM_notm}} services through {{site.data.keyword.iamshort}}, are disrupted. After connectivity is restored, logs and events are sent to your [{{site.data.keyword.logs_full_notm}} instances](/docs/satellite?topic=satellite-health).
+{{site.data.keyword.satelliteshort}} Link depends on the underlying connectivity of your hosts' local network to monitor and maintain the managed services for your {{site.data.keyword.satelliteshort}} location. When {{site.data.keyword.satelliteshort}} Link becomes unavailable, requested changes to your {{site.data.keyword.satelliteshort}} location — such as adding hosts or access control requests to {{site.data.keyword.IBM_notm}} services through {{site.data.keyword.iamshort}} — are blocked. After connectivity is restored, logs and events are sent to your [{{site.data.keyword.logs_full_notm}} instances](/docs/satellite?topic=satellite-health).
 
-Note that your on-location workloads continue to run independently even if the location's connectivity to {{site.data.keyword.cloud_notm}} is unavailable. However, if any applications use a Link endpoint to communicate with {{site.data.keyword.cloud_notm}}, communication between those apps and {{site.data.keyword.cloud_notm}} is disrupted.
+On-location workloads continue to run independently even when the location loses connectivity to {{site.data.keyword.cloud_notm}}. However, applications that use a Link endpoint to communicate with {{site.data.keyword.cloud_notm}} lose that communication until connectivity is restored.
 
 For more information about making your {{site.data.keyword.satelliteshort}} location highly available, see [High availability and disaster recovery for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-sat-ha-dr).
 

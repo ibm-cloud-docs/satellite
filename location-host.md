@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-11-08"
+  years: 2022, 2026
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, location, host, location control plane
 
