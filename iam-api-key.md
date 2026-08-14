@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # API keys in {{site.data.keyword.cloud_notm}} 
 {: #iam-api-key}
 
-{{site.data.keyword.satelliteshort}} uses [API keys](/docs/iam?topic=iam-manapikey) from {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to authorize various requests.
+{{site.data.keyword.satelliteshort}} uses [API keys](/docs/iam?topic=iam-manapikey) from {{site.data.keyword.cloud_notm}} Identity and Access Management.
 {: shortdesc}
 
 

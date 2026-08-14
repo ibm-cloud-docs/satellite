@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, location error messages, location messages, location errors
 
@@ -18,7 +18,7 @@ content-type: troubleshoot
 # Location error messages
 {: #ts-locations-debug}
 
-By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your locations and tries to resolve issues automatically for you. For issues that cannot be resolved automatically, you can debug the location by reviewing the provided health information.
+By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your locations and tries to resolve issues automatically for you.
 {: shortdesc}
 
 ## Reviewing error messages and logs

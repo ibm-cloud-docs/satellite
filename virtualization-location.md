@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -25,7 +25,7 @@ completion-time: 2hr
 {: toc-services="satellite"}
 {: toc-completion-time="2hr"}
 
-You can set up your {{site.data.keyword.baremetal_short}} to use {{site.data.keyword.redhat_openshift_notm}} virtualization in your {{site.data.keyword.satelliteshort}} location. By using virtualization, you can provision Windows or other virtual machines on your {{site.data.keyword.baremetal_short}} in a managed {{site.data.keyword.redhat_openshift_notm}} space. 
+You can set up your {{site.data.keyword.baremetal_short}} to use {{site.data.keyword.redhat_openshift_notm}} virtualization in your.
 {: shortdesc}
 
 Supported host operating systems

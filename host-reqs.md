@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, endpoint capacity, endpoint limits, location endpoint limits, location endpoints, cloud endpoints, IBM Cloud Satellite, host setup, host system requirements
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Host system requirements for {{site.data.keyword.satelliteshort}}
 {: #host-reqs}
 
-Review the host system requirements for {{site.data.keyword.satellitelong_notm}}, including operating system support and computing characteristics for a successful {{site.data.keyword.satelliteshort}} host setup.
+Review the host system requirements for {{site.data.keyword.satellitelong_notm}}, including operating system support and computing characteristics for a.
 {: shortdesc}
 
 You can add hosts from other cloud providers to your location. For more information, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).

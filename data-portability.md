@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: data, portability
 
@@ -15,7 +15,7 @@ subcollection: satellite
 # Understanding data portability for Satellite
 {: #data-portability}
 
-[Data Portability](#x2113280){: term} involves a set of tools and procedures that enable customers to export the digital artifacts that are needed to implement similar workload and data processing on different service providers or on-premises software. It includes procedures for copying and storing the service customer content, including the related configuration that is used by the service to store and process the data, on the customer’s own location.
+[Data Portability](#x2113280){: term} involves a set of tools and procedures that enable customers to export the digital artifacts that are needed to.
 {: shortdesc}
 
 ## Responsibilities

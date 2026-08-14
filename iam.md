@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-04-11"
+  years: 2020, 2026
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, access, manage access
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Managing access overview
 {: #iam}
 
-Access to {{site.data.keyword.satellitelong}} service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). Every user that accesses the {{site.data.keyword.satelliteshort}} service in your account must be assigned an access policy with an IAM role defined. The policy determines what actions that a user can perform within the context of the service or instance that you select. The allowable actions are customized and defined by the {{site.data.keyword.cloud_notm}} service as operations that are allowed to be performed on the service. The actions are then mapped to IAM user roles.
+Access to {{site.data.keyword.satellitelong}} service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} Identity and.
 {: shortdesc}
 
 The name for the {{site.data.keyword.satellitelong_notm}} service in IAM is
@@ -152,10 +152,3 @@ Wondering which access roles to assign to your {{site.data.keyword.satelliteshor
 | DevOps operator | **Editor** platform role for the location and link resources. **Deployer** service role for the configurations. **Operator** platform role to {{site.data.keyword.redhat_openshift_notm}} clusters.|
 | Operator or site reliability engineer | **Administrator** platform role for the location and link resources. **Manager** service role for the configuration resources. **Administrator** platform role and **Manager** service role to {{site.data.keyword.redhat_openshift_notm}} clusters. |
 {: caption="Types of roles you might assign to meet different use cases." caption-side="bottom"}
-
-
-
-
-
-
-

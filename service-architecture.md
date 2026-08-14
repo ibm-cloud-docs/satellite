@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite architecture, satellite components, satellite workload isolation, satellite tenant isolation, satellite dependencies
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Learning about {{site.data.keyword.satelliteshort}} architecture, workload isolation, and dependencies
 {: #service-architecture}
 
-Learn about {{site.data.keyword.satellitelong_notm}} architecture, its components, how your workloads are isolated from other tenants, and what {{site.data.keyword.cloud_notm}} and third-party services {{site.data.keyword.satelliteshort}} depends on.
+Learn about {{site.data.keyword.satellitelong_notm}} architecture, its components, how your workloads are isolated from other tenants, and what.
 {: shortdesc}
 
 ## {{site.data.keyword.satelliteshort}} architecture

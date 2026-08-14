@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, securing your data, secure data, information
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Securing your data
 {: #data-security}
 
-Review what personal and sensitive information is stored when you use {{site.data.keyword.satellitelong}}, how this data is stored and encrypted, and how you can remove this information.
+Review what personal and sensitive information is stored when you use {{site.data.keyword.satellitelong}}, how this data is stored and encrypted, and how.
 {: shortdesc}
 
 ## What information is stored with {{site.data.keyword.IBM_notm}} with {{site.data.keyword.satelliteshort}}?

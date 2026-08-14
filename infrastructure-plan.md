@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-10"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Planning your environment for {{site.data.keyword.satelliteshort}} locations
 {: #infrastructure-plan}
 
-Learn how to plan your infrastructure environment for {{site.data.keyword.satellitelong}}, including on-premises data centers, public cloud providers, and edge devices.
+Learn how to plan your infrastructure environment for {{site.data.keyword.satellitelong}}, including on-premises data centers, public cloud providers, and.
 {: shortdesc}
 
 ## Planning your infrastructure

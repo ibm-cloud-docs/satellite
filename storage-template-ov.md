@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2026
 
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-14"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -46,7 +46,7 @@ Version
 ## What are my options for deploying storage to {{site.data.keyword.satelliteshort}}?
 {: #storage-sat-configure}
 
-You have two options when configuring storage in {{site.data.keyword.satelliteshort}}. The first is by using one of the provided storage templates. The second is by bringing your own storage drivers (BYOD), Helm charts, or Operators from the IBM Cloud Catalog, OperatorHub, or GitHub repo. 
+You have two options when configuring storage in {{site.data.keyword.satelliteshort}}. The first is by using one of the provided storage templates.
 {: shortdesc}
 
 {{site.data.keyword.satelliteshort}} storage templates

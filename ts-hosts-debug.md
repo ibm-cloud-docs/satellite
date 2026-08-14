@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -18,7 +18,7 @@ content-type: troubleshoot
 # Debugging host health
 {: #ts-hosts-debug}
 
-By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your hosts and tries to resolve issues automatically for you. For issues that cannot be resolved automatically, you can debug the hosts by reviewing the provided health information.
+By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your hosts and tries to resolve issues automatically for you.
 {: shortdesc}
 
 

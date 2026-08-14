@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, ntp, custom ntp, network time protocol
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Specifying a custom Network Time Protocol (NTP) server
 {: #config-custom-ntp}
 
-Keeping time is an integral part of any system. You can choose to allow access to the [Red Hat network time protocol (NTP) servers](/docs/satellite?topic=satellite-reqs-host-network-outbound) or you can configure access to a custom Network Time Protocol (NTP) server.
+Keeping time is an integral part of any system. You can choose to allow access to the [Red Hat network time protocol (NTP).
 {: shortdesc}
 
 You can specify a custom NTP server for Red Hat CoreOS hosts only.

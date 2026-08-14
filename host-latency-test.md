@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-10"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Network latency requirements for {{site.data.keyword.satelliteshort}} hosts
 {: #host-latency-test}
 
-Review the network latency requirements for hosts that you add to your {{site.data.keyword.satellitelong_notm}} location to ensure optimal performance and availability.
+Review the network latency requirements for hosts that you add to your {{site.data.keyword.satellitelong_notm}} location to ensure optimal performance and.
 {: shortdesc}
 
 ## {{site.data.keyword.IBM_notm}}-managed master to customer-provided worker nodes for the {{site.data.keyword.satelliteshort}} location control plane

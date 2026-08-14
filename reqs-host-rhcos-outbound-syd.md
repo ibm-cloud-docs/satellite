@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # RHCOS enabled locations in Sydney
 {: #reqs-host-rhcos-outbound-syd}
 
-The following network requirements are for outbound connectivity for Red Hat Enterprise Linux (RHEL) and Red Hat CoreOS (RHCOS) hosts for use with Red Hat CoreOS enabled locations in the Sydney (`au-syd`) region.  
+The following network requirements are for outbound connectivity for Red Hat Enterprise Linux (RHEL) and Red Hat CoreOS (RHCOS) hosts for use with Red Hat.
 {: shortdesc}
 
 

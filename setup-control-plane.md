@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite, control plane, location control plane, location, satellite location, create location, create control plane
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Setting up the {{site.data.keyword.satelliteshort}} location control plane
 {: #setup-control-plane}
 
-The location control plane runs resources that are managed by {{site.data.keyword.satelliteshort}} to help manage the hosts, clusters, and other resources that you attach to the location.
+The location control plane runs resources that are managed by {{site.data.keyword.satelliteshort}} to help manage the hosts, clusters, and other resources.
 {: shortdesc}
 
 When you set up the {{site.data.keyword.satelliteshort}} location control plane, keep in mind the following host considerations.

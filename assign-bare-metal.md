@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -25,7 +25,7 @@ completion-time: 2hr
 {: toc-services="satellite"}
 {: toc-completion-time="2hr"}
 
-You can attach bare metal hosts to your {{site.data.keyword.satelliteshort}} location. After your hosts are attached, you can [set up {{site.data.keyword.redhat_openshift_notm}} virtualization](/docs/satellite?topic=satellite-virtualization-location) in your {{site.data.keyword.satelliteshort}} location. By using virtualization, you can provision Windows or other virtual machines on your {{site.data.keyword.baremetal_short}} in a managed {{site.data.keyword.redhat_openshift_notm}} space.
+You can attach bare metal hosts to your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
 Supported host operating systems

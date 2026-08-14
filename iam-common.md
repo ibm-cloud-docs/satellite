@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-12-04"
+  years: 2020, 2026
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Common permissions in other cloud providers
 {: #iam-common}
 
-To create and manage the underlying infrastructure in other cloud providers, you must have the appropriate permissions. Review some commonly required permissions. For more information, consult your cloud provider's documentation.
+To create and manage the underlying infrastructure in other cloud providers, you must have the appropriate permissions.
 {: shortdesc}
 
 

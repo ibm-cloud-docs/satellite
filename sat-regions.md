@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-10"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, IBM Cloud regions, Satellite locations, cloud management, latency, control plane
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Supported {{site.data.keyword.cloud_notm}} regions for {{site.data.keyword.satelliteshort}} locations
 {: #sat-regions}
 
-Learn about the supported {{site.data.keyword.cloud_notm}} regions for managing {{site.data.keyword.satelliteshort}} locations and the latency requirements for attaching hosts to the location control plane.
+Learn about the supported {{site.data.keyword.cloud_notm}} regions for managing {{site.data.keyword.satelliteshort}} locations and the latency.
 {: shortdesc}
 
 

@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-10-10"
+  years: 2022, 2026
+lastupdated: "2026-08-14"
 
 keywords: satellite, multicloud, location, locations, control plane, remote workers
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Setting up a {{site.data.keyword.satelliteshort}} location with remote workers
 {: #sat-multi-infra}
 
-By using the flexible architecture of {{site.data.keyword.satelliteshort}}, you can assign workload hosts to a location from a single provider or from multiple providers. You can also create worker nodes in separate networks from the {{site.data.keyword.satelliteshort}} control plane to support edge and remote use cases. Find out how to plan and create {{site.data.keyword.satelliteshort}} locations with multiple infrastructure providers.
+By using the flexible architecture of {{site.data.keyword.satelliteshort}}, you can assign workload hosts to a location from a single provider or from.
 {: shortdesc} 
 
 ## Infrastructure composition options and supported topologies

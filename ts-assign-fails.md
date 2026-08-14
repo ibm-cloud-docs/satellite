@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -17,7 +17,7 @@ content-type: troubleshoot
 # Why can't I assign hosts to a cluster?
 {: #assign-fails}
 
-Resolve issues assigning hosts to {{site.data.keyword.satellitelong_notm}} clusters by checking network connectivity to {{site.data.keyword.cloud_notm}} endpoints required for the bootstrapping process.
+Resolve issues assigning hosts to {{site.data.keyword.satellitelong_notm}} clusters by checking network connectivity to {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 You try to assign a host to {{site.data.keyword.satellitelong_notm}} resource such as a cluster, but the assignment does not succeed.

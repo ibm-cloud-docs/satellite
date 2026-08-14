@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-14"
 
 keywords: satellite storage, satellite config, debug, troubleshoot, must gather
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Debugging satellite storage configurations
 {: #storage-must-gather}
 
-Complete the following steps to debug your {{site.data.keyword.satelliteshort}} storage configurations, including checking configuration details, storage assignments, and driver pod status.
+Complete the following steps to debug your {{site.data.keyword.satelliteshort}} storage configurations, including checking configuration details, storage.
 {: shortdesc}
 
 ## Log in to your cluster

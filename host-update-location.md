@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Updating {{site.data.keyword.satelliteshort}} location control plane hosts 
 {: #host-update-location}
 
-Get the latest OpenShift Container Platform, operating system, and security patches by detaching the hosts from your location, reloading the host machine in your infrastructure provider, then reattaching and reassigning the hosts to your {{site.data.keyword.satelliteshort}} location control plane. 
+Get the latest OpenShift Container Platform, operating system, and security patches by detaching the hosts from your location, reloading the host machine in your.
 {: shortdesc}
 
 

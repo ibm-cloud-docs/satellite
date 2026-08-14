@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-02-07"
+  years: 2022, 2026
+lastupdated: "2026-08-14"
 
 keywords: satellite, toolchain, satellite config, Kubernetes, cluster
 
@@ -26,7 +26,7 @@ completion-time: 30m
 {: toc-services="satellite, ContinuousDelivery"}
 {: toc-completion-time="30m"}
 
-Deploy Kubernetes resources, like deployments, from your GitHub or GitLab repository to multiple clusters with {{site.data.keyword.contdelivery_full}} and {{site.data.keyword.satelliteshort}} Config. 
+Deploy Kubernetes resources, like deployments, from your GitHub or GitLab repository to multiple clusters with {{site.data.keyword.contdelivery_full}} and.
 {: shortdesc}
 
 ## Objectives
@@ -230,5 +230,3 @@ If you have multiple branches in your repository representing multiple versions 
 10. Optional: View the new version of your configuration in the {{site.data.keyword.satelliteshort}} configurations [console](https://cloud.ibm.com/satellite/configuration) or by running running the `ibmcloud sat config get --config CONFIG` [command](/docs/satellite?topic=satellite-satellite-cli-reference#config-get-cli).
 
 Now you can deploy Kubernetes resources to multiple clusters with a single toolchain.
-
-

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, tenancy, resellers, satellite reseller, satellite use case
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # {{site.data.keyword.satelliteshort}} for resellers
 {: #tenancy-model}
 
-As a hybrid or distributed cloud reseller, you can set up {{site.data.keyword.satelliteshort}} locations and deploy {{site.data.keyword.openshiftshort}} clusters for your customers across hybrid and multicloud environments.
+As a hybrid or distributed cloud reseller, you can set up {{site.data.keyword.satelliteshort}} locations and deploy {{site.data.keyword.openshiftshort}}.
 {: shortdesc}
 
 ## Account overview

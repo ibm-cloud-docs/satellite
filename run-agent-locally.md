@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-06-26"
+  years: 2023, 2026
+lastupdated: "2026-08-14"
 
 keywords: satellite, connector, agent, windows
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Running a Connector agent
 {: #run-agent-locally}
 
-After you [create a {{site.data.keyword.satelliteshort}} Connector](/docs/satellite?topic=satellite-create-connector), complete the following steps to create an Agent and finalize your setup.   
+After you [create a {{site.data.keyword.satelliteshort}} Connector](/docs/satellite?topic=satellite-create-connector), complete the following steps to.
 {: shortdesc}
 
 ## Prerequisites

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-10"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, alibaba, alibaba hosts, alibaba cloud
 
@@ -18,7 +18,7 @@ subcollection: satellite
 # Attaching Alibaba Cloud hosts
 {: #alibaba}
 
-Learn how to add Alibaba Cloud virtual private cloud hosts to your {{site.data.keyword.satelliteshort}} location by setting up a VPC, creating security groups, and running the host attach script.
+Learn how to add Alibaba Cloud virtual private cloud hosts to your {{site.data.keyword.satelliteshort}} location by setting up a VPC, creating security.
 {: shortdesc}
 
 All hosts that you want to add must meet the host requirements, such as the RHEL 8 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).

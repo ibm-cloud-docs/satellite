@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-07-01"
+  years: 2024, 2026
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Creating and managing Connector endpoints
 {: #connector-create-endpoints}
 
-After creating a [Connector](/docs/satellite?topic=satellite-create-connector&interface=cli) and deploying a [Connector agent](/docs/satellite?topic=satellite-run-agent-locally), you can create endpoints to manage the network between your {{site.data.keyword.satellitelong_notm}} location and services, servers, or apps that run outside of the location.
+After creating a [Connector](/docs/satellite?topic=satellite-create-connector&interface=cli) and deploying a [Connector.
 {: shortdesc}
 
 

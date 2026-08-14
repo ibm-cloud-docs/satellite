@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite, subscription, identity, satellite config, satellite configuration
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # {{site.data.keyword.satelliteshort}} Config subscription identity and authorization
 {: #sat-config-subid}
 
-When you use {{site.data.keyword.satelliteshort}} Config to apply Kubernetes resources to a managed cluster or cluster group, the resources are applied according to the permissions available to the subscription identity. 
+When you use {{site.data.keyword.satelliteshort}} Config to apply Kubernetes resources to a managed cluster or cluster group, the resources are applied according to the permissions.
 {: shortdesc}
 
 ## Subscription identity

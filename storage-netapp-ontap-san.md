@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -14,7 +14,7 @@ subcollection: satellite
 # NetApp ONTAP-SAN storage for {{site.data.keyword.satellitelong_notm}} clusters
 {: #storage-netapp-ontap-san}
 
-Set up [NetApp ONTAP-SAN storage](https://docs.netapp.com/us-en/netapp-solutions-containers/openshift/os-trident-ontap-iscsi.html){: external} for {{site.data.keyword.satellitelong}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
+Set up [NetApp ONTAP-SAN storage](https://docs.netapp.com/us-en/netapp-solutions-containers/openshift/os-trident-ontap-iscsi.html){: external} for.
 {: shortdesc}
 
 Before you can create storage configurations by using the NetApp NAS template, you must deploy the [NetApp Trident template](/docs/satellite?topic=satellite-storage-netapp-trident), which installs the required operator.

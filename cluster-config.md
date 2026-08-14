@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-10"
+  years: 2020, 2026
+lastupdated: "2026-08-14"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Understanding {{site.data.keyword.satelliteshort}} Config 
 {: #cluster-config}
 
-With {{site.data.keyword.satelliteshort}} Config, you create a configuration to specify what Kubernetes resources you want to deploy to a group of {{site.data.keyword.openshiftlong_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} location or in {{site.data.keyword.cloud_notm}}.
+With {{site.data.keyword.satelliteshort}} Config, you create a configuration to specify what Kubernetes resources you want to deploy to a group of.
 {: shortdesc}
 
 You can create either GitOps-based configurations or Direct Upload configurations.

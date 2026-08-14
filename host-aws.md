@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-02-23"
+  years: 2020, 2026
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, aws, amazon web services, satellite location
 
@@ -18,7 +18,7 @@ subcollection: satellite
 # Attaching AWS hosts to {{site.data.keyword.satelliteshort}}
 {: #aws}
 
-Add Amazon Web Services (AWS) cloud hosts to {{site.data.keyword.satellitelong}}. Review the following host requirements that are specific to hosts that are in the Amazon Web Services cloud. For required access in AWS cloud, see [AWS permissions](/docs/satellite?topic=satellite-iam-common#permissions-aws).
+Add Amazon Web Services (AWS) cloud hosts to {{site.data.keyword.satellitelong}}. Review the following host requirements that are specific to hosts that.
 {: shortdesc}
 
 To attach Red Hat CoreOS (RHCOS) hosts, your location must be enabled for Red Hat CoreOS. For more information, see [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location). Note that you can still attach Red Hat Enterprise Linux hosts to a location that is enabled for Red Hat CoreOS.
@@ -243,7 +243,3 @@ Now that you added hosts to your location, you can assign them to your location 
 5. Learn more about the [{{site.data.keyword.satelliteshort}} Link component](/docs/satellite?topic=satellite-link-location-cloud) and how you can use endpoints to manage the network traffic between your location and {{site.data.keyword.cloud_notm}}.
 
 Need help? Check out [Getting support](/docs/satellite?topic=satellite-get-help) where you can find information about cloud status, issues, and logging; contacting support; and setting your email notification preferences for {{site.data.keyword.cloud_notm}} platform-related items.
-
-
-
-

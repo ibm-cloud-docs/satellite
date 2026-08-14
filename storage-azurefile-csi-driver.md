@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file, azure file
 
@@ -18,7 +18,7 @@ subcollection: satellite
 # Azure File CSI Driver
 {: #storage-azurefile-csi-driver}
 
-The Azure File CSI driver for {{site.data.keyword.satellitelong}} implements CSI specification so that container orchestration tools can manage the lifecycle of Azure File volumes.
+The Azure File CSI driver for {{site.data.keyword.satellitelong}} implements CSI specification so that container orchestration tools can manage the.
 {: shortdesc}
 
 For an overview of the available features of the Azure File CSI driver, see [Features](https://github.com/kubernetes-sigs/azurefile-csi-driver#features){: external}. 

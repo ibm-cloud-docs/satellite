@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-10"
+  years: 2020, 2026
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Creating and managing link endpoints
 {: #link-cloud-create}
 
-Create your {{site.data.keyword.satelliteshort}} endpoints to manage the network between your {{site.data.keyword.satellitelong_notm}} location and services, servers, or apps that run outside of the location.
+Create your {{site.data.keyword.satelliteshort}} endpoints to manage the network between your {{site.data.keyword.satellitelong_notm}} location and.
 {: shortdesc}
 
 ## Creating `cloud` endpoints to connect to resources outside of the location

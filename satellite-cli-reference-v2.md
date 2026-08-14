@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-14"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -20,7 +20,7 @@ content-type: cli-docs
 # CLI reference for {{site.data.keyword.satelliteshort}} commands
 {: #satellite-cli-reference}
 
-Refer to these {{site.data.keyword.satelliteshort}} CLI commands when you want to automate the creation and management of your {{site.data.keyword.satelliteshort}} location, including location, host, cluster, and endpoint operations.
+Refer to these {{site.data.keyword.satelliteshort}} CLI commands when you want to automate the creation and management of your.
 {: shortdesc}
 
 To install the CLI, see [Installing the the CLI](/docs/satellite?topic=satellite-cli-install). To view a high-level map of all the {{site.data.keyword.satellitelong_notm}} commands, see the [CLI map](/docs/satellite?topic=satellite-icsat_map).

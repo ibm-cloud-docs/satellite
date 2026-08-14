@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-12-17"
+  years: 2022, 2026
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Sizing your {{site.data.keyword.satelliteshort}} location
 {: #location-sizing}
 
-Because your {{site.data.keyword.satelliteshort}} location represents your own data center and infrastructure resources, the size of the location can be flexible according to what you want. You are not limited in the number of hosts that you attach to a location. However, as you plan your {{site.data.keyword.satelliteshort}} strategy, keep in mind the following sizing considerations.
+Because your {{site.data.keyword.satelliteshort}} location represents your own data center and infrastructure resources, the size of the location can be.
 {: shortdesc}
 
 Minimum size requirements

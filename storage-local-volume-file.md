@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Local Storage Operator - File
 {: #storage-local-volume-file}
 
-Set up [Persistent storage using local volumes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.6/html/storage/configuring-persistent-storage#persistent-storage-using-local-volume){: external} for {{site.data.keyword.satellitelong}} clusters.You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
+Set up [Persistent storage using local volumes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.6/html/storage/configuring-persist.
 {: shortdesc}
 
 When you create a local file storage configuration, you specify the local storage devices that you want to make available as persistent volumes (PVs) in your clusters. After you assign the storage configuration to a cluster, {{site.data.keyword.satelliteshort}} deploys the local storage operator which mounts the local disks that you specified in your configuration. The operator further creates the persistent volumes with the file system type that you specify, and creates the `sat-local-file-gold` storage class which you can use to create persistent volume claims (PVCs). You can then reference your PVCs in your Kubernetes workloads.

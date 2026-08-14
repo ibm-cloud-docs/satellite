@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-14"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -15,7 +15,7 @@ subcollection: satellite
 # RHCOS enabled locations with reduced firewall in Washington D.C.
 {: #req-minimum-outbound-wdc}
   
-Review the following network requirements for outbound connectivity for hosts in a minimum internet access location in the Washington D.C. (`us-east`) region. Because this type of location requires a single network destination instead of multiple destinations, it reduces the number of outbound IP addresses that you must allow from your firewall. For more information, see [Creating Red Hat CoreOS enabled Locations with reduced firewall footprint](/docs/satellite?topic=satellite-coreos-reduced-firewall).
+Review the following network requirements for outbound connectivity for hosts in a minimum internet access location in the Washington D.C.
 {: shortdesc}
 
 

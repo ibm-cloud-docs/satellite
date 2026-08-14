@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, storage error messages, error message, cloud storage, cluster storage, debug storage
 
@@ -17,7 +17,7 @@ content-type: troubleshoot
 # Troubleshooting storage error messages in {{site.data.keyword.satellitelong_notm}}
 {: #debug-storage}
 
-Debug storage issues on {{site.data.keyword.satellitelong_notm}} by reviewing health information and resolving common cloud storage and cluster storage error messages in your {{site.data.keyword.satelliteshort}} location.
+Debug storage issues on {{site.data.keyword.satellitelong_notm}} by reviewing health information and resolving common cloud storage and cluster storage.
 {: shortdesc}
 
 ## Reviewing error messages and logs

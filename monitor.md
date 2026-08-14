@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Monitoring for {{site.data.keyword.satelliteshort}}
 {: #monitor}
 
-{{site.data.keyword.satellitelong}} comes with basic tools to help you manage the health of your {{site.data.keyword.satelliteshort}} resources, such as reviewing location and host health. Additionally, you can integrate {{site.data.keyword.satelliteshort}} and other {{site.data.keyword.cloud_notm}} resources with {{site.data.keyword.mon_full}} to get a comprehensive view and tools to manage all your resources.
+{{site.data.keyword.satellitelong}} comes with basic tools to help you manage the health of your {{site.data.keyword.satelliteshort}} resources, such as.
 {: shortdesc}
 
 Monitoring for your {{site.data.keyword.satelliteshort}} location and for the {{site.data.keyword.cloud_notm}} services that run in your location must be set up separately. For example, to collect metrics for your {{site.data.keyword.satelliteshort}} location setup, you enable a {{site.data.keyword.mon_short}} instance to collect platform metrics in the same region that your location is managed from. Then, to collect metrics for a {{site.data.keyword.openshiftlong_notm}} cluster that runs in your {{site.data.keyword.satelliteshort}} location, you create a monitoring agent in your cluster to automatically collect and forward pod metrics to a {{site.data.keyword.mon_short}} instance. Note that you can use the same {{site.data.keyword.mon_short}} instance to collect metrics for both your {{site.data.keyword.satelliteshort}} location and services that run in your {{site.data.keyword.satelliteshort}} location.

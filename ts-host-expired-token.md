@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-10"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, registration script, registration script fails
 
@@ -17,7 +17,7 @@ content-type: troubleshoot
 # Why is my host attach failing with error message `A0029` `Access denied to specified controller`?
 {: #ts-host-expired-token}
 
-Troubleshoot and resolve host attach failures with error A0029 caused by an expired `host_queue_token` value in your {{site.data.keyword.satelliteshort}} location.
+Troubleshoot and resolve host attach failures with error A0029 caused by an expired `host_queue_token` value in your {{site.data.keyword.satelliteshort}}.
 {: shortdesc}
 
 When you run the attach host script, your hosts are not attaching and you get a error message similar to the following example.

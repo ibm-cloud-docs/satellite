@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-10"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Removing hosts and locations
 {: #host-remove}
 
-Learn how to remove hosts from your {{site.data.keyword.satelliteshort}} location, detaching them from the location control plane or cluster and making them unavailable to run workloads.
+Learn how to remove hosts from your {{site.data.keyword.satelliteshort}} location, detaching them from the location control plane or cluster and making.
 {: shortdesc}
 
 After removal, the host machine still exists in your underlying infrastructure provider. Reload the operating system before using the host machine for another purpose.

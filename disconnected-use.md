@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, disconnected use, disconnected usage, disconnect
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Disconnected use for Satellite components 
 {: #disconnected-use}
 
-Certain features of {{site.data.keyword.satellitelong}} can be used while disconnected temporarily. See the following FAQs to understand the disconnected use for these components.
+Certain features of {{site.data.keyword.satellitelong}} can be used while disconnected temporarily.
 {: shortdesc}
 
 ## Understanding disconnected usage

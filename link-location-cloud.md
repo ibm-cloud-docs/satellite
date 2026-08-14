@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-07-07"
+  years: 2020, 2026
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, link endpoints, link, location endpoint, cloud endpoint
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Understanding Link endpoints and {{site.data.keyword.satelliteshort}}
 {: #link-location-cloud}
 
-Open up {{site.data.keyword.satelliteshort}} endpoints in the {{site.data.keyword.satelliteshort}} control plane to control and audit network traffic between your {{site.data.keyword.satellitelong}} location and services, servers, or apps that run outside of the location.
+Open up {{site.data.keyword.satelliteshort}} endpoints in the {{site.data.keyword.satelliteshort}} control plane to control and audit network traffic.
 {: shortdesc}
 
 With {{site.data.keyword.satelliteshort}} Link endpoints, you can allow any client that runs in your {{site.data.keyword.satelliteshort}} location to connect to a service, server, or app that runs outside of the location, or allow a client that is connected to the {{site.data.keyword.cloud_notm}} private network to connect to a service, server, or app that runs in your location.

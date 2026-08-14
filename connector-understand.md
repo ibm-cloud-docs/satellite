@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-03-31"
+lastupdated: "2026-08-14"
 
 keywords: satellite, connector, agent
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # {{site.data.keyword.satelliteshort}} Connector overview
 {: #understand-connectors}
 
-{{site.data.keyword.satelliteshort}} Connector provides secure TLS tunneling between applications and services that need to communicate in hybrid and multi-cloud environments.
+{{site.data.keyword.satelliteshort}} Connector provides secure TLS tunneling between applications and services that need to communicate in hybrid and.
 {: shortdesc}
 
   

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, assign access, access for satellite
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Assigning access with {{site.data.keyword.cloud_notm}} IAM
 {: #iam-assign-access}
 
-To grant access to {{site.data.keyword.satelliteshort}} resources, use {{site.data.keyword.cloud_notm}} IAM. For information about assigning user roles in the console, see [Managing access to resources](/docs/account?topic=account-access-getstarted).
+To grant access to {{site.data.keyword.satelliteshort}} resources, use {{site.data.keyword.cloud_notm}} IAM.
 {: shortdesc}
 
 ## Access policies

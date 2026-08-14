@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, R0043 error, IBM Cloud, Satellite setup, host network requirements, Direct Link
 
@@ -17,7 +17,7 @@ content-type: troubleshoot
 # Resolving R0043 errors after setting up {{site.data.keyword.dl_short}} in {{site.data.keyword.satelliteshort}}
 {: #ts-dl-r0043}
 
-Troubleshoot R0043 errors that occur after setting up {{site.data.keyword.dl_short}} in {{site.data.keyword.satelliteshort}} by verifying host network requirements and rebooting or replacing affected hosts.
+Troubleshoot R0043 errors that occur after setting up {{site.data.keyword.dl_short}} in {{site.data.keyword.satelliteshort}} by verifying host network.
 {: shortdesc}
 
 After you set up {{site.data.keyword.dl_short}}, you see a message similar to one of the following examples.

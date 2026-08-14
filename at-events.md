@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-04-07"
+lastupdated: "2026-08-14"
 
 keywords: satellite, satellite at events, satellite activity tracker, satconfig events, satlink events, events for satellite config, events for satellite link, events for satellite location, events for satellite host
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Auditing events for {{site.data.keyword.satelliteshort}}
 {: #at_events}
 
-As a security officer, auditor, or manager, you can use {{site.data.keyword.logs_full_notm}} to track how users and applications interact with {{site.data.keyword.satellitelong_notm}}.
+As a security officer, auditor, or manager, you can use {{site.data.keyword.logs_full_notm}} to track how users and applications interact with.
 {: shortdesc}
 
 {{site.data.keyword.logs_full_notm}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use this service to investigate abnormal activity and critical actions and to comply with regulatory audit requirements. In addition, you can be alerted about actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard. For more information, see [Working with alerts](/docs/cloud-logs?topic=cloud-logs-event-notifications-about).

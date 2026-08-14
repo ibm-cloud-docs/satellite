@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Securing your connection
 {: #service-connection}
 
-With {{site.data.keyword.satellitelong_notm}}, you bring {{site.data.keyword.cloud_notm}} to your own infrastructure environment by creating a {{site.data.keyword.satelliteshort}} location. This setup means that you do not need [{{site.data.keyword.cloud_notm}} service endpoints](/docs/account?topic=account-service-endpoints-overview) to access {{site.data.keyword.cloud_notm}}. Instead, {{site.data.keyword.cloud_notm}} needs a {{site.data.keyword.satelliteshort}} Link endpoint to access your infrastructure environment. You can access services in your {{site.data.keyword.satelliteshort}} location by creating {{site.data.keyword.satelliteshort}} Link endpoints, using the cluster URL, or creating a route or similar service for workloads in a cluster.
+With {{site.data.keyword.satellitelong_notm}}, you bring {{site.data.keyword.cloud_notm}} to your own infrastructure environment by creating a {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
 ## Access to resources that run in your {{site.data.keyword.satelliteshort}} location

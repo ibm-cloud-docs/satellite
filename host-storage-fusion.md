@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, spectrum, spectrum fusion
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Attaching IBM Storage Fusion HCI hosts
 {: #host-storage-fusion}
 
-IBM Storage Fusion is a container-native data platform for {{site.data.keyword.redhat_openshift_full}} with enterprise-grade data storage and protection services. It offers an agile way to manage, recover and access your mission-critical data as needed.
+IBM Storage Fusion is a container-native data platform for {{site.data.keyword.redhat_openshift_full}} with enterprise-grade data storage and protection.
 {: shortdesc}
 
 Before you can create a Location and add IBM Storage Fusion HCI virtual machines as hosts, you must first order the required hardware. Then, you can deploy Storage Fusion to your {{site.data.keyword.satelliteshort}} Location. 

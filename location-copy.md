@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, copy location, IBM Cloud location, Satellite location, create location
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Copying an {{site.data.keyword.satelliteshort}} location
 {: #location-copy}
 
-Learn how to copy your {{site.data.keyword.satelliteshort}} location to a new location by reviewing resource details and re-creating them in a new {{site.data.keyword.satelliteshort}} location, or to keep copies for archival purposes.
+Learn how to copy your {{site.data.keyword.satelliteshort}} location to a new location by reviewing resource details and re-creating them in a new {{site.data.keyword.satelliteshort}}.
 {: shortdesc}
 
 1. Get your location details and optionally save the details to a local file.

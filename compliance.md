@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: satellite, hybrid, multicloud, satellite security, satellite compliance
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Security and compliance
 {: #compliance}
 
-You can use built-in security features in {{site.data.keyword.satellitelong}} for risk analysis and security protection. These features help you to protect your {{site.data.keyword.satelliteshort}} workloads that run on your location infrastructure and network communication.
+You can use built-in security features in {{site.data.keyword.satellitelong}} for risk analysis and security protection.
 {: shortdesc}
 
 
