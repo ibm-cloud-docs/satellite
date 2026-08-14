@@ -15,7 +15,7 @@ subcollection: satellite
 # RHCOS enabled locations with reduced firewall in Tokyo
 {: #req-minimum-outbound-tok}
   
-Review the following network requirements for outbound connectivity for hosts in a minimum internet access location in the Tokyo (`jp-tok`) region.
+Review the following network requirements for outbound connectivity for hosts in a minimum internet access location in the Tokyo (`jp-tok`) region. Because this type of location requires a single network destination instead of multiple destinations, it reduces the number of outbound IP addresses that you must allow from your firewall. For more information, see [Creating Red Hat CoreOS enabled Locations with reduced firewall footprint](/docs/satellite?topic=satellite-coreos-reduced-firewall).
 {: shortdesc}
 
 

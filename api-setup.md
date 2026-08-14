@@ -16,7 +16,7 @@ subcollection: satellite
 # Setting up the {{site.data.keyword.satelliteshort}} API
 {: #api_setup}
 
-Use the {{site.data.keyword.satellitelong_notm}} API to automate the provisioning and management of your locations, hosts, and clusters across hybrid and.
+Use the {{site.data.keyword.satellitelong_notm}} API to automate the provisioning and management of your locations, hosts, and clusters across hybrid and multicloud environments.
 {: shortdesc}
 
 {{site.data.keyword.satellitelong_notm}} shares the same application programming interface (API) as {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.openshiftlong_notm}}, so that you can use the same methods to consistently create and manage your {{site.data.keyword.satelliteshort}} resources.

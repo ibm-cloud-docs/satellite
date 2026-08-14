@@ -17,10 +17,10 @@ subcollection: satellite
 # Monitoring for {{site.data.keyword.satelliteshort}}
 {: #monitor}
 
-{{site.data.keyword.satellitelong}} comes with basic tools to help you manage the health of your {{site.data.keyword.satelliteshort}} resources, such as.
+{{site.data.keyword.satellitelong}} provides built-in tools for managing the health of your {{site.data.keyword.satelliteshort}} resources, including locations, hosts, clusters, and Link endpoints.
 {: shortdesc}
 
-Monitoring for your {{site.data.keyword.satelliteshort}} location and for the {{site.data.keyword.cloud_notm}} services that run in your location must be set up separately. For example, to collect metrics for your {{site.data.keyword.satelliteshort}} location setup, you enable a {{site.data.keyword.mon_short}} instance to collect platform metrics in the same region that your location is managed from. Then, to collect metrics for a {{site.data.keyword.openshiftlong_notm}} cluster that runs in your {{site.data.keyword.satelliteshort}} location, you create a monitoring agent in your cluster to automatically collect and forward pod metrics to a {{site.data.keyword.mon_short}} instance. Note that you can use the same {{site.data.keyword.mon_short}} instance to collect metrics for both your {{site.data.keyword.satelliteshort}} location and services that run in your {{site.data.keyword.satelliteshort}} location.
+Monitoring for your {{site.data.keyword.satelliteshort}} location and for the {{site.data.keyword.cloud_notm}} services that run in your location requires separate setup. To collect location platform metrics, enable a {{site.data.keyword.mon_short}} instance in the same region that manages your location. To collect pod metrics from an {{site.data.keyword.openshiftlong_notm}} cluster in your {{site.data.keyword.satelliteshort}} location, deploy a monitoring agent in the cluster to forward metrics to a {{site.data.keyword.mon_short}} instance. A single {{site.data.keyword.mon_short}} instance collects metrics for both your {{site.data.keyword.satelliteshort}} location and the services running in it.
 
 ## Understanding what is logged and monitored by default
 {: #health-default}
@@ -37,7 +37,7 @@ See [Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?t
 ### {{site.data.keyword.IBM_notm}} monitoring to resolve and report location alerts
 {: #monitoring-default}
 
-When you create a {{site.data.keyword.satelliteshort}} location and set up the location control plane, {{site.data.keyword.IBM_notm}} automatically monitors and resolves certain alerts for issues with your location setup and host infrastructure. The following table describes different scenarios and the actions that {{site.data.keyword.IBM_notm}} takes to address the scenarios.
+When you create a {{site.data.keyword.satelliteshort}} location and set up the location control plane, {{site.data.keyword.IBM_notm}} automatically monitors and resolves specific alert conditions for your location setup and host infrastructure. The following table identifies each scenario and the action {{site.data.keyword.IBM_notm}} takes.
 {: shortdesc}
 
 Additionally, if you [set up your {{site.data.keyword.satelliteshort}} location to forward logs to {{site.data.keyword.logs_full_notm}}](/docs/satellite?topic=satellite-health#setup-la), the messages and more detailed information from the {{site.data.keyword.IBM_notm}} Monitoring component are captured and stored in your {{site.data.keyword.logs_full_notm}} instance.
@@ -156,9 +156,9 @@ Metrics are available for the {{site.data.keyword.satelliteshort}} Link componen
     - If you already have a {{site.data.keyword.mon_short}} instance in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from, and the {{site.data.keyword.mon_short}} instance is configured to collect platform metrics, the metrics that are generated for your {{site.data.keyword.satelliteshort}} location are automatically forwarded to this {{site.data.keyword.mon_short}} instance.
     - Otherwise, to set up {{site.data.keyword.mon_short}} for your {{site.data.keyword.satelliteshort}} location:
         1. [Provision an {{site.data.keyword.mon_full_notm}} instance](https://cloud.ibm.com/catalog){: external} in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
-        2. [Enable the instance for platform-level metrics collection](/docs/monitoring?topic=monitoring-platform_metrics_enabling). Note that within one region, only one {{site.data.keyword.mon_short}} instance can be enabled for platform metrics collection.
+        2. [Enable the instance for platform-level metrics collection](/docs/monitoring?topic=monitoring-platform_metrics_enabling). Within one region, only one {{site.data.keyword.mon_short}} instance is enabled for platform metrics collection at a time.
 2. In the **Monitoring** dashboard, click **Open Dashboard** for your {{site.data.keyword.mon_short}} instance.
-3. In the {{site.data.keyword.mon_short}} dashboard, click **Dashboards** > **IBM** > **Satellite Link - Overview**. The pre-defined dashboard for {{site.data.keyword.satelliteshort}} Link metrics opens. Note that if you just created this {{site.data.keyword.mon_short}} instance, it might take up to two hours for the **{{site.data.keyword.IBM_notm}} ** dashboards to become available.
+3. In the {{site.data.keyword.mon_short}} dashboard, click **Dashboards** > **IBM** > **Satellite Link - Overview**. The pre-defined dashboard for {{site.data.keyword.satelliteshort}} Link metrics opens. Newly created {{site.data.keyword.mon_short}} instances require up to two hours before the **{{site.data.keyword.IBM_notm}}** dashboards become available.
 
     You can create a copy of this dashboard to customize the metrics that are shown. To add metrics that are enabled for {{site.data.keyword.satellitelong_notm}}, search for the `ibm_satellite_link` prefix.
     {: tip}
@@ -191,7 +191,7 @@ The total number of {{site.data.keyword.satelliteshort}} Link tunnel servers pre
 #### Location latency
 {: #ibm_satellite_link_location_rtt_second}
 
-The total round trip time of data in milliseconds for the location.
+The total round-trip time (RTT) of data in milliseconds for the location. RTT measures the time a data packet takes to travel from the location to {{site.data.keyword.cloud_notm}} and back.
 
 | Metadata | Description |
 |----------|-------------|
@@ -327,7 +327,7 @@ The following additional attributes that are specific to {{site.data.keyword.sat
 | `Endpoint Name` | `ibm_satellite_link_endpoint_name` | The name of the endpoint |
 | `Location ID` | `ibm_satellite_link_location_id` | The identifier of the location |
 | `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance the metric is associated with |
-| `Service instance name` | `ibm_service_instance_name` | The user-provided name of the service instance, which might not be unique across regions in the account |
+| `Service instance name` | `ibm_service_instance_name` | The user-provided name of the service instance. Service instance names are not guaranteed to be unique across regions in the account. |
 {: caption="Additional attributes for metric segmentation" caption-side="bottom"}
 
 

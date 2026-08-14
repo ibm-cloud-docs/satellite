@@ -16,7 +16,7 @@ subcollection: satellite
 # Debugging satellite storage configurations
 {: #storage-must-gather}
 
-Complete the following steps to debug your {{site.data.keyword.satelliteshort}} storage configurations, including checking configuration details, storage.
+Complete the following steps to debug your {{site.data.keyword.satelliteshort}} storage configurations, including checking configuration details, storage assignments, and driver pod status.
 {: shortdesc}
 
 ## Log in to your cluster

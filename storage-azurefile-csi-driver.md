@@ -18,7 +18,7 @@ subcollection: satellite
 # Azure File CSI Driver
 {: #storage-azurefile-csi-driver}
 
-The Azure File CSI driver for {{site.data.keyword.satellitelong}} implements CSI specification so that container orchestration tools can manage the.
+The Azure File CSI driver for {{site.data.keyword.satellitelong}} implements CSI specification so that container orchestration tools can manage the lifecycle of Azure File volumes.
 {: shortdesc}
 
 For an overview of the available features of the Azure File CSI driver, see [Features](https://github.com/kubernetes-sigs/azurefile-csi-driver#features){: external}. 

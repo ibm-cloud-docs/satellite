@@ -16,7 +16,7 @@ subcollection: satellite
 # Configuring the request path from your Connector agent
 {: #connector-agent-path}
 
-This document shows how to configure the target destination for outgoing requests from your Connector agent.
+This document shows how to configure the target destination for outgoing requests from your Connector agent. You can configure the agent to send its outgoing requests through a proxy server and you can configure the Satellite Tunnel server Ingress host to which your Connector agent will forward traffic.
 {: shortdesc}
 
 

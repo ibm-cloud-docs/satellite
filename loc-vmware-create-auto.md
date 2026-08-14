@@ -16,7 +16,7 @@ subcollection: satellite
 # Automating your VMware location setup with a {{site.data.keyword.bpshort}} template
 {: #loc-vmware-create-auto}
 
-Automate your VMware Virtual Cloud Director setup with templates that use [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-getting-started.
+Automate your VMware Virtual Cloud Director setup with templates that use [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-getting-started) to create a {{site.data.keyword.satelliteshort}} location, provision hosts in your VMware Cloud Director (VCD) account, and set up the {{site.data.keyword.satelliteshort}} location control plane for you. 
 {: shortdesc}
 
 

@@ -15,7 +15,7 @@ subcollection: satellite
 # Granting {{site.data.keyword.satelliteshort}} Config access to your clusters
 {: #setup-clusters-satconfig}
 
-By default, clusters that you create in a {{site.data.keyword.satelliteshort}} location have {{site.data.keyword.satelliteshort}} Config components.
+By default, clusters that you create in a {{site.data.keyword.satelliteshort}} location have {{site.data.keyword.satelliteshort}} Config components automatically installed. However, you must grant the service accounts that {{site.data.keyword.satelliteshort}} Config uses the appropriate access to view and manage Kubernetes resources in each cluster. 
 {: shortdesc}
 
 {{site.data.keyword.satelliteshort}} Config requires admin access to your clusters to manage them. You can configure access in one of the following ways.

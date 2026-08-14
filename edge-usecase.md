@@ -16,7 +16,7 @@ subcollection: satellite
 # Edge environments for AI, IoT, and machine learning
 {: #edge-usecase}
 
-Create an {{site.data.keyword.satellitelong}} location with {{site.data.keyword.redhat_openshift_notm}} clusters on compute infrastructure that is.
+Create an {{site.data.keyword.satellitelong}} location with {{site.data.keyword.redhat_openshift_notm}} clusters on compute infrastructure that is deployed at the edge near your Internet of Things (IoT) devices. Then, through your {{site.data.keyword.satelliteshort}} location, your apps can access a suite of {{site.data.keyword.cloud_notm}} artificial intelligence (AI) and machine learning services to maximize the value of your data wherever the data is located.
 {: shortdesc}
 
 ## Solving common edge workload challenges with {{site.data.keyword.cloud_notm}}

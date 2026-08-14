@@ -16,7 +16,7 @@ subcollection: satellite
 # Creating and managing Connector endpoints
 {: #connector-create-endpoints}
 
-After creating a [Connector](/docs/satellite?topic=satellite-create-connector&interface=cli) and deploying a [Connector.
+After creating a [Connector](/docs/satellite?topic=satellite-create-connector&interface=cli) and deploying a [Connector agent](/docs/satellite?topic=satellite-run-agent-locally), you can create endpoints to manage the network between your {{site.data.keyword.satellitelong_notm}} location and services, servers, or apps that run outside of the location.
 {: shortdesc}
 
 

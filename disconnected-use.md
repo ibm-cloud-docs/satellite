@@ -16,7 +16,7 @@ subcollection: satellite
 # Disconnected use for Satellite components 
 {: #disconnected-use}
 
-Certain features of {{site.data.keyword.satellitelong}} can be used while disconnected temporarily.
+Certain features of {{site.data.keyword.satellitelong}} can be used while disconnected temporarily. See the following FAQs to understand the disconnected use for these components.
 {: shortdesc}
 
 ## Understanding disconnected usage

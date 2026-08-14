@@ -17,7 +17,7 @@ content-type: troubleshoot
 # Why can't I reach my endpoint from {{site.data.keyword.cloud_notm}}?
 {: #ts-connector-cannot-reach}
 
-Resolve issues accessing your {{site.data.keyword.satelliteshort}} Connector endpoint from {{site.data.keyword.cloud_notm}} by checking connector logs.
+Resolve issues accessing your {{site.data.keyword.satelliteshort}} Connector endpoint from {{site.data.keyword.cloud_notm}} by checking connector logs, agent logs, firewall settings, and ACL configurations.
 {: shortdesc}
 
 I created an endpoint and I cannot access it from {{site.data.keyword.cloud_notm}}.

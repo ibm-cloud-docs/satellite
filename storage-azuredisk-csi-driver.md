@@ -16,7 +16,7 @@ subcollection: satellite
 # Azure Disk CSI driver
 {: #storage-azuredisk-csi-driver}
 
-The Azure Disk CSI driver for {{site.data.keyword.satellitelong}} implements the CSI specification so that container orchestration tools can manage the.
+The Azure Disk CSI driver for {{site.data.keyword.satellitelong}} implements the CSI specification so that container orchestration tools can manage the lifecycle of Azure Disk volumes.
 {: shortdesc}
 
 For an overview of the available features of the Azure Disk CSI driver, see [Features](https://github.com/kubernetes-sigs/azuredisk-csi-driver#features){: external}.

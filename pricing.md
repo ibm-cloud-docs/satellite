@@ -17,7 +17,7 @@ subcollection: satellite
 # {{site.data.keyword.satelliteshort}} pricing for locations and services
 {: #sat-pricing}
 
-{{site.data.keyword.satellitelong_notm}} provides a flexible way for you to consume {{site.data.keyword.cloud_notm}} services in any location, with no.
+{{site.data.keyword.satellitelong_notm}} provides a flexible way for you to consume {{site.data.keyword.cloud_notm}} services in any location, with no charges for unassigned hosts and no separate fees for {{site.data.keyword.satelliteshort}} management capabilities.
 {: shortdesc}
 
 Flexible consumption

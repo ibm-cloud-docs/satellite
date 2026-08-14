@@ -17,7 +17,7 @@ content-type: troubleshoot
 # Resolving R0043 errors after setting up {{site.data.keyword.dl_short}} in {{site.data.keyword.satelliteshort}}
 {: #ts-dl-r0043}
 
-Troubleshoot R0043 errors that occur after setting up {{site.data.keyword.dl_short}} in {{site.data.keyword.satelliteshort}} by verifying host network.
+Troubleshoot R0043 errors that occur after setting up {{site.data.keyword.dl_short}} in {{site.data.keyword.satelliteshort}} by verifying host network requirements and rebooting or replacing affected hosts.
 {: shortdesc}
 
 After you set up {{site.data.keyword.dl_short}}, you see a message similar to one of the following examples.

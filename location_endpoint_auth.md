@@ -16,7 +16,7 @@ subcollection: satellite
 # Authenticating Location endpoint traffic
 {: #location_endpoint_auth}
 
-All endpoint traffic is encrypted by default. However, you can choose to provide your own certificates to implement source and destination authentication.
+All endpoint traffic is encrypted by default. However, you can choose to provide your own certificates to implement source and destination authentication. For TLS or HTTPS endpoints, there are two TLS connections in the endpoint request flow that you might need to configure. The first TLS handshake is between the source and the Satellite Link service. The second TLS handshake is between the Satellite Link service and your destination or target server. You can provide certificates for one or both of these connections.
 {: shortdesc}
 
 If you don't configure any endpoint authentication settings, endpoint traffic is still encrypted, but Satellite Link acts as a transit service only. This applies even to endpoints using the TCP or HTTP protocol. For endpoints with protocol TLS or HTTPS, traffic through Satellite Link will attempt to use simple authentication by default, relying on its well known built-in certificates, which may or may not be sufficient.

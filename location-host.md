@@ -17,7 +17,7 @@ subcollection: satellite
 # Understanding {{site.data.keyword.satelliteshort}} location and hosts 
 {: #location-host}
 
-An {{site.data.keyword.satellitelong}} location is a representation of an environment in your infrastructure provider, such as an on-prem data center or.
+An {{site.data.keyword.satellitelong}} location is a representation of an environment in your infrastructure provider, such as an on-prem data center or cloud. Locations are made up of compute sources, called hosts, that resides in your infrastructure provider or even locally. After you attach your hosts to a {{site.data.keyword.satelliteshort}} location, assign the hosts to the location control plane or use them to power your service workloads.
 {: shortdesc}
 
 Locations can be made of hosts of any size, including as small as a local desktop computer or as large as hundreds of computers in a central office. Because locations are made up of your infrastructure, you can create a {{site.data.keyword.satelliteshort}} location anywhere that your infrastructure is located. 

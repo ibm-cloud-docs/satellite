@@ -25,7 +25,7 @@ completion-time: 2hr
 {: toc-services="satellite"}
 {: toc-completion-time="2hr"}
 
-You can attach bare metal hosts to your {{site.data.keyword.satelliteshort}} location.
+You can attach bare metal hosts to your {{site.data.keyword.satelliteshort}} location. After your hosts are attached, you can [set up {{site.data.keyword.redhat_openshift_notm}} virtualization](/docs/satellite?topic=satellite-virtualization-location) in your {{site.data.keyword.satelliteshort}} location. By using virtualization, you can provision Windows or other virtual machines on your {{site.data.keyword.baremetal_short}} in a managed {{site.data.keyword.redhat_openshift_notm}} space.
 {: shortdesc}
 
 Supported host operating systems

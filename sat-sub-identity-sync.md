@@ -16,7 +16,7 @@ subcollection: satellite
 # {{site.data.keyword.satelliteshort}} Config subscription identity and authorization
 {: #sat-config-subid}
 
-When you use {{site.data.keyword.satelliteshort}} Config to apply Kubernetes resources to a managed cluster or cluster group, the resources are applied according to the permissions.
+When you use {{site.data.keyword.satelliteshort}} Config to apply Kubernetes resources to a managed cluster or cluster group, the resources are applied according to the permissions available to the subscription identity. 
 {: shortdesc}
 
 ## Subscription identity

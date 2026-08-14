@@ -16,7 +16,7 @@ subcollection: satellite
 # Creating and managing link endpoints
 {: #link-cloud-create}
 
-Create your {{site.data.keyword.satelliteshort}} endpoints to manage the network between your {{site.data.keyword.satellitelong_notm}} location and.
+Create your {{site.data.keyword.satelliteshort}} endpoints to manage the network between your {{site.data.keyword.satellitelong_notm}} location and services, servers, or apps that run outside of the location.
 {: shortdesc}
 
 ## Creating `cloud` endpoints to connect to resources outside of the location

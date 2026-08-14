@@ -17,7 +17,7 @@ subcollection: satellite
 # Manually creating {{site.data.keyword.satelliteshort}} locations
 {: #loc-manual-create}
 
-You can create {{site.data.keyword.satelliteshort}} locations for each place that you like, such as your company's ports in the north and south of the.
+You can create {{site.data.keyword.satelliteshort}} locations for each place that you like, such as your company's ports in the north and south of the country. A {{site.data.keyword.satelliteshort}} location represents a data center that you fill with your own infrastructure resources to run your own workloads and {{site.data.keyword.cloud_notm}} services.
 {: shortdesc}
 
 Do not reuse the same name for multiple locations, even after the other location is deleted. If you use the same name 5 times or more within 7 days, you might reach the Let's Encrypt [Duplicate Certificate rate limit](/docs/openshift?topic=openshift-cs_rate_limit).

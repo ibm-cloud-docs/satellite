@@ -16,7 +16,7 @@ subcollection: satellite
 # RHCOS enabled locations with reduced firewall in Sydney
 {: #req-minimum-outbound-syd}
   
-Review the following network requirements for outbound connectivity for hosts in a minimum internet access location in the Sydney (`au-syd`) region.
+Review the following network requirements for outbound connectivity for hosts in a minimum internet access location in the Sydney (`au-syd`) region. Because this type of location requires a single network destination instead of multiple destinations, it reduces the number of outbound IP addresses that you must allow from your firewall. For more information, see [Creating Red Hat CoreOS enabled Locations with reduced firewall footprint](/docs/satellite?topic=satellite-coreos-reduced-firewall).
 {: shortdesc}
 
 

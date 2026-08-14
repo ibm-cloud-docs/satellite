@@ -16,7 +16,7 @@ subcollection: satellite
 # Host system requirements for {{site.data.keyword.satelliteshort}}
 {: #host-reqs}
 
-Review the host system requirements for {{site.data.keyword.satellitelong_notm}}, including operating system support and computing characteristics for a.
+Review the host system requirements for {{site.data.keyword.satellitelong_notm}}, including operating system support and computing characteristics for a successful {{site.data.keyword.satelliteshort}} host setup.
 {: shortdesc}
 
 You can add hosts from other cloud providers to your location. For more information, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).

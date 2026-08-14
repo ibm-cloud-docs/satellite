@@ -16,7 +16,7 @@ subcollection: satellite
 # API keys in {{site.data.keyword.cloud_notm}} 
 {: #iam-api-key}
 
-{{site.data.keyword.satelliteshort}} uses [API keys](/docs/iam?topic=iam-manapikey) from {{site.data.keyword.cloud_notm}} Identity and Access Management.
+{{site.data.keyword.satelliteshort}} uses [API keys](/docs/iam?topic=iam-manapikey) from {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to authorize various requests.
 {: shortdesc}
 
 

@@ -17,7 +17,7 @@ content-type: troubleshoot
 # Troubleshooting storage error messages in {{site.data.keyword.satellitelong_notm}}
 {: #debug-storage}
 
-Debug storage issues on {{site.data.keyword.satellitelong_notm}} by reviewing health information and resolving common cloud storage and cluster storage.
+Debug storage issues on {{site.data.keyword.satellitelong_notm}} by reviewing health information and resolving common cloud storage and cluster storage error messages in your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
 ## Reviewing error messages and logs

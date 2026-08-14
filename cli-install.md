@@ -22,7 +22,7 @@ subcollection: satellite
 {: #cli-install}
 
 
-You can use the following tools to manage your {{site.data.keyword.satelliteshort}} locations and clusters.
+You can use the following tools to manage your {{site.data.keyword.satelliteshort}} locations and clusters. While you can install a subset of the tools, the following tools are recommended.
 {: shortdesc}
 
 

@@ -16,7 +16,7 @@ subcollection: satellite
 # Auditing, logging, and monitoring {{site.data.keyword.satelliteshort}} Link endpoints
 {: #link-cloud-monitor}
 
-Add auditing, logging, and monitoring to your link endpoints to help ensure the health and performance of the services and resources attached to your.
+Add auditing, logging, and monitoring to your link endpoints to help ensure the health and performance of the services and resources attached to your location.
 {: shortdesc}
 
 ## Auditing events for endpoint actions

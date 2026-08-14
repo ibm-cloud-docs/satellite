@@ -16,7 +16,7 @@ subcollection: satellite
 # Creating a {{site.data.keyword.satelliteshort}} Connector
 {: #create-connector}
 
-A Connector provides a secure connection between a specific remote location and {{site.data.keyword.cloud_notm}}.
+A Connector provides a secure connection between a specific remote location and {{site.data.keyword.cloud_notm}}. Use the {{site.data.keyword.satelliteshort}} console to create your Connector.
 {: shortdesc}
 
 ## Prerequisites

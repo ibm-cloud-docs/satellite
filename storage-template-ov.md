@@ -46,7 +46,7 @@ Version
 ## What are my options for deploying storage to {{site.data.keyword.satelliteshort}}?
 {: #storage-sat-configure}
 
-You have two options when configuring storage in {{site.data.keyword.satelliteshort}}. The first is by using one of the provided storage templates.
+You have two options when configuring storage in {{site.data.keyword.satelliteshort}}. The first is by using one of the provided storage templates. The second is by bringing your own storage drivers (BYOD), Helm charts, or Operators from the IBM Cloud Catalog, OperatorHub, or GitHub repo. 
 {: shortdesc}
 
 {{site.data.keyword.satelliteshort}} storage templates

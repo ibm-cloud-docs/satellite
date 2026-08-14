@@ -17,7 +17,7 @@ subcollection: satellite
 # Limitations, default settings, and usage requirements
 {: #requirements}
 
-{{site.data.keyword.satellitelong}} comes with usage requirements, default service settings, and limitations to ensure security, convenience, and basic.
+{{site.data.keyword.satellitelong}} comes with usage requirements, default service settings, and limitations to ensure security, convenience, and basic functionality.
 {: shortdesc}
 
 

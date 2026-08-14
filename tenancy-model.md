@@ -16,7 +16,7 @@ subcollection: satellite
 # {{site.data.keyword.satelliteshort}} for resellers
 {: #tenancy-model}
 
-As a hybrid or distributed cloud reseller, you can set up {{site.data.keyword.satelliteshort}} locations and deploy {{site.data.keyword.openshiftshort}}.
+As a hybrid or distributed cloud reseller, you can set up {{site.data.keyword.satelliteshort}} locations and deploy {{site.data.keyword.openshiftshort}} clusters for your customers across hybrid and multicloud environments.
 {: shortdesc}
 
 ## Account overview

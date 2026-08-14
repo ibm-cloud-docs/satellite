@@ -18,7 +18,7 @@ content-type: troubleshoot
 # Debugging host health
 {: #ts-hosts-debug}
 
-By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your hosts and tries to resolve issues automatically for you.
+By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your hosts and tries to resolve issues automatically for you. For issues that cannot be resolved automatically, you can debug the hosts by reviewing the provided health information.
 {: shortdesc}
 
 

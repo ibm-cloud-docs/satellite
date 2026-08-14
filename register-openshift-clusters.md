@@ -15,7 +15,7 @@ subcollection: satellite
 # Registering clusters with {{site.data.keyword.satelliteshort}} Config
 {: #register-openshift-clusters}
 
-Clusters that you create in your Satellite location are automatically registered with {{site.data.keyword.satelliteshort}} Config.
+Clusters that you create in your Satellite location are automatically registered with {{site.data.keyword.satelliteshort}} Config. You can also manually register other clusters in the public cloud or your existing {{site.data.keyword.openshiftlong_notm}} clusters with {{site.data.keyword.satelliteshort}} Config. Follow the steps to run the registration script in your cluster to set up the {{site.data.keyword.satelliteshort}} Config components and make the cluster visible in {{site.data.keyword.satelliteshort}}.
 {: shortdesc}
 
 After you complete these steps, the cluster can be added to a cluster group in your location and [subscribed to {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-satcon-manage-direct-upload). However, you must still use {{site.data.keyword.openshiftlong_notm}} to manage the worker nodes for these clusters.

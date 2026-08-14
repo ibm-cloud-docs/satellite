@@ -25,7 +25,7 @@ completion-time: 2hr
 {: toc-services="satellite"}
 {: toc-completion-time="2hr"}
 
-You can set up your {{site.data.keyword.baremetal_short}} to use {{site.data.keyword.redhat_openshift_notm}} virtualization in your.
+You can set up your {{site.data.keyword.baremetal_short}} to use {{site.data.keyword.redhat_openshift_notm}} virtualization in your {{site.data.keyword.satelliteshort}} location. By using virtualization, you can provision Windows or other virtual machines on your {{site.data.keyword.baremetal_short}} in a managed {{site.data.keyword.redhat_openshift_notm}} space. 
 {: shortdesc}
 
 Supported host operating systems

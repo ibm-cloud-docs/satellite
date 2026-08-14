@@ -16,7 +16,7 @@ subcollection: satellite
 # Updating hosts that are assigned as worker nodes 
 {: #host-update-workers}
 
-Review the following steps to get the latest OpenShift Container Platform, operating system, and security patches for your hosts that are assigned as worker nodes to.
+Review the following steps to get the latest OpenShift Container Platform, operating system, and security patches for your hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services such as clusters.
 {: shortdesc}
 
 Service clusters, which are the underlying platform for all {{site.data.keyword.cloud_notm}} services are created by services such as {{site.data.keyword.codeengineshort}} or {{site.data.keyword.cos_full_notm}} and are maintained by {{site.data.keyword.IBM_notm}}.

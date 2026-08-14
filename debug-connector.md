@@ -16,7 +16,7 @@ subcollection: satellite
 # Debugging Connectors
 {: #debug-connector}
   
-To troubleshoot your issues quickly and efficiently, it is highly recommended that you connect your {{site.data.keyword.satelliteshort}} Connector.
+To troubleshoot your issues quickly and efficiently, it is highly recommended that you connect your {{site.data.keyword.satelliteshort}} Connector instance to an {{site.data.keyword.logs_full_notm}} instance.  
 {: shortdesc}
   
 Access your {{site.data.keyword.satelliteshort}} Connector instance from the console. If you don’t have an {{site.data.keyword.logs_full_notm}} instance in your account for the region you created the {{site.data.keyword.satelliteshort}} Connector in, click **Connect** under the **Logging for Link** section. You will be taken to the **Catalog** page where you can create an {{site.data.keyword.logs_full_notm}} instance. If you already have an {{site.data.keyword.logs_full_notm}} instance, click **Configure** under the **Logging for Link** section. Then, select your existing logging instance. After you’ve connected an {{site.data.keyword.logs_full_notm}} instance to your {{site.data.keyword.satelliteshort}} Connector, you can use the **Logging for Link** section to open the Logging Instance dashboard and the output will be filtered for your Connector.

@@ -16,7 +16,7 @@ subcollection: satellite
 # Accessing your {{site.data.keyword.redhat_openshift_notm}} API Satellite link endpoints
 {: #link-endpoint-secure}
 
-By default, your {{site.data.keyword.openshiftlong_notm}} API {{site.data.keyword.satelliteshort}} link endpoints are protected to accept traffic from.
+By default, your {{site.data.keyword.openshiftlong_notm}} API {{site.data.keyword.satelliteshort}} link endpoints are protected to accept traffic from only the {{site.data.keyword.cloud_notm}} control plane. To access them from other sources, you must configure an access control list (ACL) for your endpoint.
 {: shortdesc}
 
 You can configure the ACL for your endpoint by following the instructions in [creating access control lists by using the console](/docs/satellite?topic=satellite-link-cloud-create&interface=ui#link-sources-ui) or by running the following CLI command.

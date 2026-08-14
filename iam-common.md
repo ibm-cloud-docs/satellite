@@ -16,7 +16,7 @@ subcollection: satellite
 # Common permissions in other cloud providers
 {: #iam-common}
 
-To create and manage the underlying infrastructure in other cloud providers, you must have the appropriate permissions.
+To create and manage the underlying infrastructure in other cloud providers, you must have the appropriate permissions. Review some commonly required permissions. For more information, consult your cloud provider's documentation.
 {: shortdesc}
 
 

@@ -16,7 +16,7 @@ subcollection: satellite
 # Automating your GCP location setup with a {{site.data.keyword.bpshort}} template
 {: #loc-gcp-create-auto}
 
-Automate your GCP setup with templates that use [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-getting-started) to create a {{site.data.keyword.satelliteshort}} location.
+Automate your GCP setup with templates that use [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-getting-started) to create a {{site.data.keyword.satelliteshort}} location, provision hosts in your GCP account, and set up the {{site.data.keyword.satelliteshort}} location control plane for you. 
 {: shortdesc}
 
 You can clone and modify these Terraform templates from the [Satellite Terraform GitHub repository](https://github.com/terraform-ibm-modules/terraform-ibm-satellite/tree/main/examples){: external}. Or, you can [manually attach GCP hosts to a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-gcp).

@@ -19,7 +19,7 @@ subcollection: satellite
 # Service dependency map for IBM Cloud Satellite
 {: #service-dependencies}
 
-If a service depends on other {{site.data.keyword.cloud_notm}} services, there can be impacts if any of the dependent services are having issues.
+If a service depends on other {{site.data.keyword.cloud_notm}} services, there can be impacts if any of the dependent services are having issues. The dependency severity indicates the impact to the service when the dependency is down.
 {: shortdesc}
 
 Critical

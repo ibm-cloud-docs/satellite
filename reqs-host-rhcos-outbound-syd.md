@@ -16,7 +16,7 @@ subcollection: satellite
 # RHCOS enabled locations in Sydney
 {: #reqs-host-rhcos-outbound-syd}
 
-The following network requirements are for outbound connectivity for Red Hat Enterprise Linux (RHEL) and Red Hat CoreOS (RHCOS) hosts for use with Red Hat.
+The following network requirements are for outbound connectivity for Red Hat Enterprise Linux (RHEL) and Red Hat CoreOS (RHCOS) hosts for use with Red Hat CoreOS enabled locations in the Sydney (`au-syd`) region.  
 {: shortdesc}
 
 

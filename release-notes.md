@@ -19,7 +19,7 @@ content-type: release-note
 # {{site.data.keyword.satellitelong_notm}} release notes
 {: #satellite-relnotes}
 
-Review the latest changes to the {{site.data.keyword.satellitelong_notm}} documentation, including updates to storage templates, connector agent versions.
+Review the latest changes to the {{site.data.keyword.satellitelong_notm}} documentation, including updates to storage templates, connector agent versions, and new features.
 {: shortdesc}
 
 ## August 2026

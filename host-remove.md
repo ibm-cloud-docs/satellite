@@ -17,7 +17,7 @@ subcollection: satellite
 # Removing hosts and locations
 {: #host-remove}
 
-Learn how to remove hosts from your {{site.data.keyword.satelliteshort}} location, detaching them from the location control plane or cluster and making.
+Learn how to remove hosts from your {{site.data.keyword.satelliteshort}} location, detaching them from the location control plane or cluster and making them unavailable to run workloads.
 {: shortdesc}
 
 After removal, the host machine still exists in your underlying infrastructure provider. Reload the operating system before using the host machine for another purpose.

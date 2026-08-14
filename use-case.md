@@ -16,7 +16,7 @@ subcollection: satellite
 # {{site.data.keyword.satelliteshort}} use cases for hybrid and multicloud environments
 {: #use-case}
 
-Explore {{site.data.keyword.satellitelong_notm}} use cases that enable you to run {{site.data.keyword.cloud_notm}} services on-premises, in edge.
+Explore {{site.data.keyword.satellitelong_notm}} use cases that enable you to run {{site.data.keyword.cloud_notm}} services on-premises, in edge environments, or across other cloud providers to meet your data center and hybrid multicloud needs.
 {: shortdesc}
 
 - Use {{site.data.keyword.cloud_notm}} services wherever they are needed.

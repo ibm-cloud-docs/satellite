@@ -26,7 +26,7 @@ completion-time: 30m
 {: toc-services="satellite, ContinuousDelivery"}
 {: toc-completion-time="30m"}
 
-Deploy Kubernetes resources, like deployments, from your GitHub or GitLab repository to multiple clusters with {{site.data.keyword.contdelivery_full}} and.
+Deploy Kubernetes resources, like deployments, from your GitHub or GitLab repository to multiple clusters with {{site.data.keyword.contdelivery_full}} and {{site.data.keyword.satelliteshort}} Config. 
 {: shortdesc}
 
 ## Objectives

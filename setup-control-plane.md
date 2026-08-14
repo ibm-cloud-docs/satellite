@@ -16,7 +16,7 @@ subcollection: satellite
 # Setting up the {{site.data.keyword.satelliteshort}} location control plane
 {: #setup-control-plane}
 
-The location control plane runs resources that are managed by {{site.data.keyword.satelliteshort}} to help manage the hosts, clusters, and other resources.
+The location control plane runs resources that are managed by {{site.data.keyword.satelliteshort}} to help manage the hosts, clusters, and other resources that you attach to the location.
 {: shortdesc}
 
 When you set up the {{site.data.keyword.satelliteshort}} location control plane, keep in mind the following host considerations.

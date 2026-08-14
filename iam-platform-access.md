@@ -16,7 +16,7 @@ subcollection: satellite
 # IAM platform and service access roles
 {: #iam-platform-access}
 
-Platform access roles enable users to perform tasks on service resources at the platform level.
+Platform access roles enable users to perform tasks on service resources at the platform level. For example, you can assign user access for the service, create or delete instances, and bind instances to applications. Review the following table for the actions available to platform access roles for {{site.data.keyword.satelliteshort}}. 
 {: shortdesc}
 
 You cannot scope access policies to a particular {{site.data.keyword.satelliteshort}} Config **resource**. Instead, scope the policy to the {{site.data.keyword.satellitelong_notm}} service so that users can list {{site.data.keyword.satelliteshort}} Config resources.

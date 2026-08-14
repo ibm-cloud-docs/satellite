@@ -16,7 +16,7 @@ subcollection: satellite
 # Running a Connector agent
 {: #run-agent-locally}
 
-After you [create a {{site.data.keyword.satelliteshort}} Connector](/docs/satellite?topic=satellite-create-connector), complete the following steps to.
+After you [create a {{site.data.keyword.satelliteshort}} Connector](/docs/satellite?topic=satellite-create-connector), complete the following steps to create an Agent and finalize your setup.   
 {: shortdesc}
 
 ## Prerequisites

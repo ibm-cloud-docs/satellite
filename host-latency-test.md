@@ -16,7 +16,7 @@ subcollection: satellite
 # Network latency requirements for {{site.data.keyword.satelliteshort}} hosts
 {: #host-latency-test}
 
-Review the network latency requirements for hosts that you add to your {{site.data.keyword.satellitelong_notm}} location to ensure optimal performance and.
+Review the network latency requirements for hosts that you add to your {{site.data.keyword.satellitelong_notm}} location to ensure optimal performance and availability.
 {: shortdesc}
 
 ## {{site.data.keyword.IBM_notm}}-managed master to customer-provided worker nodes for the {{site.data.keyword.satelliteshort}} location control plane

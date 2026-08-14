@@ -16,7 +16,7 @@ subcollection: satellite
 # Setting up cluster groups
 {: #setup-clusters-satconfig-groups}
 
-The cluster group specifies all clusters that you want to include in the deployment of your Kubernetes resources.
+The cluster group specifies all clusters that you want to include in the deployment of your Kubernetes resources. The clusters can run in your {{site.data.keyword.satelliteshort}} location or in {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 If you want to use the console to create {{site.data.keyword.satelliteshort}} configurations, you can create cluster groups as part of the configuration creation process. If you want to use the CLI to create {{site.data.keyword.satelliteshort}} configurations, you must create a cluster group first. Follow these steps to create a cluster group with the CLI:

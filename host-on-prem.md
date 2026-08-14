@@ -16,7 +16,7 @@ subcollection: satellite
 # Attaching on-prem hosts to your location
 {: #attach-hosts}
 
-After you create the location in {{site.data.keyword.satellitelong}}, add compute capacity to your location so that you can set up.
+After you create the location in {{site.data.keyword.satellitelong}}, add compute capacity to your location so that you can set up {{site.data.keyword.redhat_openshift_notm}} clusters or interact with other [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services).
 {: shortdesc}
 
 To attach Red Hat CoreOS (RHCOS) hosts, your location must be enabled for Red Hat CoreOS. For more information, see [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location). Note that you can still attach Red Hat Enterprise Linux hosts to a location that is enabled for Red Hat CoreOS.
