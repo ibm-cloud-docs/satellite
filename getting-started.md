@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-04-17"
+  years: 2020, 2026
+lastupdated: "2026-08-13"
 
 keywords: satellite, hybrid, multicloud, getting started, {{site.data.keyword.satellitelong}}, hosts, host
 
@@ -35,7 +35,7 @@ Many enterprises today are getting advantages out of moving workloads into the p
 ## What are {{site.data.keyword.satelliteshort}} locations, hosts, and so on?
 {: #sat-key-terms}
 
-Before you get started, become familiar with some key terms for {{site.data.keyword.satelliteshort}}. Afterward, you can test your knowledge and [take a quiz!](https://ibm.biz/BdPUqR){: external}
+Before you get started, become familiar with some key terms for {{site.data.keyword.satelliteshort}}.
 
 | Term | Description |
 | ------ | ------------------------- |

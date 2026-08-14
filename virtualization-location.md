@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-13"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -51,8 +51,8 @@ To set up virtualization, your {{site.data.keyword.baremetal_short_sing}} must m
 - Must support virtualization technology.
     - For Intel CPUs, support for virtualization is referred to as `Intel VT` or `VT-x`.
     - For AMD CPUs, support for virtualization is referred to as `AMD Virtualization` or `AMD-V`.
-- Must have a minimum of 8 cores and 32 GB RAM, plus any additional cores that you need for your vCPU overhead. For more information, see [CPU overhead](https://docs.openshift.com/container-platform/4.11/virt/install/preparing-cluster-for-virt.html#CPU-overhead_preparing-cluster-for-virt){: external} in the {{site.data.keyword.redhat_openshift_notm}} docs.
-- Must include enough memory for your workload needs. For example: `360 MiB + (1.002 * requested memory) + 146 MiB + 8 MiB * (number of vCPUs) + 16 MiB * (number of graphics devices)`. For more information, see [Memory overhead](https://docs.openshift.com/container-platform/4.11/virt/install/preparing-cluster-for-virt.html#memory-overhead_preparing-cluster-for-virt){: external} in the {{site.data.keyword.redhat_openshift_notm}} docs.
+- Must have a minimum of 8 cores and 32 GB RAM, plus any additional cores that you need for your vCPU overhead. For more information, see [CPU overhead](https://docs.redhat.com/en/documentation/openshift_container_platform/4.11/html/virtualization/installing#preparing-cluster-for-virt){: external} in the {{site.data.keyword.redhat_openshift_notm}} docs.
+- Must include enough memory for your workload needs. For example: `360 MiB + (1.002 * requested memory) + 146 MiB + 8 MiB * (number of vCPUs) + 16 MiB * (number of graphics devices)`. For more information, see [Memory overhead](https://docs.redhat.com/en/documentation/openshift_container_platform/4.11/html/virtualization/installing#preparing-cluster-for-virt){: external} in the {{site.data.keyword.redhat_openshift_notm}} docs.
 - No operating system installed. The Red Hat CoreOS operating system is installed later in this process.
 - If you want to use OpenShift Data Foundation as your storage solution, add 2 storage disks to each of your {{site.data.keyword.baremetal_short}} when you provision them.
 
@@ -174,13 +174,13 @@ After you attach at least 3 {{site.data.keyword.baremetal_short}} to your locati
 {: #virt-operator-install}
 {: step}
 
-Follow the steps to [Install {{site.data.keyword.redhat_openshift_notm}} Virtualization using the CLI](https://docs.openshift.com/container-platform/4.11/virt/install/installing-virt-cli.html){: external}.
+Follow the steps to [Install {{site.data.keyword.redhat_openshift_notm}} Virtualization using the CLI](https://docs.redhat.com/en/documentation/openshift_container_platform/4.11/html/virtualization/installing#installing-virt-cli){: external}.
 
 ## Setting up the `virtctl` CLI
 {: #virt-tools}
 {: step}
 
-Follow the steps to [download and install the `virtctl` CLI tool](https://docs.openshift.com/container-platform/4.11/virt/install/virt-enabling-virtctl.html){: external}.
+Follow the steps to [download and install the `virtctl` CLI tool](https://docs.redhat.com/en/documentation/openshift_container_platform/4.11/html/virtualization/installing#virt-enabling-virtctl){: external}.
 
 ## Creating a data volume for your virtual machine
 {: #virt-vm-storage}
@@ -333,11 +333,11 @@ You can find more information about what to do next in the [OpenShift Virtualiza
 ## Additional resources
 {: #sat-virt-additional}
 
-- [Running a Windows 2019 Server VM in IBM Cloud Satellite with OpenShift Virtualization](https://lisowski0925.medium.com/running-a-windows-2019-server-vm-in-ibm-cloud-satellite-with-openshift-virtualization-234aa9a01def){: external}.
+- Running a Windows 2019 Server VM in IBM Cloud Satellite with OpenShift Virtualization.
 - [Using the virtualization CLI tools](https://docs.redhat.com/en/documentation/openshift_container_platform/4.11/html/virtualization/virt-using-the-cli-tools){: external}
-- [Creating VMs](https://docs.openshift.com/container-platform/4.11/virt/virtual_machines/virt-create-vms.html){: external}
+- [Creating VMs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.11/html/virtualization/virtual-machines#virt-create-vms){: external}
 - [Creating a VM using the OpenShift Web Console](https://www.redhat.com/en/blog/creating-a-vm-using-the-openshift-web-console){: external}
-- [Editing VMs](https://docs.openshift.com/container-platform/4.11/virt/virtual_machines/virt-edit-vms.html){: external}
-- [Deleting VMs](https://docs.openshift.com/container-platform/4.11/virt/virtual_machines/virt-delete-vms.html){: external}
-- [Accessing VM consoles](https://docs.openshift.com/container-platform/4.11/virt/virtual_machines/virt-accessing-vm-consoles.html){: external}
+- [Editing VMs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.11/html/virtualization/virtual-machines#virt-edit-vms){: external}
+- [Deleting VMs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.11/html/virtualization/virtual-machines#virt-delete-vms){: external}
+- [Accessing VM consoles](https://docs.redhat.com/en/documentation/openshift_container_platform/4.11/html/virtualization/virtual-machines#virt-accessing-vm-consoles){: external}
 - [OpenShift Virtualization Hands-on Lab](https://github.com/rdoxenham/openshift-virt-labs){: external}

@@ -53,17 +53,17 @@ You can have a maximum of 25 Connectors per account per region.
 {: #connector-faq-endpoints-per-conn}
 
 `cloud` endpoints
-:   1000 total. The Connector supports up to 650 TLS endpoints and 350 HTTP endpoints through which clients in your location can connect to resources outside of the location network. Source: [Connector endpoint limits](/docs/satellite?topic=satellite-connector-create-endpoints#connector-endpoint-limits).
+:   1000 total. The Connector supports up to 650 TLS endpoints and 350 HTTP endpoints through which clients in your location can connect to resources outside of the location network. Source: [Connector endpoint limits](/docs/satellite?topic=satellite-connector-create-endpoints).
 
 `location` endpoints
-:   25 total. The Connector supports up to 20 TLS endpoints and 5 HTTP endpoints through which clients outside of your location network can connect to resources inside the location. Source: [Connector endpoint limits](/docs/satellite?topic=satellite-connector-create-endpoints#connector-endpoint-limits).
+:   25 total. The Connector supports up to 20 TLS endpoints and 5 HTTP endpoints through which clients outside of your location network can connect to resources inside the location. Source: [Connector endpoint limits](/docs/satellite?topic=satellite-connector-create-endpoints).
 
 <!--</qna:connector>-->
 
 ## How many instances of Connector agent can I run?
 {: #connector-faq-instance-limits}
 
-Run no more than 6 agents per Connector. Source: [Connector agent scaling guidance](/docs/satellite?topic=satellite-connector-agent#connector-agent-scale).
+Run no more than 6 agents per Connector. Source: [Connector agent scaling guidance](/docs/satellite?topic=satellite-connector-agent).
 
 ## Can I deploy {{site.data.keyword.satelliteshort}} Connectors within {{site.data.keyword.cloud_notm}}?
 {: #connector-ibm-cloud}

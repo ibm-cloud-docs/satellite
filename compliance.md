@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-07-07"
+  years: 2020, 2026
+lastupdated: "2026-08-13"
 
 keywords: satellite, hybrid, multicloud, satellite security, satellite compliance
 
@@ -108,9 +108,9 @@ Let's Encrypt certificates are automatically generated for several {{site.data.k
 
 | Component | Example domain | Certificate expiry | Who regenerates | How to regenerate |
 |---|---|---|---|---|
-| Default {{site.data.keyword.openshiftlong_notm}} API endpoint (`openshift-api-<cluster_ID>`) for each {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster | `c-04.private.us-east.link.satellite.cloud.ibm.com` | 19800 hours (~2.26 years) | You | Regenerated during a [cluster master refresh](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh) or [cluster master update](/docs/containers?topic=containers-update#master). |
+| Default {{site.data.keyword.openshiftlong_notm}} API endpoint (`openshift-api-<cluster_ID>`) for each {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster | `c-04.private.us-east.link.satellite.cloud.ibm.com` | 19800 hours (~2.26 years) | You | Regenerated during a [cluster master refresh](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_refresh) or [cluster master update](/docs/containers?topic=containers-update#master). |
 | Default endpoints for {{site.data.keyword.cloud_notm}} services (IAM, {{site.data.keyword.cos_short}}, {{site.data.keyword.mon_short}}, {{site.data.keyword.logs_full_notm}}) | `m65f0b26d6c5f695647f5-6b64a6ccc9c596bf59a86625d8fa2202-c000.us-east.satellite.appdomain.cloud` | 90 days | {{site.data.keyword.IBM_notm}} | The Link tunnel server regenerates the certificate, and the Link tunnel client automatically reboots to reflect the rotated certificate. |
-| `c000`, `c001`, `c002`, and `c003` subdomains for each location zone | `s7033baaa45e1ae1a1060-d603ff82e51c94176a53d44566df9d79-c000.us-south.satellite.appdomain.cloud` | 19800 hours (~2.26 years) | You | Regenerated during a [cluster master refresh](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh) or [cluster master update](/docs/containers?topic=containers-update#master). |
+| `c000`, `c001`, `c002`, and `c003` subdomains for each location zone | `s7033baaa45e1ae1a1060-d603ff82e51c94176a53d44566df9d79-c000.us-south.satellite.appdomain.cloud` | 19800 hours (~2.26 years) | You | Regenerated during a [cluster master refresh](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_refresh) or [cluster master update](/docs/containers?topic=containers-update#master). |
 | `ce00` Ingress subdomains | `s7033baaa45e1ae1a1060-d603ff82e51c94176a53d44566df9d79-ce00.us-south.satellite.appdomain.cloud` | 90 days | {{site.data.keyword.IBM_notm}} | [Setting up Ingress](/docs/openshift?topic=openshift-ingress-roks4). |
 | Worker node connection to the API server | 10.240.128.09 | 3 years | You | [Update hosts that are assigned as worker nodes](/docs/satellite?topic=satellite-host-update-workers). |
 | {{site.data.keyword.satelliteshort}} management plane API endpoint | `http://c103-1.containers.cloud.ibm.com/` | 19800 hours (~2.26 years) | {{site.data.keyword.IBM_notm}} | Regenerated during automated rollouts for major and minor version updates for the {{site.data.keyword.satelliteshort}} location management plane hosts. |

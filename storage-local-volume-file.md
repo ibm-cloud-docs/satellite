@@ -16,7 +16,7 @@ subcollection: satellite
 # Local Storage Operator - File
 {: #storage-local-volume-file}
 
-Set up [Persistent storage using local volumes](https://docs.openshift.com/container-platform/4.6/storage/persistent_storage/persistent-storage-local.html#create-local-pvc_persistent-storage-local){: external} for {{site.data.keyword.satellitelong}} clusters.You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
+Set up [Persistent storage using local volumes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.6/html/storage/configuring-persistent-storage#persistent-storage-using-local-volume){: external} for {{site.data.keyword.satellitelong}} clusters.You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
 When you create a local file storage configuration, you specify the local storage devices that you want to make available as persistent volumes (PVs) in your clusters. After you assign the storage configuration to a cluster, {{site.data.keyword.satelliteshort}} deploys the local storage operator which mounts the local disks that you specified in your configuration. The operator further creates the persistent volumes with the file system type that you specify, and creates the `sat-local-file-gold` storage class which you can use to create persistent volume claims (PVCs). You can then reference your PVCs in your Kubernetes workloads.
@@ -255,7 +255,7 @@ After you have [retrieved the device paths for the disks that you want to use in
 {: #local-volume-file-config-create-api}
 {: api}
 
-1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/account?topic=account-iamtoken_from_apikey).
+1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/account?topic=account-iamtoken-from-apikey).
 
 1. Review the [parameter reference](#local-volume-file-parameter-reference) for the template version that you want to use.
 
@@ -776,7 +776,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local file s
 {: #sat-local-file-support}
 
 
-1. Review the FAQs in the [Red Hat OpenShift docs](https://docs.openshift.com/container-platform/4.9/storage/persistent_storage/persistent-storage-local.html){: external}.
+1. Review the FAQs in the [Red Hat OpenShift docs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.9/html/storage/configuring-persistent-storage#persistent-storage-using-local-volume){: external}.
 1. Review the [troubleshooting documentation](/docs/satellite?topic=satellite-storage-must-gather) to troubleshoot and resolve common issues.
 1. Check the status of the {{site.data.keyword.Bluemix_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external}.
 1. Review [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud){: external} to see whether other users experienced the same problem. Tag any questions with ibm-cloud, so that it's seen by the {{site.data.keyword.Bluemix_notm}} development teams.

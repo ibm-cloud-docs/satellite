@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-07-31"
+  years: 2023, 2026
+lastupdated: "2026-08-13"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -30,7 +30,7 @@ subcollection: satellite
 
 [Major]{: tag-red}
 
-1. Update the [management plane](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update)
+1. Update the [management plane](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_update)
 
     Example command: 
     ```sh
@@ -343,7 +343,3 @@ The following steps will upgrade ODF to the next version.
     odf-operator.v4.11.8              OpenShift Data Foundation     4.11.8    odf-operator.v4.11.7              Succeeded
     ```
     {: screen}
-
-
-
-

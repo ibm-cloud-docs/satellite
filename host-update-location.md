@@ -133,7 +133,7 @@ As part of the bootstrapping process, the latest images and {{site.data.keyword.
 Updating your Kubernetes API does not update your control plane hosts.
 {: note}
 
-To update your Kubernetes API server, run the [`cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command. 
+To update your Kubernetes API server, run the [`cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_update) command.
 
 
 ## Resetting the host key

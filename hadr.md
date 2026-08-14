@@ -96,7 +96,7 @@ All upgrades follow {{site.data.keyword.IBM_notm}} service best practices, inclu
 
 Complex changes are enabled and disabled with feature flags to control exposure.
 
-Changes that impact customer workloads are detailed in {{site.data.keyword.cloud_notm}} notifications. For more information about planned maintenance, announcements, and release notes that impact this service, see [Monitoring notifications and status](/docs/account?topic=account-viewing-cloud-status).
+Changes that impact customer workloads are detailed in {{site.data.keyword.cloud_notm}} notifications. For more information about planned maintenance, announcements, and release notes that impact this service, see [Monitoring notifications and status](/docs/account?topic=account-viewing-ibm-cloud-status).
 
 ## Your responsibilities for high availability and disaster recovery
 {: #feature-responsibilities}

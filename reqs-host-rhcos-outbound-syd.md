@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-06-05"
+  years: 2023, 2026
+lastupdated: "2026-08-13"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -42,7 +42,7 @@ Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) se
 :    If you don't want to use {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers, you can instead define a [custom NTP server for your RHCOS hosts](/docs/satellite?topic=satellite-config-custom-ntp).
 
 Allow hosts to communicate with Red Hat Container Registry.
-:    Allow your hosts to access the required sites for OpenShift Container Platform. For more information, see [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.
+:    Allow your hosts to access the required sites for OpenShift Container Platform. For more information, see [Configuring your firewall](https://docs.redhat.com/en/documentation/openshift_container_platform/4.8/html/installing/installation-configuration#configuring-firewall){: external}.
 
 
 Allow control plane nodes to communicate with the management plane.
