@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-15"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -33,7 +33,7 @@ To install the CLI, see [Installing the the CLI](/docs/satellite?topic=satellite
 * Install the [{{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-cli-install).
 * Install the `ks` plug-in by running the following command:
 
-   ```sh
+   ```console
    ibmcloud plugin install ks
    ```
    {: pre}
