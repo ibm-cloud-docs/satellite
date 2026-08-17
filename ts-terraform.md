@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-17"
 
 keywords: satellite, hybrid, multicloud, troubleshoot terraform, update hosts
 
@@ -17,6 +17,9 @@ content-type: troubleshoot
 
 # Why is my host attach script triggering a state change in Terraform?
 {: #ts-host-terraform}
+
+Resolve issues where an updated host attach script triggers an unwanted state change in your Terraform configuration.
+{: shortdesc}
 
 You download an updated host script for your location, which you must do yearly or else the [script expires](/docs/satellite?topic=satellite-ts-host-unassigned-unknown). If you use Terraform scripts to manage your {{site.data.keyword.satelliteshort}} location and hosts, the updated host script requires you to update all your existing hosts, forcing you to replace them with new hosts.
 {: tsSymptoms}

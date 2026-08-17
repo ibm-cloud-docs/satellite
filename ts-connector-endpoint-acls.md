@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-17"
 
 keywords: satellite, hybrid, multicloud, connector, agent, logs
 
@@ -17,6 +17,9 @@ content-type: troubleshoot
 
 # Why do I see a `rejected by Sources` error in my agent container logs?
 {: #ts-connector-endpoints-acls}
+
+Resolve `rejected by Sources` errors in your {{site.data.keyword.satelliteshort}} Connector agent logs by checking your endpoint access control list.
+{: shortdesc}
 
 
 

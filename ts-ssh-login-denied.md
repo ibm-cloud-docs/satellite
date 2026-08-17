@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -15,6 +15,9 @@ content-type: troubleshoot
 
 # Why can't I SSH into my host machines?
 {: #ssh-login-denied}
+
+Resolve SSH access issues for host machines that are assigned in {{site.data.keyword.satelliteshort}}.
+{: shortdesc}
 
 
 When you try to SSH into a host machine that is assigned in {{site.data.keyword.satelliteshort}}, you see a message similar to the following.

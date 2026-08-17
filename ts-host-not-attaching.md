@@ -3,7 +3,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -16,6 +16,9 @@ content-type: troubleshoot
 
 # Why aren't my hosts attaching to my location?
 {: #host-not-attaching}
+
+Resolve issues where hosts aren't attaching to your {{site.data.keyword.satelliteshort}} location when the hosts are cloned virtual machines.
+{: shortdesc}
 
 
 When you run your host attach script, some hosts are not attaching to your location, but you do not receive an error message. Your host machines are virtual machine clones.
@@ -35,7 +38,7 @@ If the IDs match a host's IDs that are already attached, then you must take step
 To resolve this issue, follow these steps.
 {: tsResolve}
 
-1. Remove all hosts from the location. 
+1. Remove all hosts from the location.
 2. Reload your operating systems on each host.
 3. SSH into each host and run the following commands.
 

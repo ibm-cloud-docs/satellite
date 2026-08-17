@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-17"
 
 keywords: satellite, troubleshoot, multicloud
 
@@ -15,6 +15,9 @@ subcollection: satellite
 
 # Why can't my HTTP proxy connect to the Red Hat servers?
 {: #ts-http-proxy}
+
+Resolve issues where your HTTP proxy cannot connect to Red Hat servers due to a misconfigured `REDHAT_PACKAGE_MIRROR_LOCATION` value.
+{: shortdesc}
 
 If the `REDHAT_PACKAGE_MIRROR_LOCATION` value is misconfigured, then you receive an error similar to the following message.
 {: tsSymptoms}

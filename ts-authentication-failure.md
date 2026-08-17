@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-06-06"
+  years: 2022, 2026
+lastupdated: "2026-08-17"
 
 keywords: satellite, node, azure, file, disk
 
@@ -15,6 +15,9 @@ content-type: troubleshoot
 
 # Why am I getting an authentication failure when logging in to my Azure Disk or Azure File {{site.data.keyword.satelliteshort}} configuration?
 {: #ts-authentication-failure}
+
+Resolve authentication failures when accessing your Azure Disk or Azure File {{site.data.keyword.satelliteshort}} storage configuration.
+{: shortdesc}
 
 You are unable to access your storage configuration due to an `authentication error`. 
 {: tsSymptoms}

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -15,6 +15,9 @@ content-type: conref
 
 # Content references for Satellite
 {: #conref-satellite}
+
+Review content references for {{site.data.keyword.satelliteshort}}, including reusable snippets for storage templates, cost estimation, and other shared content.
+{: shortdesc}
 
 ## Understanding which ODF storage template to use
 {: #compare-odf}

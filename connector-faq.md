@@ -3,7 +3,7 @@
 copyright:
   years: 2023, 2026
 
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-17"
 
 keywords: satellite, connector, faq, frequently asked questions
 
@@ -16,6 +16,9 @@ subcollection: satellite
 
 # {{site.data.keyword.satelliteshort}} Connector FAQ
 {: #connector-faq}
+
+Find answers to frequently asked questions about {{site.data.keyword.satelliteshort}} Connector, including endpoint support, network access control, and agent configuration.
+{: shortdesc}
 
 <!--<qna:connector>-->
 

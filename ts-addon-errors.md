@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -18,6 +18,9 @@ content-type: troubleshoot
 {: #addon-errors}
 {: troubleshoot}
 {: support}
+
+Resolve issues with cluster add-ons in {{site.data.keyword.satellitelong_notm}}, including add-ons that are unsupported, unhealthy, or misconfigured.
+{: shortdesc}
 
 When you try to use a cluster add-on in {{site.data.keyword.satellitelong}}, the cluster add-on does not work. For example, you installed the Kubernetes web terminal add-on but cannot open the add-on.
 {: tsSymptoms}

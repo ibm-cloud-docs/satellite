@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -15,6 +15,9 @@ content-type: troubleshoot
 
 # Why can't I see Connector logs?
 {: #ts-connector-delete-apikey}
+
+Resolve issues viewing {{site.data.keyword.satelliteshort}} Connector logs when your API key has been deleted while the agent is running.
+{: shortdesc}
 
 
 When you view logs for your Connector agents, you find an error similar to the following example.

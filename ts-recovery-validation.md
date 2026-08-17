@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2024
-lastupdated: "2024-02-27"
+  years: 2024, 2026
+lastupdated: "2026-08-17"
 
 keywords: satellite, recover, disaster recovery, troubleshooting
 
@@ -16,6 +16,7 @@ subcollection: satellite
 {: #ts-recovery-validation}
 
 Complete the following steps to debug your cluster state after an infrastructure event like a machine failure or network outage in the location.
+{: shortdesc}
 
 You can complete these steps in order, or you can run the [cluster debug script](#ts-cluster-debug-script). The following steps are compiled into the debug script for you.
 {: tip}

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -16,6 +16,9 @@ content-type: troubleshoot
 
 # Debugging the health of the location control plane
 {: #ts-locations-control-plane}
+
+Debug the health of your {{site.data.keyword.satelliteshort}} location control plane when components running on your hosts have issues.
+{: shortdesc}
 
 When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations), {{site.data.keyword.IBM_notm}} automatically sets up a master for the location control plane in {{site.data.keyword.cloud_notm}}. Additionally, you must assign at least three hosts to the {{site.data.keyword.satelliteshort}} location control plane as worker nodes to run location components that {{site.data.keyword.IBM_notm}} configures. If the location control plane that runs on your hosts has issues, you can debug the location control plane.
 

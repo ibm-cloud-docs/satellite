@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-09-26"
+  years: 2022, 2026
+lastupdated: "2026-08-17"
 
 keywords: satellite, hybrid, multicloud, endpoint, link, endpoint secure
 
@@ -16,6 +16,9 @@ content-type: troubleshoot
 
 # Why can't I connect to my {{site.data.keyword.redhat_openshift_notm}} API Satellite link endpoint?
 {: #ts-link-endpoint-secure}
+
+Resolve issues connecting to your {{site.data.keyword.redhat_openshift_notm}} API {{site.data.keyword.satelliteshort}} link endpoint by configuring an access control list.
+{: shortdesc}
 
 I can't connect to my {{site.data.keyword.redhat_openshift_notm}} API Satellite link endpoint. I was able to before, what changed?  
 {: tsSymptoms}

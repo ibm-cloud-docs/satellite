@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2021, 2025
-lastupdated: "2025-04-17"
+  years: 2021, 2026
+lastupdated: "2026-08-17"
 
 keywords: satellite, host, location
 
@@ -16,6 +16,9 @@ content-type: troubleshoot
 
 # Why can't I reuse a host in a different {{site.data.keyword.satelliteshort}} location?
 {: #sat-host-reattach-fail}
+
+Resolve host assignment failures when reusing an existing host in a different {{site.data.keyword.satelliteshort}} location.
+{: shortdesc}
 
 
 When you try to reuse an existing host by assigning it to a new location, you see a message similar to the following error. 

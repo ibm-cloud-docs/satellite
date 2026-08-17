@@ -3,7 +3,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-17"
 
 keywords: satellite, hybrid, multicloud, odf, iam, session timeout
 
@@ -16,6 +16,9 @@ content-type: troubleshoot
 
 # Why do I see `unable to fetch header secret data` when creating a Satellite storage assignment?
 {: #ts-session-timeout-odf}
+
+Resolve `unable to fetch header secret data` errors that occur when creating a {{site.data.keyword.satelliteshort}} storage assignment due to an expired IAM session.
+{: shortdesc}
 
 When creating a Satellite storage assignment for storage services such as ODF, you see error messages similar to the following.
 {: tsSymptoms}

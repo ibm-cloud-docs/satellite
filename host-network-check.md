@@ -3,7 +3,7 @@
 copyright:
   years: 2022, 2026
 
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-17"
 
 keywords: satellite, networking, connectivity, host check, host setup
 
@@ -18,6 +18,7 @@ subcollection: satellite
 {: #host-network-check}
 
 After you create hosts that meet the [system requirements](/docs/satellite?topic=satellite-host-reqs), [network requirements](/docs/satellite?topic=satellite-reqs-host-network), and the [outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound), you can verify your host setup by running the following `sat-host-check` script.
+{: shortdesc}
 
 There is currently a bug with the `sat-host-check` script that causes it to fail on RHEL due to a GLIBC requirement.
 {: note}

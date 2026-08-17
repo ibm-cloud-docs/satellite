@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-02-16"
+lastupdated: "2026-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -17,6 +17,9 @@ content-type: troubleshoot
 # Why is my agent not showing up in the list of Active Agents?
 {: #ts-connector-not-in-list}
 
+Resolve issues where your {{site.data.keyword.satelliteshort}} Connector agent is running but doesn't appear in the list of active agents.
+{: shortdesc}
+
 
 My agent is running but it does not show up in the list of Active Agents in the UI.
 {: tsSymptoms}
@@ -29,11 +32,10 @@ There is a small delay (approximately several seconds) before a running Connecto
 
 - Make sure the Connector ID your agent is using matches the Connector ID you are connecting to.
 
-- Make sure the API Key is valid and has the correct permissions to the Connector instance. 
+- Make sure the API Key is valid and has the correct permissions to the Connector instance.
 
 - Check the logs of the agent to determine if there are any errors.
 
 - Make sure the Connector service and processes are running (Windows agent only).
     - From the **Services** control panel, all services with a name that starts with `SatelliteConnectorService` or `Satellite Connector Service` (< 1.2.0) must have the `Running` status and the `Automatic` startup type.
     - From TaskManager, verify that there are two `Node.js JavaScript Runtime(32 bit)` processes and one `Windows Service Wrapper` process for each agent.
-    

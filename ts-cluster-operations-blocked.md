@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -15,6 +15,9 @@ content-type: troubleshoot
 
 # Why can't I update or complete other actions with my cluster?
 {: #ts-cluster-operations-blocked}
+
+Resolve issues with cluster updates and operations that are blocked because your {{site.data.keyword.satelliteshort}} location is in an unhealthy state.
+{: shortdesc}
 
 When you try to manage your cluster, such as to perform a cluster update, the operation fails with a message similar to the following.
 {: tsSymptoms}
