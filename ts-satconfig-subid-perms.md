@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-07-28"
+lastupdated: "2026-08-17"
 
 keywords: satellite config, subscription, id, permissions, not authorized
 
@@ -16,6 +16,9 @@ content-type: troubleshoot
 
 # Why does my {{site.data.keyword.satelliteshort}} Config rollout fail and result in a `not authorized` error?
 {: #ts-satconfig-subid-perms}
+
+Resolve `403 not authorized` errors in your {{site.data.keyword.satelliteshort}} Config rollout by updating the subscription identity.
+{: shortdesc}
 
 When you create and apply a {{site.data.keyword.satelliteshort}} Config subscription to create, update, or delete Kubernetes resources, the rollout fails and you see a `403 not authorized` error. 
 {: tsSymptoms}

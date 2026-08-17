@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-07-28"
+lastupdated: "2026-08-17"
 
 keywords: satellite, node, azure, file, disk
 
@@ -16,6 +16,9 @@ content-type: troubleshoot
 
 # Why are my nodes failing to register using Azure File or Azure Disk storage templates?
 {: #ts-node-register-failure}
+
+Resolve worker node registration failures when creating an Azure Disk or Azure File {{site.data.keyword.satelliteshort}} storage configuration.
+{: shortdesc}
 
 Your worker nodes are failing to register when creating an Azure Disk or Azure File storage configuration. 
 {: tsSymptoms}

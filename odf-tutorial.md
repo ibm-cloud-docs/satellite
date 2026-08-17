@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-17"
 
 keywords: satellite, hybrid, multicloud, odf, openshift data foundation
 
@@ -24,6 +24,9 @@ completion-time: 2h
 {: toc-content-type="tutorial"}
 {: toc-services="satellite, containers, vpc"}
 {: toc-completion-time="2h"}
+
+Deploy OpenShift Data Foundation on {{site.data.keyword.satelliteshort}} clusters with Azure worker nodes by setting up storage, creating a configuration, and assigning it to your cluster.
+{: shortdesc}
 
 ## Objectives
 {: #odf-tutorial-objectives}

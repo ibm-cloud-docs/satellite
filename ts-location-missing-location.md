@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -14,6 +14,9 @@ subcollection: satellite
 
 # Why can't I see a location that another user gave me access to?
 {: #ts-location-missing-location}
+
+Resolve issues where a {{site.data.keyword.satelliteshort}} location that another user shared with you doesn't appear in your location list.
+{: shortdesc}
 
 You are granted access to another user's {{site.data.keyword.satelliteshort}} location. However, when you list locations, you do not see the location.
 {: tsSymptoms}
@@ -70,14 +73,14 @@ Ask the location owner to update your access policy in {{site.data.keyword.cloud
         Example output
         ```sh
         Policy ID:   11a11111-bb2b-3c33-444d-ee5ee55ee55e
-        Roles:       Viewer   
-        Resources:                         
-                Service Name    satellite      
-                Resource Type   location   
+        Roles:       Viewer
+        Resources:
+                Service Name    satellite
+                Resource Type   location
         ```
         {: screen}
 
-3. Update the access policy so that the policy is no longer scoped to locations. 
+3. Update the access policy so that the policy is no longer scoped to locations.
     - For individual users
         ```sh
         ibmcloud iam user-policy-update <user@email.com> <policy_ID> --roles Viewer --service-name satellite
@@ -94,8 +97,8 @@ Ask the location owner to update your access policy in {{site.data.keyword.cloud
         ```sh
         Policy ID:   11a11111-bb2b-3c33-444d-ee5ee55ee55e
         Version:     2-111aaa1111a1a1aa1a1a11aa11a1aa11
-        Roles:       Viewer 
-        Resources:                         
-                    Service Name    satellite      
+        Roles:       Viewer
+        Resources:
+                    Service Name    satellite
         ```
         {: screen}

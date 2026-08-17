@@ -3,7 +3,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-17"
 
 keywords: satellite, rhel, rhel 9, openshift 4.16 troubleshoot, host assign fail, 4.16 cluster
 
@@ -16,6 +16,9 @@ content-type: troubleshoot
 
 # Why can't I assign a RHEL 9 host to a 4.16 cluster?
 {: #host-assign-416}
+
+Resolve host assignment failures when assigning a RHEL 9 host to a {{site.data.keyword.satelliteshort}} cluster running version 4.16.
+{: shortdesc}
 
 When you try to assign RHEL 9 host to a version 4.16 cluster, you see a message similar to the following error in the host logs.
 {: tsSymptoms}

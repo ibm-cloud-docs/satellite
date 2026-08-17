@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-17"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -16,6 +16,9 @@ subcollection: satellite
 
 # Update OpenShift Data Foundation in your Satellite cluster
 {: #sat-storage-odf-update}
+
+Update OpenShift Data Foundation in your {{site.data.keyword.satelliteshort}} cluster for both major version updates and minor patch updates.
+{: shortdesc}
 
 * [Major]{: tag-red} Applies to major updates, for example if you are updating your worker nodes to a new major version, such as from `4.11` to `4.12` as well as OpenShift Data Foundation from `4.11` to `4.12`
 * [Minor]{: tag-blue} Applies to minor patch updates, for example if you are updating from `4.12.15_1542_openshift` to `4.12.16_1544_openshift` while keeping OpenShift Data Foundation at version `4.12`.

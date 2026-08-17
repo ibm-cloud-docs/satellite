@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-07-28"
+lastupdated: "2026-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -16,6 +16,9 @@ content-type: troubleshoot
 
 # Why is my Connector Agent unable to establish the tunnel with {{site.data.keyword.cloud_notm}}?
 {: #ts-connector-tunnel}
+
+Resolve issues where your {{site.data.keyword.satelliteshort}} Connector agent cannot establish a tunnel with {{site.data.keyword.cloud_notm}} due to firewall or proxy settings.
+{: shortdesc}
 
 
 Your Connector Agent cannot establish the tunnel with {{site.data.keyword.cloud_notm}}. When you check your Connector Agent Docker logs, you see error messages similar to the following example.

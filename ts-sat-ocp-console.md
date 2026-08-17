@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-17"
 
 keywords: satellite, certificate, expired, console
 
@@ -15,6 +15,9 @@ content-type: troubleshoot
 
 # Why can't I access the {{site.data.keyword.redhat_openshift_notm}} web console?
 {: #ts-sat-ocp-console}
+
+Resolve issues accessing the {{site.data.keyword.redhat_openshift_notm}} web console caused by an expired or invalid security certificate.
+{: shortdesc}
 
 When you try to access your {{site.data.keyword.satelliteshort}} cluster through the {{site.data.keyword.redhat_openshift_notm}} console, you see an error message similar to the following:
 {: tsSymptoms}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-17"
 
 
 keywords: satellite storage, features, overview
@@ -18,6 +18,8 @@ subcollection: satellite
 # Storage template feature overview
 {: #storage-template-features}
 
+Review the features supported by each {{site.data.keyword.satelliteshort}} storage template, including encryption, snapshots, volume expansion, and availability.
+{: shortdesc}
 
 | Name | Version | Supported providers | Encryption at rest | Encryption in transit | Snapshot support | Availability | Volume expansion |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -47,3 +49,4 @@ subcollection: satellite
 | OpenShift Data Foundation for remote storage | 4.20 | OpenShift Container Platform | True | True | False | Regional | True |
 | VMware CSI Driver | 2.7.0 | VMware,IBM | False | False | True | Zonal | False |
 {: caption="Storage template feature comparison" caption-side="bottom"}
+{: shortdesc}

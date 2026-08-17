@@ -3,7 +3,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -16,6 +16,9 @@ content-type: troubleshoot
 
 # Why is my Ingress in a warning state?
 {: #ts-degraded-ingress}
+
+Resolve Ingress warning states in your {{site.data.keyword.satelliteshort}} cluster by checking router health and configuration.
+{: shortdesc}
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-17"
 
 keywords: satellite, hybrid, multicloud, troubleshoot, host assign fail, crio error
 
@@ -15,6 +15,9 @@ content-type: troubleshoot
 
 # Why does host assign fail with a `CRI-O` error? 
 {: #host-assign-file-system}
+
+Resolve CRI-O errors that occur when assigning a host to a {{site.data.keyword.satelliteshort}} cluster due to an unsupported file system type.
+{: shortdesc}
 
 When you try to assign a host to a cluster, you see a message similar to the following error.
 {: tsSymptoms}

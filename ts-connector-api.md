@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -15,6 +15,9 @@ content-type: troubleshoot
 
 # Why isn't my API key working?
 {: #ts-connector-api}
+
+Resolve issues with your API key when running a {{site.data.keyword.satelliteshort}} Connector agent.
+{: shortdesc}
 
 
 Your API key is not working.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -15,6 +15,9 @@ content-type: troubleshoot
 
 # Why is the namespace where my storage operator was deployed stuck in **Terminating** status?
 {: #storage-namespace-terminating}
+
+Resolve namespaces that are stuck in `Terminating` status after removing a {{site.data.keyword.satelliteshort}} storage configuration.
+{: shortdesc}
 
 
 When you remove a storage configuration from a cluster, the resources such as operator pods and storage classes are removed, but the namespace is stuck in `Terminating` status. 

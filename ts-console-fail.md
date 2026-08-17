@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -15,6 +15,9 @@ content-type: troubleshoot
 
 # Why can't I access the {{site.data.keyword.redhat_openshift_notm}} console without a VPN on the VPC?
 {: #ts-console-fail}
+
+Resolve issues accessing the {{site.data.keyword.redhat_openshift_notm}} web console for clusters in your {{site.data.keyword.satelliteshort}} location.
+{: shortdesc}
 
 
 When you create a {{site.data.keyword.redhat_openshift_notm}} cluster in your {{site.data.keyword.satelliteshort}} location, you cannot access the {{site.data.keyword.redhat_openshift_notm}} web console, or access to the console is intermittent.

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -16,6 +16,9 @@ content-type: troubleshoot
 
 # Why does the location subdomain not route traffic to control plane hosts?
 {: #ts-location-subdomain}
+
+Resolve issues where the {{site.data.keyword.satelliteshort}} location subdomain doesn't route traffic to control plane hosts.
+{: shortdesc}
 
 
 After you assign hosts to your {{site.data.keyword.satelliteshort}} location control plane, you see a message similar to the following.
