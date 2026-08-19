@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-19"
 
 keywords: satellite, hybrid, multicloud, microsoft azure, azure, azure host
 
@@ -38,9 +38,9 @@ Do not reuse the same name for multiple locations, even after the other location
 4. In the **Azure credentials** section, enter the **Azure client ID (app ID)**, **Azure tenant ID**, and **Azure secret key (password)** values that you previously created for the service principal.
 5. Click **Fetch options from Azure**.
 6. Review the **Azure environment** details that are automatically populated. By default, enough VMs are created to provide hosts for 1 small location that can run about 2 demo clusters. To change the subscription, region, instance type, or number of VMs for the hosts, click the **Edit** pencil icon.
-7. Review the **Satellite location** details. If you edited the Azure environment details, you might want to click the **Edit** pencil icon to change details such as the description, API key, or {{site.data.keyword.cloud_notm}} multizone region that the location is managed from.
+7. Review the **Satellite location** details. If you edited the Azure environment details, you can click the **Edit** pencil icon to change details such as the description, API key, or {{site.data.keyword.cloud_notm}} multizone region that the location is managed from.
 8. In the **Summary** pane, review the cost estimate.
-9. Click **Create location**. Your location might take about 30 minutes to finish provisioning.
+9. Click **Create location**. Your location takes about 30 minutes to finish provisioning.
 10. Optional: To review the provisioning progress, review the logs in the {{site.data.keyword.bpshort}} workspace that is automatically created for you.
     1. Click **Manage in Schematics**. If you see an error, navigate to the [{{site.data.keyword.bpshort}} workspaces console](https://cloud.ibm.com/schematics/workspaces){: external} and click the name of your workspace, such as `us.east.cartOrder...`.
     2. From the **Activity** tab, find the current activity row and click **View log** to review the log details.

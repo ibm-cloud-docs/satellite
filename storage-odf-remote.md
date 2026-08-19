@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-19"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote devices, odf, openshift data foundation
 
@@ -409,7 +409,7 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
     ```
     {: pre}
 
-1. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
+1. Verify that the pod is deployed. Note that it can take a few minutes for your app to get into a `Running` state.
 
     ```sh
     oc get pods

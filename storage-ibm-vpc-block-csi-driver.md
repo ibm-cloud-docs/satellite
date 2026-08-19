@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-19"
 
 keywords: satellite storage, csi, satellite configurations, block storage, CSI driver, IBM VPC block storage, Satellite storage
 
@@ -229,7 +229,7 @@ You can use the `ibm-vpc-block-csi-driver` to create PVCs that you can use in yo
     ```
     {: pre}
 
-1. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
+1. Verify that the pod is deployed. Note that it can take a few minutes for your app to get into a `Running` state.
 
     ```sh
     oc get pods

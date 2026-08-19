@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-19"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration, AWS EBS, Amazon Elastic Block Storage, satellite clusters
 
@@ -245,7 +245,7 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
     ```
     {: pre}
 
-7. Verify that the pod is deployed. Note that it might take a few minutes for the storage request to be fulfilled and for your app to get into a `Running` state.
+7. Verify that the pod is deployed. Note that it can take a few minutes for the storage request to be fulfilled and for your app to get into a `Running` state.
     ```sh
     oc get pods
     ```

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-19"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -357,7 +357,7 @@ Want to use Terraform to deploy OpenShift Data Foundation? For more information,
     
 
 
-1. Verify that the storage configuration resources are deployed. Note that this process might take up to 10 minutes to complete.
+1. Verify that the storage configuration resources are deployed. Note that this process can take up to 10 minutes to complete.
 
     1. Get the `storagecluster` that you deployed and verify that the phase is `Ready`.
     
@@ -537,7 +537,7 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
     ```
     {: pre}
 
-1. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
+1. Verify that the pod is deployed. Note that it can take a few minutes for your app to get into a `Running` state.
 
     ```sh
     oc get pods

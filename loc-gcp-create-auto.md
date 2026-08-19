@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-19"
 
 keywords: satellite, hybrid, multicloud, gcp, google cloud platform
 
@@ -37,16 +37,16 @@ Do not reuse the same name for multiple locations, even after the other location
 1. In the **Get started** section, click **GCP Quick Start**.
 1. Upload your GCP credentials file.
 1. Review the **GCP environment** details that are automatically populated. By default, enough VMs are created to provide hosts for 1 small location that can run about 2 demo clusters. To change the subscription, region, instance type, or number of VMs for the hosts, click the **Edit** pencil icon.
-1. Review the **Satellite location** details. If you edited the GCP environment details, you might want to click the **Edit** pencil icon to change details such as the description, API key, or {{site.data.keyword.cloud_notm}} multizone region that the location is managed from.
+1. Review the **Satellite location** details. If you edited the GCP environment details, you can click the **Edit** pencil icon to change details such as the description, API key, or {{site.data.keyword.cloud_notm}} multizone region that the location is managed from.
 1. In the **Summary** pane, review the cost estimate.
-1. Click **Create location**. Your location might take about 30 minutes to finish provisioning.
+1. Click **Create location**. Your location takes about 30 minutes to finish provisioning.
 1. Optional: To review the provisioning progress, review the logs in the {{site.data.keyword.bpshort}} workspace that is automatically created for you.
     1. Click **Manage in Schematics**. If you see an error, navigate to the [{{site.data.keyword.bpshort}} workspaces console](https://cloud.ibm.com/schematics/workspaces){: external} and click the name of your workspace, such as `us.east.cartOrder...`.
     1. From the **Activity** tab, find the current activity row and click **View log** to review the log details.
     1. Wait for the {{site.data.keyword.bpshort}} action to finish and the workspace to enter an **Active** state.
 1. Optional: If you need to setup SSH access to your hosts in GCP, see [Choose your access method](https://docs.cloud.google.com/compute/docs/instances/access-overview){: external} in the Google documentation. GCP recommends using the OS Login technology. You can also use the `gcloud` CLI or the built-in SSH client in the web UI to access your VMs.
 
-The GCP VPC created by the Quick Start template does not have port 22 open externally for SSH and so you might need to add a firewall rule before you can use SSH. If you add a firewall rule to open port 22 externally, you must remove this firewall rule before you specify the **Destroy resources** option in {{site.data.keyword.bpshort}} to clean up your location.
+The GCP VPC created by the Quick Start template does not have port 22 open externally for SSH. If you want to use SSH, add a firewall rule to open port 22 externally, then remove that firewall rule before you specify the **Destroy resources** option in {{site.data.keyword.bpshort}} to clean up your location.
 {: note}
      
 
