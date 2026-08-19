@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-19"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, netapp nas trident
 
@@ -269,7 +269,7 @@ You can use the `trident-kubectl-nas` driver to deploy apps that use your NetApp
     ```
     {: pre}
 
-1. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
+1. Verify that the pod is deployed. Note that it can take a few minutes for your app to get into a `Running` state.
 
     ```sh
     oc get pods

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-19"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -49,10 +49,10 @@ Is the cost of the relay compute resources included in the {{site.data.keyword.s
 :   The {{site.data.keyword.cloud_notm}} resources used for the relay and {{site.data.keyword.satelliteshort}} are billed separately.
 
 Are there additional charges to access {{site.data.keyword.cloud_notm}} services over Direct Link?
-:   No, there are not additional charges for accessing services over Direct Link. 
+:   No, there are not additional charges for accessing services over Direct Link.
 
 Why do I need Direct Link?
-:   Normally, outbound traffic from your Location to {{site.data.keyword.cloud_notm}} services might flow over the public internet. When you use Direct Link, outbound traffic from your Location flows through the Direct Link, rather than using the public Internet.
+:   By default, outbound traffic from your Location to {{site.data.keyword.cloud_notm}} services flows over the public internet. When you use Direct Link, outbound traffic from your Location flows through the Direct Link, rather than using the public internet.
 
 My organization disables Internet access by design. Can I create and maintain Locations and hosts attached to the Location with Direct Link?
 :   If you have Direct Link, you can use it for {{site.data.keyword.satelliteshort}} services. With Direct Link, you can create Locations and attach hosts without access to public Internet.
@@ -64,16 +64,16 @@ Can I redirect all traffic to {{site.data.keyword.cloud_notm}} over Direct Link 
 :   Currently, not all services support Direct Link. So, depending on the services you use it might or might not be possible for all traffic to use Direct Link.
 
 What {{site.data.keyword.cloud_notm}} services can I access over Direct Link to avoid accessing them over Internet?
-:   After following these instructions, {{site.data.keyword.satelliteshort}} and OpenShift on {{site.data.keyword.satelliteshort}} will work across Direct Link. Additional services deployed into a {{site.data.keyword.satelliteshort}} location might have features that require public Internet access. It is recommended to consult the documentation for each service running in a location to verify their connectivity requirements.
+:   After following these instructions, {{site.data.keyword.satelliteshort}} and OpenShift on {{site.data.keyword.satelliteshort}} will work across Direct Link. If additional services are deployed into a {{site.data.keyword.satelliteshort}} location, check the documentation for each service to verify their connectivity requirements, as some services require public internet access.
 
 If I have two Locations that use Direct Link, can I use them for Direct Link to fail over from one Location to the other?
 :   This functionality is not yet available.
 
 How do I size Direct Link capacity for my Location?
-:   There are no additional sizing requirements for using Direct Link. So, you can size your Location like a normal Location, meaning based on the services you will use.  
+:   There are no additional sizing requirements for using Direct Link. So, you can size your Location like a normal Location, meaning based on the services you will use.
 
 Can I have one-click deployment of everything needed to enable Direct Link to avoid manual errors?
-:   Currently, a one-click deployment for Direct Link is not available. It might be available at a future time.
+:   Currently, a one-click deployment for Direct Link is not available.
 
 ## Target use case
 {: #target-use-case}
@@ -100,7 +100,7 @@ To enable access to the `166.9.X.X/16` range, create a Relay in your {{site.data
 The following diagram demonstrates the flow of traffic.
 
 ![{{site.data.keyword.satelliteshort}} Link setup that uses a {{site.data.keyword.dl_short}} connection and a reverse proxy](/images/sat_dl_architecture.svg){: caption="Satellite Link setup that uses a DirectLink connection" caption-side="bottom"}
-  
+
 1. Network traffic originating at your Location, such as a request from an {{site.data.keyword.satellitelong_notm}} cluster to an {{site.data.keyword.cloud_notm}} service, is routed via Link Service over Direct Link to the Relay Private Ingress, which has a Direct link routable address.
 2. The Relay initiates a new session to forward the request to the private cloud service endpoint of the tunnel server, which terminates to an IP address in the `166.9.X.X/16` range (Link private address).
 
@@ -137,27 +137,27 @@ High level steps include:
     - **Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM platform access role for {{site.data.keyword.cloudcerts_long_notm}}
     - **Viewer** {{site.data.keyword.cloud_notm}} IAM platform access role for the resource group that you plan to use with {{site.data.keyword.satelliteshort}}
     - **Manager** {{site.data.keyword.cloud_notm}} IAM service access role for {{site.data.keyword.bplong_notm}}
-- Specifically provision a Kubernetes cluster and deploy NGINX reverse proxy in it to forward to the {{site.data.keyword.dl_short}} endpoints. 
-  
-## Creating a Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} Location 
+- Specifically provision a Kubernetes cluster and deploy NGINX reverse proxy in it to forward to the {{site.data.keyword.dl_short}} endpoints.
+
+## Creating a Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} Location
 {: #dl-create-coreos-location}
-{: step}  
+{: step}
 
 You can skip this step if you already have a Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} Location.
 {: note}
 
 Log in to your {{site.data.keyword.cloud_notm}} account that has {{site.data.keyword.dl_short}} and create a Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} Location. For more information, see [Creating a Satellite location](/docs/satellite?topic=satellite-locations#verify-coreos-location).
 {: shortdesc}
-  
-## Creating a relay 
-{: #dl-create-coreos-relay}  
+
+## Creating a relay
+{: #dl-create-coreos-relay}
 {: step}
 
-The relay is an http/https reverse proxy that supports secure Websocket connections. It can run on VSI, {{site.data.keyword.redhat_openshift_notm}} or {{site.data.keyword.containerlong_notm}} as Classic or VPC. The following steps demonstrates an example for deploying NGINX reverse proxy on a private-only VPC {{site.data.keyword.redhat_openshift_notm}} cluster (on VPC private nodes). 
+The relay is an http/https reverse proxy that supports secure Websocket connections. It can run on VSI, {{site.data.keyword.redhat_openshift_notm}} or {{site.data.keyword.containerlong_notm}} as Classic or VPC. The following steps demonstrates an example for deploying NGINX reverse proxy on a private-only VPC {{site.data.keyword.redhat_openshift_notm}} cluster (on VPC private nodes).
 {: shortdesc}
-  
-One essential requirement is to have a valid name that can be assigned to the cluster private ingress (Relay Ingress) and a valid certificate on {{site.data.keyword.cloud_notm}}. On {{site.data.keyword.cloud_notm}}, VPC {{site.data.keyword.redhat_openshift_notm}} clusters on private nodes come with default private host name and certificate. You can use them or bring your custom host name and certificate. This example uses the default private host name and certificates.  
-  
+
+One essential requirement is to have a valid name that can be assigned to the cluster private ingress (Relay Ingress) and a valid certificate on {{site.data.keyword.cloud_notm}}. On {{site.data.keyword.cloud_notm}}, VPC {{site.data.keyword.redhat_openshift_notm}} clusters on private nodes come with default private host name and certificate. You can use them or bring your custom host name and certificate. This example uses the default private host name and certificates.
+
 VPC clusters considerations for this scenario:
 
 - Zone: Any multizone-capable VPC zone
@@ -165,25 +165,25 @@ VPC clusters considerations for this scenario:
 - Version: 4.x.x
 - Worker pool: At least 2 worker nodes
 - Subnets: Include Ingress Load Balancer IP subnets if the default ranges conflict with the `--pod-subnet` and `--service-subnet` values of the {{site.data.keyword.redhat_openshift_notm}} cluster on Satellite or the network CIDR where the Satellite or {{site.data.keyword.redhat_openshift_notm}} hosts are deployed on-premises.
-- Cloud service endpoints: Do not specify the `--disable-public-service-endpoint` option if you want both public and private endpoints. 
+- Cloud service endpoints: Do not specify the `--disable-public-service-endpoint` option if you want both public and private endpoints.
 - Spread the default worker pool across zones to increase the availability of your classic or VPC cluster.
 - Ensure that at least 2 worker nodes exist in each zone, so that the private ALBs that you configure in subsequent steps are highly available and can properly receive version updates.
 
 In the following example, a private-only VPC cluster and private Ingress controller are created by default. However, you can also use a {{site.data.keyword.redhat_openshift_notm}} cluster with a public cloud service endpoint enabled, but in this case your cluster is created with only a public Ingress controller by default. If you want to set up your relay by using a cluster with a public service endpoint, you must first enable the private Ingress controller and register it with a subdomain and certificate by following the steps in [Setting up Ingress](/docs/openshift?topic=openshift-ingress-roks4).
 {: note}
 
-1. Create a private-only {{site.data.keyword.redhat_openshift_notm}} cluster on VPC. For more information, see [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui). 
+1. Create a private-only {{site.data.keyword.redhat_openshift_notm}} cluster on VPC. For more information, see [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui).
 
     There are many ways to expose apps in {{site.data.keyword.redhat_openshift_notm}} cluster in a VPC. In this example, the app will be privately exposed with private endpoints only, which is the most common use case for {{site.data.keyword.dl_short}} customers. {{site.data.keyword.redhat_openshift_notm}} clusters that are privately exposed with private endpoints only come with default private name and certificate. They will be used in this example to expose the NGINX reverse proxy pods. You can use the default ones or bring your custom host name and certificate. For more details, see [Privately exposing apps in VPC clusters with a private cloud service endpoint only](/docs/openshift?topic=openshift-ingress-private-expose#priv-se-priv-controller).
     {: note}
-    
+
 1. Create a Secret Manager instance and register it to the {{site.data.keyword.redhat_openshift_notm}} cluster that was created in the previous step. For more information, see [Creating a Secrets Manager service instance](/docs/secrets-manager?topic=secrets-manager-create-instance&interface=ui).
 
 1. Get the Ingress details from {{site.data.keyword.dl_short}}.
     ```sh
     ibmcloud oc cluster get --cluster CLUSTER_NAME_OR_ID | grep Ingress
     ```
-    {: pre}   
+    {: pre}
 
     Example output:
     ```sh
@@ -200,19 +200,19 @@ In the following example, a private-only VPC cluster and private Ingress control
     ibmcloud oc ingress secret get -c CLUSTER --name SECRET_NAME --namespace openshift-ingress
     ```
     {: pre}
-    
+
 1. Create a namespace for the NGINX reverse proxy.
     ```sh
     kubectl create ns dl-reverse-proxy
     ```
-    {: pre} 
+    {: pre}
 
 1. Copy the default TLS secret from `openshift-ingress` to the project where NGINX is going to deployed.
     ```sh
-    ibmcloud oc ingress secret create --cluster CLUSTER_NAME_OR_ID --cert-crn CRN --name SECRET_NAME --namespace dl-reverse-proxy 
+    ibmcloud oc ingress secret create --cluster CLUSTER_NAME_OR_ID --cert-crn CRN --name SECRET_NAME --namespace dl-reverse-proxy
     ```
-    {: pre}  
-  
+    {: pre}
+
 1. Copy the following Ingress resource file content into your local directory. Replace `VALUE_FROM_INGRESS_SUBDOMAIN` and `VALUE_FROM_INGRESS_SECRET` with your own values.
     ```yaml
     apiVersion: networking.k8s.io/v1
@@ -241,19 +241,19 @@ In the following example, a private-only VPC cluster and private Ingress control
                   number: 80
     ```
     {: codeblock}
-    
+
 1. Create the Ingress.
     ```sh
     oc apply -f myingressresource.yaml -n <dl-reverse-proxy>
     ```
-    {: pre} 
+    {: pre}
 
 1. Get the tunnel server {{site.data.keyword.dl_short}} internal Ingress host name by running the following command.
     ```sh
     ibmcloud sat endpoint ls --location LOCATION_ID
     ```
-    {: pre}   
-  
+    {: pre}
+
 1. From the output, take a note of the Location endpoint. Replace `c-01`, `c-02`, or `c-03` with `d-01-ws`, `d-02-ws`, or `d-03-ws` and remove the port. For example, `c-01.private.us-south.link.satellite.cloud.ibm.com:40934` becomes `d-01-ws.private.us-south.link.satellite.cloud.ibm.com`. This value can be used as the value for `proxy_pass https` in the ConfigMap file.
 
 1. Copy the NGINX ConfigMap file content into your local directory. This configuration either applies ws-reverse proxy or https reverse proxy to the tunnel server {{site.data.keyword.dl_short}} endpoint. Replace `VALUE_FROM_INGRESS_SUBDOMAIN` and `VALUE_FOR_PROXY_PASS` with your own values.
@@ -287,7 +287,7 @@ In the following example, a private-only VPC cluster and private Ingress control
             proxy_send_timeout 180;
             proxy_read_timeout 180;
             location /ws {
-              proxy_pass https://VALUE_FOR_PROXY_PASS; 
+              proxy_pass https://VALUE_FOR_PROXY_PASS;
               proxy_ssl_server_name on;
               proxy_http_version 1.1;
               proxy_set_header Upgrade $http_upgrade;
@@ -300,7 +300,7 @@ In the following example, a private-only VPC cluster and private Ingress control
         }
     ```
     {: codeblock}
- 
+
 1. Copy the NGINX deployment file.
     ```yaml
     apiVersion: apps/v1
@@ -354,21 +354,21 @@ In the following example, a private-only VPC cluster and private Ingress control
       selector:
         app: nginx
     ```
-    {: codeblock}  
-  
+    {: codeblock}
+
 1. Create the ConfigMap of the NGINX (`dl-reverse-proxy`).
     ```sh
     oc apply -f confnginx.yaml -n dl-reverse-proxy
     ```
-    {: pre}    
-  
+    {: pre}
+
 1. Set the correct `scc` profile and create the NGINX (`dl-reverse-proxy`).
     ```sh
     oc adm policy add-scc-to-user anyuid system:serviceaccount:dl-reverse-proxy:default
     oc apply -f nginx-app.yaml -n dl-reverse-proxy
     ```
     {: pre}
- 
+
 1. Double check that the NGINX is running by listing pods.
     ```sh
     oc get pods
@@ -380,7 +380,7 @@ In the following example, a private-only VPC cluster and private Ingress control
     nginx-757fbc9f85-gv2p6   1/1     Running   0          53s
     nginx-757fbc9f85-xvmrj   1/1     Running   0          53s
     ```
-    {: screen}   
+    {: screen}
 
 1. Check logs.
     ```sh
@@ -398,7 +398,7 @@ In the following example, a private-only VPC cluster and private Ingress control
     /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
     /docker-entrypoint.sh: Configuration complete; ready for start up
     ```
-    {: screen} 
+    {: screen}
 
 1. Check Ingress.
     ```sh
@@ -406,11 +406,11 @@ In the following example, a private-only VPC cluster and private Ingress control
     ```
     {: pre}
 
-    ```sh    
+    ```sh
     NAME                  CLASS    HOSTS                                                                                                       ADDRESS                                                                                                     PORTS     AGE
     dl-ingress-resource   <none>   mysatellite-dl.myname-cluster10-22bfd3cd491bdeb5a0f661fb1e2b0c44-0000.us-south.containers.appdomain.cloud   router-default.myname-cluster10-22bfd3cd491bdeb5a0f661fb1e2b0c44-0000.us-south.containers.appdomain.cloud   80, 443   19m
     ```
-    {: screen} 
+    {: screen}
 
 1. Connect to the reverse proxy URL.
     ```sh
@@ -418,12 +418,12 @@ In the following example, a private-only VPC cluster and private Ingress control
     ```
     {: pre}
 
-    ```sh   
+    ```sh
     {"status":"UP"}
     ```
-    {: screen} 
-    
-  
+    {: screen}
+
+
 ## Redirect the traffic to use the {{site.data.keyword.dl_short}} Path
 {: #dl-use-direct-link-path}
 {: step}

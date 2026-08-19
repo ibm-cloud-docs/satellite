@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-19"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage, IBM Cloud Object Storage, COS driver
 
@@ -253,7 +253,7 @@ You can use the `ibm-object-s3fs` driver to create PVCs that you can use in your
     ```
     {: pre}
 
-1. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
+1. Verify that the pod is deployed. Note that it can take a few minutes for your app to get into a `Running` state.
 
     ```sh
     oc get pods

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-19"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage, Amazon Elastic File System, cloud storage, satellite clusters
 
@@ -324,7 +324,7 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
     ```
     {: pre}
 
-6. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
+6. Verify that the pod is deployed. Note that it can take a few minutes for your app to get into a `Running` state.
     ```sh
     oc get pods
     ```

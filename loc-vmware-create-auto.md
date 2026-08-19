@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-19"
 
 keywords: satellite, hybrid, multicloud, vmware, vmware host, satellite location
 
@@ -72,7 +72,7 @@ Do not reuse the same name for multiple locations, even after the other location
 4. Enter the values that you previously collected.
 5. Review the **Satellite location** details.
 6. In the **Summary** pane, review the cost estimate.
-7. Click **Create location**. Your location might take about 30 minutes to finish provisioning.
+7. Click **Create location**. Your location takes about 30 minutes to finish provisioning.
 8. Optional: To review the provisioning progress, review the logs in the {{site.data.keyword.bpshort}} workspace that is automatically created for you.
     1. Click **Manage in Schematics**. If you see an error, navigate to the [{{site.data.keyword.bpshort}} workspaces console](https://cloud.ibm.com/schematics/workspaces){: external} and click the name of your workspace, such as `us.east.cartOrder...`.
     2. From the **Activity** tab, find the current activity row and click **View log** to review the log details.
