@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-19"
+lastupdated: "2026-08-20"
 
 keywords: satellite, sitemap, IBM Cloud satellite, getting started, data, cloud
 subcollection: satellite
@@ -2313,6 +2313,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
     * [4.20 parameter reference](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#odf-local-4.20-parameters)
 
+    * [4.21 parameter reference](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#odf-local-4.21-parameters)
+
 * [Storage class reference for ODF](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#sat-storage-odf-local-sc-ref)
 
 [OpenShift Data Foundation for remote devices](/docs/satellite?topic=satellite-storage-odf-remote#storage-odf-remote)
@@ -2366,6 +2368,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
     * [4.19 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-4.19-parameters)
 
     * [4.20 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-4.20-parameters)
+
+    * [4.21 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-4.21-parameters)
 
 * [Storage class reference for OpenShift Data Foundation for remote devices](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#sat-storage-odf-remote-sc-ref)
 
@@ -2943,6 +2947,10 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 [CLI change log](/docs/satellite?topic=satellite-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/satellite?topic=satellite-cs_cli_changelog#10)
+
+* [Version v1.0.829](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01829)
+
+* [Version v1.0.815](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01815)
 
 * [Version v1.0.804](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01804)
 
