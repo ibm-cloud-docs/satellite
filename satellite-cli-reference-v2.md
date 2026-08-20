@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-08-15"
+lastupdated: "2026-08-20"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -109,10 +109,10 @@ ibmcloud sat acl create --name NAME --subnet SUBNET [--subnet SUBNET ...] [--end
 #### Examples
 {: #acl-create-examples}
 
-Create an ACL.
+Create an ACL
 
 ```sh
-ibmcloud sat acl create --location LOCATION --connector-id CONNECTOR_ID --name NAME
+ibmcloud sat acl create --name NAME --subnet SUBNET --connector-id ID
 ```
 {: pre}
 
@@ -152,15 +152,26 @@ ibmcloud sat acl endpoint add --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOI
 #### Examples
 {: #acl-endpoint-add-examples}
 
-Add one or more enabled endpoints to an ACL.
+Add one or more enabled endpoints to an ACL
 
 ```sh
-ibmcloud sat acl endpoint add \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --acl-id ACL_ID
+ibmcloud sat acl endpoint add --acl-id ID --endpoint ENDPOINT --connector-id ID
 ```
 {: pre}
+
+
+### `ibmcloud sat acl endpoint help`
+{: #acl-endpoint-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat acl endpoint help
+```
+
 
 
 ### `ibmcloud sat acl endpoint ls`
@@ -198,13 +209,10 @@ ibmcloud sat acl endpoint ls --acl-id ID [--output OUTPUT] [-q] (--connector-id 
 #### Examples
 {: #acl-endpoint-ls-examples}
 
-List all enabled endpoints for an ACL.
+List all enabled endpoints for an ACL
 
 ```sh
-ibmcloud sat acl endpoint ls \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --acl-id ACL_ID
+ibmcloud sat acl endpoint ls --acl-id ID --connector-id ID
 ```
 {: pre}
 
@@ -244,13 +252,10 @@ ibmcloud sat acl endpoint rm --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOIN
 #### Examples
 {: #acl-endpoint-rm-examples}
 
-Remove one or more enabled endpoints from an ACL.
+Remove one or more enabled endpoints from an ACL
 
 ```sh
-ibmcloud sat acl endpoint rm \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --acl-id ACL_ID
+ibmcloud sat acl endpoint rm --acl-id ID --endpoint ENDPOINT --connector-id ID
 ```
 {: pre}
 
@@ -290,12 +295,26 @@ ibmcloud sat acl get --acl-id ID [--output OUTPUT] [-q] (--connector-id ID | --l
 #### Examples
 {: #acl-get-examples}
 
-View the details of an ACL.
+View the details of an ACL
 
 ```sh
-ibmcloud sat acl get --location LOCATION --connector-id CONNECTOR_ID --acl-id ACL_ID
+ibmcloud sat acl get --acl-id ID --connector-id ID
 ```
 {: pre}
+
+
+### `ibmcloud sat acl help`
+{: #acl-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat acl help
+```
+
 
 
 ### `ibmcloud sat acl ls`
@@ -330,10 +349,10 @@ ibmcloud sat acl ls [--output OUTPUT] [-q] (--connector-id ID | --location LOCAT
 #### Examples
 {: #acl-ls-examples}
 
-List all ACLs for a Satellite connector or location.
+List all ACLs for a Satellite connector or location
 
 ```sh
-ibmcloud sat acl ls --location LOCATION --connector-id CONNECTOR_ID --output json
+ibmcloud sat acl ls --connector-id ID
 ```
 {: pre}
 
@@ -370,10 +389,10 @@ ibmcloud sat acl rm --acl-id ID [-q] (--connector-id ID | --location LOCATION)
 #### Examples
 {: #acl-rm-examples}
 
-Delete an ACL.
+Delete an ACL
 
 ```sh
-ibmcloud sat acl rm --location LOCATION --connector-id CONNECTOR_ID --acl-id ACL_ID
+ibmcloud sat acl rm --acl-id ID --connector-id ID
 ```
 {: pre}
 
@@ -413,15 +432,26 @@ ibmcloud sat acl subnet add --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-
 #### Examples
 {: #acl-subnet-add-examples}
 
-Add one or more subnets to an ACL.
+Add one or more subnets to an ACL
 
 ```sh
-ibmcloud sat acl subnet add \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --acl-id ACL_ID
+ibmcloud sat acl subnet add --acl-id ID --subnet SUBNET --connector-id ID
 ```
 {: pre}
+
+
+### `ibmcloud sat acl subnet help`
+{: #acl-subnet-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat acl subnet help
+```
+
 
 
 ### `ibmcloud sat acl subnet rm`
@@ -459,13 +489,10 @@ ibmcloud sat acl subnet rm --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q
 #### Examples
 {: #acl-subnet-rm-examples}
 
-Remove one or more subnets from an ACL.
+Remove one or more subnets from an ACL
 
 ```sh
-ibmcloud sat acl subnet rm \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --acl-id ACL_ID
+ibmcloud sat acl subnet rm --acl-id ID --subnet SUBNET --connector-id ID
 ```
 {: pre}
 
@@ -505,13 +532,10 @@ ibmcloud sat acl update --acl-id ID --name NAME [-q] (--connector-id ID | --loca
 #### Examples
 {: #acl-update-examples}
 
-Update the name of an ACL.
+Update the name of an ACL
 
 ```sh
-ibmcloud sat acl update \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --acl-id ACL_ID
+ibmcloud sat acl update --acl-id ID --name NAME --connector-id ID
 ```
 {: pre}
 
@@ -549,12 +573,26 @@ ibmcloud sat agent attach --platform PLATFORM [-q]
 #### Examples
 {: #agent-attach-examples}
 
-Get a Satellite Connector Agent for a specific platform.
+Get a Satellite Connector Agent for a specific platform
 
 ```sh
-ibmcloud sat agent attach --platform PLATFORM -q
+ibmcloud sat agent attach --platform PLATFORM
 ```
 {: pre}
+
+
+### `ibmcloud sat agent help`
+{: #agent-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat agent help
+```
+
 
 
 ### `ibmcloud sat agent ls`
@@ -586,10 +624,10 @@ ibmcloud sat agent ls --connector-id ID [--output OUTPUT] [-q]
 #### Examples
 {: #agent-ls-examples}
 
-List all Agents for a Satellite Connector.
+List all Agents for a Satellite Connector
 
 ```sh
-ibmcloud sat agent ls --connector-id CONNECTOR_ID --output json -q
+ibmcloud sat agent ls --connector-id ID
 ```
 {: pre}
 
@@ -617,7 +655,7 @@ ibmcloud sat cluster get --cluster CLUSTER [--output OUTPUT] [-q]
 {: #cluster-get-options}
 
 
-`--cluster CLUSTER`, `-c CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Specify the cluster name or the ID. To list registered clusters, run `ibmcloud sat cluster ls`.
 
 `--output OUTPUT`
@@ -630,12 +668,26 @@ ibmcloud sat cluster get --cluster CLUSTER [--output OUTPUT] [-q]
 #### Examples
 {: #cluster-get-examples}
 
-Get the details of a registered cluster.
+Get the details of a registered cluster
 
 ```sh
-ibmcloud sat cluster get --cluster CLUSTER_NAME_OR_ID --output json -q
+ibmcloud sat cluster get --cluster CLUSTER
 ```
 {: pre}
+
+
+### `ibmcloud sat cluster help`
+{: #cluster-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat cluster help
+```
+
 
 
 ### `ibmcloud sat cluster ls`
@@ -667,16 +719,6 @@ ibmcloud sat cluster ls [--filter FILTER] [--limit LIMIT] [--output OUTPUT] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-#### Examples
-{: #cluster-ls-examples}
-
-List all registered clusters in your IBM Cloud account.
-
-```sh
-ibmcloud sat cluster ls --filter FILTER --limit LIMIT --output json
-```
-{: pre}
-
 
 ### `ibmcloud sat cluster register`
 {: #cluster-register-cli}
@@ -707,10 +749,10 @@ ibmcloud sat cluster register --name NAME [-q] [--silent]
 #### Examples
 {: #cluster-register-examples}
 
-Get a `kubectl` command to register your cluster in a Satellite configuration.
+Get a `kubectl` command to register your cluster in a Satellite configuration
 
 ```sh
-ibmcloud sat cluster register --silent SILENT --name NAME -q
+ibmcloud sat cluster register --name NAME
 ```
 {: pre}
 
@@ -731,7 +773,7 @@ ibmcloud sat cluster unregister --cluster CLUSTER [-f] [-q]
 {: #cluster-unregister-options}
 
 
-`--cluster CLUSTER`, `-c CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Specify the cluster name or the ID. To list registered clusters, run `ibmcloud sat cluster ls`.
 
 `-f`
@@ -744,10 +786,10 @@ ibmcloud sat cluster unregister --cluster CLUSTER [-f] [-q]
 #### Examples
 {: #cluster-unregister-examples}
 
-Remove a cluster registration.
+Remove a cluster registration
 
 ```sh
-ibmcloud sat cluster unregister --cluster CLUSTER_NAME_OR_ID -f -q
+ibmcloud sat cluster unregister --cluster CLUSTER
 ```
 {: pre}
 
@@ -791,13 +833,10 @@ ibmcloud sat config create --name NAME [-q] (--data-location LOCATION | --provid
 #### Examples
 {: #config-create-examples}
 
-Create a configuration to specify what Kubernetes resources you want to deploy to your clusters in your Satellite worklo.
+Create a configuration to specify what Kubernetes resources you want to deploy to your clusters in your Satellite workloads
 
 ```sh
-ibmcloud sat config create \
-  --name NAME \
-  --data-location LOCATION \
-  --provider PROVIDER_ID
+ibmcloud sat config create --name NAME --data-location LOCATION
 ```
 {: pre}
 
@@ -831,12 +870,26 @@ ibmcloud sat config get --config CONFIG [--output OUTPUT] [-q]
 #### Examples
 {: #config-get-examples}
 
-Get details of a Satellite configuration, such as the versions or subscriptions that are associated with the configurati.
+Get details of a Satellite configuration, such as the versions or subscriptions that are associated with the configuration
 
 ```sh
-ibmcloud sat config get --config CONFIG --output json -q
+ibmcloud sat config get --config CONFIG
 ```
 {: pre}
+
+
+### `ibmcloud sat config help`
+{: #config-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat config help
+```
+
 
 
 ### `ibmcloud sat config ls`
@@ -861,16 +914,6 @@ ibmcloud sat config ls [--output OUTPUT] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 
-
-#### Examples
-{: #config-ls-examples}
-
-List all Satellite configurations in your IBM Cloud account.
-
-```sh
-ibmcloud sat config ls --output json -q
-```
-{: pre}
 
 
 ### `ibmcloud sat config rename`
@@ -902,10 +945,10 @@ ibmcloud sat config rename --config CONFIG --name NAME [-q]
 #### Examples
 {: #config-rename-examples}
 
-Rename a Satellite configuration.
+Rename a Satellite configuration
 
 ```sh
-ibmcloud sat config rename --config CONFIG --name NAME -q
+ibmcloud sat config rename --config CONFIG --name NAME
 ```
 {: pre}
 
@@ -939,10 +982,10 @@ ibmcloud sat config rm --config CONFIG [-f] [-q]
 #### Examples
 {: #config-rm-examples}
 
-Remove a Satellite configuration.
+Remove a Satellite configuration
 
 ```sh
-ibmcloud sat config rm --config CONFIG -f -q
+ibmcloud sat config rm --config CONFIG
 ```
 {: pre}
 
@@ -985,13 +1028,14 @@ ibmcloud sat config version create --config CONFIG --file-format FORMAT --name N
 #### Examples
 {: #config-version-create-examples}
 
-Create a configuration version to update existing Kubernetes resources for your Satellite workloads.
+Create a configuration version to update existing Kubernetes resources for your Satellite workloads
 
 ```sh
 ibmcloud sat config version create \
-  --name NAME \
   --config CONFIG \
-  --file-format FILE_PATH
+  --file-format FORMAT \
+  --name NAME \
+  --read-config CONFIG
 ```
 {: pre}
 
@@ -1031,15 +1075,26 @@ ibmcloud sat config version get --config CONFIG --version VERSION [--output OUTP
 #### Examples
 {: #config-version-get-examples}
 
-Get details for a Satellite configuration version.
+Get details for a Satellite configuration version
 
 ```sh
-ibmcloud sat config version get \
-  --config CONFIG \
-  --version VERSION \
-  --save-config SAVE-CONFIG
+ibmcloud sat config version get --config CONFIG --version VERSION
 ```
 {: pre}
+
+
+### `ibmcloud sat config version help`
+{: #config-version-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat config version help
+```
+
 
 
 ### `ibmcloud sat config version rm`
@@ -1074,10 +1129,10 @@ ibmcloud sat config version rm --config CONFIG --version VERSION [-f] [-q]
 #### Examples
 {: #config-version-rm-examples}
 
-Remove a Satellite configuration version.
+Remove a Satellite configuration version
 
 ```sh
-ibmcloud sat config version rm --config CONFIG --version VERSION -f
+ibmcloud sat config version rm --config CONFIG --version VERSION
 ```
 {: pre}
 
@@ -1118,10 +1173,10 @@ ibmcloud sat connector create --name NAME --region REGION [-q]
 #### Examples
 {: #connector-create-examples}
 
-Create a Satellite connector.
+Create a Satellite connector
 
 ```sh
-ibmcloud sat connector create --name NAME --region REGION -q
+ibmcloud sat connector create --name NAME --region REGION
 ```
 {: pre}
 
@@ -1155,12 +1210,26 @@ ibmcloud sat connector get --connector-id ID [--output OUTPUT] [-q]
 #### Examples
 {: #connector-get-examples}
 
-View the details of a Satellite Connector.
+View the details of a Satellite Connector
 
 ```sh
-ibmcloud sat connector get --connector-id CONNECTOR_ID --output json -q
+ibmcloud sat connector get --connector-id ID
 ```
 {: pre}
+
+
+### `ibmcloud sat connector help`
+{: #connector-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat connector help
+```
+
 
 
 ### `ibmcloud sat connector ls`
@@ -1192,16 +1261,6 @@ ibmcloud sat connector ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-#### Examples
-{: #connector-ls-examples}
-
-View the Satellite Connectors in your IBM Cloud account.
-
-```sh
-ibmcloud sat connector ls --after AFTER --first FIRST --output json
-```
-{: pre}
-
 
 ### `ibmcloud sat connector rm`
 {: #connector-rm-cli}
@@ -1232,10 +1291,10 @@ ibmcloud sat connector rm --connector-id ID [-f] [-q]
 #### Examples
 {: #connector-rm-examples}
 
-Delete a Satellite connector.
+Delete a Satellite connector
 
 ```sh
-ibmcloud sat connector rm --connector-id CONNECTOR_ID -f -q
+ibmcloud sat connector rm --connector-id ID
 ```
 {: pre}
 
@@ -1282,15 +1341,26 @@ ibmcloud sat endpoint authn get --endpoint ENDPOINT [--output OUTPUT] [-q] (--co
 #### Examples
 {: #endpoint-authn-get-examples}
 
-Get the authentication settings for an endpoint.
+Get the authentication settings for an endpoint
 
 ```sh
-ibmcloud sat endpoint authn get \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --endpoint ENDPOINT
+ibmcloud sat endpoint authn get --endpoint ENDPOINT --connector-id ID
 ```
 {: pre}
+
+
+### `ibmcloud sat endpoint authn help`
+{: #endpoint-authn-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat endpoint authn help
+```
+
 
 
 ### `ibmcloud sat endpoint authn rotate`
@@ -1343,13 +1413,10 @@ ibmcloud sat endpoint authn rotate --endpoint ENDPOINT [--dest-ca-cert-file FILE
 #### Examples
 {: #endpoint-authn-rotate-examples}
 
-Replace existing authentication certificates with new ones.
+Replace existing authentication certificates with new ones
 
 ```sh
-ibmcloud sat endpoint authn rotate \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --endpoint ENDPOINT
+ibmcloud sat endpoint authn rotate --endpoint ENDPOINT --connector-id ID
 ```
 {: pre}
 
@@ -1410,13 +1477,10 @@ ibmcloud sat endpoint authn set --endpoint ENDPOINT [--dest-ca-cert-file FILE] [
 #### Examples
 {: #endpoint-authn-set-examples}
 
-Set authentication settings for an endpoint.
+Set authentication settings for an endpoint
 
 ```sh
-ibmcloud sat endpoint authn set \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --endpoint ENDPOINT
+ibmcloud sat endpoint authn set --endpoint ENDPOINT --connector-id ID
 ```
 {: pre}
 
@@ -1477,13 +1541,16 @@ ibmcloud sat endpoint create --dest-hostname HOSTNAME --dest-port PORT --dest-ty
 #### Examples
 {: #endpoint-create-examples}
 
-Create an endpoint.
+Create an endpoint
 
 ```sh
 ibmcloud sat endpoint create \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --name NAME
+  --dest-hostname HOSTNAME \
+  --dest-port PORT \
+  --dest-type TYPE \
+  --name NAME \
+  --source-protocol PROTOCOL \
+  --connector-id ID
 ```
 {: pre}
 
@@ -1523,13 +1590,10 @@ ibmcloud sat endpoint disable --endpoint ENDPOINT [-f] [-q] (--connector-id ID |
 #### Examples
 {: #endpoint-disable-examples}
 
-Disable an endpoint.
+Disable an endpoint
 
 ```sh
-ibmcloud sat endpoint disable \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --endpoint ENDPOINT
+ibmcloud sat endpoint disable --endpoint ENDPOINT --connector-id ID
 ```
 {: pre}
 
@@ -1569,13 +1633,10 @@ ibmcloud sat endpoint enable --endpoint ENDPOINT [-f] [-q] (--connector-id ID | 
 #### Examples
 {: #endpoint-enable-examples}
 
-Enable an endpoint.
+Enable an endpoint
 
 ```sh
-ibmcloud sat endpoint enable \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --endpoint ENDPOINT
+ibmcloud sat endpoint enable --endpoint ENDPOINT --connector-id ID
 ```
 {: pre}
 
@@ -1615,15 +1676,26 @@ ibmcloud sat endpoint get --endpoint ENDPOINT [--output OUTPUT] [-q] (--connecto
 #### Examples
 {: #endpoint-get-examples}
 
-View the details of an endpoint.
+View the details of an endpoint
 
 ```sh
-ibmcloud sat endpoint get \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --endpoint ENDPOINT
+ibmcloud sat endpoint get --endpoint ENDPOINT --connector-id ID
 ```
 {: pre}
+
+
+### `ibmcloud sat endpoint help`
+{: #endpoint-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat endpoint help
+```
+
 
 
 ### `ibmcloud sat endpoint ls`
@@ -1658,10 +1730,10 @@ ibmcloud sat endpoint ls [--output OUTPUT] [-q] (--connector-id ID | --location 
 #### Examples
 {: #endpoint-ls-examples}
 
-List all endpoints in a Satellite location.
+List all endpoints in a Satellite location
 
 ```sh
-ibmcloud sat endpoint ls --location LOCATION --connector-id CONNECTOR_ID --output json
+ibmcloud sat endpoint ls --connector-id ID
 ```
 {: pre}
 
@@ -1698,13 +1770,10 @@ ibmcloud sat endpoint rm --endpoint ENDPOINT [-q] (--connector-id ID | --locatio
 #### Examples
 {: #endpoint-rm-examples}
 
-Delete an endpoint.
+Delete an endpoint
 
 ```sh
-ibmcloud sat endpoint rm \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --endpoint ENDPOINT
+ibmcloud sat endpoint rm --endpoint ENDPOINT --connector-id ID
 ```
 {: pre}
 
@@ -1762,13 +1831,10 @@ ibmcloud sat endpoint update --endpoint ENDPOINT [--dest-hostname HOSTNAME] [--d
 #### Examples
 {: #endpoint-update-examples}
 
-Update an endpoint.
+Update an endpoint
 
 ```sh
-ibmcloud sat endpoint update \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --endpoint ENDPOINT
+ibmcloud sat endpoint update --endpoint ENDPOINT --connector-id ID
 ```
 {: pre}
 
@@ -1780,900 +1846,32 @@ ibmcloud sat endpoint update \
 {: shortdesc}
 
 
-### `ibmcloud sat experimental acl create`
-{: #experimental-acl-create-cli}
+### `ibmcloud sat experimental endpoint help`
+{: #experimental-endpoint-help-cli}
 
 
 
-[Deactivated on 2024-10-01! Use `ibmcloud sat acl create` instead] Create an ACL.
+Show help
 {: shortdesc}
 
 ```sh
-ibmcloud sat experimental acl create --name NAME --subnet SUBNET [--subnet SUBNET ...] [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat experimental endpoint help
 ```
 
-#### Command options
-{: #experimental-acl-create-options}
 
 
-`--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
-
-`--endpoint ENDPOINT`
-:    A name or ID of an endpoint to enable for this ACL.
-
-`--location LOCATION`
-:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
-
-`--name NAME`
-:    The name for the ACL.
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-`--subnet SUBNET`
-:    An IP or CIDR block allowed by this ACL. Value must be fully contained in the following CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
-
-
-#### Examples
-{: #experimental-acl-create-examples}
-
-Create an ACL.
-
-```sh
-ibmcloud sat experimental acl create \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --name NAME
-```
-{: pre}
-
-
-### `ibmcloud sat experimental acl endpoint add`
-{: #experimental-acl-endpoint-add-cli}
+### `ibmcloud sat experimental help`
+{: #experimental-help-cli}
 
 
 
-[Deactivated on 2024-10-01! Use `ibmcloud sat acl endpoint add` instead] Add one or more enabled endpoints to an ACL.
+Show help
 {: shortdesc}
 
 ```sh
-ibmcloud sat experimental acl endpoint add --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
+ibmcloud sat experimental help
 ```
 
-#### Command options
-{: #experimental-acl-endpoint-add-options}
-
-
-`--acl-id ID`
-:    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
-
-`--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
-
-`--endpoint ENDPOINT`
-:    A name or ID of an endpoint to enable for this ACL.
-
-`--location LOCATION`
-:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-
-#### Examples
-{: #experimental-acl-endpoint-add-examples}
-
-Add one or more enabled endpoints to an ACL.
-
-```sh
-ibmcloud sat experimental acl endpoint add \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --acl-id ACL_ID
-```
-{: pre}
-
-
-### `ibmcloud sat experimental acl endpoint ls`
-{: #experimental-acl-endpoint-ls-cli}
-
-
-
-[Deactivated on 2024-10-01! Use `ibmcloud sat acl endpoint ls` instead] List all enabled endpoints for an ACL.
-{: shortdesc}
-
-```sh
-ibmcloud sat experimental acl endpoint ls --acl-id ID [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
-```
-
-#### Command options
-{: #experimental-acl-endpoint-ls-options}
-
-
-`--acl-id ID`
-:    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
-
-`--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
-
-`--location LOCATION`
-:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
-
-`--output OUTPUT`
-:    Prints the command output in the provided format. Accepted values: `json`
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-
-#### Examples
-{: #experimental-acl-endpoint-ls-examples}
-
-List all enabled endpoints for an ACL.
-
-```sh
-ibmcloud sat experimental acl endpoint ls \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --acl-id ACL_ID
-```
-{: pre}
-
-
-### `ibmcloud sat experimental acl endpoint rm`
-{: #experimental-acl-endpoint-rm-cli}
-
-
-
-[Deactivated on 2024-10-01! Use `ibmcloud sat acl endpoint rm` instead] Remove one or more enabled endpoints from an ACL.
-{: shortdesc}
-
-```sh
-ibmcloud sat experimental acl endpoint rm --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
-```
-
-#### Command options
-{: #experimental-acl-endpoint-rm-options}
-
-
-`--acl-id ID`
-:    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
-
-`--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
-
-`--endpoint ENDPOINT`
-:    A name or ID of an endpoint to disable for this ACL.
-
-`--location LOCATION`
-:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-
-#### Examples
-{: #experimental-acl-endpoint-rm-examples}
-
-Remove one or more enabled endpoints from an ACL.
-
-```sh
-ibmcloud sat experimental acl endpoint rm \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --acl-id ACL_ID
-```
-{: pre}
-
-
-### `ibmcloud sat experimental acl get`
-{: #experimental-acl-get-cli}
-
-
-
-[Deactivated on 2024-10-01! Use `ibmcloud sat acl get` instead] View the details of an ACL.
-{: shortdesc}
-
-```sh
-ibmcloud sat experimental acl get --acl-id ID [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
-```
-
-#### Command options
-{: #experimental-acl-get-options}
-
-
-`--acl-id ID`
-:    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
-
-`--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
-
-`--location LOCATION`
-:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
-
-`--output OUTPUT`
-:    Prints the command output in the provided format. Accepted values: `json`
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-
-#### Examples
-{: #experimental-acl-get-examples}
-
-View the details of an ACL.
-
-```sh
-ibmcloud sat experimental acl get \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --acl-id ACL_ID
-```
-{: pre}
-
-
-### `ibmcloud sat experimental acl ls`
-{: #experimental-acl-ls-cli}
-
-
-
-[Deactivated on 2024-10-01! Use `ibmcloud sat acl ls` instead] List all ACLs for a Satellite connector or location.
-{: shortdesc}
-
-```sh
-ibmcloud sat experimental acl ls [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
-```
-
-#### Command options
-{: #experimental-acl-ls-options}
-
-
-`--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
-
-`--location LOCATION`
-:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
-
-`--output OUTPUT`
-:    Prints the command output in the provided format. Accepted values: `json`
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-
-#### Examples
-{: #experimental-acl-ls-examples}
-
-List all ACLs for a Satellite connector or location.
-
-```sh
-ibmcloud sat experimental acl ls \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --output json
-```
-{: pre}
-
-
-### `ibmcloud sat experimental acl rm`
-{: #experimental-acl-rm-cli}
-
-
-
-[Deactivated on 2024-10-01! Use `ibmcloud sat acl rm` instead] Delete an ACL.
-{: shortdesc}
-
-```sh
-ibmcloud sat experimental acl rm --acl-id ID [-q] (--connector-id ID | --location LOCATION)
-```
-
-#### Command options
-{: #experimental-acl-rm-options}
-
-
-`--acl-id ID`
-:    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
-
-`--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
-
-`--location LOCATION`
-:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-
-#### Examples
-{: #experimental-acl-rm-examples}
-
-Delete an ACL.
-
-```sh
-ibmcloud sat experimental acl rm \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --acl-id ACL_ID
-```
-{: pre}
-
-
-### `ibmcloud sat experimental acl subnet add`
-{: #experimental-acl-subnet-add-cli}
-
-
-
-[Deactivated on 2024-10-01! Use `ibmcloud sat acl subnet add` instead] Add one or more subnets to an ACL.
-{: shortdesc}
-
-```sh
-ibmcloud sat experimental acl subnet add --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q] (--connector-id ID | --location LOCATION)
-```
-
-#### Command options
-{: #experimental-acl-subnet-add-options}
-
-
-`--acl-id ID`
-:    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
-
-`--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
-
-`--location LOCATION`
-:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-`--subnet SUBNET`
-:    An IP or CIDR block allowed by this ACL. Value must be fully contained in the following CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
-
-
-#### Examples
-{: #experimental-acl-subnet-add-examples}
-
-Add one or more subnets to an ACL.
-
-```sh
-ibmcloud sat experimental acl subnet add \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --acl-id ACL_ID
-```
-{: pre}
-
-
-### `ibmcloud sat experimental acl subnet rm`
-{: #experimental-acl-subnet-rm-cli}
-
-
-
-[Deactivated on 2024-10-01! Use `ibmcloud sat acl subnet rm` instead] Remove one or more subnets from an ACL.
-{: shortdesc}
-
-```sh
-ibmcloud sat experimental acl subnet rm --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q] (--connector-id ID | --location LOCATION)
-```
-
-#### Command options
-{: #experimental-acl-subnet-rm-options}
-
-
-`--acl-id ID`
-:    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
-
-`--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
-
-`--location LOCATION`
-:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-`--subnet SUBNET`
-:    An IP or CIDR block allowed by this ACL. Value must be fully contained in the following CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
-
-
-#### Examples
-{: #experimental-acl-subnet-rm-examples}
-
-Remove one or more subnets from an ACL.
-
-```sh
-ibmcloud sat experimental acl subnet rm \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --acl-id ACL_ID
-```
-{: pre}
-
-
-### `ibmcloud sat experimental acl update`
-{: #experimental-acl-update-cli}
-
-
-
-[Deactivated on 2024-10-01! Use `ibmcloud sat acl update` instead] Update the name of an ACL.
-{: shortdesc}
-
-```sh
-ibmcloud sat experimental acl update --acl-id ID --name NAME [-q] (--connector-id ID | --location LOCATION)
-```
-
-#### Command options
-{: #experimental-acl-update-options}
-
-
-`--acl-id ID`
-:    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
-
-`--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
-
-`--location LOCATION`
-:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
-
-`--name NAME`
-:    The new name for the ACL.
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-
-#### Examples
-{: #experimental-acl-update-examples}
-
-Update the name of an ACL.
-
-```sh
-ibmcloud sat experimental acl update \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --acl-id ACL_ID
-```
-{: pre}
-
-
-### `ibmcloud sat experimental agent attach`
-{: #experimental-agent-attach-cli}
-
-
-
-[Deactivated on 2024-09-01! Use `ibmcloud sat agent attach` instead] Get a Satellite Connector Agent for a specific platform. Download the Agent `.zip` for Windows or get a link to the documentation for Docker environments.
-{: shortdesc}
-
-```sh
-ibmcloud sat experimental agent attach --platform PLATFORM [-q]
-```
-
-#### Command options
-{: #experimental-agent-attach-options}
-
-
-`--platform PLATFORM`
-:    The platform for the Satellite Connector Agent. For more information about Docker, see the documentation at https://ibm.biz/satconagent Available options: windows, docker
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-
-#### Examples
-{: #experimental-agent-attach-examples}
-
-Get a Satellite Connector Agent for a specific platform.
-
-```sh
-ibmcloud sat experimental agent attach --platform PLATFORM -q
-```
-{: pre}
-
-
-### `ibmcloud sat experimental agent ls`
-{: #experimental-agent-ls-cli}
-
-
-
-[Deactivated on 2024-09-01! Use `ibmcloud sat agent ls` instead] List all Agents for a Satellite Connector.
-{: shortdesc}
-
-```sh
-ibmcloud sat experimental agent ls --connector-id ID [--output OUTPUT] [-q]
-```
-
-#### Command options
-{: #experimental-agent-ls-options}
-
-
-`--connector-id ID`
-:    The ID of a Satellite connector.
-
-`--output OUTPUT`
-:    Prints the command output in the provided format. Accepted values: `json`
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-
-#### Examples
-{: #experimental-agent-ls-examples}
-
-List all Agents for a Satellite Connector.
-
-```sh
-ibmcloud sat experimental agent ls --connector-id CONNECTOR_ID --output json -q
-```
-{: pre}
-
-
-### `ibmcloud sat experimental connector create`
-{: #experimental-connector-create-cli}
-
-
-
-[Deactivated on 2024-11-18! Use `ibmcloud sat connector create` instead] Create a Satellite connector.
-{: shortdesc}
-
-```sh
-ibmcloud sat experimental connector create --name NAME --region REGION [-q]
-```
-
-#### Command options
-{: #experimental-connector-create-options}
-
-
-`--name NAME`
-:    The name for the Satellite connector.
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-`--region REGION`
-:    The IBM Cloud region to manage your Satellite connector.
-
-
-#### Examples
-{: #experimental-connector-create-examples}
-
-Create a Satellite connector.
-
-```sh
-ibmcloud sat experimental connector create --name NAME --region REGION -q
-```
-{: pre}
-
-
-### `ibmcloud sat experimental connector get`
-{: #experimental-connector-get-cli}
-
-
-
-[Deactivated on 2024-11-18! Use `ibmcloud sat connector get` instead] View the details of a Satellite Connector.
-{: shortdesc}
-
-```sh
-ibmcloud sat experimental connector get --connector-id ID [--output OUTPUT] [-q]
-```
-
-#### Command options
-{: #experimental-connector-get-options}
-
-
-`--connector-id ID`
-:    The ID of a Satellite connector.
-
-`--output OUTPUT`
-:    Prints the command output in the provided format. Accepted values: `json`
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-
-#### Examples
-{: #experimental-connector-get-examples}
-
-View the details of a Satellite Connector.
-
-```sh
-ibmcloud sat experimental connector get --connector-id CONNECTOR_ID --output json -q
-```
-{: pre}
-
-
-### `ibmcloud sat experimental connector ls`
-{: #experimental-connector-ls-cli}
-
-
-
-[Deactivated on 2024-11-18! Use `ibmcloud sat connector ls` instead] View the Satellite Connectors in your IBM Cloud account.
-{: shortdesc}
-
-```sh
-ibmcloud sat experimental connector ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q]
-```
-
-#### Command options
-{: #experimental-connector-ls-options}
-
-
-`--after AFTER`
-:    Show Satellite Connectors after the given cursor.
-
-`--first FIRST`
-:    View the next Satellite Connectors, up to the first number of Connectors.
-
-`--output OUTPUT`
-:    Prints the command output in the provided format. Accepted values: `json`
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-
-#### Examples
-{: #experimental-connector-ls-examples}
-
-View the Satellite Connectors in your IBM Cloud account.
-
-```sh
-ibmcloud sat experimental connector ls --after AFTER --first FIRST --output json
-```
-{: pre}
-
-
-### `ibmcloud sat experimental connector rm`
-{: #experimental-connector-rm-cli}
-
-
-
-[Deactivated on 2024-11-18! Use `ibmcloud sat connector rm` instead] Delete a Satellite connector.
-{: shortdesc}
-
-```sh
-ibmcloud sat experimental connector rm --connector-id ID [-f] [-q]
-```
-
-#### Command options
-{: #experimental-connector-rm-options}
-
-
-`--connector-id ID`
-:    The ID of a Satellite connector.
-
-`-f`
-:    Force the command to run without user prompts.
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-
-#### Examples
-{: #experimental-connector-rm-examples}
-
-Delete a Satellite connector.
-
-```sh
-ibmcloud sat experimental connector rm --connector-id CONNECTOR_ID -f -q
-```
-{: pre}
-
-
-### `ibmcloud sat experimental endpoint authn get`
-{: #experimental-endpoint-authn-get-cli}
-
-
-
-[Deactivated on 2024-10-01! Use `ibmcloud sat endpoint authn get` instead] Get the authentication settings for an endpoint.
-{: shortdesc}
-
-```sh
-ibmcloud sat experimental endpoint authn get --endpoint ENDPOINT [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
-```
-
-#### Command options
-{: #experimental-endpoint-authn-get-options}
-
-
-`--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
-
-`--endpoint ENDPOINT`
-:    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls`.
-
-`--location LOCATION`
-:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
-
-`--output OUTPUT`
-:    Prints the command output in the provided format. Accepted values: `json`
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-
-#### Examples
-{: #experimental-endpoint-authn-get-examples}
-
-Get the authentication settings for an endpoint.
-
-```sh
-ibmcloud sat experimental endpoint authn get \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --endpoint ENDPOINT
-```
-{: pre}
-
-
-### `ibmcloud sat experimental endpoint authn rotate`
-{: #experimental-endpoint-authn-rotate-cli}
-
-
-
-[Deactivated on 2024-10-01! Use `ibmcloud sat endpoint authn rotate` instead] Replace existing authentication certificates with new ones. There are two TLS connections in the request flow. The `source` options refer to the TLS handshake between the source and the Connector service. The `destination` options refer to the TLS handshake between the Connector service and your destination or target server. You can provide certificates for one or both of these connections. Only the certificates that you specify are replaced.
-{: shortdesc}
-
-```sh
-ibmcloud sat experimental endpoint authn rotate --endpoint ENDPOINT [--dest-ca-cert-file FILE] [--dest-cert-file FILE] [--dest-key-file FILE] [-q] [--source-ca-cert-file FILE] [--source-cert-file FILE] [--source-key-file FILE] (--connector-id ID | --location LOCATION)
-```
-
-#### Command options
-{: #experimental-endpoint-authn-rotate-options}
-
-
-`--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
-
-`--dest-ca-cert-file FILE`
-:    Trusted CA certificate or chain used to validate the destination server's certificate. For example `myCA.pem`.
-
-`--dest-cert-file FILE`
-:    The client certificate used to authenticate with the destination server. For example `myCert.pem`.
-
-`--dest-key-file FILE`
-:    The client private key used to encrypt the client certificate. For example `myKey.pem`.
-
-`--endpoint ENDPOINT`
-:    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls`.
-
-`--location LOCATION`
-:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-`--source-ca-cert-file FILE`
-:    Trusted CA certificate or chain used to validate the source client's certificate when source-tls-mode is mutual. For example `myCA.pem`.
-
-`--source-cert-file FILE`
-:    The server certificate to present to the source client. For example `myCert.pem`.
-
-`--source-key-file FILE`
-:    The server private key used to encrypt the server certificate. For example `myKey.pem`.
-
-
-#### Examples
-{: #experimental-endpoint-authn-rotate-examples}
-
-Replace existing authentication certificates with new ones.
-
-```sh
-ibmcloud sat experimental endpoint authn rotate \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --endpoint ENDPOINT
-```
-{: pre}
-
-
-### `ibmcloud sat experimental endpoint authn set`
-{: #experimental-endpoint-authn-set-cli}
-
-
-
-[Deactivated on 2024-10-01! Use `ibmcloud sat endpoint authn set` instead] Set authentication settings for an endpoint. There are two TLS connections in the request flow. The `source` options refer to the TLS handshake between the source and the Connector service. The `destination` options refer to the TLS handshake between the Connector service and your destination or target server. You can provide certificates for one or both of these connections. Unspecified settings are set to their default values.
-{: shortdesc}
-
-```sh
-ibmcloud sat experimental endpoint authn set --endpoint ENDPOINT [--dest-ca-cert-file FILE] [--dest-cert-file FILE] [--dest-key-file FILE] [--dest-tls-mode MODE] [-q] [--source-ca-cert-file FILE] [--source-cert-file FILE] [--source-key-file FILE] [--source-tls-mode MODE] (--connector-id ID | --location LOCATION)
-```
-
-#### Command options
-{: #experimental-endpoint-authn-set-options}
-
-
-`--connector-id ID`
-:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
-
-`--dest-ca-cert-file FILE`
-:    Trusted CA certificate or chain used to validate the destination server's certificate. For example `myCA.pem`.
-
-`--dest-cert-file FILE`
-:    The client certificate used to authenticate with the destination server. For example `myCert.pem`.
-
-`--dest-key-file FILE`
-:    The client private key used to encrypt the client certificate. For example `myKey.pem`.
-
-`--dest-tls-mode MODE`
-:    The destination TLS mode. Accepted values: `simple`, `mutual`, `none`
-
-`--endpoint ENDPOINT`
-:    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls`.
-
-`--location LOCATION`
-:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-`--source-ca-cert-file FILE`
-:    Trusted CA certificate or chain used to validate the source client's certificate when source-tls-mode is mutual. For example `myCA.pem`.
-
-`--source-cert-file FILE`
-:    The server certificate to present to the source client. For example `myCert.pem`.
-
-`--source-key-file FILE`
-:    The server private key used to encrypt the server certificate. For example `myKey.pem`.
-
-`--source-tls-mode MODE`
-:    The source TLS mode. Accepted values: `simple`, `mutual`
-
-
-#### Examples
-{: #experimental-endpoint-authn-set-examples}
-
-Set authentication settings for an endpoint.
-
-```sh
-ibmcloud sat experimental endpoint authn set \
-  --location LOCATION \
-  --connector-id CONNECTOR_ID \
-  --endpoint ENDPOINT
-```
-{: pre}
-
-
-### `ibmcloud sat experimental location update`
-{: #experimental-location-update-cli}
-
-
-
-[Deactivated on 2024-11-25! Use `ibmcloud sat location update` instead] Update the name or description of a Satellite location.
-{: shortdesc}
-
-```sh
-ibmcloud sat experimental location update --location-id ID [--description DESCRIPTION] [--name NAME] [-q]
-```
-
-#### Command options
-{: #experimental-location-update-options}
-
-
-`--description DESCRIPTION`
-:    Enter a new description for the Satellite location. The length of the description is limited to 400 bytes.
-
-`--location-id ID`
-:    The ID of the Satellite location. To find the location ID, run `ibmcloud sat location ls`.
-
-`--name NAME`
-:    Specify a new name for the Satellite location. Location names must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be fewer than 36 characters. Do not reuse names, including names of deleted locations.
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-
-#### Examples
-{: #experimental-location-update-examples}
-
-Update the name or description of a Satellite location.
-
-```sh
-ibmcloud sat experimental location update \
-  --location-id LOCATION \
-  --name NAME \
-  --description IP_ADDRESS
-```
-{: pre}
 
 
 ## Group commands
@@ -2699,10 +1897,10 @@ ibmcloud sat group attach --cluster CLUSTER [--cluster CLUSTER ...] --group GROU
 {: #group-attach-options}
 
 
-`--cluster CLUSTER`, `-c CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Specify the cluster name or ID. To list registered clusters, run `ibmcloud sat cluster ls`.
 
-`--group GROUP`, `-g GROUP`
+`-g CLUSTER`, `--group GROUP`
 :    Specify the name or ID of a Satellite cluster group. To list available cluster groups, run `ibmcloud sat group ls`.
 
 `-q`
@@ -2712,10 +1910,10 @@ ibmcloud sat group attach --cluster CLUSTER [--cluster CLUSTER ...] --group GROU
 #### Examples
 {: #group-attach-examples}
 
-Add a cluster to your cluster group.
+Add a cluster to your cluster group
 
 ```sh
-ibmcloud sat group attach --group GROUP --cluster CLUSTER_NAME_OR_ID -q
+ibmcloud sat group attach --cluster CLUSTER --group GROUP
 ```
 {: pre}
 
@@ -2736,7 +1934,7 @@ ibmcloud sat group create --name NAME [--cluster CLUSTER ...] [-q]
 {: #group-create-options}
 
 
-`--cluster CLUSTER`, `-c CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Specify the cluster name or ID to add to the cluster group. To list registered clusters, run `ibmcloud sat cluster ls`.
 
 `--name NAME`
@@ -2749,10 +1947,10 @@ ibmcloud sat group create --name NAME [--cluster CLUSTER ...] [-q]
 #### Examples
 {: #group-create-examples}
 
-Create a cluster group.
+Create a cluster group
 
 ```sh
-ibmcloud sat group create --name NAME --cluster CLUSTER_NAME_OR_ID -q
+ibmcloud sat group create --name NAME
 ```
 {: pre}
 
@@ -2773,13 +1971,13 @@ ibmcloud sat group detach --cluster CLUSTER [--cluster CLUSTER ...] --group GROU
 {: #group-detach-options}
 
 
-`--cluster CLUSTER`, `-c CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Specify the cluster name or ID. To list the clusters in your cluster group, run `ibmcloud sat group get --group <cluster_group_name_or_ID>`.
 
 `-f`
 :    Force the command to run without user prompts.
 
-`--group GROUP`, `-g GROUP`
+`-g CLUSTER`, `--group GROUP`
 :    Specify the name or ID of a Satellite cluster group. To list available cluster groups, run `ibmcloud sat group ls`.
 
 `-q`
@@ -2789,10 +1987,10 @@ ibmcloud sat group detach --cluster CLUSTER [--cluster CLUSTER ...] --group GROU
 #### Examples
 {: #group-detach-examples}
 
-Removes one or more clusters from your Satellite cluster group and deletes the Kubernetes resources that were managed by.
+Removes one or more clusters from your Satellite cluster group and deletes the Kubernetes resources that were managed by the group's subscriptions
 
 ```sh
-ibmcloud sat group detach --group GROUP --cluster CLUSTER_NAME_OR_ID -f
+ibmcloud sat group detach --cluster CLUSTER --group GROUP
 ```
 {: pre}
 
@@ -2813,7 +2011,7 @@ ibmcloud sat group get --group GROUP [--output OUTPUT] [-q]
 {: #group-get-options}
 
 
-`--group GROUP`, `-g GROUP`
+`-g`, `--group GROUP`
 :    Specify the name or ID of a Satellite cluster group. To list registered clusters, run `ibmcloud sat cluster ls`.
 
 `--output OUTPUT`
@@ -2826,12 +2024,26 @@ ibmcloud sat group get --group GROUP [--output OUTPUT] [-q]
 #### Examples
 {: #group-get-examples}
 
-Get detailed information for a Satellite cluster group.
+Get detailed information for a Satellite cluster group
 
 ```sh
-ibmcloud sat group get --group GROUP --output json -q
+ibmcloud sat group get --group GROUP
 ```
 {: pre}
+
+
+### `ibmcloud sat group help`
+{: #group-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat group help
+```
+
 
 
 ### `ibmcloud sat group ls`
@@ -2857,16 +2069,6 @@ ibmcloud sat group ls [--output OUTPUT] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-#### Examples
-{: #group-ls-examples}
-
-List all Satellite cluster groups in your IBM Cloud account.
-
-```sh
-ibmcloud sat group ls --output json -q
-```
-{: pre}
-
 
 ### `ibmcloud sat group rm`
 {: #group-rm-cli}
@@ -2887,7 +2089,7 @@ ibmcloud sat group rm --group GROUP [-f] [-q]
 `-f`
 :    Force the command to run without user prompts.
 
-`--group GROUP`, `-g GROUP`
+`-g`, `--group GROUP`
 :    Specify the name or ID of a Satellite cluster group. To list available cluster groups, run `ibmcloud sat group ls`.
 
 `-q`
@@ -2897,10 +2099,10 @@ ibmcloud sat group rm --group GROUP [-f] [-q]
 #### Examples
 {: #group-rm-examples}
 
-Remove a Satellite cluster group, which unsubscribes clusters and deletes the Kubernetes resources that were managed by .
+Remove a Satellite cluster group, which unsubscribes clusters and deletes the Kubernetes resources that were managed by the group's subscriptions
 
 ```sh
-ibmcloud sat group rm --group GROUP -f -q
+ibmcloud sat group rm --group GROUP
 ```
 {: pre}
 
@@ -2940,11 +2142,11 @@ ibmcloud sat host assign --location LOCATION [--cluster CLUSTER] [--host HOST] [
 `--location LOCATION`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
+`-p LABEL`, `--worker-pool POOL`
+:    The name or ID of the worker pool within the cluster to assign the host. If no worker pool is specified, the host is assigned to the default worker pool.
+
 `-q`
 :    Do not show the message of the day or update reminders.
-
-`--worker-pool POOL`, `-p POOL`
-:    The name or ID of the worker pool within the cluster to assign the host. If no worker pool is specified, the host is assigned to the default worker pool.
 
 `--zone ZONE`
 :    The name or ID of the zone to assign the host. To find available zones, run `ibmcloud sat location get --location <location_name_or_ID>` and look for the `Host Zones` field.
@@ -2953,13 +2155,10 @@ ibmcloud sat host assign --location LOCATION [--cluster CLUSTER] [--host HOST] [
 #### Examples
 {: #host-assign-examples}
 
-Assign a host to a Satellite location control plane or cluster.
+Assign a host to a Satellite location control plane or cluster
 
 ```sh
-ibmcloud sat host assign \
-  --location LOCATION \
-  --cluster CLUSTER_NAME_OR_ID \
-  --worker-pool POOL_NAME
+ibmcloud sat host assign --location LOCATION
 ```
 {: pre}
 
@@ -3002,13 +2201,10 @@ ibmcloud sat host attach --location LOCATION [--host-label LABEL ...] [--host-li
 #### Examples
 {: #host-attach-examples}
 
-Create and download a script that you can run on your hosts to attach them to your location.
+Create and download a script that you can run on your hosts to attach them to your location
 
 ```sh
-ibmcloud sat host attach \
-  --location LOCATION \
-  --host-label HOSTNAME \
-  --reset-key RESET-KEY
+ibmcloud sat host attach --location LOCATION
 ```
 {: pre}
 
@@ -3045,12 +2241,26 @@ ibmcloud sat host get --host HOST --location LOCATION [--output OUTPUT] [-q]
 #### Examples
 {: #host-get-examples}
 
-View the details of a Satellite host.
+View the details of a Satellite host
 
 ```sh
-ibmcloud sat host get --location LOCATION --host HOSTNAME --output json
+ibmcloud sat host get --host HOST --location LOCATION
 ```
 {: pre}
+
+
+### `ibmcloud sat host help`
+{: #host-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat host help
+```
+
 
 
 ### `ibmcloud sat host ls`
@@ -3082,10 +2292,10 @@ ibmcloud sat host ls --location LOCATION [--output OUTPUT] [-q]
 #### Examples
 {: #host-ls-examples}
 
-List all hosts that are attached to a Satellite location, including hosts that are assigned to clusters or the control p.
+List all hosts that are attached to a Satellite location, including hosts that are assigned to clusters or the control plane
 
 ```sh
-ibmcloud sat host ls --location LOCATION --output json -q
+ibmcloud sat host ls --location LOCATION
 ```
 {: pre}
 
@@ -3122,10 +2332,10 @@ ibmcloud sat host rm --host HOST --location LOCATION [-f] [-q]
 #### Examples
 {: #host-rm-examples}
 
-Remove a host from a Satellite location.
+Remove a host from a Satellite location
 
 ```sh
-ibmcloud sat host rm --location LOCATION --host HOSTNAME -f
+ibmcloud sat host rm --host HOST --location LOCATION
 ```
 {: pre}
 
@@ -3165,10 +2375,10 @@ ibmcloud sat host update --host HOST --location LOCATION [--host-label LABEL ...
 #### Examples
 {: #host-update-examples}
 
-Update host information, such as zones and labels.
+Update host information, such as zones and labels
 
 ```sh
-ibmcloud sat host update --location LOCATION --host-label HOSTNAME --zone ZONE
+ibmcloud sat host update --host HOST --location LOCATION
 ```
 {: pre}
 
@@ -3178,6 +2388,20 @@ ibmcloud sat host update --location LOCATION --host-label HOSTNAME --zone ZONE
 
 View and manage Satellite Config keys.
 {: shortdesc}
+
+
+### `ibmcloud sat key help`
+{: #key-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat key help
+```
+
 
 
 ### `ibmcloud sat key ls`
@@ -3202,16 +2426,6 @@ ibmcloud sat key ls [--output OUTPUT] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 
-
-#### Examples
-{: #key-ls-examples}
-
-List all Satellite Config keys in your IBM Cloud account.
-
-```sh
-ibmcloud sat key ls --output json -q
-```
-{: pre}
 
 
 ### `ibmcloud sat key rm`
@@ -3243,10 +2457,10 @@ ibmcloud sat key rm --key KEY [-f] [-q]
 #### Examples
 {: #key-rm-examples}
 
-Remove a Satellite Config key.
+Remove a Satellite Config key
 
 ```sh
-ibmcloud sat key rm --key KEY -f -q
+ibmcloud sat key rm --key KEY
 ```
 {: pre}
 
@@ -3280,10 +2494,10 @@ ibmcloud sat key rotate --name NAME [-f] [-q]
 #### Examples
 {: #key-rotate-examples}
 
-Generate a new key for use by managed clusters to connect to Satellite Config.
+Generate a new key for use by managed clusters to connect to Satellite Config
 
 ```sh
-ibmcloud sat key rotate --name NAME -f -q
+ibmcloud sat key rotate --name NAME
 ```
 {: pre}
 
@@ -3360,13 +2574,10 @@ ibmcloud sat location create --managed-from REGION --name NAME [--capability CAP
 #### Examples
 {: #location-create-examples}
 
-Create a Satellite location.
+Create a Satellite location
 
 ```sh
-ibmcloud sat location create \
-  --pod-subnet SUBNET_CIDR \
-  --service-subnet SUBNET_CIDR \
-  --name NAME
+ibmcloud sat location create --managed-from REGION --name NAME
 ```
 {: pre}
 
@@ -3403,12 +2614,26 @@ ibmcloud sat location dns get --location LOCATION --subdomain SUBDOMAIN [--outpu
 #### Examples
 {: #location-dns-get-examples}
 
-View the details of a registered subdomain in a Satellite location.
+View the details of a registered subdomain in a Satellite location
 
 ```sh
-ibmcloud sat location dns get --location LOCATION --subdomain DOMAIN --output json
+ibmcloud sat location dns get --location LOCATION --subdomain SUBDOMAIN
 ```
 {: pre}
+
+
+### `ibmcloud sat location dns help`
+{: #location-dns-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat location dns help
+```
+
 
 
 ### `ibmcloud sat location dns ls`
@@ -3440,10 +2665,10 @@ ibmcloud sat location dns ls --location LOCATION [--output OUTPUT] [-q]
 #### Examples
 {: #location-dns-ls-examples}
 
-List the registered subdomains in a Satellite location.
+List the registered subdomains in a Satellite location
 
 ```sh
-ibmcloud sat location dns ls --location LOCATION --output json -q
+ibmcloud sat location dns ls --location LOCATION
 ```
 {: pre}
 
@@ -3480,10 +2705,10 @@ ibmcloud sat location dns register --ip IP [--ip IP ...] --location LOCATION [--
 #### Examples
 {: #location-dns-register-examples}
 
-Set a subdomain for the hosts assigned to the control plane in a Satellite location.
+Set a subdomain for the hosts assigned to the control plane in a Satellite location
 
 ```sh
-ibmcloud sat location dns register --location LOCATION --ip IP_ADDRESS --output json
+ibmcloud sat location dns register --ip IP --location LOCATION
 ```
 {: pre}
 
@@ -3517,12 +2742,26 @@ ibmcloud sat location get --location LOCATION [--output OUTPUT] [-q]
 #### Examples
 {: #location-get-examples}
 
-View the details of a Satellite location.
+View the details of a Satellite location
 
 ```sh
-ibmcloud sat location get --location LOCATION --output json -q
+ibmcloud sat location get --location LOCATION
 ```
 {: pre}
+
+
+### `ibmcloud sat location help`
+{: #location-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat location help
+```
+
 
 
 ### `ibmcloud sat location ls`
@@ -3547,16 +2786,6 @@ ibmcloud sat location ls [--output OUTPUT] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 
-
-#### Examples
-{: #location-ls-examples}
-
-List all Satellite locations in your IBM Cloud account.
-
-```sh
-ibmcloud sat location ls --output json -q
-```
-{: pre}
 
 
 ### `ibmcloud sat location rm`
@@ -3588,10 +2817,10 @@ ibmcloud sat location rm --location LOCATION [-f] [-q]
 #### Examples
 {: #location-rm-examples}
 
-Delete a location.
+Delete a location
 
 ```sh
-ibmcloud sat location rm --location LOCATION -f -q
+ibmcloud sat location rm --location LOCATION
 ```
 {: pre}
 
@@ -3628,13 +2857,10 @@ ibmcloud sat location update --location-id ID [--description DESCRIPTION] [--nam
 #### Examples
 {: #location-update-examples}
 
-Update the name or description of a Satellite location.
+Update the name or description of a Satellite location
 
 ```sh
-ibmcloud sat location update \
-  --location-id LOCATION \
-  --name NAME \
-  --description IP_ADDRESS
+ibmcloud sat location update --location-id ID
 ```
 {: pre}
 
@@ -3665,16 +2891,6 @@ ibmcloud sat messages [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 
-
-#### Examples
-{: #messages-examples}
-
-View the current user messages.
-
-```sh
-ibmcloud sat messages -q
-```
-{: pre}
 
 
 ## Resource commands
@@ -3719,15 +2935,26 @@ ibmcloud sat resource get --resource RESOURCE [--history HISTORY] [--output OUTP
 #### Examples
 {: #resource-get-examples}
 
-View the details of a Kubernetes resource that is managed by a Satellite configuration.
+View the details of a Kubernetes resource that is managed by a Satellite configuration
 
 ```sh
-ibmcloud sat resource get \
-  --resource RESOURCE \
-  --history HISTORY \
-  --save-data SAVE-DATA
+ibmcloud sat resource get --resource RESOURCE
 ```
 {: pre}
+
+
+### `ibmcloud sat resource help`
+{: #resource-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat resource help
+```
+
 
 
 ### `ibmcloud sat resource history get`
@@ -3762,12 +2989,26 @@ ibmcloud sat resource history get --resource RESOURCE [--limit LIMIT] [--output 
 #### Examples
 {: #resource-history-get-examples}
 
-Get history for a Kubernetes resource.
+Get history for a Kubernetes resource
 
 ```sh
-ibmcloud sat resource history get --resource RESOURCE --limit LIMIT --output json
+ibmcloud sat resource history get --resource RESOURCE
 ```
 {: pre}
+
+
+### `ibmcloud sat resource history help`
+{: #resource-history-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat resource history help
+```
+
 
 
 ### `ibmcloud sat resource ls`
@@ -3786,7 +3027,7 @@ ibmcloud sat resource ls [--limit LIMIT] [--output OUTPUT] [-q] [--search SEARCH
 {: #resource-ls-options}
 
 
-`--cluster CLUSTER`, `-c CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Specify the name or ID of the registered cluster that the Kubernetes resource runs in. To find registered clusters, run `ibmcloud sat cluster ls`.
 
 `--limit LIMIT`
@@ -3808,10 +3049,10 @@ ibmcloud sat resource ls [--limit LIMIT] [--output OUTPUT] [-q] [--search SEARCH
 #### Examples
 {: #resource-ls-examples}
 
-Search Kubernetes resources that are managed by Satellite.
+Search Kubernetes resources that are managed by Satellite
 
 ```sh
-ibmcloud sat resource ls --search SEARCH --limit LIMIT --cluster CLUSTER_NAME_OR_ID
+ibmcloud sat resource ls --cluster CLUSTER
 ```
 {: pre}
 
@@ -3821,6 +3062,20 @@ ibmcloud sat resource ls --search SEARCH --limit LIMIT --cluster CLUSTER_NAME_OR
 
 View Satellite service clusters.
 {: shortdesc}
+
+
+### `ibmcloud sat service help`
+{: #service-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat service help
+```
+
 
 
 ### `ibmcloud sat service ls`
@@ -3852,10 +3107,10 @@ ibmcloud sat service ls --location LOCATION [--output OUTPUT] [-q]
 #### Examples
 {: #service-ls-examples}
 
-List all Satellite service clusters in your location to review details, such as requested host resources.
+List all Satellite service clusters in your location to review details, such as requested host resources
 
 ```sh
-ibmcloud sat service ls --location LOCATION --output json -q
+ibmcloud sat service ls --location LOCATION
 ```
 {: pre}
 
@@ -3902,13 +3157,10 @@ ibmcloud sat storage assignment autopatch disable --config CONFIG [-q] (--all | 
 #### Examples
 {: #storage-assignment-autopatch-disable-examples}
 
-Disable automatic patches for a Satellite storage assignment.
+Disable automatic patches for a Satellite storage assignment
 
 ```sh
-ibmcloud sat storage assignment autopatch disable \
-  --config CONFIG \
-  --assignment ASSIGNMENT \
-  --all
+ibmcloud sat storage assignment autopatch disable --config CONFIG --all
 ```
 {: pre}
 
@@ -3948,15 +3200,26 @@ ibmcloud sat storage assignment autopatch enable --config CONFIG [-q] (--all | -
 #### Examples
 {: #storage-assignment-autopatch-enable-examples}
 
-Enable automatic patches for a Satellite storage assignment.
+Enable automatic patches for a Satellite storage assignment
 
 ```sh
-ibmcloud sat storage assignment autopatch enable \
-  --config CONFIG \
-  --assignment ASSIGNMENT \
-  --all
+ibmcloud sat storage assignment autopatch enable --config CONFIG --all
 ```
 {: pre}
+
+
+### `ibmcloud sat storage assignment autopatch help`
+{: #storage-assignment-autopatch-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat storage assignment autopatch help
+```
+
 
 
 ### `ibmcloud sat storage assignment create`
@@ -3975,13 +3238,13 @@ ibmcloud sat storage assignment create --config CONFIG [--name NAME] [-q] (--clu
 {: #storage-assignment-create-options}
 
 
-`--cluster CLUSTER`, `-c CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Specify the ID of the Satellite cluster for the assignment. To find the cluster ID, run `ibmcloud oc cluster ls --provider satellite`.
 
 `--config CONFIG`
 :    Specify the Satellite storage configuration for the assignment. to find configurations, run `ibmcloud sat storage config ls`.
 
-`--group GROUP`, `-g GROUP`
+`-g CLUSTER`, `--group GROUP`
 :    Specify the cluster groups for the assignment. To find cluster groups, run `ibmcloud sat group ls`.
 
 `--name NAME`
@@ -3997,13 +3260,10 @@ ibmcloud sat storage assignment create --config CONFIG [--name NAME] [-q] (--clu
 #### Examples
 {: #storage-assignment-create-examples}
 
-Create an assignment to deploy your storage configurations to clusters in your Satellite location.
+Create an assignment to deploy your storage configurations to clusters in your Satellite location
 
 ```sh
-ibmcloud sat storage assignment create \
-  --name NAME \
-  --group GROUP \
-  --service-cluster-id CLUSTER_NAME_OR_ID
+ibmcloud sat storage assignment create --config CONFIG --cluster CLUSTER
 ```
 {: pre}
 
@@ -4037,12 +3297,26 @@ ibmcloud sat storage assignment get --assignment ASSIGNMENT [--output OUTPUT] [-
 #### Examples
 {: #storage-assignment-get-examples}
 
-Get the details of a Satellite storage assignment.
+Get the details of a Satellite storage assignment
 
 ```sh
-ibmcloud sat storage assignment get --assignment ASSIGNMENT --output json -q
+ibmcloud sat storage assignment get --assignment ASSIGNMENT
 ```
 {: pre}
+
+
+### `ibmcloud sat storage assignment help`
+{: #storage-assignment-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat storage assignment help
+```
+
 
 
 ### `ibmcloud sat storage assignment ls`
@@ -4067,7 +3341,7 @@ ibmcloud sat storage assignment ls [--output OUTPUT] [-q] (--cluster CLUSTER | -
 {: #storage-assignment-ls-options}
 
 
-`--cluster CLUSTER`, `-c CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Specify the ID of the Satellite cluster for the assignments. To get the cluster ID, run `ibmcloud oc cluster ls --provider satellite`.
 
 `--config CONFIG`
@@ -4089,13 +3363,10 @@ ibmcloud sat storage assignment ls [--output OUTPUT] [-q] (--cluster CLUSTER | -
 #### Examples
 {: #storage-assignment-ls-examples}
 
-List the Satellite storage assignments in your IBM Cloud account.
+List the Satellite storage assignments in your IBM Cloud account
 
 ```sh
-ibmcloud sat storage assignment ls \
-  --service-cluster-id CLUSTER_NAME_OR_ID \
-  --cluster CLUSTER_NAME_OR_ID \
-  --config CONFIG
+ibmcloud sat storage assignment ls --cluster CLUSTER
 ```
 {: pre}
 
@@ -4131,10 +3402,10 @@ Aliases: `ibmcloud sat upgrade`
 #### Examples
 {: #storage-assignment-patch-examples}
 
-Apply storage configuration changes to the associated assignments.
+Apply storage configuration changes to the associated assignments
 
 ```sh
-ibmcloud sat storage assignment patch --assignment ASSIGNMENT -f -q
+ibmcloud sat storage assignment patch --assignment ASSIGNMENT
 ```
 {: pre}
 
@@ -4168,10 +3439,10 @@ ibmcloud sat storage assignment rm --assignment ASSIGNMENT [-f] [-q]
 #### Examples
 {: #storage-assignment-rm-examples}
 
-Remove a Satellite storage assignment.
+Remove a Satellite storage assignment
 
 ```sh
-ibmcloud sat storage assignment rm --assignment ASSIGNMENT -f -q
+ibmcloud sat storage assignment rm --assignment ASSIGNMENT
 ```
 {: pre}
 
@@ -4198,7 +3469,7 @@ ibmcloud sat storage assignment update --assignment ASSIGNMENT [-f] [--group GRO
 `-f`
 :    Force the command to run without user prompts.
 
-`--group GROUP`, `-g GROUP`
+`-g`, `--group GROUP`
 :    Specify the new cluster groups for the assignment. To list available groups, run `ibmcloud sat group ls`.
 
 `--name NAME`
@@ -4211,13 +3482,10 @@ ibmcloud sat storage assignment update --assignment ASSIGNMENT [-f] [--group GRO
 #### Examples
 {: #storage-assignment-update-examples}
 
-Update a Satellite storage assignment.
+Update a Satellite storage assignment
 
 ```sh
-ibmcloud sat storage assignment update \
-  --assignment ASSIGNMENT \
-  --name NAME \
-  --group GROUP
+ibmcloud sat storage assignment update --assignment ASSIGNMENT
 ```
 {: pre}
 
@@ -4244,7 +3512,7 @@ ibmcloud sat storage config class add --config-name NAME --name NAME --param PAR
 `--name NAME`
 :    Provide a name for the custom storage class.
 
-`--param PARAM`, `-p PARAM`
+`-p`, `--param PARAM`
 :    Specify a `key=value` pair for storage class parameters. To see the storage class parameters in a storage template, run `ibmcloud sat storage template get`.
 
 `-q`
@@ -4254,10 +3522,10 @@ ibmcloud sat storage config class add --config-name NAME --name NAME --param PAR
 #### Examples
 {: #storage-config-class-add-examples}
 
-Create a custom Satellite storage class.
+Create a custom Satellite storage class
 
 ```sh
-ibmcloud sat storage config class add --name NAME --config-name NAME --param PARAM
+ibmcloud sat storage config class add --config-name NAME --name NAME --param PARAM
 ```
 {: pre}
 
@@ -4294,12 +3562,26 @@ ibmcloud sat storage config class get --class CLASS --config CONFIG [--output OU
 #### Examples
 {: #storage-config-class-get-examples}
 
-Get the details of a Satellite storage class.
+Get the details of a Satellite storage class
 
 ```sh
-ibmcloud sat storage config class get --class CLASS --config CONFIG --output json
+ibmcloud sat storage config class get --class CLASS --config CONFIG
 ```
 {: pre}
+
+
+### `ibmcloud sat storage config class help`
+{: #storage-config-class-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat storage config class help
+```
+
 
 
 ### `ibmcloud sat storage config class ls`
@@ -4334,13 +3616,10 @@ ibmcloud sat storage config class ls --config CONFIG [--output OUTPUT] [-q] [--s
 #### Examples
 {: #storage-config-class-ls-examples}
 
-List the storage classes in a Satellite storage configuration.
+List the storage classes in a Satellite storage configuration
 
 ```sh
-ibmcloud sat storage config class ls \
-  --config CONFIG \
-  --show-params SHOW-PARAMS \
-  --output json
+ibmcloud sat storage config class ls --config CONFIG
 ```
 {: pre}
 
@@ -4367,7 +3646,7 @@ ibmcloud sat storage config create --location LOCATION --name NAME --template-na
 `--name NAME`
 :    Specify the name of the storage configuration.
 
-`--param PARAM`, `-p PARAM`
+`-p`, `--param PARAM`
 :    Specify a `key=value` pair for configuration parameters. To see the configuration parameters in a storage template, run `ibmcloud sat storage template get`.
 
 `-q`
@@ -4383,13 +3662,10 @@ ibmcloud sat storage config create --location LOCATION --name NAME --template-na
 #### Examples
 {: #storage-config-create-examples}
 
-Create a Satellite storage configuration to install storage drivers in your clusters.
+Create a Satellite storage configuration to install storage drivers in your clusters
 
 ```sh
-ibmcloud sat storage config create \
-  --name NAME \
-  --template-name NAME \
-  --template-version VERSION
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name NAME
 ```
 {: pre}
 
@@ -4423,12 +3699,26 @@ ibmcloud sat storage config get --config CONFIG [--output OUTPUT] [-q]
 #### Examples
 {: #storage-config-get-examples}
 
-Get the details of a Satellite storage configuration.
+Get the details of a Satellite storage configuration
 
 ```sh
-ibmcloud sat storage config get --config CONFIG --output json -q
+ibmcloud sat storage config get --config CONFIG
 ```
 {: pre}
+
+
+### `ibmcloud sat storage config help`
+{: #storage-config-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat storage config help
+```
+
 
 
 ### `ibmcloud sat storage config ls`
@@ -4457,15 +3747,19 @@ ibmcloud sat storage config ls [--location LOCATION] [--output OUTPUT] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-#### Examples
-{: #storage-config-ls-examples}
 
-List the Satellite storage configurations in your IBM Cloud account.
+### `ibmcloud sat storage config param help`
+{: #storage-config-param-help-cli}
+
+
+
+Show help
+{: shortdesc}
 
 ```sh
-ibmcloud sat storage config ls --location LOCATION --output json -q
+ibmcloud sat storage config param help
 ```
-{: pre}
+
 
 
 ### `ibmcloud sat storage config param set`
@@ -4493,7 +3787,7 @@ ibmcloud sat storage config param set --config CONFIG --param PARAM [--param PAR
 `-f`
 :    Force the command to run without user prompts.
 
-`--param PARAM`, `-p PARAM`
+`-p`, `--param PARAM`
 :    Specify a `key=value` pair for configuration parameters. To see the configuration parameters in a storage template, run `ibmcloud sat storage template get`.
 
 `-q`
@@ -4503,10 +3797,10 @@ ibmcloud sat storage config param set --config CONFIG --param PARAM [--param PAR
 #### Examples
 {: #storage-config-param-set-examples}
 
-Set the configuration and secret parameters of a Satellite storage configuration.
+Set the configuration and secret parameters of a Satellite storage configuration
 
 ```sh
-ibmcloud sat storage config param set --config CONFIG --param PARAM --apply APPLY
+ibmcloud sat storage config param set --config CONFIG --param PARAM
 ```
 {: pre}
 
@@ -4545,13 +3839,10 @@ Aliases: `ibmcloud sat upgrade`
 #### Examples
 {: #storage-config-patch-examples}
 
-Apply the latest patch updates to a Satellite storage configuration.
+Apply the latest patch updates to a Satellite storage configuration
 
 ```sh
-ibmcloud sat storage config patch \
-  --config CONFIG \
-  --include-assignments INCLUDE-ASSIGNMENTS \
-  -f
+ibmcloud sat storage config patch --config CONFIG
 ```
 {: pre}
 
@@ -4588,15 +3879,26 @@ ibmcloud sat storage config rm --config CONFIG [-f] [--include-assignments] [-q]
 #### Examples
 {: #storage-config-rm-examples}
 
-Remove a Satellite storage configuration.
+Remove a Satellite storage configuration
 
 ```sh
-ibmcloud sat storage config rm \
-  --config CONFIG \
-  --include-assignments INCLUDE-ASSIGNMENTS \
-  -f
+ibmcloud sat storage config rm --config CONFIG
 ```
 {: pre}
+
+
+### `ibmcloud sat storage help`
+{: #storage-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat storage help
+```
+
 
 
 ### `ibmcloud sat storage template get`
@@ -4631,12 +3933,26 @@ ibmcloud sat storage template get --name NAME --version VERSION [--output OUTPUT
 #### Examples
 {: #storage-template-get-examples}
 
-Get the details of a Satellite storage template.
+Get the details of a Satellite storage template
 
 ```sh
-ibmcloud sat storage template get --name NAME --version VERSION --output json
+ibmcloud sat storage template get --name NAME --version VERSION
 ```
 {: pre}
+
+
+### `ibmcloud sat storage template help`
+{: #storage-template-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat storage template help
+```
+
 
 
 ### `ibmcloud sat storage template ls`
@@ -4658,16 +3974,6 @@ ibmcloud sat storage template ls [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 
-
-#### Examples
-{: #storage-template-ls-examples}
-
-List the available Satellite storage templates.
-
-```sh
-ibmcloud sat storage template ls -q
-```
-{: pre}
 
 
 ## Subscription commands
@@ -4699,14 +4005,14 @@ ibmcloud sat subscription create --config CONFIG --group GROUP [--group GROUP ..
 `--config CONFIG`
 :    Specify the name of the configuration to use for the subscription. To find available configurations, run `ibmcloud sat config ls`.
 
+`-g`, `--group GROUP`
+:    Specify the name or ID of the cluster groups to subscribe to your configuration. To find available cluster groups, run `ibmcloud sat group ls`.
+
 `--gitref GITREF`
 :    Specify the GitRef to use for the Satellite subscription. Strategy: GitOps.
 
 `--gitref-type TYPE`
 :    Indicate the type of GitRef to use for the Satellite subscription. Strategy: GitOps. Allowed values: branch, commit, tag, release
-
-`--group GROUP`, `-g GROUP`
-:    Specify the name or ID of the cluster groups to subscribe to your configuration. To find available cluster groups, run `ibmcloud sat group ls`.
 
 `--name NAME`
 :    Enter a name for the subscription.
@@ -4727,14 +4033,18 @@ ibmcloud sat subscription create --config CONFIG --group GROUP [--group GROUP ..
 #### Examples
 {: #subscription-create-examples}
 
-Create a Satellite subscription for clusters.
+Create a Satellite subscription for clusters
 
 ```sh
 ibmcloud sat subscription create \
-  --auth-required AUTH-REQUIRED \
-  --name NAME \
+  --config CONFIG \
   --group GROUP \
-  --config CONFIG
+  --name NAME \
+  --auth-required \
+  --gitref GITREF \
+  --gitref-type TYPE \
+  --path PATH \
+  --repository REPOSITORY
 ```
 {: pre}
 
@@ -4768,12 +4078,40 @@ ibmcloud sat subscription get --subscription SUBSCRIPTION [--output OUTPUT] [-q]
 #### Examples
 {: #subscription-get-examples}
 
-Get detailed information for a Satellite subscription.
+Get detailed information for a Satellite subscription
 
 ```sh
-ibmcloud sat subscription get --subscription IP_ADDRESS --output json -q
+ibmcloud sat subscription get --subscription SUBSCRIPTION
 ```
 {: pre}
+
+
+### `ibmcloud sat subscription help`
+{: #subscription-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat subscription help
+```
+
+
+
+### `ibmcloud sat subscription identity help`
+{: #subscription-identity-help-cli}
+
+
+
+Show help
+{: shortdesc}
+
+```sh
+ibmcloud sat subscription identity help
+```
+
 
 
 ### `ibmcloud sat subscription identity set`
@@ -4805,10 +4143,10 @@ ibmcloud sat subscription identity set --subscription SUBSCRIPTION [-f] [-q]
 #### Examples
 {: #subscription-identity-set-examples}
 
-Update the Satellite subscription to use your identity to manage resources.
+Update the Satellite subscription to use your identity to manage resources
 
 ```sh
-ibmcloud sat subscription identity set --subscription IP_ADDRESS -f -q
+ibmcloud sat subscription identity set --subscription SUBSCRIPTION
 ```
 {: pre}
 
@@ -4829,7 +4167,7 @@ ibmcloud sat subscription ls [--cluster CLUSTER] [--output OUTPUT] [-q]
 {: #subscription-ls-options}
 
 
-`--cluster CLUSTER`, `-c CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Specify the Satellite cluster name or ID. To find registered clusters, run `ibmcloud sat cluster ls`.
 
 `--output OUTPUT`
@@ -4838,16 +4176,6 @@ ibmcloud sat subscription ls [--cluster CLUSTER] [--output OUTPUT] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 
-
-#### Examples
-{: #subscription-ls-examples}
-
-List all Satellite subscriptions in your IBM Cloud account.
-
-```sh
-ibmcloud sat subscription ls --cluster CLUSTER_NAME_OR_ID --output json -q
-```
-{: pre}
 
 
 ### `ibmcloud sat subscription rm`
@@ -4879,10 +4207,10 @@ ibmcloud sat subscription rm --subscription SUBSCRIPTION [-f] [-q]
 #### Examples
 {: #subscription-rm-examples}
 
-Remove a Satellite subscription.
+Remove a Satellite subscription
 
 ```sh
-ibmcloud sat subscription rm --subscription IP_ADDRESS -f -q
+ibmcloud sat subscription rm --subscription SUBSCRIPTION
 ```
 {: pre}
 
@@ -4909,14 +4237,14 @@ ibmcloud sat subscription update --subscription SUBSCRIPTION [-f] [--group GROUP
 `-f`
 :    Force the command to run without user prompts.
 
+`-g`, `--group GROUP`
+:    Specify the new cluster groups to subscribe to your configuration.
+
 `--gitref GITREF`
 :    Specify the GitRef to use for the Satellite subscription. Strategy: GitOps.
 
 `--gitref-type TYPE`
 :    Indicate the type of GitRef to use for this Satellite subscription. Strategy: GitOps. Allowed values: branch, commit, tag, release
-
-`--group GROUP`, `-g GROUP`
-:    Specify the new cluster groups to subscribe to your configuration.
 
 `--name NAME`
 :    Provide a new name of the Satellite subscription.
@@ -4940,13 +4268,15 @@ ibmcloud sat subscription update --subscription SUBSCRIPTION [-f] [--group GROUP
 #### Examples
 {: #subscription-update-examples}
 
-Update a Satellite subscription.
+Update a Satellite subscription
 
 ```sh
 ibmcloud sat subscription update \
-  --auth-required AUTH-REQUIRED \
-  --subscription IP_ADDRESS \
-  --name NAME \
-  --group GROUP
+  --subscription SUBSCRIPTION \
+  --auth-required \
+  --gitref GITREF \
+  --gitref-type TYPE \
+  --path PATH \
+  --repository REPOSITORY
 ```
 {: pre}
