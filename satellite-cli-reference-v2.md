@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-08-20"
+lastupdated: "2026-08-21"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -27,16 +27,20 @@ To install the CLI, see [Installing the the CLI](/docs/satellite?topic=satellite
 {: tip}
 
 
-## Prerequisites
+Prerequisites
 {: #sat-cli-prereq}
+{: dl}
 
-* Install the [{{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-cli-install).
-* Install the `ks` plug-in by running the following command:
+Install the [{{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-cli-install).
+:   See [Getting started with the IBM Cloud CLI](/docs/satellite?topic=satellite-cli-install).
 
-   ```console
-   ibmcloud plugin install ks
-   ```
-   {: pre}
+Install the `ks` plug-in.
+:   Run the following command:
+
+    ```console
+    ibmcloud plugin install ks
+    ```
+    {: pre}
 
 
 ## ibmcloud sat commands
@@ -172,6 +176,16 @@ Show help
 ibmcloud sat acl endpoint help
 ```
 
+
+#### Examples
+{: #acl-endpoint-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat acl endpoint help
+```
+{: pre}
 
 
 ### `ibmcloud sat acl endpoint ls`
@@ -316,6 +330,16 @@ ibmcloud sat acl help
 ```
 
 
+#### Examples
+{: #acl-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat acl help
+```
+{: pre}
+
 
 ### `ibmcloud sat acl ls`
 {: #acl-ls-cli}
@@ -452,6 +476,16 @@ Show help
 ibmcloud sat acl subnet help
 ```
 
+
+#### Examples
+{: #acl-subnet-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat acl subnet help
+```
+{: pre}
 
 
 ### `ibmcloud sat acl subnet rm`
@@ -594,6 +628,16 @@ ibmcloud sat agent help
 ```
 
 
+#### Examples
+{: #agent-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat agent help
+```
+{: pre}
+
 
 ### `ibmcloud sat agent ls`
 {: #agent-ls-cli}
@@ -689,6 +733,16 @@ ibmcloud sat cluster help
 ```
 
 
+#### Examples
+{: #cluster-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat cluster help
+```
+{: pre}
+
 
 ### `ibmcloud sat cluster ls`
 {: #cluster-ls-cli}
@@ -718,6 +772,16 @@ ibmcloud sat cluster ls [--filter FILTER] [--limit LIMIT] [--output OUTPUT] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 
+
+#### Examples
+{: #cluster-ls-examples}
+
+List all registered clusters in your IBM Cloud account
+
+```sh
+ibmcloud sat cluster ls
+```
+{: pre}
 
 
 ### `ibmcloud sat cluster register`
@@ -891,6 +955,16 @@ ibmcloud sat config help
 ```
 
 
+#### Examples
+{: #config-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat config help
+```
+{: pre}
+
 
 ### `ibmcloud sat config ls`
 {: #config-ls-cli}
@@ -914,6 +988,16 @@ ibmcloud sat config ls [--output OUTPUT] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 
+
+#### Examples
+{: #config-ls-examples}
+
+List all Satellite configurations in your IBM Cloud account
+
+```sh
+ibmcloud sat config ls
+```
+{: pre}
 
 
 ### `ibmcloud sat config rename`
@@ -1096,6 +1180,16 @@ ibmcloud sat config version help
 ```
 
 
+#### Examples
+{: #config-version-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat config version help
+```
+{: pre}
+
 
 ### `ibmcloud sat config version rm`
 {: #config-version-rm-cli}
@@ -1231,6 +1325,16 @@ ibmcloud sat connector help
 ```
 
 
+#### Examples
+{: #connector-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat connector help
+```
+{: pre}
+
 
 ### `ibmcloud sat connector ls`
 {: #connector-ls-cli}
@@ -1260,6 +1364,16 @@ ibmcloud sat connector ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 
+
+#### Examples
+{: #connector-ls-examples}
+
+View the Satellite Connectors in your IBM Cloud account
+
+```sh
+ibmcloud sat connector ls
+```
+{: pre}
 
 
 ### `ibmcloud sat connector rm`
@@ -1361,6 +1475,16 @@ Show help
 ibmcloud sat endpoint authn help
 ```
 
+
+#### Examples
+{: #endpoint-authn-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat endpoint authn help
+```
+{: pre}
 
 
 ### `ibmcloud sat endpoint authn rotate`
@@ -1697,6 +1821,16 @@ ibmcloud sat endpoint help
 ```
 
 
+#### Examples
+{: #endpoint-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat endpoint help
+```
+{: pre}
+
 
 ### `ibmcloud sat endpoint ls`
 {: #endpoint-ls-cli}
@@ -1859,6 +1993,16 @@ ibmcloud sat experimental endpoint help
 ```
 
 
+#### Examples
+{: #experimental-endpoint-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat experimental endpoint help
+```
+{: pre}
+
 
 ### `ibmcloud sat experimental help`
 {: #experimental-help-cli}
@@ -1872,6 +2016,16 @@ Show help
 ibmcloud sat experimental help
 ```
 
+
+#### Examples
+{: #experimental-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat experimental help
+```
+{: pre}
 
 
 ## Group commands
@@ -2045,6 +2199,16 @@ ibmcloud sat group help
 ```
 
 
+#### Examples
+{: #group-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat group help
+```
+{: pre}
+
 
 ### `ibmcloud sat group ls`
 {: #group-ls-cli}
@@ -2068,6 +2232,16 @@ ibmcloud sat group ls [--output OUTPUT] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 
+
+#### Examples
+{: #group-ls-examples}
+
+List all Satellite cluster groups in your IBM Cloud account
+
+```sh
+ibmcloud sat group ls
+```
+{: pre}
 
 
 ### `ibmcloud sat group rm`
@@ -2262,6 +2436,16 @@ ibmcloud sat host help
 ```
 
 
+#### Examples
+{: #host-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat host help
+```
+{: pre}
+
 
 ### `ibmcloud sat host ls`
 {: #host-ls-cli}
@@ -2403,6 +2587,16 @@ ibmcloud sat key help
 ```
 
 
+#### Examples
+{: #key-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat key help
+```
+{: pre}
+
 
 ### `ibmcloud sat key ls`
 {: #key-ls-cli}
@@ -2426,6 +2620,16 @@ ibmcloud sat key ls [--output OUTPUT] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 
+
+#### Examples
+{: #key-ls-examples}
+
+List all Satellite Config keys in your IBM Cloud account
+
+```sh
+ibmcloud sat key ls
+```
+{: pre}
 
 
 ### `ibmcloud sat key rm`
@@ -2635,6 +2839,16 @@ ibmcloud sat location dns help
 ```
 
 
+#### Examples
+{: #location-dns-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat location dns help
+```
+{: pre}
+
 
 ### `ibmcloud sat location dns ls`
 {: #location-dns-ls-cli}
@@ -2763,6 +2977,16 @@ ibmcloud sat location help
 ```
 
 
+#### Examples
+{: #location-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat location help
+```
+{: pre}
+
 
 ### `ibmcloud sat location ls`
 {: #location-ls-cli}
@@ -2786,6 +3010,16 @@ ibmcloud sat location ls [--output OUTPUT] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 
+
+#### Examples
+{: #location-ls-examples}
+
+List all Satellite locations in your IBM Cloud account
+
+```sh
+ibmcloud sat location ls
+```
+{: pre}
 
 
 ### `ibmcloud sat location rm`
@@ -2892,6 +3126,16 @@ ibmcloud sat messages [-q]
 :    Do not show the message of the day or update reminders.
 
 
+#### Examples
+{: #messages-examples}
+
+View the current user messages
+
+```sh
+ibmcloud sat messages
+```
+{: pre}
+
 
 ## Resource commands
 {: #resource-cli}
@@ -2956,6 +3200,16 @@ ibmcloud sat resource help
 ```
 
 
+#### Examples
+{: #resource-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat resource help
+```
+{: pre}
+
 
 ### `ibmcloud sat resource history get`
 {: #resource-history-get-cli}
@@ -3009,6 +3263,16 @@ Show help
 ibmcloud sat resource history help
 ```
 
+
+#### Examples
+{: #resource-history-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat resource history help
+```
+{: pre}
 
 
 ### `ibmcloud sat resource ls`
@@ -3076,6 +3340,16 @@ Show help
 ibmcloud sat service help
 ```
 
+
+#### Examples
+{: #service-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat service help
+```
+{: pre}
 
 
 ### `ibmcloud sat service ls`
@@ -3221,6 +3495,16 @@ ibmcloud sat storage assignment autopatch help
 ```
 
 
+#### Examples
+{: #storage-assignment-autopatch-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat storage assignment autopatch help
+```
+{: pre}
+
 
 ### `ibmcloud sat storage assignment create`
 {: #storage-assignment-create-cli}
@@ -3317,6 +3601,16 @@ Show help
 ibmcloud sat storage assignment help
 ```
 
+
+#### Examples
+{: #storage-assignment-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat storage assignment help
+```
+{: pre}
 
 
 ### `ibmcloud sat storage assignment ls`
@@ -3583,6 +3877,16 @@ ibmcloud sat storage config class help
 ```
 
 
+#### Examples
+{: #storage-config-class-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat storage config class help
+```
+{: pre}
+
 
 ### `ibmcloud sat storage config class ls`
 {: #storage-config-class-ls-cli}
@@ -3720,6 +4024,16 @@ ibmcloud sat storage config help
 ```
 
 
+#### Examples
+{: #storage-config-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat storage config help
+```
+{: pre}
+
 
 ### `ibmcloud sat storage config ls`
 {: #storage-config-ls-cli}
@@ -3747,6 +4061,16 @@ ibmcloud sat storage config ls [--location LOCATION] [--output OUTPUT] [-q]
 :    Do not show the message of the day or update reminders.
 
 
+#### Examples
+{: #storage-config-ls-examples}
+
+List the Satellite storage configurations in your IBM Cloud account
+
+```sh
+ibmcloud sat storage config ls
+```
+{: pre}
+
 
 ### `ibmcloud sat storage config param help`
 {: #storage-config-param-help-cli}
@@ -3760,6 +4084,16 @@ Show help
 ibmcloud sat storage config param help
 ```
 
+
+#### Examples
+{: #storage-config-param-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat storage config param help
+```
+{: pre}
 
 
 ### `ibmcloud sat storage config param set`
@@ -3900,6 +4234,16 @@ ibmcloud sat storage help
 ```
 
 
+#### Examples
+{: #storage-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat storage help
+```
+{: pre}
+
 
 ### `ibmcloud sat storage template get`
 {: #storage-template-get-cli}
@@ -3954,6 +4298,16 @@ ibmcloud sat storage template help
 ```
 
 
+#### Examples
+{: #storage-template-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat storage template help
+```
+{: pre}
+
 
 ### `ibmcloud sat storage template ls`
 {: #storage-template-ls-cli}
@@ -3974,6 +4328,16 @@ ibmcloud sat storage template ls [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 
+
+#### Examples
+{: #storage-template-ls-examples}
+
+List the available Satellite storage templates
+
+```sh
+ibmcloud sat storage template ls
+```
+{: pre}
 
 
 ## Subscription commands
@@ -4099,6 +4463,16 @@ ibmcloud sat subscription help
 ```
 
 
+#### Examples
+{: #subscription-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat subscription help
+```
+{: pre}
+
 
 ### `ibmcloud sat subscription identity help`
 {: #subscription-identity-help-cli}
@@ -4112,6 +4486,16 @@ Show help
 ibmcloud sat subscription identity help
 ```
 
+
+#### Examples
+{: #subscription-identity-help-examples}
+
+Show help
+
+```sh
+ibmcloud sat subscription identity help
+```
+{: pre}
 
 
 ### `ibmcloud sat subscription identity set`
@@ -4176,6 +4560,16 @@ ibmcloud sat subscription ls [--cluster CLUSTER] [--output OUTPUT] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 
+
+#### Examples
+{: #subscription-ls-examples}
+
+List all Satellite subscriptions in your IBM Cloud account
+
+```sh
+ibmcloud sat subscription ls
+```
+{: pre}
 
 
 ### `ibmcloud sat subscription rm`
