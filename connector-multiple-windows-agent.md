@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-17"
+lastupdated: "2026-08-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -31,7 +31,7 @@ Running multiple agents on the same Windows host is not supported for Satellite 
 
 - In version `1.2.0`, to distinguish between the multiple Windows agents installed on a single Windows host, a new parameter was introduced in the agent config file named `SATELLITE_CONNECTOR_INSTANCE_NAME`. This parameter is appended to the Service Name and separated by a `-`. To install multiple Windows agents, you must now specify a config file when calling the installation or uninstallation scripts.
 
-- The Windows agent runs as a node process on the Windows host. In both the IBM Cloud Console and the IBM Cloud CLI, the node process ID is appended to the Connector name and separated by a `.`.
+- The Windows agent runs as a node process on the Windows host. In both the IBM Cloud Console and the IBM Cloud command-line interface (CLI), the node process ID is appended to the Connector name and separated by a `.`.
 
 - In versions earlier than `1.2.0` of the Windows agent, you weren't allowed to specify a config file for the installation or uninstallation scripts. Instead, the scripts automatically took the file `config.json` from the same directory and used it to install or uninstall a single Windows agent.
 
@@ -41,15 +41,15 @@ Running multiple agents on the same Windows host is not supported for Satellite 
 
 - Installing multiple Windows agents requires 25MB of memory to be preserved for each agent.
 
-- Running traffic across agents adds up to ~70MB of memory and approximately 15% CPU utilization per agent, with bandwidth reaching 150–200 Mbps per agent. Source: [Connector agent resource requirements](/docs/satellite?topic=satellite-connector-agent).
+- Running traffic across agents adds up to ~70MB of memory and approximately 15% central processing unit (CPU) utilization per agent, with bandwidth reaching 150–200 Mbps per agent. Source: [Connector agent resource requirements](/docs/satellite?topic=satellite-run-agent-locally).
 
 
 ## Installing multiple Windows agents
 {: #install-multiple}
 
-To deploy multiple agents on a single hots, you must use a configFile parameter.
+To deploy multiple agents on a single host, you must use a configFile parameter.
 
-1. From the CLI, run the following command to download the agent `.zip` file.
+1. From the CLI, run the following command to download the agent `.zip` (ZIP archive) file.
 
     ```sh
     ibmcloud sat agent attach --platform windows
@@ -211,10 +211,10 @@ To deploy multiple agents on a single hots, you must use a configFile parameter.
 ## Uninstalling multiple Windows agents
 {: #ma-uninstall}
 
-To uninstall a Windows multiple agents, run the following command.
+To uninstall multiple Windows agents, run the following command.
 
 ```txt
-.\uninstall -configFile config_connector1.json
+.\uninstall.ps1 -configFile config_connector1.json
 ```
 {: codeblock}
 
@@ -234,7 +234,7 @@ Review the following steps to use the `install.ps1` script to install only a sin
 - The config file name must be `config.json`.
 - The config file `config.json` must not contain a `SATELLITE_CONNECTOR_INSTANCE_NAME`.
 
-To deploy multiple agents on a single hots, you must use a configFile parameter.
+To deploy multiple agents on a single host, you must use a configFile parameter.
 
 1. From the CLI, run the following command to download the agent `.zip` file.
 
@@ -326,10 +326,10 @@ To deploy multiple agents on a single hots, you must use a configFile parameter.
 ## Uninstalling a single Windows agent
 {: #uninstall-single-agent}
 
-To uninstall single agent, run the following command.
+To uninstall a single agent, run the following command.
 
 ```txt
-.\unistall.sh
+.\uninstall.ps1
 ```
 {: codeblock}
 
@@ -343,7 +343,7 @@ To update a Windows single Agent, uninstall the agent, update the config file, a
 {: #multiple-faq}
 
 Can I add a multi Windows agent to an existing single Windows agent installation?
-:   Yes, download a Windows agent zip file >=1.2.0, unpack it to a different directory than the existing single Windows agent installation and configure an `SATELLITE_CONNECTOR_INSTANCE_NAME` in the config file not named `config.json` The use `install.ps1 -configFile <agent-config-file.json>` to install it.
+:   Yes, download a Windows agent zip file >=1.2.0, unpack it to a different directory than the existing single Windows agent installation and configure an `SATELLITE_CONNECTOR_INSTANCE_NAME` in the config file not named `config.json`. Then use `install.ps1 -configFile <agent-config-file.json>` to install it.
 
 Why is the `update-service.ps1` missing in Versions >= 1.2?
 :   The `update-service.ps1` was an uninstall followed by a new install, so we decided to remove it. If you need to update a Windows agent, uninstall it, update the config file and install it again.

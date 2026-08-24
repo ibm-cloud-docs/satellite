@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-24"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 
@@ -44,8 +44,8 @@ To create a location, open the [{{site.data.keyword.satelliteshort}} console](ht
 Getting started options
 :    The following options determine your installation process.
 :    - If your infrastructure is on prem or edge, select the **On prem and Edge** option. With this option, you create a location, choose your zones, and download a host attach script to run on your hosts.
-:    - If your infrastructure is a cloud provider and you want to use only hosts that are running RHEL, select the cloud provider that you want to use, enter your credentials, and create your location. You can also [download the terraform template](https://github.com/terraform-ibm-modules/terraform-ibm-satellite/tree/main/examples){: external} and edit it before you run it.
-:    - If your infrastructure is a cloud provider and you want to use hosts that are running RHCOS or want to have more control over your host creation, then select **Advanced configuration**. With this option, you create a location, choose your zones, include your cloud provider credentials, and then download a host attach script (RHEL) or an ignition script (RHCOS) to run on your hosts.
+:    - If your infrastructure is a cloud provider and you want to use only hosts that are running Red Hat Enterprise Linux (RHEL), select the cloud provider that you want to use, enter your credentials, and create your location. You can also [download the terraform template](https://github.com/terraform-ibm-modules/terraform-ibm-satellite/tree/main/examples){: external} and edit it before you run it.
+:    - If your infrastructure is a cloud provider and you want to use hosts that are running Red Hat CoreOS (RHCOS) or want to have more control over your host creation, then select **Advanced configuration**. With this option, you create a location, choose your zones, include your cloud provider credentials, and then download a host attach script (RHEL) or an ignition script (RHCOS) to run on your hosts.
 
 :    If you selected **On prem and Edge**, you can change your location options by clicking **Edit**.
      {: tip}
@@ -61,13 +61,13 @@ Getting started options
 :    - **Zones**: The names of the zones **must match exactly** the names of the corresponding zones in your infrastructure provider where you plan to create hosts, such as a cloud provider zone or on-prem rack. To retrieve the name of the zone for other cloud providers, consult your infrastructure provider.
          - [Alibaba regions and zones](https://www.alibabacloud.com/help/en/ecs/user-guide/regions-and-zones){: external}, such as `us-east-1a` and `us-east-1b`.
          - [AWS regions and zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html){: external}, such as `us-east-1a`, `us-east-1b`, and `us-east-1c`.
-         - [Azure `topology.kubernetes.io/zone` labels](https://learn.microsoft.com/en-us/azure/aks/availability-zones#verify-node-distribution-across-zones){: external}, such as `eastus-1`, `eastus-2`, and `eastus-3`. **Don't** use only the location name (`eastus`) or the zone number (`1`).
+         - [Azure `topology.kubernetes.io/zone` labels](https://learn.microsoft.com/en-us/azure/aks/reliability-availability-zones-configure#verify-node-distribution-across-zones){: external}, such as `eastus-1`, `eastus-2`, and `eastus-3`. **Don't** use only the location name (`eastus`) or the zone number (`1`).
          - [GCP regions and zones](https://docs.cloud.google.com/compute/docs/regions-zones){: external}, such as `us-west1-a`, `us-west1-b`, and `us-west1-c`.
  
 :    - **Red Hat CoreOS Support**: {{site.data.keyword.satelliteshort}} supports hosts that are running either **RHEL** or **RHCOS**. For more information, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os). 
 :    - **Object Storage**: The exact name of an existing {{site.data.keyword.cos_full_notm}} bucket that you want to use to back up {{site.data.keyword.satelliteshort}} location control plane data. Otherwise, a new bucket is automatically created in an {{site.data.keyword.cos_short}} instance in your account. **Do not delete** your {{site.data.keyword.cos_short}} instance or this bucket. If the service instance or bucket is deleted, your {{site.data.keyword.satelliteshort}} location control plane data cannot be backed up.
 
-After you click **Create**, you can [attach hosts to your location](/docs/satellite?topic=satellite-attach-hosts) and finish the setup of your [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-setup-control-plane). Note that the token in the attach script is an API key, which must be treated and protected as sensitive information. 
+After you click **Create**, you can [attach hosts to your location](/docs/satellite?topic=satellite-attach-hosts) and finish the setup of your [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-setup-control-plane). Note that the token in the attach script is an application programming interface (API) key, which must be treated and protected as sensitive information.
 
 The host attach script for your location expires one year from the creation date. To make sure that hosts in your location don't have authentication issues, download a new copy of the host attach script at least once per year and update any unassigned hosts. For more information, see [Why do my unassigned hosts have an `Unresponsive` status?](/docs/satellite?topic=satellite-ts-host-unassigned-unknown).
 {: important}
@@ -76,7 +76,7 @@ Want to verify if your location is enabled for Red Hat CoreOS? See [Is my locati
 
 
 
-## Creating locations from the CLI
+## Creating locations from the command-line interface (CLI)
 {: #locations-create-cli}
 
 Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to create your location.
@@ -91,7 +91,7 @@ Before you begin
 
 To create a {{site.data.keyword.satelliteshort}} location from the CLI,
 
-1. Log in to your {{site.data.keyword.cloud_notm}} account. If you have a federated account, include the `--sso` option, or create an API key to log in.
+1. Log in to your {{site.data.keyword.cloud_notm}} account. If you have a federated account, include the `--sso` option, or create an application programming interface (API) key to log in.
 
     ```sh
     ibmcloud login [-sso]
@@ -127,7 +127,7 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI,
     :    Specify three names for high availability zones in your location. The names of the zones **must match exactly** the names of the corresponding zones in your infrastructure provider where you plan to create hosts, such as a cloud provider zone or on-prem rack. To retrieve the name of the zone, consult your infrastructure provider.
          1. [Alibaba regions and zones](https://www.alibabacloud.com/help/en/ecs/user-guide/regions-and-zones){: external}, such as `us-east-1` and `us-west-1`.
          2. [AWS regions and zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html){: external}, such as `us-east-1a`, `us-east-1b`, `us-east-1c`.
-         3. [Azure `topology.kubernetes.io/zone` labels](https://learn.microsoft.com/en-us/azure/aks/availability-zones#verify-node-distribution-across-zones){: external}, such as `eastus-1`, `eastus-2`, and `eastus-3`. Do **not** use only the location name (`eastus`) or the zone number (`1`).
+         3. [Azure `topology.kubernetes.io/zone` labels](https://learn.microsoft.com/en-us/azure/aks/reliability-availability-zones-configure#verify-node-distribution-across-zones){: external}, such as `eastus-1`, `eastus-2`, and `eastus-3`. Do **not** use only the location name (`eastus`) or the zone number (`1`).
          4. [GCP regions and zones](https://docs.cloud.google.com/compute/docs/regions-zones){: external}, such as `us-west1-a`, `us-west1-b`, and `us-west1-c`.
 
     :    Optional: If you use this option, zone names must be specified in three repeated options. If you do not use this option, the zones in your location are assigned names, such as `zone-1`.
@@ -139,9 +139,9 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI,
     :    Optional. The {{site.data.keyword.cloud_notm}} account ID with the instance of {{site.data.keyword.logs_full_notm}} that you want to forward your {{site.data.keyword.satelliteshort}} logs to. This option is available only in select environments.
 
     `--pod-subnet SUBNET`
-    :    Optional. Specify a custom subnet CIDR to provide private IP addresses for pods. This option can be used only if you also enable Red Hat CoreOS with the `--coreos-enabled` option. All pods that are deployed to a worker node are assigned a private IP address in the 172.16.0.0/16 range by default. You can avoid subnet conflicts with the network that you use to connect to your location by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
+    :    Optional. Specify a custom subnet Classless Inter-Domain Routing (CIDR) to provide private IP addresses for pods. This option can be used only if you also enable Red Hat CoreOS with the `--coreos-enabled` option. All pods that are deployed to a worker node are assigned a private IP address in the 172.16.0.0/16 range by default. You can avoid subnet conflicts with the network that you use to connect to your location by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
     :    When you choose a subnet size, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least `/23`, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use `/22` to have enough pod IP addresses for eight worker nodes, `/21` to have enough pod IP addresses for 16 worker nodes, and so on.
-    :    The subnet that you choose must be within one of the following ranges.The subnet that you choose must be within one of the following ranges.
+    :    The subnet that you choose must be within one of the following ranges.
          - `172.16.0.0 - 172.17.255.255`
          - `172.21.0.0 - 172.31.255.255`
          - `192.168.0.0 - 192.168.254.255`

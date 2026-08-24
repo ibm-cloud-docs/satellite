@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-17"
+lastupdated: "2026-08-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -21,7 +21,7 @@ Resolve issues where a {{site.data.keyword.satelliteshort}} location that anothe
 You are granted access to another user's {{site.data.keyword.satelliteshort}} location. However, when you list locations, you do not see the location.
 {: tsSymptoms}
 
-The location owner might have scoped your {{site.data.keyword.satelliteshort}} access in {{site.data.keyword.cloud_notm}} IAM to only the `location` resource type, which prevents the location from returning unless you target the regional endpoint that the location is managed from.
+The location owner might have scoped your {{site.data.keyword.satelliteshort}} access in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to only the `location` resource type, which prevents the location from returning unless you target the regional endpoint that the location is managed from.
 {: tsCauses}
 
 Target the regional endpoint, or ask the location owner to update your permissions.
@@ -31,7 +31,7 @@ Target the regional endpoint, or ask the location owner to update your permissio
 {: #ts-location-missing-location-target}
 
 1. Ask the location owner which [{{site.data.keyword.cloud_notm}} multizone region](/docs/satellite?topic=satellite-sat-regions) the {{site.data.keyword.satelliteshort}} location is managed from. For example, the owner can run `ibmcloud sat location get --location <location_name_or_ID>` and review the **Managed from** field.
-2. From the CLI, [target the regional endpoint](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_target), such as Washington, D.C. (`us-east`) in the following example.
+2. From the command-line interface (CLI), [target the regional endpoint](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_init), such as Washington, D.C. (`us-east`) in the following example.
     ```sh
     ibmcloud oc init --host https://us-east.containers.cloud.ibm.com
     ```

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-24"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -164,7 +164,7 @@ After you have [retrieved the device paths for the disks that you want to use in
 1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
 1. Click **Complete** to assign your storage configuration.
 
-## Creating a configuration in the CLI
+## Creating a configuration in the command-line interface (CLI)
 {: #local-volume-block-config-create-cli}
 {: cli}
 
@@ -254,11 +254,11 @@ After you have [retrieved the device paths for the disks that you want to use in
     ```
     {: pre}
 
-## Creating a configuration in the API
+## Creating a configuration in the application programming interface (API)
 {: #local-volume-block-config-create-api}
 {: api}
 
-1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/account?topic=account-iamtoken-from-apikey).
+1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud Identity and Access Management (IAM) token by using an API key](/docs/account?topic=account-iamtoken_from_apikey).
 
 1. Review the [parameter reference](#local-volume-block-parameter-reference) for the template version that you want to use.
 

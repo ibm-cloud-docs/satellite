@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-24"
 
 
 keywords: high availability, disaster recover, HA, DR, responsibilities
@@ -96,7 +96,7 @@ All upgrades follow {{site.data.keyword.IBM_notm}} service best practices, inclu
 
 Complex changes are enabled and disabled with feature flags to control exposure.
 
-Changes that impact customer workloads are detailed in {{site.data.keyword.cloud_notm}} notifications. For more information about planned maintenance, announcements, and release notes that impact this service, see [Monitoring notifications and status](/docs/account?topic=account-viewing-ibm-cloud-status).
+Changes that impact customer workloads are detailed in {{site.data.keyword.cloud_notm}} notifications. For more information about planned maintenance, announcements, and release notes that impact this service, see [Monitoring notifications and status](/docs/account?topic=account-viewing-cloud-status).
 
 ## Your responsibilities for high availability and disaster recovery
 {: #feature-responsibilities}
@@ -108,7 +108,7 @@ It is your responsibility to continuously test your plan for HA and DR.
 Interruptions in network connectivity and short periods of unavailability of a service can occur. It is your responsibility to make sure that application source code includes [client availability retry logic](/docs/resiliency?topic=resiliency-high-availability-design#client-retry-logic-for-ha) to maintain high availability of the application.
 {: note}
 
-You are responsible for configuring your cluster to achieve the appropriate level of availability for your apps and services. The level of availability that you set up for your cluster impacts your coverage under the [{{site.data.keyword.cloud_notm}} HA service level agreement terms](/docs/overview?topic=overview-slas). For example, to receive full HA coverage under the SLA terms, you must set up a multizone cluster with a total of at least 6 worker nodes, two worker nodes per zone that are evenly spread across three zones.
+You are responsible for configuring your cluster to achieve the appropriate level of availability for your apps and services. The level of availability that you set up for your cluster impacts your coverage under the [{{site.data.keyword.cloud_notm}} HA service level agreement (SLA) terms](/docs/overview?topic=overview-slas). For example, to receive full HA coverage under the SLA terms, you must set up a multizone cluster with a total of at least 6 worker nodes, two worker nodes per zone that are evenly spread across three zones.
 
 You are responsible for the recovery of the workloads that run the cluster and your application data. For more information on your responsibilities for disaster recovery, see [Your responsibilities](/docs/satellite?topic=satellite-responsibilities).
 
@@ -117,9 +117,9 @@ You are responsible for the recovery of the workloads that run the cluster and y
 
 Change management includes tasks such as upgrades, configuration changes, and deletion. Keep the following points in mind to reduce downtime or data loss for your workload. 
 
-- It is recommended that you grant users and processes the IAM roles and actions with the least privilege required for their work. For example, limit the ability to delete production resources.
+- It is recommended that you grant users and processes the Identity and Access Management (IAM) roles and actions with the least privilege required for their work. For example, limit the ability to delete production resources.
 
-- Use the API, CLI, or console tools to apply the provided worker node updates that include operating system patches, or to request that worker nodes are rebooted, reloaded, or replaced.
+- Use the application programming interface (API), command-line interface (CLI), or console tools to apply the provided worker node updates that include operating system patches, or to request that worker nodes are rebooted, reloaded, or replaced.
 
 - Use the API, CLI, or console tools to apply the provided [updates](/docs/openshift?topic=openshift-openshift_versions#os-sat) for any Satellite clusters you own. Make sure to review the information and requirements for each version update to prevent issues or downtime. 
 
