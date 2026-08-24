@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-24"
 
 
 keywords: change log, version history, odf-remote
@@ -23,6 +23,17 @@ subcollection: "satellite"
 
 Review the version history for `odf-remote`.
 {: shortdesc}
+
+
+## Version 4.21
+{: #cl-storage-templates-odf-remote-4.21}
+
+
+### Version 4.21 - Revision 1, released 20 August 2026
+{: #cl-storage-templates-odf-remote-4.21-1}
+
+- Updates Go to version `1.26.4`.
+- ODF 4.21 initial release
 
 
 ## Version 4.20

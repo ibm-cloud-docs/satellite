@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-24"
 
 
 keywords: change log, version history, netapp-ontap-san
@@ -29,6 +29,13 @@ Review the version history for `netapp-ontap-san`.
 {: #cl-storage-templates-netapp-ontap-san-25.06}
 
 
+### Version 25.06 - Revision 3, released 20 August 2026
+{: #cl-storage-templates-netapp-ontap-san-25.06-3}
+
+- Resolves the following CVEs: [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2025-5278](https://nvd.nist.gov/vuln/detail/CVE-2025-5278){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}, [CVE-2026-4438](https://nvd.nist.gov/vuln/detail/CVE-2026-4438){: external}, [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/CVE-2026-4046){: external}, [CVE-2026-0861](https://nvd.nist.gov/vuln/detail/CVE-2026-0861){: external}, [CVE-2025-15281](https://nvd.nist.gov/vuln/detail/CVE-2025-15281){: external}, [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/CVE-2026-54369){: external}, [CVE-2026-4878](https://nvd.nist.gov/vuln/detail/CVE-2026-4878){: external}, [CVE-2026-4437](https://nvd.nist.gov/vuln/detail/CVE-2026-4437){: external}, [CVE-2026-0915](https://nvd.nist.gov/vuln/detail/CVE-2026-0915){: external}, and [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}.
+- Updates Go to version `1.26.5`.
+
+
 ### Version 25.06 - Revision 2, released 14 November 2025
 {: #cl-storage-templates-netapp-ontap-san-25.06-2}
 
@@ -46,6 +53,13 @@ Review the version history for `netapp-ontap-san`.
 
 ## Version 24.02
 {: #cl-storage-templates-netapp-ontap-san-24.02}
+
+
+### Version 24.02 - Revision 8, released 20 August 2026
+{: #cl-storage-templates-netapp-ontap-san-24.02-8}
+
+- Resolves the following CVEs: [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2025-5278](https://nvd.nist.gov/vuln/detail/CVE-2025-5278){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}, [CVE-2026-4438](https://nvd.nist.gov/vuln/detail/CVE-2026-4438){: external}, [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/CVE-2026-4046){: external}, [CVE-2026-0861](https://nvd.nist.gov/vuln/detail/CVE-2026-0861){: external}, [CVE-2025-15281](https://nvd.nist.gov/vuln/detail/CVE-2025-15281){: external}, [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/CVE-2026-54369){: external}, [CVE-2026-4878](https://nvd.nist.gov/vuln/detail/CVE-2026-4878){: external}, [CVE-2026-4437](https://nvd.nist.gov/vuln/detail/CVE-2026-4437){: external}, [CVE-2026-0915](https://nvd.nist.gov/vuln/detail/CVE-2026-0915){: external}, and [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}.
+- Updates Go to version `1.26.5`.
 
 
 ### Version 24.02 - Revision 7, released 14 November 2025
