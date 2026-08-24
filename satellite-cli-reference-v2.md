@@ -27,13 +27,10 @@ To install the CLI, see [Installing the the CLI](/docs/satellite?topic=satellite
 {: tip}
 
 
-Prerequisites
-{: #sat-cli-prereq}
-{: dl}
 
-Install the {{site.data.keyword.cloud_notm}} CLI.
-:   See [Getting started with the IBM Cloud CLI](/docs/satellite?topic=satellite-cli-install).
-:   Install the `ks` plug-in. Run the following command.
+1. Install the {{site.data.keyword.cloud_notm}} CLI. See [Getting started with the IBM Cloud CLI](/docs/satellite?topic=satellite-cli-install).
+
+2. Install the `ks` plug-in.
 
     ```console
     ibmcloud plugin install ks
@@ -41,29 +38,6 @@ Install the {{site.data.keyword.cloud_notm}} CLI.
     {: pre}
 
 
-## ibmcloud sat commands
-{: #cli_commands}
-
-The following tables list the `ibmcloud sat` command groups. For a complete list of all `ibmcloud sat` commands as they are structured in the CLI, see the [CLI map](/docs/satellite?topic=satellite-icsat_map).
-
-| Command group | Description |
-| --- | --- |
-| [`ibmcloud sat connector`](#connector-cli) | Create, view, and modify Satellite connectors. |
-| [`ibmcloud sat location`](#location-cli) | Create, view, and modify Satellite locations. |
-| [`ibmcloud sat endpoint`](#endpoint-cli) | View and manage Satellite endpoints. |
-| [`ibmcloud sat acl`](#acl-cli) | View and manage Satellite access control lists (ACLs). |
-| [`ibmcloud sat agent`](#agent-cli) | Attach or view Satellite Connector Agents. |
-| [`ibmcloud sat host`](#host-cli) | View and modify Satellite hosts. |
-| [`ibmcloud sat cluster`](#cluster-cli) | Register and manage clusters for use with Satellite configurations. |
-| [`ibmcloud sat messages`](#messages-cli) | View the current user messages. |
-| [`ibmcloud sat group`](#group-cli) | View and manage Satellite cluster groups. Cluster groups are used to subscribe clusters to Satellite configurations of Kubernetes resources. |
-| [`ibmcloud sat key`](#key-cli) | View and manage Satellite Config keys. |
-| [`ibmcloud sat config`](#config-cli) | View and manage Satellite Configuration. |
-| [`ibmcloud sat resource`](#resource-cli) | Search and view Kubernetes resources that are managed by a Satellite configuration. |
-| [`ibmcloud sat service`](#service-cli) | View Satellite service clusters. |
-| [`ibmcloud sat storage`](#storage-cli) | View and manage Satellite storage resources. |
-| [`ibmcloud sat subscription`](#subscription-cli) | View and manage Satellite subscriptions to deploy Kubernetes configuration files to your clusters. |
-{: caption="ibmcloud sat CLI command groups" caption-side="bottom"}
 
 ## Acl commands
 {: #acl-cli}
@@ -78,7 +52,7 @@ View and manage Satellite access control lists (ACLs).
 
 Create an ACL.
 
-```txt
+```sh
 ibmcloud sat acl create --name NAME --subnet SUBNET [--subnet SUBNET ...] [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
 ```
 
@@ -86,22 +60,22 @@ ibmcloud sat acl create --name NAME --subnet SUBNET [--subnet SUBNET ...] [--end
 {: #acl-create-options}
 
 
-`--connector-id ID`
+`--connector-id`
 :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
-`--endpoint ENDPOINT`
+`--endpoint`
 :    A name or ID of an endpoint to enable for this ACL.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
-`--name NAME`
+`--name`
 :    The name for the ACL.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--subnet SUBNET`
+`--subnet`
 :    An IP or CIDR block allowed by this ACL. Value must be fully contained in the following CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
 
 
@@ -123,7 +97,7 @@ ibmcloud sat acl create --name NAME --subnet SUBNET --connector-id ID
 
 Add one or more enabled endpoints to an ACL.
 
-```txt
+```sh
 ibmcloud sat acl endpoint add --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
 ```
 
@@ -131,16 +105,16 @@ ibmcloud sat acl endpoint add --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOI
 {: #acl-endpoint-add-options}
 
 
-`--acl-id ID`
+`--acl-id`
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
-`--connector-id ID`
+`--connector-id`
 :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
-`--endpoint ENDPOINT`
+`--endpoint`
 :    A name or ID of an endpoint to enable for this ACL.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
 `-q`
@@ -165,7 +139,7 @@ ibmcloud sat acl endpoint add --acl-id ID --endpoint ENDPOINT --connector-id ID
 
 Show help
 
-```txt
+```sh
 ibmcloud sat acl endpoint help
 ```
 
@@ -188,7 +162,7 @@ ibmcloud sat acl endpoint help
 
 List all enabled endpoints for an ACL.
 
-```txt
+```sh
 ibmcloud sat acl endpoint ls --acl-id ID [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
 ```
 
@@ -196,16 +170,16 @@ ibmcloud sat acl endpoint ls --acl-id ID [--output OUTPUT] [-q] (--connector-id 
 {: #acl-endpoint-ls-options}
 
 
-`--acl-id ID`
+`--acl-id`
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
-`--connector-id ID`
+`--connector-id`
 :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -230,7 +204,7 @@ ibmcloud sat acl endpoint ls --acl-id ID --connector-id ID
 
 Remove one or more enabled endpoints from an ACL.
 
-```txt
+```sh
 ibmcloud sat acl endpoint rm --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
 ```
 
@@ -238,16 +212,16 @@ ibmcloud sat acl endpoint rm --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOIN
 {: #acl-endpoint-rm-options}
 
 
-`--acl-id ID`
+`--acl-id`
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
-`--connector-id ID`
+`--connector-id`
 :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
-`--endpoint ENDPOINT`
+`--endpoint`
 :    A name or ID of an endpoint to disable for this ACL.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
 `-q`
@@ -272,7 +246,7 @@ ibmcloud sat acl endpoint rm --acl-id ID --endpoint ENDPOINT --connector-id ID
 
 View the details of an ACL.
 
-```txt
+```sh
 ibmcloud sat acl get --acl-id ID [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
 ```
 
@@ -280,16 +254,16 @@ ibmcloud sat acl get --acl-id ID [--output OUTPUT] [-q] (--connector-id ID | --l
 {: #acl-get-options}
 
 
-`--acl-id ID`
+`--acl-id`
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
-`--connector-id ID`
+`--connector-id`
 :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -314,7 +288,7 @@ ibmcloud sat acl get --acl-id ID --connector-id ID
 
 Show help
 
-```txt
+```sh
 ibmcloud sat acl help
 ```
 
@@ -337,7 +311,7 @@ ibmcloud sat acl help
 
 List all ACLs for a Satellite connector or location.
 
-```txt
+```sh
 ibmcloud sat acl ls [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
 ```
 
@@ -345,13 +319,13 @@ ibmcloud sat acl ls [--output OUTPUT] [-q] (--connector-id ID | --location LOCAT
 {: #acl-ls-options}
 
 
-`--connector-id ID`
+`--connector-id`
 :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -376,7 +350,7 @@ ibmcloud sat acl ls --connector-id ID
 
 Delete an ACL.
 
-```txt
+```sh
 ibmcloud sat acl rm --acl-id ID [-q] (--connector-id ID | --location LOCATION)
 ```
 
@@ -384,13 +358,13 @@ ibmcloud sat acl rm --acl-id ID [-q] (--connector-id ID | --location LOCATION)
 {: #acl-rm-options}
 
 
-`--acl-id ID`
+`--acl-id`
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
-`--connector-id ID`
+`--connector-id`
 :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
 `-q`
@@ -415,7 +389,7 @@ ibmcloud sat acl rm --acl-id ID --connector-id ID
 
 Add one or more subnets to an ACL.
 
-```txt
+```sh
 ibmcloud sat acl subnet add --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q] (--connector-id ID | --location LOCATION)
 ```
 
@@ -423,19 +397,19 @@ ibmcloud sat acl subnet add --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-
 {: #acl-subnet-add-options}
 
 
-`--acl-id ID`
+`--acl-id`
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
-`--connector-id ID`
+`--connector-id`
 :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--subnet SUBNET`
+`--subnet`
 :    An IP or CIDR block allowed by this ACL. Value must be fully contained in the following CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
 
 
@@ -457,7 +431,7 @@ ibmcloud sat acl subnet add --acl-id ID --subnet SUBNET --connector-id ID
 
 Show help
 
-```txt
+```sh
 ibmcloud sat acl subnet help
 ```
 
@@ -480,7 +454,7 @@ ibmcloud sat acl subnet help
 
 Remove one or more subnets from an ACL.
 
-```txt
+```sh
 ibmcloud sat acl subnet rm --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q] (--connector-id ID | --location LOCATION)
 ```
 
@@ -488,19 +462,19 @@ ibmcloud sat acl subnet rm --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q
 {: #acl-subnet-rm-options}
 
 
-`--acl-id ID`
+`--acl-id`
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
-`--connector-id ID`
+`--connector-id`
 :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--subnet SUBNET`
+`--subnet`
 :    An IP or CIDR block allowed by this ACL. Value must be fully contained in the following CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
 
 
@@ -522,7 +496,7 @@ ibmcloud sat acl subnet rm --acl-id ID --subnet SUBNET --connector-id ID
 
 Update the name of an ACL.
 
-```txt
+```sh
 ibmcloud sat acl update --acl-id ID --name NAME [-q] (--connector-id ID | --location LOCATION)
 ```
 
@@ -530,16 +504,16 @@ ibmcloud sat acl update --acl-id ID --name NAME [-q] (--connector-id ID | --loca
 {: #acl-update-options}
 
 
-`--acl-id ID`
+`--acl-id`
 :    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat acl ls`.
 
-`--connector-id ID`
+`--connector-id`
 :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
-`--name NAME`
+`--name`
 :    The new name for the ACL.
 
 `-q`
@@ -570,7 +544,7 @@ Attach or view Satellite Connector Agents.
 
 Get a Satellite Connector Agent for a specific platform. Download the Agent `.zip` for Windows or get a link to the documentation for Docker environments.
 
-```txt
+```sh
 ibmcloud sat agent attach --platform PLATFORM [-q]
 ```
 
@@ -578,7 +552,7 @@ ibmcloud sat agent attach --platform PLATFORM [-q]
 {: #agent-attach-options}
 
 
-`--platform PLATFORM`
+`--platform`
 :    The platform for the Satellite Connector Agent. For more information about Docker, see the documentation at https://ibm.biz/satconagent Available options: windows, docker
 
 `-q`
@@ -603,7 +577,7 @@ ibmcloud sat agent attach --platform PLATFORM
 
 Show help
 
-```txt
+```sh
 ibmcloud sat agent help
 ```
 
@@ -626,7 +600,7 @@ ibmcloud sat agent help
 
 List all Agents for a Satellite Connector.
 
-```txt
+```sh
 ibmcloud sat agent ls --connector-id ID [--output OUTPUT] [-q]
 ```
 
@@ -634,10 +608,10 @@ ibmcloud sat agent ls --connector-id ID [--output OUTPUT] [-q]
 {: #agent-ls-options}
 
 
-`--connector-id ID`
+`--connector-id`
 :    The ID of a Satellite connector.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -668,7 +642,7 @@ Register and manage clusters for use with Satellite configurations.
 
 Get the details of a registered cluster.
 
-```txt
+```sh
 ibmcloud sat cluster get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
@@ -676,10 +650,10 @@ ibmcloud sat cluster get --cluster CLUSTER [--output OUTPUT] [-q]
 {: #cluster-get-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or the ID. To list registered clusters, run `ibmcloud sat cluster ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -704,7 +678,7 @@ ibmcloud sat cluster get --cluster CLUSTER
 
 Show help
 
-```txt
+```sh
 ibmcloud sat cluster help
 ```
 
@@ -727,7 +701,7 @@ ibmcloud sat cluster help
 
 List all registered clusters in your IBM Cloud account.
 
-```txt
+```sh
 ibmcloud sat cluster ls [--filter FILTER] [--limit LIMIT] [--output OUTPUT] [-q]
 ```
 
@@ -735,13 +709,13 @@ ibmcloud sat cluster ls [--filter FILTER] [--limit LIMIT] [--output OUTPUT] [-q]
 {: #cluster-ls-options}
 
 
-`--filter FILTER`
+`--filter`
 :    Filter registered clusters by cluster ID.
 
-`--limit LIMIT`
+`--limit`
 :    Limit the number of clusters that are returned.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -766,7 +740,7 @@ ibmcloud sat cluster ls
 
 Get a `kubectl` command to register your cluster in a Satellite configuration. Log in to your cluster and run this command to install a Satellite Config agent. Clusters that you run in your Satellite location automatically install this agent.
 
-```txt
+```sh
 ibmcloud sat cluster register --name NAME [-q] [--silent]
 ```
 
@@ -774,7 +748,7 @@ ibmcloud sat cluster register --name NAME [-q] [--silent]
 {: #cluster-register-options}
 
 
-`--name NAME`
+`--name`
 :    Specify the name of the cluster that you want to register
 
 `-q`
@@ -802,7 +776,7 @@ ibmcloud sat cluster register --name NAME
 
 Remove a cluster registration. The cluster is no longer subscribed to a Satellite configuration, but the cluster and its existing resources still run.
 
-```txt
+```sh
 ibmcloud sat cluster unregister --cluster CLUSTER [-f] [-q]
 ```
 
@@ -810,7 +784,7 @@ ibmcloud sat cluster unregister --cluster CLUSTER [-f] [-q]
 {: #cluster-unregister-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or the ID. To list registered clusters, run `ibmcloud sat cluster ls`.
 
 `-f`
@@ -844,7 +818,7 @@ View and manage Satellite Configuration.
 
 Create a configuration to specify what Kubernetes resources you want to deploy to your clusters in your Satellite workloads.
 
-```txt
+```sh
 ibmcloud sat config create --name NAME [-q] (--data-location LOCATION | --provider PROVIDER)
 ```
 
@@ -852,13 +826,13 @@ ibmcloud sat config create --name NAME [-q] (--data-location LOCATION | --provid
 {: #config-create-options}
 
 
-`--data-location LOCATION`
+`--data-location`
 :    Specify the IBM region to store the Satellite configuration data. Strategy: Direct Upload.
 
-`--name NAME`
+`--name`
 :    Provide a name for the Satellite configuration.
 
-`--provider PROVIDER`
+`--provider`
 :    Indicate the remote GitOps provider for the Satellite configuration. This provider stores the Kubernetes resource definitions. Strategy: GitOps. Allowed values: github, gitlab
 
 `-q`
@@ -883,7 +857,7 @@ ibmcloud sat config create --name NAME --data-location LOCATION
 
 Get details of a Satellite configuration, such as the versions or subscriptions that are associated with the configuration.
 
-```txt
+```sh
 ibmcloud sat config get --config CONFIG [--output OUTPUT] [-q]
 ```
 
@@ -891,10 +865,10 @@ ibmcloud sat config get --config CONFIG [--output OUTPUT] [-q]
 {: #config-get-options}
 
 
-`--config CONFIG`
+`--config`
 :    Specify the name or ID of a Satellite configuration. To list available configurations, run `ibmcloud sat config ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -919,7 +893,7 @@ ibmcloud sat config get --config CONFIG
 
 Show help
 
-```txt
+```sh
 ibmcloud sat config help
 ```
 
@@ -942,7 +916,7 @@ ibmcloud sat config help
 
 List all Satellite configurations in your IBM Cloud account.
 
-```txt
+```sh
 ibmcloud sat config ls [--output OUTPUT] [-q]
 ```
 
@@ -950,7 +924,7 @@ ibmcloud sat config ls [--output OUTPUT] [-q]
 {: #config-ls-options}
 
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -975,7 +949,7 @@ ibmcloud sat config ls
 
 Rename a Satellite configuration.
 
-```txt
+```sh
 ibmcloud sat config rename --config CONFIG --name NAME [-q]
 ```
 
@@ -983,10 +957,10 @@ ibmcloud sat config rename --config CONFIG --name NAME [-q]
 {: #config-rename-options}
 
 
-`--config CONFIG`
+`--config`
 :    Specify the name or ID of a Satellite configuration. To list available configurations, run `ibmcloud sat config ls`.
 
-`--name NAME`
+`--name`
 :    Provide a new name for the Satellite configuration.
 
 `-q`
@@ -1011,7 +985,7 @@ ibmcloud sat config rename --config CONFIG --name NAME
 
 Remove a Satellite configuration. All associated subscriptions must be removed first. All versions are deleted. Back up any resource definitions that you want to keep.
 
-```txt
+```sh
 ibmcloud sat config rm --config CONFIG [-f] [-q]
 ```
 
@@ -1019,7 +993,7 @@ ibmcloud sat config rm --config CONFIG [-f] [-q]
 {: #config-rm-options}
 
 
-`--config CONFIG`
+`--config`
 :    Specify the name or ID of a Satellite configuration. To list available configurations, run `ibmcloud sat config ls`.
 
 `-f`
@@ -1047,7 +1021,7 @@ ibmcloud sat config rm --config CONFIG
 
 Create a configuration version to update existing Kubernetes resources for your Satellite workloads.
 
-```txt
+```sh
 ibmcloud sat config version create --config CONFIG --file-format FORMAT --name NAME --read-config CONFIG [--description DESCRIPTION] [-q]
 ```
 
@@ -1055,22 +1029,22 @@ ibmcloud sat config version create --config CONFIG --file-format FORMAT --name N
 {: #config-version-create-options}
 
 
-`--config CONFIG`
+`--config`
 :    Specify the name or ID of the Satellite configuration. To list available configurations, run `ibmcloud sat config ls`.
 
-`--description DESCRIPTION`
+`--description`
 :    Add a description for the Satellite configuration version.
 
-`--file-format FORMAT`
+`--file-format`
 :    Indicate the file format of the configuration version. Available options: yaml
 
-`--name NAME`
+`--name`
 :    Provide a name for the Satellite configuration version.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--read-config CONFIG`
+`--read-config`
 :    Specify the file path for the configuration version file.
 
 
@@ -1096,7 +1070,7 @@ ibmcloud sat config version create \
 
 Get details for a Satellite configuration version.
 
-```txt
+```sh
 ibmcloud sat config version get --config CONFIG --version VERSION [--output OUTPUT] [-q] [--save-config]
 ```
 
@@ -1104,10 +1078,10 @@ ibmcloud sat config version get --config CONFIG --version VERSION [--output OUTP
 {: #config-version-get-options}
 
 
-`--config CONFIG`
+`--config`
 :    Specify the name or ID of the Satellite configuration. To list available configurations, run `ibmcloud sat config ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -1116,7 +1090,7 @@ ibmcloud sat config version get --config CONFIG --version VERSION [--output OUTP
 `--save-config`
 :    Download and save the configuration version to a temporary file.
 
-`--version VERSION`
+`--version`
 :    Specify the name or ID of the Satellite configuration version. To list versions in your configuration, run `ibmcloud sat config get --config <configuration_name_or_ID>`.
 
 
@@ -1138,7 +1112,7 @@ ibmcloud sat config version get --config CONFIG --version VERSION
 
 Show help
 
-```txt
+```sh
 ibmcloud sat config version help
 ```
 
@@ -1161,7 +1135,7 @@ ibmcloud sat config version help
 
 Remove a Satellite configuration version.
 
-```txt
+```sh
 ibmcloud sat config version rm --config CONFIG --version VERSION [-f] [-q]
 ```
 
@@ -1169,7 +1143,7 @@ ibmcloud sat config version rm --config CONFIG --version VERSION [-f] [-q]
 {: #config-version-rm-options}
 
 
-`--config CONFIG`
+`--config`
 :    Specify the name or ID of the Satellite configuration. To list available configurations, run `ibmcloud sat config ls`.
 
 `-f`
@@ -1178,7 +1152,7 @@ ibmcloud sat config version rm --config CONFIG --version VERSION [-f] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Indicate the name or ID of the Satellite configuration version. To list versions, run `ibmcloud sat config get --config <configuration_name_or_ID>`.
 
 
@@ -1206,7 +1180,7 @@ Create, view, and modify Satellite connectors.
 
 Create a Satellite connector.
 
-```txt
+```sh
 ibmcloud sat connector create --name NAME --region REGION [-q]
 ```
 
@@ -1214,13 +1188,13 @@ ibmcloud sat connector create --name NAME --region REGION [-q]
 {: #connector-create-options}
 
 
-`--name NAME`
+`--name`
 :    The name for the Satellite connector.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--region REGION`
+`--region`
 :    The IBM Cloud region to manage your Satellite connector.
 
 
@@ -1242,7 +1216,7 @@ ibmcloud sat connector create --name NAME --region REGION
 
 View the details of a Satellite Connector.
 
-```txt
+```sh
 ibmcloud sat connector get --connector-id ID [--output OUTPUT] [-q]
 ```
 
@@ -1250,10 +1224,10 @@ ibmcloud sat connector get --connector-id ID [--output OUTPUT] [-q]
 {: #connector-get-options}
 
 
-`--connector-id ID`
+`--connector-id`
 :    The ID of a Satellite connector.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -1278,7 +1252,7 @@ ibmcloud sat connector get --connector-id ID
 
 Show help
 
-```txt
+```sh
 ibmcloud sat connector help
 ```
 
@@ -1301,7 +1275,7 @@ ibmcloud sat connector help
 
 View the Satellite Connectors in your IBM Cloud account.
 
-```txt
+```sh
 ibmcloud sat connector ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q]
 ```
 
@@ -1309,13 +1283,13 @@ ibmcloud sat connector ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q]
 {: #connector-ls-options}
 
 
-`--after AFTER`
+`--after`
 :    Show Satellite Connectors after the given cursor.
 
-`--first FIRST`
+`--first`
 :    View the next Satellite Connectors, up to the first number of Connectors.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -1340,7 +1314,7 @@ ibmcloud sat connector ls
 
 Delete a Satellite connector.
 
-```txt
+```sh
 ibmcloud sat connector rm --connector-id ID [-f] [-q]
 ```
 
@@ -1348,7 +1322,7 @@ ibmcloud sat connector rm --connector-id ID [-f] [-q]
 {: #connector-rm-options}
 
 
-`--connector-id ID`
+`--connector-id`
 :    The ID of a Satellite connector.
 
 `-f`
@@ -1382,7 +1356,7 @@ View and manage Satellite endpoints.
 
 Get the authentication settings for an endpoint.
 
-```txt
+```sh
 ibmcloud sat endpoint authn get --endpoint ENDPOINT [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
 ```
 
@@ -1390,16 +1364,16 @@ ibmcloud sat endpoint authn get --endpoint ENDPOINT [--output OUTPUT] [-q] (--co
 {: #endpoint-authn-get-options}
 
 
-`--connector-id ID`
+`--connector-id`
 :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
-`--endpoint ENDPOINT`
+`--endpoint`
 :    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls`.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -1424,7 +1398,7 @@ ibmcloud sat endpoint authn get --endpoint ENDPOINT --connector-id ID
 
 Show help
 
-```txt
+```sh
 ibmcloud sat endpoint authn help
 ```
 
@@ -1447,7 +1421,7 @@ ibmcloud sat endpoint authn help
 
 Replace existing authentication certificates with new ones. There are two TLS connections in the request flow. The `source` options refer to the TLS handshake between the source and the Connector service. The `destination` options refer to the TLS handshake between the Connector service and your destination or target server. You can provide certificates for one or both of these connections. Only the certificates that you specify are replaced.
 
-```txt
+```sh
 ibmcloud sat endpoint authn rotate --endpoint ENDPOINT [--dest-ca-cert-file FILE] [--dest-cert-file FILE] [--dest-key-file FILE] [-q] [--source-ca-cert-file FILE] [--source-cert-file FILE] [--source-key-file FILE] (--connector-id ID | --location LOCATION)
 ```
 
@@ -1455,34 +1429,34 @@ ibmcloud sat endpoint authn rotate --endpoint ENDPOINT [--dest-ca-cert-file FILE
 {: #endpoint-authn-rotate-options}
 
 
-`--connector-id ID`
+`--connector-id`
 :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
-`--dest-ca-cert-file FILE`
+`--dest-ca-cert-file`
 :    Trusted CA certificate or chain used to validate the destination server's certificate. For example `myCA.pem`.
 
-`--dest-cert-file FILE`
+`--dest-cert-file`
 :    The client certificate used to authenticate with the destination server. For example `myCert.pem`.
 
-`--dest-key-file FILE`
+`--dest-key-file`
 :    The client private key used to encrypt the client certificate. For example `myKey.pem`.
 
-`--endpoint ENDPOINT`
+`--endpoint`
 :    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls`.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--source-ca-cert-file FILE`
+`--source-ca-cert-file`
 :    Trusted CA certificate or chain used to validate the source client's certificate when source-tls-mode is mutual. For example `myCA.pem`.
 
-`--source-cert-file FILE`
+`--source-cert-file`
 :    The server certificate to present to the source client. For example `myCert.pem`.
 
-`--source-key-file FILE`
+`--source-key-file`
 :    The server private key used to encrypt the server certificate. For example `myKey.pem`.
 
 
@@ -1504,7 +1478,7 @@ ibmcloud sat endpoint authn rotate --endpoint ENDPOINT --connector-id ID
 
 Set authentication settings for an endpoint. There are two TLS connections in the request flow. The `source` options refer to the TLS handshake between the source and the Connector service. The `destination` options refer to the TLS handshake between the Connector service and your destination or target server. You can provide certificates for one or both of these connections. Unspecified settings are set to their default values.
 
-```txt
+```sh
 ibmcloud sat endpoint authn set --endpoint ENDPOINT [--dest-ca-cert-file FILE] [--dest-cert-file FILE] [--dest-key-file FILE] [--dest-tls-mode MODE] [-q] [--source-ca-cert-file FILE] [--source-cert-file FILE] [--source-key-file FILE] [--source-tls-mode MODE] (--connector-id ID | --location LOCATION)
 ```
 
@@ -1512,40 +1486,40 @@ ibmcloud sat endpoint authn set --endpoint ENDPOINT [--dest-ca-cert-file FILE] [
 {: #endpoint-authn-set-options}
 
 
-`--connector-id ID`
+`--connector-id`
 :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
-`--dest-ca-cert-file FILE`
+`--dest-ca-cert-file`
 :    Trusted CA certificate or chain used to validate the destination server's certificate. For example `myCA.pem`.
 
-`--dest-cert-file FILE`
+`--dest-cert-file`
 :    The client certificate used to authenticate with the destination server. For example `myCert.pem`.
 
-`--dest-key-file FILE`
+`--dest-key-file`
 :    The client private key used to encrypt the client certificate. For example `myKey.pem`.
 
-`--dest-tls-mode MODE`
+`--dest-tls-mode`
 :    The destination TLS mode. Accepted values: `simple`, `mutual`, `none`
 
-`--endpoint ENDPOINT`
+`--endpoint`
 :    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls`.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--source-ca-cert-file FILE`
+`--source-ca-cert-file`
 :    Trusted CA certificate or chain used to validate the source client's certificate when source-tls-mode is mutual. For example `myCA.pem`.
 
-`--source-cert-file FILE`
+`--source-cert-file`
 :    The server certificate to present to the source client. For example `myCert.pem`.
 
-`--source-key-file FILE`
+`--source-key-file`
 :    The server private key used to encrypt the server certificate. For example `myKey.pem`.
 
-`--source-tls-mode MODE`
+`--source-tls-mode`
 :    The source TLS mode. Accepted values: `simple`, `mutual`
 
 
@@ -1567,7 +1541,7 @@ ibmcloud sat endpoint authn set --endpoint ENDPOINT --connector-id ID
 
 Create an endpoint.
 
-```txt
+```sh
 ibmcloud sat endpoint create --dest-hostname HOSTNAME --dest-port PORT --dest-type TYPE --name NAME --source-protocol PROTOCOL [--dest-protocol PROTOCOL] [--idle-timeout-seconds SECONDS] [--output OUTPUT] [-q] [--sni SNI] (--connector-id ID | --location LOCATION)
 ```
 
@@ -1575,40 +1549,40 @@ ibmcloud sat endpoint create --dest-hostname HOSTNAME --dest-port PORT --dest-ty
 {: #endpoint-create-options}
 
 
-`--connector-id ID`
+`--connector-id`
 :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
-`--dest-hostname HOSTNAME`
+`--dest-hostname`
 :    Indicate the fully qualified domain name (FQDN) or the externally accessible IP address of the destination that you want to connect to. For `cloud` endpoints, this value must resolve to a public IP address or to a private IP address that is accessible within IBM Cloud such as a private cloud service endpoint. For `location` endpoints, this value must resolve from and be reachable from the control plane hosts for Satellite locations or where the agent runs for Satellite Connector.
 
-`--dest-port PORT`
+`--dest-port`
 :    Provide the port that the destination resource listens on for incoming requests. Make sure that the port matches the destination protocol.
 
-`--dest-protocol PROTOCOL`
+`--dest-protocol`
 :    Specify the destination's protocol. If you do not specify this option, the destination protocol is inherited from the source protocol. Accepted values: `TCP`, `TLS`
 
-`--dest-type TYPE`
+`--dest-type`
 :    Specify where the destination resource runs, either in IBM Cloud (`cloud`) or your Satellite location (`location`). Available options: location, cloud
 
-`--idle-timeout-seconds SECONDS`
+`--idle-timeout-seconds`
 :    Specify the timeout interval in seconds for active connections to the destination. Make sure your timeout is compatible with the destination service and protocol `keep-alive` settings.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
-`--name NAME`
+`--name`
 :    Provide a name for the endpoint.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--sni SNI`
+`--sni`
 :    Specify the server name indicator, if you specify a `tls` or `https` source protocol and want a separate hostname to be added to the TLS handshake.
 
-`--source-protocol PROTOCOL`
+`--source-protocol`
 :    Provide the protocol that the source uses to connect the destination resource. See [http://ibm.biz/endpoint-protocols](http://ibm.biz/endpoint-protocols). Available options: TCP, TLS, HTTP, HTTPS, HTTP-tunnel
 
 
@@ -1636,7 +1610,7 @@ ibmcloud sat endpoint create \
 
 Disable an endpoint.
 
-```txt
+```sh
 ibmcloud sat endpoint disable --endpoint ENDPOINT [-f] [-q] (--connector-id ID | --location LOCATION)
 ```
 
@@ -1644,16 +1618,16 @@ ibmcloud sat endpoint disable --endpoint ENDPOINT [-f] [-q] (--connector-id ID |
 {: #endpoint-disable-options}
 
 
-`--connector-id ID`
+`--connector-id`
 :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
-`--endpoint ENDPOINT`
+`--endpoint`
 :    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls (--connector-id ID | --location LOCATION)`.
 
 `-f`
 :    Force the command to run without user prompts.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
 `-q`
@@ -1678,7 +1652,7 @@ ibmcloud sat endpoint disable --endpoint ENDPOINT --connector-id ID
 
 Enable an endpoint.
 
-```txt
+```sh
 ibmcloud sat endpoint enable --endpoint ENDPOINT [-f] [-q] (--connector-id ID | --location LOCATION)
 ```
 
@@ -1686,16 +1660,16 @@ ibmcloud sat endpoint enable --endpoint ENDPOINT [-f] [-q] (--connector-id ID | 
 {: #endpoint-enable-options}
 
 
-`--connector-id ID`
+`--connector-id`
 :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
-`--endpoint ENDPOINT`
+`--endpoint`
 :    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls (--connector-id ID | --location LOCATION)`.
 
 `-f`
 :    Force the command to run without user prompts.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
 `-q`
@@ -1720,7 +1694,7 @@ ibmcloud sat endpoint enable --endpoint ENDPOINT --connector-id ID
 
 View the details of an endpoint.
 
-```txt
+```sh
 ibmcloud sat endpoint get --endpoint ENDPOINT [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
 ```
 
@@ -1728,16 +1702,16 @@ ibmcloud sat endpoint get --endpoint ENDPOINT [--output OUTPUT] [-q] (--connecto
 {: #endpoint-get-options}
 
 
-`--connector-id ID`
+`--connector-id`
 :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
-`--endpoint ENDPOINT`
+`--endpoint`
 :    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls (--connector-id ID | --location LOCATION)`.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -1762,7 +1736,7 @@ ibmcloud sat endpoint get --endpoint ENDPOINT --connector-id ID
 
 Show help
 
-```txt
+```sh
 ibmcloud sat endpoint help
 ```
 
@@ -1785,7 +1759,7 @@ ibmcloud sat endpoint help
 
 List all endpoints in a Satellite location.
 
-```txt
+```sh
 ibmcloud sat endpoint ls [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
 ```
 
@@ -1793,13 +1767,13 @@ ibmcloud sat endpoint ls [--output OUTPUT] [-q] (--connector-id ID | --location 
 {: #endpoint-ls-options}
 
 
-`--connector-id ID`
+`--connector-id`
 :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -1824,7 +1798,7 @@ ibmcloud sat endpoint ls --connector-id ID
 
 Delete an endpoint.
 
-```txt
+```sh
 ibmcloud sat endpoint rm --endpoint ENDPOINT [-q] (--connector-id ID | --location LOCATION)
 ```
 
@@ -1832,13 +1806,13 @@ ibmcloud sat endpoint rm --endpoint ENDPOINT [-q] (--connector-id ID | --locatio
 {: #endpoint-rm-options}
 
 
-`--connector-id ID`
+`--connector-id`
 :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
-`--endpoint ENDPOINT`
+`--endpoint`
 :    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls (--connector-id ID | --location LOCATION)`.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
 `-q`
@@ -1863,7 +1837,7 @@ ibmcloud sat endpoint rm --endpoint ENDPOINT --connector-id ID
 
 Update an endpoint. Only the options that you specify are updated.
 
-```txt
+```sh
 ibmcloud sat endpoint update --endpoint ENDPOINT [--dest-hostname HOSTNAME] [--dest-port PORT] [--dest-protocol PROTOCOL] [--idle-timeout-seconds SECONDS] [--name NAME] [-q] [--sni SNI] [--source-protocol PROTOCOL] (--connector-id ID | --location LOCATION)
 ```
 
@@ -1871,37 +1845,37 @@ ibmcloud sat endpoint update --endpoint ENDPOINT [--dest-hostname HOSTNAME] [--d
 {: #endpoint-update-options}
 
 
-`--connector-id ID`
+`--connector-id`
 :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat connector ls`.
 
-`--dest-hostname HOSTNAME`
+`--dest-hostname`
 :    Indicate the fully qualified domain name (FQDN) or the externally accessible IP address of the destination that you want to connect to. For `cloud` endpoints, this value must resolve to a public IP address or to a private IP address that is accessible within IBM Cloud such as a private cloud service endpoint. For `location` endpoints, this value must resolve from and be reachable from the control plane hosts for Satellite locations or where the agent runs for Satellite Connector.
 
-`--dest-port PORT`
+`--dest-port`
 :    Provide the port that the destination resource listens on for incoming requests. Make sure that the port matches the destination protocol.
 
-`--dest-protocol PROTOCOL`
+`--dest-protocol`
 :    Specify the destination's protocol. If you do not specify this option, the destination protocol is inherited from the source protocol. Accepted values: `TCP`, `TLS`
 
-`--endpoint ENDPOINT`
+`--endpoint`
 :    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls (--connector-id ID | --location LOCATION)`.
 
-`--idle-timeout-seconds SECONDS`
+`--idle-timeout-seconds`
 :    Specify the timeout interval in seconds for active connections to the destination. Make sure your timeout is compatible with the destination service and protocol `keep-alive` settings.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
-`--name NAME`
+`--name`
 :    Provide a new name for the endpoint.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--sni SNI`
+`--sni`
 :    Specify the server name indicator, if you specify a `tls` or `https` source protocol and want a separate hostname to be added to the TLS handshake.
 
-`--source-protocol PROTOCOL`
+`--source-protocol`
 :    Provide the protocol that the source uses to connect the destination resource. See [http://ibm.biz/endpoint-protocols](http://ibm.biz/endpoint-protocols). Accepted values: `TCP`, `TLS`, `HTTP`, `HTTPS`, `HTTP-tunnel`
 
 
@@ -1929,7 +1903,7 @@ ibmcloud sat endpoint update --endpoint ENDPOINT --connector-id ID
 
 Show help
 
-```txt
+```sh
 ibmcloud sat experimental endpoint help
 ```
 
@@ -1952,7 +1926,7 @@ ibmcloud sat experimental endpoint help
 
 Show help
 
-```txt
+```sh
 ibmcloud sat experimental help
 ```
 
@@ -1981,7 +1955,7 @@ View and manage Satellite cluster groups. Cluster groups are used to subscribe c
 
 Add a cluster to your cluster group. The cluster can run in your Satellite location or in IBM Cloud. To add a cluster that runs in IBM Cloud, you must first register the cluster with Satellite Config.
 
-```txt
+```sh
 ibmcloud sat group attach --cluster CLUSTER [--cluster CLUSTER ...] --group GROUP [-q]
 ```
 
@@ -1989,10 +1963,10 @@ ibmcloud sat group attach --cluster CLUSTER [--cluster CLUSTER ...] --group GROU
 {: #group-attach-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID. To list registered clusters, run `ibmcloud sat cluster ls`.
 
-`-g CLUSTER`, `--group GROUP`
+`-g`, `--group`
 :    Specify the name or ID of a Satellite cluster group. To list available cluster groups, run `ibmcloud sat group ls`.
 
 `-q`
@@ -2017,7 +1991,7 @@ ibmcloud sat group attach --cluster CLUSTER --group GROUP
 
 Create a cluster group. Then, you can subscribe the cluster group to a Satellite configuration.
 
-```txt
+```sh
 ibmcloud sat group create --name NAME [--cluster CLUSTER ...] [-q]
 ```
 
@@ -2025,10 +1999,10 @@ ibmcloud sat group create --name NAME [--cluster CLUSTER ...] [-q]
 {: #group-create-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID to add to the cluster group. To list registered clusters, run `ibmcloud sat cluster ls`.
 
-`--name NAME`
+`--name`
 :    Provide a name of the Satellite cluster group.
 
 `-q`
@@ -2053,7 +2027,7 @@ ibmcloud sat group create --name NAME
 
 Removes one or more clusters from your Satellite cluster group and deletes the Kubernetes resources that were managed by the group's subscriptions.
 
-```txt
+```sh
 ibmcloud sat group detach --cluster CLUSTER [--cluster CLUSTER ...] --group GROUP [-f] [-q]
 ```
 
@@ -2061,13 +2035,13 @@ ibmcloud sat group detach --cluster CLUSTER [--cluster CLUSTER ...] --group GROU
 {: #group-detach-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID. To list the clusters in your cluster group, run `ibmcloud sat group get --group <cluster_group_name_or_ID>`.
 
 `-f`
 :    Force the command to run without user prompts.
 
-`-g CLUSTER`, `--group GROUP`
+`-g`, `--group`
 :    Specify the name or ID of a Satellite cluster group. To list available cluster groups, run `ibmcloud sat group ls`.
 
 `-q`
@@ -2092,7 +2066,7 @@ ibmcloud sat group detach --cluster CLUSTER --group GROUP
 
 Get detailed information for a Satellite cluster group.
 
-```txt
+```sh
 ibmcloud sat group get --group GROUP [--output OUTPUT] [-q]
 ```
 
@@ -2100,10 +2074,10 @@ ibmcloud sat group get --group GROUP [--output OUTPUT] [-q]
 {: #group-get-options}
 
 
-`-g`, `--group GROUP`
+`-g`, `--group`
 :    Specify the name or ID of a Satellite cluster group. To list registered clusters, run `ibmcloud sat cluster ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -2128,7 +2102,7 @@ ibmcloud sat group get --group GROUP
 
 Show help
 
-```txt
+```sh
 ibmcloud sat group help
 ```
 
@@ -2151,7 +2125,7 @@ ibmcloud sat group help
 
 List all Satellite cluster groups in your IBM Cloud account.
 
-```txt
+```sh
 ibmcloud sat group ls [--output OUTPUT] [-q]
 ```
 
@@ -2159,7 +2133,7 @@ ibmcloud sat group ls [--output OUTPUT] [-q]
 {: #group-ls-options}
 
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -2184,7 +2158,7 @@ ibmcloud sat group ls
 
 Remove a Satellite cluster group, which unsubscribes clusters and deletes the Kubernetes resources that were managed by the group's subscriptions.
 
-```txt
+```sh
 ibmcloud sat group rm --group GROUP [-f] [-q]
 ```
 
@@ -2195,7 +2169,7 @@ ibmcloud sat group rm --group GROUP [-f] [-q]
 `-f`
 :    Force the command to run without user prompts.
 
-`-g`, `--group GROUP`
+`-g`, `--group`
 :    Specify the name or ID of a Satellite cluster group. To list available cluster groups, run `ibmcloud sat group ls`.
 
 `-q`
@@ -2226,7 +2200,7 @@ View and modify Satellite hosts.
 
 Assign a host to a Satellite location control plane or cluster.
 
-```txt
+```sh
 ibmcloud sat host assign --location LOCATION [--cluster CLUSTER] [--host HOST] [--host-label LABEL ...] [-q] [--worker-pool POOL] [--zone ZONE]
 ```
 
@@ -2234,25 +2208,25 @@ ibmcloud sat host assign --location LOCATION [--cluster CLUSTER] [--host HOST] [
 {: #host-assign-options}
 
 
-`--cluster CLUSTER`
+`--cluster`
 :    The name or ID of the cluster to assign the host to. To list available clusters, run `ibmcloud sat cluster ls`. If no cluster is provided, the host is automatically assigned to the Satellite control plane.
 
-`--host HOST`
+`--host`
 :    The name or ID of the host to assign. To automatically assign hosts based on labels, do not include this option. To retrieve the host ID, run `ibmcloud sat host ls --location <location_ID_or_name>`.
 
-`--host-label LABEL`, `--hl LABEL`
+`--host-label`, `--hl`
 :    Enter any labels as key-value pairs to identify the host to assign to your Satellite control plane or Red Hat OpenShift cluster. The first host that has this label and is unassigned is automatically assigned to the control plane or cluster. To find available host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
-`-p LABEL`, `--worker-pool POOL`
+`-p`, `--worker-pool`
 :    The name or ID of the worker pool within the cluster to assign the host. If no worker pool is specified, the host is assigned to the default worker pool.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--zone ZONE`
+`--zone`
 :    The name or ID of the zone to assign the host. To find available zones, run `ibmcloud sat location get --location <location_name_or_ID>` and look for the `Host Zones` field.
 
 
@@ -2274,7 +2248,7 @@ ibmcloud sat host assign --location LOCATION
 
 Create and download a script that you can run on your hosts to attach them to your location. For RHCOS enabled locations, the script is an ignition file.
 
-```txt
+```sh
 ibmcloud sat host attach --location LOCATION [--host-label LABEL ...] [--host-link-agent-endpoint ENDPOINT] [--operating-system SYSTEM] [-q] [--reset-key]
 ```
 
@@ -2282,16 +2256,16 @@ ibmcloud sat host attach --location LOCATION [--host-label LABEL ...] [--host-li
 {: #host-attach-options}
 
 
-`--host-label LABEL`, `--hl LABEL`
+`--host-label`, `--hl`
 :    Enter any labels as key-value pairs to identify the host to assign to your Satellite control plane or Red Hat OpenShift cluster. The first host that has this label and is unassigned is automatically assigned to the control plane or cluster. To find available host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`.
 
-`--host-link-agent-endpoint ENDPOINT`
+`--host-link-agent-endpoint`
 :    The endpoint that the link agent uses to connect to the link tunnel server.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
-`--operating-system SYSTEM`
+`--operating-system`
 :    The operating system of the hosts you want to attach to your location. To attach RHCOS hosts, your location must be RHCOS enabled. Accepted values: `RHEL`, `RHCOS`
 
 `-q`
@@ -2319,7 +2293,7 @@ ibmcloud sat host attach --location LOCATION
 
 View the details of a Satellite host.
 
-```txt
+```sh
 ibmcloud sat host get --host HOST --location LOCATION [--output OUTPUT] [-q]
 ```
 
@@ -2327,13 +2301,13 @@ ibmcloud sat host get --host HOST --location LOCATION [--output OUTPUT] [-q]
 {: #host-get-options}
 
 
-`--host HOST`
+`--host`
 :    The Satellite host ID. To find the host ID, run `ibmcloud sat host ls <location_ID_or_name>`.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -2358,7 +2332,7 @@ ibmcloud sat host get --host HOST --location LOCATION
 
 Show help
 
-```txt
+```sh
 ibmcloud sat host help
 ```
 
@@ -2381,7 +2355,7 @@ ibmcloud sat host help
 
 List all hosts that are attached to a Satellite location, including hosts that are assigned to clusters or the control plane.
 
-```txt
+```sh
 ibmcloud sat host ls --location LOCATION [--output OUTPUT] [-q]
 ```
 
@@ -2389,10 +2363,10 @@ ibmcloud sat host ls --location LOCATION [--output OUTPUT] [-q]
 {: #host-ls-options}
 
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -2417,7 +2391,7 @@ ibmcloud sat host ls --location LOCATION
 
 Remove a host from a Satellite location.
 
-```txt
+```sh
 ibmcloud sat host rm --host HOST --location LOCATION [-f] [-q]
 ```
 
@@ -2428,10 +2402,10 @@ ibmcloud sat host rm --host HOST --location LOCATION [-f] [-q]
 `-f`
 :    Force the command to run without user prompts.
 
-`--host HOST`
+`--host`
 :    The name or ID of the host to remove.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
 `-q`
@@ -2456,7 +2430,7 @@ ibmcloud sat host rm --host HOST --location LOCATION
 
 Update host information, such as zones and labels.
 
-```txt
+```sh
 ibmcloud sat host update --host HOST --location LOCATION [--host-label LABEL ...] [-q] [--zone ZONE]
 ```
 
@@ -2464,19 +2438,19 @@ ibmcloud sat host update --host HOST --location LOCATION [--host-label LABEL ...
 {: #host-update-options}
 
 
-`--host HOST`
+`--host`
 :    The name or ID of the host to assign. To automatically assign hosts based on labels, do not include this option.
 
-`--host-label LABEL`, `--hl LABEL`
+`--host-label`, `--hl`
 :    Enter any labels as key-value pairs to identify the host to assign to your Satellite control plane or Red Hat OpenShift cluster. The first host that has this label and is unassigned is automatically assigned to the control plane or cluster. To find available host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--zone ZONE`
+`--zone`
 :    The name or ID of the zone to associate the host. You cannot change the zone of hosts that are assigned to a resource, such as a cluster. You must unassign them first. To list available zones, run `ibmcloud sat location get --location <ID>`.
 
 
@@ -2504,7 +2478,7 @@ View and manage Satellite Config keys.
 
 Show help
 
-```txt
+```sh
 ibmcloud sat key help
 ```
 
@@ -2527,7 +2501,7 @@ ibmcloud sat key help
 
 List all Satellite Config keys in your IBM Cloud account.
 
-```txt
+```sh
 ibmcloud sat key ls [--output OUTPUT] [-q]
 ```
 
@@ -2535,7 +2509,7 @@ ibmcloud sat key ls [--output OUTPUT] [-q]
 {: #key-ls-options}
 
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -2560,7 +2534,7 @@ ibmcloud sat key ls
 
 Remove a Satellite Config key. Any cluster that still uses this key cannot connect to Satellite Config.
 
-```txt
+```sh
 ibmcloud sat key rm --key KEY [-f] [-q]
 ```
 
@@ -2571,7 +2545,7 @@ ibmcloud sat key rm --key KEY [-f] [-q]
 `-f`
 :    Force the command to run without user prompts.
 
-`--key KEY`
+`--key`
 :    The name or ID of a Satellite Config key.
 
 `-q`
@@ -2596,7 +2570,7 @@ ibmcloud sat key rm --key KEY
 
 Generate a new key for use by managed clusters to connect to Satellite Config.
 
-```txt
+```sh
 ibmcloud sat key rotate --name NAME [-f] [-q]
 ```
 
@@ -2607,7 +2581,7 @@ ibmcloud sat key rotate --name NAME [-f] [-q]
 `-f`
 :    Force the command to run without user prompts.
 
-`--name NAME`
+`--name`
 :    The name of the new Satellite Config key.
 
 `-q`
@@ -2638,7 +2612,7 @@ Create, view, and modify Satellite locations.
 
 Create a Satellite location. A Satellite location is a representation of an environment in your infrastructure provider. After you create a location, attach hosts from separate zones of your backing infrastructure environment with the `ibmcloud sat host attach` command.
 
-```txt
+```sh
 ibmcloud sat location create --managed-from REGION --name NAME [--capability CAPABILITY ...] [--coreos-enabled] [--cos-bucket BUCKET] [--description DESCRIPTION] [--ha-zone ZONE ...] [--physical-address ADDRESS] [--pod-network-interface-selection SELECTION] [--pod-subnet SUBNET] [--provider PROVIDER] [--provider-credential CREDENTIAL] [--provider-region REGION] [-q] [--service-subnet SUBNET]
 ```
 
@@ -2646,49 +2620,49 @@ ibmcloud sat location create --managed-from REGION --name NAME [--capability CAP
 {: #location-create-options}
 
 
-`--capability CAPABILITY`
+`--capability`
 :    A capability of the Satellite location.
 
 `--coreos-enabled`
 :    Enable Red Hat CoreOS features for the Satellite location. This action cannot be undone. See [https://ibm.biz/infra-os](https://ibm.biz/infra-os).
 
-`--cos-bucket BUCKET`
+`--cos-bucket`
 :    Specify the name of the IBM Cloud Object Storage bucket to store your Satellite location control plane data. Otherwise, a new bucket is created for you.
 
-`--description DESCRIPTION`
+`--description`
 :    Enter a description for the Satellite location.
 
-`--ha-zone ZONE`
+`--ha-zone`
 :    Specify the zone for your location. For high availability, specify 3 zones for your location as `--ha-zone ZONE1_NAME --ha-zone ZONE2_NAME --ha-zone ZONE3_NAME`. The names of the zones must match exactly the names of the corresponding zones in your infrastructure provider where you plan to create hosts.
 
-`--managed-from REGION`
+`--managed-from`
 :    Select the IBM Cloud region to manage your Satellite location from. Choose a region close to your on-prem data center for better performance. See [https://ibm.biz/sat-region](https://ibm.biz/sat-region).
 
-`--name NAME`
+`--name`
 :    Specify a name for the Satellite location. Location names must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be fewer than 36 characters. Do not reuse names, even if the other location is deleted.
 
-`--physical-address ADDRESS`
+`--physical-address`
 :    The physical address of the Satellite location.
 
-`--pod-network-interface-selection SELECTION`
+`--pod-network-interface-selection`
 :    The method for selecting the node network interface for the internal pod network. This option can be used only if you also enable Red Hat CoreOS with the `--coreos-enabled` option. To provide a direct URL or IP address, specify `can-reach=<url>` or `can-reach=<ip_address>`. To choose a network interface, specify `interface=<network_interface>`.
 
-`--pod-subnet SUBNET`
+`--pod-subnet`
 :    Specify a custom subnet CIDR to provide private IP addresses for pods. This option is used only if you enable Red Hat CoreOS with the `--coreos-enabled` option. The subnet must be `/23` or larger. See [https://ibm.biz/sat-location-create](https://ibm.biz/sat-location-create). Default value: '172.16.0.0/16
 
-`--provider PROVIDER`
+`--provider`
 :    Indicate the infrastructure provider to use for the Satellite location. If you include this option, you must also include the `--provider-credential` option. Accepted values: `aws`, `azure`, `gcp`, `vmware`
 
-`--provider-credential CREDENTIAL`
+`--provider-credential`
 :    Specify the path to a JSON file on your local machine that has the credentials of the infrastructure provider for the Satellite location. The credential format is provider-specific. See [http://ibm.biz/sat-infra-creds](http://ibm.biz/sat-infra-creds).
 
-`--provider-region REGION`
+`--provider-region`
 :    Specify the region in the infrastructure provider where you plan to create the hosts for the Satellite location. If you include this option, you must also include the `--provider` option.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--service-subnet SUBNET`
+`--service-subnet`
 :    Specify a custom subnet CIDR to provide private IP addresses for services. This option is used only if you enable Red Hat CoreOS with the `--coreos-enabled` option. The subnet must be `/24` or larger. See [https://ibm.biz/sat-location-create](https://ibm.biz/sat-location-create). Default value: `172.20.0.0/16`
 
 
@@ -2710,7 +2684,7 @@ ibmcloud sat location create --managed-from REGION --name NAME
 
 View the details of a registered subdomain in a Satellite location.
 
-```txt
+```sh
 ibmcloud sat location dns get --location LOCATION --subdomain SUBDOMAIN [--output OUTPUT] [-q]
 ```
 
@@ -2718,16 +2692,16 @@ ibmcloud sat location dns get --location LOCATION --subdomain SUBDOMAIN [--outpu
 {: #location-dns-get-options}
 
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--subdomain SUBDOMAIN`
+`--subdomain`
 :    Specify the subdomain name. To list existing subdomains, run `ibmcloud sat location dns ls --location <ID>`.
 
 
@@ -2749,7 +2723,7 @@ ibmcloud sat location dns get --location LOCATION --subdomain SUBDOMAIN
 
 Show help
 
-```txt
+```sh
 ibmcloud sat location dns help
 ```
 
@@ -2772,7 +2746,7 @@ ibmcloud sat location dns help
 
 List the registered subdomains in a Satellite location.
 
-```txt
+```sh
 ibmcloud sat location dns ls --location LOCATION [--output OUTPUT] [-q]
 ```
 
@@ -2780,10 +2754,10 @@ ibmcloud sat location dns ls --location LOCATION [--output OUTPUT] [-q]
 {: #location-dns-ls-options}
 
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -2808,7 +2782,7 @@ ibmcloud sat location dns ls --location LOCATION
 
 Set a subdomain for the hosts assigned to the control plane in a Satellite location.
 
-```txt
+```sh
 ibmcloud sat location dns register --ip IP [--ip IP ...] --location LOCATION [--output OUTPUT] [-q]
 ```
 
@@ -2816,13 +2790,13 @@ ibmcloud sat location dns register --ip IP [--ip IP ...] --location LOCATION [--
 {: #location-dns-register-options}
 
 
-`--ip IP`
+`--ip`
 :    Specify the IP address for each control plane host, in the format `--ip x.x.x.1 --ip x.x.x.2 --ip x.x.x.3`. For multizone clusters, use one IP address from each zone. To find the IP address, run `ibmcloud sat host ls --location <location_ID_or_name>` and look for `Worker IP` for hosts labeled `infrastructure`.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -2847,7 +2821,7 @@ ibmcloud sat location dns register --ip IP --location LOCATION
 
 View the details of a Satellite location.
 
-```txt
+```sh
 ibmcloud sat location get --location LOCATION [--output OUTPUT] [-q]
 ```
 
@@ -2855,10 +2829,10 @@ ibmcloud sat location get --location LOCATION [--output OUTPUT] [-q]
 {: #location-get-options}
 
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -2883,7 +2857,7 @@ ibmcloud sat location get --location LOCATION
 
 Show help
 
-```txt
+```sh
 ibmcloud sat location help
 ```
 
@@ -2906,7 +2880,7 @@ ibmcloud sat location help
 
 List all Satellite locations in your IBM Cloud account.
 
-```txt
+```sh
 ibmcloud sat location ls [--output OUTPUT] [-q]
 ```
 
@@ -2914,7 +2888,7 @@ ibmcloud sat location ls [--output OUTPUT] [-q]
 {: #location-ls-options}
 
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -2939,7 +2913,7 @@ ibmcloud sat location ls
 
 Delete a location. Before you run this command, back up your configurations and remove any hosts and clusters that run in the location. The underlying host infrastructure is not automatically deleted when you delete a location. This action cannot be undone.
 
-```txt
+```sh
 ibmcloud sat location rm --location LOCATION [-f] [-q]
 ```
 
@@ -2950,7 +2924,7 @@ ibmcloud sat location rm --location LOCATION [-f] [-q]
 `-f`
 :    Force the command to run without user prompts.
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
 `-q`
@@ -2975,7 +2949,7 @@ ibmcloud sat location rm --location LOCATION
 
 Update the name or description of a Satellite location.
 
-```txt
+```sh
 ibmcloud sat location update --location-id ID [--description DESCRIPTION] [--name NAME] [-q]
 ```
 
@@ -2983,13 +2957,13 @@ ibmcloud sat location update --location-id ID [--description DESCRIPTION] [--nam
 {: #location-update-options}
 
 
-`--description DESCRIPTION`
+`--description`
 :    Enter a new description for the Satellite location. The length of the description is limited to 400 bytes.
 
-`--location-id ID`
+`--location-id`
 :    The ID of the Satellite location. To find the location ID, run `ibmcloud sat location ls`.
 
-`--name NAME`
+`--name`
 :    Specify a new name for the Satellite location. Location names must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be fewer than 36 characters. Do not reuse names, including names of deleted locations.
 
 `-q`
@@ -3020,7 +2994,7 @@ View the current user messages.
 
 View the current user messages.
 
-```txt
+```sh
 ibmcloud sat messages [-q]
 ```
 
@@ -3056,7 +3030,7 @@ Search and view Kubernetes resources that are managed by a Satellite configurati
 
 View the details of a Kubernetes resource that is managed by a Satellite configuration.
 
-```txt
+```sh
 ibmcloud sat resource get --resource RESOURCE [--history HISTORY] [--output OUTPUT] [-q] [--save-data]
 ```
 
@@ -3064,16 +3038,16 @@ ibmcloud sat resource get --resource RESOURCE [--history HISTORY] [--output OUTP
 {: #resource-get-options}
 
 
-`--history HISTORY`
+`--history`
 :    The history ID for the resource.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--resource RESOURCE`
+`--resource`
 :    Specify the Kubernetes resource ID. To find Kubernetes resources, run `ibmcloud sat resource ls`.
 
 `--save-data`
@@ -3098,7 +3072,7 @@ ibmcloud sat resource get --resource RESOURCE
 
 Show help
 
-```txt
+```sh
 ibmcloud sat resource help
 ```
 
@@ -3121,7 +3095,7 @@ ibmcloud sat resource help
 
 Get history for a Kubernetes resource.
 
-```txt
+```sh
 ibmcloud sat resource history get --resource RESOURCE [--limit LIMIT] [--output OUTPUT] [-q]
 ```
 
@@ -3129,16 +3103,16 @@ ibmcloud sat resource history get --resource RESOURCE [--limit LIMIT] [--output 
 {: #resource-history-get-options}
 
 
-`--limit LIMIT`
+`--limit`
 :    Specify the maximum number of history entries to return.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--resource RESOURCE`
+`--resource`
 :    The Kubernetes resource ID.
 
 
@@ -3160,7 +3134,7 @@ ibmcloud sat resource history get --resource RESOURCE
 
 Show help
 
-```txt
+```sh
 ibmcloud sat resource history help
 ```
 
@@ -3183,7 +3157,7 @@ ibmcloud sat resource history help
 
 Search Kubernetes resources that are managed by Satellite.
 
-```txt
+```sh
 ibmcloud sat resource ls [--limit LIMIT] [--output OUTPUT] [-q] [--search SEARCH] (--cluster CLUSTER | --subscription SUBSCRIPTION)
 ```
 
@@ -3191,22 +3165,22 @@ ibmcloud sat resource ls [--limit LIMIT] [--output OUTPUT] [-q] [--search SEARCH
 {: #resource-ls-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the name or ID of the registered cluster that the Kubernetes resource runs in. To find registered clusters, run `ibmcloud sat cluster ls`.
 
-`--limit LIMIT`
+`--limit`
 :    Specify the maximum number of resource entries for the search to return.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--search SEARCH`
+`--search`
 :    Indicate the string to filter search results of Kubernetes resources, such as a pod or namespace name.
 
-`--subscription SUBSCRIPTION`
+`--subscription`
 :    Specify the Satellite subscription ID or name.  To find subscriptions, run `ibmcloud sat cluster ls`.
 
 
@@ -3234,7 +3208,7 @@ View Satellite service clusters.
 
 Show help
 
-```txt
+```sh
 ibmcloud sat service help
 ```
 
@@ -3257,7 +3231,7 @@ ibmcloud sat service help
 
 List all Satellite service clusters in your location to review details, such as requested host resources.
 
-```txt
+```sh
 ibmcloud sat service ls --location LOCATION [--output OUTPUT] [-q]
 ```
 
@@ -3265,10 +3239,10 @@ ibmcloud sat service ls --location LOCATION [--output OUTPUT] [-q]
 {: #service-ls-options}
 
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -3302,7 +3276,7 @@ The `storage assignment autopatch disable` command is a beta feature.
 
 Disable automatic patches for a Satellite storage assignment.
 
-```txt
+```sh
 ibmcloud sat storage assignment autopatch disable --config CONFIG [-q] (--all | --assignment ASSIGNMENT)
 ```
 
@@ -3313,10 +3287,10 @@ ibmcloud sat storage assignment autopatch disable --config CONFIG [-q] (--all | 
 `--all`
 :    Disable automatic patches for all Satellite storage assignments of a storage configuration.
 
-`--assignment ASSIGNMENT`
+`--assignment`
 :    The ID of a Satellite storage assignment. To list available storage assignments of the configuration, run `ibmcloud sat storage assignment ls  --config CONFIG`.
 
-`--config CONFIG`
+`--config`
 :    The name or ID of a Satellite storage configuration. To list available storage configurations, run `ibmcloud sat storage config ls`.
 
 `-q`
@@ -3344,7 +3318,7 @@ The `storage assignment autopatch enable` command is a beta feature.
 
 Enable automatic patches for a Satellite storage assignment.
 
-```txt
+```sh
 ibmcloud sat storage assignment autopatch enable --config CONFIG [-q] (--all | --assignment ASSIGNMENT)
 ```
 
@@ -3355,10 +3329,10 @@ ibmcloud sat storage assignment autopatch enable --config CONFIG [-q] (--all | -
 `--all`
 :    Enable automatic patches for all Satellite storage assignments of a storage configuration.
 
-`--assignment ASSIGNMENT`
+`--assignment`
 :    The ID of a Satellite storage assignment. To list available storage assignments of the configuration, run `ibmcloud sat storage assignment ls  --config CONFIG`.
 
-`--config CONFIG`
+`--config`
 :    The name or ID of a Satellite storage configuration. To list available storage configurations, run `ibmcloud sat storage config ls`.
 
 `-q`
@@ -3383,7 +3357,7 @@ ibmcloud sat storage assignment autopatch enable --config CONFIG --all
 
 Show help
 
-```txt
+```sh
 ibmcloud sat storage assignment autopatch help
 ```
 
@@ -3406,7 +3380,7 @@ ibmcloud sat storage assignment autopatch help
 
 Create an assignment to deploy your storage configurations to clusters in your Satellite location.
 
-```txt
+```sh
 ibmcloud sat storage assignment create --config CONFIG [--name NAME] [-q] (--cluster CLUSTER | --group GROUP | --service-cluster-id CLUSTER)
 ```
 
@@ -3414,22 +3388,22 @@ ibmcloud sat storage assignment create --config CONFIG [--name NAME] [-q] (--clu
 {: #storage-assignment-create-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the ID of the Satellite cluster for the assignment. To find the cluster ID, run `ibmcloud oc cluster ls --provider satellite`.
 
-`--config CONFIG`
+`--config`
 :    Specify the Satellite storage configuration for the assignment. to find configurations, run `ibmcloud sat storage config ls`.
 
-`-g CLUSTER`, `--group GROUP`
+`-g`, `--group`
 :    Specify the cluster groups for the assignment. To find cluster groups, run `ibmcloud sat group ls`.
 
-`--name NAME`
+`--name`
 :    Provide a name for Satellite storage assignment.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--service-cluster-id CLUSTER`
+`--service-cluster-id`
 :    Specify the ID of the service cluster for the assignment. To find the service cluster ID, run `ibmcloud sat service ls --location <location>`.
 
 
@@ -3451,7 +3425,7 @@ ibmcloud sat storage assignment create --config CONFIG --cluster CLUSTER
 
 Get the details of a Satellite storage assignment.
 
-```txt
+```sh
 ibmcloud sat storage assignment get --assignment ASSIGNMENT [--output OUTPUT] [-q]
 ```
 
@@ -3459,10 +3433,10 @@ ibmcloud sat storage assignment get --assignment ASSIGNMENT [--output OUTPUT] [-
 {: #storage-assignment-get-options}
 
 
-`--assignment ASSIGNMENT`
+`--assignment`
 :    Specify the ID of a Satellite storage assignment.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -3487,7 +3461,7 @@ ibmcloud sat storage assignment get --assignment ASSIGNMENT
 
 Show help
 
-```txt
+```sh
 ibmcloud sat storage assignment help
 ```
 
@@ -3516,7 +3490,7 @@ To list all assignments for a service cluster as Location Admin: ibmcloud sat st
 
 To list all assignments for a configuration: ibmcloud sat storage assignment ls --config CONFIG.
 
-```txt
+```sh
 ibmcloud sat storage assignment ls [--output OUTPUT] [-q] (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER)
 ```
 
@@ -3524,22 +3498,22 @@ ibmcloud sat storage assignment ls [--output OUTPUT] [-q] (--cluster CLUSTER | -
 {: #storage-assignment-ls-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the ID of the Satellite cluster for the assignments. To get the cluster ID, run `ibmcloud oc cluster ls --provider satellite`.
 
-`--config CONFIG`
+`--config`
 :    Specify the name or ID of a Satellite storage configuration. To list available storage configurations, run `ibmcloud sat storage config ls`.
 
-`--location LOCATION`
+`--location`
 :    Specify the name of a Satellite location. To list available locations, run `ibmcloud sat location ls`. This option cannot be used by service administrator.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--service-cluster-id CLUSTER`
+`--service-cluster-id`
 :    Specify the ID of the service cluster for the assignments. To find the service cluster ID, run `ibmcloud sat service ls --location <location>`.
 
 
@@ -3561,7 +3535,7 @@ ibmcloud sat storage assignment ls --cluster CLUSTER
 
 Apply storage configuration changes to the associated assignments.
 
-```txt
+```sh
 ibmcloud sat storage assignment patch --assignment ASSIGNMENT [-f] [-q]
 ```
 
@@ -3571,7 +3545,7 @@ Aliases: `ibmcloud sat upgrade`
 {: #storage-assignment-patch-options}
 
 
-`--assignment ASSIGNMENT`
+`--assignment`
 :    Specify the ID of a Satellite storage assignment. To list available assignments, run `ibmcloud sat storage assignment ls`.
 
 `-f`
@@ -3599,7 +3573,7 @@ ibmcloud sat storage assignment patch --assignment ASSIGNMENT
 
 Remove a Satellite storage assignment. The Kubernetes resources are deleted from all the clusters in your Satellite location, but the configuration remains.
 
-```txt
+```sh
 ibmcloud sat storage assignment rm --assignment ASSIGNMENT [-f] [-q]
 ```
 
@@ -3607,7 +3581,7 @@ ibmcloud sat storage assignment rm --assignment ASSIGNMENT [-f] [-q]
 {: #storage-assignment-rm-options}
 
 
-`--assignment ASSIGNMENT`
+`--assignment`
 :    Specify the ID of a Satellite storage assignment. To find assignments, run `ibmcloud sat storage assignment ls`.
 
 `-f`
@@ -3635,7 +3609,7 @@ ibmcloud sat storage assignment rm --assignment ASSIGNMENT
 
 Update a Satellite storage assignment.
 
-```txt
+```sh
 ibmcloud sat storage assignment update --assignment ASSIGNMENT [-f] [--group GROUP ...] [--name NAME] [-q]
 ```
 
@@ -3643,16 +3617,16 @@ ibmcloud sat storage assignment update --assignment ASSIGNMENT [-f] [--group GRO
 {: #storage-assignment-update-options}
 
 
-`--assignment ASSIGNMENT`
+`--assignment`
 :    Specify the ID of a Satellite storage assignment.
 
 `-f`
 :    Force the command to run without user prompts.
 
-`-g`, `--group GROUP`
+`-g`, `--group`
 :    Specify the new cluster groups for the assignment. To list available groups, run `ibmcloud sat group ls`.
 
-`--name NAME`
+`--name`
 :    Provide a new name for the Satellite storage assignment.
 
 `-q`
@@ -3677,7 +3651,7 @@ ibmcloud sat storage assignment update --assignment ASSIGNMENT
 
 Create a custom Satellite storage class.
 
-```txt
+```sh
 ibmcloud sat storage config class add --config-name NAME --name NAME --param PARAM [--param PARAM ...] [-q]
 ```
 
@@ -3685,13 +3659,13 @@ ibmcloud sat storage config class add --config-name NAME --name NAME --param PAR
 {: #storage-config-class-add-options}
 
 
-`--config-name NAME`
+`--config-name`
 :    Specify the name of the storage configuration for the custom storage class. To list Satellite storage configurations, run `ibmcloud sat storage config ls`.
 
-`--name NAME`
+`--name`
 :    Provide a name for the custom storage class.
 
-`-p`, `--param PARAM`
+`-p`, `--param`
 :    Specify a `key=value` pair for storage class parameters. To see the storage class parameters in a storage template, run `ibmcloud sat storage template get`.
 
 `-q`
@@ -3716,7 +3690,7 @@ ibmcloud sat storage config class add --config-name NAME --name NAME --param PAR
 
 Get the details of a Satellite storage class.
 
-```txt
+```sh
 ibmcloud sat storage config class get --class CLASS --config CONFIG [--output OUTPUT] [-q]
 ```
 
@@ -3724,13 +3698,13 @@ ibmcloud sat storage config class get --class CLASS --config CONFIG [--output OU
 {: #storage-config-class-get-options}
 
 
-`--class CLASS`
+`--class`
 :    Specify the name of a Satellite storage class.
 
-`--config CONFIG`
+`--config`
 :    Specify the name or ID of a Satellite storage configuration. To list Satellite storage configurations, run `ibmcloud sat storage config ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -3755,7 +3729,7 @@ ibmcloud sat storage config class get --class CLASS --config CONFIG
 
 Show help
 
-```txt
+```sh
 ibmcloud sat storage config class help
 ```
 
@@ -3778,7 +3752,7 @@ ibmcloud sat storage config class help
 
 List the storage classes in a Satellite storage configuration
 
-```txt
+```sh
 ibmcloud sat storage config class ls --config CONFIG [--output OUTPUT] [-q] [--show-params]
 ```
 
@@ -3786,10 +3760,10 @@ ibmcloud sat storage config class ls --config CONFIG [--output OUTPUT] [-q] [--s
 {: #storage-config-class-ls-options}
 
 
-`--config CONFIG`
+`--config`
 :    Specify the name or ID of a Satellite storage configuration. To list Satellite storage configurations, run `ibmcloud sat storage config ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -3817,7 +3791,7 @@ ibmcloud sat storage config class ls --config CONFIG
 
 Create a Satellite storage configuration to install storage drivers in your clusters.
 
-```txt
+```sh
 ibmcloud sat storage config create --location LOCATION --name NAME --template-name NAME [--param PARAM ...] [-q] [--template-version VERSION]
 ```
 
@@ -3825,22 +3799,22 @@ ibmcloud sat storage config create --location LOCATION --name NAME --template-na
 {: #storage-config-create-options}
 
 
-`--location LOCATION`
+`--location`
 :    Enter the ID or name of the location for the storage configuration. To find available locations, run `ibmcloud sat location ls`.
 
-`--name NAME`
+`--name`
 :    Specify the name of the storage configuration.
 
-`-p`, `--param PARAM`
+`-p`, `--param`
 :    Specify a `key=value` pair for configuration parameters. To see the configuration parameters in a storage template, run `ibmcloud sat storage template get`.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--template-name NAME`
+`--template-name`
 :    Specify the Satellite storage configuration template name. To list available storage configuration templates, run `ibmcloud sat storage template ls`.
 
-`--template-version VERSION`
+`--template-version`
 :    Specify the Satellite storage configuration template version. If you do not include this option, the default version is used. To list available storage configuration templates, run `ibmcloud sat storage template ls`.
 
 
@@ -3862,7 +3836,7 @@ ibmcloud sat storage config create --location LOCATION --name NAME --template-na
 
 Get the details of a Satellite storage configuration.
 
-```txt
+```sh
 ibmcloud sat storage config get --config CONFIG [--output OUTPUT] [-q]
 ```
 
@@ -3870,10 +3844,10 @@ ibmcloud sat storage config get --config CONFIG [--output OUTPUT] [-q]
 {: #storage-config-get-options}
 
 
-`--config CONFIG`
+`--config`
 :    Specify the name or ID of a Satellite storage configuration. To list available configurations, run `ibmcloud sat storage config ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -3898,7 +3872,7 @@ ibmcloud sat storage config get --config CONFIG
 
 Show help
 
-```txt
+```sh
 ibmcloud sat storage config help
 ```
 
@@ -3921,7 +3895,7 @@ ibmcloud sat storage config help
 
 List the Satellite storage configurations in your IBM Cloud account.
 
-```txt
+```sh
 ibmcloud sat storage config ls [--location LOCATION] [--output OUTPUT] [-q]
 ```
 
@@ -3929,10 +3903,10 @@ ibmcloud sat storage config ls [--location LOCATION] [--output OUTPUT] [-q]
 {: #storage-config-ls-options}
 
 
-`--location LOCATION`
+`--location`
 :    Specify the ID or name of the location that contains the configurations you want to list. To find available locations, run `ibmcloud sat location ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -3957,7 +3931,7 @@ ibmcloud sat storage config ls
 
 Show help
 
-```txt
+```sh
 ibmcloud sat storage config param help
 ```
 
@@ -3980,7 +3954,7 @@ ibmcloud sat storage config param help
 
 Set the configuration and secret parameters of a Satellite storage configuration.
 
-```txt
+```sh
 ibmcloud sat storage config param set --config CONFIG --param PARAM [--param PARAM ...] [--apply] [-f] [-q]
 ```
 
@@ -3991,13 +3965,13 @@ ibmcloud sat storage config param set --config CONFIG --param PARAM [--param PAR
 `--apply`
 :    Apply the latest Satellite storage configuration version to all assignments of a configuration. To list a configuration's assignments, run `ibmcloud sat storage assignment ls --config CONFIG`.
 
-`--config CONFIG`
+`--config`
 :    Specify the name or ID of the storage configuration. To list Satellite storage configurations, run `ibmcloud sat storage config ls`.
 
 `-f`
 :    Force the command to run without user prompts.
 
-`-p`, `--param PARAM`
+`-p`, `--param`
 :    Specify a `key=value` pair for configuration parameters. To see the configuration parameters in a storage template, run `ibmcloud sat storage template get`.
 
 `-q`
@@ -4022,7 +3996,7 @@ ibmcloud sat storage config param set --config CONFIG --param PARAM
 
 Apply the latest patch updates to a Satellite storage configuration. Patch updates contain vulnerability remediations and bug fixes within the same major version.
 
-```txt
+```sh
 ibmcloud sat storage config patch --config CONFIG [-f] [--include-assignments] [-q]
 ```
 
@@ -4032,7 +4006,7 @@ Aliases: `ibmcloud sat upgrade`
 {: #storage-config-patch-options}
 
 
-`--config CONFIG`
+`--config`
 :    Specify the name or ID of a Satellite storage configuration. To list available configurations, run `ibmcloud sat storage config ls`.
 
 `-f`
@@ -4063,7 +4037,7 @@ ibmcloud sat storage config patch --config CONFIG
 
 Remove a Satellite storage configuration.
 
-```txt
+```sh
 ibmcloud sat storage config rm --config CONFIG [-f] [--include-assignments] [-q]
 ```
 
@@ -4071,7 +4045,7 @@ ibmcloud sat storage config rm --config CONFIG [-f] [--include-assignments] [-q]
 {: #storage-config-rm-options}
 
 
-`--config CONFIG`
+`--config`
 :    Specify the name or ID of a Satellite storage configuration. To list available configurations, run `ibmcloud sat storage config ls`.
 
 `-f`
@@ -4102,7 +4076,7 @@ ibmcloud sat storage config rm --config CONFIG
 
 Show help
 
-```txt
+```sh
 ibmcloud sat storage help
 ```
 
@@ -4125,7 +4099,7 @@ ibmcloud sat storage help
 
 Get the details of a Satellite storage template
 
-```txt
+```sh
 ibmcloud sat storage template get --name NAME --version VERSION [--output OUTPUT] [-q]
 ```
 
@@ -4133,16 +4107,16 @@ ibmcloud sat storage template get --name NAME --version VERSION [--output OUTPUT
 {: #storage-template-get-options}
 
 
-`--name NAME`
+`--name`
 :    Specify the storage template name. To list available storage templates, run `ibmcloud sat storage template ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the storage template version. To list available storage templates, run `ibmcloud sat storage template ls`.
 
 
@@ -4164,7 +4138,7 @@ ibmcloud sat storage template get --name NAME --version VERSION
 
 Show help
 
-```txt
+```sh
 ibmcloud sat storage template help
 ```
 
@@ -4187,7 +4161,7 @@ ibmcloud sat storage template help
 
 List the available Satellite storage templates.
 
-```txt
+```sh
 ibmcloud sat storage template ls [-q]
 ```
 
@@ -4223,7 +4197,7 @@ View and manage Satellite subscriptions to deploy Kubernetes configuration files
 
 Create a Satellite subscription for clusters. After you create the subscription, the associated Satellite configuration version is automatically deployed to the subscribed clusters.
 
-```txt
+```sh
 ibmcloud sat subscription create --config CONFIG --group GROUP [--group GROUP ...] --name NAME [-q] (--auth-required --gitref GITREF --gitref-type TYPE --path PATH --repository REPOSITORY | --version VERSION)
 ```
 
@@ -4234,31 +4208,31 @@ ibmcloud sat subscription create --config CONFIG --group GROUP [--group GROUP ..
 `--auth-required`
 :    Provide the authentication secret required to connect to the remote repository. See [https://ibm.biz/sat-config-private-repo](https://ibm.biz/sat-config-private-repo) for details. Strategy: GitOps.
 
-`--config CONFIG`
+`--config`
 :    Specify the name of the configuration to use for the subscription. To find available configurations, run `ibmcloud sat config ls`.
 
-`-g`, `--group GROUP`
+`-g`, `--group`
 :    Specify the name or ID of the cluster groups to subscribe to your configuration. To find available cluster groups, run `ibmcloud sat group ls`.
 
-`--gitref GITREF`
+`--gitref`
 :    Specify the GitRef to use for the Satellite subscription. Strategy: GitOps.
 
-`--gitref-type TYPE`
+`--gitref-type`
 :    Indicate the type of GitRef to use for the Satellite subscription. Strategy: GitOps. Allowed values: branch, commit, tag, release
 
-`--name NAME`
+`--name`
 :    Enter a name for the subscription.
 
-`--path PATH`
+`--path`
 :    Provide the path to the repository files or release assets in the remote repository to use for the Satellite subscription. Strategy: GitOps.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--repository REPOSITORY`
+`--repository`
 :    Specify the URL of the remote repository to use for the subscription. Strategy: GitOps.
 
-`--version VERSION`
+`--version`
 :    Indicate the name or ID of the existing configuration version to use for the subscription. To find versions, run `ibmcloud sat config get --config <configuration_name_or_ID>`. Strategy: Direct Upload.
 
 
@@ -4288,7 +4262,7 @@ ibmcloud sat subscription create \
 
 Get detailed information for a Satellite subscription.
 
-```txt
+```sh
 ibmcloud sat subscription get --subscription SUBSCRIPTION [--output OUTPUT] [-q]
 ```
 
@@ -4296,13 +4270,13 @@ ibmcloud sat subscription get --subscription SUBSCRIPTION [--output OUTPUT] [-q]
 {: #subscription-get-options}
 
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--subscription SUBSCRIPTION`
+`--subscription`
 :    Enter the name or ID of a Satellite subscription. To find subscriptions, run `ibmcloud sat subscription ls`.
 
 
@@ -4324,7 +4298,7 @@ ibmcloud sat subscription get --subscription SUBSCRIPTION
 
 Show help
 
-```txt
+```sh
 ibmcloud sat subscription help
 ```
 
@@ -4347,7 +4321,7 @@ ibmcloud sat subscription help
 
 Show help
 
-```txt
+```sh
 ibmcloud sat subscription identity help
 ```
 
@@ -4370,7 +4344,7 @@ ibmcloud sat subscription identity help
 
 Update the Satellite subscription to use your identity to manage resources.
 
-```txt
+```sh
 ibmcloud sat subscription identity set --subscription SUBSCRIPTION [-f] [-q]
 ```
 
@@ -4384,7 +4358,7 @@ ibmcloud sat subscription identity set --subscription SUBSCRIPTION [-f] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--subscription SUBSCRIPTION`
+`--subscription`
 :    Specify the name or ID of a Satellite subscription. To list subscriptions, run `ibmcloud sat subscription ls`.
 
 
@@ -4406,7 +4380,7 @@ ibmcloud sat subscription identity set --subscription SUBSCRIPTION
 
 List all Satellite subscriptions in your IBM Cloud account.
 
-```txt
+```sh
 ibmcloud sat subscription ls [--cluster CLUSTER] [--output OUTPUT] [-q]
 ```
 
@@ -4414,10 +4388,10 @@ ibmcloud sat subscription ls [--cluster CLUSTER] [--output OUTPUT] [-q]
 {: #subscription-ls-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the Satellite cluster name or ID. To find registered clusters, run `ibmcloud sat cluster ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -4442,7 +4416,7 @@ ibmcloud sat subscription ls
 
 Remove a Satellite subscription. The Kubernetes resources are no longer deployed to your clusters.
 
-```txt
+```sh
 ibmcloud sat subscription rm --subscription SUBSCRIPTION [-f] [-q]
 ```
 
@@ -4456,7 +4430,7 @@ ibmcloud sat subscription rm --subscription SUBSCRIPTION [-f] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--subscription SUBSCRIPTION`
+`--subscription`
 :    Provide the name or ID of a Satellite subscription. To list subscriptions, run `ibmcloud sat subscription ls`.
 
 
@@ -4478,7 +4452,7 @@ ibmcloud sat subscription rm --subscription SUBSCRIPTION
 
 Update a Satellite subscription.
 
-```txt
+```sh
 ibmcloud sat subscription update --subscription SUBSCRIPTION [-f] [--group GROUP] [--name NAME] [-q] (--auth-required --gitref GITREF --gitref-type TYPE --path PATH --repository REPOSITORY | --version VERSION)
 ```
 
@@ -4492,31 +4466,31 @@ ibmcloud sat subscription update --subscription SUBSCRIPTION [-f] [--group GROUP
 `-f`
 :    Force the command to run without user prompts.
 
-`-g`, `--group GROUP`
+`-g`, `--group`
 :    Specify the new cluster groups to subscribe to your configuration.
 
-`--gitref GITREF`
+`--gitref`
 :    Specify the GitRef to use for the Satellite subscription. Strategy: GitOps.
 
-`--gitref-type TYPE`
+`--gitref-type`
 :    Indicate the type of GitRef to use for this Satellite subscription. Strategy: GitOps. Allowed values: branch, commit, tag, release
 
-`--name NAME`
+`--name`
 :    Provide a new name of the Satellite subscription.
 
-`--path PATH`
+`--path`
 :    Indicate the path to the repository files or release assets in the remote repository to use for the Satellite subscription. Strategy: GitOps.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--repository REPOSITORY`
+`--repository`
 :    Provide the URL of the remote repository to use for the Satellite subscription. Strategy: GitOps.
 
-`--subscription SUBSCRIPTION`
+`--subscription`
 :    Specify the name or ID of a Satellite subscription. To list subscriptions, run `ibmcloud sat subscription ls`.
 
-`--version VERSION`
+`--version`
 :    Indicate the existing configuration version to use for the Satellite subscription. Strategy: Direct Upload.
 
 

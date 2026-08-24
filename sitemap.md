@@ -2686,8 +2686,6 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 [CLI reference for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-satellite-cli-reference#satellite-cli-reference)
 
-* [ibmcloud sat commands](/docs/satellite?topic=satellite-satellite-cli-reference#cli_commands)
-
 * [Acl commands](/docs/satellite?topic=satellite-satellite-cli-reference#acl-cli)
 
     * [`ibmcloud sat acl create`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-create-cli)
