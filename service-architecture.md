@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: satellite architecture, satellite components, satellite workload isolation, satellite tenant isolation, satellite dependencies
 
@@ -26,7 +26,7 @@ The following image shows the main components in {{site.data.keyword.satellitelo
 {: shortdesc}
 
 
-![Satellite for IBM Cloud service architecture](/images/sat_architecture.svg "Satellite service architecture"){: caption="Satellite service architecture" caption-side="bottom"}
+![{{site.data.keyword.satelliteshort}} for IBM Cloud service architecture](/images/sat_architecture.svg "{{site.data.keyword.satelliteshort}} service architecture"){: caption="{{site.data.keyword.satelliteshort}} service architecture" caption-side="bottom"}
  
   
 While communication from your location to some {{site.data.keyword.satelliteshort}} services is routed fully through the Link tunnel server, other services require outbound connectivity from your hosts. For more information, see the [host network requirements](/docs/satellite?topic=satellite-reqs-host-network ) and [host outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound).
@@ -45,9 +45,9 @@ Review a description of the main components of the {{site.data.keyword.satellite
 |{{site.data.keyword.monitoringfull_notm}}|The {{site.data.keyword.monitoringfull_notm}} component monitors the compute capacity in your {{site.data.keyword.satelliteshort}} location and the components that run in your {{site.data.keyword.satelliteshort}} control plane to detect issues and automatically resolve them if possible. These actions can include assigning additional hosts to the control plane or restart components that keep on failing. For issues that cannot be resolved, {{site.data.keyword.IBM_notm}} Site Reliability Engineers are automatically informed for further investigation. |
 |{{site.data.keyword.satelliteshort}} Config|With {{site.data.keyword.satelliteshort}} Config, you can consistently deploy Kubernetes resource configurations across {{site.data.keyword.openshiftlong}} clusters that run on the infrastructure of your {{site.data.keyword.satelliteshort}} location or in {{site.data.keyword.cloud_notm}}. You can monitor the health of these resources by using the location dashboard. For more information, see [Deploying Kubernetes resources across {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig).|
 | {{site.data.keyword.secrets-manager_full_notm}} | With {{site.data.keyword.secrets-manager_full_notm}}, you can create secrets dynamically and lease them to applications while you control access from a single location. Built on open source HashiCorp Vault, {{site.data.keyword.secrets-manager_full_notm}} helps you get the data isolation of a dedicated environment with the benefits of a public cloud. For more information, see [Getting started with {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-getting-started).|
-{: summary="Overview of the Satellite management plane components"}
+{: summary="Overview of the {{site.data.keyword.satelliteshort}} management plane components"}
 {: class="simple-tab-table"}
-{: caption="Overview of Satellite management plane components." caption-side="bottom"}
+{: caption="Overview of {{site.data.keyword.satelliteshort}} management plane components." caption-side="bottom"}
 {: #master-components}
 {: tab-title="Master components"}
 {: tab-group="satellite-components"}
@@ -57,9 +57,9 @@ Review a description of the main components of the {{site.data.keyword.satellite
 |{{site.data.keyword.satelliteshort}} Link tunnel client|The {{site.data.keyword.satelliteshort}} Link tunnel client component is the main gateway for any communication between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}. All workloads that run in your location and that must connect to an app, service or server that runs in {{site.data.keyword.cloud_notm}} must send their requests to the {{site.data.keyword.satelliteshort}} Link tunnel client. The {{site.data.keyword.satelliteshort}} Link tunnel client securely forwards your request to the {{site.data.keyword.satelliteshort}} Link tunnel server where the request is proxied and forwarded to the destination target. To enable DNS resolution between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}, you must create a {{site.data.keyword.satelliteshort}} Link endpoint. For more information, see [Connecting your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}} with endpoints](/docs/satellite?topic=satellite-link-location-cloud). By default, all network traffic that enters and leaves your location is automatically captured to allow network monitoring and auditing. |
 |{{site.data.keyword.monitoringfull_notm}}|The {{site.data.keyword.monitoringfull_notm}} component monitors the compute capacity in your {{site.data.keyword.satelliteshort}} location and the components that run in your {{site.data.keyword.satelliteshort}} control plane to detect issues and automatically resolve them if possible. These actions can include assigning additional hosts to the control plane or restart components that keep on failing. For issues that cannot be resolved, {{site.data.keyword.IBM_notm}} Site Reliability Engineers are automatically informed for further investigation. |
 |Cluster master|When you create a {{site.data.keyword.satelliteshort}} cluster in your location, the master of this cluster is deployed onto your {{site.data.keyword.satelliteshort}} control plane nodes to allow communication to {{site.data.keyword.cloud_notm}} and monitoring through {{site.data.keyword.IBM_notm}}. For more information, see [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters).|
-{: summary="Overview of the Satellite control plane node components"}
+{: summary="Overview of the {{site.data.keyword.satelliteshort}} control plane node components"}
 {: class="simple-tab-table"}
-{: caption="Overview of Satellite control plane node components." caption-side="bottom"}
+{: caption="Overview of {{site.data.keyword.satelliteshort}} control plane node components." caption-side="bottom"}
 {: #worker-node-components}
 {: tab-title="Worker node components"}
 {: tab-group="satellite-components"}

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud, use case, scenarios, benefits, data center, hybrid multicloud, cloud services, edge environments
 
@@ -45,7 +45,7 @@ For more information about {{site.data.keyword.satelliteshort}}, how it works an
 ## Common use cases for {{site.data.keyword.satelliteshort}}
 {: #use-case-common}
 
-This use case is applicable to all industries.
+{{site.data.keyword.satelliteshort}} supports the following use case across all industries.
 {: shortdesc}
 
 ### Deploy {{site.data.keyword.redhat_openshift_notm}} environment as a managed service wherever it is needed
@@ -63,7 +63,7 @@ Pain points:
 ## Finance use cases for {{site.data.keyword.satelliteshort}}
 {: #use-case-finance}
 
-These use cases are applicable to the finance industry.
+{{site.data.keyword.satelliteshort}} supports the following use cases for the finance industry.
 {: shortdesc}
 
 ### Leverage mainframe data for customers who are restricted from moving data to the cloud
@@ -105,7 +105,7 @@ Pain points:
 ## Insurance use cases for {{site.data.keyword.satelliteshort}}
 {: #use-case-insurance}
 
-This use case is applicable to the insurance industry.
+{{site.data.keyword.satelliteshort}} supports the following use case for the insurance industry.
 {: shortdesc}
 
 ### Analytics platform on-premises
@@ -123,7 +123,7 @@ Pain points
 ## Manufacturing use cases for {{site.data.keyword.satelliteshort}}
 {: #use-case-manufacture}
 
-These use cases are applicable to the manufacturing industry.
+{{site.data.keyword.satelliteshort}} supports the following use cases for the manufacturing industry.
 {: shortdesc}
 
 ### Internet of Things (IoT) service platform 
@@ -201,7 +201,7 @@ Pain points:
 ## Distribution use cases for {{site.data.keyword.satelliteshort}}
 {: #use-case-distribution}
 
-This use case is applicable to the distribution industry.
+{{site.data.keyword.satelliteshort}} supports the following use case for the distribution industry.
 {: shortdesc}
 
 ### Deliver and integrate store or warehouse digitization solutions for the distribution or retail sectors
@@ -219,7 +219,7 @@ Pain points:
 ## Public sector or health use cases for {{site.data.keyword.satelliteshort}}
 {: #use-case-health}
 
-This use case is applicable to the public sector or health industry.
+{{site.data.keyword.satelliteshort}} supports the following use case for the public sector and health industry.
 {: shortdesc}
 
 ### On-premises service platform
@@ -237,7 +237,7 @@ Pain points:
 ## Communications use cases for {{site.data.keyword.satelliteshort}}
 {: #use-case-communications}
 
-This use case is applicable to the communications industry.
+{{site.data.keyword.satelliteshort}} supports the following use case for the communications industry.
 {: shortdesc}
 
 ### Multi-access edge computing (MEC) platform support service 
@@ -255,7 +255,7 @@ Pain points:
 ## Utilities use cases for {{site.data.keyword.satelliteshort}}
 {: #use-case-utilities}
 
-This use case is applicable to the utilities industry.
+{{site.data.keyword.satelliteshort}} supports the following use case for the utilities industry.
 {: shortdesc}
 
 ### Expand the use of smart meters with {{site.data.keyword.satelliteshort}}

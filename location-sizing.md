@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
 
@@ -21,13 +21,13 @@ Because your {{site.data.keyword.satelliteshort}} location represents your own d
 {: shortdesc}
 
 Minimum size requirements
-    :   To get started, you must attach and assign hosts that meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs). For testing purposes such as a proof of concept, you can have a minimum of 3 hosts assigned to the control plane, but for production purposes, you must have a minimum of 6 hosts. As you continue to use your location, [you might need to scale the {{site.data.keyword.satelliteshort}} location control plane](#control-plane-attach-capacity) in multiples of 3, such as 6, 9, or 12 hosts.
+    :   To get started, you must attach and assign hosts that meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs). For testing purposes such as a proof of concept, you can have a minimum of 3 hosts assigned to the control plane, but for production purposes, you must have a minimum of 6 hosts. As you continue to use your location, scale the {{site.data.keyword.satelliteshort}} location control plane in multiples of 3, such as 6, 9, or 12 hosts.
     
 High availability
 :   When you assign hosts to the {{site.data.keyword.satelliteshort}} location control plane, assign the hosts evenly across each of the 3 available zones of your {{site.data.keyword.cloud_notm}} multizone metro that you selected during location creation. To make the control plane highly available, make sure that the underlying hosts are in separate zones in your physical infrastructure environment. For example, you might assign 2 hosts each that run in 3 separate availability zones in your cloud provider, or that run in 3 separate physical systems in your own data center. You do not have to meet specific requirements for a "zone," but the separate zones must provide availability for system maintenance operations. For example, if 1 zone becomes unavailable due to a failure, or if 1 host becomes unavailable due to updating, the remaining 2 zones are still available to run control plane operations. A poor high availability setup is 2 hosts that are virtual machines on the same hypervisor, because servicing the underlying hardware such as to update the machine would make both hosts become unavailable. For more information, see [High availability for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-sat-ha-dr).
 
 Compute capacity
-:   {{site.data.keyword.satelliteshort}} monitors the available compute capacity of your location. When the location reaches 70% capacity, you see a warning status to notify you to attach more hosts to the location. If the location reaches 80% capacity, the status changes to **critical** and you see another warning that tells you to attach more hosts to the location.
+:   {{site.data.keyword.satelliteshort}} monitors the available compute capacity of your location. IBM capacity monitoring confirms that locations reaching 70% capacity trigger a warning status, prompting you to attach more hosts. If the location reaches 80% capacity, the status changes to **critical** and triggers another warning to attach more hosts.
 
     
 Plan to keep **at least 3 extra hosts** attached and unassigned to your location. When you have extra hosts, then {{site.data.keyword.IBM_notm}} can assign the hosts to your {{site.data.keyword.satelliteshort}} location control plane automatically when the location reaches the warning capacity threshold or an unhealthy host needs to be replaced.
@@ -37,7 +37,7 @@ Plan to keep **at least 3 extra hosts** attached and unassigned to your location
 ## Location sizing
 {: #control-plane-how-many-clusters-rhel}
 
-The following tables show sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes. These sizings are for reference only.
+IBM sizing guidance shows the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes. These sizings are for reference only.
 
 
 | Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
@@ -113,7 +113,7 @@ After you determine the size of your location, [add hosts to the location contro
 ### How do I scale up my {{site.data.keyword.satelliteshort}} location control plane to be highly available?
 {: #control-plane-scale-up}
 
-See [Highly available control plane worker setup](/docs/satellite?topic=satellite-sat-ha-dr#ha-control-plane-master). Make sure to attach hosts to the control plane location in each zone, in multiples of three. For example, you might have 6 hosts that are assigned to your control plane location that is managed from the {{site.data.keyword.cloud_notm}} `wdc` region, with 2 hosts each zone (`us-east-1`, `us-east-2`, and `us-east-3`).
+See [Highly available control plane worker setup](/docs/satellite?topic=satellite-sat-ha-dr#ha-control-plane-master). Attach hosts to the control plane location in each zone, in multiples of three. For example, assign 6 hosts to your control plane location managed from the {{site.data.keyword.cloud_notm}} `wdc` region, with 2 hosts in each zone (`us-east-1`, `us-east-2`, and `us-east-3`).
 
 To scale up your control plane, you can follow the same steps to [Set up the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-setup-control-plane).
 
@@ -125,7 +125,7 @@ The number of clusters depends on the size of your clusters and the size of the 
 The following tables provide examples of the number of hosts that the control plane must have to run the masters for various combinations of clusters and worker nodes, for informational purposes only. 
 
 - The size of the hosts that run the control plane, **4 vCPU and 16GB RAM** or **16 vCPU and 64GB RAM**, affect the numbers of clusters and worker nodes that are possible in the location. Keep in mind that actual performance requirements depend on many factors, such as the underlying CPU performance and control plane usage by the applications that run in the location.
-- You can assign hosts to the control plane in groups of 3. The table presents examples up to 12 hosts as common configurations to give you an idea of how you might size the control plane for your host and application environment. Note that you can add more than 12 hosts to your control plane in groups of 3. For example you might create a control plane with 18 or 27 hosts.
+- You can assign hosts to the control plane in groups of 3. The table presents examples up to 12 hosts as common configurations to give you an idea of how to size the control plane for your host and application environment. Note that you can add more than 12 hosts to your control plane in groups of 3 — for example, 18 or 27 hosts.
 
 ### What types of changes can increase my location sizing requirements? 
 {: #types-changes-sizing-increase}

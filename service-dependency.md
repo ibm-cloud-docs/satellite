@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords:
 
@@ -119,15 +119,15 @@ If you have any questions about the service dependency data as you review the se
 ### What is the expected impact to the functions described?
 {: #expected-impact}
 
-Each severity tab in the table indicates the impact that your provisioned service might encounter if the dependency were to go offline. This means that the dependency high availability and disaster recovery influences the severity of the impact and therefore is used for general guidance to help you understand potential issues that might arise if the dependency was impacted by an incident.
+Each severity tab in the table indicates the impact on your provisioned service if the dependency goes offline. The dependency's high availability and disaster recovery configuration influences the severity of that impact and provides general guidance about potential issues during an incident.
 
-Services that are regional are not impacted by a severe outage of a single zone because of the failover that is built in to default to another zone. For these occurrences, there might be a slight performance impact, if any, while the system fails over to the other location. This also applies to global services where the impact is lowered even more as it can fail over to other regions if necessary. This reduces the frequency at which these items might have the impact that is shown.
+Services that are regional are not impacted by a severe outage of a single zone because of the built-in failover to another zone. During failover, a slight performance impact may occur while the system switches to the other location. Global services reduce impact further by failing over across regions, which decreases the frequency of the impacts shown in the table.
 {: note}
 
 ### What services does my service depend on?
 {: #dependent-services}
 
-The **Dependencies** column lists the services. These are the major service to service dependencies including major internal dependencies that might not be visible externally.
+The **Dependencies** column lists the services. These are the major service-to-service dependencies, including major internal dependencies that are not visible externally.
 
 ### What function does the dependency impact?
 {: #function-impact}
@@ -184,7 +184,7 @@ The table shows a standard cloud deployment. If a special deployment is used lik
 
 Sometimes, the dependency has a separate control plane and data plane. In these cases, there are separate lines that show the location in relation to the deployed customer instance of the service where these will be provisioned. The lines can have different impacts and different functions. See the **Control or data plane** column to understand what possible impact this type of outage can have.
 
-`Same region` means that the dependent services are in the same region as the provisioned instance. Other values might show `data center` or region names if the service must be used from a specific region, a specific zone, or set of zones. If a service is tied to a specific region or site, and the region goes offline, the service might go offline as well. It is recommended that you go through the high availability and disaster recovery documentation of the dependency to determine if there are any steps that you should take to mitigate these types of risks.
+`Same region` means that the dependent services are in the same region as the provisioned instance. Other values show `data center` or region names if the service must be used from a specific region, zone, or set of zones. If a service is tied to a specific region or site and that region goes offline, the service goes offline as well. Review the high availability and disaster recovery documentation of each dependency to determine mitigation steps.
 
 ## Additional resources
 {: #additional-resources}

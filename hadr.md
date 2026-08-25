@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-25"
 
 
 keywords: high availability, disaster recover, HA, DR, responsibilities
@@ -18,7 +18,7 @@ subcollection: satellite
 
 [High availability](x2284708){: term} (HA) is the ability for a service to remain operational and accessible in the presence of unexpected failures. [Disaster recovery](#x2113280){: term} is the process of recovering the service instance to a working state. {: shortdesc}
 
-{{site.data.keyword.satelliteshort}} is a highly available regional or zonal service designed for availability during a regional or zonal outage. {{site.data.keyword.satelliteshort}} is designed to meet the Service Level Objectives (SLO) with the Standard plan.
+{{site.data.keyword.satelliteshort}} is a highly available regional or zonal service designed for availability during a regional or zonal outage. {{site.data.keyword.satelliteshort}} is designed to meet the Service Level Objectives (SLO) with the Standard plan. According to [IBM Cloud resiliency guidance](/docs/resiliency?topic=resiliency-ha-redundancy), services that span multiple availability zones maintain operations even when an individual zone fails.
 
 For more information about the available region and data center locations, see Service and infrastructure availability by location.
 
@@ -85,14 +85,14 @@ For information relevant to IBM Cloud, see [How IBM Cloud prepares for disaster 
 ### How {{site.data.keyword.IBM_notm}} recovers from failures
 {: #ibm-zone-failure}
 
-If there is a zone or regional failure, IBM is responsible for the recovery of  components. IBM will attempt to restore the cluster in the same region based on the last state in internal persistent storage. IBM updates and recovers operational components within the cluster, such as the Ingress application load balancer and file storage plug-in.
+If there is a zone or regional failure, IBM is responsible for the recovery of components. IBM restores the cluster in the same region based on the last state in internal persistent storage. IBM updates and recovers operational components within the cluster, such as the Ingress application load balancer and file storage plug-in.
 
 IBM also provides the ability to integrate with other IBM Cloud services such as storage providers so that data can be backed up and restored. It is your responsibility to implement these integrations. 
 
 ## How {{site.data.keyword.IBM_notm}} maintains services
 {: #ibm-service-maintenance}
 
-All upgrades follow {{site.data.keyword.IBM_notm}} service best practices, including recovery plans and rollback processes. Regular maintenance can cause short interruptions, mitigated by [client availability retry logic](/docs/resiliency?topic=resiliency-high-availability-design#client-retry-logic-for-ha). Changes are rolled out sequentially, region by region, and zone by zone within a region. {{site.data.keyword.IBM_notm}} reverts updates at the first sign of a defect.
+All upgrades follow {{site.data.keyword.IBM_notm}} service best practices, including recovery plans and rollback processes. Regular maintenance can cause short interruptions, mitigated by [client availability retry logic](/docs/resiliency?topic=resiliency-high-availability-design#client-retry-logic-for-ha). Changes are rolled out sequentially, region by region, and zone by zone within a region, ensuring that a defect in one zone does not affect other zones. {{site.data.keyword.IBM_notm}} reverts updates at the first sign of a defect.
 
 Complex changes are enabled and disabled with feature flags to control exposure.
 
@@ -117,7 +117,7 @@ You are responsible for the recovery of the workloads that run the cluster and y
 
 Change management includes tasks such as upgrades, configuration changes, and deletion. Keep the following points in mind to reduce downtime or data loss for your workload. 
 
-- It is recommended that you grant users and processes the Identity and Access Management (IAM) roles and actions with the least privilege required for their work. For example, limit the ability to delete production resources.
+- Grant users and processes the Identity and Access Management (IAM) roles and actions with the least privilege required for their work. For example, limit the ability to delete production resources.
 
 - Use the application programming interface (API), command-line interface (CLI), or console tools to apply the provided worker node updates that include operating system patches, or to request that worker nodes are rebooted, reloaded, or replaced.
 

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: satellite, multicloud, location, locations, control plane, remote workers
 
@@ -23,10 +23,10 @@ By using the flexible architecture of {{site.data.keyword.satelliteshort}}, you 
 ## Infrastructure composition options and supported topologies
 {: #infra-topologies}
 
-The following figures show the supported topologies. 
-{: shortdesc} 
+The following figures show the supported topologies.
+{: shortdesc}
 
-In each case, communication flows between the {{site.data.keyword.satelliteshort}} control plane and the service clusters. The {{site.data.keyword.satelliteshort}} management plane communicates with the {{site.data.keyword.satelliteshort}} control plane. This communication must be enabled for {{site.data.keyword.satelliteshort}} to work normally.
+In all supported {{site.data.keyword.satelliteshort}} topologies, communication flows between the control plane and the service clusters. The {{site.data.keyword.satelliteshort}} management plane communicates with the {{site.data.keyword.satelliteshort}} control plane, and this communication must remain enabled for {{site.data.keyword.satelliteshort}} to function.
 
 When you set up {{site.data.keyword.satelliteshort}} locations with multiple infrastructure providers, consider the following points.
 

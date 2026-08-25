@@ -13,7 +13,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Disconnected use for Satellite components 
+# Disconnected use for {{site.data.keyword.satelliteshort}} components
 {: #disconnected-use}
 
 Certain features of {{site.data.keyword.satellitelong}} can be used while disconnected temporarily. See the following FAQs to understand the disconnected use for these components.
