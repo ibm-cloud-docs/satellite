@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud, disconnected use, disconnected usage, disconnect
 
@@ -13,7 +13,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Disconnected use for Satellite components 
+# Disconnected use for {{site.data.keyword.satelliteshort}} components
 {: #disconnected-use}
 
 Certain features of {{site.data.keyword.satellitelong}} can be used while disconnected temporarily. See the following FAQs to understand the disconnected use for these components.
@@ -38,7 +38,7 @@ How do I re-authenticate?
 :   Reconnect your Location first and then log in again with your credentials. 
 
 Do I have to recover etcd backup?
-:   If you are using RHCOS hosts, you don't need to recover etcd backup. The Location recovers automatically after you reconnect it and re-authenticate. However, locations that use RHEL might need to recover etcd.
+:   If you are using RHCOS hosts, you don't need to recover etcd backup. The Location recovers automatically after you reconnect it and re-authenticate. Locations that use RHEL require etcd recovery.
 
 What happens if a location stays disconnected for more than 7 days?
 :   After you restore your connection, you must replace all hosts across the location with new infrastructure.
@@ -49,7 +49,7 @@ How do I know when to reconnect a location?
 ## Setting the disconnected usage time
 {: #disconnect-time}
 
-{{site.data.keyword.satelliteshort}} Locations and {{site.data.keyword.openshiftlong_notm}} can run disconnected from the parent `managed-from` region in {{site.data.keyword.cloud_notm}} for up to 168 hours (7 days).
+{{site.data.keyword.satellitelong_notm}} allows locations and {{site.data.keyword.openshiftlong_notm}} clusters to run disconnected from the parent `managed-from` region in {{site.data.keyword.cloud_notm}} for up to 168 hours (7 days).
 {: shortdesc}
 
 You can modify this setting by changing the `accessTokenMaxAgeSeconds` value for all your OAuth clients. The default value for `accessTokenMaxAgeSeconds` parameter is 86400 seconds.

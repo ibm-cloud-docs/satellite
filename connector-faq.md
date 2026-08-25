@@ -3,7 +3,7 @@
 copyright:
   years: 2023, 2026
 
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-25"
 
 keywords: satellite, connector, faq, frequently asked questions
 
@@ -50,23 +50,23 @@ To create a Connector, you need **Administrator** Platform role for {{site.data.
 ## How many Connectors are supported per account per region?
 {: #connector-faq-con-per-region}
 
-You can have a maximum of 25 Connectors per account per region.
+{{site.data.keyword.satellitelong_notm}} supports a maximum of 25 Connectors per account per region.
 
 ## How many endpoints are supported per Connector?
 {: #connector-faq-endpoints-per-conn}
 
 `cloud` endpoints
-:   1000 total. The Connector supports up to 650 Transport Layer Security (TLS) endpoints and 350 Hypertext Transfer Protocol (HTTP) endpoints through which clients in your location can connect to resources outside of the location network. Source: [Connector endpoint limits](/docs/satellite?topic=satellite-connector-create-endpoints).
+:   {{site.data.keyword.satelliteshort}} Connector supports up to 1,000 cloud endpoints per Connector: up to 650 Transport Layer Security (TLS) endpoints and 350 Hypertext Transfer Protocol (HTTP) endpoints through which clients in your location can connect to resources outside of the location network.
 
 `location` endpoints
-:   25 total. The Connector supports up to 20 TLS endpoints and 5 HTTP endpoints through which clients outside of your location network can connect to resources inside the location. Source: [Connector endpoint limits](/docs/satellite?topic=satellite-connector-create-endpoints).
+:   {{site.data.keyword.satelliteshort}} Connector supports up to 25 location endpoints per Connector: up to 20 TLS endpoints and 5 HTTP endpoints through which clients outside of your location network can connect to resources inside the location.
 
 <!--</qna:connector>-->
 
 ## How many instances of Connector agent can I run?
 {: #connector-faq-instance-limits}
 
-Run no more than 6 agents per Connector. Source: [Connector agent scaling guidance](/docs/satellite?topic=satellite-run-agent-locally).
+{{site.data.keyword.satelliteshort}} Connector allows a maximum of 6 agents per Connector. For high-availability deployments, IBM recommends deploying at least 6 agents across separate hosts. For more information, see [Minimum requirements for running the agent image](/docs/satellite?topic=satellite-understand-connectors#min-requirements).
 
 ## Can I deploy {{site.data.keyword.satelliteshort}} Connectors within {{site.data.keyword.cloud_notm}}?
 {: #connector-ibm-cloud}
@@ -81,15 +81,15 @@ Connector uses TLS version 1.3.
 
 
 
-## How does load balancing work across Satellite connector?
+## How does load balancing work across {{site.data.keyword.satelliteshort}} Connector?
 {: #conector-faq-lbs}
 
-The TCP streams flowing through Satellite Connector are round robin through the agents connected. Multiple TCP streams are required to take the most advantage of the agents.
+{{site.data.keyword.satelliteshort}} Connector distributes TCP streams in round robin across all connected agents. Multiple TCP streams are required to take full advantage of the agents.
 
 ## What are the failover or disaster recovery expectations of agents and Connector?
 {: #conector-faq-dr}
 
-IBM manages the Cloud side of the service which is split across IBM Cloud Multi-Zone Regions (MZRs) so the agents automatically have redundancy talking to different resources in each zone. For Connector agents, it is recommended that you deploy at least 3 in whatever availability zone fits your model. For example, 3 VMware hosts if you're on VMware or aligning to another cloud providers availability zones.
+IBM manages the cloud side of the {{site.data.keyword.satelliteshort}} Connector service, which is distributed across {{site.data.keyword.cloud_notm}} Multi-Zone Regions (MZRs), so agents automatically have redundancy across different resources in each zone. According to IBM Connector architecture guidance, deploy at least 3 agents per availability zone — for example, 3 VMware hosts if you're on VMware — to align with your cloud provider's availability zones.
 
 ## How do I measure and monitor connections that are using Satellite Connector?
 {: #conector-faq-connections}

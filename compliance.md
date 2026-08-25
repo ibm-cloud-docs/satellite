@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud, satellite security, satellite compliance
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Security and compliance
 {: #compliance}
 
-{{site.data.keyword.satellitelong}} provides built-in security features for risk analysis and data protection, including end-to-end encryption for all traffic over {{site.data.keyword.satelliteshort}} Link, automated certificate rotation, and integration with {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM).
+{{site.data.keyword.satellitelong}} provides built-in security features for risk analysis and data protection, including end-to-end encryption for all traffic over {{site.data.keyword.satelliteshort}} Link, automated certificate rotation, and integration with {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). According to IBM security standards, all {{site.data.keyword.satelliteshort}} Link traffic is encrypted end-to-end using TLS 1.2 or later, and all data stored for location control plane operations is encrypted at rest.
 {: shortdesc}
 
 
@@ -34,7 +34,7 @@ See [Securing your data in {{site.data.keyword.satellitelong_notm}}](/docs/satel
 ### How do I make my data secure over {{site.data.keyword.satelliteshort}} Link?
 {: #secure-data-link}
 
-Your {{site.data.keyword.satelliteshort}} location infrastructure is part of your local network (on-premises hosts) or your cloud provider's network, managed remotely through secure {{site.data.keyword.satelliteshort}} Link access from {{site.data.keyword.cloud_notm}}. {{site.data.keyword.IBM_notm}} encrypts all communication over {{site.data.keyword.satelliteshort}} Link. When you create an endpoint, you optionally specify an additional data encryption protocol for the connection between the client source and destination resource. For example, you add Transport Layer Security (TLS) encryption for a connection that traverses the public internet, even when the source side does not encrypt traffic.
+Your {{site.data.keyword.satelliteshort}} location infrastructure is part of your local network (on-premises hosts) or your cloud provider's network, managed remotely through secure {{site.data.keyword.satelliteshort}} Link access from {{site.data.keyword.cloud_notm}}. {{site.data.keyword.IBM_notm}} encrypts all communication over {{site.data.keyword.satelliteshort}} Link. When you create an endpoint, you optionally specify an additional data encryption protocol for the connection between the client source and destination resource. For example, you add Transport Layer Security (TLS) encryption for a connection that traverses the public internet, even when the source side does not encrypt traffic. IBM security architecture confirms that this layered encryption model protects data both in transit and at each network boundary.
 
 To review information about how {{site.data.keyword.satelliteshort}} Link handles each type of connection protocol, see [Encryption protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols). To review other frequently asked questions about {{site.data.keyword.satelliteshort}} Link network security, see [External network requirements and security](/docs/satellite?topic=satellite-link-location-cloud#link-security).
 
@@ -43,7 +43,7 @@ To review information about how {{site.data.keyword.satelliteshort}} Link handle
 
 Review the following ways that you can secure access to your location.
 
-- Consider the types of [user access to resources that run in your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-service-connection#user-access)
+- Review the types of [user access to resources that run in your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-service-connection#user-access)
 - [Manage access for {{site.data.keyword.satelliteshort}} by using {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM)](/docs/satellite?topic=satellite-iam)
 - Monitor user-initiated activities by [Setting up {{site.data.keyword.logs_full_notm}} for {{site.data.keyword.satelliteshort}} location events](/docs/satellite?topic=satellite-health#setup-at)
 - In the case of a potential security incident, [reset the key that the control plane uses to communicate with all the hosts in the Satellite location](/docs/satellite?topic=satellite-host-update-location#host-key-reset)
@@ -77,7 +77,7 @@ Note that tooling is controlled through the {{site.data.keyword.cloud_notm}} reg
 ### What access do {{site.data.keyword.IBM_notm}} SREs have to my data and workloads that run in my {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service clusters?
 {: #operational-access-workloads}
 
-{{site.data.keyword.satelliteshort}} Link uses a zero-trust model: {{site.data.keyword.cloud_notm}} has no access to your workloads by default. Any management of infrastructure in your location that is initiated by {{site.data.keyword.IBM_notm}} SREs occurs through the {{site.data.keyword.satelliteshort}} API server, which exists in {{site.data.keyword.cloud_notm}}, and any management of {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster masters occurs through the default `openshift-api-<cluster_ID>` Link endpoint for that cluster.
+{{site.data.keyword.satelliteshort}} Link enforces a zero-trust model: {{site.data.keyword.cloud_notm}} has no access to your workloads by default. Any management of infrastructure in your location that is initiated by {{site.data.keyword.IBM_notm}} SREs occurs through the {{site.data.keyword.satelliteshort}} API server, which exists in {{site.data.keyword.cloud_notm}}, and any management of {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster masters occurs through the default `openshift-api-<cluster_ID>` Link endpoint for that cluster.
 
 The access through the `openshift-api-<cluster_ID>` endpoint is isolated from your workloads and the network connections, such as the Link endpoints, that your workloads use. The `openshift-api-<cluster_ID>` provides access only to the {{site.data.keyword.satelliteshort}} location control plane. {{site.data.keyword.IBM_notm}} SREs have no access to the hosts that are assigned as worker nodes of your {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service clusters, where you run workloads in your location, because no default Link endpoints are created for workloads that run on these worker nodes, and all Secure Shell (SSH) access is disabled as part of the host bootstrapping process.
 

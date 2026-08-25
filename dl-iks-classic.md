@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -103,7 +103,7 @@ Set up the private Ingress application load balancers (ALBs) for the {{site.data
 
 4. Set up a custom domain for the private ALBs that the NGINX reverse proxy is accessible through, and optionally set up TLS for the domain.
     1. Create a custom domain through your DNS service provider. Your custom domain must be 130 characters or fewer to meet Ingress requirements.
-    2. Map your custom domain to the private ALBs by adding their IP addresses as A records (classic clusters) or their VPC hostname as a CNAME (VPC clusters). To find the ALB IP addresses (classic) or hostname (VPC), run `ibmcloud ks ingress alb ls -c <cluster_name_or_ID>`. Note that in VPC clusters, a hostname is assigned to the ALBs because the `10.X.X.X` IP addresses are not static and might change over time.
+    2. Map your custom domain to the private ALBs by adding their IP addresses as A records (classic clusters) or their VPC hostname as a CNAME (VPC clusters). To find the ALB IP addresses (classic) or hostname (VPC), run `ibmcloud ks ingress alb ls -c <cluster_name_or_ID>`. In VPC clusters, a hostname is assigned to the ALBs because the `10.X.X.X` IP addresses are dynamic and change over time.
     3. To use TLS termination, create a secret in the `dl-reverse-proxy` namespace that contains a TLS certificate for your custom domain. For example, if a TLS certificate is stored in {{site.data.keyword.cloudcerts_long_notm}} that you want to use, you can import its associated secret into your cluster by running the following command. For more information, see [Custom domains with Ingress](/docs/containers?topic=containers-ingress-domains).
         ```sh
         ibmcloud ks ingress secret create --name SECRET_NAME --cluster CLUSTER_NAME_OR_ID --cert-crn CERTIFICATE_CRN --namespace dl-reverse-proxy
@@ -300,8 +300,8 @@ Configure the Link tunnel client in your {{site.data.keyword.satelliteshort}} lo
     ```
     {: pre}
 
-1. Verify that traffic flows from your {{site.data.keyword.satelliteshort}} location to {{site.data.keyword.cloud_notm}} by [creating a Link endpoint of type `cloud`](/docs/satellite?topic=satellite-link-cloud-create#link-cloud). For example, you might create a `cloud` endpoint for the private service endpoint of an {{site.data.keyword.cloud_notm}} service, and then [test the connection to the service from a {{site.data.keyword.openshiftlong_notm}} cluster that runs in your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-link-cloud-create#link-cloud-test).
+1. Verify that traffic flows from your {{site.data.keyword.satelliteshort}} location to {{site.data.keyword.cloud_notm}} by [creating a Link endpoint of type `cloud`](/docs/satellite?topic=satellite-link-cloud-create#link-cloud). For example, create a `cloud` endpoint for the private service endpoint of an {{site.data.keyword.cloud_notm}} service, then [test the connection to the service from a {{site.data.keyword.openshiftlong_notm}} cluster that runs in your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-link-cloud-create#link-cloud-test).
 
-1. Verify that traffic flows from {{site.data.keyword.cloud_notm}} to your {{site.data.keyword.satelliteshort}} location by [creating a Link endpoint of type `location`](/docs/satellite?topic=satellite-link-cloud-create#link-location). For example, you might create a `location` endpoint for the IP address of an app in a {{site.data.keyword.satelliteshort}} cluster in your location, and then test the connection to the app from a service in the {{site.data.keyword.cloud_notm}} private network.
+1. Verify that traffic flows from {{site.data.keyword.cloud_notm}} to your {{site.data.keyword.satelliteshort}} location by [creating a Link endpoint of type `location`](/docs/satellite?topic=satellite-link-cloud-create#link-location). For example, create a `location` endpoint for the IP address of an app in a {{site.data.keyword.satelliteshort}} cluster in your location, then test the connection to the app from a service in the {{site.data.keyword.cloud_notm}} private network.
 
 You've successfully configured your {{site.data.keyword.satelliteshort}} Link setup so that all traffic that flows over Link endpoints now uses your {{site.data.keyword.dl_short}} connection.

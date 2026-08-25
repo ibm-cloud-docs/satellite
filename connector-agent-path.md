@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud, connector, private tunnel
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Configuring the request path from your Connector agent
 {: #connector-agent-path}
 
-This document shows how to configure the target destination for outgoing requests from your Connector agent. You can configure the agent to send its outgoing requests through a proxy server and you can configure the Satellite Tunnel server Ingress host to which your Connector agent will forward traffic.
+This document shows how to configure the target destination for outgoing requests from your Connector agent. You can configure the agent to send its outgoing requests through a proxy server and you can configure the {{site.data.keyword.satelliteshort}} Tunnel server Ingress host to which your Connector agent will forward traffic.
 {: shortdesc}
 
 
@@ -69,7 +69,7 @@ If your Connector agent is running on a container platform, ensure that your con
 ## Configuring a Tunnel server Ingress host for your {{site.data.keyword.satelliteshort}} Connector agent
 {: #config-connector-ingress}
 
-You can configure the Satellite Tunnel server Ingress host that your Connector agent will forward traffic to. The Connector agent supports specifying either public or private Ingress hosts. To help with compliance management, you can configure a single network destination to reduce the number of outbound IP addresses to allow on your firewall. Also, by specifying an internal Ingress host, you can ensure that the traffic between your Connector agent and Tunnel server stays in your private network and no traffic uses the public internet.
+You can configure the {{site.data.keyword.satelliteshort}} Tunnel server Ingress host that your Connector agent will forward traffic to. The Connector agent supports specifying either public or private Ingress hosts. To help with compliance management, you can configure a single network destination to reduce the number of outbound IP addresses to allow on your firewall. Also, by specifying an internal Ingress host, you can ensure that the traffic between your Connector agent and Tunnel server stays in your private network and no traffic uses the public internet.
 
 ### Specifying an internal host
 {: #specify-host}

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -41,7 +41,7 @@ Running multiple agents on the same Windows host is not supported for Satellite 
 
 - Installing multiple Windows agents requires 25MB of memory to be preserved for each agent.
 
-- Running traffic across agents adds up to ~70MB of memory and approximately 15% central processing unit (CPU) utilization per agent, with bandwidth reaching 150–200 Mbps per agent. Source: [Connector agent resource requirements](/docs/satellite?topic=satellite-run-agent-locally).
+- Running traffic across agents adds up to ~70MB of memory and approximately 15% central processing unit (CPU) utilization per agent, with bandwidth reaching 150–200 Mbps per agent.
 
 
 ## Installing multiple Windows agents

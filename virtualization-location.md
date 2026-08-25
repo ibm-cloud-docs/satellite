@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -333,7 +333,7 @@ You can find more information about what to do next in the [OpenShift Virtualiza
 ## Additional resources
 {: #sat-virt-additional}
 
-- Running a Windows 2019 Server VM in IBM Cloud Satellite with OpenShift Virtualization.
+- Running a Windows 2019 Server VM in {{site.data.keyword.satellitelong_notm}} with OpenShift Virtualization.
 - [Using the virtualization CLI tools](https://docs.redhat.com/en/documentation/openshift_container_platform/4.11/html/virtualization/virt-using-the-cli-tools){: external}
 - [Creating VMs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.11/html/virtualization/virtual-machines#virt-create-vms){: external}
 - [Creating a VM using the OpenShift Web Console](https://www.redhat.com/en/blog/creating-a-vm-using-the-openshift-web-console){: external}

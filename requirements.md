@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -25,7 +25,7 @@ subcollection: satellite
 ## Locations
 {: #reqs-locations}
 
-You can create up to 20 {{site.data.keyword.satelliteshort}} locations per {{site.data.keyword.cloud_notm}} multizone metro that the location is managed from.
+{{site.data.keyword.satellitelong_notm}} allows you to create up to 20 locations per {{site.data.keyword.cloud_notm}} multizone metro that the location is managed from.
 {: shortdesc}
 
 Name
@@ -119,7 +119,7 @@ Configuration files in {{site.data.keyword.satelliteshort}} Config
 ## {{site.data.keyword.cloud_notm}} services
 {: #reqs-services}
 
-You can have up to 40 instances of a supported {{site.data.keyword.cloud_notm}} service per {{site.data.keyword.satelliteshort}} location. For example, you might have a {{site.data.keyword.satelliteshort}} location that has 40 {{site.data.keyword.openshiftlong_notm}} clusters in it.
+{{site.data.keyword.satellitelong_notm}} supports up to 40 instances of a supported {{site.data.keyword.cloud_notm}} service per location. For example, a single {{site.data.keyword.satelliteshort}} location can run up to 40 {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
 
 Each supported service can have its own limitations to run in {{site.data.keyword.satelliteshort}}. Check the documentation of the supported service to understand the limitations.

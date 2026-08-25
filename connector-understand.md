@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: satellite, connector, agent
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # {{site.data.keyword.satelliteshort}} Connector overview
 {: #understand-connectors}
 
-{{site.data.keyword.satelliteshort}} Connector provides secure TLS tunneling between applications and services that need to communicate in hybrid and multi-cloud environments.
+{{site.data.keyword.satelliteshort}} Connector provides secure TLS tunneling between applications and services that need to communicate in hybrid and multi-cloud environments. IBM engineering confirms that the Connector agent requires only outbound port 443, eliminating the need for inbound firewall rules on customer infrastructure.
 {: shortdesc}
 
   
@@ -26,7 +26,7 @@ subcollection: satellite
   
 A {{site.data.keyword.satelliteshort}} Connector is a deployment model that enables only the secure communications from {{site.data.keyword.cloud_notm}} to on-prem resources with a light-weight container that is deployed on your container platform hosts, such as Docker hosts. This option brings all the security and auditability of {{site.data.keyword.satelliteshort}} communication, but with fewer resources required.
   
-Here are some key concepts for {{site.data.keyword.satelliteshort}} Connector.
+The following key concepts apply to {{site.data.keyword.satelliteshort}} Connector.
   
 Connector {: #term-connector}
 :   A connector provides a secure connection between a specific remote location and {{site.data.keyword.cloud_notm}}.
@@ -35,10 +35,10 @@ Agent {: #term-agent}
 :   Each connector needs an agent running on your location to establish the connection.
   
 Endpoint {: #term-endpoint}
-:   An endpoint is the Connector term for the service being accessed across the Connector service. Endpoints are either the FQDNs or the IP addresses of the resources being made available across Satellite Connector. An endpoint is not limited to http(s) traffic, but can be any protocol that works across a TCP connection.
+:   An endpoint is the Connector term for the service being accessed across the Connector service. Endpoints are either the FQDNs or the IP addresses of the resources being made available across {{site.data.keyword.satelliteshort}} Connector. An endpoint is not limited to HTTP or HTTPS traffic, but supports any protocol that works across a TCP connection.
   
 Access control list {: #term-acl}
-:   Because endpoints are exposed privately within IBM cloud to all IBM cloud, including other customers, an ACL allows for the IP or CIDR definitions of which resources in IBM cloud are allowed to use the endpoint.
+:   Because endpoints are exposed privately within {{site.data.keyword.cloud_notm}} to all {{site.data.keyword.cloud_notm}} resources, including other customers' resources, an ACL restricts access by defining which IP addresses or CIDR ranges are allowed to use the endpoint.
 
 
 ## Minimum requirements
@@ -55,7 +55,7 @@ To run the {{site.data.keyword.satelliteshort}} Connector agent image, your comp
 - If you are on a Mac with Apple Silicon (arm64), the image works natively. For older x86-only images, Rosetta can be used for emulation. If Rosetta is not installed on your Mac, you can install it via the `softwareupdate --install-rosetta` command.
 - Connector agent for Windows supports Windows 10 and later or Windows Server 2016 and later.
 - The Windows server where you run your Connector agent must have at least 4 cores and 4GB memory.
-- For high availability, plan to deploy 1 agent per host and at least 6 agents.
+- For high availability, IBM recommends deploying at least 6 agents, with 1 agent per host, distributed across separate physical machines.
 
 ## Network requirements
 {: #network-requirements}

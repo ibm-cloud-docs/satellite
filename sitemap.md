@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-25"
 
 keywords: satellite, sitemap, IBM Cloud satellite, getting started, data, cloud
 subcollection: satellite
@@ -181,7 +181,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [What version of TLS does Connector use?](/docs/satellite?topic=satellite-connector-faq#conector-faq-tls)
 
-* [How does load balancing work across Satellite connector?](/docs/satellite?topic=satellite-connector-faq#conector-faq-lbs)
+* [How does load balancing work across {{site.data.keyword.satelliteshort}} Connector?](/docs/satellite?topic=satellite-connector-faq#conector-faq-lbs)
 
 * [What are the failover or disaster recovery expectations of agents and Connector?](/docs/satellite?topic=satellite-connector-faq#conector-faq-dr)
 
@@ -3214,11 +3214,11 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
     * [Disaster recovery](/docs/satellite?topic=satellite-responsibilities#disaster-recovery)
 
 
-## Disconnected use for Satellite components
-{: #sitemap_disconnected_use_for_satellite_components}
+## Disconnected use for {{site.data.keyword.satelliteshort}} components
+{: #sitemap_disconnected_use_for_components}
 
 
-[Disconnected use for Satellite components](/docs/satellite?topic=satellite-disconnected-use#disconnected-use)
+[Disconnected use for {{site.data.keyword.satelliteshort}} components](/docs/satellite?topic=satellite-disconnected-use#disconnected-use)
 
 * [Understanding disconnected usage](/docs/satellite?topic=satellite-disconnected-use#understand-disconnected)
 
