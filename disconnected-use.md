@@ -41,15 +41,15 @@ Do I have to recover etcd backup?
 :   If you are using RHCOS hosts, you don't need to recover etcd backup. The Location recovers automatically after you reconnect it and re-authenticate. Locations that use RHEL require etcd recovery.
 
 What happens if a location stays disconnected for more than 7 days?
-:   After you restore your connection, you must replace all hosts across the location with new infrastructure.
+:   After you restore your connection, you must replace all hosts across the location with new infrastructure. The 7-day maximum is derived from the default `accessTokenMaxAgeSeconds` ceiling of 604800 seconds as configured in the OpenShift OAuth server.
 
 How do I know when to reconnect a location?
-:   You can make a note or set a reminder to reconnect the location before the 7-day window expires. The timer starts when you request the token. 
+:   You can make a note or set a reminder to reconnect the location before the 7-day window expires. The timer starts when you request the token.
 
 ## Setting the disconnected usage time
 {: #disconnect-time}
 
-{{site.data.keyword.satellitelong_notm}} allows locations and {{site.data.keyword.openshiftlong_notm}} clusters to run disconnected from the parent `managed-from` region in {{site.data.keyword.cloud_notm}} for up to 168 hours (7 days).
+{{site.data.keyword.satellitelong_notm}} allows locations and {{site.data.keyword.openshiftlong_notm}} clusters to run disconnected from the parent `managed-from` region in {{site.data.keyword.cloud_notm}} for up to 168 hours (7 days). This limit is determined by the maximum supported value for `accessTokenMaxAgeSeconds` (604800 seconds) in the OpenShift OAuth server configuration.
 {: shortdesc}
 
 You can modify this setting by changing the `accessTokenMaxAgeSeconds` value for all your OAuth clients. The default value for `accessTokenMaxAgeSeconds` parameter is 86400 seconds.
