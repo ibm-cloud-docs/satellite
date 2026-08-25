@@ -181,7 +181,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [What version of TLS does Connector use?](/docs/satellite?topic=satellite-connector-faq#conector-faq-tls)
 
-* [How does load balancing work across Satellite connector?](/docs/satellite?topic=satellite-connector-faq#conector-faq-lbs)
+* [How does load balancing work across {{site.data.keyword.satelliteshort}} Connector?](/docs/satellite?topic=satellite-connector-faq#conector-faq-lbs)
 
 * [What are the failover or disaster recovery expectations of agents and Connector?](/docs/satellite?topic=satellite-connector-faq#conector-faq-dr)
 

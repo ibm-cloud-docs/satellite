@@ -49,7 +49,7 @@ How do I know when to reconnect a location?
 ## Setting the disconnected usage time
 {: #disconnect-time}
 
-{{site.data.keyword.satelliteshort}} Locations and {{site.data.keyword.openshiftlong_notm}} can run disconnected from the parent `managed-from` region in {{site.data.keyword.cloud_notm}} for up to 168 hours (7 days).
+{{site.data.keyword.satellitelong_notm}} allows locations and {{site.data.keyword.openshiftlong_notm}} clusters to run disconnected from the parent `managed-from` region in {{site.data.keyword.cloud_notm}} for up to 168 hours (7 days).
 {: shortdesc}
 
 You can modify this setting by changing the `accessTokenMaxAgeSeconds` value for all your OAuth clients. The default value for `accessTokenMaxAgeSeconds` parameter is 86400 seconds.
