@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -21,7 +21,7 @@ Resolve issues where a {{site.data.keyword.satelliteshort}} location that anothe
 You are granted access to another user's {{site.data.keyword.satelliteshort}} location. However, when you list locations, you do not see the location.
 {: tsSymptoms}
 
-The location owner might have scoped your {{site.data.keyword.satelliteshort}} access in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to only the `location` resource type, which prevents the location from returning unless you target the regional endpoint that the location is managed from.
+The location owner scoped your {{site.data.keyword.satelliteshort}} access in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to only the `location` resource type, which prevents the location from returning unless you target the regional endpoint that the location is managed from.
 {: tsCauses}
 
 Target the regional endpoint, or ask the location owner to update your permissions.

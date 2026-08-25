@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud, location, satellite location, create location
 
@@ -55,7 +55,7 @@ I want to create an RHCOS enabled location.
 :    To create an RHCOS enabled location, you must [create it manually](/docs/satellite?topic=satellite-loc-manual-create). 
 
 I want to create a location with reduced firewall footprint
-:    Depending on your setup, you might be able to connect your location to a single network destination instead of multiple destinations to reduce the number of outbound IP addresses to allow on your firewall. For more information, see [Creating Red Hat CoreOS enabled Locations with reduced firewall footprint](/docs/satellite?topic=satellite-coreos-reduced-firewall).
+:    Depending on your setup, you can connect your location to a single network destination instead of multiple destinations to reduce the number of outbound IP addresses to allow on your firewall. For more information, see [Creating Red Hat CoreOS enabled Locations with reduced firewall footprint](/docs/satellite?topic=satellite-coreos-reduced-firewall).
 
 
 ## Is my location enabled for Red Hat CoreOS?

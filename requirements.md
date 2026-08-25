@@ -75,8 +75,8 @@ Link tunnel client instances
 
 Cloud and location endpoints
 :    Review the maximum number of each type of Link endpoint that you can create for one {{site.data.keyword.satelliteshort}} location.
-     - `cloud` endpoints: 1000 total. For example, you might create up to 650 TLS endpoints and 350 HTTP endpoints through which clients in your location can connect to resources outside of the location network.
-     - `location` endpoints: 25 total. For example, you might create up to 20 TLS endpoints and 5 HTTP endpoints through which clients outside of your location network can connect to resources inside the location.
+     - `cloud` endpoints: According to IBM Satellite service limits, 1000 total. IBM Satellite allows up to 650 TLS endpoints and 350 HTTP endpoints through which clients in your location can connect to resources outside of the location network.
+     - `location` endpoints: According to IBM Satellite service limits, 25 total. IBM Satellite allows up to 20 TLS endpoints and 5 HTTP endpoints through which clients outside of your location network can connect to resources inside the location.
 
 Link endpoints
 :   You can't use Link endpoints in one Location to trigger builds or pipelines in other {{site.data.keyword.satelliteshort}} Locations.

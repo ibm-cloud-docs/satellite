@@ -176,7 +176,7 @@ In the **Location of dependency** column, you can view if the dependency is loca
 
 To find where your service can be deployed, see [Service and infrastructure availability by location](/docs/overview?topic=overview-services_region).
 
-The table shows a standard cloud deployment. If a special deployment is used like FedRAMP or other region-bound deployment models, the data might differ from the details available in the table. Refer to the specific deployment that you are using for that information.
+The table shows a standard cloud deployment. If a special deployment is used like FedRAMP or other region-bound deployment models, the data differs from the details available in the table. Refer to the specific deployment that you are using for that information.
 {: note}
 
 ### Where are the separate control plane and data plane located, if applicable?

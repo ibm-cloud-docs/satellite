@@ -4438,7 +4438,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 {: #sitemap_hosts}
 
 
-[Enabling SSH on Satellite hosts](/docs/satellite?topic=satellite-enabling-ssh-on-hosts#enabling-ssh-on-hosts)
+[Enabling SSH on {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-enabling-ssh-on-hosts#enabling-ssh-on-hosts)
 
 * [Enabling non-root SSH on RHCOS hosts before assignment](/docs/satellite?topic=satellite-enabling-ssh-on-hosts#non-root-ssh-before-coreos)
 

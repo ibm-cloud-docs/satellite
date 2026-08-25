@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -29,7 +29,7 @@ Review the following considerations before you update your {{site.data.keyword.s
 
 How can I tell if a version update is available?
 :    Version updates for hosts become available as the {{site.data.keyword.openshiftlong_notm}} team packages new versions for worker nodes. Typically, worker node version updates are released every two weeks. 
-:    You might check for a version update to meet your required security cadence, such as updates on a monthly or bi-monthly basis. To review available version updates, see the [Version change log for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_versions).
+:    Check for a version update to meet your required security cadence, such as updates on a monthly or bi-monthly basis. To review available version updates, see the [Version change log for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_versions).
 :    You can also use the command-line interface (CLI) to quickly identify which control plane hosts need updating. When you run `ibmcloud sat location ls`, `ibmcloud sat location get`, `ibmcloud sat hosts`, or `ibmcloud sat host get`, look for symbols in the **Status** or **State** column that indicate outdated hosts. For more information, see [Identifying control plane hosts that need updating](#host-update-identify-cli).
 
 Does updating the hosts impact the cluster masters that run in the {{site.data.keyword.satelliteshort}} location control plane?

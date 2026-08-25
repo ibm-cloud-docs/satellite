@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -17,7 +17,7 @@ content-type: troubleshoot
 # Debugging host connectivity issues
 {: #ts-hosts-login}
 
-You might need to log in to your host machine to debug a host issue further.
+To debug a host issue further, log in to your host machine by following the steps in this topic.
 {: shortdesc}
 
 You can SSH into the host machine if you did not assign the host to a cluster, or if the assignment failed. Otherwise, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host by using SSH for security purposes. You can [remove the host](/docs/satellite?topic=satellite-host-remove) and reload the operating system to restore the ability to SSH into the host machine.
@@ -49,7 +49,7 @@ The first boot did not complete successfully. Check the `/tmp/bootstrap/bootstra
 ## Host registration script fails
 {: #ts-hosts-login-host-script}
 
-You receive output similar to the following messages. Note that the package name might be replaced with another package name.
+You receive output similar to the following messages. The package name in the output varies depending on your environment.
 
 ```sh
 No package matching '\''container-selinux'\'' found available, installed or updated
@@ -103,7 +103,7 @@ curl: (6) Could not resolve host
 
 The machine cannot be reached on the network. Check that your machine meets the [minimum requirements for network connectivity](/docs/satellite?topic=satellite-host-reqs), [remove the host](/docs/satellite?topic=satellite-host-remove), and try to [add](/docs/satellite?topic=satellite-attach-hosts) and [assign](/docs/satellite?topic=satellite-assigning-hosts) the host again. 
 
-Alternatively, the infrastructure provider network might have issues, such as a failed connection. Consult the infrastructure provider documentation for further debugging steps.
+Alternatively, the infrastructure provider network has connectivity issues, such as a failed connection. Consult the infrastructure provider documentation for further debugging steps.
 
 ## RHEL machine cannot be reached on the network
 {: #ts-hosts-login-cannot-reach}
@@ -123,4 +123,4 @@ Failed to untar bootstrap.tar` \n `+ rm -rf /tmp/bootstrap
 ```
 {: codeblock}
 
-The machine cannot be reached on the network. Check that your machine meets the [minimum requirements for network connectivity](/docs/satellite?topic=satellite-host-reqs), [remove the host](/docs/satellite?topic=satellite-host-remove), and try to [add](/docs/satellite?topic=satellite-attach-hosts) and [assign](/docs/satellite?topic=satellite-assigning-hosts) the host again. Alternatively, the infrastructure provider network might have issues, such as a failed connection. Consult the infrastructure provider documentation for further debugging steps.
+The machine cannot be reached on the network. Check that your machine meets the [minimum requirements for network connectivity](/docs/satellite?topic=satellite-host-reqs), [remove the host](/docs/satellite?topic=satellite-host-remove), and try to [add](/docs/satellite?topic=satellite-attach-hosts) and [assign](/docs/satellite?topic=satellite-assigning-hosts) the host again. Alternatively, the infrastructure provider network has connectivity issues, such as a failed connection. Consult the infrastructure provider documentation for further debugging steps.

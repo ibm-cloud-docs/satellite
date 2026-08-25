@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud, endpoint, link, endpoint secure
 
@@ -29,7 +29,7 @@ ibmcloud sat acl create --name NAME --location LOCATION --endpoint ENDPOINT --su
 To find the {{site.data.keyword.redhat_openshift_notm}} API endpoint in your {{site.data.keyword.satelliteshort}} location, run `ibmcloud sat endpoints --location LOCATION` and look in the output for the endpoint with a name that starts with `openshift-api-`.
 {: tip}
 
-The subnets that your ACL needs to allow depend on where you are trying to access the API server from, for example, where you are trying to run `kubectl` commands from. The actual source IP that is calling the endpoint might not be what you think it is, especially if your source is coming from a Kubernetes cluster or instance in VPC.
+The subnets that your ACL needs to allow depend on where you are trying to access the API server from, for example, where you are trying to run `kubectl` commands from. The actual source IP that is calling the endpoint is not always the IP you expect, especially if your source is coming from a Kubernetes cluster or instance in VPC.
 
 Use one of the following instructions, depending on your environment.
 

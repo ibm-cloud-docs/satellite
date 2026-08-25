@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud, location error messages, location messages, location errors
 
@@ -69,7 +69,7 @@ Location message
 :    The {{site.data.keyword.satelliteshort}} location is ready for operations.
 
 Steps to resolve
-:    Your {{site.data.keyword.satelliteshort}} location has no critical alerts, and the {{site.data.keyword.IBM_notm}} monitoring component in the location control plane is monitoring the health of your location. You might still see some warning messages for actions that you can take to improve the state of resources in your location, such as hosts.
+:    Your {{site.data.keyword.satelliteshort}} location has no critical alerts, and the {{site.data.keyword.IBM_notm}} monitoring component in the location control plane is monitoring the health of your location. Warning messages can appear for actions that you can take to improve the state of resources in your location, such as hosts.
 
 ## R0002, R0018, R0020, R0029, R0037, R0039, R0042: Wait for location to be ready
 {: #R0002}
@@ -122,7 +122,7 @@ Location message
 :    R0032: Manually assign hosts to the control plane across all 3 zones. {: #R0032}
 
 Steps to resolve
-:    Your location has no available hosts for {{site.data.keyword.satelliteshort}} to automatically assign to the location control plane, and might be reaching capacity limits. You can choose from the following options.
+:    Your location has no available hosts for {{site.data.keyword.satelliteshort}} to automatically assign to the location control plane. The location is reaching capacity limits. You can choose from the following options.
 
 - [Attach](/docs/satellite?topic=satellite-attach-hosts) and [assign](/docs/satellite?topic=satellite-setup-control-plane) more hosts to the location control plane. Keep in mind that when you scale up the location control plane, scale evenly in multiples of 3, and assign the hosts evenly across zones.
 - [Remove](/docs/satellite?topic=satellite-host-remove) and [reattach the host](/docs/satellite?topic=satellite-attach-hosts).
@@ -267,7 +267,7 @@ Location message
 :    R0043: The location does not meet the following requirement: Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. If you still have issues, contact {{site.data.keyword.cloud_notm}} Support and include your Satellite location ID.
 
 Steps to resolve
-:    Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. You cannot block access to certain ports that might block communication across hosts. Review [Host network requirements](/docs/satellite?topic=satellite-reqs-host-network) and unblock the ports on the host in your infrastructure provider.	This error can also mean that the host does not have the required RHEL packages installed, or the required CPU, memory, disk space and firewall ports opened up. After you verify that your hosts meet all the requirements, take a look at the platform logs.
+:    Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. You cannot block access to ports that are required for communication across hosts. Review [Host network requirements](/docs/satellite?topic=satellite-reqs-host-network) and unblock the ports on the host in your infrastructure provider.	This error can also mean that the host does not have the required RHEL packages installed, or the required CPU, memory, disk space and firewall ports opened up. After you verify that your hosts meet all the requirements, take a look at the platform logs.
 
 To test TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts,
 1. SSH into a host that is attached to your location but that is not assigned to any resources.
@@ -310,7 +310,7 @@ To test DNS resolution,
     ```
     {: pre}
 
-3. Ensure that `localhost` with any appended search domains in your DNS configuration either do not resolve to anything, or resolve only to `127.0.0.1`. In the `/etc/resolv.conf` file that manages DNS resolution for each host, multiple search domains, such as `search ibm.com`, might be listed. Calico Typha pods on each host run a health check that uses `localhost` resolution. However, some search domains might be appended when the health check attempts to resolve `localhost`, which causes the health check to fail. To ensure that the health check can run properly, make sure that none of the listed search domains resolve to anything other than the `127.0.0.1` IP address when appended to `localhost`.
+3. Ensure that `localhost` with any appended search domains in your DNS configuration either does not resolve to anything, or resolves only to `127.0.0.1`. In the `/etc/resolv.conf` file that manages DNS resolution for each host, multiple search domains, such as `search ibm.com`, can be listed. Calico Typha pods on each host run a health check that uses `localhost` resolution. When search domains are appended during the health check's attempt to resolve `localhost`, the health check fails. To ensure that the health check runs properly, make sure that none of the listed search domains resolve to anything other than the `127.0.0.1` IP address when appended to `localhost`.
 
 ## R0045: Host read-only file system issues
 {: #R0045}
@@ -469,7 +469,7 @@ For additional information about the affected components, [set up {{site.data.ke
 {: #R0058}
 
 Location message
-:   A location with this name was recently deleted. If you want to reuse the location name of a recently deleted location, DNS registration might take a week to complete.
+:   A location with this name was recently deleted. If you want to reuse the location name of a recently deleted location, DNS registration takes up to a week to complete.
 
 Steps to resolve
 :   If you don't need to reuse this location name, delete this location and create a location with a unique name. If the issue persists, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID.

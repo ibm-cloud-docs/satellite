@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -40,7 +40,7 @@ Your host infrastructure setup must have a low latency connection of less than o
 Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.data.keyword.cloud_notm}} multizone region](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions). You can test the latency between your hosts and the region to make sure you use a low latency connection of less than or equal to 200 milliseconds (`<= 200ms`) round trip time (RTT).
 {: shortdesc}
 
-1. In your infrastructure provider, log in to a host machine that you want to add to a {{site.data.keyword.satelliteshort}} location. For example, you might SSH into the machine from a command line.
+1. In your infrastructure provider, log in to a host machine that you want to add to a {{site.data.keyword.satelliteshort}} location. For example, SSH into the machine from a command line.
 
 2. Note the IP addresses for the {{site.data.keyword.cloud_notm}} region that you want to test
 
@@ -80,7 +80,7 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
     ```
     {: pre}
 
-4. After a few packets complete transmission, close the connection. For example, from the command line, you might enter `ctrl+c`.
+4. After a few packets complete transmission, close the connection. For example, from the command line, enter `ctrl+c`.
 5. In the `ping statistics` output, note the average (`avg`) round trip distance in milliseconds (ms) between the host and the {{site.data.keyword.cloud_notm}} region, and compare whether the connection meets the latency requirement of less than or equal to 200 milliseconds (`<= 200ms`).
 
     Example of a connection that meets the latency requirements

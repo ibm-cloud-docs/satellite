@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -32,7 +32,7 @@ Follow this list to check for errors.
 
 - Make sure that your firewall is not blocking the connection from the Connector agent that is running in Docker to the endpoint.
 
-- If an ACL is assigned to the endpoint, make sure it is set up properly with the correct source IP address or CIDR. The source IP might not be what you think it is especially if your source is coming from a Kubernetes cluster or instance in VPC. The `flowlog` entry shows the source IP address; for example,
+- If an ACL is assigned to the endpoint, make sure it is set up properly with the correct source IP address or CIDR. The source IP is not always the IP you expect, especially if your source is coming from a Kubernetes cluster or instance in VPC. The `flowlog` entry shows the source IP address; for example,
     ```sh
     May 12 15:57:49  satellite-link-tunnel-5476c9bbdf-vv6m2  satellite-link-tunnel-container 50  flowlog: rejected by Sources when client 10.39.62.229:36062 connecting to 172.18.197.208:35665, conn_type: location
     ```

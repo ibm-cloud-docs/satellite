@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud, access, manage access
 
@@ -112,7 +112,7 @@ Resource type, IAM role, and scope of access policies
 {{site.data.keyword.openshiftlong_notm}} clusters
 :    You do not assign access policies for {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satelliteshort}}. Instead, access to clusters is assigned in {{site.data.keyword.cloud_notm}} IAM through {{site.data.keyword.openshiftlong_notm}} (**Kubernetes Service** in the console or `containers-kubernetes` in the API or CLI). For more information, see [Platform and service roles for {{site.data.keyword.redhat_openshift_notm}} clusters](#iam-roles-clusters).
 
-:    If you have access to a {{site.data.keyword.satelliteshort}} location or configuration, you can view the clusters that are attached to the location or configuration. However, you might not be able to access the clusters if you do not have the appropriate roles to those clusters. For example, if you have the appropriate access to a {{site.data.keyword.satelliteshort}} configuration, you might be able to list all the Kubernetes resources that run in registered clusters through the {{site.data.keyword.satelliteshort}} Config API. However, without an access policy to the individual clusters, you cannot log in to the individual clusters and use {{site.data.keyword.redhat_openshift_notm}} APIs to list Kubernetes resources. For more information, see the following topics.
+:    If you have access to a {{site.data.keyword.satelliteshort}} location or configuration, you can view the clusters that are attached to the location or configuration. However, access to those clusters requires the appropriate IAM roles. For example, if you have the appropriate access to a {{site.data.keyword.satelliteshort}} configuration, you can list all the Kubernetes resources that run in registered clusters through the {{site.data.keyword.satelliteshort}} Config API. Without an access policy to the individual clusters, you cannot log in to the individual clusters and use {{site.data.keyword.redhat_openshift_notm}} APIs to list Kubernetes resources. For more information, see the following topics.
     - [Reference documentation](/docs/openshift?topic=openshift-iam-platform-access-roles) for user access permissions, including platform and service roles.
     - [Set the cluster credentials](/docs/openshift?topic=openshift-access-creds), such as setting up the API key for underlying infrastructure permissions and granting users access with {{site.data.keyword.cloud_notm}} IAM.
     - [Accessing clusters](/docs/openshift?topic=openshift-access_cluster) on the public or private service endpoints, or by using an {{site.data.keyword.cloud_notm}} IAM API key such as for automation purposes.
@@ -151,4 +151,4 @@ Wondering which access roles to assign to your {{site.data.keyword.satelliteshor
 | Location administrator | **Administrator** platform role for the location and link resources. **Administrator** platform role to {{site.data.keyword.redhat_openshift_notm}} clusters. **Manager** service role to the {{site.data.keyword.cos_full_notm}} instance that backs up the location control plane data.|
 | DevOps operator | **Editor** platform role for the location and link resources. **Deployer** service role for the configurations. **Operator** platform role to {{site.data.keyword.redhat_openshift_notm}} clusters.|
 | Operator or site reliability engineer | **Administrator** platform role for the location and link resources. **Manager** service role for the configuration resources. **Administrator** platform role and **Manager** service role to {{site.data.keyword.redhat_openshift_notm}} clusters. |
-{: caption="Types of roles you might assign to meet different use cases." caption-side="bottom"}
+{: caption="Types of roles to assign to meet different use cases." caption-side="bottom"}

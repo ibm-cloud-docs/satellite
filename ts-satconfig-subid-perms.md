@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-17"
+lastupdated: "2026-08-25"
 
 keywords: satellite config, subscription, id, permissions, not authorized
 
@@ -29,7 +29,7 @@ The user ID that is used as the {{site.data.keyword.satelliteshort}} Config subs
 Change the subscription identity to use a different user ID. That user becomes the new subscription "owner", and the {{site.data.keyword.satelliteshort}} Config rollout uses their permissions. 
 {: tsResolve}
 
-1. Verify that the current subscription identity belongs to a user that no longer has the necessary permissions. In the **status** section of the command output, find the **Impersonate-user** field and note the listed username, which might be listed as a single value or in the form of an email address, such as `username@ibm.com`. In the same **status** section, look for a `403` error with a message similar to the one in the example output.
+1. Verify that the current subscription identity belongs to a user that no longer has the necessary permissions. In the **status** section of the command output, find the **Impersonate-user** field and note the listed username. The username is listed as a single value or in the form of an email address, such as `username@ibm.com`. In the same **status** section, look for a `403` error with a message similar to the one in the example output.
 
     To find the subscription name, run `ibmcloud sat subscription ls`.
     {: tip}

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-17"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -25,7 +25,7 @@ Resolve issues with cluster add-ons in {{site.data.keyword.satellitelong_notm}},
 When you try to use a cluster add-on in {{site.data.keyword.satellitelong}}, the cluster add-on does not work. For example, you installed the Kubernetes web terminal add-on but cannot open the add-on.
 {: tsSymptoms}
 
-Add-ons might not work for several reason.
+Add-ons fail to work for the following reasons.
 {: tsCauses}
 
 - The add-on is not supported for clusters in a {{site.data.keyword.satelliteshort}} location.

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud, assigning hosts, host auto assignment, host auto assignment, host labels
 
@@ -34,7 +34,7 @@ Default host labels
 :    When you attach a host to a {{site.data.keyword.satelliteshort}} location, the host automatically gets labels for `cpu`, `os`, and `memory` (in bytes). You cannot remove these labels. You can include additional host labels, or update the host metadata later. If the host does not include the `os` label, it is automatically assumed as `RHEL7`.
 
 Hosts can have more labels than worker pools
-:    For example, your host might have `cpu`, `memory`, and `env` host labels, but the requesting worker pool has only a `cpu` host label. Host auto assignment matches the `cpu` labels. Note that the reverse does not work. If a worker pool has more labels than a host, the host cannot be auto assigned to the worker pool.
+:    For example, a host with `cpu`, `memory`, and `env` host labels can be auto-assigned to a worker pool that has only a `cpu` host label. Host auto assignment matches the `cpu` labels. The reverse does not work: if a worker pool has more labels than a host, the host cannot be auto assigned to the worker pool.
 
 Matching is exact
 :    Host labels must equal (`=`) each other exactly. Even if the host label is a number, no less than (`<`), greater than (`>`), or other operators are used for matching.
