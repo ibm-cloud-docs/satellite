@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-24"
 
 keywords: satellite, hybrid, multicloud, assigning hosts, host auto assignment, host auto assignment, host labels
 
@@ -51,10 +51,10 @@ Your {{site.data.keyword.satelliteshort}} location has available (unassigned) ho
 - Host A: `cpu=4, memory=32, env=prod, zone=us-east-1b` `os=rhel`
 - Host B: `cpu=4, memory=32, zone=us-east-1a` `os=RHEL7`
 - Host C: `cpu=4, memory=64, env=prod` `os=RHEL7`
-- Host D: `cpu=4, memory=64, env=prod` `os=RHCOS`
+- Host D: `cpu=4, memory=64, env=prod` `os=RHCOS` (Red Hat CoreOS)
 
 If you resize the `default` worker pool to request 3 more worker nodes, only Host C can be automatically assigned, but not Host A or Host B.
-- Host A meets the CPU and `env=prod` label requests, but can only be assigned in `us-east-1b`. Because the `default` worker pool is only in `us-east-1a`, Host A is not assigned.
+- Host A meets the central processing unit (CPU) and `env=prod` label requests, but can only be assigned in `us-east-1b`. Because the `default` worker pool is only in `us-east-1a`, Host A is not assigned.
 - Host B meets the CPU and zone requests. However, the host does not have the `env=prod` label, and so is not assigned.
 - Host C is automatically assigned because it matches the `cpu=4` and `env=prod` host labels, and does not have any zone restrictions. The `memory=64` host label is not considered, because the worker pool does not request a `memory` label.
 - Host D meets the CPU, zone, and `env=prod` label requests, but does not meet the `os` request of `RHEL7`, and so is not assigned.
@@ -68,7 +68,7 @@ Hosts must be assigned as worker nodes in each zone of the default worker pool i
 {{site.data.keyword.satellitelong_notm}} can automatically assign hosts to worker pools in {{site.data.keyword.satelliteshort}} clusters that request compute capacity by using host labels, such as `cpu`.
 {: shortdesc}
 
-Before you begin, make sure that you create a {{site.data.keyword.satelliteshort}} cluster. If you create a cluster in the [CLI](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#cli_satellite-cluster-create), you must specify the `--workers` option with the number of hosts you want to automatically assign. Then, make sure that you [attach hosts](/docs/satellite?topic=satellite-attach-hosts) to your {{site.data.keyword.satelliteshort}} location, but do not assign the hosts to any resources.
+Before you begin, make sure that you create a {{site.data.keyword.satelliteshort}} cluster. If you create a cluster in the [CLI](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#cli_cluster-create-satellite), you must specify the `--workers` option with the number of hosts you want to automatically assign. Then, make sure that you [attach hosts](/docs/satellite?topic=satellite-attach-hosts) to your {{site.data.keyword.satelliteshort}} location, but do not assign the hosts to any resources.
 
 1. Review the host labels that the worker pools use to request compute capacity. You have several options.
     - [Create a worker pool in a {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-clusters) with the host labels that you want to use for auto assignment.

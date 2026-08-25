@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-06-17"
+  years: 2020, 2026
+lastupdated: "2026-08-24"
 
 keywords: satellite, hybrid, multicloud, default link enpoints, default link
 
@@ -54,9 +54,8 @@ The following table describes the Link endpoints that are automatically created 
 | `openshift-api-<cluster_ID>` | Allows the {{site.data.keyword.openshiftlong_notm}} API to communicate with the master for the service cluster. By default, your {{site.data.keyword.openshiftlong_notm}} API {{site.data.keyword.satelliteshort}} link endpoints are protected to accept traffic from only the {{site.data.keyword.cloud_notm}} control plane. To access them, you must [create a source list](/docs/satellite?topic=satellite-link-endpoint-secure) for your endpoint to be accessible from other sources. | Location | One per {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service in your location |
 {: caption="Default Link endpoints." caption-side="bottom"}
 
-These endpoints are used to manage and update your location and are enabled by default. If you disable any of these endpoints, your client services that are running on your location can be negatively impacted. To avoid issues, do not disable these endpoints.
+These endpoints are used to manage and update your location and are enabled by default. If you disable any of these endpoints, your client services that are running on your location can be negatively impacted. To avoid issues, do not disable these endpoints.
 {: important}
-
 
 ## Default link endpoints for locations without CoreOS enabled
 {: #non-rhcos-default-endpoints}

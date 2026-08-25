@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-17"
+lastupdated: "2026-08-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -19,13 +19,13 @@ content-type: conref
 Review content references for {{site.data.keyword.satelliteshort}}, including reusable snippets for storage templates, cost estimation, and other shared content.
 {: shortdesc}
 
-## Understanding which ODF storage template to use
+## Understanding which OpenShift Data Foundation (ODF) storage template to use
 {: #compare-odf}
 
 You have two options when deploying OpenShift Data Foundation to your {{site.data.keyword.satelliteshort}} clusters, which are the `odf-local` and `odf-remote` storage templates.
 
 - [`odf-local`](/docs/satellite?topic=satellite-storage-odf-local): Choose this template when you have local storage available to your worker nodes. If your storage volumes are visible when running `lsblk`, you can use these disks when deploying ODF if they are raw and unformatted.
-- [`odf-remote`](/docs/satellite?topic=satellite-storage-odf-remote): Choose this template if you have a CSI driver installed in your cluster. For example, the `azuredisk-csi-driver` driver. You can use the CSI driver to dynamically provision storage volumes when deploying ODF.
+- [`odf-remote`](/docs/satellite?topic=satellite-storage-odf-remote): Choose this template if you have a Container Storage Interface (CSI) driver installed in your cluster. For example, the `azuredisk-csi-driver` driver. You can use the CSI driver to dynamically provision storage volumes when deploying ODF.
 
 
 
@@ -42,10 +42,10 @@ Keep in mind that some charges are not reflected in the estimate, such as the co
 {: faq}
  
 
-See [View your usage](/docs/account?topic=account-viewingusage#viewingusage) and [Set spending notifications](/docs/account?topic=account-spending-notifications) for general {{site.data.keyword.cloud_notm}} account guidance.
+See [View your usage](/docs/account?topic=account-viewingusage#viewingusage) and [Set spending notifications](/docs/account?topic=account-spending) for general {{site.data.keyword.cloud_notm}} account guidance.
 
 
-## Creating an assignment in the CLI
+## Creating an assignment in the command-line interface (CLI)
 {: #assignment-create-cli}
 {: cli}
 
@@ -127,7 +127,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
     ```
     {: pre}
 
-    Example command to upgrade a configuration and it's associated assignments to the latest revision.
+    Example command to upgrade a configuration and its associated assignments to the latest revision.
     ```sh
     ibmcloud sat storage config upgrade --config CONFIG --include-assignments
     ```
@@ -266,7 +266,7 @@ If you enable automatic patch updates, you must still apply major updates manual
     
 
 
-## Creating a storage assignment in the API
+## Creating a storage assignment in the application programming interface (API)
 {: #assignment-create-api}
 {: api}
 

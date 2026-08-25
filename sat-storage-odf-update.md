@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-17"
+lastupdated: "2026-08-24"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -33,7 +33,7 @@ Update OpenShift Data Foundation in your {{site.data.keyword.satelliteshort}} cl
 
 [Major]{: tag-red}
 
-1. Update the [management plane](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_update)
+1. Update the [management plane](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update)
 
     Example command: 
     ```sh
@@ -42,7 +42,7 @@ Update OpenShift Data Foundation in your {{site.data.keyword.satelliteshort}} cl
     {: pre}
 
 
-## Determine which ODF worker nodes you want to update
+## Determine which OpenShift Data Foundation (ODF) worker nodes you want to update
 {: #determine-worker-nodes-sat}
 {: step}
 
@@ -284,7 +284,7 @@ Update OpenShift Data Foundation in your {{site.data.keyword.satelliteshort}} cl
 
 [Major]{: tag-red}
 
-The following steps will upgrade ODF to the next version.
+The following steps upgrade ODF to the next version.
 
 1. Update your storage configuration to set the `perform-cleanup` parameter to `false` from the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. If this parameter is not set to `false`, ODF is removed.
 

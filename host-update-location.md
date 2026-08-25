@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-24"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -30,7 +30,7 @@ Review the following considerations before you update your {{site.data.keyword.s
 How can I tell if a version update is available?
 :    Version updates for hosts become available as the {{site.data.keyword.openshiftlong_notm}} team packages new versions for worker nodes. Typically, worker node version updates are released every two weeks. 
 :    You might check for a version update to meet your required security cadence, such as updates on a monthly or bi-monthly basis. To review available version updates, see the [Version change log for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_versions).
-:    You can also use the CLI to quickly identify which control plane hosts need updating. When you run `ibmcloud sat location ls`, `ibmcloud sat location get`, `ibmcloud sat hosts`, or `ibmcloud sat host get`, look for symbols in the **Status** or **State** column that indicate outdated hosts. For more information, see [Identifying control plane hosts that need updating](#host-update-identify-cli).
+:    You can also use the command-line interface (CLI) to quickly identify which control plane hosts need updating. When you run `ibmcloud sat location ls`, `ibmcloud sat location get`, `ibmcloud sat hosts`, or `ibmcloud sat host get`, look for symbols in the **Status** or **State** column that indicate outdated hosts. For more information, see [Identifying control plane hosts that need updating](#host-update-identify-cli).
 
 Does updating the hosts impact the cluster masters that run in the {{site.data.keyword.satelliteshort}} location control plane?
 :    Yes. Because the cluster masters run in your {{site.data.keyword.satelliteshort}} location control plane, make sure that you have enough extra hosts in your control plane before you update any hosts. To attach extra hosts, see [Attaching capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-attach-hosts).
@@ -92,7 +92,7 @@ When you see either symbol, [update your control plane hosts](#host-update-cp-pr
 The {{site.data.keyword.satelliteshort}} console surfaces control plane host upgrade status in two places.
 
 **Locations table:**
-A new **Control plane health** column displays a color-coded status icon based on the `hostUpdateSeverity` API field.
+A new **Control plane health** column displays a color-coded status icon based on the `hostUpdateSeverity` application programming interface (API) field.
 
 - Green icon — All control plane hosts are up to date.
 - Yellow icon — One or more control plane hosts are at least one patch version behind (`*` equivalent).
@@ -133,7 +133,7 @@ As part of the bootstrapping process, the latest images and {{site.data.keyword.
 Updating your Kubernetes API does not update your control plane hosts.
 {: note}
 
-To update your Kubernetes API server, run the [`cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_update) command.
+To update your Kubernetes API server, run the [`cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command.
 
 
 ## Resetting the host key
@@ -154,7 +154,7 @@ ibmcloud sat host attach --location LOCATION_NAME --reset-key
 If you are using Terraform with your {{site.data.keyword.satelliteshort}} location and your host key is reset, either because it expired or you manually reset it, you are then prompted to replace all your hosts, including hosts that are assigned. You can avoid this issue by updating your Terraform script. For more information, see [Why is my host attach script triggering a state change in Terraform?](/docs/satellite?topic=satellite-ts-host-terraform).
 {: note}
 
-## Migrating your control plane to a new RHEL version
+## Migrating your control plane to a new Red Hat Enterprise Linux (RHEL) version
 {: #migrate-cp-rhel}
 
 To replace your control plane hosts on an older version of RHEL, you must first add a hosts at the newer version of RHEL that you want to use. After you attach new hosts to your location and assign them to the control plane, you can remove the old hosts in the same zone from the control plane. 

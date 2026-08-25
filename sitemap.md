@@ -169,7 +169,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [I created an ACL for my Connector, why doesn't it take effect?](/docs/satellite?topic=satellite-connector-faq#connector-faq-acl-implementation)
 
-* [What IAM permissions do I need for Connectors?](/docs/satellite?topic=satellite-connector-faq#conector-faq-permissions)
+* [What Identity and Access Management (IAM) permissions do I need for Connectors?](/docs/satellite?topic=satellite-connector-faq#conector-faq-permissions)
 
 * [How many Connectors are supported per account per region?](/docs/satellite?topic=satellite-connector-faq#connector-faq-con-per-region)
 
@@ -995,7 +995,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Manually creating locations from the console](/docs/satellite?topic=satellite-loc-manual-create#location-create-console)
 
-* [Creating locations from the CLI](/docs/satellite?topic=satellite-loc-manual-create#locations-create-cli)
+* [Creating locations from the command-line interface (CLI)](/docs/satellite?topic=satellite-loc-manual-create#locations-create-cli)
 
 * [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-loc-manual-create#manual-loc-whats-next)
 
@@ -1144,7 +1144,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Resetting the host key](/docs/satellite?topic=satellite-host-update-location#host-key-reset)
 
-* [Migrating your control plane to a new RHEL version](/docs/satellite?topic=satellite-host-update-location#migrate-cp-rhel)
+* [Migrating your control plane to a new Red Hat Enterprise Linux (RHEL) version](/docs/satellite?topic=satellite-host-update-location#migrate-cp-rhel)
 
 [Updating hosts that are assigned as worker nodes](/docs/satellite?topic=satellite-host-update-workers#host-update-workers)
 
@@ -1630,9 +1630,9 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=api#aws-ebs-csi-driver-config-create-api)
 
-* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=cli#storage-aws-ebs-csi-driver-include-assignment-create-cli)
+* [Creating an assignment in the command-line interface (CLI)](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=cli#storage-aws-ebs-csi-driver-include-assignment-create-cli)
 
-* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=api#storage-aws-ebs-csi-driver-include-assignment-create-api)
+* [Creating a storage assignment in the application programming interface (API)](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=api#storage-aws-ebs-csi-driver-include-assignment-create-api)
 
 * [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=ui#storage-aws-ebs-csi-driver-include-configuration-upgrade-console)
 
@@ -1674,9 +1674,9 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=api#aws-efs-csi-driver-config-create-api)
 
-* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=cli#storage-aws-efs-csi-driver-include-assignment-create-cli)
+* [Creating an assignment in the command-line interface (CLI)](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=cli#storage-aws-efs-csi-driver-include-assignment-create-cli)
 
-* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=api#storage-aws-efs-csi-driver-include-assignment-create-api)
+* [Creating a storage assignment in the application programming interface (API)](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=api#storage-aws-efs-csi-driver-include-assignment-create-api)
 
 * [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=ui#storage-aws-efs-csi-driver-include-configuration-upgrade-console)
 
@@ -1723,9 +1723,9 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=api#azuredisk-csi-driver-config-create-api)
 
-* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=cli#storage-azuredisk-csi-driver-include-assignment-create-cli)
+* [Creating an assignment in the command-line interface (CLI)](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=cli#storage-azuredisk-csi-driver-include-assignment-create-cli)
 
-* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=api#storage-azuredisk-csi-driver-include-assignment-create-api)
+* [Creating a storage assignment in the application programming interface (API)](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=api#storage-azuredisk-csi-driver-include-assignment-create-api)
 
 * [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=ui#storage-azuredisk-csi-driver-include-configuration-upgrade-console)
 
@@ -1769,9 +1769,9 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-azurefile-csi-driver&interface=api#azurefile-csi-driver-config-create-api)
 
-* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-azurefile-csi-driver&interface=cli#storage-azurefile-csi-driver-include-assignment-create-cli)
+* [Creating an assignment in the command-line interface (CLI)](/docs/satellite?topic=satellite-storage-azurefile-csi-driver&interface=cli#storage-azurefile-csi-driver-include-assignment-create-cli)
 
-* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-azurefile-csi-driver&interface=api#storage-azurefile-csi-driver-include-assignment-create-api)
+* [Creating a storage assignment in the application programming interface (API)](/docs/satellite?topic=satellite-storage-azurefile-csi-driver&interface=api#storage-azurefile-csi-driver-include-assignment-create-api)
 
 * [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-azurefile-csi-driver&interface=ui#storage-azurefile-csi-driver-include-configuration-upgrade-console)
 
@@ -1816,9 +1816,9 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver&interface=api#gcp-compute-persistent-disk-csi-driver-config-create-api)
 
-* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver&interface=cli#storage-gcp-compute-persistent-disk-csi-driver-include-assignment-create-cli)
+* [Creating an assignment in the command-line interface (CLI)](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver&interface=cli#storage-gcp-compute-persistent-disk-csi-driver-include-assignment-create-cli)
 
-* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver&interface=api#storage-gcp-compute-persistent-disk-csi-driver-include-assignment-create-api)
+* [Creating a storage assignment in the application programming interface (API)](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver&interface=api#storage-gcp-compute-persistent-disk-csi-driver-include-assignment-create-api)
 
 * [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver&interface=ui#storage-gcp-compute-persistent-disk-csi-driver-include-configuration-upgrade-console)
 
@@ -1859,13 +1859,13 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver&interface=ui#ibm-system-storage-block-csi-driver-config-create-console)
 
-* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver&interface=cli#ibm-system-storage-block-csi-driver-config-create-cli)
+* [Creating a configuration in the command-line interface (CLI)](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver&interface=cli#ibm-system-storage-block-csi-driver-config-create-cli)
 
-* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver&interface=api#ibm-system-storage-block-csi-driver-config-create-api)
+* [Creating a configuration in the application programming interface (API)](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver&interface=api#ibm-system-storage-block-csi-driver-config-create-api)
 
-* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver&interface=cli#storage-ibm-system-storage-block-csi-driver-include-assignment-create-cli)
+* [Creating an assignment in the command-line interface (CLI)](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver&interface=cli#storage-ibm-system-storage-block-csi-driver-include-assignment-create-cli)
 
-* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver&interface=api#storage-ibm-system-storage-block-csi-driver-include-assignment-create-api)
+* [Creating a storage assignment in the application programming interface (API)](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver&interface=api#storage-ibm-system-storage-block-csi-driver-include-assignment-create-api)
 
 * [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver&interface=ui#storage-ibm-system-storage-block-csi-driver-include-configuration-upgrade-console)
 
@@ -1901,9 +1901,9 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin&interface=api#ibm-object-storage-plugin-config-create-api)
 
-* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin&interface=cli#storage-ibm-object-storage-plugin-include-assignment-create-cli)
+* [Creating an assignment in the command-line interface (CLI)](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin&interface=cli#storage-ibm-object-storage-plugin-include-assignment-create-cli)
 
-* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin&interface=api#storage-ibm-object-storage-plugin-include-assignment-create-api)
+* [Creating a storage assignment in the application programming interface (API)](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin&interface=api#storage-ibm-object-storage-plugin-include-assignment-create-api)
 
 * [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin&interface=ui#storage-ibm-object-storage-plugin-include-configuration-upgrade-console)
 
@@ -1939,9 +1939,9 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver&interface=api#ibm-vpc-block-csi-driver-config-create-api)
 
-* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver&interface=cli#storage-ibm-vpc-block-csi-driver-include-assignment-create-cli)
+* [Creating an assignment in the command-line interface (CLI)](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver&interface=cli#storage-ibm-vpc-block-csi-driver-include-assignment-create-cli)
 
-* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver&interface=api#storage-ibm-vpc-block-csi-driver-include-assignment-create-api)
+* [Creating a storage assignment in the application programming interface (API)](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver&interface=api#storage-ibm-vpc-block-csi-driver-include-assignment-create-api)
 
 * [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver&interface=ui#storage-ibm-vpc-block-csi-driver-include-configuration-upgrade-console)
 
@@ -1986,9 +1986,9 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-netapp-trident&interface=api#netapp-trident-config-create-api)
 
-* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-netapp-trident&interface=cli#storage-netapp-trident-include-assignment-create-cli)
+* [Creating an assignment in the command-line interface (CLI)](/docs/satellite?topic=satellite-storage-netapp-trident&interface=cli#storage-netapp-trident-include-assignment-create-cli)
 
-* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-netapp-trident&interface=api#storage-netapp-trident-include-assignment-create-api)
+* [Creating a storage assignment in the application programming interface (API)](/docs/satellite?topic=satellite-storage-netapp-trident&interface=api#storage-netapp-trident-include-assignment-create-api)
 
 * [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-netapp-trident&interface=ui#storage-netapp-trident-include-configuration-upgrade-console)
 
@@ -2018,9 +2018,9 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-netapp-ontap-nas&interface=api#netapp-ontap-nas-config-create-api)
 
-* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-netapp-ontap-nas&interface=cli#storage-netapp-ontap-nas-include-assignment-create-cli)
+* [Creating an assignment in the command-line interface (CLI)](/docs/satellite?topic=satellite-storage-netapp-ontap-nas&interface=cli#storage-netapp-ontap-nas-include-assignment-create-cli)
 
-* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-netapp-ontap-nas&interface=api#storage-netapp-ontap-nas-include-assignment-create-api)
+* [Creating a storage assignment in the application programming interface (API)](/docs/satellite?topic=satellite-storage-netapp-ontap-nas&interface=api#storage-netapp-ontap-nas-include-assignment-create-api)
 
 * [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-netapp-ontap-nas&interface=ui#storage-netapp-ontap-nas-include-configuration-upgrade-console)
 
@@ -2060,9 +2060,9 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-netapp-ontap-san&interface=api#netapp-ontap-san-config-create-api)
 
-* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-netapp-ontap-san&interface=cli#storage-netapp-ontap-san-include-assignment-create-cli)
+* [Creating an assignment in the command-line interface (CLI)](/docs/satellite?topic=satellite-storage-netapp-ontap-san&interface=cli#storage-netapp-ontap-san-include-assignment-create-cli)
 
-* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-netapp-ontap-san&interface=api#storage-netapp-ontap-san-include-assignment-create-api)
+* [Creating a storage assignment in the application programming interface (API)](/docs/satellite?topic=satellite-storage-netapp-ontap-san&interface=api#storage-netapp-ontap-san-include-assignment-create-api)
 
 * [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-netapp-ontap-san&interface=ui#storage-netapp-ontap-san-include-configuration-upgrade-console)
 
@@ -2097,9 +2097,9 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-local-storage-operator&interface=api#local-storage-operator-config-create-api)
 
-* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-local-storage-operator&interface=cli#storage-local-storage-operator-include-assignment-create-cli)
+* [Creating an assignment in the command-line interface (CLI)](/docs/satellite?topic=satellite-storage-local-storage-operator&interface=cli#storage-local-storage-operator-include-assignment-create-cli)
 
-* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-local-storage-operator&interface=api#storage-local-storage-operator-include-assignment-create-api)
+* [Creating a storage assignment in the application programming interface (API)](/docs/satellite?topic=satellite-storage-local-storage-operator&interface=api#storage-local-storage-operator-include-assignment-create-api)
 
 * [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-local-storage-operator&interface=ui#storage-local-storage-operator-include-configuration-upgrade-console)
 
@@ -2125,9 +2125,9 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-local-storage&interface=api#local-storage-config-create-api)
 
-* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-local-storage&interface=cli#storage-local-storage-include-assignment-create-cli)
+* [Creating an assignment in the command-line interface (CLI)](/docs/satellite?topic=satellite-storage-local-storage&interface=cli#storage-local-storage-include-assignment-create-cli)
 
-* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-local-storage&interface=api#storage-local-storage-include-assignment-create-api)
+* [Creating a storage assignment in the application programming interface (API)](/docs/satellite?topic=satellite-storage-local-storage&interface=api#storage-local-storage-include-assignment-create-api)
 
 * [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-local-storage&interface=ui#storage-local-storage-include-configuration-upgrade-console)
 
@@ -2161,13 +2161,13 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-local-volume-block&interface=ui#local-volume-block-config-create-console)
 
-* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-volume-block&interface=cli#local-volume-block-config-create-cli)
+* [Creating a configuration in the command-line interface (CLI)](/docs/satellite?topic=satellite-storage-local-volume-block&interface=cli#local-volume-block-config-create-cli)
 
-* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-local-volume-block&interface=api#local-volume-block-config-create-api)
+* [Creating a configuration in the application programming interface (API)](/docs/satellite?topic=satellite-storage-local-volume-block&interface=api#local-volume-block-config-create-api)
 
-* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-local-volume-block&interface=cli#storage-local-volume-block-include-assignment-create-cli)
+* [Creating an assignment in the command-line interface (CLI)](/docs/satellite?topic=satellite-storage-local-volume-block&interface=cli#storage-local-volume-block-include-assignment-create-cli)
 
-* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-local-volume-block&interface=api#storage-local-volume-block-include-assignment-create-api)
+* [Creating a storage assignment in the application programming interface (API)](/docs/satellite?topic=satellite-storage-local-volume-block&interface=api#storage-local-volume-block-include-assignment-create-api)
 
 * [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-local-volume-block&interface=cli#storage-local-volume-block-include-assignment-upgrade-cli)
 
@@ -2213,13 +2213,13 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-local-volume-file&interface=ui#local-volume-file-config-create-console)
 
-* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-volume-file&interface=cli#local-volume-file-config-create-cli)
+* [Creating a configuration in the command-line interface (CLI)](/docs/satellite?topic=satellite-storage-local-volume-file&interface=cli#local-volume-file-config-create-cli)
 
-* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-local-volume-file&interface=api#local-volume-file-config-create-api)
+* [Creating a configuration in the application programming interface (API)](/docs/satellite?topic=satellite-storage-local-volume-file&interface=api#local-volume-file-config-create-api)
 
-* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-local-volume-file&interface=cli#storage-local-volume-file-include-assignment-create-cli)
+* [Creating an assignment in the command-line interface (CLI)](/docs/satellite?topic=satellite-storage-local-volume-file&interface=cli#storage-local-volume-file-include-assignment-create-cli)
 
-* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-local-volume-file&interface=api#storage-local-volume-file-include-assignment-create-api)
+* [Creating a storage assignment in the application programming interface (API)](/docs/satellite?topic=satellite-storage-local-volume-file&interface=api#storage-local-volume-file-include-assignment-create-api)
 
 * [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-local-volume-file&interface=ui#storage-local-volume-file-include-configuration-upgrade-console)
 
@@ -2259,7 +2259,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 [OpenShift Data Foundation using local disks](/docs/satellite?topic=satellite-storage-odf-local#storage-odf-local)
 
-* [Understanding which ODF storage template to use](/docs/satellite?topic=satellite-storage-odf-local#storage-odf-local-include-compare-odf)
+* [Understanding which OpenShift Data Foundation (ODF) storage template to use](/docs/satellite?topic=satellite-storage-odf-local#storage-odf-local-include-compare-odf)
 
 * [Prerequisites for ODF](/docs/satellite?topic=satellite-storage-odf-local#sat-storage-odf-local-prereq)
 
@@ -2273,9 +2273,9 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-odf-local&interface=api#odf-local-config-create-api)
 
-* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#storage-odf-local-include-assignment-create-cli)
+* [Creating an assignment in the command-line interface (CLI)](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#storage-odf-local-include-assignment-create-cli)
 
-* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-odf-local&interface=api#storage-odf-local-include-assignment-create-api)
+* [Creating a storage assignment in the application programming interface (API)](/docs/satellite?topic=satellite-storage-odf-local&interface=api#storage-odf-local-include-assignment-create-api)
 
 * [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-odf-local&interface=ui#storage-odf-local-include-configuration-upgrade-console)
 
@@ -2319,7 +2319,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 [OpenShift Data Foundation for remote devices](/docs/satellite?topic=satellite-storage-odf-remote#storage-odf-remote)
 
-* [Understanding which ODF storage template to use](/docs/satellite?topic=satellite-storage-odf-remote#storage-odf-remote-include-compare-odf)
+* [Understanding which OpenShift Data Foundation (ODF) storage template to use](/docs/satellite?topic=satellite-storage-odf-remote#storage-odf-remote-include-compare-odf)
 
 * [Prerequisites for using ODF for remote devices](/docs/satellite?topic=satellite-storage-odf-remote#sat-storage-odf-remote-prereq)
 
@@ -2331,9 +2331,9 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-odf-remote&interface=api#odf-remote-config-create-api)
 
-* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#storage-odf-remote-include-assignment-create-cli)
+* [Creating an assignment in the command-line interface (CLI)](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#storage-odf-remote-include-assignment-create-cli)
 
-* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-odf-remote&interface=api#storage-odf-remote-include-assignment-create-api)
+* [Creating a storage assignment in the application programming interface (API)](/docs/satellite?topic=satellite-storage-odf-remote&interface=api#storage-odf-remote-include-assignment-create-api)
 
 * [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-odf-remote&interface=ui#storage-odf-remote-include-configuration-upgrade-console)
 
@@ -2379,7 +2379,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Update the cluster master](/docs/satellite?topic=satellite-sat-storage-odf-update#sat-storage-update-cluster-master)
 
-* [Determine which ODF worker nodes you want to update](/docs/satellite?topic=satellite-sat-storage-odf-update#determine-worker-nodes-sat)
+* [Determine which OpenShift Data Foundation (ODF) worker nodes you want to update](/docs/satellite?topic=satellite-sat-storage-odf-update#determine-worker-nodes-sat)
 
 * [Scale down OpenShift Data Foundation](/docs/satellite?topic=satellite-sat-storage-odf-update#scale-down-odf-sat)
 
@@ -2424,9 +2424,9 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-vsphere-csi-driver&interface=api#vsphere-csi-driver-config-create-api)
 
-* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-vsphere-csi-driver&interface=cli#storage-vsphere-csi-driver-include-assignment-create-cli)
+* [Creating an assignment in the command-line interface (CLI)](/docs/satellite?topic=satellite-storage-vsphere-csi-driver&interface=cli#storage-vsphere-csi-driver-include-assignment-create-cli)
 
-* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-vsphere-csi-driver&interface=api#storage-vsphere-csi-driver-include-assignment-create-api)
+* [Creating a storage assignment in the application programming interface (API)](/docs/satellite?topic=satellite-storage-vsphere-csi-driver&interface=api#storage-vsphere-csi-driver-include-assignment-create-api)
 
 * [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-vsphere-csi-driver&interface=ui#storage-vsphere-csi-driver-include-configuration-upgrade-console)
 
@@ -2543,7 +2543,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
     * [Checking IAM platform and service access roles from the CLI](/docs/satellite?topic=satellite-iam-assign-access#checking-iam-cli)
 
-[IAM platform and service access roles](/docs/satellite?topic=satellite-iam-platform-access#iam-platform-access)
+[Identity and Access Management (IAM) platform and service access roles](/docs/satellite?topic=satellite-iam-platform-access#iam-platform-access)
 
 * [IBM Cloud Satellite](/docs/satellite?topic=satellite-iam-platform-access#iam-platform-access-include-satellite-roles)
 
@@ -4518,7 +4518,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 [Why does the list of Kubernetes resources not show up or update after registering my cluster with {{site.data.keyword.satelliteshort}} Config?](/docs/satellite?topic=satellite-satconfig-cluster-access-error#satconfig-cluster-access-error)
 
-[Why can't I access the {{site.data.keyword.redhat_openshift_notm}} console without a VPN on the VPC?](/docs/satellite?topic=satellite-ts-console-fail#ts-console-fail)
+[Why can't I access the {{site.data.keyword.redhat_openshift_notm}} console without a virtual private network (VPN) on the virtual private cloud (VPC)?](/docs/satellite?topic=satellite-ts-console-fail#ts-console-fail)
 
 [Why can't I update or complete other actions with my cluster?](/docs/satellite?topic=satellite-ts-cluster-operations-blocked#ts-cluster-operations-blocked)
 

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-19"
+lastupdated: "2026-08-24"
 
 keywords: satellite, hybrid, multicloud, tenancy, resellers, satellite reseller, satellite use case
 
@@ -44,7 +44,7 @@ Create a responsibility matrix for your enterprise and your clients. The followi
 
 | Your enterprise | Client cluster administrator | Client cluster operator | Client developer |
 | --- | --- | --- | --- |
-| - Prepare requirements template & review client requirements.  \n - Prepare quote.  \n - Create client accounts, locations, and clusters, and API keys. | - Perform requirements assessment.  \n - Complete the requirements template.  \n - Review and approve quote.  \n - Review and confirm environment setup.  \n - Assign cluster operator and developer roles. | Verify cluster operator permissions | Verify cluster developer permissions |
+| - Prepare requirements template & review client requirements.  \n - Prepare quote.  \n - Create client accounts, locations, and clusters, and application programming interface (API) keys. | - Perform requirements assessment.  \n - Complete the requirements template.  \n - Review and approve quote.  \n - Review and confirm environment setup.  \n - Assign cluster operator and developer roles. | Verify cluster operator permissions | Verify cluster developer permissions |
 {: caption="Example responsibility matrix for resellers." caption-side="bottom"}
 
 
@@ -110,8 +110,8 @@ To create a location, open the [{{site.data.keyword.satelliteshort}} console](ht
 Getting started options
 :    The following options determine your installation process.
 :    - If your infrastructure is on prem or edge, select the **On prem and Edge** option. With this option, you create a location, choose your zones, and download a host attach script to run on your hosts.
-:    - If your infrastructure is a cloud provider and you want to use only hosts that are running RHEL, select the cloud provider that you want to use, enter your credentials, and create your location. You can also [download the terraform template](https://github.com/terraform-ibm-modules/terraform-ibm-satellite/tree/main/examples){: external} and edit it before you run it.
-:    - If your infrastructure is a cloud provider and you want to use hosts that are running RHCOS or want to have more control over your host creation, then select **Advanced configuration**. With this option, you create a location, choose your zones, include your cloud provider credentials, and then download a host attach script (RHEL) or an ignition script (RHCOS) to run on your hosts.
+:    - If your infrastructure is a cloud provider and you want to use only hosts that are running Red Hat Enterprise Linux (RHEL), select the cloud provider that you want to use, enter your credentials, and create your location. You can also [download the terraform template](https://github.com/terraform-ibm-modules/terraform-ibm-satellite/tree/main/examples){: external} and edit it before you run it.
+:    - If your infrastructure is a cloud provider and you want to use hosts that are running Red Hat CoreOS (RHCOS) or want to have more control over your host creation, then select **Advanced configuration**. With this option, you create a location, choose your zones, include your cloud provider credentials, and then download a host attach script (RHEL) or an ignition script (RHCOS) to run on your hosts.
 
 :    If you selected **On prem and Edge**, you can change your location options by clicking **Edit**.
      {: tip}
@@ -127,13 +127,13 @@ Getting started options
 :    - **Zones**: The names of the zones **must match exactly** the names of the corresponding zones in your infrastructure provider where you plan to create hosts, such as a cloud provider zone or on-prem rack. To retrieve the name of the zone for other cloud providers, consult your infrastructure provider.
          - [Alibaba regions and zones](https://www.alibabacloud.com/help/en/ecs/user-guide/regions-and-zones){: external}, such as `us-east-1a` and `us-east-1b`.
          - [AWS regions and zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html){: external}, such as `us-east-1a`, `us-east-1b`, and `us-east-1c`.
-         - [Azure `topology.kubernetes.io/zone` labels](https://learn.microsoft.com/en-us/azure/aks/availability-zones#verify-node-distribution-across-zones){: external}, such as `eastus-1`, `eastus-2`, and `eastus-3`. **Don't** use only the location name (`eastus`) or the zone number (`1`).
+         - [Azure `topology.kubernetes.io/zone` labels](https://learn.microsoft.com/en-us/azure/aks/reliability-availability-zones-configure#verify-node-distribution-across-zones){: external}, such as `eastus-1`, `eastus-2`, and `eastus-3`. **Don't** use only the location name (`eastus`) or the zone number (`1`).
          - [GCP regions and zones](https://docs.cloud.google.com/compute/docs/regions-zones){: external}, such as `us-west1-a`, `us-west1-b`, and `us-west1-c`.
  
 :    - **Red Hat CoreOS Support**: {{site.data.keyword.satelliteshort}} supports hosts that are running either **RHEL** or **RHCOS**. For more information, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os). 
 :    - **Object Storage**: The exact name of an existing {{site.data.keyword.cos_full_notm}} bucket that you want to use to back up {{site.data.keyword.satelliteshort}} location control plane data. Otherwise, a new bucket is automatically created in an {{site.data.keyword.cos_short}} instance in your account. **Do not delete** your {{site.data.keyword.cos_short}} instance or this bucket. If the service instance or bucket is deleted, your {{site.data.keyword.satelliteshort}} location control plane data cannot be backed up.
 
-After you click **Create**, you can [attach hosts to your location](/docs/satellite?topic=satellite-attach-hosts) and finish the setup of your [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-setup-control-plane). Note that the token in the attach script is an API key, which must be treated and protected as sensitive information. 
+After you click **Create**, you can [attach hosts to your location](/docs/satellite?topic=satellite-attach-hosts) and finish the setup of your [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-setup-control-plane). Note that the token in the attach script is an application programming interface (API) key, which must be treated and protected as sensitive information.
 
 The host attach script for your location expires one year from the creation date. To make sure that hosts in your location don't have authentication issues, download a new copy of the host attach script at least once per year and update any unassigned hosts. For more information, see [Why do my unassigned hosts have an `Unresponsive` status?](/docs/satellite?topic=satellite-ts-host-unassigned-unknown).
 {: important}
@@ -216,14 +216,14 @@ After setting up the location and the control plane, create cluster and an API k
 1. In the **OCP entitlement** section, specify an existing OCP entitlement for the worker nodes in this cluster by providing your [{{site.data.keyword.redhat_full}} account pull secret](https://console.redhat.com/openshift/install/pull-secret){: external} as a file or in raw JSON format. The cluster also uses this pull secret to download {{site.data.keyword.redhat_openshift_notm}} images from your own {{site.data.keyword.redhat_notm}} account.
 1. In the **Location** section, select the {{site.data.keyword.satelliteshort}} location where you want to create the cluster. Make sure that the location that you select is in a **Normal** state.
 
-1. In the **Operating System** section, select the operating system of the hosts that you want to use in the default worker pool of your cluster. In locations that are Red Hat CoreOS enabled, you can use either your RHCOS or RHEL hosts.
+1. In the **Operating System** section, select the operating system of the hosts that you want to use in the default worker pool of your cluster. In locations that are Red Hat CoreOS enabled, you can use either your Red Hat CoreOS (RHCOS) or Red Hat Enterprise Linux (RHEL) hosts.
     In RHCOS enabled locations, when you want to add worker pools to your cluster, you can use RHCOS or RHEL hosts. Make sure to attach hosts with the operating system that you want to use to your location before assigning them to a worker pool.
     {: tip}
     
 1. In the **Worker pools** section, configure the details for your default worker pool.
     1. Select the **Satellite zones** that {{site.data.keyword.satelliteshort}} uses to evenly assign hosts across zones that represent zones in your underlying infrastructure provider. Generally, create your worker pool across 3 zones for high availability.
-    1. Request the **vCPU**, **Memory (GB)**, and number of **Worker nodes per zone** that you want to create the worker pool with. {{site.data.keyword.satelliteshort}} can automatically assign available hosts to the worker pool to fulfill your request. Generally, select at least 1 worker node per zone for a total of 3 worker nodes in your cluster.
-1. In the **{{site.data.keyword.satelliteshort}} Config** section, decide whether to enable cluster admin access for {{site.data.keyword.satelliteshort}} Config. If you don't grant {{site.data.keyword.satelliteshort}} Config access, you can't later use the {{site.data.keyword.satelliteshort}} Config functionality to view or deploy Kubernetes resources for your clusters.If you want to enable access later, you can [create custom RBAC roles for {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#manual-setup-clusters-satconfig).
+    1. Request the **virtual CPU (vCPU)**, **Memory (GB)**, and number of **Worker nodes per zone** that you want to create the worker pool with. {{site.data.keyword.satelliteshort}} can automatically assign available hosts to the worker pool to fulfill your request. Generally, select at least 1 worker node per zone for a total of 3 worker nodes in your cluster.
+1. In the **{{site.data.keyword.satelliteshort}} Config** section, decide whether to enable cluster admin access for {{site.data.keyword.satelliteshort}} Config. If you don't grant {{site.data.keyword.satelliteshort}} Config access, you can't later use the {{site.data.keyword.satelliteshort}} Config functionality to view or deploy Kubernetes resources for your clusters. If you want to enable access later, you can [create custom role-based access control (RBAC) roles for {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#manual-setup-clusters-satconfig).
 1. For the **Resource details**, enter a **Cluster name** and any [{{site.data.keyword.cloud_notm}} tags](/docs/account?topic=account-tag) that you want to associate with your cloud resource. The cluster name must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer.
 1. Click **Create**. When you create the cluster, the cluster master is automatically created in your {{site.data.keyword.satelliteshort}} location control plane, and your worker pool is automatically assigned available hosts that match your worker node request.
 1. Wait for the cluster to reach a **Normal** state.
@@ -234,7 +234,7 @@ After setting up the location and the control plane, create cluster and an API k
 1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, verify that your cluster reaches a **Normal** state.
 1. [Access your cluster](/docs/openshift?topic=openshift-access_cluster) to access the {{site.data.keyword.redhat_openshift_notm}} web console or to run `oc` and `kubectl` commands from the CLI. If you enabled {{site.data.keyword.satelliteshort}} Config access, you must complete this step to synchronize the permissions.
 
-    If your location hosts have private network connectivity only, or if you use Amazon Web Services, Google Cloud Platform, or Microsoft Azure hosts, you must be connected to your hosts' private network, such as through VPN access, to connect to your cluster and access the {{site.data.keyword.redhat_openshift_notm}} web console. Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's and location's DNS records to [use your hosts' public IP addresses](/docs/openshift?topic=openshift-access_cluster#sat_public_ip).
+    If your location hosts have private network connectivity only, or if you use Amazon Web Services, Google Cloud Platform, or Microsoft Azure hosts, you must be connected to your hosts' private network, such as through virtual private network (VPN) access, to connect to your cluster and access the {{site.data.keyword.redhat_openshift_notm}} web console. Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's and location's Domain Name System (DNS) records to [use your hosts' public IP addresses](/docs/openshift?topic=openshift-cluster-access-satellite#sat-public-access).
     {: note}
 
 1. **Optional**: Set up an internal container image registry. For more information, see [Setting up the internal container image registry](/docs/openshift?topic=openshift-satellite-clusters-registry) in the {{site.data.keyword.openshiftlong_notm}} docs.
@@ -245,7 +245,7 @@ After setting up the location and the control plane, create cluster and an API k
 {: #create-api-tenancy}
 {: step}
 
-Follow the steps to [create an API that can be used in your client account](/docs/account?topic=account-userapikey#create_user_key&interface=ui).
+Follow the steps to [create an API that can be used in your client account](/docs/account?topic=account-userapikey#create_user_key).
 
 
 ### Setting up cluster admin and developer roles

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-24"
 
 keywords: satellite, hybrid, multicloud, assign access, access for satellite
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Assigning access with {{site.data.keyword.cloud_notm}} IAM
 {: #iam-assign-access}
 
-To grant access to {{site.data.keyword.satelliteshort}} resources, use {{site.data.keyword.cloud_notm}} IAM. For information about assigning user roles in the console, see [Managing access to resources](/docs/account?topic=account-access-getstarted).
+To grant access to {{site.data.keyword.satelliteshort}} resources, use {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). For information about assigning user roles in the console, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 {: shortdesc}
 
 ## Access policies
@@ -27,7 +27,7 @@ Policies enable access at different levels. Some options for {{site.data.keyword
 
 - Access across all {{site.data.keyword.satelliteshort}} service instances of all resource types in your account.
 - Access to specific resource types within {{site.data.keyword.satelliteshort}}. For more information about resource types, see [Understanding {{site.data.keyword.satelliteshort}} resource types for access](/docs/satellite?topic=satellite-iam).
-    - **Location** in the UI, **location** in the API and CLI. (When scoped, users must [target the regional endpoint](/docs/satellite?topic=satellite-ts-location-missing-location).)
+    - **Location** in the UI, **location** in the application programming interface (API) and command-line interface (CLI). (When scoped, users must [target the regional endpoint](/docs/satellite?topic=satellite-ts-location-missing-location).)
     - **Link** in the UI, **link** in the API and CLI.
     - {{site.data.keyword.satelliteshort}} Config resource types:
         - **Cluster** in the UI, **cluster** in the API and CLI.
