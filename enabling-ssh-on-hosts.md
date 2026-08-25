@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-08-17"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud, hosts, ssh
 
@@ -12,10 +12,10 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Enabling SSH on Satellite hosts
+# Enabling SSH on {{site.data.keyword.satelliteshort}} hosts
 {: #enabling-ssh-on-hosts}
 
-In troubleshooting and debugging scenarios, you might need SSH access to your Satellite hosts either before or after you have assigned them to your control plane or a cluster.
+In troubleshooting and debugging scenarios, SSH access to your {{site.data.keyword.satelliteshort}} hosts is required either before or after you assign them to your control plane or a cluster.
 {: shortdesc}
 
 For example, if you are having problems assigning hosts, you can enable a non-root user for SSH access to a host before you assign it to a cluster.
@@ -163,7 +163,7 @@ Run the remaining steps on the host itself, so SSH into the host with root autho
     ```
     {: pre}
 
-1. **Optional:** Check the various log output files from the host registration and host bootstrapping processes. Replace `<filepath>` with the following files to check in order. Depending on the issue, certain log files might or might not files be present on the host.
+1. **Optional:** Check the various log output files from the host registration and host bootstrapping processes. Replace `<filepath>` with the following files to check in order. Depending on the issue, some log files are not present on the host if the corresponding process did not run.
 
     1. The `nohup.out` logs from the host registration attempt.
     1. The `/var/log/firstboot.log` for the first bootstrapping attempt. If the host registration failed, you do not have this file.
@@ -197,7 +197,7 @@ Run the remaining steps on the host itself, so SSH into the host with root autho
 
 [RHCOS]{: tag-red} [RHEL]{: tag-warm-gray}
 
-Occasionally there might be a need to SSH directly into a host that is already assigned as a worker node in a cluster. For example, there might be a problem with cluster worker nodes losing connectivity to the cluster master. These instructions describe how to temporarily enable root SSH access to either a Red Hat CoreOS or RHEL cluster worker node in a Satellite cluster.
+In some troubleshooting scenarios, SSH access is required directly on a host that is already assigned as a worker node in a cluster — for example, when cluster worker nodes lose connectivity to the cluster master. These instructions describe how to temporarily enable root SSH access to either a Red Hat CoreOS or RHEL cluster worker node in a {{site.data.keyword.satelliteshort}} cluster.
 
 Revert these steps and disable SSH access after you finish troubleshooting.
 {: note}
@@ -243,7 +243,7 @@ Before you begin, make sure you have the following.
     {: pre}
 
 1. Set an environment variable for your `SSHD_CONFIG_FILE` by using one of the following commands.
-    Note that it could be in a different place depending on the exact worker version you have, and if so, set the `SSHD_CONFIG_FILE` environment variable to the full path of the `SSHD` config file so you can update it in the next few steps.
+    The config file location varies by worker version. If neither example path matches your host, set the `SSHD_CONFIG_FILE` environment variable to the full path of the `sshd` config file before continuing.
     {: note}
 
     Example command for CoreOS workers.

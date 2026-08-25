@@ -2,8 +2,8 @@
 
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-12-04"
+  years: 2020, 2026
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud, gcp, google cloud platform
 
@@ -44,7 +44,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to add GCP hosts.
 2. Retrieve the host registration script that you must run on your hosts to make them visible to your {{site.data.keyword.satellitelong_notm}} location.
     1. From the **Hosts** tab, click **Attach host**.
-    2. Optional: Enter any host labels that are used later to [automatically assign](/docs/satellite?topic=satellite-host-autoassign-ov) hosts to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services in the location. Labels must be provided as key-value pairs, and must match the request from the service. For example, you might have host labels such as `env=prod` or `service=database`. By default, your hosts get a `cpu` label, but you might want to add more to control the auto assignment, such as `env=prod` or `service=database`.
+    2. Optional: Enter any host labels that are used later to [automatically assign](/docs/satellite?topic=satellite-host-autoassign-ov) hosts to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services in the location. Labels must be provided as key-value pairs, and must match the request from the service. Common labels include `env=prod` or `service=database`. By default, your hosts get a `cpu` label. Add more labels to control auto assignment, such as `env=prod` or `service=database`.
     3. Enter a file name for your script or use the name that is generated for you.
     4. Click **Download script** to generate the host script and download the script to your local machine. Note that the token in the script is an API key, which should be treated and protected as sensitive information.
 3. **RHEL hosts only** Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
@@ -97,7 +97,7 @@ gcloud compute instances create INSTANCE-1 INSTANCE-2 INSTANCE-3 --machine-type=
 ## Network firewall settings
 {: #gcp-reqs-firewall}
 
-As described in the [host networking requirements](/docs/satellite?topic=satellite-reqs-host-network), your GCP hosts must have access to connect to {{site.data.keyword.satellitelong_notm}}. You might find that you need to update your firewall settings in GCP, similar to the following example.
+As described in the [host networking requirements](/docs/satellite?topic=satellite-reqs-host-network), your GCP hosts must have access to connect to {{site.data.keyword.satellitelong_notm}}. Update your firewall settings in GCP to match the following example.
 {: shortdesc}
 
 ```sh

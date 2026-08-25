@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud, assign access, access for satellite
 
@@ -47,7 +47,7 @@ After you define the scope of the access policy, you assign a role, which determ
 ## Overview of the process to set up access to {{site.data.keyword.satellitelong_notm}} in {{site.data.keyword.cloud_notm}} IAM
 {: #iam-assign-overview}
 
-As a general practice, you can invite users to your {{site.data.keyword.cloud_notm}} account, add them to an access group, and assign them access to {{site.data.keyword.satellitelong_notm}} resources in IAM. You might also add access policies for other {{site.data.keyword.cloud_notm}} services, or assign individual user access.
+As a general practice, you can invite users to your {{site.data.keyword.cloud_notm}} account, add them to an access group, and assign them access to {{site.data.keyword.satellitelong_notm}} resources in IAM. You can also add access policies for other {{site.data.keyword.cloud_notm}} services, or assign individual user access.
 {: shortdesc}
 
 1. [Invite users to your account](/docs/account?topic=account-inviteusers).
@@ -165,7 +165,7 @@ Use the {{site.data.keyword.cloud_notm}} IAM CLI to grant an access policy to an
 ## Checking user permissions
 {: #checking-perms}
 
-Before you complete a task, you might want to check that you have the appropriate permissions in {{site.data.keyword.cloud}} Identity and Access Management (IAM).
+Before you complete a task, check that you have the appropriate permissions in {{site.data.keyword.cloud}} Identity and Access Management (IAM).
 {: shortdesc}
 
 ### Checking IAM platform and service access roles from the UI

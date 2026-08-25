@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -23,7 +23,7 @@ Resolve issues accessing the {{site.data.keyword.redhat_openshift_notm}} web con
 When you create a {{site.data.keyword.redhat_openshift_notm}} cluster in your {{site.data.keyword.satelliteshort}} location, you cannot access the {{site.data.keyword.redhat_openshift_notm}} web console, or access to the console is intermittent.
 {: tsSymptoms}
 
-You might see an error message similar to the following:
+An error message similar to the following appears:
 ```sh
 OpenShift web console unavailable
 Wait until your ingress subdomain is available before you access the OpenShift web console.
@@ -44,7 +44,7 @@ Worker nodes do not exist in each zone of the default worker pool
 :    If you use host auto assignment, [attach hosts](/docs/satellite?topic=satellite-attach-hosts) to your {{site.data.keyword.satelliteshort}} location in the zone where you do not have worker nodes so that hosts can be assigned to the default worker pool. If the hosts are not automatically assigned, you can also manually [assign {{site.data.keyword.satelliteshort}} hosts in that zone to your cluster](/docs/satellite?topic=satellite-assigning-hosts).
 
 Host private IP addresses are used for Ingress subdomain
-:    Connect to your hosts' private network to access to your cluster and open the {{site.data.keyword.redhat_openshift_notm}} web console. For example, you might connect to your on-premises local network, or use a VPN such as [WireGuard](/docs/openshift?topic=openshift-cluster-access-wireguard) to connect to your cloud provider's private network. 
+:    Connect to your hosts' private network to access your cluster and open the {{site.data.keyword.redhat_openshift_notm}} web console. For example, connect to your on-premises local network, or use a VPN such as [WireGuard](/docs/openshift?topic=openshift-cluster-access-wireguard) to connect to your cloud provider's private network.
 
 Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's service URL and your location's DNS record to [use your hosts' public IP addresses](/docs/openshift?topic=openshift-cluster-access-satellite#sat-public-access). Note that making your location and cluster subdomains available outside of your hosts' private network to your authorized cluster users is not recommended for production-level workloads.
 

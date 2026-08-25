@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch, host, update, host update
 
@@ -278,7 +278,7 @@ You can roll out updates to all your worker node hosts with a ConfigMap. Specify
     
     If the update failed, you must [apply version updates by replacing hosts](#host-update-workers-minor).
 
-10. Verify that you don't have duplicate worker nodes. Sometimes, older clusters might list duplicate worker nodes with a **`NotReady`** status after an update. To remove duplicates, see [troubleshooting](/docs/containers?topic=containers-cs_duplicate_nodes).
+10. Verify that you don't have duplicate worker nodes. Older clusters can list duplicate worker nodes with a **`NotReady`** status after an update. To remove duplicates, see [troubleshooting](/docs/containers?topic=containers-cs_duplicate_nodes).
 
 ## Applying version updates to worker nodes by replacing hosts
 {: #host-update-workers-minor}

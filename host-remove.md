@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -46,7 +46,7 @@ Removing a host cannot be undone. Before you remove a host, make sure that your 
 5. From the **Hosts** table, hover over the host that you want to remove and click the **Action menu** icon ![Action menu icon](../icons/action-menu-icon.svg).
 6. Click **Remove host**, enter the host name to confirm deletion, and click **Remove**.
 7. Follow the instructions from your underlying infrastructure provider to complete one of the following actions:
-    - To reuse the host for other purposes, reload the operating system of the host. For example, you might reattach the host to a {{site.data.keyword.satelliteshort}} location later. When you reattach a host, the host name can remain the same as the previous name, but a new host ID is generated.
+    - To reuse the host for other purposes, reload the operating system of the host. For example, reattach the host to a {{site.data.keyword.satelliteshort}} location after the reload. When you reattach a host, the host name can remain the same as the previous name, but a new host ID is generated.
     - To no longer use the host, delete the host from your infrastructure provider.
     
  After the host is removed, shut it down and do not activate it again without reloading the OS.
@@ -104,7 +104,7 @@ Removing a host cannot be undone. Before you remove a host, make sure that your 
     {: pre}
 
 7. Follow the instructions from your underlying infrastructure provider to complete one of the following actions:
-    - To reuse the host for other purposes, reload the operating system of the host. For example, you might reattach the host to a {{site.data.keyword.satelliteshort}} location later. When you reattach a host, the host name can remain the same as the previous name, but a new host ID is generated.
+    - To reuse the host for other purposes, reload the operating system of the host. For example, reattach the host to a {{site.data.keyword.satelliteshort}} location after the reload. When you reattach a host, the host name can remain the same as the previous name, but a new host ID is generated.
     - To no longer use the host, delete the host from your infrastructure provider.
 
 ## Removing locations from the console

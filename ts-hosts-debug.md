@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -40,7 +40,7 @@ You can verify your host setup with the `satellite-host-check` script. For more 
     {: screen}
 
 2. Review the states and the steps to resolve the issue in the following table.
-3. Check that your hosts still meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as for network connectivity. For example, if you change the firewall rules for the host machine's public or private network connectivity, you might make the host unsupported by blocking the necessary ports and IP addresses. For cloud provider-specific configurations, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).
+3. Check that your hosts still meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as for network connectivity. For example, changing the firewall rules for the host machine's public or private network connectivity can make the host unsupported by blocking the necessary ports and IP addresses. For cloud provider-specific configurations, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).
 4. Check your logs by logging in to the host. For more information, see [Enabling SSH on Satellite hosts](/docs/satellite?topic=satellite-enabling-ssh-on-hosts).
 5. If your host still has issues, try to [remove](/docs/satellite?topic=satellite-host-remove), update, and [reattach the host](/docs/satellite?topic=satellite-attach-hosts).
 

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -250,7 +250,7 @@ Use the console to create an endpoint so that sources that are connected to the 
 7. Configure optional connection settings, such as setting an inactivity timeout.  Choose a value between 1 and 600 seconds. The default value is `60` seconds.
 8. Click **Create**. Wait a few minutes for the {{site.data.keyword.satelliteshort}} Link connector component to assign a port to your endpoint.
 9. In the table row for your endpoint, copy the host name for your {{site.data.keyword.satelliteshort}} Link tunnel server and the port for your endpoint in the **Address** field.
-10. From your source client in the {{site.data.keyword.cloud_notm}} private network, test the connection to your {{site.data.keyword.satelliteshort}} endpoint by using the address. For example, depending on your source client, you might send a curl request to the endpoint:
+10. From your source client in the {{site.data.keyword.cloud_notm}} private network, test the connection to your {{site.data.keyword.satelliteshort}} endpoint by using the address. For example, send a curl request to the endpoint:
 
     ```sh
     curl http://<linkserver_hostname>:<port>
@@ -316,7 +316,7 @@ Use the CLI to create an endpoint so that sources that are connected to the {{si
     ```
     {: screen}
 
-5. From your source client in the {{site.data.keyword.cloud_notm}} private network, test the connection to your {{site.data.keyword.satelliteshort}} endpoint by using the address. For example, depending on your source client, you might send a curl request to the endpoint.
+5. From your source client in the {{site.data.keyword.cloud_notm}} private network, test the connection to your {{site.data.keyword.satelliteshort}} endpoint by using the address. For example, send a curl request to the endpoint.
 
     ```sh
     curl http://<linkserver_hostname>:<port>

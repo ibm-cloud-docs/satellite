@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud, pricing, service, billing, charges
 
@@ -34,7 +34,7 @@ Review the following table for pricing details. For more information, see the de
 | Type of charge | Locations created after 15 November 2022 | Locations created before 15 November 2022 | What the charge covers |
 | --- | --- | --- | --- |
 | Location management fee | A flat fee for the location, charged hourly. | Per vCPU hour of the hosts that are attached to the location. | The benefits of {{site.data.keyword.satellitelong_notm}}, such as to create the cluster on any compatible infrastructure that you want; tooling to consistently deploy apps, storage drivers, and endpoints across the location; integration with {{site.data.keyword.cloud_notm}} platform tooling such as IAM; continuous monitoring by {{site.data.keyword.IBM_notm}} Site Reliability Engineers; access to {{site.data.keyword.cloud_notm}} support; and more.  |
-| Infrastructure fee | Varies by provider | Varies by provider | The underlying infrastructure that you bring to {{site.data.keyword.satelliteshort}} is your own, and might have its own charges. Consult your infrastructure provider for more details, such as about the storage, compute, and networking of the hosts in a cloud or on-prem environment. |
+| Infrastructure fee | Varies by provider | Varies by provider | The underlying infrastructure that you bring to {{site.data.keyword.satelliteshort}} is your own and carries its own charges from your infrastructure provider. Consult your infrastructure provider for more details, such as about the storage, compute, and networking of the hosts in a cloud or on-prem environment. |
 {: caption="{{site.data.keyword.satelliteshort}} location control plane charges." caption-side="bottom"}
 
 ## {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -23,17 +23,17 @@ Resolve issues assigning hosts to {{site.data.keyword.satellitelong_notm}} clust
 You try to assign a host to {{site.data.keyword.satellitelong_notm}} resource such as a cluster, but the assignment does not succeed.
 {: tsSymptoms}
 
-When you check your host, the health state might be `unresponsive`, `unknown`, or `reload-required`.
+When you check your host, the health state is `unresponsive`, `unknown`, or `reload-required`.
 
-Your host might have encountered an issue during the bootstrapping process. For example, the underlying infrastructure of the host machine changed and no longer meets the [minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as for network connectivity.
+The host encountered an issue during the bootstrapping process. For example, the underlying infrastructure of the host machine changed and no longer meets the [minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as for network connectivity.
 {: tsCauses}
 
-You might have set up a firewall or other change that prevents access to a dependency.
+A firewall or other configuration change is preventing access to a dependency.
 
 In particular, the bootstrapping process depends upon the following access.
 - Access to RHEL Satellite servers and the required packages installed on the host machine.
 - Access to {{site.data.keyword.registrylong_notm}} endpoints to pull the required images.
-- Access to the Kubernetes master of the {{site.data.keyword.satelliteshort}} cluster that you want to assign the host to. Access might be blocked because the host cannot communicate with the service endpoint of the cluster, or because a Kubernetes resource within the cluster such as a webhook intercepts and blocks communication with the Kubernetes API server.
+- Access to the Kubernetes master of the {{site.data.keyword.satelliteshort}} cluster that you want to assign the host to. Access is blocked when the host cannot communicate with the service endpoint of the cluster, or when a Kubernetes resource within the cluster such as a webhook intercepts and blocks communication with the Kubernetes API server.
 
 ## Debugging hosts for connectivity issues
 {: #debug-host-connectivity}
@@ -52,7 +52,7 @@ Otherwise, remove the host, reload the operating system, and attach the host bac
 2. Confirm that your host meets the [minimum requirements](/docs/satellite?topic=satellite-host-reqs) and verify that the hostname contains only lowercase alphanumeric characters, `-`, or `.`.
 3. Check your host for connectivity issues.
     1. Log in to your host machine, such as via SSH.
-    2. Check your [host network settings](/docs/satellite?topic=satellite-reqs-host-network) to ensure that your host can access the required ports and IP addresses, which might be blocked by a security group or firewall.
+    2. Check your [host network settings](/docs/satellite?topic=satellite-reqs-host-network) to ensure that your host can access the required ports and IP addresses. A security group or firewall can block these ports and IP addresses.
     3. Check access to the required [{{site.data.keyword.cloud_notm}} multizone metro endpoints](#endpoints-to-verify).
     4. For hosts that are assigned to clusters, get the details of the cluster master endpoint.
         ```sh
@@ -66,7 +66,7 @@ Otherwise, remove the host, reload the operating system, and attach the host bac
         ```
         {: pre}
 
-    6. If you think you might have a webhook in the cluster that block access to the API server, see [Cluster cannot update because of broken webhook](/docs/openshift?topic=openshift-webhooks_update). Webhooks are often components for additional capabilities in your cluster, such as Cloud Paks, Istio, or container image security enforcement.
+    6. If a webhook in the cluster is blocking access to the API server, see [Cluster cannot update because of broken webhook](/docs/openshift?topic=openshift-webhooks_update). Webhooks are often components for additional capabilities in your cluster, such as Cloud Paks, Istio, or container image security enforcement.
 4. After you resolve any connectivity issues, [check the health of your host](/docs/satellite?topic=satellite-ts-hosts-debug) for further information.
 5. Reassign your hosts if you continue to have issues.
     1. [Remove the host](/docs/satellite?topic=satellite-host-remove) from your {{site.data.keyword.satelliteshort}} location.
@@ -98,7 +98,7 @@ Otherwise, remove the host, reload the operating system, and attach the host bac
         {: pre}
 
     7. [Assign the host](/docs/satellite?topic=satellite-assigning-hosts) to your {{site.data.keyword.satelliteshort}} resource, such as a cluster.
-    8. Check that the host is **assigned** to your cluster. The process might take an hour to complete. From the console, click your location, and then click the **Hosts** tab. From the CLI, run the following command.
+    8. Check that the host is **assigned** to your cluster. The assignment process can take up to an hour. From the console, click your location, and then click the **Hosts** tab. From the CLI, run the following command.
         ```sh
         ibmcloud sat host ls --location <location_name_or_ID>
         ```

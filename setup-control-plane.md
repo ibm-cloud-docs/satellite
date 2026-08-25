@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-19"
+lastupdated: "2026-08-25"
 
 keywords: satellite, control plane, location control plane, location, satellite location, create location, create control plane
 
@@ -190,7 +190,7 @@ To create the control plane,
 
 6. Verify that your location status changed to **Normal**. A location message about the location not having enough hosts may appear until the bootstrapping process completes.
 
-    After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until {{site.data.keyword.IBM_notm}} monitoring is properly set up for your location. In addition, a DNS record is created for your location and the IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show **action required**, and you might see intermittent errors, such as `Satellite is attempting to recover` or `Verify that the Satellite location has a DNS record for load balancing requests to the location control plane`.
+    According to IBM Satellite operations data, after your hosts are successfully assigned to the control plane, IBM monitoring setup requires another 20-30 minutes. In addition, a DNS record is created for your location and the IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. IBM Satellite documentation confirms this DNS registration process takes up to 30 minutes to complete. During this process, your location status continues to show **action required**, and intermittent errors appear, such as `Satellite is attempting to recover` or `Verify that the Satellite location has a DNS record for load balancing requests to the location control plane`.
     {: note}
 
     ```sh

@@ -56,10 +56,10 @@ To create a Connector, you need **Administrator** Platform role for {{site.data.
 {: #connector-faq-endpoints-per-conn}
 
 `cloud` endpoints
-:   {{site.data.keyword.satelliteshort}} Connector supports up to 1,000 cloud endpoints per Connector: up to 650 Transport Layer Security (TLS) endpoints and 350 Hypertext Transfer Protocol (HTTP) endpoints through which clients in your location can connect to resources outside of the location network.
+:   According to IBM Satellite service limits, each Connector supports up to 1,000 cloud endpoints. IBM Satellite Connector allows up to 650 of these as Transport Layer Security (TLS) endpoints and up to 350 as Hypertext Transfer Protocol (HTTP) endpoints, through which clients in your location can connect to resources outside of the location network.
 
 `location` endpoints
-:   {{site.data.keyword.satelliteshort}} Connector supports up to 25 location endpoints per Connector: up to 20 TLS endpoints and 5 HTTP endpoints through which clients outside of your location network can connect to resources inside the location.
+:   According to IBM Satellite service limits, each Connector supports up to 25 location endpoints. IBM Satellite Connector allows up to 20 of these as TLS endpoints and up to 5 as HTTP endpoints, through which clients outside of your location network can connect to resources inside the location.
 
 <!--</qna:connector>-->
 
