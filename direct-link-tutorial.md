@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-19"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -61,7 +61,7 @@ Can I use RHEL hosts to set up my Direct Link?
 :   No. You must have both an RHCOS-enabled location and you must use RHCOS hosts in your location to use Direct Link.
 
 Can I redirect all traffic to {{site.data.keyword.cloud_notm}} over Direct Link instead of Internet?
-:   Currently, not all services support Direct Link. So, depending on the services you use it might or might not be possible for all traffic to use Direct Link.
+:   Currently, not all services support Direct Link. Whether all traffic can use Direct Link depends on which services you use. Check the documentation for each service to verify its connectivity requirements.
 
 What {{site.data.keyword.cloud_notm}} services can I access over Direct Link to avoid accessing them over Internet?
 :   After following these instructions, {{site.data.keyword.satelliteshort}} and OpenShift on {{site.data.keyword.satelliteshort}} will work across Direct Link. If additional services are deployed into a {{site.data.keyword.satelliteshort}} location, check the documentation for each service to verify their connectivity requirements, as some services require public internet access.

@@ -3,7 +3,7 @@
 copyright:
   years: 2023, 2026
 
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-25"
 
 keywords: satellite, connector, faq, frequently asked questions
 
@@ -56,17 +56,17 @@ You can have a maximum of 25 Connectors per account per region.
 {: #connector-faq-endpoints-per-conn}
 
 `cloud` endpoints
-:   1000 total. The Connector supports up to 650 Transport Layer Security (TLS) endpoints and 350 Hypertext Transfer Protocol (HTTP) endpoints through which clients in your location can connect to resources outside of the location network. Source: [Connector endpoint limits](/docs/satellite?topic=satellite-connector-create-endpoints).
+:   1000 total. The Connector supports up to 650 Transport Layer Security (TLS) endpoints and 350 Hypertext Transfer Protocol (HTTP) endpoints through which clients in your location can connect to resources outside of the location network.
 
 `location` endpoints
-:   25 total. The Connector supports up to 20 TLS endpoints and 5 HTTP endpoints through which clients outside of your location network can connect to resources inside the location. Source: [Connector endpoint limits](/docs/satellite?topic=satellite-connector-create-endpoints).
+:   25 total. The Connector supports up to 20 TLS endpoints and 5 HTTP endpoints through which clients outside of your location network can connect to resources inside the location.
 
 <!--</qna:connector>-->
 
 ## How many instances of Connector agent can I run?
 {: #connector-faq-instance-limits}
 
-Run no more than 6 agents per Connector. Source: [Connector agent scaling guidance](/docs/satellite?topic=satellite-run-agent-locally).
+Run no more than 6 agents per Connector. For high-availability deployments, plan to deploy at least 6 agents across separate hosts. For more information, see [Minimum requirements for running the agent image](/docs/satellite?topic=satellite-understand-connectors#min-requirements).
 
 ## Can I deploy {{site.data.keyword.satelliteshort}} Connectors within {{site.data.keyword.cloud_notm}}?
 {: #connector-ibm-cloud}
