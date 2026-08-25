@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud, bare metal host, bare metal, baremetal
 
@@ -40,7 +40,7 @@ If your servers do not meet these requirements, you can [create a {{site.data.ke
 {: #bare-metal-attach}
 
 
-Follow these general steps to attach your bare metal servers to your location. These steps might vary, depending on your specific hardware. For a complete tutorial, see [Attaching {{site.data.keyword.cloud_notm}} Bare Metal Servers for Classic hosts](/docs/satellite?topic=satellite-assign-bare-metal). 
+Follow these general steps to attach your bare metal servers to your location. Steps vary depending on your specific hardware. For a complete tutorial, see [Attaching {{site.data.keyword.cloud_notm}} Bare Metal Servers for Classic hosts](/docs/satellite?topic=satellite-assign-bare-metal).
 
 1. [Download a Red Hat CoreOS ISO](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/){: external}. Find the corresponding ISO version that matches the {{site.data.keyword.redhat_openshift_notm}} version that you want to use. For example, if you want to use version 4.11, [download a version of RHCOS for 4.11](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/4.11/){: external}, such as `rhcos-4.11.9-x86_64-live.x86_64.iso`.
 2. Log in to your bare metal server.

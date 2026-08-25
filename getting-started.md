@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: satellite, hybrid, multicloud, getting started, {{site.data.keyword.satellitelong}}, hosts, host
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Getting started with {{site.data.keyword.satellitelong_notm}} 
 {: #getting-started}
 
-{{site.data.keyword.satellitelong}} provides a distributed cloud architecture that brings the scalability and flexibility of public cloud services to any environment — on-premises, edge, or multi-cloud. With {{site.data.keyword.satelliteshort}}, you access the same catalog of 130+ {{site.data.keyword.cloud_notm}} services through consistent APIs, regardless of where your workloads run. According to IBM research, enterprises running distributed cloud architectures report significantly faster deployment cycles and reduced operational overhead compared to managing separate cloud environments.
+{{site.data.keyword.satellitelong}} provides a distributed cloud architecture that brings the scalability and flexibility of public cloud services to any environment — on-premises, edge, or multi-cloud. With {{site.data.keyword.satelliteshort}}, you access the same catalog of 130+ {{site.data.keyword.cloud_notm}} services through consistent APIs, regardless of where your workloads run. The 130+ service count reflects the number of services listed in the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog){: external}.
 {: shortdesc}
 
 Your {{site.data.keyword.satelliteshort}} location includes tools such as {{site.data.keyword.satelliteshort}} Link and {{site.data.keyword.satelliteshort}} Config to provide capabilities for securing and auditing network connections in your location and consistently deploying, managing, and controlling your apps and policies across clusters in the location.
