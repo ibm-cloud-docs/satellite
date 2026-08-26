@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-26"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -27,9 +27,12 @@ The following outbound network requirements are specific for hosts in the Sao Pa
 
      
 Allow Link tunnel clients to connect to the Link tunnel server endpoint.
-:    * Destination IP addresses: 163.107.69.114, 163.109.70.234, 169.57.155.74 
+:    * Destination IP addresses: 163.107.69.114, 163.109.70.234, 169.57.155.74, 163.107.92.34, 13.116.89.23, 163.109.91.168
      * Destination hostnames: `c-01-ws.br-sao.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
+
+The following IP addresses were added on 1 September 2026: `163.107.92.34`, `13.116.89.23`, `163.109.91.168`.
+{: note}
 
 
 Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers.

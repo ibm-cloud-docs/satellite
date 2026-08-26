@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-26"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -70,11 +70,14 @@ Allow continuous delivery of updates to platform components.
      * Protocol and ports: HTTPS 443
 
 Allow Link tunnel clients to connect to the Link tunnel server endpoint.
-:    * Destination IP addresses: 163.74.67.114, 163.75.70.74, 158.85.79.18
+:    * Destination IP addresses: 163.74.67.114, 163.75.70.74, 158.85.79.18, 163.66.90.175, 163.74.94.50, 163.75.81.140
      * Destination hostnames: `c-01-ws.ca-tor.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
 
 :    You can find the hostnames or IP addresses by running the `dig c-<XX>-ws.ca-tor.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned.
+
+The following IP addresses were added on 1 September 2026: `163.66.90.175`, `163.74.94.50`, `163.75.81.140`.
+{: note}
 
 Allow hosts to be attached to a location and assigned to services in the location.
 :    * Destination IP addresses: 163.75.64.114, 163.74.65.18, 158.85.65.194, 104.94.220.132, 104.94.221.132, 104.94.222.140, 104.94.223.140, 104.96.176.132, 104.96.177.132, 104.96.178.134, 104.96.179.134, 104.96.180.131, 104.96.181.131

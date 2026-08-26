@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-26"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -27,9 +27,12 @@ The following outbound network requirements are specific for hosts in the Osaka 
 
      
 Allow Link tunnel clients to connect to the Link tunnel server endpoint.
-:    * Destination IP addresses: 163.68.78.234, 163.69.70.106, 163.73.70.50
+:    * Destination IP addresses: 163.68.78.234, 163.69.70.106, 163.73.70.50, 163.73.94.54, 163.68.80.147, 163.69.86.59
      * Destination hostnames: `c-01-ws.jp-osa.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
+
+The following IP addresses were added on 1 September 2026: `163.73.94.54`, `163.68.80.147`, `163.69.86.59`.
+{: note}
      
   
 Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers.

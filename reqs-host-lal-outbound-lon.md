@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-26"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -28,9 +28,12 @@ The following outbound network requirements are specific for hosts in the London
 
      
 Allow Link tunnel clients to connect to the Link tunnel server endpoint.
-:    * Destination IP addresses: 158.175.130.138, 141.125.87.226, 158.176.74.242
+:    * Destination IP addresses: 158.175.130.138, 141.125.87.226, 158.176.74.242, 158.176.177.12, 141.125.159.214, 158.175.176.32
      * Destination hostnames: `c-01-ws.eu-gb.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
+
+The following IP addresses were added on 1 September 2026: `158.176.177.12`, `141.125.159.214`, `158.175.176.32`.
+{: note}
   
 Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers.
 :    * Destination hostnames: `0.rhel.pool.ntp.org`, `1.rhel.pool.ntp.org`, `2.rhel.pool.ntp.org`, `3.rhel.pool.ntp.org`
