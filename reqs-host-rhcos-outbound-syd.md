@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-26"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -61,9 +61,12 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}.
      * Protocol and ports: HTTPS 443
 
 Allow Link tunnel clients to connect to the Link tunnel server endpoint. {: #link-connector-syd}
-:    * Destination IP addresses: 130.198.75.74, 135.90.67.154, 168.1.201.194
+:    * Destination IP addresses: 130.198.75.74, 135.90.67.154, 168.1.201.194, 135.90.141.207, 130.198.19.60, 159.23.96.87
      * Destination hostnames: `c-01-ws.au-syd.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
+
+The following IP addresses were added on 1 September 2026: `135.90.141.207`, `130.198.19.60`, `159.23.96.87`.
+{: note}
 
 :    You can find the hostnames or IP addresses by running the `dig c-<XX>-ws.au-syd.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned. 
 

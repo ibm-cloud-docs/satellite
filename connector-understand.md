@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-26"
 
 keywords: satellite, connector, agent
 
@@ -78,39 +78,60 @@ Frankfurt
      * Protocol and ports: HTTPS 443
 
 London
-:    * Destination IP addresses: 158.175.130.138, 141.125.87.226, 158.176.74.242
+:    * Destination IP addresses: 158.175.130.138, 141.125.87.226, 158.176.74.242, 158.176.177.12, 141.125.159.214, 158.175.176.32
      * Destination hostnames: `c-01-ws.eu-gb.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`, `iam.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
 
+The following IP addresses were added on 1 September 2026: `158.176.177.12`, `141.125.159.214`, `158.175.176.32`.
+{: note}
+
 Madrid
-:   * Destination IP addresses: `13.120.67.106`, `13.121.67.82`, `13.122.67.186`
+:   * Destination IP addresses: `13.120.67.106`, `13.121.67.82`, `13.122.67.186`, `13.120.83.28`, `13.121.82.217`, `13.122.82.84`
     * Destination hostnames: `c-01-ws.eu-es.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`, `iam.cloud.ibm.com`
     * Protocol and ports: HTTPS 443
-     
+
+The following IP addresses were added on 1 September 2026: `13.120.83.28`, `13.121.82.217`, `13.122.82.84`.
+{: note}
+
 Osaka
-:    * Destination IP addresses: 163.68.78.234, 163.69.70.106, 163.73.70.50
+:    * Destination IP addresses: 163.68.78.234, 163.69.70.106, 163.73.70.50, 163.73.94.54, 163.68.80.147, 163.69.86.59
      * Destination hostnames: `c-01-ws.jp-osa.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`, `iam.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
 
+The following IP addresses were added on 1 September 2026: `163.73.94.54`, `163.68.80.147`, `163.69.86.59`.
+{: note}
+
 Sao Paulo
-:    * Destination IP addresses: 163.107.69.114, 163.109.70.234, 169.57.155.74 
+:    * Destination IP addresses: 163.107.69.114, 163.109.70.234, 169.57.155.74, 163.107.92.34, 13.116.89.23, 163.109.91.168
      * Destination hostnames: `c-01-ws.br-sao.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`, `iam.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
 
+The following IP addresses were added on 1 September 2026: `163.107.92.34`, `13.116.89.23`, `163.109.91.168`.
+{: note}
+
 Sydney
-:    * Destination IP addresses: 130.198.75.74, 135.90.67.154, 168.1.201.194
+:    * Destination IP addresses: 130.198.75.74, 135.90.67.154, 168.1.201.194, 135.90.141.207, 130.198.19.60, 159.23.96.87
      * Destination hostnames: `c-01-ws.au-syd.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`, `iam.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
-     
+
+The following IP addresses were added on 1 September 2026: `135.90.141.207`, `130.198.19.60`, `159.23.96.87`.
+{: note}
+
 Tokyo
-:    * Destination IP addresses: 161.202.150.66, 128.168.89.146, 165.192.71.226
+:    * Destination IP addresses: 161.202.150.66, 128.168.89.146, 165.192.71.226, 165.192.138.242, 128.168.141.55, 162.133.128.178
      * Destination hostnames: `c-01-ws.jp-tok.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`, `iam.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
 
+The following IP addresses were added on 1 September 2026: `165.192.138.242`, `128.168.141.55`, `162.133.128.178`.
+{: note}
+
 Toronto
-:    * Destination IP addresses: 163.74.67.114, 163.75.70.74, 158.85.79.18
+:    * Destination IP addresses: 163.74.67.114, 163.75.70.74, 158.85.79.18, 163.66.90.175, 163.74.94.50, 163.75.81.140
      * Destination hostnames: `c-01-ws.ca-tor.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`, `iam.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
+
+The following IP addresses were added on 1 September 2026: `163.66.90.175`, `163.74.94.50`, `163.75.81.140`.
+{: note}
 
 Washington D.C.
 :    * Destination IP addresses: 169.47.156.154, 169.63.148.250, 169.62.1.34

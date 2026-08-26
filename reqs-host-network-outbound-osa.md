@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-26"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -69,11 +69,14 @@ Allow continuous delivery of updates to platform components.
      * Protocol and ports: HTTPS 443
 
 Allow Link tunnel clients to connect to the Link tunnel server endpoint.
-:    * Destination IP addresses: 163.68.78.234, 163.69.70.106, 163.73.70.50
+:    * Destination IP addresses: 163.68.78.234, 163.69.70.106, 163.73.70.50, 163.73.94.54, 163.68.80.147, 163.69.86.59
      * Destination hostnames: `c-01-ws.jp-osa.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
      
 :    You can find the hostnames or IP addresses by running the `dig c-<XX>-ws.jp-osa.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned.
+
+The following IP addresses were added on 1 September 2026: `163.73.94.54`, `163.68.80.147`, `163.69.86.59`.
+{: note}
 
 Allow hosts to be attached to a location and assigned to services in the location.
 :    * Destination IPs: 165.192.69.69, 161.202.126.210, 128.168.71.117, 104.94.220.131, 104.94.221.131, 104.94.222.139, 104.94.223.139, 104.96.176.131, 104.96.177.131, 104.96.178.133, 104.96.179.133, 104.96.180.130, 104.96.181.130

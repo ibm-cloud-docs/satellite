@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-26"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -60,9 +60,12 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}.
      * Protocol and ports: HTTPS 443
      
 Allow Link tunnel clients to connect to the Link tunnel server endpoint. {: #link-connector-lon}
-:    * Destination IP addresses: 158.175.130.138, 141.125.87.226, 158.176.74.242
+:    * Destination IP addresses: 158.175.130.138, 141.125.87.226, 158.176.74.242, 158.176.177.12, 141.125.159.214, 158.175.176.32
      * Destination hostnames: `c-01-ws.eu-gb.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
+
+The following IP addresses were added on 1 September 2026: `158.176.177.12`, `141.125.159.214`, `158.175.176.32`.
+{: note}
      
 :    You can find the hostnames or IP addresses by running the `dig c-<XX>-ws.eu-gb.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned. 
      

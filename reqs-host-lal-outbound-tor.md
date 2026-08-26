@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-26"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -26,9 +26,12 @@ You can verify your host setup with the `satellite-host-check` script. For more 
 The following outbound network requirements are specific for hosts in the Toronto (`ca-tor`) region.
      
 Allow Link tunnel clients to connect to the Link tunnel server endpoint.
-:    * Destination IP addresses: 163.74.67.114, 163.75.70.74, 158.85.79.18
+:    * Destination IP addresses: 163.74.67.114, 163.75.70.74, 158.85.79.18, 163.66.90.175, 163.74.94.50, 163.75.81.140
      * Destination hostnames: `c-01-ws.ca-tor.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
+
+The following IP addresses were added on 1 September 2026: `163.66.90.175`, `163.74.94.50`, `163.75.81.140`.
+{: note}
 
 
 Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers.

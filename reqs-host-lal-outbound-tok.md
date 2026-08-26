@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-26"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -27,9 +27,12 @@ The following outbound network requirements are for hosts in the Tokyo (`jp-tok`
 
      
 Allow Link tunnel clients to connect to the Link tunnel server endpoint.
-:    * Destination IP addresses: 161.202.150.66, 128.168.89.146, 165.192.71.226
+:    * Destination IP addresses: 161.202.150.66, 128.168.89.146, 165.192.71.226, 165.192.138.242, 128.168.141.55, 162.133.128.178
      * Destination hostnames: `c-01-ws.jp-tok.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
+
+The following IP addresses were added on 1 September 2026: `165.192.138.242`, `128.168.141.55`, `162.133.128.178`.
+{: note}
   
 Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers.
 :    * Destination hostnames: `0.rhel.pool.ntp.org`, `1.rhel.pool.ntp.org`, `2.rhel.pool.ntp.org`, `3.rhel.pool.ntp.org`
