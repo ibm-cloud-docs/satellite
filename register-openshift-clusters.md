@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-27"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -15,7 +15,7 @@ subcollection: satellite
 # Registering clusters with {{site.data.keyword.satelliteshort}} Config
 {: #register-openshift-clusters}
 
-Clusters that you create in your Satellite location are automatically registered with {{site.data.keyword.satelliteshort}} Config. You can also manually register other clusters in the public cloud or your existing {{site.data.keyword.openshiftlong_notm}} clusters with {{site.data.keyword.satelliteshort}} Config. Follow the steps to run the registration script in your cluster to set up the {{site.data.keyword.satelliteshort}} Config components and make the cluster visible in {{site.data.keyword.satelliteshort}}.
+Location clusters are automatically registered with {{site.data.keyword.satelliteshort}} Config. Manually register other clusters by running the registration script to set up {{site.data.keyword.satelliteshort}} Config components.
 {: shortdesc}
 
 After you complete these steps, the cluster can be added to a cluster group in your location and [subscribed to {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-satcon-manage-direct-upload). However, you must still use {{site.data.keyword.openshiftlong_notm}} to manage the worker nodes for these clusters.

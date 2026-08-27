@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Monitoring for {{site.data.keyword.satelliteshort}}
 {: #monitor}
 
-{{site.data.keyword.satellitelong}} provides built-in tools for managing the health of your {{site.data.keyword.satelliteshort}} resources, including locations, hosts, clusters, and Link endpoints.
+{{site.data.keyword.satellitelong}} provides built-in tools for monitoring the health of locations, hosts, clusters, and Link endpoints.
 {: shortdesc}
 
 Monitoring for your {{site.data.keyword.satelliteshort}} location and for the {{site.data.keyword.cloud_notm}} services that run in your location requires separate setup. To collect location platform metrics, enable a {{site.data.keyword.mon_short}} instance in the same region that manages your location. To collect pod metrics from an {{site.data.keyword.openshiftlong_notm}} cluster in your {{site.data.keyword.satelliteshort}} location, deploy a monitoring agent in the cluster to forward metrics to a {{site.data.keyword.mon_short}} instance. A single {{site.data.keyword.mon_short}} instance collects metrics for both your {{site.data.keyword.satelliteshort}} location and the services running in it.
@@ -37,7 +37,7 @@ See [Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?t
 ### {{site.data.keyword.IBM_notm}} monitoring to resolve and report location alerts
 {: #monitoring-default}
 
-When you create a {{site.data.keyword.satelliteshort}} location and set up the location control plane, {{site.data.keyword.IBM_notm}} automatically monitors and resolves specific alert conditions for your location setup and host infrastructure. The following table identifies each scenario and the action {{site.data.keyword.IBM_notm}} takes.
+{{site.data.keyword.IBM_notm}} automatically monitors and resolves specific alert conditions for your location setup and host infrastructure. The following table shows each scenario and the action taken.
 {: shortdesc}
 
 Additionally, if you [set up your {{site.data.keyword.satelliteshort}} location to forward logs to {{site.data.keyword.logs_full_notm}}](/docs/satellite?topic=satellite-health#setup-la), the messages and more detailed information from the {{site.data.keyword.IBM_notm}} Monitoring component are captured and stored in your {{site.data.keyword.logs_full_notm}} instance.
@@ -55,13 +55,13 @@ Additionally, if you [set up your {{site.data.keyword.satelliteshort}} location 
 ## Viewing location, host, and cluster health
 {: #view-health}
 
-You can review the health of {{site.data.keyword.satelliteshort}} resources such as locations, hosts, clusters, and Kubernetes resources that run in clusters.
+Review the health of {{site.data.keyword.satelliteshort}} resources including locations, hosts, clusters, and Kubernetes resources.
 {: shortdesc}
 
 ### Viewing location health
 {: #location-health}
 
-When you set up a {{site.data.keyword.satelliteshort}} location, {{site.data.keyword.cloud_notm}} monitors the host and reports back statuses that you can use to keep your location healthy. For more information, see [{{site.data.keyword.IBM_notm}} monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-monitor#monitoring-default). For troubleshooting help, see [Debugging location health](/docs/satellite?topic=satellite-ts-locations-debug).
+{{site.data.keyword.cloud_notm}} monitors your {{site.data.keyword.satelliteshort}} location hosts and reports statuses. See [IBM monitoring alerts](/docs/satellite?topic=satellite-monitor#monitoring-default) and [debugging location health](/docs/satellite?topic=satellite-ts-locations-debug).
 {: shortdesc}
 
 You can review the host health from the **Locations** table in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, or by running `ibmcloud sat location ls`.
@@ -107,7 +107,7 @@ When you view the **Hosts** table in the {{site.data.keyword.satelliteshort}} co
 ### Viewing cluster health
 {: #cluster-health}
 
-To review the health of {{site.data.keyword.openshiftlong_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-cluster-states-reference).
+See the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-cluster-states-reference) to review cluster health in your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
 ### Viewing Kubernetes resources in clusters
@@ -122,7 +122,7 @@ Adding clusters to {{site.data.keyword.satelliteshort}} Configuration does not a
 ### Viewing {{site.data.keyword.satelliteshort}} Config registration status for clusters
 {: #satconfig-registration-status}
 
-You can view the registration status of clusters that are enabled for use with {{site.data.keyword.satelliteshort}} Config. Keep in mind that some clusters can be in a public cloud location, not your {{site.data.keyword.satelliteshort}} location.
+View the registration status of clusters enabled for {{site.data.keyword.satelliteshort}} Config, including clusters in public cloud locations.
 {: shortdesc}
 
 1. List clusters that are registered with {{site.data.keyword.satelliteshort}} Config. Note the output in the **Status** and **Location** columns.
@@ -145,7 +145,7 @@ You can view the registration status of clusters that are enabled for use with {
 ## Setting up {{site.data.keyword.mon_short}} for {{site.data.keyword.satelliteshort}} location platform metrics
 {: #setup-mon}
 
-Forward and view additional metrics for {{site.data.keyword.satelliteshort}} in an {{site.data.keyword.mon_full_notm}} instance that is enabled for platform-level metrics.
+Forward and view {{site.data.keyword.satelliteshort}} metrics in an {{site.data.keyword.mon_full_notm}} instance enabled for platform-level metrics.
 {: shortdesc}
 
 Metrics are available for the {{site.data.keyword.satelliteshort}} Link component of your location to help you monitor the performance of specific Link endpoints or of all Link endpoints for the location. For example, you can monitor the latency or throughput of a specific Link endpoint that you created.

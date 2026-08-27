@@ -17,7 +17,7 @@ subcollection: satellite
 {: #connector-multiple-windows-agent}
 
 
-Beginning with Windows agent version 1.2.0, multiple agents on a single Windows host are now supported. Microsoft .NET >= 3.5 is required on the Server to use version >= 1.2.0 of the Windows agent.
+Multiple Connector agents on a single Windows host are supported starting with version 1.2.0. Requires Microsoft .NET >= 3.5.
 {: shortdesc}
 
 

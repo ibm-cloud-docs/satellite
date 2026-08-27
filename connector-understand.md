@@ -16,7 +16,7 @@ subcollection: satellite
 # {{site.data.keyword.satelliteshort}} Connector overview
 {: #understand-connectors}
 
-{{site.data.keyword.satelliteshort}} Connector provides secure Transport Layer Security (TLS) tunneling between applications and services that need to communicate in hybrid and multi-cloud environments. IBM engineering confirms that the Connector agent requires only outbound port 443, eliminating the need for inbound firewall rules on customer infrastructure.
+{{site.data.keyword.satelliteshort}} Connector provides secure TLS tunneling between applications and services in hybrid and multi-cloud environments using only outbound port 443.
 {: shortdesc}
 
   

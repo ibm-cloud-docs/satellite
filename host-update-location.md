@@ -17,7 +17,7 @@ subcollection: satellite
 # Updating {{site.data.keyword.satelliteshort}} location control plane hosts 
 {: #host-update-location}
 
-Get the latest OpenShift Container Platform, operating system, and security patches by detaching the hosts from your location, reloading the host machine in your infrastructure provider, then reattaching and reassigning the hosts to your {{site.data.keyword.satelliteshort}} location control plane. 
+Update control plane hosts by detaching them, reloading the OS in your infrastructure provider, then reattaching and reassigning them to your {{site.data.keyword.satelliteshort}} location control plane.
 {: shortdesc}
 
 
@@ -112,7 +112,7 @@ All non-normal host statuses in the console include a tooltip that links directl
 ## Updating control plane hosts
 {: #host-update-cp-procedure}
 
-To apply a version update, you must detach, reload, and reattach your host to the {{site.data.keyword.satelliteshort}} location. Then, you can assign the host back to the control plane or to another resource that runs in the location.
+Detach, reload, and reattach your host to apply a version update, then reassign it to the control plane or another location resource.
 {: shortdesc}
 
 When you update control plane hosts, **do not assign or remove multiple hosts at the same time** as doing so may break the control plane. You must wait for a host assignment or removal to complete before assigning or removing another host.

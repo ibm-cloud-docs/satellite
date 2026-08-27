@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, assigning hosts, host auto assignment, host auto assignment, host labels
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Assigning hosts with host label auto assignment
 {: #host-autoassign-ov}
 
-Available hosts can be  automatically assigned to worker pools in {{site.data.keyword.satelliteshort}} resources, such as a cluster or a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) when you use host labels. Host labels are used by worker pools to request compute capacity from available {{site.data.keyword.satelliteshort}} hosts with matching labels. You can disable and enable host auto assignment. Your host must be available before it can be assigned.
+Hosts are automatically assigned to worker pools in clusters or [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s using host labels to match available compute capacity. You can enable or disable auto assignment.
 {: shortdesc}
 
 Host auto assignment is not available for the {{site.data.keyword.satelliteshort}} location control plane. 
@@ -25,7 +25,7 @@ Host auto assignment is not available for the {{site.data.keyword.satelliteshort
 ## Host labels
 {: #host-autoassign-about}
 
-Host auto assignment works by matching labels from worker pools in {{site.data.keyword.satelliteshort}} clusters to the host and zone labels on available {{site.data.keyword.satelliteshort}} hosts.
+Host auto assignment matches worker pool labels in {{site.data.keyword.satelliteshort}} clusters to host and zone labels on available hosts.
 {: shortdesc}
 
 Keep in mind the following information about the host labels that are used for auto assignment.
@@ -65,7 +65,7 @@ Hosts must be assigned as worker nodes in each zone of the default worker pool i
 ## Automatically assigning hosts
 {: #host-autoassign}
 
-{{site.data.keyword.satellitelong_notm}} can automatically assign hosts to worker pools in {{site.data.keyword.satelliteshort}} clusters that request compute capacity by using host labels, such as `cpu`.
+{{site.data.keyword.satellitelong_notm}} automatically assigns hosts to worker pools in clusters that request compute capacity using host labels such as `cpu`.
 {: shortdesc}
 
 Before you begin, make sure that you create a {{site.data.keyword.satelliteshort}} cluster. If you create a cluster in the [CLI](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#cli_cluster-create-satellite), you must specify the `--workers` option with the number of hosts you want to automatically assign. Then, make sure that you [attach hosts](/docs/satellite?topic=satellite-attach-hosts) to your {{site.data.keyword.satelliteshort}} location, but do not assign the hosts to any resources.

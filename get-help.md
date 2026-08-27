@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -40,7 +40,7 @@ Still having issues? Review different ways to get help and support for {{site.da
 ## Identifying issues for {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service
 {: #help-services}
 
-If you experience an issue with a {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service in your location, first check whether your issue is listed in the troubleshooting topics in the {{site.data.keyword.satelliteshort}} documentation. If the issue is not listed in the {{site.data.keyword.satelliteshort}} documentation, check the {{site.data.keyword.cloud_notm}} documentation set for the service.
+For issues with a {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service, check the {{site.data.keyword.satelliteshort}} troubleshooting topics first, then the {{site.data.keyword.cloud_notm}} documentation for that service.
 {: shortdesc}
 
 For example, if you cannot access the {{site.data.keyword.redhat_openshift_notm}} console for a {{site.data.keyword.redhat_openshift_notm}} cluster on {{site.data.keyword.satelliteshort}}, first check whether the issue is [specific to your {{site.data.keyword.satelliteshort}} location setup](/docs/satellite?topic=satellite-ts-console-fail). If your {{site.data.keyword.satelliteshort}} location setup is not the source of the issue, then check the [{{site.data.keyword.openshiftlong_notm}} documentation for troubleshooting console issues](/docs/openshift?topic=openshift-ocp-debug).

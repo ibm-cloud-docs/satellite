@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, edge, use case, machine learning
 
@@ -16,13 +16,13 @@ subcollection: satellite
 # Edge environments for AI, IoT, and machine learning
 {: #edge-usecase}
 
-Create an {{site.data.keyword.satellitelong}} location with {{site.data.keyword.redhat_openshift_notm}} clusters on compute infrastructure that is deployed at the edge near your Internet of Things (IoT) devices. Then, through your {{site.data.keyword.satelliteshort}} location, your apps can access a suite of {{site.data.keyword.cloud_notm}} artificial intelligence (AI) and machine learning services to maximize the value of your data wherever the data is located.
+Create a {{site.data.keyword.satelliteshort}} location with {{site.data.keyword.redhat_openshift_notm}} clusters at the edge near your IoT devices to access {{site.data.keyword.cloud_notm}} AI and machine learning services wherever your data lives.
 {: shortdesc}
 
 ## Solving common edge workload challenges with {{site.data.keyword.cloud_notm}}
 {: #edge-challenges}
 
-Common challenges of edge workloads include training the machine learning models and using predictive model inferencing. With {{site.data.keyword.satelliteshort}}, you can access the {{site.data.keyword.cloud_notm}} services that addresses these challenges where your edge workloads actually run.
+Address edge workload challenges like model training and inferencing by using {{site.data.keyword.cloud_notm}} services where your edge workloads run.
 {: shortdesc}
 
 Training a machine learning model
@@ -35,7 +35,7 @@ Model inferencing
 ## Setting up your edge solution with {{site.data.keyword.satelliteshort}}
 {: #edge-solution}
 
-While you can set up many possible solutions to the challenges of your edge environment, you can use {{site.data.keyword.satelliteshort}} to provide a consistent, scalable experience across environments. An example setup is as follows.
+Use {{site.data.keyword.satelliteshort}} to provide a consistent, scalable experience across your edge environments.
 {: shortdesc}
 
 1. Set up machine learning and model training for your data.
@@ -45,7 +45,7 @@ While you can set up many possible solutions to the challenges of your edge envi
 ### Step 1: Set up machine learning and model training for your data
 {: #edge-example-ml}
 
-As an AI model developer, you prepare your edge data with machine learning and AI tools in {{site.data.keyword.cloud_notm}}. Before you begin, you must have access to {{site.data.keyword.DSX}} and {{site.data.keyword.pm_short}} instances, such as in an {{site.data.keyword.cloud_notm}} account or through {{site.data.keyword.cpd_full_notm}}.
+Prepare edge data with {{site.data.keyword.DSX}} and {{site.data.keyword.pm_short}} in {{site.data.keyword.cloud_notm}} or {{site.data.keyword.cpd_full_notm}} before deploying your model.
 {: shortdesc}
 
 1. Upload the training data to [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-19"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, aws, amazon web services, satellite location
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Automating your AWS location setup with a {{site.data.keyword.bpshort}} template
 {: #loc-aws-create-auto}
 
-Automate your AWS setup with templates that use [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-getting-started) to create a {{site.data.keyword.satelliteshort}} location, provision hosts in your AWS account, and set up the {{site.data.keyword.satelliteshort}} location control plane for you. 
+Use [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-getting-started) templates to automatically create a {{site.data.keyword.satelliteshort}} location, provision AWS hosts, and set up the {{site.data.keyword.satelliteshort}} location control plane.
 {: shortdesc}
 
 You can clone and modify these Terraform templates from the [Satellite Terraform GitHub repository](https://github.com/terraform-ibm-modules/terraform-ibm-satellite/tree/main/examples){: external}. Or, you can [manually attach AWS hosts to a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-aws).
@@ -61,7 +61,7 @@ The following resources are created by the template in your {{site.data.keyword.
 
 - 1 {{site.data.keyword.satelliteshort}} location.
 - 3 {{site.data.keyword.satelliteshort}} hosts that represent the EC2 instances in AWS, attached to the location and assigned to the {{site.data.keyword.satelliteshort}} location control plane.
-- 3 {{site.data.keyword.satelliteshort}} hosts that represent the EC2 instances in AWS, attached to the location, unassigned, and available to use for services such as a {{site.data.keyword.redhat_openshift_notm}} cluster. If you added more than 6 hosts, If you added more than 6 hosts, the additional hosts are unassigned and available for use in the control plane or by services. 
+- 3 {{site.data.keyword.satelliteshort}} hosts that represent the EC2 instances in AWS, attached to the location, unassigned, and available to use for services such as a {{site.data.keyword.redhat_openshift_notm}} cluster. If you added more than 6 hosts, the additional hosts are unassigned and available for use in the control plane or by services.
 
 If you are using this template for demonstration purposes, do not assign all your hosts to your control plane. Hosts that are assigned to the control plane cannot be used for other purposes, such as worker nodes for your cluster. For more information, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-location-host).
 {: note}

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -16,7 +16,7 @@ content-type: conref
 # Content references for Satellite
 {: #conref-satellite}
 
-Review content references for {{site.data.keyword.satelliteshort}}, including reusable snippets for storage templates, cost estimation, and other shared content.
+Review content references for {{site.data.keyword.satelliteshort}}, including reusable snippets for storage templates and shared content.
 {: shortdesc}
 
 ## Understanding which OpenShift Data Foundation (ODF) storage template to use

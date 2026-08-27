@@ -3,7 +3,7 @@
 
 copyright: 
   years: 2023, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-27"
 
 keywords: satellite, install cli, install sat, set up satellite command line, satellite command line, satellite cli, sat commands
 
@@ -22,7 +22,7 @@ subcollection: satellite
 {: #cli-install}
 
 
-You can use the following tools to manage your {{site.data.keyword.satelliteshort}} locations and clusters. While you can install a subset of the tools, the following tools are recommended.
+Install the following recommended tools to manage your {{site.data.keyword.satelliteshort}} locations and clusters.
 {: shortdesc}
 
 

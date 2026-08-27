@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-17"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link, connector, agent
 
@@ -25,7 +25,7 @@ completion-time: 2h
 {: toc-services="satellite, dl, vpc"}
 {: toc-completion-time="2h"}
 
-In the following steps, you set up a Virtual Private Endpoint (VPE) gateway in your Virtual Private Cloud (VPC) to use with Direct Link for communication between your on-premises apps and IBM Cloud.
+Set up a Virtual Private Endpoint (VPE) gateway in your VPC to use with Direct Link for communication between on-premises apps and IBM Cloud.
 {: shortdesc}
 
 After setting up the VPE, you can communicate to IBM Cloud through the VPE by using Satellite Connector. 

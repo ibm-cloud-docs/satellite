@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, satellite security, satellite compliance
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Security and compliance
 {: #compliance}
 
-{{site.data.keyword.satellitelong}} provides built-in security features for risk analysis and data protection, including end-to-end encryption for all traffic over {{site.data.keyword.satelliteshort}} Link, automated certificate rotation, and integration with {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). According to IBM security standards, all {{site.data.keyword.satelliteshort}} Link traffic is encrypted end-to-end using TLS 1.2 or later, and all data stored for location control plane operations is encrypted at rest.
+{{site.data.keyword.satellitelong}} provides built-in security for risk analysis and data protection, including end-to-end encryption over {{site.data.keyword.satelliteshort}} Link, certificate rotation, and IAM integration.
 {: shortdesc}
 
 
@@ -52,7 +52,7 @@ Review the following ways that you can secure access to your location.
 ## {{site.data.keyword.IBM_notm}} operational access
 {: #operational-access}
 
-Learn more about {{site.data.keyword.IBM_notm}} operational access to your {{site.data.keyword.satelliteshort}} location and how to monitor {{site.data.keyword.IBM_notm}}-initiated activities.
+Learn about {{site.data.keyword.IBM_notm}} operational access to your {{site.data.keyword.satelliteshort}} location and how to monitor {{site.data.keyword.IBM_notm}}-initiated activities.
 {: shortdesc}
 
 ### What automated access does {{site.data.keyword.IBM_notm}} have to my location?
@@ -103,7 +103,7 @@ For more information about making your {{site.data.keyword.satelliteshort}} loca
 ## Digital certificates for {{site.data.keyword.satelliteshort}} hosts and domains
 {: #certs-hosts-domains}
 
-Let's Encrypt certificates are automatically generated for several {{site.data.keyword.satellitelong_notm}} domains and hosts. Regular renewal of these certificates helps keep your {{site.data.keyword.satelliteshort}} components secure. To see the expiry dates for each certificate and understand whether you or {{site.data.keyword.IBM_notm}} is responsible for regenerating the certificate, review the following table.
+Let's Encrypt certificates are automatically generated and renewed for {{site.data.keyword.satellitelong_notm}} domains and hosts. Review the table to see expiry dates and renewal responsibilities.
 {: shortdesc}
 
 | Component | Example domain | Certificate expiry | Who regenerates | How to regenerate |

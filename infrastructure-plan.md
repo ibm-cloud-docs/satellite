@@ -17,7 +17,7 @@ subcollection: satellite
 # Planning your environment for {{site.data.keyword.satelliteshort}} locations
 {: #infrastructure-plan}
 
-Learn how to plan your infrastructure environment for {{site.data.keyword.satellitelong}}, including on-premises data centers, public cloud providers, and edge devices.
+Plan your infrastructure for {{site.data.keyword.satellitelong}}, including on-premises data centers, cloud providers, and edge devices.
 {: shortdesc}
 
 ## Planning your infrastructure

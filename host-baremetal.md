@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, bare metal host, bare metal, baremetal
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Attaching Bare metal hosts
 {: #host-baremetal}
 
-You can use a supported bare metal server as a host attached to your {{site.data.keyword.satelliteshort}} location, including {{site.data.keyword.baremetal_long}} for Classic.
+Use a supported bare metal server, including {{site.data.keyword.baremetal_long}} for Classic, as a host in your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
 ## {{site.data.keyword.baremetal_short_sing}} requirements

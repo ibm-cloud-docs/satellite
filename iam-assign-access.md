@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, assign access, access for satellite
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Assigning access with {{site.data.keyword.cloud_notm}} IAM
 {: #iam-assign-access}
 
-To grant access to {{site.data.keyword.satelliteshort}} resources, use {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). For information about assigning user roles in the console, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
+Use {{site.data.keyword.cloud_notm}} IAM to grant access to {{site.data.keyword.satelliteshort}} resources. See [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 {: shortdesc}
 
 ## Access policies
@@ -47,7 +47,7 @@ After you define the scope of the access policy, you assign a role, which determ
 ## Overview of the process to set up access to {{site.data.keyword.satellitelong_notm}} in {{site.data.keyword.cloud_notm}} IAM
 {: #iam-assign-overview}
 
-As a general practice, you can invite users to your {{site.data.keyword.cloud_notm}} account, add them to an access group, and assign them access to {{site.data.keyword.satellitelong_notm}} resources in IAM. You can also add access policies for other {{site.data.keyword.cloud_notm}} services, or assign individual user access.
+Invite users, add them to access groups, and assign IAM policies for {{site.data.keyword.satellitelong_notm}} resources and other {{site.data.keyword.cloud_notm}} services.
 {: shortdesc}
 
 1. [Invite users to your account](/docs/account?topic=account-inviteusers).
@@ -84,7 +84,7 @@ As a general practice, you can invite users to your {{site.data.keyword.cloud_no
 ## Assigning access policy to access group by using the console
 {: #iam-assign-ui}
 
-Use the {{site.data.keyword.cloud_notm}} IAM console to assign an access policy to an access group to manage {{site.data.keyword.satelliteshort}} locations, hosts, and endpoints as shown in the following example.
+Use the IAM console to assign an access policy to an access group for managing {{site.data.keyword.satelliteshort}} locations, hosts, and endpoints.
 {: shortdesc}
 
 1. Log in to [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/){: external}.
@@ -110,7 +110,7 @@ Use the {{site.data.keyword.cloud_notm}} IAM console to assign an access policy 
 ## Assigning access policy to access group with the CLI
 {: #iam-assign-cli}
 
-Use the {{site.data.keyword.cloud_notm}} IAM CLI to grant an access policy to an access group to manage {{site.data.keyword.satelliteshort}} resources as shown in the following example.
+Use the IAM CLI to grant an access policy to an access group for managing {{site.data.keyword.satelliteshort}} resources.
 {: shortdesc}
 
 1. Log in to {{site.data.keyword.cloud_notm}}. If you have a federated account, include the `--sso` option.

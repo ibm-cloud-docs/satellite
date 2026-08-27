@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -25,7 +25,7 @@ completion-time: 2h
 {: toc-services="satellite, containers, dl"}
 {: toc-completion-time="2h"}
 
-Use a secure {{site.data.keyword.cloud_notm}} connection for {{site.data.keyword.satelliteshort}} Link communications between your services running in a {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}. Learn how to set up a direct link connection for hybrid cloud environments.
+Set up a {{site.data.keyword.dl_full}} connection for {{site.data.keyword.satelliteshort}} Link communications between your location and {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 The following steps are deprecated. For the latest steps, see [Connecting to IBM Cloud via the private network by using Satellite Connector and Direct Link 2.0](/docs/satellite?topic=satellite-direct-link-vpe).
@@ -37,7 +37,7 @@ Supported location types
 Supported host operating systems
 :   Red Hat CoreOS (RHCOS) and RHEL
 
-Use a secure {{site.data.keyword.dl_full}} connection for {{site.data.keyword.satelliteshort}} Link communications between your services running in an {{site.data.keyword.satellitelong}} Location and {{site.data.keyword.cloud}}.
+Use {{site.data.keyword.dl_full}} for {{site.data.keyword.satelliteshort}} Link communications between your {{site.data.keyword.satellitelong}} Location and {{site.data.keyword.cloud}}.
 {: shortdesc}
 
 In this tutorial, you set up your {{site.data.keyword.satelliteshort}} Link to use a {{site.data.keyword.dl_short}} connection. The Link tunnel client at your Location sends traffic over the {{site.data.keyword.dl_short}} connection to a Relay that you create in your  {{site.data.keyword.cloud_notm}} account. This Relay proxies the traffic to Link tunnel server's IP address in the {{site.data.keyword.cloud_notm}} private network.
@@ -107,7 +107,7 @@ The following diagram demonstrates the flow of traffic.
 ## Objectives
 {: #dl-objectives}
 
-You can create Red Hat CoreOS enabled Locations without accessing public Internet. All traffic is handled by {{site.data.keyword.dl_short}} and stays internal.
+Create Red Hat CoreOS enabled Locations without public Internet access by routing all traffic through {{site.data.keyword.dl_short}}.
 {: shortdesc}
 
 High level steps include:
@@ -146,14 +146,14 @@ High level steps include:
 You can skip this step if you already have a Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} Location.
 {: note}
 
-Log in to your {{site.data.keyword.cloud_notm}} account that has {{site.data.keyword.dl_short}} and create a Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} Location. For more information, see [Creating a Satellite location](/docs/satellite?topic=satellite-locations#verify-coreos-location).
+Log in to your {{site.data.keyword.cloud_notm}} account with {{site.data.keyword.dl_short}} and [create a Red Hat CoreOS enabled location](/docs/satellite?topic=satellite-locations#verify-coreos-location).
 {: shortdesc}
 
 ## Creating a relay
 {: #dl-create-coreos-relay}
 {: step}
 
-The relay is an http/https reverse proxy that supports secure Websocket connections. It can run on VSI, {{site.data.keyword.redhat_openshift_notm}} or {{site.data.keyword.containerlong_notm}} as Classic or VPC. The following steps demonstrates an example for deploying NGINX reverse proxy on a private-only VPC {{site.data.keyword.redhat_openshift_notm}} cluster (on VPC private nodes).
+The relay is an HTTP/HTTPS reverse proxy supporting secure WebSocket connections, deployable on VSI, {{site.data.keyword.redhat_openshift_notm}}, or {{site.data.keyword.containerlong_notm}} Classic or VPC.
 {: shortdesc}
 
 One essential requirement is to have a valid name that can be assigned to the cluster private ingress (Relay Ingress) and a valid certificate on {{site.data.keyword.cloud_notm}}. On {{site.data.keyword.cloud_notm}}, VPC {{site.data.keyword.redhat_openshift_notm}} clusters on private nodes come with default private host name and certificate. You can use them or bring your custom host name and certificate. This example uses the default private host name and certificates.

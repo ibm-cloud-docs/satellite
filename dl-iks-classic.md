@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -35,7 +35,7 @@ Follow these steps to set up the `dl-reverse-proxy` for {{site.data.keyword.dl_f
 {: #dl-cluster}
 {: step}
 
-Create an {{site.data.keyword.containerlong_notm}} cluster in your {{site.data.keyword.cloud_notm}} account, which serves as the connection between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}} on the private network.
+Create an {{site.data.keyword.containerlong_notm}} cluster as the private-network connection between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 1. Review the networking basics of clusters. In particular, ensure that you prepare the following:
@@ -80,7 +80,7 @@ Create an {{site.data.keyword.containerlong_notm}} cluster in your {{site.data.k
 {: #dl-ingress}
 {: step}
 
-Set up the private Ingress application load balancers (ALBs) for the {{site.data.keyword.containerlong_notm}} cluster, which expose the service for an NGINX reverse proxy on the private network. For more information, you can review the [considerations for exposing an app in your cluster to the private network only](/docs/containers?topic=containers-cs_network_planning#private_access) and specific guidance for [privately exposing apps with Ingress ALBs](/docs/containers?topic=containers-comm-ingress-annotations).
+Set up private Ingress ALBs for your {{site.data.keyword.containerlong_notm}} cluster to expose an NGINX reverse proxy on the private network.
 {: shortdesc}
 
 1. Verify that at least one ALB with a **Type** of `private` exists in each zone.
@@ -151,7 +151,7 @@ The private Ingress ALBs in your cluster are now configured to expose a reverse 
 {: #dl-reverse-proxy}
 {: step}
 
-Deploy an NGINX reverse proxy in the cluster that is exposed on the private network by the Ingress ALBs, and configure the reverse proxy to point to the {{site.data.keyword.satelliteshort}} Link tunnel server for your location.
+Deploy an NGINX reverse proxy exposed by the Ingress ALBs and configure it to point to the {{site.data.keyword.satelliteshort}} Link tunnel server for your location.
 {: shortdesc}
 
 The following steps include editing and using local YAML files to create a ConfigMap, an NGINX deployment, and a service. As an alternative, you can clone an NGINX HTTPS sample repository, such as the [`https-nginx` directory of the `kubernetes/examples` repository](https://github.com/kubernetes/examples/tree/master/_archived/https-nginx){: external}, and [push the Docker image to a namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started). If you use a sample repository, ensure that the NGINX configuration, such as in the `default.conf` file, includes the server block that is specified in step 2 of this section.

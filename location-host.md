@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, location, host, location control plane
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Understanding {{site.data.keyword.satelliteshort}} location and hosts 
 {: #location-host}
 
-An {{site.data.keyword.satellitelong}} location is a representation of an environment in your infrastructure provider, such as an on-prem data center or cloud. Locations are made up of compute sources, called hosts, that resides in your infrastructure provider or even locally. After you attach your hosts to a {{site.data.keyword.satelliteshort}} location, assign the hosts to the location control plane or use them to power your service workloads.
+A {{site.data.keyword.satellitelong}} location represents an environment in your infrastructure provider. Attach compute hosts to the location, then assign them to the control plane or service workloads.
 {: shortdesc}
 
 Locations can be made of hosts of any size, including as small as a local desktop computer or as large as hundreds of computers in a central office. Because locations are made up of your infrastructure, you can create a {{site.data.keyword.satelliteshort}} location anywhere that your infrastructure is located. 
@@ -25,7 +25,7 @@ Locations can be made of hosts of any size, including as small as a local deskto
 ## {{site.data.keyword.satelliteshort}} location overview
 {: #loc-overview}
 
-To set up a {{site.data.keyword.satelliteshort}} location, you must first create the location, add hosts to it, and then create the location control plane. If you use a quick start template (Schematics template), some steps are done for you automatically.  
+Create a {{site.data.keyword.satelliteshort}} location, add hosts, and set up the control plane. Quick start templates automate some steps.
 {: shortdesc}
 
 ![High level process overview.](/images/sat_location_overview.svg "High-level overview of a Satellite location"){: caption="High-level overview of a Satellite location" caption-side="bottom"}
