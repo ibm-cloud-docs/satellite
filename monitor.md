@@ -113,7 +113,7 @@ See the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift
 ### Viewing Kubernetes resources in clusters
 {: #kubernetes-resources-health}
 
-When you add your clusters to {{site.data.keyword.satelliteshort}} Configuration, the Kubernetes resources are automatically added to an inventory that you can review. For more information, see [Managing apps with {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-setup-clusters-satconfig).
+Clusters added to {{site.data.keyword.satelliteshort}} Configuration have their Kubernetes resources automatically inventoried for review.
 {: shortdesc}
 
 Adding clusters to {{site.data.keyword.satelliteshort}} Configuration does not automatically set up logging and monitoring solutions, such as {{site.data.keyword.logs_full_notm}} and {{site.data.keyword.mon_full_notm}}.
@@ -122,7 +122,7 @@ Adding clusters to {{site.data.keyword.satelliteshort}} Configuration does not a
 ### Viewing {{site.data.keyword.satelliteshort}} Config registration status for clusters
 {: #satconfig-registration-status}
 
-View the registration status of clusters enabled for {{site.data.keyword.satelliteshort}} Config, including clusters in public cloud locations.
+View the registration status of clusters enabled for {{site.data.keyword.satelliteshort}} Config, including those in public cloud locations.
 {: shortdesc}
 
 1. List clusters that are registered with {{site.data.keyword.satelliteshort}} Config. Note the output in the **Status** and **Location** columns.

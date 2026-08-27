@@ -122,7 +122,7 @@ Use the CLI to create an endpoint connecting your {{site.data.keyword.satellites
 ## Testing connections through cloud endpoints
 {: #link-cloud-test}
 
-Use the {{site.data.keyword.satelliteshort}} Link connector host name and port that are assigned to your endpoint to connect to your destination resource from a source in your location. The source can be a {{site.data.keyword.satelliteshort}} cluster that you previously created or a host that you assigned to your location.
+Use the {{site.data.keyword.satelliteshort}} Link connector host name and port assigned to your endpoint to connect to your destination from a cluster or host in your location.
 {: shortdesc}
 
 ### Example for testing the connection from an unassigned host
