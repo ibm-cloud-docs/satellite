@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, host network requirements, satellite, hybrid multicloud, network configuration, host setup
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Host network requirements for {{site.data.keyword.satelliteshort}}
 {: #reqs-host-network}
 
-Review the network setup requirements for host machines in {{site.data.keyword.satellitelong_notm}}, including configurations, bandwidth, and connectivity requirements for your {{site.data.keyword.satelliteshort}} location.
+Review network requirements for {{site.data.keyword.satelliteshort}} hosts, including configurations, bandwidth, and connectivity requirements for your location.
 {: shortdesc}
 
 
@@ -27,7 +27,7 @@ You can verify your host setup with the `satellite-host-check` script. For more 
 ## Networking configurations
 {: #reqs-host-network-config}
 
-In general, do not set any custom networking configurations on your hosts, such as network manager scripts, `dnsmasq` setups, custom IP table rules, or custom MTU settings like jumbo frames.
+Do not set custom networking configurations on your hosts, such as network manager scripts, `dnsmasq` setups, custom IP table rules, or custom MTU settings like jumbo frames.
 {: shortdesc}
 
 All hosts must meet the following network requirements:
@@ -70,7 +70,7 @@ Hosts assigned to a specific {{site.data.keyword.redhat_openshift_notm}} cluster
 ## Inbound connectivity requirements for {{site.data.keyword.satelliteshort}} hosts
 {: #reqs-host-network-firewall-inbound}
 
-Hosts must have inbound connectivity on the primary network interface through the default gateway or firewall the system. Hosts that are assigned to the same service; for example, the same cluster, must be able to talk to each other and with the {{site.data.keyword.satelliteshort}} control plane.
+Hosts must have inbound connectivity on the primary network interface. Hosts assigned to the same service must communicate with each other and with the {{site.data.keyword.satelliteshort}} control plane.
 {: shortdesc}
 
 For example, if the primary network interface for a host is `eth0`, you must open the following required IP addresses and ports on the default gateway or firewall on the `eth0` private network interface.

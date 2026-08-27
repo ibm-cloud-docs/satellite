@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, RACI, responsibilities, shared responsibilities
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Your responsibilities with {{site.data.keyword.satelliteshort}}
 {: #responsibilities}
 
-Learn about the management responsibilities and terms and conditions that you have when you use {{site.data.keyword.satellitelong}}, including shared responsibilities between you and {{site.data.keyword.IBM_notm}} for {{site.data.keyword.cloud_notm}} services.
+Learn about your management responsibilities and shared responsibilities with {{site.data.keyword.IBM_notm}} when you use {{site.data.keyword.satellitelong_notm}}.
 {: shortdesc}
 
 Review the following sections for the specific responsibilities for you and for {{site.data.keyword.IBM_notm}} when you use {{site.data.keyword.satellitelong_notm}}. For the overall terms of use, see [{{site.data.keyword.cloud_notm}} Terms and Notices](/docs/overview?topic=overview-terms). For responsibilities that you have for other {{site.data.keyword.cloud_notm}} services that you use with {{site.data.keyword.satelliteshort}}, refer to the documentation of those services, such as [{{site.data.keyword.openshiftlong_notm}} responsibilities](/docs/openshift?topic=openshift-responsibilities_iks).
@@ -25,7 +25,7 @@ Review the following sections for the specific responsibilities for you and for 
 ## Overview of shared responsibilities
 {: #overview-by-resource}
 
-{{site.data.keyword.satellitelong_notm}} is a managed service in the [{{site.data.keyword.cloud_notm}} shared responsibility model](/docs/overview?topic=overview-shared-responsibilities). Review the following table of who is responsible for particular cloud resources when using {{site.data.keyword.satellitelong_notm}}. 
+Review who is responsible for each cloud resource in {{site.data.keyword.satellitelong_notm}} under the [{{site.data.keyword.cloud_notm}} shared responsibility model](/docs/overview?topic=overview-shared-responsibilities).
 {: shortdesc}
 
 | Resource | [Incident and operations management](#incident-and-ops) | [Change management](#change-management) | [Identity and access management](#iam-responsibilities) | [Security and regulation compliance](#security-compliance) | [Disaster Recovery](#disaster-recovery) |
@@ -64,7 +64,7 @@ After reviewing the [overview](#overview-by-resource), see what tasks you and {{
 ### Incident and operations management
 {: #incident-and-ops}
 
-Incident and operations management includes tasks such as monitoring, event management, high availability, problem determination, recovery, and full state backup and recovery.
+Incident and operations management includes monitoring, event management, high availability, problem determination, recovery, and full state backup and recovery.
 {: shortdesc}
 
 | Task | {{site.data.keyword.IBM_notm}} responsibilities | Your responsibilities |
@@ -84,7 +84,7 @@ Incident and operations management includes tasks such as monitoring, event mana
 ### Change management
 {: #change-management}
 
-Change management includes tasks such as deployment, configuration, operating system upgrades, security patching, configuration changes, deletion, and version updates.
+Change management includes deployment, configuration, OS upgrades, security patching, configuration changes, deletion, and version updates.
 {: shortdesc}
 
 | Task | {{site.data.keyword.IBM_notm}} responsibilities | Your responsibilities |
@@ -102,7 +102,7 @@ Change management includes tasks such as deployment, configuration, operating sy
 ### Identity and access management
 {: #iam-responsibilities}
 
-Identity and access management includes tasks such as authentication, authorization, access control policies, and approving, granting, and revoking access. For more information, see [Managing access for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-iam).
+Identity and access management includes authentication, authorization, and access control. For more information, see [Managing access](/docs/satellite?topic=satellite-iam).
 {: shortdesc}
 
 | Task | {{site.data.keyword.IBM_notm}} responsibilities | Your responsibilities |
@@ -140,7 +140,7 @@ Security and regulation compliance includes tasks such as security controls impl
 ### Disaster recovery
 {: #disaster-recovery}
 
-Disaster recovery includes tasks such as providing dependencies on disaster recovery sites, provision disaster recovery environments, data and configuration backup, replicating data and configuration to the disaster recovery environment, and failover on disaster events.
+Disaster recovery includes DR site dependencies, environment provisioning, data and configuration backup, replication, and failover.
 {: shortdesc}
 
 | Task | {{site.data.keyword.IBM_notm}} responsibilities | Your responsibilities |

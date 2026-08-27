@@ -17,7 +17,7 @@ subcollection: satellite
 # Notices and licensing for {{site.data.keyword.satellitelong_notm}}
 {: #sat-notices}
 
-Review the satellite license notices and licensing information for {{site.data.keyword.satellitelong_notm}}, including the Creative Commons Attribution Share Alike 4.0 Generic license.
+Review license notices and licensing information for {{site.data.keyword.satellitelong_notm}}, including the Creative Commons Attribution Share Alike 4.0 Generic license.
 {: shortdesc}
 
 ## Creative Commons Attribution Share Alike 4.0 Generic

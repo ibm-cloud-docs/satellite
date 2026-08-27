@@ -17,7 +17,7 @@ subcollection: satellite
 # Storage requirements for {{site.data.keyword.satelliteshort}} hosts and attached devices
 {: #reqs-host-storage}
 
-Review the storage requirements for hosts assigned to the {{site.data.keyword.satelliteshort}} location control plane and services. Storage needs vary by service, so check the service documentation for specific requirements.
+Review storage requirements for hosts assigned to the {{site.data.keyword.satelliteshort}} control plane and services. Requirements vary by service; check service documentation for details.
 {: shortdesc}
 
 Hosts must have a boot device with an `ext4` file system and enough space to boot the host and run the operating system. While a minimum of 10 GiB is required, 25 GiB is recommended. In addition, `/tmp` and `/usr` must each have at least 1.5 GiB available. Hosts can't have a device that is mounted to `/var/data`. The `/boot` partition must be a minimum of 1 GiB.

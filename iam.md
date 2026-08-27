@@ -128,7 +128,7 @@ Other managed services
 ### Platform and service roles for {{site.data.keyword.redhat_openshift_notm}} clusters
 {: #iam-roles-clusters}
 
-If you create {{site.data.keyword.openshiftlong_notm}} clusters to use in your {{site.data.keyword.redhat_openshift_notm}} locations, you manage access to these clusters in IAM for the {{site.data.keyword.redhat_openshift_notm}} service, not for {{site.data.keyword.redhat_openshift_notm}}. Review the following information to manage IAM access to {{site.data.keyword.redhat_openshift_notm}} clusters.
+Manage access to {{site.data.keyword.openshiftlong_notm}} clusters in your {{site.data.keyword.satelliteshort}} locations by using IAM for the {{site.data.keyword.openshiftlong_notm}} service.
 {: shortdesc}
 
 - [Reference documentation](/docs/openshift?topic=openshift-iam-platform-access-roles) for user access permissions, including platform and service roles.

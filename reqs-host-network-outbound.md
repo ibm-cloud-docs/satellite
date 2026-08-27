@@ -16,7 +16,7 @@ subcollection: satellite
 # Outbound connectivity requirements for {{site.data.keyword.satelliteshort}} hosts
 {: #reqs-host-network-outbound}
 
-Understand the outbound connectivity requirements for hosts in {{site.data.keyword.satellitelong_notm}}, including RHCOS and non-RHCOS locations, and how to verify host network setup.
+Review outbound connectivity requirements for {{site.data.keyword.satelliteshort}} hosts across RHCOS and non-RHCOS locations, and learn how to verify host network setup.
 {: shortdesc}
 
 The type of location that you create dictates the type of operating systems that can run on your hosts. If your location is RHCOS enabled, then you can attach hosts that are running either RHEL and RHCOS. If your location isn't RHCOS enabled, then you can attach only hosts that are running RHEL. You can check whether your [location is RHCOS enabled](/docs/satellite?topic=satellite-locations#verify-coreos-location). For more information about operating system support, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os).

@@ -59,7 +59,7 @@ Worker node hosts
 ## Clusters
 {: #reqs-clusters}
 
-See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-limitations#satellite_limits) in the {{site.data.keyword.openshiftlong_notm}} documentation. The limitations include information related to the following components.
+See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-limitations#satellite_limits) in the {{site.data.keyword.openshiftlong_notm}} documentation for details on clusters, storage, networking, and hosts.
 {: shortdesc}
 
 - {{site.data.keyword.openshiftlong_notm}} clusters that you create in your {{site.data.keyword.satelliteshort}} location.
@@ -119,7 +119,7 @@ Configuration files in {{site.data.keyword.satelliteshort}} Config
 ## {{site.data.keyword.cloud_notm}} services
 {: #reqs-services}
 
-{{site.data.keyword.satellitelong_notm}} supports up to 40 instances of a supported {{site.data.keyword.cloud_notm}} service per location. For example, a single {{site.data.keyword.satelliteshort}} location can run up to 40 {{site.data.keyword.openshiftlong_notm}} clusters.
+{{site.data.keyword.satellitelong_notm}} supports up to 40 instances of a {{site.data.keyword.cloud_notm}} service per location, such as up to 40 {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
 
 Each supported service can have its own limitations to run in {{site.data.keyword.satelliteshort}}. Check the documentation of the supported service to understand the limitations.
