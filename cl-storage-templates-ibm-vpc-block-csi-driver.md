@@ -17,11 +17,11 @@ subcollection: "satellite"
 
 
 
-# IBM VPC block CSI driver storage template version change log
+# `ibm-vpc-block-csi-driver` storage template version change log
 {: #cl-storage-templates-ibm-vpc-block-csi-driver}
 
 
-Review the version history and change log for the IBM VPC block CSI driver, including block storage updates and resolved CVEs.
+Review the version history for `ibm-vpc-block-csi-driver`.
 {: shortdesc}
 
 

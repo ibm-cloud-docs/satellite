@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-19"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, aws, amazon web services, satellite location
 
@@ -61,7 +61,7 @@ The following resources are created by the template in your {{site.data.keyword.
 
 - 1 {{site.data.keyword.satelliteshort}} location.
 - 3 {{site.data.keyword.satelliteshort}} hosts that represent the EC2 instances in AWS, attached to the location and assigned to the {{site.data.keyword.satelliteshort}} location control plane.
-- 3 {{site.data.keyword.satelliteshort}} hosts that represent the EC2 instances in AWS, attached to the location, unassigned, and available to use for services such as a {{site.data.keyword.redhat_openshift_notm}} cluster. If you added more than 6 hosts, If you added more than 6 hosts, the additional hosts are unassigned and available for use in the control plane or by services. 
+- 3 {{site.data.keyword.satelliteshort}} hosts that represent the EC2 instances in AWS, attached to the location, unassigned, and available to use for services such as a {{site.data.keyword.redhat_openshift_notm}} cluster. If you added more than 6 hosts, the additional hosts are unassigned and available for use in the control plane or by services.
 
 If you are using this template for demonstration purposes, do not assign all your hosts to your control plane. Hosts that are assigned to the control plane cannot be used for other purposes, such as worker nodes for your cluster. For more information, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-location-host).
 {: note}
