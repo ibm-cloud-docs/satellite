@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-27"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Understanding {{site.data.keyword.satelliteshort}} Config 
 {: #cluster-config}
 
-With {{site.data.keyword.satelliteshort}} Config, you create a configuration to specify what Kubernetes resources you want to deploy to a group of {{site.data.keyword.openshiftlong_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} location or in {{site.data.keyword.cloud_notm}}.
+With {{site.data.keyword.satelliteshort}} Config, create a configuration to deploy Kubernetes resources to {{site.data.keyword.openshiftlong_notm}} clusters in your {{site.data.keyword.satelliteshort}} location or {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 You can create either GitOps-based configurations or Direct Upload configurations.
@@ -24,7 +24,7 @@ You can create either GitOps-based configurations or Direct Upload configuration
 ## Understanding GitOps-based configurations
 {: #satcon-understand-gitops}
 
-Store your Kubernetes resource definitions in a Git repository. Clusters automatically pull changes directly from your repository and Git references. Your resources stay in your source repository and automatically deploy when the referenced source changes. To use this method, select the **GitOps** template when you create your configuration. If you are using GitOps-based configuration for the first time and want to see how this flow works, you can select the **GitOps - Sample application** template, which guides you to set up and deploy a sample application from the IBM Git repository to your clusters.  
+Store Kubernetes resource definitions in a Git repository. Clusters automatically pull and deploy changes from your repository. Select the **GitOps** template when you create your configuration.
 {: shortdesc}
   
 ![How {{site.data.keyword.satelliteshort}} configurations work](/images/satcon-gitops.svg){: caption="How GitOps configurations work" caption-side="bottom"}
@@ -38,7 +38,7 @@ A GitOps-based configuration involves the follow high-level steps.
 ## Understanding Direct Upload configurations
 {: #satcon-understand-direct-upload}
 
-Store your Kubernetes resource definitions in {{site.data.keyword.satelliteshort}} Config by either manually uploading your YAML files or pushing YAML files from your CI/CD process. Manage changes directly through {{site.data.keyword.satelliteshort}} Config GUI, CLI, or from your CI/CD process. To use this method, select the **Direct upload** template when you create your configuration.
+Upload YAML files manually or from your CI/CD process and manage them through the {{site.data.keyword.satelliteshort}} Config GUI or CLI. Select the **Direct upload** template when you create your configuration.
 {: shortdesc}
 
 ![How {{site.data.keyword.satelliteshort}} configurations work](/images/satcon-direct-upload.svg){: caption="How Direct upload configurations work" caption-side="bottom"}

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Logging for {{site.data.keyword.satelliteshort}}
 {: #health}
 
-Integrate {{site.data.keyword.satelliteshort}} and other {{site.data.keyword.cloud_notm}} resources with {{site.data.keyword.logs_full}} to get a comprehensive view and tools to manage all your resources.
+Integrate {{site.data.keyword.satelliteshort}} with {{site.data.keyword.logs_full}} for a comprehensive view and management tools across all your resources.
 {: shortdesc}
 
 Logging for your {{site.data.keyword.satelliteshort}} location and for the {{site.data.keyword.cloud_notm}} services that run in your location must be set up separately. For example, to collect logs for your {{site.data.keyword.satelliteshort}} location setup, you enable an {{site.data.keyword.logs_full_notm}} instance to collect platform logs in the same region that your location is managed from. Then, to collect logs for a {{site.data.keyword.openshiftlong_notm}} cluster that runs in your {{site.data.keyword.satelliteshort}} location, you create a logging agent in your cluster to automatically collect and forward pod logs to an {{site.data.keyword.logs_full_notm}} instance. Note that you can use the same {{site.data.keyword.logs_full_notm}} instance to collect logs for both your {{site.data.keyword.satelliteshort}} location and services that run in your {{site.data.keyword.satelliteshort}} location.
@@ -25,13 +25,13 @@ Logging for your {{site.data.keyword.satelliteshort}} location and for the {{sit
 ## Setting up {{site.data.keyword.logs_full_notm}} for {{site.data.keyword.satelliteshort}} location platform logs
 {: #setup-la}
 
-Forward and view logs that are automatically generated for your {{site.data.keyword.satelliteshort}} location setup in an {{site.data.keyword.logs_full_notm}} instance that is enabled for platform-level logs.
+Forward and view automatically generated {{site.data.keyword.satelliteshort}} location logs in a {{site.data.keyword.logs_full_notm}} instance enabled for platform-level logs.
 {: shortdesc}
 
 ### Enabling platform logs
 {: #enable-la}
 
-If you already have an {{site.data.keyword.logs_full_notm}} instance in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from, and the {{site.data.keyword.logs_full_notm}} instance is configured to collect platform logs, the logs that are generated for your {{site.data.keyword.satelliteshort}} location are automatically forwarded to this {{site.data.keyword.logs_full_notm}} instance. Otherwise, follow these steps to set up {{site.data.keyword.logs_full_notm}} for your {{site.data.keyword.satelliteshort}} location.
+If you have a {{site.data.keyword.logs_full_notm}} instance in the same region as your {{site.data.keyword.satelliteshort}} location and it collects platform logs, location logs are forwarded automatically. Otherwise, follow these steps to set it up.
 {: shortdesc}
 
 1. [Provision an {{site.data.keyword.logs_full_notm}} instance](https://cloud.ibm.com/catalog){: external} in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
@@ -40,7 +40,7 @@ If you already have an {{site.data.keyword.logs_full_notm}} instance in the same
 ### Viewing logs for your {{site.data.keyword.satelliteshort}} location
 {: #view-la}
 
-Because the {{site.data.keyword.logs_full_notm}} instance is enabled for platform-level log collection, logs for all {{site.data.keyword.logs_full_notm}}-integrated services are shown in the {{site.data.keyword.logs_full_notm}} dashboard. You can apply filters to view only logs for your {{site.data.keyword.satelliteshort}} location.
+All {{site.data.keyword.logs_full_notm}}-integrated service logs appear in the dashboard. Apply filters to view only your {{site.data.keyword.satelliteshort}} location logs.
 {: shortdesc}
 
 1. In the [**Logging** dashboard](https://cloud.ibm.com/observe/logging){: external}, click **Open Dashboard** for your {{site.data.keyword.logs_full_notm}} instance.
@@ -85,7 +85,7 @@ The {{site.data.keyword.monitoringfull_notm}} component generates certain alerts
 ### `R00XX` error logs
 {: #logs-error}
 
-`R00XX` error logs report messages and more detailed information about issues with your location setup and host infrastructure. For more information about each `R00XX` error message, including troubleshooting steps, see [Location error messages](/docs/satellite?topic=satellite-ts-locations-debug).
+`R00XX` error logs report issues with your location setup and host infrastructure. For troubleshooting steps, see [Location error messages](/docs/satellite?topic=satellite-ts-locations-debug).
 {: shortdesc}
 
 Example log
@@ -108,7 +108,7 @@ Example log
 ### Enablement of resource deployment logs
 {: #logs-deploy}
 
-Enablement of resource deployment logs report the current status of whether resources such as hosts, clusters, or {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service instances can be changed or deployed in your location, and the reason for this status. For example, resource deployment can be set to false due to one or more location errors.
+Deployment enablement logs report whether hosts, clusters, or {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service instances can be deployed or changed in your location and the reason for the current status.
 {: shortdesc}
 
 Example log
@@ -128,7 +128,7 @@ Example log
 ### Endpoint health status logs
 {: #logs-link}
 
-Endpoint health status logs report the current health check status of the {{site.data.keyword.satelliteshort}} Link tunnel server endpoint. For more information, see [Why is {{site.data.keyword.cloud_notm}} unable to check my location's health?](/docs/satellite?topic=satellite-ts-location-healthcheck).
+Endpoint health logs report the {{site.data.keyword.satelliteshort}} Link tunnel server health check status. See [Troubleshooting location health checks](/docs/satellite?topic=satellite-ts-location-healthcheck).
 {: shortdesc}
 
 - If logs report `Successfully checked endpoint`, your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is reachable and healthy.
@@ -152,7 +152,7 @@ Example log
 ## Setting up {{site.data.keyword.logs_full_notm}} for {{site.data.keyword.satelliteshort}} location events
 {: #setup-at}
 
-To track how users and applications interact with your {{site.data.keyword.satelliteshort}} location, {{site.data.keyword.satellitelong_notm}} automatically generates user-initiated management events and forwards these event logs to {{site.data.keyword.logs_full_notm}}.
+{{site.data.keyword.satellitelong_notm}} automatically generates user-initiated management events for your {{site.data.keyword.satelliteshort}} location and forwards them to {{site.data.keyword.logs_full_notm}}.
 {: shortdesc}
 
 To access these logs, provision an instance of {{site.data.keyword.logs_full_notm}} in the same region that your location is managed from. For more information about the types of {{site.data.keyword.satelliteshort}} events that you can track, see [Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-at_events).
@@ -160,7 +160,7 @@ To access these logs, provision an instance of {{site.data.keyword.logs_full_not
 ## Setting up logging for clusters
 {: #setup-clusters-logging}
 
-To understand and set up logging for {{site.data.keyword.redhat_openshift_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the tutorials in the [{{site.data.keyword.logs_full_notm}} documentation](/docs/cloud-logs).
+Set up logging for {{site.data.keyword.redhat_openshift_notm}} clusters in your {{site.data.keyword.satelliteshort}} location. See the [{{site.data.keyword.logs_full_notm}} documentation](/docs/cloud-logs).
 {: shortdesc}
 
 You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console to enable logging for {{site.data.keyword.satelliteshort}} clusters. You must [manually deploy logging agents to your cluster](#enable-clusters-logging) to forward logs to {{site.data.keyword.logs_full_notm}}.

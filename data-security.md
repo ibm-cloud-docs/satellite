@@ -17,13 +17,13 @@ subcollection: satellite
 # Securing data in IBM Cloud Satellite: storage, encryption, and removal
 {: #data-security}
 
-Learn how IBM Cloud Satellite stores and encrypts personal and sensitive information, and how to remove your data, including data security and cloud encryption details.
+Learn how {{site.data.keyword.satellitelong_notm}} stores and encrypts personal and sensitive information, and how to remove your data.
 {: shortdesc}
 
 ## What information is stored with {{site.data.keyword.IBM_notm}} with {{site.data.keyword.satelliteshort}}?
 {: #sat-sensitive-data}
 
-For every location that you create, {{site.data.keyword.IBM_notm}} stores certain personal and sensitive information. Depending on the type of information, {{site.data.keyword.IBM_notm}} or you are responsible to store this information and protect it. For more information, see [How is my information stored, backed up, and encrypted](#sat-data-encryption)?
+For every location you create, {{site.data.keyword.IBM_notm}} stores certain personal and sensitive information. See [How is my information stored, backed up, and encrypted](#sat-data-encryption)?
 {: shortdesc}
 
 ### Stored information when you create a {{site.data.keyword.satelliteshort}} location
@@ -43,7 +43,7 @@ Sensitive information
 ### Stored information from resources that you create in {{site.data.keyword.satelliteshort}}
 {: #sat-sensitive-data-user-added}
 
-Because {{site.data.keyword.satelliteshort}} is an extension of {{site.data.keyword.cloud_notm}} to your own environment, you create many resources whose metadata is stored, backed up, and encrypted in {{site.data.keyword.satelliteshort}}.
+Resources you create in {{site.data.keyword.satelliteshort}} have metadata that is stored, backed up, and encrypted by the service.
 {: shortdesc}
 
 Do not use sensitive or personally identifiable information for the names, labels, tags, or other metadata for the following items.

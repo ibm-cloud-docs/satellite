@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -16,13 +16,13 @@ subcollection: satellite
 # Creating and managing link endpoints
 {: #link-cloud-create}
 
-Create your {{site.data.keyword.satelliteshort}} endpoints to manage the network between your {{site.data.keyword.satellitelong_notm}} location and services, servers, or apps that run outside of the location.
+Create {{site.data.keyword.satelliteshort}} endpoints to manage network traffic between your location and external services, servers, or apps.
 {: shortdesc}
 
 ## Creating `cloud` endpoints to connect to resources outside of the location
 {: #link-cloud}
 
-Create an endpoint of type `cloud` so that sources in your {{site.data.keyword.satelliteshort}} location can connect to a service, server, or app that runs outside of the location.
+Create a `cloud` endpoint so that sources in your {{site.data.keyword.satelliteshort}} location can connect to external services or apps.
 {: shortdesc}
 
 Before you begin, ensure that you have the following items.
@@ -40,7 +40,7 @@ Permissions
 {: #link-cloud-ui}
 {: ui}
 
-Use the console to create a cloud endpoint so that sources in your {{site.data.keyword.satelliteshort}} location can connect to a service, server, or app that runs outside of the location.
+Use the console to create a cloud endpoint connecting your {{site.data.keyword.satelliteshort}} location sources to external services or apps.
 {: shortdesc}
 
 1. From the [{{site.data.keyword.satelliteshort}} **Locations** dashboard](https://cloud.ibm.com/satellite/locations), click the name of your location.
@@ -61,7 +61,7 @@ Use the console to create a cloud endpoint so that sources in your {{site.data.k
 {: #link-cloud-cli}
 {: cli}
 
-Use the CLI to create an endpoint so that sources in your {{site.data.keyword.satelliteshort}} location can connect to a service, server, or app that runs outside of the location.
+Use the CLI to create an endpoint connecting your {{site.data.keyword.satelliteshort}} location sources to external services or apps.
 {: shortdesc}
 
 1. Get the ID of your {{site.data.keyword.satelliteshort}} location and verify that your location has a **normal** status.
@@ -217,7 +217,7 @@ Use the {{site.data.keyword.satelliteshort}} Link connector host name and port t
 ## Creating `location` endpoints to connect to resources in a location
 {: #link-location}
 
-Create an endpoint of type `location` so that sources that are connected to the {{site.data.keyword.cloud_notm}} private network can connect to a service, server, or app in your {{site.data.keyword.satelliteshort}} location.
+Create a `location` endpoint so that sources on the {{site.data.keyword.cloud_notm}} private network can connect to services or apps in your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
 Before you begin, ensure that you have the following items.
@@ -235,7 +235,7 @@ Permissions
 {: #link-location-ui}
 {: ui}
 
-Use the console to create an endpoint so that sources that are connected to the {{site.data.keyword.cloud_notm}} private network can connect to a service, server, or app in your {{site.data.keyword.satelliteshort}} location.
+Use the console to create a location endpoint connecting {{site.data.keyword.cloud_notm}} private network sources to your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
 1. From the [{{site.data.keyword.satelliteshort}} **Locations** dashboard](https://cloud.ibm.com/satellite/locations), click the name of your location.
@@ -261,7 +261,7 @@ Use the console to create an endpoint so that sources that are connected to the 
 {: #link-location-cli}
 {: cli}
 
-Use the CLI to create an endpoint so that sources that are connected to the {{site.data.keyword.cloud_notm}} private network can connect to a service, server, or app in your {{site.data.keyword.satelliteshort}} location.
+Use the CLI to create a location endpoint connecting {{site.data.keyword.cloud_notm}} private network sources to your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
 1. Get the ID of your {{site.data.keyword.satelliteshort}} location and verify that your location has a **normal** status.

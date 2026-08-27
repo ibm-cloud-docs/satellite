@@ -16,7 +16,7 @@ subcollection: satellite
 # Network latency requirements for {{site.data.keyword.satelliteshort}} hosts
 {: #host-latency-test}
 
-Review the network latency requirements for hosts that you add to your {{site.data.keyword.satellitelong_notm}} location to ensure optimal performance and availability.
+Review network latency requirements for hosts in your {{site.data.keyword.satellitelong_notm}} location to ensure optimal performance.
 {: shortdesc}
 
 ## {{site.data.keyword.IBM_notm}}-managed master to customer-provided worker nodes for the {{site.data.keyword.satelliteshort}} location control plane
@@ -37,7 +37,7 @@ Your host infrastructure setup must have a low latency connection of less than o
 ## Testing the latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts
 {: #host-latency-mzr}
 
-Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.data.keyword.cloud_notm}} multizone region](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions). You can test the latency between your hosts and the region to make sure you use a low latency connection of less than or equal to 200 milliseconds (`<= 200ms`) round trip time (RTT). RTT measures the time for a packet to travel from the source to the destination and back.
+Test the latency between your hosts and their managing [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions) to verify the less than or equal to 200 milliseconds (`<= 200ms`) RTT requirement.
 {: shortdesc}
 
 1. In your infrastructure provider, log in to a host machine that you want to add to a {{site.data.keyword.satelliteshort}} location. For example, use Secure Shell (SSH) to connect to the machine from a command line.

@@ -16,7 +16,7 @@ subcollection: satellite
 # Automating your AWS location setup with a {{site.data.keyword.bpshort}} template
 {: #loc-aws-create-auto}
 
-Automate your AWS setup with templates that use [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-getting-started) to create a {{site.data.keyword.satelliteshort}} location, provision hosts in your AWS account, and set up the {{site.data.keyword.satelliteshort}} location control plane for you. 
+Use [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-getting-started) templates to automatically create a {{site.data.keyword.satelliteshort}} location, provision AWS hosts, and set up the {{site.data.keyword.satelliteshort}} location control plane.
 {: shortdesc}
 
 You can clone and modify these Terraform templates from the [Satellite Terraform GitHub repository](https://github.com/terraform-ibm-modules/terraform-ibm-satellite/tree/main/examples){: external}. Or, you can [manually attach AWS hosts to a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-aws).

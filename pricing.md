@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, pricing, service, billing, charges
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # {{site.data.keyword.satelliteshort}} pricing for locations and services
 {: #sat-pricing}
 
-{{site.data.keyword.satellitelong_notm}} provides a flexible way for you to consume {{site.data.keyword.cloud_notm}} services in any location, with no charges for unassigned hosts and no separate fees for {{site.data.keyword.satelliteshort}} management capabilities.
+{{site.data.keyword.satellitelong_notm}} lets you consume {{site.data.keyword.cloud_notm}} services in any location with no charges for unassigned hosts.
 {: shortdesc}
 
 Flexible consumption

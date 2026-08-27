@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 
 keywords: high availability, disaster recover, HA, DR, responsibilities
@@ -32,7 +32,7 @@ The following image shows specific areas to watch in the {{site.data.keyword.sat
 ### High availability of the {{site.data.keyword.satelliteshort}} location control plane
 {: #ha-control-plane-master}
 
-When you create a {{site.data.keyword.satelliteshort}} location, you must choose an {{site.data.keyword.cloud_notm}} multizone metro that runs and manages the {{site.data.keyword.satelliteshort}} control plane of your location. The control plane is in an {{site.data.keyword.IBM_notm}} account and is managed by {{site.data.keyword.cloud_notm}}.
+When you create a location, choose a {{site.data.keyword.cloud_notm}} multizone metro to manage your {{site.data.keyword.satelliteshort}} control plane. The control plane is in an {{site.data.keyword.IBM_notm}} account.
 {: shortdesc}
 
 {{site.data.keyword.IBM_notm}} provides high availability for your {{site.data.keyword.satelliteshort}} location control plane in the following ways.

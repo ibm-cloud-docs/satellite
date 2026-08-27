@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, microsoft azure, azure, azure host
 
@@ -132,7 +132,7 @@ To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location,
 ## Security group settings for Azure
 {: #azure-reqs-firewall}
 
-As described in the [host networking requirements](/docs/satellite?topic=satellite-reqs-host-network), your Azure hosts must have access to connect to {{site.data.keyword.satellitelong_notm}}. Update your security group settings in Azure to match the following example.
+Update your Azure security group settings to meet [host networking requirements](/docs/satellite?topic=satellite-reqs-host-network) for connecting to {{site.data.keyword.satellitelong_notm}}.
 {: shortdesc}
 
 The following example shows a security group for Azure that meets {{site.data.keyword.satelliteshort}} host networking requirements.

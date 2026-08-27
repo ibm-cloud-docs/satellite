@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Removing hosts and locations
 {: #host-remove}
 
-Learn how to remove hosts from your {{site.data.keyword.satelliteshort}} location, detaching them from the location control plane or cluster and making them unavailable to run workloads.
+Remove hosts from your {{site.data.keyword.satelliteshort}} location by detaching them from the control plane or cluster.
 {: shortdesc}
 
 After removal, the host machine still exists in your underlying infrastructure provider. Reload the operating system before using the host machine for another purpose.
@@ -55,7 +55,7 @@ Removing a host cannot be undone. Before you remove a host, make sure that your 
 ## Removing hosts with the CLI
 {: #host-remove-cli}
 
-Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to remove your hosts as compute capacity from the {{site.data.keyword.satelliteshort}} location.
+Use the {{site.data.keyword.satelliteshort}} CLI to remove hosts as compute capacity from your location.
 {: shortdesc}
 
 Removing a host cannot be undone. Before you remove a host, make sure that your cluster or location control plane has enough compute resources to continue running even after you remove the host, or back up any data that you want to keep. Note that the underlying host infrastructure is not deleted.

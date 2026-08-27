@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch, host, update, host update
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Updating hosts that are assigned as worker nodes 
 {: #host-update-workers}
 
-Review the following steps to get the latest OpenShift Container Platform, operating system, and security patches for your hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services such as clusters.
+Update worker node hosts assigned to {{site.data.keyword.satelliteshort}}-enabled services to get the latest OpenShift Container Platform, OS, and security patches.
 {: shortdesc}
 
 Service clusters, which are the underlying platform for all {{site.data.keyword.cloud_notm}} services are created by services such as {{site.data.keyword.codeengineshort}} or {{site.data.keyword.cos_full_notm}} and are maintained by {{site.data.keyword.IBM_notm}}.
@@ -33,7 +33,7 @@ to your service. You can add additional hosts to your location temporarily and t
 ## Checking if a version update is available for worker node hosts
 {: #host-update-workers-check}
 
-You can check if a version update is available for a host that is assigned as a worker node to a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) by using the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console.
+Check for version updates available for worker node hosts assigned to a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) using the CLI or console.
 {: shortdesc}
 
 To review the changes that are included in each version update, see the [Version change log for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_versions).
@@ -126,7 +126,7 @@ Determine whether your hosts are part of the control plane, assigned to a manage
 ## Apply version updates to worker node hosts without detaching them
 {: #host-update-workers-inplace}
 
-You can update your worker node hosts without detaching them from the location. You can also perform a rolling update of your worker node hosts with a ConfigMap.
+Update worker node hosts in place without detaching from the location, using a rolling update with a ConfigMap.
 {: shortdesc}
 
 Before you begin
@@ -283,7 +283,7 @@ You can roll out updates to all your worker node hosts with a ConfigMap. Specify
 ## Applying version updates to worker nodes by replacing hosts
 {: #host-update-workers-minor}
 
-Hosts that are attached to a location do not update automatically. To apply a version update, you can first attach and assign new hosts to your [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) and then remove the old hosts. You can also apply [minor and patch version updates in place](#host-update-workers-inplace).
+Hosts do not update automatically. Attach new hosts and remove old ones, or apply [minor and patch updates in place](#host-update-workers-inplace).
 {: shortdesc}
 
 
@@ -323,7 +323,7 @@ You can update worker node hosts by using the {{site.data.keyword.openshiftlong_
 ## Determining if the worker node version update is a major, minor, or patch update
 {: #host-update-workers-type}
 
-The process to update a worker node is the same for all types of updates. However, you can find information on whether the update is a major, minor, or patch update.
+The worker node update process is the same for all update types. Identify whether the update is major, minor, or a patch.
 {: shortdesc}
 
 To determine the type of update that is available, compare your current worker node versions to the latest `worker node fix pack` version in the [{{site.data.keyword.redhat_openshift_notm}} version change log](/docs/openshift?topic=openshift-openshift_versions). Major updates are indicated by the first digit in the version label (4.x.x), minor updates are indicated by the second digit (x.7.x) and patch updates are indicated by the trailing digits (x.x.23_1528_openshift). For more information on version updates, see [Version information and update actions](/docs/openshift?topic=openshift-openshift_versions).

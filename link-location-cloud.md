@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, link endpoints, link, location endpoint, cloud endpoint
 
@@ -17,10 +17,10 @@ subcollection: satellite
 # Understanding Link endpoints and {{site.data.keyword.satelliteshort}}
 {: #link-location-cloud}
 
-Open up {{site.data.keyword.satelliteshort}} endpoints in the {{site.data.keyword.satelliteshort}} control plane to control and audit network traffic between your {{site.data.keyword.satellitelong}} location and services, servers, or apps that run outside of the location.
+Use {{site.data.keyword.satelliteshort}} Link endpoints to control and audit network traffic between your location and external services, servers, or apps.
 {: shortdesc}
 
-With {{site.data.keyword.satelliteshort}} Link endpoints, you can allow any client that runs in your {{site.data.keyword.satelliteshort}} location to connect to a service, server, or app that runs outside of the location, or allow a client that is connected to the {{site.data.keyword.cloud_notm}} private network to connect to a service, server, or app that runs in your location.
+{{site.data.keyword.satelliteshort}} Link endpoints allow clients in your location to connect to external resources, or allow clients on the {{site.data.keyword.cloud_notm}} private network to connect to resources in your location.
 {: shortdesc}
 
 To establish the connection, you must specify the destination resource's fully qualified domain name (FQDN) or IP address, port, the connection protocol, and any authentication methods in the endpoint. The endpoint is registered with the {{site.data.keyword.satelliteshort}} Link component of your location's {{site.data.keyword.satelliteshort}} control plane. To help you maintain enterprise security and audit compliance, {{site.data.keyword.satelliteshort}} Link additionally provides built-in controls to restrict client access to endpoints and to log and audit traffic that flows over endpoints.

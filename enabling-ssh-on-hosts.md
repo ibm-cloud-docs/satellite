@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, hosts, ssh
 
@@ -15,7 +15,7 @@ subcollection: satellite
 # Enabling SSH on {{site.data.keyword.satelliteshort}} hosts
 {: #enabling-ssh-on-hosts}
 
-In troubleshooting and debugging scenarios, SSH access to your {{site.data.keyword.satelliteshort}} hosts is required either before or after you assign them to your control plane or a cluster.
+Enable SSH access to {{site.data.keyword.satelliteshort}} hosts for troubleshooting before or after host assignment to a control plane or cluster.
 {: shortdesc}
 
 For example, if you are having problems assigning hosts, you can enable a non-root user for SSH access to a host before you assign it to a cluster.

@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-27"
 
 
 keywords: change log, version history, ibm-object-storage-plug-in
@@ -32,35 +32,35 @@ Review the version history for `ibm-object-storage-plugin`.
 ### Version 2.2 - Revision 42, released 20 August 2026
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-42}
 
-- Resolves the following CVEs: [CVE-2026-41989](https://nvd.nist.gov/vuln/detail/CVE-2026-41989){: external}, and [CVE-2026-13757](https://nvd.nist.gov/vuln/detail/CVE-2026-13757){: external}.
+- Resolves the following CVEs: [CVE-2026-41989](https://nvd.nist.gov/vuln/detail/cve-2026-41989){: external}, and [CVE-2026-13757](https://nvd.nist.gov/vuln/detail/cve-2026-13757){: external}.
 - Updates Go to version `1.26.5`.
 
 
 ### Version 2.2 - Revision 41, released 31 July 2026
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-41}
 
-- Resolves the following CVEs: [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}, [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/CVE-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/CVE-2026-54370){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, and [GHSA-hrxh-6v49-42gf](https://github.com/advisories/GHSA-hrxh-6v49-42gf){: external}.
+- Resolves the following CVEs: [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}, [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/cve-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/cve-2026-54370){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, and [GHSA-hrxh-6v49-42gf](https://github.com/advisories/GHSA-hrxh-6v49-42gf){: external}.
 - Updates Go to version `1.26.5`.
 
 
 ### Version 2.2 - Revision 40, released 10 July 2026
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-40}
 
-- Resolves the following CVEs: [CVE-2025-5278](https://nvd.nist.gov/vuln/detail/CVE-2025-5278){: external}, and [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}.
+- Resolves the following CVEs: [CVE-2025-5278](https://nvd.nist.gov/vuln/detail/cve-2025-5278){: external}, and [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/cve-2026-5450){: external}.
 - Updates Go to version `1.25.11`.
 
 
 ### Version 2.2 - Revision 39, released 27 May 2026
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-39}
 
-- Resolves the following CVEs: [CCVE-2026-33811](https://nvd.nist.gov/vuln/detail/CCVE-2026-33811){: external}, [CVE-2026-33814](https://nvd.nist.gov/vuln/detail/CVE-2026-33814){: external}, [CVE-2026-39820](https://nvd.nist.gov/vuln/detail/CVE-2026-39820){: external}, [CVE-2026-39836](https://nvd.nist.gov/vuln/detail/CVE-2026-39836){: external}, [CVE-2026-42499](https://nvd.nist.gov/vuln/detail/CVE-2026-42499){: external}, [CVE-2026-4878](https://nvd.nist.gov/vuln/detail/CVE-2026-4878){: external}, [CVE-2026-29111](https://nvd.nist.gov/vuln/detail/CVE-2026-29111){: external}, [CVE-2026-39823](https://nvd.nist.gov/vuln/detail/CVE-2026-39823){: external}, [CVE-2026-39826](https://nvd.nist.gov/vuln/detail/CVE-2026-39826){: external}, [CVE-2026-2100](https://nvd.nist.gov/vuln/detail/CVE-2026-2100){: external}, and [CVE-2026-31790](https://nvd.nist.gov/vuln/detail/CVE-2026-31790){: external}.
+- Resolves the following CVEs: [CCVE-2026-33811](https://nvd.nist.gov/vuln/detail/ccve-2026-33811){: external}, [CVE-2026-33814](https://nvd.nist.gov/vuln/detail/cve-2026-33814){: external}, [CVE-2026-39820](https://nvd.nist.gov/vuln/detail/cve-2026-39820){: external}, [CVE-2026-39836](https://nvd.nist.gov/vuln/detail/cve-2026-39836){: external}, [CVE-2026-42499](https://nvd.nist.gov/vuln/detail/cve-2026-42499){: external}, [CVE-2026-4878](https://nvd.nist.gov/vuln/detail/cve-2026-4878){: external}, [CVE-2026-29111](https://nvd.nist.gov/vuln/detail/cve-2026-29111){: external}, [CVE-2026-39823](https://nvd.nist.gov/vuln/detail/cve-2026-39823){: external}, [CVE-2026-39826](https://nvd.nist.gov/vuln/detail/cve-2026-39826){: external}, [CVE-2026-2100](https://nvd.nist.gov/vuln/detail/cve-2026-2100){: external}, and [CVE-2026-31790](https://nvd.nist.gov/vuln/detail/cve-2026-31790){: external}.
 - Updates Go to version `1.25.10`.
 
 
 ### Version 2.2 - Revision 37, released 02 April 2026
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-37}
 
-- Resolves the following CVEs: [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/CVE-2026-33186){: external}.
+- Resolves the following CVEs: [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/cve-2026-33186){: external}.
 - Updates Go to version `1.25.8`.
 - cos plugin support on in-mum region
 
@@ -68,21 +68,21 @@ Review the version history for `ibm-object-storage-plugin`.
 ### Version 2.2 - Revision 36, released 20 March 2026
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-36}
 
-- Resolves the following CVEs: [CVE-2026-25679](https://nvd.nist.gov/vuln/detail/CVE-2026-25679){: external}, [CVE-2026-27139](https://nvd.nist.gov/vuln/detail/CVE-2026-27139){: external}, and [CVE-2026-27142](https://nvd.nist.gov/vuln/detail/CVE-2026-27142){: external}.
+- Resolves the following CVEs: [CVE-2026-25679](https://nvd.nist.gov/vuln/detail/cve-2026-25679){: external}, [CVE-2026-27139](https://nvd.nist.gov/vuln/detail/cve-2026-27139){: external}, and [CVE-2026-27142](https://nvd.nist.gov/vuln/detail/cve-2026-27142){: external}.
 - Updates Go to version `1.25.8`.
 
 
 ### Version 2.2 - Revision 35, released 03 March 2026
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-35}
 
-- Resolves the following CVEs: [CVE-2026-0861](https://nvd.nist.gov/vuln/detail/CVE-2026-0861){: external}, [CVE-2025-15281](https://nvd.nist.gov/vuln/detail/CVE-2025-15281){: external}, [CVE-2026-0915](https://nvd.nist.gov/vuln/detail/CVE-2026-0915){: external}, and [CVE-2025-68121](https://nvd.nist.gov/vuln/detail/CVE-2025-68121){: external}.
+- Resolves the following CVEs: [CVE-2026-0861](https://nvd.nist.gov/vuln/detail/cve-2026-0861){: external}, [CVE-2025-15281](https://nvd.nist.gov/vuln/detail/cve-2025-15281){: external}, [CVE-2026-0915](https://nvd.nist.gov/vuln/detail/cve-2026-0915){: external}, and [CVE-2025-68121](https://nvd.nist.gov/vuln/detail/cve-2025-68121){: external}.
 - Updates Go to version `1.25.5`.
 
 
 ### Version 2.2 - Revision 34, released 18 February 2026
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-34}
 
-- Resolves the following CVEs: [CVE-2025-15467](https://nvd.nist.gov/vuln/detail/CVE-2025-15467){: external}, [CVE-2025-11187](https://nvd.nist.gov/vuln/detail/CVE-2025-11187){: external}, [CVE-2025-15468](https://nvd.nist.gov/vuln/detail/CVE-2025-15468){: external}, [CVE-2025-15469](https://nvd.nist.gov/vuln/detail/CVE-2025-15469){: external}, [CVE-2025-66199](https://nvd.nist.gov/vuln/detail/CVE-2025-66199){: external}, [CVE-2025-68160](https://nvd.nist.gov/vuln/detail/CVE-2025-68160){: external}, [CVE-2025-69418](https://nvd.nist.gov/vuln/detail/CVE-2025-69418){: external}, [CVE-2025-69419](https://nvd.nist.gov/vuln/detail/CVE-2025-69419){: external}, [CVE-2025-69420](https://nvd.nist.gov/vuln/detail/CVE-2025-69420){: external}, [CVE-2025-69421](https://nvd.nist.gov/vuln/detail/CVE-2025-69421){: external}, [CVE-2026-22795](https://nvd.nist.gov/vuln/detail/CVE-2026-22795){: external}, and [CVE-2026-22796](https://nvd.nist.gov/vuln/detail/CVE-2026-22796){: external}.
+- Resolves the following CVEs: [CVE-2025-15467](https://nvd.nist.gov/vuln/detail/cve-2025-15467){: external}, [CVE-2025-11187](https://nvd.nist.gov/vuln/detail/cve-2025-11187){: external}, [CVE-2025-15468](https://nvd.nist.gov/vuln/detail/cve-2025-15468){: external}, [CVE-2025-15469](https://nvd.nist.gov/vuln/detail/cve-2025-15469){: external}, [CVE-2025-66199](https://nvd.nist.gov/vuln/detail/cve-2025-66199){: external}, [CVE-2025-68160](https://nvd.nist.gov/vuln/detail/cve-2025-68160){: external}, [CVE-2025-69418](https://nvd.nist.gov/vuln/detail/cve-2025-69418){: external}, [CVE-2025-69419](https://nvd.nist.gov/vuln/detail/cve-2025-69419){: external}, [CVE-2025-69420](https://nvd.nist.gov/vuln/detail/cve-2025-69420){: external}, [CVE-2025-69421](https://nvd.nist.gov/vuln/detail/cve-2025-69421){: external}, [CVE-2026-22795](https://nvd.nist.gov/vuln/detail/cve-2026-22795){: external}, and [CVE-2026-22796](https://nvd.nist.gov/vuln/detail/cve-2026-22796){: external}.
 - Updates Go to version `1.25.5`.
 - cos plugin support on iks 1.35
 
@@ -90,7 +90,7 @@ Review the version history for `ibm-object-storage-plugin`.
 ### Version 2.2 - Revision 33, released 23 January 2026
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-33}
 
-- Resolves the following CVEs: [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/CVE-2025-61727){: external}, [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/CVE-2025-61729){: external}, [CVE-2025-45582](https://nvd.nist.gov/vuln/detail/CVE-2025-45582){: external}, and [CVE-2025-4598](https://nvd.nist.gov/vuln/detail/CVE-2025-4598){: external}.
+- Resolves the following CVEs: [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/cve-2025-61727){: external}, [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/cve-2025-61729){: external}, [CVE-2025-45582](https://nvd.nist.gov/vuln/detail/cve-2025-45582){: external}, and [CVE-2025-4598](https://nvd.nist.gov/vuln/detail/cve-2025-4598){: external}.
 - Updates Go to version `1.25.5`.
 - cos plugin support on in-che region
 
@@ -105,14 +105,14 @@ Review the version history for `ibm-object-storage-plugin`.
 ### Version 2.2 - Revision 31, released 13 November 2025
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-31}
 
-- Resolves the following CVEs: [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/CVE-2025-58185){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/CVE-2025-58189){: external}, [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/CVE-2025-61723){: external}, [CVE-2025-61725](https://nvd.nist.gov/vuln/detail/CVE-2025-61725){: external}, [CVE-2025-22874](https://nvd.nist.gov/vuln/detail/CVE-2025-22874){: external}, [CVE-2025-4673](https://nvd.nist.gov/vuln/detail/CVE-2025-4673){: external}, [CVE-2025-22871](https://nvd.nist.gov/vuln/detail/CVE-2025-22871){: external}, and [CVE-2025-47906](https://nvd.nist.gov/vuln/detail/CVE-2025-47906){: external}.
+- Resolves the following CVEs: [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/cve-2025-58185){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/cve-2025-58189){: external}, [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/cve-2025-61723){: external}, [CVE-2025-61725](https://nvd.nist.gov/vuln/detail/cve-2025-61725){: external}, [CVE-2025-22874](https://nvd.nist.gov/vuln/detail/cve-2025-22874){: external}, [CVE-2025-4673](https://nvd.nist.gov/vuln/detail/cve-2025-4673){: external}, [CVE-2025-22871](https://nvd.nist.gov/vuln/detail/cve-2025-22871){: external}, and [CVE-2025-47906](https://nvd.nist.gov/vuln/detail/cve-2025-47906){: external}.
 - Updates Go to version `1.25.4`.
 
 
 ### Version 2.2 - Revision 30, released 18 August 2025
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-30}
 
-- Resolves the following CVEs: [CVE-2019-17543](https://nvd.nist.gov/vuln/detail/CVE-2019-17543){: external}, [CVE-2025-22871](https://nvd.nist.gov/vuln/detail/CVE-2025-22871){: external}, [CVE-2025-22874](https://nvd.nist.gov/vuln/detail/CVE-2025-22874){: external}, [CVE-2025-4673](https://nvd.nist.gov/vuln/detail/CVE-2025-4673){: external}, and [CVE-2025-8058](https://nvd.nist.gov/vuln/detail/CVE-2025-8058){: external}.
+- Resolves the following CVEs: [CVE-2019-17543](https://nvd.nist.gov/vuln/detail/cve-2019-17543){: external}, [CVE-2025-22871](https://nvd.nist.gov/vuln/detail/cve-2025-22871){: external}, [CVE-2025-22874](https://nvd.nist.gov/vuln/detail/cve-2025-22874){: external}, [CVE-2025-4673](https://nvd.nist.gov/vuln/detail/cve-2025-4673){: external}, and [CVE-2025-8058](https://nvd.nist.gov/vuln/detail/cve-2025-8058){: external}.
 - Updates Go to version `1.23.12`.
 - Plugin support on heterogeneous cluster (cluster with both rhel and rhcos worker pools)
 
@@ -120,14 +120,14 @@ Review the version history for `ibm-object-storage-plugin`.
 ### Version 2.2 - Revision 29, released 24 June 2025
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-29}
 
-- Resolves the following CVEs: [CVE-2025-22872](https://nvd.nist.gov/vuln/detail/CVE-2025-22872){: external}, [CVE-2025-30204](https://nvd.nist.gov/vuln/detail/CVE-2025-30204){: external}, and [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}.
+- Resolves the following CVEs: [CVE-2025-22872](https://nvd.nist.gov/vuln/detail/cve-2025-22872){: external}, [CVE-2025-30204](https://nvd.nist.gov/vuln/detail/cve-2025-30204){: external}, and [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/cve-2025-4802){: external}.
 - Updates Go to version `1.23.10`.
 
 
 ### Version 2.2 - Revision 28, released 25 April 2025
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-28}
 
-- Resolves the following CVEs: [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/CVE-2025-0395){: external}.
+- Resolves the following CVEs: [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/cve-2025-0395){: external}.
 - Updates Go to version `1.23.8`.
 - Enable bucket versioning support
 
@@ -135,7 +135,7 @@ Review the version history for `ibm-object-storage-plugin`.
 ### Version 2.2 - Revision 25, released 13 December 2024
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-25}
 
-- Resolves the following CVEs: [CVE-2024-3596](https://nvd.nist.gov/vuln/detail/CVE-2024-3596){: external}.
+- Resolves the following CVEs: [CVE-2024-3596](https://nvd.nist.gov/vuln/detail/cve-2024-3596){: external}.
 - Updates Go to version `1.22.9`.
 - ROKS v4.17 cluster support
 
@@ -143,7 +143,7 @@ Review the version history for `ibm-object-storage-plugin`.
 ### Version 2.2 - Revision 24, released 01 October 2024
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-24}
 
-- Resolves the following CVEs: [CVE-2024-34158](https://nvd.nist.gov/vuln/detail/CVE-2024-34158){: external}, [CVE-2024-34155](https://nvd.nist.gov/vuln/detail/CVE-2024-34155){: external}, and [CVE-2024-34156](https://nvd.nist.gov/vuln/detail/CVE-2024-34156){: external}.
+- Resolves the following CVEs: [CVE-2024-34158](https://nvd.nist.gov/vuln/detail/cve-2024-34158){: external}, [CVE-2024-34155](https://nvd.nist.gov/vuln/detail/cve-2024-34155){: external}, and [CVE-2024-34156](https://nvd.nist.gov/vuln/detail/cve-2024-34156){: external}.
 - Updates Go to version `1.22.7`.
 - Fixed mount issue with coreos9 roks 4.16 cluster 
 - s3fs-fuse version updated to v1.94
@@ -153,21 +153,21 @@ Review the version history for `ibm-object-storage-plugin`.
 ### Version 2.2 - Revision 23, released 04 September 2024
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-23}
 
-- Resolves the following CVEs: [CVE-2024-6104](https://nvd.nist.gov/vuln/detail/CVE-2024-6104){: external}, [CVE-2024-24791](https://nvd.nist.gov/vuln/detail/CVE-2024-24791){: external}, [CVE-2023-45288](https://nvd.nist.gov/vuln/detail/CVE-2023-45288){: external}, [CVE-2024-2398](https://nvd.nist.gov/vuln/detail/CVE-2024-2398){: external}, [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/CVE-2024-37370){: external}, and [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/CVE-2024-37371){: external}.
+- Resolves the following CVEs: [CVE-2024-6104](https://nvd.nist.gov/vuln/detail/cve-2024-6104){: external}, [CVE-2024-24791](https://nvd.nist.gov/vuln/detail/cve-2024-24791){: external}, [CVE-2023-45288](https://nvd.nist.gov/vuln/detail/cve-2023-45288){: external}, [CVE-2024-2398](https://nvd.nist.gov/vuln/detail/cve-2024-2398){: external}, [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/cve-2024-37370){: external}, and [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/cve-2024-37371){: external}.
 - Updates Go to version `1.21.13`.
 
 
 ### Version 2.2 - Revision 22, released 17 July 2024
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-22}
 
-- Resolves the following CVEs: [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external}, and [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external}.
+- Resolves the following CVEs: [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/cve-2023-2953){: external}, and [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/cve-2024-28182){: external}.
 - Updates Go to version `1.21.12`.
 
 
 ### Version 2.2 - Revision 21, released 05 June 2024
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-21}
 
-- Resolves the following CVEs: [CVE-2023-7008](https://nvd.nist.gov/vuln/detail/CVE-2023-7008){: external}, [CVE-2024-2961](https://nvd.nist.gov/vuln/detail/CVE-2024-2961){: external}, [CVE-2024-33599](https://nvd.nist.gov/vuln/detail/CVE-2024-33599){: external}, [CVE-2024-33600](https://nvd.nist.gov/vuln/detail/CVE-2024-33600){: external}, [CVE-2024-33601](https://nvd.nist.gov/vuln/detail/CVE-2024-33601){: external}, and [CVE-2024-33602](https://nvd.nist.gov/vuln/detail/CVE-2024-33602){: external}.
+- Resolves the following CVEs: [CVE-2023-7008](https://nvd.nist.gov/vuln/detail/cve-2023-7008){: external}, [CVE-2024-2961](https://nvd.nist.gov/vuln/detail/cve-2024-2961){: external}, [CVE-2024-33599](https://nvd.nist.gov/vuln/detail/cve-2024-33599){: external}, [CVE-2024-33600](https://nvd.nist.gov/vuln/detail/cve-2024-33600){: external}, [CVE-2024-33601](https://nvd.nist.gov/vuln/detail/cve-2024-33601){: external}, and [CVE-2024-33602](https://nvd.nist.gov/vuln/detail/cve-2024-33602){: external}.
 - Updates Go to version `1.21.10`.
 - HPCS support for cos s3fs plug-in 
 
@@ -175,7 +175,7 @@ Review the version history for `ibm-object-storage-plugin`.
 ### Version 2.2 - Revision 20, released 29 April 2024
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-20}
 
-- Resolves the following CVEs: [CVE-2023-45288](https://nvd.nist.gov/vuln/detail/CVE-2023-45288){: external}, [CVE-2024-24785](https://nvd.nist.gov/vuln/detail/CVE-2024-24785){: external}, [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487){: external}, and [CVE-2023-45288](https://nvd.nist.gov/vuln/detail/CVE-2023-45288){: external}.
+- Resolves the following CVEs: [CVE-2023-45288](https://nvd.nist.gov/vuln/detail/cve-2023-45288){: external}, [CVE-2024-24785](https://nvd.nist.gov/vuln/detail/cve-2024-24785){: external}, [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/cve-2023-44487){: external}, and [CVE-2023-45288](https://nvd.nist.gov/vuln/detail/cve-2023-45288){: external}.
 - Updates Go to version `1.21.9`.
 - Fix plug-in installation issue on CoreOS8 cluster 
 
@@ -190,7 +190,7 @@ Review the version history for `ibm-object-storage-plugin`.
 ### Version 2.2 - Revision 18, released 02 February 2024
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-18}
 
-- Resolves the following CVEs: [CVE-2023-3446](https://nvd.nist.gov/vuln/detail/CVE-2023-3446){: external}, [CVE-2023-3817](https://nvd.nist.gov/vuln/detail/CVE-2023-3817){: external}, and [CVE-2023-5678](https://nvd.nist.gov/vuln/detail/CVE-2023-5678){: external}.
+- Resolves the following CVEs: [CVE-2023-3446](https://nvd.nist.gov/vuln/detail/cve-2023-3446){: external}, [CVE-2023-3817](https://nvd.nist.gov/vuln/detail/cve-2023-3817){: external}, and [CVE-2023-5678](https://nvd.nist.gov/vuln/detail/cve-2023-5678){: external}.
 - Updates Go to version `1.20.13`.
 - Replaced UBI image with scratch image 
 
@@ -198,7 +198,7 @@ Review the version history for `ibm-object-storage-plugin`.
 ### Version 2.2 - Revision 17, released 27 November 2023
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-17}
 
-- Resolves the following CVEs: [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external}, [CVE-2023-4016](https://nvd.nist.gov/vuln/detail/CVE-2023-4016){: external}, [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external}, and [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/CVE-2023-40217){: external}.
+- Resolves the following CVEs: [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/cve-2007-4559){: external}, [CVE-2023-4016](https://nvd.nist.gov/vuln/detail/cve-2023-4016){: external}, [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, and [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/cve-2023-40217){: external}.
 - Updates the UBI to version `8.9-1029`.
 - Updates Go to version `1.21.4`.
 - s3fs fuse version updated to v1.93
@@ -207,7 +207,7 @@ Review the version history for `ibm-object-storage-plugin`.
 ### Version 2.2 - Revision 16, released 30 October 2023
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-16}
 
-- Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487){: external}, and [CVE-2023-39325](https://nvd.nist.gov/vuln/detail/CVE-2023-39325){: external}.
+- Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/cve-2023-44487){: external}, and [CVE-2023-39325](https://nvd.nist.gov/vuln/detail/cve-2023-39325){: external}.
 - Updates the UBI to version `8.8-1072.1697626218`.
 - Updates Go to version `1.19.12`.
 
@@ -215,7 +215,7 @@ Review the version history for `ibm-object-storage-plugin`.
 ### Version 2.2 - Revision 15, released 18 October 2023
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-15}
 
-- Resolves the following CVEs: [CVE-2023-29491](https://nvd.nist.gov/vuln/detail/CVE-2023-29491){: external}, [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/CVE-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/CVE-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/CVE-2023-4806){: external}, and [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/CVE-2023-4813){: external}.
+- Resolves the following CVEs: [CVE-2023-29491](https://nvd.nist.gov/vuln/detail/cve-2023-29491){: external}, [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/cve-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/cve-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/cve-2023-4806){: external}, and [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/cve-2023-4813){: external}.
 - Updates the UBI to version `8.8-1072.1696517598`.
 - Updates Go to version `1.19.12`.
 
@@ -223,7 +223,7 @@ Review the version history for `ibm-object-storage-plugin`.
 ### Version 2.2 - Revision 14, released 19 September 2023
 {: #cl-storage-templates-ibm-object-storage-plugin-2.2-14}
 
-- Resolves the following CVEs: [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/CVE-2023-27536){: external}, [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/CVE-2023-2602){: external}, [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/CVE-2023-2603){: external}, [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/CVE-2023-34969){: external}, [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/CVE-2023-28321){: external}, [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/CVE-2023-28484){: external}, [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/CVE-2023-29469){: external}, and [CVE-2023-29409](https://nvd.nist.gov/vuln/detail/CVE-2023-29409){: external}.
+- Resolves the following CVEs: [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/cve-2023-27536){: external}, [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/cve-2023-2602){: external}, [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/cve-2023-2603){: external}, [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/cve-2023-34969){: external}, [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/cve-2023-28321){: external}, [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/cve-2023-28484){: external}, [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/cve-2023-29469){: external}, and [CVE-2023-29409](https://nvd.nist.gov/vuln/detail/cve-2023-29409){: external}.
 - Updates the UBI to version `8.8-1037`.
 - Updates Go to version `1.19.12`.
 - RHCOS 4.13 support

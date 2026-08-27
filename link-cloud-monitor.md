@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -16,13 +16,13 @@ subcollection: satellite
 # Auditing, logging, and monitoring {{site.data.keyword.satelliteshort}} Link endpoints
 {: #link-cloud-monitor}
 
-Add auditing, logging, and monitoring to your link endpoints to help ensure the health and performance of the services and resources attached to your location.
+Add auditing, logging, and monitoring to your link endpoints to ensure the health and performance of location services.
 {: shortdesc}
 
 ## Auditing events for endpoint actions
 {: #link-audit}
 
-{{site.data.keyword.satellitelong_notm}} integrates with {{site.data.keyword.logs_full_notm}} to collect and send audit events for all link endpoints in your location to your {{site.data.keyword.logs_full_notm}} instance.
+{{site.data.keyword.satellitelong_notm}} collects and sends audit events for all link endpoints to your {{site.data.keyword.logs_full_notm}} instance.
 {: shortdesc}
 
 1. Provision an instance of {{site.data.keyword.logs_full_notm}} in the {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
@@ -47,7 +47,7 @@ Metrics are available for the {{site.data.keyword.satelliteshort}} Link componen
 ### Running a packet capture of endpoint traffic
 {: #link-packet-capture}
 
-Run a packet capture to view the traffic that is flowing from your source to your destination resource over a {{site.data.keyword.satelliteshort}} endpoint. Packet captures can be useful to help you debug problems with your endpoint connectivity or to monitor sources that access your destination.
+Run a packet capture to view traffic flowing over a {{site.data.keyword.satelliteshort}} endpoint, useful for debugging connectivity issues or monitoring sources.
 {: shortdesc}
 
 Before you begin, install a packet capture tool, such as [`tcpdump`](https://www.tcpdump.org/){: external}, on your local machine.

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, gcp, google cloud platform
 
@@ -97,7 +97,7 @@ gcloud compute instances create INSTANCE-1 INSTANCE-2 INSTANCE-3 --machine-type=
 ## Network firewall settings
 {: #gcp-reqs-firewall}
 
-As described in the [host networking requirements](/docs/satellite?topic=satellite-reqs-host-network), your GCP hosts must have access to connect to {{site.data.keyword.satellitelong_notm}}. Update your firewall settings in GCP to match the following example.
+Update your GCP firewall settings to meet [host networking requirements](/docs/satellite?topic=satellite-reqs-host-network) for connecting to {{site.data.keyword.satellitelong_notm}}.
 {: shortdesc}
 
 ```sh

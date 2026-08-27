@@ -17,7 +17,7 @@ subcollection: satellite
 # {{site.data.keyword.satelliteshort}} Connector FAQ
 {: #connector-faq}
 
-Find answers to frequently asked questions about {{site.data.keyword.satelliteshort}} Connector, including endpoint support, network access control, and agent configuration.
+Find answers to common questions about {{site.data.keyword.satelliteshort}} Connector, including endpoint support and agent configuration.
 {: shortdesc}
 
 ## Does {{site.data.keyword.satelliteshort}} Connector support Cloud Endpoints?

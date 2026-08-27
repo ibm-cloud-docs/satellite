@@ -16,7 +16,7 @@ subcollection: satellite
 # Manually assigning hosts to worker pools
 {: #assigning-hosts}
 
-After you attach hosts to a {{site.data.keyword.satelliteshort}} location, you assign them to {{site.data.keyword.satelliteshort}} resources to provide compute capacity, such as clusters or {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services.
+After you attach hosts to a {{site.data.keyword.satelliteshort}} location, assign them to resources such as clusters or {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services to provide compute capacity.
 {: shortdesc}
 
 You can also use [host auto assignment](/docs/satellite?topic=satellite-host-autoassign-ov) for worker pools in {{site.data.keyword.satelliteshort}} clusters. However, you must manually assign hosts to the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-setup-control-plane).

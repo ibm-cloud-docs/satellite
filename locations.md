@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, location, satellite location, create location
 
@@ -38,7 +38,7 @@ For more information, see [Planning your operating system](/docs/satellite?topic
 ## Options for creating your {{site.data.keyword.satelliteshort}} location
 {: #create-options}
 
-Your locations is made up of compute sources, called hosts, from separate zones of your backing infrastructure environment. Depending on your infrastructure provider, you have different options to create a {{site.data.keyword.satelliteshort}} location.
+Your location is made up of compute hosts from separate zones of your backing infrastructure. The options for creating a {{site.data.keyword.satelliteshort}} location vary by provider.
 {: shortdesc}
 
 My infrastructure is a cloud provider.

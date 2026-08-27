@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, aws, amazon web services, satellite location
 
@@ -18,7 +18,7 @@ subcollection: satellite
 # Attaching AWS hosts to {{site.data.keyword.satelliteshort}}
 {: #aws}
 
-Add Amazon Web Services (AWS) cloud hosts to {{site.data.keyword.satellitelong}}. Review the following host requirements that are specific to hosts that are in the Amazon Web Services cloud. For required access in AWS cloud, see [AWS permissions](/docs/satellite?topic=satellite-iam-common#permissions-aws).
+Add AWS cloud hosts to {{site.data.keyword.satellitelong}}. Review AWS-specific host requirements and see [AWS permissions](/docs/satellite?topic=satellite-iam-common#permissions-aws) for required access.
 {: shortdesc}
 
 To attach Red Hat CoreOS (RHCOS) hosts, your location must be enabled for Red Hat CoreOS. For more information, see [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location). Note that you can still attach Red Hat Enterprise Linux hosts to a location that is enabled for Red Hat CoreOS.
@@ -115,7 +115,7 @@ aws ec2 run-instances --count COUNT --instance-type INSTANCE-TYPE --launch-templ
 ## AWS instance types
 {: #aws-instance-types}
 
-Review the following suggested [AWS EC2 instance types](https://aws.amazon.com/ec2/instance-types/){: external} that you can use as hosts in {{site.data.keyword.satellitelong_notm}}. You can use other AWS instance types as long as they meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for {{site.data.keyword.satelliteshort}}.
+Review suggested [AWS EC2 instance types](https://aws.amazon.com/ec2/instance-types/){: external} for {{site.data.keyword.satellitelong_notm}} hosts that meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: shortdesc}
 
 | Instance | vCPU | Memory (GiB) | Storage disk (GiB) | Network bandwidth (Gbps) |
@@ -129,7 +129,7 @@ Review the following suggested [AWS EC2 instance types](https://aws.amazon.com/e
 ## Security group settings for AWS
 {: #aws-reqs-secgroup}
 
-As described in the [host networking requirements](/docs/satellite?topic=satellite-reqs-host-network), your AWS hosts must have access to connect to {{site.data.keyword.satellitelong_notm}}. If you use hosts in a virtual private cloud (VPC), you can create a security group similar to the following example. You can get the owner, group, user, and VPC IDs from your AWS provider resources.
+Configure a security group for your AWS VPC hosts to meet [host networking requirements](/docs/satellite?topic=satellite-reqs-host-network). Retrieve owner, group, user, and VPC IDs from your AWS resources.
 {: shortdesc}
 
 The following example shows a security group for AWS that meets {{site.data.keyword.satelliteshort}} host networking requirements.

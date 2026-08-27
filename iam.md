@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, access, manage access
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Managing access overview
 {: #iam}
 
-Access to {{site.data.keyword.satellitelong}} service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). Every user that accesses the {{site.data.keyword.satelliteshort}} service in your account must be assigned an access policy with an IAM role defined. The policy determines what actions that a user can perform within the context of the service or instance that you select. The allowable actions are customized and defined by the {{site.data.keyword.cloud_notm}} service as operations that are allowed to be performed on the service. The actions are then mapped to IAM user roles.
+Access to {{site.data.keyword.satellitelong}} for users in your account is controlled by {{site.data.keyword.cloud_notm}} IAM. Each user must be assigned an access policy with a role that determines allowed actions.
 {: shortdesc}
 
 The name for the {{site.data.keyword.satellitelong_notm}} service in IAM is
@@ -56,7 +56,7 @@ Description
 ## Configuration, subscription, cluster, cluster group, and resource
 {: #iam-resource-config}
 
-Review details about the {{site.data.keyword.satelliteshort}} Config IAM resource type, which includes actions for configurations, subscriptions, clusters, cluster groups, resources, and other components that use {{site.data.keyword.satelliteshort}} Config such as storage.
+Review {{site.data.keyword.satelliteshort}} Config IAM resource type details, covering configurations, subscriptions, clusters, cluster groups, resources, and storage components.
 {: shortdesc}
 
 Name of the resource type
@@ -138,7 +138,7 @@ If you create {{site.data.keyword.openshiftlong_notm}} clusters to use in your {
 ## Common use cases and roles in {{site.data.keyword.cloud_notm}}
 {: #iam-roles-usecases}
 
-Wondering which access roles to assign to your {{site.data.keyword.satelliteshort}} access groups and users? Use the examples in the following table to determine which roles and scope to assign.
+Use the following table to determine which roles and scope to assign to your {{site.data.keyword.satelliteshort}} access groups and users.
 {: shortdesc}
 
 | Use case | Example roles and scope |

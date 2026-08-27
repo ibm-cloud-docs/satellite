@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, storage error messages, error message, cloud storage, cluster storage, debug storage
 
@@ -17,7 +17,7 @@ content-type: troubleshoot
 # Troubleshooting storage error messages in {{site.data.keyword.satellitelong_notm}}
 {: #debug-storage}
 
-Debug storage issues on {{site.data.keyword.satellitelong_notm}} by reviewing health information and resolving common cloud storage and cluster storage error messages in your {{site.data.keyword.satelliteshort}} location.
+Debug storage issues in {{site.data.keyword.satellitelong_notm}} by reviewing health information and resolving common storage error messages.
 {: shortdesc}
 
 ## Reviewing error messages and logs
@@ -35,7 +35,7 @@ Response code: `400`
 ### ST0002 error message
 {: #st0002}
 
-The input parameters in the request body are either incomplete or in the wrong format. Be sure to include all required parameters in your request in JSON format.
+The request body parameters are incomplete or incorrectly formatted. Include all required parameters in JSON format.
 {: shortdesc}
 
 
@@ -86,7 +86,7 @@ Response code: `500`
 ### ST0007 error message
 {: #st0007}
 
-The specified volume attachment ID could not be found. To retrieve the volume attachment ID, run `ibmcloud is volume VOLUME_ID` and note the `Vdisk ID` in the Volume Attachment Instance Reference.
+Volume attachment ID not found. Run `ibmcloud is volume VOLUME_ID` and note the `Vdisk ID` in the Volume Attachment Instance Reference.
 {: shortdesc}
 
 Error type: Bad request
@@ -146,7 +146,7 @@ Response code: `400`
 ### ST0014 error message
 {: #st0014}
 
-The required input parameter PARAMETER in the request body is  either missing or unsupported. The specified value is PARAMETER. The expected value(s) is(are) VALUE.
+Required input parameter PARAMETER is missing or unsupported. The specified value is PARAMETER; expected value(s): VALUE.
 {: shortdesc}
 
 Error type: Bad request
@@ -237,7 +237,7 @@ Response code: `500`
 ### ST0023 error message
 {: #st0023}
 
-Unable to update configuration with name CONFIGURATION-NAME. NUMBER assignments depend on this configuration.  Remove them before you update this configuration or create a new configuration.
+Cannot update configuration CONFIGURATION-NAME. Remove the NUMBER dependent assignments first, or create a new configuration.
 {: shortdesc}
 
 Error type: Services
@@ -329,7 +329,7 @@ Response code: `404`
 ### ST0033 error message
 {: #st0033}
 
-Updating an assignment, created for a cluster, to cluster group(s) is not supported. Run `ibmcloud sat storage assignment rm` to remove the assignment and create new assignment with cluster group(s).
+Updating a cluster assignment to cluster groups is unsupported. Remove it with `ibmcloud sat storage assignment rm` and re-create it with cluster groups.
 {: shortdesc}
 
 Error type: Bad request
@@ -381,7 +381,7 @@ Response code: `500`
 ### ST0038 error message
 {: #st0038}
 
-{{site.data.keyword.satelliteshort}} Location LOCATION not found. To list all the {{site.data.keyword.satelliteshort}} locations that you have access to, run `ibmcloud sat locations`.
+{{site.data.keyword.satelliteshort}} Location LOCATION not found. Run `ibmcloud sat locations` to list available locations.
 {: shortdesc}
 
 Error type: Bad request
@@ -391,7 +391,7 @@ Response code: `404`
 ### ST0039 error message
 {: #st0039}
 
-{{site.data.keyword.cloud_notm}} {{site.data.keyword.satelliteshort}} is not available in this region. Choose a supported {{site.data.keyword.cloud_notm}} region with `ibmcloud target -r REGION` to manage your {{site.data.keyword.satelliteshort}} location from, and try again. For supported multizone regions, see `http://ibm.biz/satloc-mzr`.
+{{site.data.keyword.satelliteshort}} is not available in this region. Use `ibmcloud target -r REGION` to select a supported region. See `http://ibm.biz/satloc-mzr` for options.
 {: shortdesc}
 
 Error type: {{site.data.keyword.satelliteshort}}

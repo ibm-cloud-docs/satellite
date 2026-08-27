@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, getting started, {{site.data.keyword.satellitelong}}, hosts, host
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Getting started with {{site.data.keyword.satellitelong_notm}} 
 {: #getting-started}
 
-{{site.data.keyword.satellitelong}} provides a distributed cloud architecture that brings the scalability and flexibility of public cloud services to any environment — on-premises, edge, or multi-cloud. With {{site.data.keyword.satelliteshort}}, you access the same catalog of 130+ {{site.data.keyword.cloud_notm}} services through consistent APIs, regardless of where your workloads run. The 130+ service count reflects the number of services listed in the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog){: external}.
+{{site.data.keyword.satellitelong}} brings the scalability and flexibility of public cloud to any environment — on-premises, edge, or multi-cloud — with access to 130+ {{site.data.keyword.cloud_notm}} services through consistent APIs.
 {: shortdesc}
 
 Your {{site.data.keyword.satelliteshort}} location includes tools such as {{site.data.keyword.satelliteshort}} Link and {{site.data.keyword.satelliteshort}} Config to provide capabilities for securing and auditing network connections in your location and consistently deploying, managing, and controlling your apps and policies across clusters in the location.
@@ -53,7 +53,7 @@ Before you get started, become familiar with some key terms for {{site.data.keyw
 ## Choose your infrastructure for {{site.data.keyword.satelliteshort}}
 {: #gs-start-here}
 
-To get started with {{site.data.keyword.satelliteshort}}, decide what type of infrastructure you want to use. Then, create a location by attaching hosts and creating a location control plane. For select cloud providers, Terraform templates automate location creation and host attachment. For all other environments, attach hosts manually. For more information about your options, see [Planning your environment for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-infrastructure-plan).
+Choose your infrastructure, create a location by attaching hosts, and set up the control plane. Terraform templates automate setup for select cloud providers. See [Planning your environment](/docs/satellite?topic=satellite-infrastructure-plan).
 {: shortdesc}
 
 I want to try out {{site.data.keyword.satelliteshort}}.

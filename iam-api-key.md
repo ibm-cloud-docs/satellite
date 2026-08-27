@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # API keys in {{site.data.keyword.cloud_notm}} 
 {: #iam-api-key}
 
-{{site.data.keyword.satelliteshort}} uses [API keys](/docs/iam?topic=iam-manapikey) from {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to authorize various requests.
+{{site.data.keyword.satelliteshort}} uses {{site.data.keyword.cloud_notm}} IAM [API keys](/docs/iam?topic=iam-manapikey) to authorize various requests.
 {: shortdesc}
 
 
@@ -28,7 +28,7 @@ subcollection: satellite
 ## Container service API key
 {: #api-keys-containers}
 
-{{site.data.keyword.satelliteshort}} uses the API key that is set for the container service, {{site.data.keyword.openshiftlong_notm}}, which is specific to the resource group and region that the {{site.data.keyword.satelliteshort}} location is managed from.
+{{site.data.keyword.satelliteshort}} uses the {{site.data.keyword.openshiftlong_notm}} API key specific to the resource group and region managing the {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
 The API key name is in the format `containers-kubernetes-key`. The account owner can reset the API key by logging in to a region and resource group and running `ibmcloud ks api-key reset`.
@@ -43,5 +43,5 @@ For more information, see the [{{site.data.keyword.openshiftlong_notm}} document
 ## Infrastructure provider credentials
 {: #api-keys-templates}
 
-If you create a {{site.data.keyword.satelliteshort}} location from a template, such as an {{site.data.keyword.bplong_notm}} template for AWS, {{site.data.keyword.satelliteshort}} checks for permissions with an API key. The API key must have the [required permissions to create a location](/docs/satellite?topic=satellite-iam#iam-roles-usecases), including to {{site.data.keyword.bplong_notm}}, which is used to automate the infrastructure creation from the template cloud provider.
+When creating a {{site.data.keyword.satelliteshort}} location from a template, {{site.data.keyword.satelliteshort}} checks an API key for [permissions to create a location](/docs/satellite?topic=satellite-iam#iam-roles-usecases), including {{site.data.keyword.bplong_notm}} access.
 {: shortdesc}

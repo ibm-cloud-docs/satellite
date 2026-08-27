@@ -16,7 +16,7 @@ subcollection: satellite
 # Disconnected use for {{site.data.keyword.satelliteshort}} components
 {: #disconnected-use}
 
-Certain features of {{site.data.keyword.satellitelong}} can be used while disconnected temporarily. See the following FAQs to understand the disconnected use for these components.
+Certain features of {{site.data.keyword.satellitelong}} can be used while temporarily disconnected. Review these FAQs to understand disconnected usage limits.
 {: shortdesc}
 
 ## Understanding disconnected usage
@@ -49,7 +49,7 @@ How do I know when to reconnect a location?
 ## Setting the disconnected usage time
 {: #disconnect-time}
 
-{{site.data.keyword.satellitelong_notm}} allows locations and {{site.data.keyword.openshiftlong_notm}} clusters to run disconnected from the parent `managed-from` region in {{site.data.keyword.cloud_notm}} for up to 168 hours (7 days). This limit is set by the maximum supported value for `accessTokenMaxAgeSeconds` (604800 seconds) in the [OpenShift OAuth server configuration](https://docs.openshift.com/container-platform/latest/authentication/configuring-internal-oauth.html){: external}.
+Locations and clusters can run disconnected from {{site.data.keyword.cloud_notm}} for up to 168 hours (7 days). Set the duration by editing `accessTokenMaxAgeSeconds` in the [OpenShift OAuth configuration](https://docs.openshift.com/container-platform/latest/authentication/configuring-internal-oauth.html){: external}.
 {: shortdesc}
 
 You can modify this setting by changing the `accessTokenMaxAgeSeconds` value for all your OAuth clients. The default value for `accessTokenMaxAgeSeconds` parameter is 86400 seconds.
