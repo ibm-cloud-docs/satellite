@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-19"
+lastupdated: "2026-08-27"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage, IBM Cloud Object Storage, COS driver
 
@@ -12,10 +12,10 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Configuring {{site.data.keyword.cos_full_notm}} driver for {{site.data.keyword.satelliteshort}} clusters
+# Configuring IBM Cloud Object Storage driver for {{site.data.keyword.satelliteshort}} clusters
 {: #storage-ibm-object-storage-plugin}
 
-Learn how to deploy the {{site.data.keyword.cos_full_notm}} driver to your {{site.data.keyword.satelliteshort}} clusters to create and access data across multiple S3-compatible cloud storage providers including IBM, AWS, Wasabi, and Azure.
+Learn how to deploy the IBM Cloud Object Storage (COS) driver to your {{site.data.keyword.satelliteshort}} clusters to access data across multiple S3-compatible cloud storage providers including IBM, AWS, Wasabi, and Azure.
 {: shortdesc}
 
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config by selecting the **Enable cluster admin access for Satellite Config** option in the console or including the `--enable-config-admin` option when you create your cluster.

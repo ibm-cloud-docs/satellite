@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2024
-lastupdated: "2024-02-27"
+  years: 2024, 2026
+lastupdated: "2026-08-27"
 
 keywords: satellite, recover, disaster recovery, troubleshooting
 
@@ -12,10 +12,10 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Recovering your location
+# Recovering a satellite location after a disaster
 {: #ts-recover-location}
 
-The following steps outline the general flow of recovering from a disaster event within a Satellite location.
+Learn the steps to recover a satellite location after a disaster event, including replacing unhealthy infrastructure and recovering OpenShift clusters.
 {: shortdesc}
 
 1. Replace any unhealthy infrastructure in the Location control plane. Remove unhealthy hosts, then attach new hosts and assign them to the control plane.
@@ -38,4 +38,3 @@ The following steps outline the general flow of recovering from a disaster event
 1. Recover or replace any unhealthy infrastructure in the data plane of each OpenShift cluster within the location. Remove unhealthy worker nodes. Attach new hosts and assign them as worker nodes. Repeat this process until all worker nodes in the cluster are healthy and running.
 1. [Check the status of the cluster components](/docs/satellite?topic=satellite-ts-recovery-validation). 
 1. Begin application and persistent storage DR. Consult the appropriate application specific documentation or storage solution documentation for more details.
-
