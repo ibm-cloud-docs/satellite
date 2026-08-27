@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -35,13 +35,15 @@ Running multiple agents on the same Windows host is not supported for Satellite 
 
 - In versions earlier than `1.2.0` of the Windows agent, you weren't allowed to specify a config file for the installation or uninstallation scripts. Instead, the scripts automatically took the file `config.json` from the same directory and used it to install or uninstall a single Windows agent.
 
-- A single Windows agents requires at least 4 vCPU and 4 GB is recommended. While this setup could handle multiple agents there is a significant drop in performance after the 4th agent. Therefore, at least 8 vCPU and 8 GB is recommended for running multiple agents.
+- A single Windows agent requires at least 4 virtual CPU (vCPU) and 4 GB is recommended. While this setup could handle multiple agents there is a significant drop in performance after the 4th agent. Therefore, at least 8 vCPU and 8 GB is recommended for running multiple agents.
 
 - Running multiple agents belonging to the same Connector doesn't offer any benefit. The best practice is to have 1 agent per Connector.
 
 - Installing multiple Windows agents requires 25MB of memory to be preserved for each agent.
 
-- Running traffic across agents adds up to approximately 70 MB of memory and approximately 15% CPU utilization per agent, with bandwidth reaching 150–200 Mbps per agent. These figures are based on IBM internal performance testing of the Satellite Connector Windows agent.
+- Running traffic across agents uses approximately 70 MB of memory and approximately 15% CPU utilization per agent, with bandwidth reaching 150–200 Mbps per agent.[^1]
+
+[^1]: IBM internal performance testing of the Satellite Connector Windows agent.
 
 
 ## Installing multiple Windows agents

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-26"
+lastupdated: "2026-08-27"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -13,7 +13,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Non-RHCOS enabled locations in Osaka
+# Non-CoreOS enabled locations in Osaka
 {: #reqs-host-network-outbound-osa}
 
 

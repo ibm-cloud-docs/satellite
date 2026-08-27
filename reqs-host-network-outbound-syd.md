@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-26"
+lastupdated: "2026-08-27"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -13,7 +13,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Non-RHCOS enabled locations in Sydney
+# Non-CoreOS enabled locations in Sydney
 {: #reqs-host-network-outbound-syd}
 
 The following network requirements are for outbound connectivity for Red Hat Enterprise Linux (RHEL) hosts for use with non Red Hat CoreOS enabled locations in the Sydney (`au-syd`) region. 
@@ -32,7 +32,7 @@ You can [download a copy of these requirements](https://cloud.ibm.com/media/docs
 
 
 
-Review the following outbound network requirements for RHEL hosts for use with non-RHCOS enabled locations in the Sydney (`au-syd`) region.
+Review the following outbound network requirements for RHEL hosts for use with non-CoreOS enabled locations in the Sydney (`au-syd`) region.
 
 Allow hosts to connect to {{site.data.keyword.IBM_notm}}.
 :    * Destination hostnames: `cloud.ibm.com`, `containers.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`

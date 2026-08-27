@@ -1,9 +1,9 @@
 ---
 
+
 copyright:
   years: 2023, 2026
-
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, connector, faq, frequently asked questions
 
@@ -20,8 +20,6 @@ subcollection: satellite
 Find answers to frequently asked questions about {{site.data.keyword.satelliteshort}} Connector, including endpoint support, network access control, and agent configuration.
 {: shortdesc}
 
-<!--<qna:connector>-->
-
 ## Does {{site.data.keyword.satelliteshort}} Connector support Cloud Endpoints?
 {: #connector-faq-endpoints}
 
@@ -30,7 +28,7 @@ Yes, {{site.data.keyword.satelliteshort}} Connector supports both Location and C
 ## How can I restrict access to my location endpoints?
 {: #connector-faq-restrict}
 
-You can set up ACL rules to restrict access to your endpoints. When you create your link endpoint, select an existing ACL rule or create a new ACL rule to control which clients can access location endpoint resources. If no ACL rule is selected, any client that is connected to the {{site.data.keyword.cloud_notm}} private network can use the endpoint to connect to the destination resource that runs in your location.
+You can set up access control list (ACL) rules to restrict access to your endpoints. When you create your link endpoint, select an existing ACL rule or create a new ACL rule to control which clients can access location endpoint resources. If no ACL rule is selected, any client that is connected to the {{site.data.keyword.cloud_notm}} private network can use the endpoint to connect to the destination resource that runs in your location.
 
 ## How can I restrict the Connector Agent access on my network?
 {: #connector-faq-agent-restrict}
@@ -61,8 +59,6 @@ To create a Connector, you need **Administrator** Platform role for {{site.data.
 `location` endpoints
 :   According to IBM Satellite service limits, each Connector supports up to 25 location endpoints. IBM Satellite Connector allows up to 20 of these as TLS endpoints and up to 5 as HTTP endpoints, through which clients outside of your location network can connect to resources inside the location.
 
-<!--</qna:connector>-->
-
 ## How many instances of Connector agent can I run?
 {: #connector-faq-instance-limits}
 
@@ -84,12 +80,12 @@ Connector uses TLS version 1.3.
 ## How does load balancing work across {{site.data.keyword.satelliteshort}} Connector?
 {: #conector-faq-lbs}
 
-{{site.data.keyword.satelliteshort}} Connector distributes TCP streams in round robin across all connected agents. Multiple TCP streams are required to take full advantage of the agents.
+{{site.data.keyword.satelliteshort}} Connector distributes Transmission Control Protocol (TCP) streams in round robin across all connected agents. Multiple TCP streams are required to take full advantage of the agents.
 
 ## What are the failover or disaster recovery expectations of agents and Connector?
 {: #conector-faq-dr}
 
-IBM manages the cloud side of the {{site.data.keyword.satelliteshort}} Connector service, which is distributed across {{site.data.keyword.cloud_notm}} Multi-Zone Regions (MZRs), so agents automatically have redundancy across different resources in each zone. According to IBM Connector architecture guidance, deploy at least 3 agents per availability zone — for example, 3 VMware hosts if you're on VMware — to align with your cloud provider's availability zones.
+IBM manages the cloud side of the {{site.data.keyword.satelliteshort}} Connector service, which is distributed across {{site.data.keyword.cloud_notm}} multizone regions (MZRs), so agents automatically have redundancy across different resources in each zone. According to IBM Connector architecture guidance, deploy at least 3 agents per availability zone — for example, 3 VMware hosts if you're on VMware — to align with your cloud provider's availability zones.
 
 ## How do I measure and monitor connections that are using Satellite Connector?
 {: #conector-faq-connections}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-26"
+lastupdated: "2026-08-27"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -13,7 +13,7 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
   
-# RHCOS enabled locations with reduced firewall in Sao Paulo
+# CoreOS enabled locations with reduced firewall in Sao Paulo
 {: #req-minimum-outbound-sao}
   
 Review the following network requirements for outbound connectivity for hosts in a minimum internet access location in the Sao Paulo (`br-sao`) region. Because this type of location requires a single network destination instead of multiple destinations, it reduces the number of outbound IP addresses that you must allow from your firewall. For more information, see [Creating Red Hat CoreOS enabled Locations with reduced firewall footprint](/docs/satellite?topic=satellite-coreos-reduced-firewall).
@@ -47,4 +47,4 @@ Optional:  Allow hosts to connect to HPCS for encrypting cluster secrets.
 
 :    If you have a preconfigured set of instances, you can find the assigned port to your instance in the overview page and allowlist just that port on the domain.
 
-For access to services such as {{site.data.keyword.loganalysislong_notm}} or {{site.data.keyword.monitoringlong_notm}}, you must add the outbound access for them. For more information, see [RHCOS enabled locations in Sao Paulo](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-sao).
+For access to services such as {{site.data.keyword.loganalysislong_notm}} or {{site.data.keyword.monitoringlong_notm}}, you must add the outbound access for them. For more information, see [CoreOS enabled locations in Sao Paulo](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-sao).

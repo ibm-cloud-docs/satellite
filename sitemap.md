@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, sitemap, IBM Cloud satellite, getting started, data, cloud
 subcollection: satellite
@@ -792,110 +792,110 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 {: #sitemap_host_outbound_connectivity_for_dallas}
 
 
-[RHCOS enabled locations in Dallas](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-dal#reqs-host-rhcos-outbound-dal)
+[CoreOS enabled locations in Dallas](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-dal#reqs-host-rhcos-outbound-dal)
 
-[Non-RHCOS enabled locations in Dallas](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#reqs-host-network-outbound-dal)
+[Non-CoreOS enabled locations in Dallas](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#reqs-host-network-outbound-dal)
 
-[RHCOS enabled locations with reduced firewall in Dallas](/docs/satellite?topic=satellite-req-minimum-outbound-dal#req-minimum-outbound-dal)
+[CoreOS enabled locations with reduced firewall in Dallas](/docs/satellite?topic=satellite-req-minimum-outbound-dal#req-minimum-outbound-dal)
 
 
 ### Host outbound connectivity for Frankfurt
 {: #sitemap_host_outbound_connectivity_for_frankfurt}
 
 
-[RHCOS enabled locations in Frankfurt](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-fra#reqs-host-rhcos-outbound-fra)
+[CoreOS enabled locations in Frankfurt](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-fra#reqs-host-rhcos-outbound-fra)
 
-[Non-RHCOS enabled locations in Frankfurt](/docs/satellite?topic=satellite-reqs-host-network-outbound-fra#reqs-host-network-outbound-fra)
+[Non-CoreOS enabled locations in Frankfurt](/docs/satellite?topic=satellite-reqs-host-network-outbound-fra#reqs-host-network-outbound-fra)
 
-[RHCOS enabled locations with reduced firewall in Frankfurt](/docs/satellite?topic=satellite-req-minimum-outbound-fra#req-minimum-outbound-fra)
+[CoreOS enabled locations with reduced firewall in Frankfurt](/docs/satellite?topic=satellite-req-minimum-outbound-fra#req-minimum-outbound-fra)
 
 
 ### Host outbound connectivity for London
 {: #sitemap_host_outbound_connectivity_for_london}
 
 
-[RHCOS enabled locations in London](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-lon#reqs-host-rhcos-outbound-lon)
+[CoreOS enabled locations in London](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-lon#reqs-host-rhcos-outbound-lon)
 
-[Non-RHCOS enabled locations in London](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon#reqs-host-network-outbound-lon)
+[Non-CoreOS enabled locations in London](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon#reqs-host-network-outbound-lon)
 
-[RHCOS enabled locations with reduced firewall in London](/docs/satellite?topic=satellite-req-minimum-outbound-lon#req-minimum-outbound-lon)
+[CoreOS enabled locations with reduced firewall in London](/docs/satellite?topic=satellite-req-minimum-outbound-lon#req-minimum-outbound-lon)
 
 
 ### Host outbound connectivity for Madrid
 {: #sitemap_host_outbound_connectivity_for_madrid}
 
 
-[RHCOS enabled locations in Madrid](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-mad#reqs-host-rhcos-outbound-mad)
+[CoreOS enabled locations in Madrid](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-mad#reqs-host-rhcos-outbound-mad)
 
-[Non-RHCOS enabled locations in Madrid](/docs/satellite?topic=satellite-reqs-host-network-outbound-mad#reqs-host-network-outbound-mad)
+[Non-CoreOS enabled locations in Madrid](/docs/satellite?topic=satellite-reqs-host-network-outbound-mad#reqs-host-network-outbound-mad)
 
-[RHCOS enabled locations with reduced firewall in Madrid](/docs/satellite?topic=satellite-req-minimum-outbound-mad#req-minimum-outbound-mad)
+[CoreOS enabled locations with reduced firewall in Madrid](/docs/satellite?topic=satellite-req-minimum-outbound-mad#req-minimum-outbound-mad)
 
 
 ### Host outbound connectivity for Osaka
 {: #sitemap_host_outbound_connectivity_for_osaka}
 
 
-[RHCOS enabled locations in Osaka](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-osa#reqs-host-rhcos-outbound-osa)
+[CoreOS enabled locations in Osaka](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-osa#reqs-host-rhcos-outbound-osa)
 
-[Non-RHCOS enabled locations in Osaka](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#reqs-host-network-outbound-osa)
+[Non-CoreOS enabled locations in Osaka](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#reqs-host-network-outbound-osa)
 
-[RHCOS enabled locations with reduced firewall in Osaka](/docs/satellite?topic=satellite-req-minimum-outbound-osa#req-minimum-outbound-osa)
+[CoreOS enabled locations with reduced firewall in Osaka](/docs/satellite?topic=satellite-req-minimum-outbound-osa#req-minimum-outbound-osa)
 
 
 ### Host outbound connectivity for Sao Paulo
 {: #sitemap_host_outbound_connectivity_for_sao_paulo}
 
 
-[RHCOS enabled locations in Sao Paulo](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-sao#reqs-host-rhcos-outbound-sao)
+[CoreOS enabled locations in Sao Paulo](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-sao#reqs-host-rhcos-outbound-sao)
 
-[Non-RHCOS enabled locations in Sao Paulo](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao#reqs-host-network-outbound-sao)
+[Non-CoreOS enabled locations in Sao Paulo](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao#reqs-host-network-outbound-sao)
 
-[RHCOS enabled locations with reduced firewall in Sao Paulo](/docs/satellite?topic=satellite-req-minimum-outbound-sao#req-minimum-outbound-sao)
+[CoreOS enabled locations with reduced firewall in Sao Paulo](/docs/satellite?topic=satellite-req-minimum-outbound-sao#req-minimum-outbound-sao)
 
 
 ### Host outbound connectivity for Sydney
 {: #sitemap_host_outbound_connectivity_for_sydney}
 
 
-[RHCOS enabled locations in Sydney](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-syd#reqs-host-rhcos-outbound-syd)
+[CoreOS enabled locations in Sydney](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-syd#reqs-host-rhcos-outbound-syd)
 
-[Non-RHCOS enabled locations in Sydney](/docs/satellite?topic=satellite-reqs-host-network-outbound-syd#reqs-host-network-outbound-syd)
+[Non-CoreOS enabled locations in Sydney](/docs/satellite?topic=satellite-reqs-host-network-outbound-syd#reqs-host-network-outbound-syd)
 
-[RHCOS enabled locations with reduced firewall in Sydney](/docs/satellite?topic=satellite-req-minimum-outbound-syd#req-minimum-outbound-syd)
+[CoreOS enabled locations with reduced firewall in Sydney](/docs/satellite?topic=satellite-req-minimum-outbound-syd#req-minimum-outbound-syd)
 
 
 ### Host outbound connectivity for Tokyo
 {: #sitemap_host_outbound_connectivity_for_tokyo}
 
 
-[RHCOS enabled locations in Tokyo](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-tok#reqs-host-rhcos-outbound-tok)
+[CoreOS enabled locations in Tokyo](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-tok#reqs-host-rhcos-outbound-tok)
 
-[Non-RHCOS enabled locations in Tokyo](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok#reqs-host-network-outbound-tok)
+[Non-CoreOS enabled locations in Tokyo](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok#reqs-host-network-outbound-tok)
 
-[RHCOS enabled locations with reduced firewall in Tokyo](/docs/satellite?topic=satellite-req-minimum-outbound-tok#req-minimum-outbound-tok)
+[CoreOS enabled locations with reduced firewall in Tokyo](/docs/satellite?topic=satellite-req-minimum-outbound-tok#req-minimum-outbound-tok)
 
 
 ### Host outbound connectivity for Toronto
 {: #sitemap_host_outbound_connectivity_for_toronto}
 
 
-[RHCOS enabled locations in Toronto](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-tor#reqs-host-rhcos-outbound-tor)
+[CoreOS enabled locations in Toronto](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-tor#reqs-host-rhcos-outbound-tor)
 
-[Non-RHCOS enabled locations in Toronto](/docs/satellite?topic=satellite-reqs-host-network-outbound-tor#reqs-host-network-outbound-tor)
+[Non-CoreOS enabled locations in Toronto](/docs/satellite?topic=satellite-reqs-host-network-outbound-tor#reqs-host-network-outbound-tor)
 
-[RHCOS enabled locations with reduced firewall in Toronto](/docs/satellite?topic=satellite-req-minimum-outbound-tor#req-minimum-outbound-tor)
+[CoreOS enabled locations with reduced firewall in Toronto](/docs/satellite?topic=satellite-req-minimum-outbound-tor#req-minimum-outbound-tor)
 
 
 ### Host outbound connectivity for Washington D.C.
 {: #sitemap_host_outbound_connectivity_for_washington_dc}
 
 
-[RHCOS enabled locations in Washington D.C.](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-wdc#reqs-host-rhcos-outbound-wdc)
+[CoreOS enabled locations in Washington D.C.](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-wdc#reqs-host-rhcos-outbound-wdc)
 
-[Non-RHCOS enabled locations in Washington D.C.](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc#reqs-host-network-outbound-wdc)
+[Non-CoreOS enabled locations in Washington D.C.](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc#reqs-host-network-outbound-wdc)
 
-[RHCOS enabled locations with reduced firewall in Washington D.C.](/docs/satellite?topic=satellite-req-minimum-outbound-wdc#req-minimum-outbound-wdc)
+[CoreOS enabled locations with reduced firewall in Washington D.C.](/docs/satellite?topic=satellite-req-minimum-outbound-wdc#req-minimum-outbound-wdc)
 
 [Network latency requirements for {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-host-latency-test#host-latency-test)
 

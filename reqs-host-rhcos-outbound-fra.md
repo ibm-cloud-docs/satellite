@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-27"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -13,7 +13,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# RHCOS enabled locations in Frankfurt
+# CoreOS enabled locations in Frankfurt
 {: #reqs-host-rhcos-outbound-fra}
 
 The following network requirements are for outbound connectivity for Red Hat Enterprise Linux (RHEL) and Red Hat CoreOS (RHCOS) hosts for use with Red Hat CoreOS enabled locations in the Frankfurt (`eu-de`) region. 
@@ -32,7 +32,7 @@ You can [download a copy of these requirements](https://cloud.ibm.com/media/docs
 
 
 
-Review the following outbound network requirements for RHEL and RHCOS hosts for use with RHCOS enabled locations in the Frankfurt (`eu-de`) region.
+Review the following outbound network requirements for RHEL and RHCOS hosts for use with CoreOS enabled locations in the Frankfurt (`eu-de`) region.
 
 Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers.
 :    * Destination hostnames: `0.rhel.pool.ntp.org`, `1.rhel.pool.ntp.org`, `2.rhel.pool.ntp.org`, `3.rhel.pool.ntp.org`

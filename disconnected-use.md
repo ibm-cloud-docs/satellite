@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, disconnected use, disconnected usage, disconnect
 
@@ -38,10 +38,10 @@ How do I re-authenticate?
 :   Reconnect your Location first and then log in again with your credentials. 
 
 Do I have to recover etcd backup?
-:   If you are using RHCOS hosts, you don't need to recover etcd backup. The Location recovers automatically after you reconnect it and re-authenticate. Locations that use RHEL require etcd recovery.
+:   If you are using Red Hat CoreOS (RHCOS) hosts, you don't need to recover etcd backup. The Location recovers automatically after you reconnect it and re-authenticate. Locations that use Red Hat Enterprise Linux (RHEL) require etcd recovery.
 
 What happens if a location stays disconnected for more than 7 days?
-:   After you restore your connection, you must replace all hosts across the location with new infrastructure. The 7-day maximum is derived from the default `accessTokenMaxAgeSeconds` ceiling of 604800 seconds as configured in the OpenShift OAuth server.
+:   After you restore your connection, you must replace all hosts across the location with new infrastructure. The 7-day (168-hour) maximum is set by the `accessTokenMaxAgeSeconds` ceiling of 604800 seconds in the [OpenShift OAuth server configuration](https://docs.openshift.com/container-platform/latest/authentication/configuring-internal-oauth.html){: external}.
 
 How do I know when to reconnect a location?
 :   You can make a note or set a reminder to reconnect the location before the 7-day window expires. The timer starts when you request the token.
@@ -49,12 +49,12 @@ How do I know when to reconnect a location?
 ## Setting the disconnected usage time
 {: #disconnect-time}
 
-{{site.data.keyword.satellitelong_notm}} allows locations and {{site.data.keyword.openshiftlong_notm}} clusters to run disconnected from the parent `managed-from` region in {{site.data.keyword.cloud_notm}} for up to 168 hours (7 days). This limit is determined by the maximum supported value for `accessTokenMaxAgeSeconds` (604800 seconds) in the OpenShift OAuth server configuration.
+{{site.data.keyword.satellitelong_notm}} allows locations and {{site.data.keyword.openshiftlong_notm}} clusters to run disconnected from the parent `managed-from` region in {{site.data.keyword.cloud_notm}} for up to 168 hours (7 days). This limit is set by the maximum supported value for `accessTokenMaxAgeSeconds` (604800 seconds) in the [OpenShift OAuth server configuration](https://docs.openshift.com/container-platform/latest/authentication/configuring-internal-oauth.html){: external}.
 {: shortdesc}
 
 You can modify this setting by changing the `accessTokenMaxAgeSeconds` value for all your OAuth clients. The default value for `accessTokenMaxAgeSeconds` parameter is 86400 seconds.
 
-The `accessTokenMaxAgeSeconds` value starts counting when the user was last authenticated, not when the Location is disconnected. Note that a user must have access to IAM to authenticate.
+The `accessTokenMaxAgeSeconds` value starts counting when the user was last authenticated, not when the Location is disconnected. Note that a user must have access to Identity and Access Management (IAM) to authenticate.
 {: important}
 
 1. Get your OAuth clients by running `oc get oauthclients`.
@@ -105,7 +105,7 @@ The following tables explain the behavior and limitations of different component
 
 | Feature | Connected behavior | Disconnected behavior | Maximum disconnection tolerance |
 | -- | -- | -- | -- |
-| Deployment | You can deploy apps by using your preferred methods, such as the `kubectl` command line, the OpenShift Console, CI/CD pipelines, and Sat Config. | You can deploy apps while disconnected by using the Kubernetes API. | Equal to the `accessTokenMaxAgeSeconds` value from last authentication |
+| Deployment | You can deploy apps by using your preferred methods, such as the `kubectl` command line, the OpenShift Console, continuous integration and continuous delivery (CI/CD) pipelines, and Sat Config. | You can deploy apps while disconnected by using the Kubernetes API. | Equal to the `accessTokenMaxAgeSeconds` value from last authentication |
 | Removal | You can remove apps by using your preferred methods, such as the `kubectl` command line, the OpenShift Console, CI/CD pipelines, and Sat Config. | You can remove apps while disconnected by using the Kubernetes API. | Equal to the `accessTokenMaxAgeSeconds` value from last authentication |
 | Scaling | You can scale apps by using your preferred methods, such as the `kubectl` command line, the OpenShift Console, CI/CD pipelines, and Sat Config. | You can scale apps while disconnected by using the Kubernetes API. | Equal to the `accessTokenMaxAgeSeconds` value from last authentication |
 {: caption="Disconnected app management" caption-side="bottom"}
