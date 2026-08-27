@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -159,7 +159,7 @@ If you are using Terraform with your {{site.data.keyword.satelliteshort}} locati
 
 To replace your control plane hosts on an older version of RHEL, you must first add a hosts at the newer version of RHEL that you want to use. After you attach new hosts to your location and assign them to the control plane, you can remove the old hosts in the same zone from the control plane. 
 
-Before migrating to a newer version of RHEL, note that Red Hat CoreOS (RHCOS) is now a supported OS in RHCOS enabled locations. RHCOS is a minimal, secure OS with tight integration into the {{site.data.keyword.redhat_openshift_notm}} ecosystem and is capable of doing in-place upgrades of major versions. Before you can use RHCOS hosts in your location, you must create a Red Hat CoreOS enabled location. If you already have a location that is RHCOS enabled, consider adding RHCOS hosts instead. To create a Red Hat CoreOS enabled Satellite location, see [Understanding locations](/docs/satellite?topic=satellite-location-host).
+Before migrating to a newer version of RHEL, note that Red Hat CoreOS (RHCOS) is now a supported OS in CoreOS enabled locations. RHCOS is a minimal, secure OS with tight integration into the {{site.data.keyword.redhat_openshift_notm}} ecosystem and is capable of doing in-place upgrades of major versions. Before you can use RHCOS hosts in your location, you must create a Red Hat CoreOS enabled location. If you already have a location that is RHCOS enabled, consider adding RHCOS hosts instead. To create a Red Hat CoreOS enabled Satellite location, see [Understanding locations](/docs/satellite?topic=satellite-location-host).
 {: tip}
 
 1. Identify which hosts you want to replace and which zones they are located in by running the following command. Look for the `"os"` label or a host without an `os` label in the output file.

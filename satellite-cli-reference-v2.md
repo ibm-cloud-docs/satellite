@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-27"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -2246,7 +2246,7 @@ ibmcloud sat host assign --location LOCATION
 
 
 
-Create and download a script that you can run on your hosts to attach them to your location. For RHCOS enabled locations, the script is an ignition file.
+Create and download a script that you can run on your hosts to attach them to your location. For CoreOS enabled locations, the script is an ignition file.
 
 ```sh
 ibmcloud sat host attach --location LOCATION [--host-label LABEL ...] [--host-link-agent-endpoint ENDPOINT] [--operating-system SYSTEM] [-q] [--reset-key]

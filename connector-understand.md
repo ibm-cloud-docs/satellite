@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-26"
+lastupdated: "2026-08-27"
 
 keywords: satellite, connector, agent
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # {{site.data.keyword.satelliteshort}} Connector overview
 {: #understand-connectors}
 
-{{site.data.keyword.satelliteshort}} Connector provides secure TLS tunneling between applications and services that need to communicate in hybrid and multi-cloud environments. IBM engineering confirms that the Connector agent requires only outbound port 443, eliminating the need for inbound firewall rules on customer infrastructure.
+{{site.data.keyword.satelliteshort}} Connector provides secure Transport Layer Security (TLS) tunneling between applications and services that need to communicate in hybrid and multi-cloud environments. IBM engineering confirms that the Connector agent requires only outbound port 443, eliminating the need for inbound firewall rules on customer infrastructure.
 {: shortdesc}
 
   
@@ -35,10 +35,10 @@ Agent {: #term-agent}
 :   Each connector needs an agent running on your location to establish the connection.
   
 Endpoint {: #term-endpoint}
-:   An endpoint is the Connector term for the service being accessed across the Connector service. Endpoints are either the FQDNs or the IP addresses of the resources being made available across {{site.data.keyword.satelliteshort}} Connector. An endpoint is not limited to HTTP or HTTPS traffic, but supports any protocol that works across a TCP connection.
+:   An endpoint is the Connector term for the service being accessed across the Connector service. Endpoints are either the fully qualified domain names (FQDNs) or the IP addresses of the resources being made available across {{site.data.keyword.satelliteshort}} Connector. An endpoint is not limited to HTTP (Hypertext Transfer Protocol) or HTTPS traffic, but supports any protocol that works across a TCP (Transmission Control Protocol) connection.
   
 Access control list {: #term-acl}
-:   Because endpoints are exposed privately within {{site.data.keyword.cloud_notm}} to all {{site.data.keyword.cloud_notm}} resources, including other customers' resources, an ACL restricts access by defining which IP addresses or CIDR ranges are allowed to use the endpoint.
+:   Because endpoints are exposed privately within {{site.data.keyword.cloud_notm}} to all {{site.data.keyword.cloud_notm}} resources, including other customers' resources, an access control list (ACL) restricts access by defining which IP addresses or Classless Inter-Domain Routing (CIDR) ranges are allowed to use the endpoint.
 
 
 ## Minimum requirements
@@ -49,7 +49,7 @@ These minimum requirements are for running the agent image only and exclude what
   
 To run the {{site.data.keyword.satelliteshort}} Connector agent image, your computing environment must meet the following minimum requirements.
 
-- CPU: 0.40
+- Central processing unit (CPU): 0.40
 - Memory: 500M
 - The Connector agent image is available for multiple architectures: x86_64 (amd64), ARM64 (arm64), PowerPC 64-bit Little Endian (ppc64le), and IBM Z (s390x).
 - If you are on a Mac with Apple Silicon (arm64), the image works natively. For older x86-only images, Rosetta can be used for emulation. If Rosetta is not installed on your Mac, you can install it via the `softwareupdate --install-rosetta` command.

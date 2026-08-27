@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 
@@ -56,10 +56,10 @@ Multizone
 :    A {{site.data.keyword.satelliteshort}} location requires at least three physically separate zones to distribute hosts evenly for [high availability](/docs/satellite?topic=satellite-sat-ha-dr). For example, a cloud provider delivers three different zones within the same region, or an on-premises environment uses three racks with independent networking and power supply systems.
     
 Latency between {{site.data.keyword.cloud_notm}} and the location
-:    The hosts that you want to attach to the {{site.data.keyword.satelliteshort}} location control plane must have a low latency connection of less than or equal to 200 milliseconds (`<= 200ms`) round trip time (RTT) to the {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from. As latency increases, you might see impacts to performance, including {{site.data.keyword.satelliteshort}} Link throughput, {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service provisioning time, host failure recovery time, and in extreme cases, the availability of resources that run in the {{site.data.keyword.satelliteshort}} location control plane, such as {{site.data.keyword.redhat_openshift_notm}} cluster masters. For more information, see [Testing the latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-latency-test#host-latency-mzr).
+:    The hosts that you want to attach to the {{site.data.keyword.satelliteshort}} location control plane must have a low latency connection of less than or equal to 200 milliseconds (`<= 200ms`) round trip time (RTT) to the {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from. Higher latency degrades performance, including {{site.data.keyword.satelliteshort}} Link throughput, {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service provisioning time, host failure recovery time, and in extreme cases, the availability of resources that run in the {{site.data.keyword.satelliteshort}} location control plane, such as {{site.data.keyword.redhat_openshift_notm}} cluster masters. For more information, see [Testing the latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-latency-test#host-latency-mzr).
     
 Latency between hosts in your location
-:    Your host infrastructure setup must have a low latency connection of less than or equal to 100 milliseconds (`<= 100ms`) round trip time (RTT) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane worker nodes and the hosts that are used for other resources in the location, like clusters or [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services). For example, in cloud providers such as AWS, this setup typically means that all the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`. As latency increases, you might see impacts to performance, including provisioning and recovery times, reduced worker nodes in the cluster, {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service degradation, and in extreme cases, failures in your cluster applications.
+:    Your host infrastructure setup must have a low latency connection of less than or equal to 100 milliseconds (`<= 100ms`) round trip time (RTT) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane worker nodes and the hosts that are used for other resources in the location, like clusters or [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services). For example, in cloud providers such as AWS, this setup typically means that all the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`. Higher latency degrades performance, including provisioning and recovery times, available worker nodes in the cluster, {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service stability, and in extreme cases, cluster application availability.
 
 ### Plan your host systems
 {: #infra-plan-compatible}
@@ -105,7 +105,7 @@ The following table shows the features that are available only in Red Hat CoreOS
 
 To verify if you location is enabled for Red Hat CoreOS, see [Is my location enabled for Red Hat CoreOS](/docs/satellite?topic=satellite-locations#verify-coreos-location).
 
-The bring your own key (BYOK) or keep your own key (KYOK) feature is supported in RHCOS-enabled locations on {{site.data.keyword.openshiftshort}} 4.13 and later, on both RHEL and RHCOS hosts. This feature encrypts cluster secrets only and is not available during cluster or worker pool creation. Enable it after cluster or worker pool creation by running the `ibmcloud oc kms enable` command. This feature cannot be disabled once enabled.
+The bring your own key (BYOK) or keep your own key (KYOK) feature is supported in CoreOS enabled locations on {{site.data.keyword.openshiftshort}} 4.13 and later, on both RHEL and RHCOS hosts. This feature encrypts cluster secrets only and is not available during cluster or worker pool creation. Enable it after cluster or worker pool creation by running the `ibmcloud oc kms enable` command. This feature cannot be disabled once enabled.
 {: note}
 
 

@@ -1,9 +1,9 @@
 ---
 
+
 copyright:
   years: 2022, 2026
-
-lastupdated: "2026-08-17"
+lastupdated: "2026-08-27"
 
 keywords: satellite, networking, connectivity, host check, host setup
 
@@ -12,7 +12,6 @@ subcollection: satellite
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-<!--<qna:host-setup>-->
 
 # Checking your host setup
 {: #host-network-check}
@@ -20,7 +19,7 @@ subcollection: satellite
 After you create hosts that meet the [system requirements](/docs/satellite?topic=satellite-host-reqs), [network requirements](/docs/satellite?topic=satellite-reqs-host-network), and the [outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound), you can verify your host setup by running the following `sat-host-check` script.
 {: shortdesc}
 
-There is currently a bug with the `sat-host-check` script that causes it to fail on RHEL due to a GLIBC requirement.
+There is currently a bug with the `sat-host-check` script that causes it to fail on Red Hat Enterprise Linux (RHEL) due to a GLIBC requirement.
 {: note}
 
 1. Log in to your host.
@@ -29,13 +28,13 @@ There is currently a bug with the `sat-host-check` script that causes it to fail
     ```
     {: pre}
     
-    1. For RHEL hosts, SSH as root.
+    1. For RHEL hosts, use Secure Shell (SSH) to log in as root.
         ```sh
         ssh root@<IP_address>
         ```
         {: pre}
         
-    1. For RHCOS hosts, copy your public SSH key into your ignition script and log in as core.
+    1. For Red Hat CoreOS (RHCOS) hosts, copy your public SSH key into your ignition script and log in as core.
         1. Download the host attach script and add your public SSH key.
 
             ```json
@@ -86,7 +85,7 @@ There is currently a bug with the `sat-host-check` script that causes it to fail
     ```sh
     sudo ./sat-host-check --region us-south
     ```
-    {: pre}<!--</qna:host-setup>-->
+    {: pre}
     
     Example output for checking a host in `us-south`.
     ```sh

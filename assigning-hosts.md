@@ -1,9 +1,9 @@
 ---
 
+
 copyright:
   years: 2020, 2026
-
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, assigning hosts, host auto assignment, host auto assignment, host labels
 
@@ -11,7 +11,7 @@ subcollection: satellite
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}<!--<qna:hosts>-->
+{{site.data.keyword.attribute-definition-list}}
 
 # Manually assigning hosts to worker pools
 {: #assigning-hosts}
@@ -22,12 +22,12 @@ After you attach hosts to a {{site.data.keyword.satelliteshort}} location, you a
 You can also use [host auto assignment](/docs/satellite?topic=satellite-host-autoassign-ov) for worker pools in {{site.data.keyword.satelliteshort}} clusters. However, you must manually assign hosts to the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-setup-control-plane).
 {: tip}
 
-When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} management fee per host vCPU. [Learn more](/docs/satellite?topic=satellite-faqs#pricing).
+When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} management fee per host virtual CPU (vCPU). [Learn more](/docs/satellite?topic=satellite-faqs#pricing).
 {: note}
 
 Before you begin,
 
-1. Make sure that you have the {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/satellite?topic=satellite-iam-assign-access#checking-perms).
+1. Make sure that you have the {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) **Operator** platform role for {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/satellite?topic=satellite-iam-assign-access#checking-perms).
 2. [Attach hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-attach-hosts), and check that the hosts are healthy and **unassigned**.
 
 ## Assigning hosts from the console
@@ -40,8 +40,8 @@ Before you begin,
 5. Verify that your hosts are successfully assigned to the cluster. The assignment is successful when an IP address is added to your host and the **Health** status changes to **Normal**.
 6. Repeat these steps to ensure that hosts are assigned as worker nodes in each zone of the default worker pool in your cluster.
 
-    According to IBM Satellite operations data, after your hosts are successfully assigned to the control plane, IBM monitoring setup requires another 20-30 minutes. In addition, a DNS record is created for your location and the IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. IBM Satellite documentation confirms this DNS registration process takes up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you will see intermittent errors, such as `Satellite is attempting to recover` or `Verify that the Satellite location has a DNS record for load balancing requests to the location control plane`.
-    {: note}<!--</qna:hosts>-->
+    After your hosts are successfully assigned to the control plane, IBM monitoring setup requires another 20-30 minutes. In addition, a Domain Name System (DNS) record is created for your location and the IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This DNS registration process takes up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you will see intermittent errors, such as `Satellite is attempting to recover` or `Verify that the Satellite location has a DNS record for load balancing requests to the location control plane`.
+    {: note}
 
 ## Assigning hosts from the CLI
 {: #assigning-hosts-cli}
@@ -76,7 +76,7 @@ Before you begin,
         | `--zone <zone>` | The name of the zone where you want to assign the compute host. To see the zone names for your location, run `ibmcloud sat location get --location` and look for the `Host Zones` field. |
         {: caption="Understanding this command's components" caption-side="bottom"}
 
-    - The following example assigns a host by using the `os=RHCOS` host label.
+    - The following example assigns a host by using the `os=RHCOS` (Red Hat CoreOS) host label.
         ```sh
         ibmcloud sat host assign --location LOCATION_NAME_OR_ID  --cluster CLUSTER_NAME_OR_ID --host-label os=RHCOS --zone ZONE
         ```

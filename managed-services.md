@@ -1,9 +1,9 @@
 ---
 
+
 copyright:
   years: 2022, 2026
-
-lastupdated: "2026-08-10"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, managed services, enabled service, satellite-enabled, IBM Cloud satellite services, satellite enabled services, IBM Cloud supported services
 
@@ -13,12 +13,10 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-
-
 # Supported Satellite-enabled IBM Cloud services
 {: #managed-services}
 
-Learn about the IBM Cloud services that are supported by {{site.data.keyword.satellitelong_notm}}, and which services support RHCOS hosts.
+Learn about the IBM Cloud services that are supported by {{site.data.keyword.satellitelong_notm}}, and which services support Red Hat CoreOS (RHCOS) hosts.
 {: shortdesc}
 
 | Service | Description of support | Supported by RHCOS hosts |
@@ -31,7 +29,7 @@ Learn about the IBM Cloud services that are supported by {{site.data.keyword.sat
 ## Setting up access for Satellite-enabled services
 {: #managed-services-iam}
 
-For most Satellite-enabled services, you must set up service-to-service access through IAM, with **Satellite** as your target service and the managed service as the source service. 
+For most Satellite-enabled services, you must set up service-to-service access through Identity and Access Management (IAM), with **Satellite** as your target service and the managed service as the source service.
 
 1. Open [Manage authorizations](https://cloud.ibm.com/iam/authorizations){: external} in the IBM Cloud console.
 2. Click **Create**.

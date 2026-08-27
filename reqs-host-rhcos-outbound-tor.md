@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-26"
+lastupdated: "2026-08-27"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -13,7 +13,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# RHCOS enabled locations in Toronto
+# CoreOS enabled locations in Toronto
 {: #reqs-host-rhcos-outbound-tor}
 
 
@@ -33,7 +33,7 @@ You can [download a copy of these requirements](https://cloud.ibm.com/media/docs
 
 
 
-Review the following outbound network requirements for RHEL and RHCOS hosts for use with RHCOS enabled locations in the Toronto (`ca-tor`) region.
+Review the following outbound network requirements for RHEL and RHCOS hosts for use with CoreOS enabled locations in the Toronto (`ca-tor`) region.
 
 Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers.
 :    * Destination hostnames: `0.rhel.pool.ntp.org`, `1.rhel.pool.ntp.org`, `2.rhel.pool.ntp.org`, `3.rhel.pool.ntp.org`
