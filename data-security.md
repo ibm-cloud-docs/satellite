@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-27"
 
 keywords: satellite, hybrid, multicloud, securing your data, secure data, information
 
@@ -14,10 +14,10 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Securing your data
+# Securing data in IBM Cloud Satellite: storage, encryption, and removal
 {: #data-security}
 
-Review what personal and sensitive information is stored when you use {{site.data.keyword.satellitelong}}, how this data is stored and encrypted, and how you can remove this information.
+Learn how IBM Cloud Satellite stores and encrypts personal and sensitive information, and how to remove your data, including data security and cloud encryption details.
 {: shortdesc}
 
 ## What information is stored with {{site.data.keyword.IBM_notm}} with {{site.data.keyword.satelliteshort}}?

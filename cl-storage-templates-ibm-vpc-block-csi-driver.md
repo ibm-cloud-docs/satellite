@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-07-31"
+lastupdated: "2026-08-27"
 
 
 keywords: change log, version history, ibm-vpc-block-csi-driver
@@ -17,11 +17,11 @@ subcollection: "satellite"
 
 
 
-# `ibm-vpc-block-csi-driver` storage template version change log
+# IBM VPC block CSI driver storage template version change log
 {: #cl-storage-templates-ibm-vpc-block-csi-driver}
 
 
-Review the version history for `ibm-vpc-block-csi-driver`.
+Review the version history and change log for the IBM VPC block CSI driver, including block storage updates and resolved CVEs.
 {: shortdesc}
 
 

@@ -1889,7 +1889,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Getting help and support for {{site.data.keyword.blockstorageshort}}](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver&interface=api#sat-storage-block-csi-support)
 
-[Configuring {{site.data.keyword.cos_full_notm}} driver for {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin)
+[Configuring IBM Cloud Object Storage driver for {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin)
 
 * [Prerequisites](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin-prereqs)
 
@@ -2623,7 +2623,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [{{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-service-connection#ibm-cloud-access)
 
-[Securing your data](/docs/satellite?topic=satellite-data-security#data-security)
+[Securing data in IBM Cloud Satellite: storage, encryption, and removal](/docs/satellite?topic=satellite-data-security#data-security)
 
 * [What information is stored with {{site.data.keyword.IBM_notm}} with {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-data-security#sat-sensitive-data)
 
@@ -2684,7 +2684,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [`subscription` commands](/docs/satellite?topic=satellite-icsat_map#icks_map_subscription)
 
-[CLI reference for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-satellite-cli-reference#satellite-cli-reference)
+[IBM Cloud CLI reference for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-satellite-cli-reference#satellite-cli-reference)
 
 * [Acl commands](/docs/satellite?topic=satellite-satellite-cli-reference#acl-cli)
 
@@ -3243,11 +3243,11 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
     * [Networking](/docs/satellite?topic=satellite-disconnected-use#networking)
 
 
-## {{site.data.keyword.satellitelong_notm}} notices
-{: #sitemap__notices}
+## Notices and licensing for {{site.data.keyword.satellitelong_notm}}
+{: #sitemap_notices_and_licensing_for_}
 
 
-[{{site.data.keyword.satellitelong_notm}} notices](/docs/satellite?topic=satellite-sat-notices#sat-notices)
+[Notices and licensing for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-sat-notices#sat-notices)
 
 * [Creative Commons Attribution Share Alike 4.0 Generic](/docs/satellite?topic=satellite-sat-notices#cc-40-generic)
 
@@ -3491,7 +3491,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Version 1.11.2](/docs/satellite?topic=satellite-cl-storage-templates-ibm-system-storage-block-csi-driver#cl-storage-templates-ibm-system-storage-block-csi-driver-1.11.2)
 
-[`ibm-vpc-block-csi-driver` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver)
+[IBM VPC block CSI driver storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver)
 
 * [Version 5.1](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.1)
 
@@ -4396,7 +4396,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [R0061: A Satellite cluster API server is unreachable from IBM Cloud.](/docs/satellite?topic=satellite-ts-locations-debug#R0061)
 
-[Recovering your location](/docs/satellite?topic=satellite-ts-recover-location#ts-recover-location)
+[Recovering a satellite location after a disaster](/docs/satellite?topic=satellite-ts-recover-location#ts-recover-location)
 
 [Checking cluster health after recovery](/docs/satellite?topic=satellite-ts-recovery-validation#ts-recovery-validation)
 
