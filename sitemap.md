@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-27"
+lastupdated: "2026-08-28"
 
 keywords: satellite, sitemap, IBM Cloud satellite, getting started, data, cloud
 subcollection: satellite
@@ -2684,7 +2684,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [`subscription` commands](/docs/satellite?topic=satellite-icsat_map#icks_map_subscription)
 
-[IBM Cloud CLI reference for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-satellite-cli-reference#satellite-cli-reference)
+[CLI reference for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-satellite-cli-reference#satellite-cli-reference)
 
 * [Acl commands](/docs/satellite?topic=satellite-satellite-cli-reference#acl-cli)
 
@@ -2961,6 +2961,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 [CLI change log](/docs/satellite?topic=satellite-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/satellite?topic=satellite-cs_cli_changelog#10)
+
+* [Version v1.0.843](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01843)
 
 * [Version v1.0.829](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01829)
 
