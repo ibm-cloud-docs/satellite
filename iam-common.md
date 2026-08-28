@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-27"
+lastupdated: "2026-08-28"
 
 keywords: satellite, hybrid, multicloud
 
@@ -43,5 +43,5 @@ When you use an [{{site.data.keyword.bplong}} template](/docs/satellite?topic=sa
 ## VMware permissions
 {: #permissions-vmware}
 
-Assign the **Administrator** role for VMware vSphere vCenter servers when using a [{{site.data.keyword.bplong}} template](/docs/satellite?topic=satellite-loc-vmware-create-auto). See the [VMware documentation](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.security.doc/GUID-93B962A7-93FA-4E96-B68F-AE66D3D6C663.html){: external}.
+Assign the **Administrator** role for VMware vSphere vCenter servers when using a [{{site.data.keyword.bplong}} template](/docs/satellite?topic=satellite-loc-vmware-create-auto). See the [VMware documentation](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/7-0/vsphere-security.html){: external}.
 {: shortdesc}

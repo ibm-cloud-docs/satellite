@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-27"
+lastupdated: "2026-08-28"
 
 keywords: satellite, hybrid, multicloud, disconnected use, disconnected usage, disconnect
 
@@ -41,7 +41,7 @@ Do I have to recover etcd backup?
 :   If you are using Red Hat CoreOS (RHCOS) hosts, you don't need to recover etcd backup. The Location recovers automatically after you reconnect it and re-authenticate. Locations that use Red Hat Enterprise Linux (RHEL) require etcd recovery.
 
 What happens if a location stays disconnected for more than 7 days?
-:   After you restore your connection, you must replace all hosts across the location with new infrastructure. The 7-day (168-hour) maximum is set by the `accessTokenMaxAgeSeconds` ceiling of 604800 seconds in the [OpenShift OAuth server configuration](https://docs.openshift.com/container-platform/latest/authentication/configuring-internal-oauth.html){: external}.
+:   After you restore your connection, you must replace all hosts across the location with new infrastructure. The 7-day (168-hour) maximum is set by the `accessTokenMaxAgeSeconds` ceiling of 604800 seconds in the [OpenShift OAuth server configuration](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/authentication_and_authorization/configuring-internal-oauth){: external}.
 
 How do I know when to reconnect a location?
 :   You can make a note or set a reminder to reconnect the location before the 7-day window expires. The timer starts when you request the token.
@@ -49,7 +49,7 @@ How do I know when to reconnect a location?
 ## Setting the disconnected usage time
 {: #disconnect-time}
 
-Locations and clusters can run disconnected from {{site.data.keyword.cloud_notm}} for up to 168 hours (7 days). Set the duration by editing `accessTokenMaxAgeSeconds` in the [OpenShift OAuth configuration](https://docs.openshift.com/container-platform/latest/authentication/configuring-internal-oauth.html){: external}.
+Locations and clusters can run disconnected from {{site.data.keyword.cloud_notm}} for up to 168 hours (7 days). Set the duration by editing `accessTokenMaxAgeSeconds` in the [OpenShift OAuth configuration](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/authentication_and_authorization/configuring-internal-oauth){: external}.
 {: shortdesc}
 
 You can modify this setting by changing the `accessTokenMaxAgeSeconds` value for all your OAuth clients. The default value for `accessTokenMaxAgeSeconds` parameter is 86400 seconds.

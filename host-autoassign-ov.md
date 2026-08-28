@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-27"
+lastupdated: "2026-08-28"
 
 keywords: satellite, hybrid, multicloud, assigning hosts, host auto assignment, host auto assignment, host labels
 
@@ -68,7 +68,7 @@ Hosts must be assigned as worker nodes in each zone of the default worker pool i
 {{site.data.keyword.satellitelong_notm}} automatically assigns hosts to worker pools in clusters that request compute capacity using host labels such as `cpu`.
 {: shortdesc}
 
-Before you begin, make sure that you create a {{site.data.keyword.satelliteshort}} cluster. If you create a cluster in the [CLI](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#cli_cluster-create-satellite), you must specify the `--workers` option with the number of hosts you want to automatically assign. Then, make sure that you [attach hosts](/docs/satellite?topic=satellite-attach-hosts) to your {{site.data.keyword.satelliteshort}} location, but do not assign the hosts to any resources.
+Before you begin, make sure that you create a {{site.data.keyword.satelliteshort}} cluster. If you create a cluster in the [CLI](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#cluster-create-satellite-cli), you must specify the `--workers` option with the number of hosts you want to automatically assign. Then, make sure that you [attach hosts](/docs/satellite?topic=satellite-attach-hosts) to your {{site.data.keyword.satelliteshort}} location, but do not assign the hosts to any resources.
 
 1. Review the host labels that the worker pools use to request compute capacity. You have several options.
     - [Create a worker pool in a {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-clusters) with the host labels that you want to use for auto assignment.

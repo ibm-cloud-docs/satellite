@@ -3,7 +3,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-28"
 
 keywords: satellite, hybrid, multicloud, odf, iam, session timeout
 
@@ -46,4 +46,4 @@ To resolve the issue, choose from the following options:
 
 * Start a new log-in session.
 
-* Update the session duration of your dynamic access group or trusted profile. For more information, see [Limiting access with time and resource attribute-based conditions](/docs/account?topic=account-iam-time-based&interface=ui).
+* Update the session duration of your dynamic access group or trusted profile. For more information, see [Limiting access with time and resource attribute-based conditions](/docs/iam?topic=iam-iam-time-based&interface=ui).
