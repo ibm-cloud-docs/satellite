@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-08-27"
+lastupdated: "2026-08-28"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -17,10 +17,10 @@ content-type: cli-docs
 
 {{site.data.keyword.attribute-definition-list}}
 
-# IBM Cloud CLI reference for {{site.data.keyword.satelliteshort}} commands
+# CLI reference for {{site.data.keyword.satelliteshort}} commands
 {: #satellite-cli-reference}
 
-Automate the creation and management of your IBM Cloud Satellite location with CLI commands for location, host, cluster, and endpoint operations.
+Refer to these {{site.data.keyword.satelliteshort}} CLI commands when you want to automate the creation and management of your {{site.data.keyword.satelliteshort}} location, including location, host, cluster, and endpoint operations.
 {: shortdesc}
 
 To install the CLI, see [Installing the the CLI](/docs/satellite?topic=satellite-cli-install). To view a high-level map of all the {{site.data.keyword.satellitelong_notm}} commands, see the [CLI map](/docs/satellite?topic=satellite-icsat_map).
@@ -2246,7 +2246,7 @@ ibmcloud sat host assign --location LOCATION
 
 
 
-Create and download a script that you can run on your hosts to attach them to your location. For CoreOS enabled locations, the script is an ignition file.
+Create and download a script that you can run on your hosts to attach them to your location. For RHCOS enabled locations, the script is an ignition file.
 
 ```sh
 ibmcloud sat host attach --location LOCATION [--host-label LABEL ...] [--host-link-agent-endpoint ENDPOINT] [--operating-system SYSTEM] [-q] [--reset-key]
