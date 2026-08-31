@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-28"
 
 keywords: satellite, certificate, expired, console
 
@@ -35,7 +35,7 @@ Follow the steps to validate your certificate.
 
 1. [Access your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-2. Run the [`master refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh) command.
+2. Run the [`master refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-refresh-cli) command.
 
     ```sh
     ibmcloud oc cluster master refresh --cluster <cluster_id>

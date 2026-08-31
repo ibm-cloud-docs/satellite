@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-27"
+lastupdated: "2026-08-28"
 
 keywords: satellite, hybrid, multicloud, tenancy, resellers, satellite reseller, satellite use case
 
@@ -245,7 +245,7 @@ After setting up the location and the control plane, create cluster and an API k
 {: #create-api-tenancy}
 {: step}
 
-Follow the steps to [create an API that can be used in your client account](/docs/account?topic=account-userapikey#create_user_key).
+Follow the steps to [create an API that can be used in your client account](/docs/iam?topic=iam-userapikey#create_user_key).
 
 
 ### Setting up cluster admin and developer roles

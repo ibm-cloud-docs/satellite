@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-28"
 
 keywords: satellite, hybrid, multicloud
 
@@ -31,7 +31,7 @@ Target the regional endpoint, or ask the location owner to update your permissio
 {: #ts-location-missing-location-target}
 
 1. Ask the location owner which [{{site.data.keyword.cloud_notm}} multizone region](/docs/satellite?topic=satellite-sat-regions) the {{site.data.keyword.satelliteshort}} location is managed from. For example, the owner can run `ibmcloud sat location get --location <location_name_or_ID>` and review the **Managed from** field.
-2. From the command-line interface (CLI), [target the regional endpoint](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_init), such as Washington, D.C. (`us-east`) in the following example.
+2. From the command-line interface (CLI), [target the regional endpoint](/docs/openshift?topic=openshift-kubernetes-service-cli), such as Washington, D.C. (`us-east`) in the following example.
     ```sh
     ibmcloud oc init --host https://us-east.containers.cloud.ibm.com
     ```

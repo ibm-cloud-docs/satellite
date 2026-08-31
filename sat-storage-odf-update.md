@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-28"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -33,7 +33,7 @@ Update OpenShift Data Foundation in your {{site.data.keyword.satelliteshort}} cl
 
 [Major]{: tag-red}
 
-1. Update the [management plane](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update)
+1. Update the [management plane](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-update-cli)
 
     Example command: 
     ```sh

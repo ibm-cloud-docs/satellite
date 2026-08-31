@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-28"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -258,7 +258,7 @@ After you have [retrieved the device paths for the disks that you want to use in
 {: #local-volume-block-config-create-api}
 {: api}
 
-1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud Identity and Access Management (IAM) token by using an API key](/docs/account?topic=account-iamtoken_from_apikey).
+1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/iam?topic=iam-iamtoken_from_apikey).
 
 1. Review the [parameter reference](#local-volume-block-parameter-reference) for the template version that you want to use.
 

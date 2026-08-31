@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-27"
+lastupdated: "2026-08-28"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -133,7 +133,7 @@ As part of the bootstrapping process, the latest images and {{site.data.keyword.
 Updating your Kubernetes API does not update your control plane hosts.
 {: note}
 
-To update your Kubernetes API server, run the [`cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command.
+To update your Kubernetes API server, run the [`cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-update-cli) command.
 
 
 ## Resetting the host key
