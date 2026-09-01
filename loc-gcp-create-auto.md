@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-27"
+lastupdated: "2026-09-01"
 
 keywords: satellite, hybrid, multicloud, gcp, google cloud platform
 
@@ -29,7 +29,7 @@ For {{site.data.keyword.satellitelong_notm}} to perform actions on your behalf i
 
 Before you begin, make sure that you have the correct [{{site.data.keyword.cloud_notm}} permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations, including to {{site.data.keyword.satelliteshort}} and {{site.data.keyword.bpshort}}. To create the template and manage its resources, {{site.data.keyword.satelliteshort}} automatically creates an {{site.data.keyword.cloud_notm}} IAM [API key](/docs/iam?topic=iam-manapikey). You can optionally provide the value of an existing API key that has the correct permissions in the same account.
 
-Do not reuse the same name for multiple locations, even after the other location is deleted. If you use the same name 5 times or more within 7 days, you might reach the Let's Encrypt [Duplicate Certificate rate limit](/docs/openshift?topic=openshift-cs_rate_limit).
+Do not reuse the same name for multiple locations, even after the other location is deleted. If you use the same name 5 times or more within 7 days, you will reach the Let's Encrypt [Duplicate Certificate rate limit](/docs/openshift?topic=openshift-cs_rate_limit).
 {: note}
 
 1. In your GCP cloud provider, [set up your account credentials](#infra-creds-gcp).

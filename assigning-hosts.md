@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-27"
+lastupdated: "2026-09-01"
 
 keywords: satellite, hybrid, multicloud, assigning hosts, host auto assignment, host auto assignment, host labels
 
@@ -40,7 +40,7 @@ Before you begin,
 5. Verify that your hosts are successfully assigned to the cluster. The assignment is successful when an IP address is added to your host and the **Health** status changes to **Normal**.
 6. Repeat these steps to ensure that hosts are assigned as worker nodes in each zone of the default worker pool in your cluster.
 
-    After your hosts are successfully assigned to the control plane, IBM monitoring setup requires another 20-30 minutes. In addition, a Domain Name System (DNS) record is created for your location and the IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This DNS registration process takes up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you will see intermittent errors, such as `Satellite is attempting to recover` or `Verify that the Satellite location has a DNS record for load balancing requests to the location control plane`.
+    After your hosts are successfully assigned to the control plane, IBM monitoring setup requires another 20-30 minutes. In addition, a Domain Name System (DNS) record is created for your location and the IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This DNS registration process takes up to 30 minutes to complete, as defined by the [{{site.data.keyword.satelliteshort}} location setup process](/docs/satellite?topic=satellite-setup-control-plane). During this process, your location status continues to show an **action required** state, and you will see intermittent errors, such as `Satellite is attempting to recover` or `Verify that the Satellite location has a DNS record for load balancing requests to the location control plane`.
     {: note}
 
 ## Assigning hosts from the CLI
