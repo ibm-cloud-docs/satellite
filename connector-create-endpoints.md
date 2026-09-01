@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-27"
+lastupdated: "2026-09-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -124,7 +124,7 @@ For container platforms such as Docker or Rancher, this requires you to map the 
     ```
     {: pre}
 
-    You may also need to work with your container platform and operating system to allow outside traffic into your chosen `LISTENPORT`. In the previous example, the `LISTENPORT` is `8443`.
+    You must also work with your container platform and operating system to allow outside traffic into your chosen `LISTENPORT`. In the previous example, the `LISTENPORT` is `8443`.
 
 1. Now the resource is reachable from the IP address or the DNS name set up in your container platform on port 8443 in this example.
 

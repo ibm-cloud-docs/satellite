@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-27"
+lastupdated: "2026-09-01"
 
 keywords: satellite, hybrid, multicloud, connector, private tunnel
 
@@ -82,7 +82,7 @@ Follow the steps to configure your Connector agent to use an internal Ingress ho
 
 1. Review the [prereqs](/docs/satellite?topic=satellite-run-agent-locally#agent-prepreqs) for running a Connector agent.
 
-1. If the Connector agent is unable to reach the CSE endpoint IP addresses of the tunnel server directly from your local network, you may need to create a relay through which to send the agent requests. For more information, refer to [creating a relay](/docs/satellite?topic=satellite-direct-link-tutorial#dl-create-coreos-relay).
+1. If the Connector agent is unable to reach the CSE endpoint IP addresses of the tunnel server directly from your local network, you must create a relay through which to send the agent requests. For more information, refer to [creating a relay](/docs/satellite?topic=satellite-direct-link-tutorial#dl-create-coreos-relay).
 
 1. Set the `SATELLITE_CONNECTOR_DIRECT_LINK_INGRESS` parameter along with your other required [agent parameters](/docs/satellite?topic=satellite-run-agent-locally#review-parameters). For example:
 

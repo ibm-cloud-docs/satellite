@@ -3,7 +3,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-08-17"
+lastupdated: "2026-09-01"
 
 keywords: satellite, host, location
 
@@ -47,7 +47,7 @@ If the cluster master still recognizes the host, you must rename and reload the 
         1. Navigate to **Classic infrastructure**>**Device list**.
         2. In the **Devices** table, click the host you want to reload. 
         3. From the **Actions** drop down menu, select **OS Reload**.
-        4. Click **Reload**. Note that it may take several minutes for the reload process to complete.
+        4. Click **Reload**. Note that the reload process takes several minutes to complete.
 
     - In the CLI:
         1. List your hosts and note the **ID** of the host you want to reload.
@@ -57,7 +57,7 @@ If the cluster master still recognizes the host, you must rename and reload the 
             ```
             {: pre}
 
-        2. Run the `ibmcloud sl vs reload` command. Note that it may take several minutes for the reload process to complete.
+        2. Run the `ibmcloud sl vs reload` command. Note that the reload process takes several minutes to complete.
 
             ```sh
             ibmcloud sl vs reload <host_id>

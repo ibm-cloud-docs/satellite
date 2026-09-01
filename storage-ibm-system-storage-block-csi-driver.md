@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-28"
+lastupdated: "2026-09-01"
 
 keywords: satellite storage, satellite config, satellite configurations, 
 
@@ -393,7 +393,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
 | --- | --- | --- | --- | --- |
 | Namespace | `namespace`| Config | The namespace where you want to create the deployment. |`default` |
 | Secret Name | `secret-name` | Config | The name of the secret to create. | N/A |
-| Secret Management Address | `secret-management-address` | Secret | The address of the management server. This could be an IP address or a URL. For example: 'example-cluster.xiv.ibm.com'. | N/A |
+| Secret Management Address | `secret-management-address` | Secret | The address of the management server. This is an IP address or a URL. For example: 'example-cluster.xiv.ibm.com'. | N/A |
 | Secret Username | `secret-username` | Secret | The username to use to authenticate to the management server. | N/A |
 | Secret Password | `secret-password` | Secret | The password to use to authenticate to the management server. | N/A |
 {: caption="Table 3. 1.11.2 parameter reference" caption-side="bottom"}
