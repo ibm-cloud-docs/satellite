@@ -278,7 +278,7 @@ toc:
       topics:
       - link:
           label: API reference
-          href: https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2#createsatellitecluster
+          href: https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2#createsatelliteclusterremote
       - topicgroup:
           label: CLI plug-in reference
           topics:

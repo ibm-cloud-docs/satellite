@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-28"
+lastupdated: "2026-09-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -42,7 +42,7 @@ Keep in mind that some charges are not reflected in the estimate, such as the co
 {: faq}
  
 
-See [View your usage](/docs/account?topic=account-viewingusage#viewingusage) and [Set spending notifications](/docs/iam?topic=iam-spending) for general {{site.data.keyword.cloud_notm}} account guidance.
+See [View your usage](/docs/account?topic=account-viewingusage#viewingusage) and [Set spending notifications](/docs/account?topic=account-spending-notifications) for general {{site.data.keyword.cloud_notm}} account guidance.
 
 
 ## Creating an assignment in the command-line interface (CLI)
