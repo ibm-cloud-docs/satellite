@@ -32,7 +32,7 @@ The following image shows specific areas to watch in the {{site.data.keyword.sat
 ### High availability of the {{site.data.keyword.satelliteshort}} location control plane
 {: #ha-control-plane-master}
 
-When you create a location, choose a {{site.data.keyword.cloud_notm}} multizone metro to manage your {{site.data.keyword.satelliteshort}} control plane. The control plane is in an {{site.data.keyword.IBM_notm}} account.
+When you create a location, choose an {{site.data.keyword.cloud_notm}} multizone metro to manage your {{site.data.keyword.satelliteshort}} control plane. The control plane is in an {{site.data.keyword.IBM_notm}} account.
 {: shortdesc}
 
 {{site.data.keyword.IBM_notm}} provides high availability for your {{site.data.keyword.satelliteshort}} location control plane in the following ways.

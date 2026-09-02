@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-27"
+lastupdated: "2026-09-02"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -25,7 +25,7 @@ completion-time: 2h
 {: toc-services="satellite, containers, dl"}
 {: toc-completion-time="2h"}
 
-Set up a {{site.data.keyword.dl_full}} connection for {{site.data.keyword.satelliteshort}} Link communications between your location and {{site.data.keyword.cloud_notm}}.
+Set up an {{site.data.keyword.dl_full}} connection for {{site.data.keyword.satelliteshort}} Link communications between your location and {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 The following steps are deprecated. For the latest steps, see [Connecting to IBM Cloud via the private network by using Satellite Connector and Direct Link 2.0](/docs/satellite?topic=satellite-direct-link-vpe).
