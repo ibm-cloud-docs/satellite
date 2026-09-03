@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-08-27"
+lastupdated: "2026-09-03"
 
 
 keywords: change log, version history, ibm-vpc-block-csi-driver
@@ -29,35 +29,35 @@ Review the version history for `ibm-vpc-block-csi-driver`.
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1}
 
 
-### Version 5.1 - Revision 18, released 30 July 2026
+### 30 July 2026, Version 5.1 - Revision 18
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-18}
 
 - Resolves the following CVEs: [CVE-2026-2303](https://nvd.nist.gov/vuln/detail/cve-2026-2303){: external}, [CVE-2026-15308](https://nvd.nist.gov/vuln/detail/cve-2026-15308){: external}, [CVE-2025-5278](https://nvd.nist.gov/vuln/detail/cve-2025-5278){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/cve-2026-5450){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}, [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/cve-2025-58185){: external}, [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/cve-2025-61727){: external}, [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/cve-2025-61729){: external}, [CVE-2025-47912](https://nvd.nist.gov/vuln/detail/cve-2025-47912){: external}, [CVE-2025-58187](https://nvd.nist.gov/vuln/detail/cve-2025-58187){: external}, [CVE-2025-58188](https://nvd.nist.gov/vuln/detail/cve-2025-58188){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/cve-2025-58189){: external}, [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/cve-2025-61723){: external}, [CVE-2025-61724](https://nvd.nist.gov/vuln/detail/cve-2025-61724){: external}, [CVE-2025-61726](https://nvd.nist.gov/vuln/detail/cve-2025-61726){: external}, [CVE-2025-61730](https://nvd.nist.gov/vuln/detail/cve-2025-61730){: external}, [CVE-2025-68121](https://nvd.nist.gov/vuln/detail/cve-2025-68121){: external}, [CVE-2025-47906](https://nvd.nist.gov/vuln/detail/cve-2025-47906){: external}, and [CVE-2025-22870](https://nvd.nist.gov/vuln/detail/cve-2025-22870){: external}.
 - Updates Go to version `1.26.3`.
 
 
-### Version 5.1 - Revision 17, released 10 July 2026
+### 10 July 2026, Version 5.1 - Revision 17
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-17}
 
 - Resolves the following CVEs: [CVE-2026-4438](https://nvd.nist.gov/vuln/detail/cve-2026-4438){: external}, [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/cve-2026-4046){: external}, and [CVE-2026-4437](https://nvd.nist.gov/vuln/detail/cve-2026-4437){: external}.
 - Updates Go to version `1.25.11`.
 
 
-### Version 5.1 - Revision 16, released 27 May 2026
+### 27 May 2026, Version 5.1 - Revision 16
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-16}
 
 - Resolves the following CVEs: [CVE-2026-32281](https://nvd.nist.gov/vuln/detail/cve-2026-32281){: external}, [CVE-2026-32280](https://nvd.nist.gov/vuln/detail/cve-2026-32280){: external}, [CVE-2026-32283](https://nvd.nist.gov/vuln/detail/cve-2026-32283){: external}, [CVE-2026-32289](https://nvd.nist.gov/vuln/detail/cve-2026-32289){: external}, [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/cve-2026-33186){: external}, [CVE-2026-29181](https://nvd.nist.gov/vuln/detail/cve-2026-29181){: external}, [CVE-2026-4878](https://nvd.nist.gov/vuln/detail/cve-2026-4878){: external}, [CVE-2026-29111](https://nvd.nist.gov/vuln/detail/cve-2026-29111){: external}, [CVE-2026-33814](https://nvd.nist.gov/vuln/detail/cve-2026-33814){: external}, [CVE-2026-39836](https://nvd.nist.gov/vuln/detail/cve-2026-39836){: external}, [CVE-2026-42499](https://nvd.nist.gov/vuln/detail/cve-2026-42499){: external}, [CVE-2026-33811](https://nvd.nist.gov/vuln/detail/cve-2026-33811){: external}, [CVE-2026-39820](https://nvd.nist.gov/vuln/detail/cve-2026-39820){: external}, and [CVE-2026-31790](https://nvd.nist.gov/vuln/detail/cve-2026-31790){: external}.
 - Updates Go to version `1.25.10`.
 
 
-### Version 5.1 - Revision 15, released 02 April 2026
+### 02 April 2026, Version 5.1 - Revision 15
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-15}
 
 - Resolves the following CVEs: [CVE-2026-25679](https://nvd.nist.gov/vuln/detail/cve-2026-25679){: external}, [CVE-2026-27139](https://nvd.nist.gov/vuln/detail/cve-2026-27139){: external}, and [CVE-2026-27142](https://nvd.nist.gov/vuln/detail/cve-2026-27142){: external}.
 - Updates Go to version `1.25.8`.
 
 
-### Version 5.1 - Revision 14, released 03 March 2026
+### 03 March 2026, Version 5.1 - Revision 14
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-14}
 
 - Resolves the following CVEs: [CVE-2025-15467](https://nvd.nist.gov/vuln/detail/cve-2025-15467){: external}, [CVE-2025-11187](https://nvd.nist.gov/vuln/detail/cve-2025-11187){: external}, [CVE-2025-15468](https://nvd.nist.gov/vuln/detail/cve-2025-15468){: external}, [CVE-2025-15469](https://nvd.nist.gov/vuln/detail/cve-2025-15469){: external}, [CVE-2025-66199](https://nvd.nist.gov/vuln/detail/cve-2025-66199){: external}, [CVE-2025-68160](https://nvd.nist.gov/vuln/detail/cve-2025-68160){: external}, [CVE-2025-69418](https://nvd.nist.gov/vuln/detail/cve-2025-69418){: external}, [CVE-2025-69419](https://nvd.nist.gov/vuln/detail/cve-2025-69419){: external}, [CVE-2025-69420](https://nvd.nist.gov/vuln/detail/cve-2025-69420){: external}, [CVE-2025-69421](https://nvd.nist.gov/vuln/detail/cve-2025-69421){: external}, [CVE-2026-22795](https://nvd.nist.gov/vuln/detail/cve-2026-22795){: external}, [CVE-2026-22796](https://nvd.nist.gov/vuln/detail/cve-2026-22796){: external}, [CVE-2025-9086](https://nvd.nist.gov/vuln/detail/cve-2025-9086){: external}, [CVE-2025-61726](https://nvd.nist.gov/vuln/detail/cve-2025-61726){: external}, [CVE-2025-61730](https://nvd.nist.gov/vuln/detail/cve-2025-61730){: external}, [CVE-2025-14104](https://nvd.nist.gov/vuln/detail/cve-2025-14104){: external}, and [CVE-2025-68121](https://nvd.nist.gov/vuln/detail/cve-2025-68121){: external}.
@@ -65,7 +65,7 @@ Review the version history for `ibm-vpc-block-csi-driver`.
 - Add support for snapshot creation in the user defined resource group 
 
 
-### Version 5.1 - Revision 13, released 20 January 2026
+### 20 January 2026, Version 5.1 - Revision 13
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-13}
 
 - Resolves the following CVEs: [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/cve-2025-61727){: external}, [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/cve-2025-61729){: external}, [CVE-2025-4598](https://nvd.nist.gov/vuln/detail/cve-2025-4598){: external}, and [CVE-2025-13281](https://nvd.nist.gov/vuln/detail/cve-2025-13281){: external}.
@@ -73,14 +73,14 @@ Review the version history for `ibm-vpc-block-csi-driver`.
 - Updates K8s client libraries from 1.32.8 to 1.32.10 in iks-vpc-block-driver container 
 
 
-### Version 5.1 - Revision 12, released 18 August 2025
+### 18 August 2025, Version 5.1 - Revision 12
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-12}
 
 - Resolves the following CVEs: [CVE-2025-4563](https://nvd.nist.gov/vuln/detail/cve-2025-4563){: external}, and [CVE-2025-4673](https://nvd.nist.gov/vuln/detail/cve-2025-4673){: external}.
 - Updates Go to version `1.23.10`.
 
 
-### Version 5.1 - Revision 11, released 24 June 2025
+### 24 June 2025, Version 5.1 - Revision 11
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-11}
 
 - Resolves the following CVEs: [CVE-2024-9042](https://nvd.nist.gov/vuln/detail/cve-2024-9042){: external}, [CVE-2025-0426](https://nvd.nist.gov/vuln/detail/cve-2025-0426){: external}, [CVE-2025-22872](https://nvd.nist.gov/vuln/detail/cve-2025-22872){: external}, and [CVE-2025-30204](https://nvd.nist.gov/vuln/detail/cve-2025-30204){: external}.
@@ -88,7 +88,7 @@ Review the version history for `ibm-vpc-block-csi-driver`.
 - Updated csi-images: csi-provisioner v5.2.0, csi-resizer v1.13.2, csi-snapshotter v8.2.1, csi-attacher v4.8.1, livenessprobe:v2.15.0, csi-node-driver-registrar v2.13.0 
 
 
-### Version 5.1 - Revision 10, released 08 April 2025
+### 08 April 2025, Version 5.1 - Revision 10
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-10}
 
 - Resolves the following CVEs: [CVE-2024-45339](https://nvd.nist.gov/vuln/detail/cve-2024-45339){: external}, and [CVE-2024-45338](https://nvd.nist.gov/vuln/detail/cve-2024-45338){: external}.
@@ -96,41 +96,41 @@ Review the version history for `ibm-vpc-block-csi-driver`.
 - Resiliency improvement to use VPC Storage service API for tagging volumes. This doesn't impact existing or new PVCs. This reduces the number of Kubernetes service API calls. 
 
 
-### Version 5.1 - Revision 9, released 13 December 2024
+### 13 December 2024, Version 5.1 - Revision 9
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-9}
 
 - Resolves the following CVEs: [CVE-2024-51744](https://nvd.nist.gov/vuln/detail/cve-2024-51744){: external}.
 - Updates Go to version `1.22.9`.
 
 
-### Version 5.1 - Revision 7, released 12 July 2024
+### 12 July 2024, Version 5.1 - Revision 7
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-7}
 
 - Updates Go to version `1.21.12`.
 
 
-### Version 5.1 - Revision 6, released 20 June 2024
+### 20 June 2024, Version 5.1 - Revision 6
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-6}
 
 - Resolves the following CVEs: [CVE-2024-2961](https://nvd.nist.gov/vuln/detail/cve-2024-2961){: external}, [CVE-2024-33599](https://nvd.nist.gov/vuln/detail/cve-2024-33599){: external}, [CVE-2024-33600](https://nvd.nist.gov/vuln/detail/cve-2024-33600){: external}, [CVE-2024-33601](https://nvd.nist.gov/vuln/detail/cve-2024-33601){: external}, and [CVE-2024-33602](https://nvd.nist.gov/vuln/detail/cve-2024-33602){: external}.
 - Updates Go to version `1.21.11`.
 
 
-### Version 5.1 - Revision 5, released 14 May 2024
+### 14 May 2024, Version 5.1 - Revision 5
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-5}
 
 - Resolves the following CVEs: [CVE-2023-28322](https://nvd.nist.gov/vuln/detail/cve-2023-28322){: external}, [CVE-2023-38546](https://nvd.nist.gov/vuln/detail/cve-2023-38546){: external}, [CVE-2023-46218](https://nvd.nist.gov/vuln/detail/cve-2023-46218){: external}, and [CVE-2024-24786](https://nvd.nist.gov/vuln/detail/cve-2024-24786){: external}.
 - Updates Go to version `1.21.9`.
 
 
-### Version 5.1 - Revision 4, released 07 March 2024
+### 07 March 2024, Version 5.1 - Revision 4
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-4}
 
 - Resolves the following CVEs: [CVE-2023-3446](https://nvd.nist.gov/vuln/detail/cve-2023-3446){: external}, [CVE-2023-3817](https://nvd.nist.gov/vuln/detail/cve-2023-3817){: external}, [CVE-2023-5678](https://nvd.nist.gov/vuln/detail/cve-2023-5678){: external}, [CVE-2023-5981](https://nvd.nist.gov/vuln/detail/cve-2023-5981){: external}, [CVE-2023-39615](https://nvd.nist.gov/vuln/detail/cve-2023-39615){: external}, [CVE-2023-7104](https://nvd.nist.gov/vuln/detail/cve-2023-7104){: external}, [CVE-2023-50387](https://nvd.nist.gov/vuln/detail/cve-2023-50387){: external}, and [CVE-2023-50868](https://nvd.nist.gov/vuln/detail/cve-2023-50868){: external}.
 - Updates Go to version `1.21.7`.
 
 
-### Version 5.1 - Revision 3, released 16 February 2024
+### 16 February 2024, Version 5.1 - Revision 3
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-3}
 
 - Resolves the following CVEs: [CVE-2022-48560](https://nvd.nist.gov/vuln/detail/cve-2022-48560){: external}, [CVE-2022-48564](https://nvd.nist.gov/vuln/detail/cve-2022-48564){: external}, [CVE-2023-39615](https://nvd.nist.gov/vuln/detail/cve-2023-39615){: external}, [CVE-2023-43804](https://nvd.nist.gov/vuln/detail/cve-2023-43804){: external}, [CVE-2023-45803](https://nvd.nist.gov/vuln/detail/cve-2023-45803){: external}, and [CVE-2023-5981](https://nvd.nist.gov/vuln/detail/cve-2023-5981){: external}.
@@ -145,7 +145,7 @@ Review the version history for `ibm-vpc-block-csi-driver`.
 - Updated `csi-resizer` image to v1.9.3 
 
 
-### Version 5.1 - Revision 2, released 25 January 2024
+### 25 January 2024, Version 5.1 - Revision 2
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-2}
 
 - Resolves the following CVEs: [CVE-2023-3446](https://nvd.nist.gov/vuln/detail/cve-2023-3446){: external}, [CVE-2023-3817](https://nvd.nist.gov/vuln/detail/cve-2023-3817){: external}, and [CVE-2023-5678](https://nvd.nist.gov/vuln/detail/cve-2023-5678){: external}.
@@ -153,7 +153,7 @@ Review the version history for `ibm-vpc-block-csi-driver`.
 - Updates Go to version `1.20.11`.
 
 
-### Version 5.1 - Revision 1, released 27 November 2023
+### 27 November 2023, Version 5.1 - Revision 1
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.1-1}
 
 - Updates the UBI to version `8.9-1029`.
@@ -171,7 +171,7 @@ Review the version history for `ibm-vpc-block-csi-driver`.
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.0}
 
 
-### Version 5.0 - Revision 15, released 27 November 2023
+### 27 November 2023, Version 5.0 - Revision 15
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.0-15}
 
 - Resolves the following CVEs: [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/cve-2007-4559){: external}, [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}, and [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}.
@@ -180,7 +180,7 @@ Review the version history for `ibm-vpc-block-csi-driver`.
 - security fix to use correct socket path as SElinux policy modules has been changed and CSI also recommending to use /var/lib/kubelet/plugins/.
 
 
-### Version 5.0 - Revision 14, released 30 October 2023
+### 30 October 2023, Version 5.0 - Revision 14
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.0-14}
 
 - Resolves the following CVEs: [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/cve-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/cve-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/cve-2023-4806){: external}, [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/cve-2023-4813){: external}, [CVE-2023-39325](https://nvd.nist.gov/vuln/detail/cve-2023-39325){: external}, and [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/cve-2023-44487){: external}.
@@ -188,7 +188,7 @@ Review the version history for `ibm-vpc-block-csi-driver`.
 - Updates Go to version `1.20.10`.
 
 
-### Version 5.0 - Revision 13, released 19 September 2023
+### 19 September 2023, Version 5.0 - Revision 13
 {: #cl-storage-templates-ibm-vpc-block-csi-driver-5.0-13}
 
 - Resolves the following CVEs: [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/cve-2023-34969){: external}, [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/cve-2023-28321){: external}, [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/cve-2023-2602){: external}, [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/cve-2023-2603){: external}, [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/cve-2023-28484){: external}, [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/cve-2023-29469){: external}, [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/cve-2023-27536){: external}, [CVE-2023-3899](https://nvd.nist.gov/vuln/detail/cve-2023-3899){: external}, and [CVE-2023-32681](https://nvd.nist.gov/vuln/detail/cve-2023-32681){: external}.
