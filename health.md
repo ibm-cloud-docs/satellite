@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-27"
+lastupdated: "2026-09-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -31,7 +31,7 @@ Forward and view automatically generated {{site.data.keyword.satelliteshort}} lo
 ### Enabling platform logs
 {: #enable-la}
 
-If you have a {{site.data.keyword.logs_full_notm}} instance in the same region as your {{site.data.keyword.satelliteshort}} location and it collects platform logs, location logs are forwarded automatically. Otherwise, follow these steps to set it up.
+If you have an {{site.data.keyword.logs_full_notm}} instance in the same region as your {{site.data.keyword.satelliteshort}} location and it collects platform logs, location logs are forwarded automatically. Otherwise, follow these steps to set it up.
 {: shortdesc}
 
 1. [Provision an {{site.data.keyword.logs_full_notm}} instance](https://cloud.ibm.com/catalog){: external} in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
