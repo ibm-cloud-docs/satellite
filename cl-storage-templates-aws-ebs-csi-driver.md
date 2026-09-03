@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-25"
+lastupdated: "2026-09-03"
 
 
 keywords: change log, version history, aws-ebs-csi-driver
@@ -29,7 +29,7 @@ Review the version history for `aws-ebs-csi-driver`.
 {: #cl-storage-templates-aws-ebs-csi-driver-1.55.0}
 
 
-### Version 1.55.0 - Revision 1, released 03 March 2026
+### 03 March 2026, Version 1.55.0 - Revision 1
 {: #cl-storage-templates-aws-ebs-csi-driver-1.55.0-1}
 
 - Initial release
@@ -39,7 +39,7 @@ Review the version history for `aws-ebs-csi-driver`.
 {: #cl-storage-templates-aws-ebs-csi-driver-1.31.0}
 
 
-### Version 1.31.0 - Revision 1, released 05 June 2024
+### 05 June 2024, Version 1.31.0 - Revision 1
 {: #cl-storage-templates-aws-ebs-csi-driver-1.31.0-1}
 
 - Initial release
@@ -49,7 +49,7 @@ Review the version history for `aws-ebs-csi-driver`.
 {: #cl-storage-templates-aws-ebs-csi-driver-1.12.0}
 
 
-### Version 1.12.0 - Revision 3, released 05 June 2024
+### 05 June 2024, Version 1.12.0 - Revision 3
 {: #cl-storage-templates-aws-ebs-csi-driver-1.12.0-3}
 
 - Add the ebs-csi-node-role cluster role 
