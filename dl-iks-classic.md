@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-27"
+lastupdated: "2026-09-04"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -39,7 +39,7 @@ Create an {{site.data.keyword.containerlong_notm}} cluster as the private-networ
 {: shortdesc}
 
 1. Review the networking basics of clusters. In particular, ensure that you prepare the following:
-    - [VLAN management (classic clusters only)](/docs/containers?topic=containers-cs_network_cluster): Manage and choose both a public and private VLAN for your cluster's network connectivity.
+    - [VLAN management (classic clusters only)](/docs/containers?topic=containers-subnets): Manage and choose both a public and private VLAN for your cluster's network connectivity.
     - [Subnet routing](/docs/containers?topic=containers-subnets): Enable a Virtual Router Function (VRF) or VLAN spanning for your {{site.data.keyword.cloud_notm}} infrastructure account so your worker nodes can communicate with each other on the private network and communicate with private cloud service endpoints internally.
     - [IP address schema](/docs/containers?topic=containers-subnets#finding_subnets_account): Ensure that no subnet conflicts exist between the cluster and your on-premises network.
 
