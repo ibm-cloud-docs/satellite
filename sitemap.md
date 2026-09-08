@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-09-04"
+lastupdated: "2026-09-08"
 
 keywords: satellite, sitemap, IBM Cloud satellite, getting started, data, cloud
 subcollection: satellite
@@ -4320,8 +4320,6 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 * [Identifying issues for {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-get-help#help-services)
 
 * [Reviewing logs](/docs/satellite?topic=satellite-get-help#review-logs)
-
-* [Feedback and questions](/docs/satellite?topic=satellite-get-help#feedback-qs)
 
 * [Contacting support](/docs/satellite?topic=satellite-get-help#help-support)
 

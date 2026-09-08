@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-27"
+lastupdated: "2026-09-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -56,17 +56,6 @@ If your host is not assigned to a cluster, or if the assignment fails, you can S
 If you are using {{site.data.keyword.bpshort}}, you can view job log details to find information about your deployment. For more information, see [Reviewing the {{site.data.keyword.bpshort}} job details](/docs/schematics?topic=schematics-wks-state).
 
 You can also view logs that are automatically generated for your {{site.data.keyword.satelliteshort}} location setup and collected in an {{site.data.keyword.logs_full_notm}} instance. For more information, see [Logging for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-health).
-
-## Feedback and questions
-{: #feedback-qs}
-
-Review forums such as Stack Overflow to see whether other users ran into the same issue. When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
-
-For questions about {{site.data.keyword.satelliteshort}}, use the tags `ibm-cloud` and `satellite`.
-
-If you have technical questions about developing or deploying clusters or apps with {{site.data.keyword.redhat_openshift_notm}}, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `openshift`, and `containers`.
-
-See [Getting help](/docs/support?topic=support-using-avatar) for more details about using the forums.
 
 ## Contacting support
 {: #help-support}
