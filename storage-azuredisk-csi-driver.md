@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-19"
+lastupdated: "2026-09-09"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, azure disk csi, azure disk
 
@@ -507,17 +507,17 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 | Subscription ID | `subscriptionId`| Secret | Your Azure subscription ID. From the Azure portal, search for 'Subscription' to find a list of your subscriptions. You can also find your subscription ID by running the`az account subscription list` command. | N/A |
 | Azure Active Directory Client ID | `aadClientId`| Secret | Your Azure Active Directory Client ID. You can find your Client ID in the Azure portal or by running the`az ad sp list --display-name appDisplayName` command. | N/A |
 | Location | `location`| Config | The location of your Azure hosts. You can find the location of your virtual machines in the Azure portal or by running the`az vm list` command. Example location: 'useast'. | N/A |
-| Azure Active Directory Client Secret | `aadClientSecret`| Secret | Your Azure Active Directory Client Secret. You can find your client secret in the Azure portal under the`App registrations` menu. | N/A |
+| Azure Active Directory Client Secret | `aadClientSecret`| Secret | The Azure Active Directory (AAD) client secret (`aadClientSecret`). You can find your client secret in the Azure portal under the`App registrations` menu. | N/A |
 | Resource Group | `resourceGroup`| Config | The name of your Azure resource group. You can find your resource group detail in the Azure portal or by running the`az group list` command. | N/A |
-| Virtual Machine Type | `vmType`| Config | You can find your virtual machine type in the Azure portal or by running the`az vm list` command. Example types: 'standard' or 'VMSS'. | N/A |
+| Virtual Machine Type | `vmType`| Config | You can find your virtual machine type in the Azure portal or by running the`az vm list` command. Example types: 'standard' or 'VMSS' (Virtual Machine Scale Set). | N/A |
 | Network Security Group Name | `securityGroupName`| Config | The name of your security group. You can find your security group details in the Azure portal or by running the`az network nsg list` command. | N/A |
 | Virtual Network Name | `vnetName`| Config | The name of the virtual network. You can find the name of your virtual network in the Azure portal or by running the`az network vnet list` command. | N/A |
 | Use Workload Identity | `useWorkloadIdentity`| Config | Set to 'true' if you want to use Microsoft Entra Workload ID. If enabled, you will also need to specify the client and tenant ID for the workload. |`false` |
-| Workload Identity Client ID | `workloadIdentityClientId`| Secret | The client ID of the Azure Active Directory (AAD) application or user-assigned managed identity. You can find client ID of the AAD application by running the`az ad sp list --display-name APPLICATION_NAME --query '[0].appId' -otsv`command and client ID of the user-assigned managed identity by running the`az identity show --name USER_ASSIGNED_IDENTITY_NAME --resource-group IDENTITY_RESOURCE_GROUP --query 'clientId' -otsv` command. | N/A |
-| Workload Identity Tenant ID | `workloadIdentityTenantId`| Secret | The tenant ID of the Azure Active Directory (AAD) application or user-assigned managed identity. If the AAD application or user-assigned managed identity is not in the same tenant as the cluster then, set the tenantID of the AAD application or user-assigned managed identity respectively. You can find tenant ID of the AAD application by running the`az ad sp list --display-name APPLICATION_NAME --query '[0].appOwnerOrganizationId' -otsv`command and tenant ID of the user-assigned managed identity by running the`az identity show --name USER_ASSIGNED_IDENTITY_NAME --resource-group IDENTITY_RESOURCE_GROUP --query 'tenantId' -otsv` command. | N/A |
-| Enable OpenTelemetry Tracing | `enableOtelTracing`| Config | Set to 'true' if you want to enable OpenTelemetry tracing. If enabled, you will also need to specify a OpenTelemetry service name and exporter endpoint. |`false` |
-| OpenTelemetry Service Name | `otelServiceName` | Config | Service name for OpenTelemetry tracing | N/A |
-| OpenTelemetry Exporter Endpoint | `otelExporterEndpoint` | Config | Endpoint of the OpenTelemetry exporter | N/A |
+| Workload Identity Client ID | `workloadIdentityClientId`| Secret | The client ID of the Azure Active Directory application or user-assigned managed identity. You can find the client ID of the Azure Active Directory application by running the`az ad sp list --display-name APPLICATION_NAME --query '[0].appId' -otsv`command and the client ID of the user-assigned managed identity by running the`az identity show --name USER_ASSIGNED_IDENTITY_NAME --resource-group IDENTITY_RESOURCE_GROUP --query 'clientId' -otsv` command. | N/A |
+| Workload Identity Tenant ID | `workloadIdentityTenantId`| Secret | The tenant ID of the Azure Active Directory application or user-assigned managed identity. If the Azure Active Directory application or user-assigned managed identity is not in the same tenant as the cluster, set the tenant ID of the Azure Active Directory application or user-assigned managed identity respectively. You can find the tenant ID of the Azure Active Directory application by running the`az ad sp list --display-name APPLICATION_NAME --query '[0].appOwnerOrganizationId' -otsv`command and the tenant ID of the user-assigned managed identity by running the`az identity show --name USER_ASSIGNED_IDENTITY_NAME --resource-group IDENTITY_RESOURCE_GROUP --query 'tenantId' -otsv` command. | N/A |
+| Enable OpenTelemetry Tracing | `enableOtelTracing`| Config | Set to 'true' if you want to enable OpenTelemetry (OTel) tracing. If enabled, you will also need to specify an OpenTelemetry service name and exporter endpoint. |`false` |
+| OpenTelemetry Service Name | `otelServiceName` | Config | The service name for OpenTelemetry (OTel) tracing. | N/A |
+| OpenTelemetry Exporter Endpoint | `otelExporterEndpoint` | Config | The endpoint URL of the OpenTelemetry (OTel) exporter. | N/A |
 | Use Host Network | `useHostNetwork`| Config | Set to 'true' if you want to use the host network. If enabled, the liveness-probe HTTP endpoint will be set to localhost on port 29602. |`false` |
 {: caption="Table 1. 1.30.3 parameter reference" caption-side="bottom"}
 

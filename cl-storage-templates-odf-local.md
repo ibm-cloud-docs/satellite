@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-03"
+lastupdated: "2026-09-09"
 
 
 keywords: change log, version history, odf-local
@@ -29,6 +29,13 @@ Review the version history for `odf-local`.
 {: #cl-storage-templates-odf-local-4.21}
 
 
+### 08 September 2026, Version 4.21 - Revision 2
+{: #cl-storage-templates-odf-local-4.21-2}
+
+- Resolves the following CVEs: [CVE-2026-8286](https://nvd.nist.gov/vuln/detail/cve-2026-8286){: external}, [CVE-2026-3783](https://nvd.nist.gov/vuln/detail/cve-2026-3783){: external}, [CVE-2026-1965](https://nvd.nist.gov/vuln/detail/cve-2026-1965){: external}, [CVE-2026-46600](https://nvd.nist.gov/vuln/detail/cve-2026-46600){: external}, [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/cve-2026-39821){: external}, [CVE-2026-58055](https://nvd.nist.gov/vuln/detail/cve-2026-58055){: external}, [CVE-2026-56862](https://nvd.nist.gov/vuln/detail/cve-2026-56862){: external}, [CVE-2026-56860](https://nvd.nist.gov/vuln/detail/cve-2026-56860){: external}, [CVE-2026-56859](https://nvd.nist.gov/vuln/detail/cve-2026-56859){: external}, [CVE-2026-56858](https://nvd.nist.gov/vuln/detail/cve-2026-56858){: external}, [CVE-2026-56853](https://nvd.nist.gov/vuln/detail/cve-2026-56853){: external}, [CVE-2026-33818](https://nvd.nist.gov/vuln/detail/cve-2026-33818){: external}, and [CVE-2026-9547](https://nvd.nist.gov/vuln/detail/cve-2026-9547){: external}.
+- Updates Go to version `1.26.6`.
+
+
 ### 20 August 2026, Version 4.21 - Revision 1
 {: #cl-storage-templates-odf-local-4.21-1}
 
@@ -38,6 +45,13 @@ Review the version history for `odf-local`.
 
 ## Version 4.20
 {: #cl-storage-templates-odf-local-4.20}
+
+
+### 08 September 2026, Version 4.20 - Revision 6
+{: #cl-storage-templates-odf-local-4.20-6}
+
+- Resolves the following CVEs: [CVE-2026-8286](https://nvd.nist.gov/vuln/detail/cve-2026-8286){: external}, [CVE-2026-3783](https://nvd.nist.gov/vuln/detail/cve-2026-3783){: external}, [CVE-2026-1965](https://nvd.nist.gov/vuln/detail/cve-2026-1965){: external}, [CVE-2026-46600](https://nvd.nist.gov/vuln/detail/cve-2026-46600){: external}, [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/cve-2026-39821){: external}, [CVE-2026-58055](https://nvd.nist.gov/vuln/detail/cve-2026-58055){: external}, [CVE-2026-56862](https://nvd.nist.gov/vuln/detail/cve-2026-56862){: external}, [CVE-2026-56860](https://nvd.nist.gov/vuln/detail/cve-2026-56860){: external}, [CVE-2026-56859](https://nvd.nist.gov/vuln/detail/cve-2026-56859){: external}, [CVE-2026-56858](https://nvd.nist.gov/vuln/detail/cve-2026-56858){: external}, [CVE-2026-56853](https://nvd.nist.gov/vuln/detail/cve-2026-56853){: external}, [CVE-2026-33818](https://nvd.nist.gov/vuln/detail/cve-2026-33818){: external}, and [CVE-2026-9547](https://nvd.nist.gov/vuln/detail/cve-2026-9547){: external}.
+- Updates Go to version `1.26.6`.
 
 
 ### 10 July 2026, Version 4.20 - Revision 5
@@ -77,6 +91,13 @@ Review the version history for `odf-local`.
 
 ## Version 4.19
 {: #cl-storage-templates-odf-local-4.19}
+
+
+### 08 September 2026, Version 4.19 - Revision 8
+{: #cl-storage-templates-odf-local-4.19-8}
+
+- Resolves the following CVEs: [CVE-2026-8286](https://nvd.nist.gov/vuln/detail/cve-2026-8286){: external}, [CVE-2026-3783](https://nvd.nist.gov/vuln/detail/cve-2026-3783){: external}, [CVE-2026-1965](https://nvd.nist.gov/vuln/detail/cve-2026-1965){: external}, [CVE-2026-46600](https://nvd.nist.gov/vuln/detail/cve-2026-46600){: external}, [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/cve-2026-39821){: external}, [CVE-2026-58055](https://nvd.nist.gov/vuln/detail/cve-2026-58055){: external}, [CVE-2026-56862](https://nvd.nist.gov/vuln/detail/cve-2026-56862){: external}, [CVE-2026-56860](https://nvd.nist.gov/vuln/detail/cve-2026-56860){: external}, [CVE-2026-56859](https://nvd.nist.gov/vuln/detail/cve-2026-56859){: external}, [CVE-2026-56858](https://nvd.nist.gov/vuln/detail/cve-2026-56858){: external}, [CVE-2026-56853](https://nvd.nist.gov/vuln/detail/cve-2026-56853){: external}, [CVE-2026-33818](https://nvd.nist.gov/vuln/detail/cve-2026-33818){: external}, and [CVE-2026-9547](https://nvd.nist.gov/vuln/detail/cve-2026-9547){: external}.
+- Updates Go to version `1.26.6`.
 
 
 ### 10 July 2026, Version 4.19 - Revision 7
@@ -130,6 +151,13 @@ Review the version history for `odf-local`.
 
 ## Version 4.18
 {: #cl-storage-templates-odf-local-4.18}
+
+
+### 08 September 2026, Version 4.18 - Revision 11
+{: #cl-storage-templates-odf-local-4.18-11}
+
+- Resolves the following CVEs: [CVE-2026-8286](https://nvd.nist.gov/vuln/detail/cve-2026-8286){: external}, [CVE-2026-3783](https://nvd.nist.gov/vuln/detail/cve-2026-3783){: external}, [CVE-2026-1965](https://nvd.nist.gov/vuln/detail/cve-2026-1965){: external}, [CVE-2026-46600](https://nvd.nist.gov/vuln/detail/cve-2026-46600){: external}, [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/cve-2026-39821){: external}, [CVE-2026-58055](https://nvd.nist.gov/vuln/detail/cve-2026-58055){: external}, [CVE-2026-56862](https://nvd.nist.gov/vuln/detail/cve-2026-56862){: external}, [CVE-2026-56860](https://nvd.nist.gov/vuln/detail/cve-2026-56860){: external}, [CVE-2026-56859](https://nvd.nist.gov/vuln/detail/cve-2026-56859){: external}, [CVE-2026-56858](https://nvd.nist.gov/vuln/detail/cve-2026-56858){: external}, [CVE-2026-56853](https://nvd.nist.gov/vuln/detail/cve-2026-56853){: external}, [CVE-2026-33818](https://nvd.nist.gov/vuln/detail/cve-2026-33818){: external}, and [CVE-2026-9547](https://nvd.nist.gov/vuln/detail/cve-2026-9547){: external}.
+- Updates Go to version `1.26.6`.
 
 
 ### 10 July 2026, Version 4.18 - Revision 10
@@ -204,6 +232,13 @@ Review the version history for `odf-local`.
 
 ## Version 4.17
 {: #cl-storage-templates-odf-local-4.17}
+
+
+### 08 September 2026, Version 4.17 - Revision 15
+{: #cl-storage-templates-odf-local-4.17-15}
+
+- Resolves the following CVEs: [CVE-2026-8286](https://nvd.nist.gov/vuln/detail/cve-2026-8286){: external}, [CVE-2026-3783](https://nvd.nist.gov/vuln/detail/cve-2026-3783){: external}, [CVE-2026-1965](https://nvd.nist.gov/vuln/detail/cve-2026-1965){: external}, [CVE-2026-46600](https://nvd.nist.gov/vuln/detail/cve-2026-46600){: external}, [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/cve-2026-39821){: external}, [CVE-2026-58055](https://nvd.nist.gov/vuln/detail/cve-2026-58055){: external}, [CVE-2026-56862](https://nvd.nist.gov/vuln/detail/cve-2026-56862){: external}, [CVE-2026-56860](https://nvd.nist.gov/vuln/detail/cve-2026-56860){: external}, [CVE-2026-56859](https://nvd.nist.gov/vuln/detail/cve-2026-56859){: external}, [CVE-2026-56858](https://nvd.nist.gov/vuln/detail/cve-2026-56858){: external}, [CVE-2026-56853](https://nvd.nist.gov/vuln/detail/cve-2026-56853){: external}, [CVE-2026-33818](https://nvd.nist.gov/vuln/detail/cve-2026-33818){: external}, and [CVE-2026-9547](https://nvd.nist.gov/vuln/detail/cve-2026-9547){: external}.
+- Updates Go to version `1.26.6`.
 
 
 ### 10 July 2026, Version 4.17 - Revision 14
@@ -286,6 +321,13 @@ Review the version history for `odf-local`.
 
 ## Version 4.16
 {: #cl-storage-templates-odf-local-4.16}
+
+
+### 08 September 2026, Version 4.16 - Revision 17
+{: #cl-storage-templates-odf-local-4.16-17}
+
+- Resolves the following CVEs: [CVE-2026-8286](https://nvd.nist.gov/vuln/detail/cve-2026-8286){: external}, [CVE-2026-3783](https://nvd.nist.gov/vuln/detail/cve-2026-3783){: external}, [CVE-2026-1965](https://nvd.nist.gov/vuln/detail/cve-2026-1965){: external}, [CVE-2026-46600](https://nvd.nist.gov/vuln/detail/cve-2026-46600){: external}, [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/cve-2026-39821){: external}, [CVE-2026-58055](https://nvd.nist.gov/vuln/detail/cve-2026-58055){: external}, [CVE-2026-56862](https://nvd.nist.gov/vuln/detail/cve-2026-56862){: external}, [CVE-2026-56860](https://nvd.nist.gov/vuln/detail/cve-2026-56860){: external}, [CVE-2026-56859](https://nvd.nist.gov/vuln/detail/cve-2026-56859){: external}, [CVE-2026-56858](https://nvd.nist.gov/vuln/detail/cve-2026-56858){: external}, [CVE-2026-56853](https://nvd.nist.gov/vuln/detail/cve-2026-56853){: external}, [CVE-2026-33818](https://nvd.nist.gov/vuln/detail/cve-2026-33818){: external}, and [CVE-2026-9547](https://nvd.nist.gov/vuln/detail/cve-2026-9547){: external}.
+- Updates Go to version `1.26.6`.
 
 
 ### 10 July 2026, Version 4.16 - Revision 16

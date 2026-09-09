@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-09-08"
+lastupdated: "2026-09-09"
 
 keywords: satellite, sitemap, IBM Cloud satellite, getting started, data, cloud
 subcollection: satellite
@@ -3439,6 +3439,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Version 2.2](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2)
 
+    * [08 September 2026, Version 2.2 - Revision 43](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-43)
+
     * [20 August 2026, Version 2.2 - Revision 42](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-42)
 
     * [31 July 2026, Version 2.2 - Revision 41](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-41)
@@ -3581,6 +3583,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Version 25.06](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-25.06)
 
+    * [08 September 2026, Version 25.06 - Revision 4](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-25.06-4)
+
     * [20 August 2026, Version 25.06 - Revision 3](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-25.06-3)
 
     * [14 November 2025, Version 25.06 - Revision 2](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-25.06-2)
@@ -3588,6 +3592,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
     * [04 September 2025, Version 25.06 - Revision 1](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-25.06-1)
 
 * [Version 24.02](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-24.02)
+
+    * [08 September 2026, Version 24.02 - Revision 9](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-24.02-9)
 
     * [20 August 2026, Version 24.02 - Revision 8](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-24.02-8)
 
@@ -3659,6 +3665,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Version 25.06](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-25.06)
 
+    * [08 September 2026, Version 25.06 - Revision 4](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-25.06-4)
+
     * [20 August 2026, Version 25.06 - Revision 3](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-25.06-3)
 
     * [14 November 2025, Version 25.06 - Revision 2](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-25.06-2)
@@ -3666,6 +3674,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
     * [04 September 2025, Version 25.06 - Revision 1](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-25.06-1)
 
 * [Version 24.02](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-24.02)
+
+    * [08 September 2026, Version 24.02 - Revision 9](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-24.02-9)
 
     * [20 August 2026, Version 24.02 - Revision 8](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-24.02-8)
 
@@ -3767,9 +3777,13 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Version 4.21](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.21)
 
+    * [08 September 2026, Version 4.21 - Revision 2](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.21-2)
+
     * [20 August 2026, Version 4.21 - Revision 1](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.21-1)
 
 * [Version 4.20](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.20)
+
+    * [08 September 2026, Version 4.20 - Revision 6](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.20-6)
 
     * [10 July 2026, Version 4.20 - Revision 5](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.20-5)
 
@@ -3782,6 +3796,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
     * [03 March 2026, Version 4.20 - Revision 1](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.20-1)
 
 * [Version 4.19](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.19)
+
+    * [08 September 2026, Version 4.19 - Revision 8](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.19-8)
 
     * [10 July 2026, Version 4.19 - Revision 7](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.19-7)
 
@@ -3798,6 +3814,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
     * [21 October 2025, Version 4.19 - Revision 1](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.19-1)
 
 * [Version 4.18](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.18)
+
+    * [08 September 2026, Version 4.18 - Revision 11](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.18-11)
 
     * [10 July 2026, Version 4.18 - Revision 10](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.18-10)
 
@@ -3820,6 +3838,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
     * [24 June 2025, Version 4.18 - Revision 1](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.18-1)
 
 * [Version 4.17](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.17)
+
+    * [08 September 2026, Version 4.17 - Revision 15](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.17-15)
 
     * [10 July 2026, Version 4.17 - Revision 14](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.17-14)
 
@@ -3844,6 +3864,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
     * [25 April 2025, Version 4.17 - Revision 4](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.17-4)
 
 * [Version 4.16](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.16)
+
+    * [08 September 2026, Version 4.16 - Revision 17](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.16-17)
 
     * [10 July 2026, Version 4.16 - Revision 16](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.16-16)
 
@@ -4015,9 +4037,13 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Version 4.21](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.21)
 
+    * [08 September 2026, Version 4.21 - Revision 2](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.21-2)
+
     * [20 August 2026, Version 4.21 - Revision 1](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.21-1)
 
 * [Version 4.20](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.20)
+
+    * [08 September 2026, Version 4.20 - Revision 6](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.20-6)
 
     * [10 July 2026, Version 4.20 - Revision 5](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.20-5)
 
@@ -4030,6 +4056,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
     * [03 March 2026, Version 4.20 - Revision 1](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.20-1)
 
 * [Version 4.19](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.19)
+
+    * [08 September 2026, Version 4.19 - Revision 8](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.19-8)
 
     * [10 July 2026, Version 4.19 - Revision 7](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.19-7)
 
@@ -4046,6 +4074,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
     * [21 October 2025, Version 4.19 - Revision 1](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.19-1)
 
 * [Version 4.18](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.18)
+
+    * [08 September 2026, Version 4.18 - Revision 11](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.18-11)
 
     * [10 July 2026, Version 4.18 - Revision 10](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.18-10)
 
@@ -4068,6 +4098,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
     * [24 June 2025, Version 4.18 - Revision 1](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.18-1)
 
 * [Version 4.17](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.17)
+
+    * [08 September 2026, Version 4.17 - Revision 15](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.17-15)
 
     * [10 July 2026, Version 4.17 - Revision 14](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.17-14)
 
@@ -4092,6 +4124,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
     * [25 April 2025, Version 4.17 - Revision 4](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.17-4)
 
 * [Version 4.16](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.16)
+
+    * [08 September 2026, Version 4.16 - Revision 17](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.16-17)
 
     * [10 July 2026, Version 4.16 - Revision 16](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.16-16)
 
