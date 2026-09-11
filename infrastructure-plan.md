@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-27"
+lastupdated: "2026-09-11"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 
@@ -211,7 +211,9 @@ Retrieve the Google Cloud Platform (GCP) credentials that {{site.data.keyword.sa
     }
     ```
     {: screen}
-    
+
+
+
 
 
 
@@ -224,6 +226,9 @@ Retrieve the VMWare credentials that {{site.data.keyword.satelliteshort}} can us
 {: shortdesc}
 
 1. Verify that you have the required [permissions in your VMWare account](/docs/satellite?topic=satellite-iam-common#permissions-vmware) to create a {{site.data.keyword.satelliteshort}} location from a template.
-2. Identify or [create a user](https://techdocs.broadcom.com/us/en/vmware-cis/cloud-director/vmware-cloud-director/10-6/map-for-vmware-cloud-director-tenant-portal-guide-10-6/managing-users-groups-and-roles-in-vcd-tenant/managing-users-in-your-vcd-tenant-portal-tenant/managing-users-in-your-vcd-tenant-portal-tenant.html){: external} with **Administrator** role.
+
+2. Identify or [create a user](https://techdocs.broadcom.com/us/en/vmware-cis/cloud-director/vmware-cloud-director/10-6/map-for-vmware-cloud-director-tenant-portal-guide-10-6/managing-users-groups-and-roles-in-vcd-tenant/managing-users-in-your-vcd-tenant-portal-tenant.html){: external} with **Administrator** role.
+
 3. Find your [network information](/docs/satellite?topic=satellite-loc-vmware-create-auto#vmware-network).
+
 4. Provide this information on the [VMware Cloud Director template](/docs/satellite?topic=satellite-loc-vmware-create-auto#create-auto-vmware).
