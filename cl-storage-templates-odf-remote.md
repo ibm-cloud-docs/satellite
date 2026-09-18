@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-09"
+lastupdated: "2026-09-18"
 
 
 keywords: change log, version history, odf-remote
@@ -738,14 +738,6 @@ Review the version history for `odf-remote`.
 - Updates Go to version `1.20.7`.
 
 
-### 19 September 2023, Version 4.13 - Revision 3
-{: #cl-storage-templates-odf-remote-4.13-3}
-
-- Resolves the following CVEs: [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/cve-2023-28484){: external}, [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/cve-2023-29469){: external}, [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/cve-2023-27536){: external}, [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/cve-2023-28321){: external}, [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/cve-2023-34969){: external}, [CVE-2023-32681](https://nvd.nist.gov/vuln/detail/cve-2023-32681){: external}, [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/cve-2023-2602){: external}, and [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/cve-2023-2603){: external}.
-- Updates the UBI to version `8.8-1037`.
-- Updates Go to version `1.20.7`.
-
-
 
 
 ### 05 June 2025, Version 4.12 - Revision 20
@@ -839,14 +831,6 @@ Review the version history for `odf-remote`.
 - Updates Go to version `1.20.7`.
 
 
-### 19 September 2023, Version 4.12 - Revision 5
-{: #cl-storage-templates-odf-remote-4.12-5}
-
-- Resolves the following CVEs: [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/cve-2023-28484){: external}, [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/cve-2023-29469){: external}, [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/cve-2023-27536){: external}, [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/cve-2023-28321){: external}, [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/cve-2023-34969){: external}, [CVE-2023-32681](https://nvd.nist.gov/vuln/detail/cve-2023-32681){: external}, [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/cve-2023-2602){: external}, and [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/cve-2023-2603){: external}.
-- Updates the UBI to version `8.8-1037`.
-- Updates Go to version `1.20.7`.
-
-
 
 
 ### 07 March 2024, Version 4.11 - Revision 15
@@ -898,14 +882,6 @@ Review the version history for `odf-remote`.
 - Updates Go to version `1.20.7`.
 
 
-### 19 September 2023, Version 4.11 - Revision 9
-{: #cl-storage-templates-odf-remote-4.11-9}
-
-- Resolves the following CVEs: [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/cve-2023-28484){: external}, [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/cve-2023-29469){: external}, [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/cve-2023-27536){: external}, [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/cve-2023-28321){: external}, [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/cve-2023-34969){: external}, [CVE-2023-32681](https://nvd.nist.gov/vuln/detail/cve-2023-32681){: external}, [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/cve-2023-2602){: external}, and [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/cve-2023-2603){: external}.
-- Updates the UBI to version `8.8-1037`.
-- Updates Go to version `1.20.7`.
-
-
 
 
 ### 27 November 2023, Version 4.10 - Revision 23
@@ -929,22 +905,4 @@ Review the version history for `odf-remote`.
 
 - Resolves the following CVEs: [CVE-2023-29491](https://nvd.nist.gov/vuln/detail/cve-2023-29491){: external}, [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/cve-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/cve-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/cve-2023-4806){: external}, and [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/cve-2023-4813){: external}.
 - Updates the UBI to version `8.8-1072.1696517598`.
-- Updates Go to version `1.20.7`.
-
-
-### 19 September 2023, Version 4.10 - Revision 20
-{: #cl-storage-templates-odf-remote-4.10-20}
-
-- Resolves the following CVEs: [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/cve-2023-28484){: external}, [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/cve-2023-29469){: external}, [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/cve-2023-27536){: external}, [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/cve-2023-28321){: external}, [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/cve-2023-34969){: external}, [CVE-2023-32681](https://nvd.nist.gov/vuln/detail/cve-2023-32681){: external}, [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/cve-2023-2602){: external}, and [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/cve-2023-2603){: external}.
-- Updates the UBI to version `8.8-1037`.
-- Updates Go to version `1.20.7`.
-
-
-
-
-### 19 September 2023, Version 4.9 - Revision 26
-{: #cl-storage-templates-odf-remote-4.9-26}
-
-- Resolves the following CVEs: [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/cve-2023-28484){: external}, [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/cve-2023-29469){: external}, [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/cve-2023-27536){: external}, [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/cve-2023-28321){: external}, [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/cve-2023-34969){: external}, [CVE-2023-32681](https://nvd.nist.gov/vuln/detail/cve-2023-32681){: external}, [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/cve-2023-2602){: external}, and [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/cve-2023-2603){: external}.
-- Updates the UBI to version `8.8-1037`.
 - Updates Go to version `1.20.7`.

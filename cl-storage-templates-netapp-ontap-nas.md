@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-09"
+lastupdated: "2026-09-18"
 
 
 keywords: change log, version history, netapp-ontap-nas
@@ -199,13 +199,6 @@ Review the version history for `netapp-ontap-nas`.
 - Updates the UBI to version `8.8-1072.1696517598`.
 
 
-### 19 September 2023, Version 22.10 - Revision 8
-{: #cl-storage-templates-netapp-ontap-nas-22.10-8}
-
-- Resolves the following CVEs: [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/cve-2023-27536){: external}, [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/cve-2023-2603){: external}, [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/cve-2023-34969){: external}, [CVE-2023-3899](https://nvd.nist.gov/vuln/detail/cve-2023-3899){: external}, [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/cve-2023-28321){: external}, [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/cve-2023-2602){: external}, [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/cve-2023-28484){: external}, [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/cve-2023-29469){: external}, and [CVE-2023-32681](https://nvd.nist.gov/vuln/detail/cve-2023-32681){: external}.
-- Updates the UBI to version `8.8-1037`.
-
-
 
 
 ### 24 June 2025, Version 22.04 - Revision 29
@@ -261,13 +254,6 @@ Review the version history for `netapp-ontap-nas`.
 - Updates the UBI to version `8.8-1072.1696517598`.
 
 
-### 19 September 2023, Version 22.04 - Revision 21
-{: #cl-storage-templates-netapp-ontap-nas-22.04-21}
-
-- Resolves the following CVEs: [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/cve-2023-27536){: external}, [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/cve-2023-2603){: external}, [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/cve-2023-34969){: external}, [CVE-2023-3899](https://nvd.nist.gov/vuln/detail/cve-2023-3899){: external}, [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/cve-2023-28321){: external}, [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/cve-2023-2602){: external}, [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/cve-2023-28484){: external}, [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/cve-2023-29469){: external}, and [CVE-2023-32681](https://nvd.nist.gov/vuln/detail/cve-2023-32681){: external}.
-- Updates the UBI to version `8.8-1037`.
-
-
 
 
 ### 30 October 2023, Version 21.04 - Revision 25
@@ -282,10 +268,3 @@ Review the version history for `netapp-ontap-nas`.
 
 - Resolves the following CVEs: [CVE-2023-29491](https://nvd.nist.gov/vuln/detail/cve-2023-29491){: external}, [CVE-2023-30630](https://nvd.nist.gov/vuln/detail/cve-2023-30630){: external}, [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/cve-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/cve-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/cve-2023-4806){: external}, and [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/cve-2023-4813){: external}.
 - Updates the UBI to version `8.8-1072.1696517598`.
-
-
-### 19 September 2023, Version 21.04 - Revision 23
-{: #cl-storage-templates-netapp-ontap-nas-21.04-23}
-
-- Resolves the following CVEs: [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/cve-2023-27536){: external}, [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/cve-2023-2603){: external}, [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/cve-2023-34969){: external}, [CVE-2023-3899](https://nvd.nist.gov/vuln/detail/cve-2023-3899){: external}, [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/cve-2023-28321){: external}, [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/cve-2023-2602){: external}, [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/cve-2023-28484){: external}, [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/cve-2023-29469){: external}, and [CVE-2023-32681](https://nvd.nist.gov/vuln/detail/cve-2023-32681){: external}.
-- Updates the UBI to version `8.8-1037`.
