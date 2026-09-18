@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-11"
+lastupdated: "2026-09-18"
 
 
 keywords: change log, version history, ibm-object-storage-plug-in
@@ -226,12 +226,3 @@ Review the version history for `ibm-object-storage-plugin`.
 - Resolves the following CVEs: [CVE-2023-29491](https://nvd.nist.gov/vuln/detail/cve-2023-29491){: external}, [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/cve-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/cve-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/cve-2023-4806){: external}, and [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/cve-2023-4813){: external}.
 - Updates the UBI to version `8.8-1072.1696517598`.
 - Updates Go to version `1.19.12`.
-
-
-### 19 September 2023, Version 2.2 - Revision 14
-{: #cl-storage-templates-ibm-object-storage-plugin-2.2-14}
-
-- Resolves the following CVEs: [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/cve-2023-27536){: external}, [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/cve-2023-2602){: external}, [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/cve-2023-2603){: external}, [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/cve-2023-34969){: external}, [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/cve-2023-28321){: external}, [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/cve-2023-28484){: external}, [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/cve-2023-29469){: external}, and [CVE-2023-29409](https://nvd.nist.gov/vuln/detail/cve-2023-29409){: external}.
-- Updates the UBI to version `8.8-1037`.
-- Updates Go to version `1.19.12`.
-- RHCOS 4.13 support
