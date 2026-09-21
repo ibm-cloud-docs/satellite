@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-27"
+lastupdated: "2026-09-21"
 
 keywords: satellite, connector, agent
 
@@ -55,7 +55,7 @@ To run the {{site.data.keyword.satelliteshort}} Connector agent image, your comp
 - If you are on a Mac with Apple Silicon (arm64), the image works natively. For older x86-only images, Rosetta can be used for emulation. If Rosetta is not installed on your Mac, you can install it via the `softwareupdate --install-rosetta` command.
 - Connector agent for Windows supports Windows 10 and later or Windows Server 2016 and later.
 - The Windows server where you run your Connector agent must have at least 4 cores and 4GB memory.
-- For high availability, IBM recommends deploying at least 6 agents, with 1 agent per host, distributed across separate physical machines.
+- For redundancy, IBM recommends a minimum of 3 agents, with 1 agent per host, each on a separate physical machine distributed across your availability zones. For high-bandwidth workloads, IBM recommends at least 6 agents.
 
 ## Network requirements
 {: #network-requirements}

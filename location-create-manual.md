@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-09-01"
+lastupdated: "2026-09-21"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 
@@ -110,7 +110,7 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI,
     {: pre}
 
     `--managed-from REGION`
-    :    Required. The {{site.data.keyword.cloud_notm}} region, such as `wdc` or `lon`, that your {{site.data.keyword.satelliteshort}} location is managed from. You can use any region, but to reduce latency between {{site.data.keyword.cloud_notm}} and your location, choose the region that is closest to the compute hosts that you plan to attach to your location later. For a list of supported {{site.data.keyword.cloud_notm}} regions, see [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions).
+    :    Required. The {{site.data.keyword.cloud_notm}} metro (data center) from which your {{site.data.keyword.satelliteshort}} location is managed, such as `wdc` (Washington DC) or `lon` (London). These are IBM Cloud metro codes, not region names. To reduce latency between {{site.data.keyword.cloud_notm}} and your location, choose the metro that is closest to the compute hosts that you plan to attach to your location later. For a list of supported metros, see [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions).
 
     `--name NAME`
     :    Required. Enter a name for your location. The {{site.data.keyword.satelliteshort}} location name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer. Do not reuse the same name for multiple locations, even if you deleted another location with the same name.
