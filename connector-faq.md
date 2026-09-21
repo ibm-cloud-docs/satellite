@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-27"
+lastupdated: "2026-09-21"
 
 keywords: satellite, connector, faq, frequently asked questions
 
@@ -62,7 +62,7 @@ To create a Connector, you need **Administrator** Platform role for {{site.data.
 ## How many instances of Connector agent can I run?
 {: #connector-faq-instance-limits}
 
-{{site.data.keyword.satelliteshort}} Connector allows a maximum of 6 agents per Connector. For high-availability deployments, IBM recommends deploying at least 6 agents across separate hosts. For more information, see [Minimum requirements for running the agent image](/docs/satellite?topic=satellite-understand-connectors#min-requirements).
+{{site.data.keyword.satelliteshort}} Connector supports a maximum of 9 agents per Connector. For redundancy, IBM recommends a minimum of 3 agents, each on a separate host. For high-bandwidth workloads, IBM recommends at least 6 agents. Leave at least 3 slots unused to allow ephemeral containers or VMs to restart without being rejected. For more information, see [Minimum requirements for running the agent image](/docs/satellite?topic=satellite-understand-connectors#min-requirements).
 
 ## Can I deploy {{site.data.keyword.satelliteshort}} Connectors within {{site.data.keyword.cloud_notm}}?
 {: #connector-ibm-cloud}
@@ -85,7 +85,7 @@ Connector uses TLS version 1.3.
 ## What are the failover or disaster recovery expectations of agents and Connector?
 {: #conector-faq-dr}
 
-IBM manages the cloud side of the {{site.data.keyword.satelliteshort}} Connector service, which is distributed across {{site.data.keyword.cloud_notm}} multizone regions (MZRs), so agents automatically have redundancy across different resources in each zone. According to IBM Connector architecture guidance, deploy at least 3 agents per availability zone — for example, 3 VMware hosts if you're on VMware — to align with your cloud provider's availability zones.
+IBM manages the cloud side of the {{site.data.keyword.satelliteshort}} Connector service, which is distributed across {{site.data.keyword.cloud_notm}} multizone regions (MZRs), so agents automatically have redundancy across different resources in each zone. For your own agents, IBM recommends deploying a total of 3–6 agents distributed across the available availability zones in your infrastructure — not 3 agents per zone. For example, for a 3-AZ environment, run 3 agents (one per AZ) or 6 agents (two per AZ). This ensures that a single AZ outage does not interrupt all traffic.
 
 ## How do I measure and monitor connections that are using Satellite Connector?
 {: #conector-faq-connections}

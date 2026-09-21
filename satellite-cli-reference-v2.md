@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-08-28"
+lastupdated: "2026-09-21"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -2636,7 +2636,7 @@ ibmcloud sat location create --managed-from REGION --name NAME [--capability CAP
 :    Specify the zone for your location. For high availability, specify 3 zones for your location as `--ha-zone ZONE1_NAME --ha-zone ZONE2_NAME --ha-zone ZONE3_NAME`. The names of the zones must match exactly the names of the corresponding zones in your infrastructure provider where you plan to create hosts.
 
 `--managed-from`
-:    Select the IBM Cloud region to manage your Satellite location from. Choose a region close to your on-prem data center for better performance. See [https://ibm.biz/sat-region](https://ibm.biz/sat-region).
+:    Select the IBM Cloud metro (data center) to manage your Satellite location from, such as `wdc` (Washington DC) or `lon` (London). These are IBM Cloud metro codes, not region names. Choose the metro closest to your on-prem data center for better performance. See [https://ibm.biz/sat-region](https://ibm.biz/sat-region).
 
 `--name`
 :    Specify a name for the Satellite location. Location names must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be fewer than 36 characters. Do not reuse names, even if the other location is deleted.
