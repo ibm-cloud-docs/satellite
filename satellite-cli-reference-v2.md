@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-09-21"
+lastupdated: "2026-09-23"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -48,7 +48,7 @@ View and manage Satellite access control lists (ACLs).
 ### `ibmcloud sat acl create`
 {: #acl-create-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Create an ACL.
 
@@ -93,7 +93,7 @@ ibmcloud sat acl create --name NAME --subnet SUBNET --connector-id ID
 ### `ibmcloud sat acl endpoint add`
 {: #acl-endpoint-add-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Add one or more enabled endpoints to an ACL.
 
@@ -158,7 +158,7 @@ ibmcloud sat acl endpoint help
 ### `ibmcloud sat acl endpoint ls`
 {: #acl-endpoint-ls-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 List all enabled endpoints for an ACL.
 
@@ -200,7 +200,7 @@ ibmcloud sat acl endpoint ls --acl-id ID --connector-id ID
 ### `ibmcloud sat acl endpoint rm`
 {: #acl-endpoint-rm-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Remove one or more enabled endpoints from an ACL.
 
@@ -242,7 +242,7 @@ ibmcloud sat acl endpoint rm --acl-id ID --endpoint ENDPOINT --connector-id ID
 ### `ibmcloud sat acl get`
 {: #acl-get-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 View the details of an ACL.
 
@@ -307,7 +307,7 @@ ibmcloud sat acl help
 ### `ibmcloud sat acl ls`
 {: #acl-ls-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 List all ACLs for a Satellite connector or location.
 
@@ -346,7 +346,7 @@ ibmcloud sat acl ls --connector-id ID
 ### `ibmcloud sat acl rm`
 {: #acl-rm-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Delete an ACL.
 
@@ -385,7 +385,7 @@ ibmcloud sat acl rm --acl-id ID --connector-id ID
 ### `ibmcloud sat acl subnet add`
 {: #acl-subnet-add-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Add one or more subnets to an ACL.
 
@@ -450,7 +450,7 @@ ibmcloud sat acl subnet help
 ### `ibmcloud sat acl subnet rm`
 {: #acl-subnet-rm-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Remove one or more subnets from an ACL.
 
@@ -492,7 +492,7 @@ ibmcloud sat acl subnet rm --acl-id ID --subnet SUBNET --connector-id ID
 ### `ibmcloud sat acl update`
 {: #acl-update-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Update the name of an ACL.
 
@@ -540,7 +540,7 @@ Attach or view Satellite Connector Agents.
 ### `ibmcloud sat agent attach`
 {: #agent-attach-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Get a Satellite Connector Agent for a specific platform. Download the Agent `.zip` for Windows or get a link to the documentation for Docker environments.
 
@@ -596,7 +596,7 @@ ibmcloud sat agent help
 ### `ibmcloud sat agent ls`
 {: #agent-ls-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 List all Agents for a Satellite Connector.
 
@@ -736,7 +736,7 @@ ibmcloud sat cluster ls
 ### `ibmcloud sat cluster register`
 {: #cluster-register-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Get a `kubectl` command to register your cluster in a Satellite configuration. Log in to your cluster and run this command to install a Satellite Config agent. Clusters that you run in your Satellite location automatically install this agent.
 
@@ -772,7 +772,7 @@ ibmcloud sat cluster register --name NAME
 ### `ibmcloud sat cluster unregister`
 {: #cluster-unregister-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Remove a cluster registration. The cluster is no longer subscribed to a Satellite configuration, but the cluster and its existing resources still run.
 
@@ -814,7 +814,7 @@ View and manage Satellite Configuration.
 ### `ibmcloud sat config create`
 {: #config-create-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Create a configuration to specify what Kubernetes resources you want to deploy to your clusters in your Satellite workloads.
 
@@ -853,7 +853,7 @@ ibmcloud sat config create --name NAME --data-location LOCATION
 ### `ibmcloud sat config get`
 {: #config-get-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Get details of a Satellite configuration, such as the versions or subscriptions that are associated with the configuration.
 
@@ -912,7 +912,7 @@ ibmcloud sat config help
 ### `ibmcloud sat config ls`
 {: #config-ls-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 List all Satellite configurations in your IBM Cloud account.
 
@@ -945,7 +945,7 @@ ibmcloud sat config ls
 ### `ibmcloud sat config rename`
 {: #config-rename-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Rename a Satellite configuration.
 
@@ -981,7 +981,7 @@ ibmcloud sat config rename --config CONFIG --name NAME
 ### `ibmcloud sat config rm`
 {: #config-rm-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Remove a Satellite configuration. All associated subscriptions must be removed first. All versions are deleted. Back up any resource definitions that you want to keep.
 
@@ -1017,7 +1017,7 @@ ibmcloud sat config rm --config CONFIG
 ### `ibmcloud sat config version create`
 {: #config-version-create-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Create a configuration version to update existing Kubernetes resources for your Satellite workloads.
 
@@ -1066,7 +1066,7 @@ ibmcloud sat config version create \
 ### `ibmcloud sat config version get`
 {: #config-version-get-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Get details for a Satellite configuration version.
 
@@ -1131,7 +1131,7 @@ ibmcloud sat config version help
 ### `ibmcloud sat config version rm`
 {: #config-version-rm-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Remove a Satellite configuration version.
 
@@ -1176,7 +1176,7 @@ Create, view, and modify Satellite connectors.
 ### `ibmcloud sat connector create`
 {: #connector-create-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Create a Satellite connector.
 
@@ -1212,7 +1212,7 @@ ibmcloud sat connector create --name NAME --region REGION
 ### `ibmcloud sat connector get`
 {: #connector-get-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 View the details of a Satellite Connector.
 
@@ -1271,7 +1271,7 @@ ibmcloud sat connector help
 ### `ibmcloud sat connector ls`
 {: #connector-ls-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 View the Satellite Connectors in your IBM Cloud account.
 
@@ -1310,7 +1310,7 @@ ibmcloud sat connector ls
 ### `ibmcloud sat connector rm`
 {: #connector-rm-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Delete a Satellite connector.
 
@@ -1352,7 +1352,7 @@ View and manage Satellite endpoints.
 ### `ibmcloud sat endpoint authn get`
 {: #endpoint-authn-get-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Get the authentication settings for an endpoint.
 
@@ -1417,7 +1417,7 @@ ibmcloud sat endpoint authn help
 ### `ibmcloud sat endpoint authn rotate`
 {: #endpoint-authn-rotate-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Replace existing authentication certificates with new ones. There are two TLS connections in the request flow. The `source` options refer to the TLS handshake between the source and the Connector service. The `destination` options refer to the TLS handshake between the Connector service and your destination or target server. You can provide certificates for one or both of these connections. Only the certificates that you specify are replaced.
 
@@ -1474,7 +1474,7 @@ ibmcloud sat endpoint authn rotate --endpoint ENDPOINT --connector-id ID
 ### `ibmcloud sat endpoint authn set`
 {: #endpoint-authn-set-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Set authentication settings for an endpoint. There are two TLS connections in the request flow. The `source` options refer to the TLS handshake between the source and the Connector service. The `destination` options refer to the TLS handshake between the Connector service and your destination or target server. You can provide certificates for one or both of these connections. Unspecified settings are set to their default values.
 
@@ -1537,7 +1537,7 @@ ibmcloud sat endpoint authn set --endpoint ENDPOINT --connector-id ID
 ### `ibmcloud sat endpoint create`
 {: #endpoint-create-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Create an endpoint.
 
@@ -1606,7 +1606,7 @@ ibmcloud sat endpoint create \
 ### `ibmcloud sat endpoint disable`
 {: #endpoint-disable-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Disable an endpoint.
 
@@ -1648,7 +1648,7 @@ ibmcloud sat endpoint disable --endpoint ENDPOINT --connector-id ID
 ### `ibmcloud sat endpoint enable`
 {: #endpoint-enable-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Enable an endpoint.
 
@@ -1690,7 +1690,7 @@ ibmcloud sat endpoint enable --endpoint ENDPOINT --connector-id ID
 ### `ibmcloud sat endpoint get`
 {: #endpoint-get-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 View the details of an endpoint.
 
@@ -1755,7 +1755,7 @@ ibmcloud sat endpoint help
 ### `ibmcloud sat endpoint ls`
 {: #endpoint-ls-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 List all endpoints in a Satellite location.
 
@@ -1794,7 +1794,7 @@ ibmcloud sat endpoint ls --connector-id ID
 ### `ibmcloud sat endpoint rm`
 {: #endpoint-rm-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Delete an endpoint.
 
@@ -1833,7 +1833,7 @@ ibmcloud sat endpoint rm --endpoint ENDPOINT --connector-id ID
 ### `ibmcloud sat endpoint update`
 {: #endpoint-update-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Update an endpoint. Only the options that you specify are updated.
 
@@ -1951,7 +1951,7 @@ View and manage Satellite cluster groups. Cluster groups are used to subscribe c
 ### `ibmcloud sat group attach`
 {: #group-attach-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Add a cluster to your cluster group. The cluster can run in your Satellite location or in IBM Cloud. To add a cluster that runs in IBM Cloud, you must first register the cluster with Satellite Config.
 
@@ -1987,7 +1987,7 @@ ibmcloud sat group attach --cluster CLUSTER --group GROUP
 ### `ibmcloud sat group create`
 {: #group-create-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Create a cluster group. Then, you can subscribe the cluster group to a Satellite configuration.
 
@@ -2023,7 +2023,7 @@ ibmcloud sat group create --name NAME
 ### `ibmcloud sat group detach`
 {: #group-detach-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Removes one or more clusters from your Satellite cluster group and deletes the Kubernetes resources that were managed by the group's subscriptions.
 
@@ -2062,7 +2062,7 @@ ibmcloud sat group detach --cluster CLUSTER --group GROUP
 ### `ibmcloud sat group get`
 {: #group-get-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Get detailed information for a Satellite cluster group.
 
@@ -2121,7 +2121,7 @@ ibmcloud sat group help
 ### `ibmcloud sat group ls`
 {: #group-ls-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 List all Satellite cluster groups in your IBM Cloud account.
 
@@ -2154,7 +2154,7 @@ ibmcloud sat group ls
 ### `ibmcloud sat group rm`
 {: #group-rm-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Remove a Satellite cluster group, which unsubscribes clusters and deletes the Kubernetes resources that were managed by the group's subscriptions.
 
@@ -2196,7 +2196,7 @@ View and modify Satellite hosts.
 ### `ibmcloud sat host assign`
 {: #host-assign-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Assign a host to a Satellite location control plane or cluster.
 
@@ -2244,7 +2244,7 @@ ibmcloud sat host assign --location LOCATION
 ### `ibmcloud sat host attach`
 {: #host-attach-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Create and download a script that you can run on your hosts to attach them to your location. For RHCOS enabled locations, the script is an ignition file.
 
@@ -2289,7 +2289,7 @@ ibmcloud sat host attach --location LOCATION
 ### `ibmcloud sat host get`
 {: #host-get-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 View the details of a Satellite host.
 
@@ -2351,7 +2351,7 @@ ibmcloud sat host help
 ### `ibmcloud sat host ls`
 {: #host-ls-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 List all hosts that are attached to a Satellite location, including hosts that are assigned to clusters or the control plane.
 
@@ -2387,7 +2387,7 @@ ibmcloud sat host ls --location LOCATION
 ### `ibmcloud sat host rm`
 {: #host-rm-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Remove a host from a Satellite location.
 
@@ -2426,7 +2426,7 @@ ibmcloud sat host rm --host HOST --location LOCATION
 ### `ibmcloud sat host update`
 {: #host-update-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Update host information, such as zones and labels.
 
@@ -2497,7 +2497,7 @@ ibmcloud sat key help
 ### `ibmcloud sat key ls`
 {: #key-ls-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 List all Satellite Config keys in your IBM Cloud account.
 
@@ -2530,7 +2530,7 @@ ibmcloud sat key ls
 ### `ibmcloud sat key rm`
 {: #key-rm-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Remove a Satellite Config key. Any cluster that still uses this key cannot connect to Satellite Config.
 
@@ -2566,7 +2566,7 @@ ibmcloud sat key rm --key KEY
 ### `ibmcloud sat key rotate`
 {: #key-rotate-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Generate a new key for use by managed clusters to connect to Satellite Config.
 
@@ -2608,7 +2608,7 @@ Create, view, and modify Satellite locations.
 ### `ibmcloud sat location create`
 {: #location-create-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Create a Satellite location. A Satellite location is a representation of an environment in your infrastructure provider. After you create a location, attach hosts from separate zones of your backing infrastructure environment with the `ibmcloud sat host attach` command.
 
@@ -2636,7 +2636,7 @@ ibmcloud sat location create --managed-from REGION --name NAME [--capability CAP
 :    Specify the zone for your location. For high availability, specify 3 zones for your location as `--ha-zone ZONE1_NAME --ha-zone ZONE2_NAME --ha-zone ZONE3_NAME`. The names of the zones must match exactly the names of the corresponding zones in your infrastructure provider where you plan to create hosts.
 
 `--managed-from`
-:    Select the IBM Cloud metro (data center) to manage your Satellite location from, such as `wdc` (Washington DC) or `lon` (London). These are IBM Cloud metro codes, not region names. Choose the metro closest to your on-prem data center for better performance. See [https://ibm.biz/sat-region](https://ibm.biz/sat-region).
+:    Select the IBM Cloud region to manage your Satellite location from. Choose a region close to your on-prem data center for better performance. See [https://ibm.biz/sat-region](https://ibm.biz/sat-region).
 
 `--name`
 :    Specify a name for the Satellite location. Location names must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be fewer than 36 characters. Do not reuse names, even if the other location is deleted.
@@ -2680,7 +2680,7 @@ ibmcloud sat location create --managed-from REGION --name NAME
 ### `ibmcloud sat location dns get`
 {: #location-dns-get-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 View the details of a registered subdomain in a Satellite location.
 
@@ -2742,7 +2742,7 @@ ibmcloud sat location dns help
 ### `ibmcloud sat location dns ls`
 {: #location-dns-ls-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 List the registered subdomains in a Satellite location.
 
@@ -2778,7 +2778,7 @@ ibmcloud sat location dns ls --location LOCATION
 ### `ibmcloud sat location dns register`
 {: #location-dns-register-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Set a subdomain for the hosts assigned to the control plane in a Satellite location.
 
@@ -2817,7 +2817,7 @@ ibmcloud sat location dns register --ip IP --location LOCATION
 ### `ibmcloud sat location get`
 {: #location-get-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 View the details of a Satellite location.
 
@@ -2876,7 +2876,7 @@ ibmcloud sat location help
 ### `ibmcloud sat location ls`
 {: #location-ls-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 List all Satellite locations in your IBM Cloud account.
 
@@ -2909,7 +2909,7 @@ ibmcloud sat location ls
 ### `ibmcloud sat location rm`
 {: #location-rm-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Delete a location. Before you run this command, back up your configurations and remove any hosts and clusters that run in the location. The underlying host infrastructure is not automatically deleted when you delete a location. This action cannot be undone.
 
@@ -2945,7 +2945,7 @@ ibmcloud sat location rm --location LOCATION
 ### `ibmcloud sat location update`
 {: #location-update-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Update the name or description of a Satellite location.
 
@@ -2990,7 +2990,7 @@ View the current user messages.
 ### `ibmcloud sat messages`
 {: #messages-cli}
 
-
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
 
 View the current user messages.
 
@@ -3026,7 +3026,7 @@ Search and view Kubernetes resources that are managed by a Satellite configurati
 ### `ibmcloud sat resource get`
 {: #resource-get-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 View the details of a Kubernetes resource that is managed by a Satellite configuration.
 
@@ -3091,7 +3091,7 @@ ibmcloud sat resource help
 ### `ibmcloud sat resource history get`
 {: #resource-history-get-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Get history for a Kubernetes resource.
 
@@ -3153,7 +3153,7 @@ ibmcloud sat resource history help
 ### `ibmcloud sat resource ls`
 {: #resource-ls-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Search Kubernetes resources that are managed by Satellite.
 
@@ -3227,7 +3227,7 @@ ibmcloud sat service help
 ### `ibmcloud sat service ls`
 {: #service-ls-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 List all Satellite service clusters in your location to review details, such as requested host resources.
 
@@ -3272,7 +3272,7 @@ View and manage Satellite storage resources.
 The `storage assignment autopatch disable` command is a beta feature.
 {: beta}
 
-
+[Satellite]{: tag-satellite} 
 
 Disable automatic patches for a Satellite storage assignment.
 
@@ -3314,7 +3314,7 @@ ibmcloud sat storage assignment autopatch disable --config CONFIG --all
 The `storage assignment autopatch enable` command is a beta feature.
 {: beta}
 
-
+[Satellite]{: tag-satellite} 
 
 Enable automatic patches for a Satellite storage assignment.
 
@@ -3376,7 +3376,7 @@ ibmcloud sat storage assignment autopatch help
 ### `ibmcloud sat storage assignment create`
 {: #storage-assignment-create-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Create an assignment to deploy your storage configurations to clusters in your Satellite location.
 
@@ -3421,7 +3421,7 @@ ibmcloud sat storage assignment create --config CONFIG --cluster CLUSTER
 ### `ibmcloud sat storage assignment get`
 {: #storage-assignment-get-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Get the details of a Satellite storage assignment.
 
@@ -3480,7 +3480,7 @@ ibmcloud sat storage assignment help
 ### `ibmcloud sat storage assignment ls`
 {: #storage-assignment-ls-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 List the Satellite storage assignments in your IBM Cloud account.
 
@@ -3531,7 +3531,7 @@ ibmcloud sat storage assignment ls --cluster CLUSTER
 ### `ibmcloud sat storage assignment patch`
 {: #storage-assignment-patch-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Apply storage configuration changes to the associated assignments.
 
@@ -3569,7 +3569,7 @@ ibmcloud sat storage assignment patch --assignment ASSIGNMENT
 ### `ibmcloud sat storage assignment rm`
 {: #storage-assignment-rm-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Remove a Satellite storage assignment. The Kubernetes resources are deleted from all the clusters in your Satellite location, but the configuration remains.
 
@@ -3605,7 +3605,7 @@ ibmcloud sat storage assignment rm --assignment ASSIGNMENT
 ### `ibmcloud sat storage assignment update`
 {: #storage-assignment-update-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Update a Satellite storage assignment.
 
@@ -3647,7 +3647,7 @@ ibmcloud sat storage assignment update --assignment ASSIGNMENT
 ### `ibmcloud sat storage config class add`
 {: #storage-config-class-add-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Create a custom Satellite storage class.
 
@@ -3686,7 +3686,7 @@ ibmcloud sat storage config class add --config-name NAME --name NAME --param PAR
 ### `ibmcloud sat storage config class get`
 {: #storage-config-class-get-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Get the details of a Satellite storage class.
 
@@ -3748,7 +3748,7 @@ ibmcloud sat storage config class help
 ### `ibmcloud sat storage config class ls`
 {: #storage-config-class-ls-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 List the storage classes in a Satellite storage configuration
 
@@ -3787,7 +3787,7 @@ ibmcloud sat storage config class ls --config CONFIG
 ### `ibmcloud sat storage config create`
 {: #storage-config-create-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Create a Satellite storage configuration to install storage drivers in your clusters.
 
@@ -3832,7 +3832,7 @@ ibmcloud sat storage config create --location LOCATION --name NAME --template-na
 ### `ibmcloud sat storage config get`
 {: #storage-config-get-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Get the details of a Satellite storage configuration.
 
@@ -3891,7 +3891,7 @@ ibmcloud sat storage config help
 ### `ibmcloud sat storage config ls`
 {: #storage-config-ls-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 List the Satellite storage configurations in your IBM Cloud account.
 
@@ -3950,7 +3950,7 @@ ibmcloud sat storage config param help
 ### `ibmcloud sat storage config param set`
 {: #storage-config-param-set-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Set the configuration and secret parameters of a Satellite storage configuration.
 
@@ -3992,7 +3992,7 @@ ibmcloud sat storage config param set --config CONFIG --param PARAM
 ### `ibmcloud sat storage config patch`
 {: #storage-config-patch-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Apply the latest patch updates to a Satellite storage configuration. Patch updates contain vulnerability remediations and bug fixes within the same major version.
 
@@ -4033,7 +4033,7 @@ ibmcloud sat storage config patch --config CONFIG
 ### `ibmcloud sat storage config rm`
 {: #storage-config-rm-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Remove a Satellite storage configuration.
 
@@ -4095,7 +4095,7 @@ ibmcloud sat storage help
 ### `ibmcloud sat storage template get`
 {: #storage-template-get-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Get the details of a Satellite storage template
 
@@ -4157,7 +4157,7 @@ ibmcloud sat storage template help
 ### `ibmcloud sat storage template ls`
 {: #storage-template-ls-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 List the available Satellite storage templates.
 
@@ -4193,7 +4193,7 @@ View and manage Satellite subscriptions to deploy Kubernetes configuration files
 ### `ibmcloud sat subscription create`
 {: #subscription-create-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Create a Satellite subscription for clusters. After you create the subscription, the associated Satellite configuration version is automatically deployed to the subscribed clusters.
 
@@ -4258,7 +4258,7 @@ ibmcloud sat subscription create \
 ### `ibmcloud sat subscription get`
 {: #subscription-get-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Get detailed information for a Satellite subscription.
 
@@ -4340,7 +4340,7 @@ ibmcloud sat subscription identity help
 ### `ibmcloud sat subscription identity set`
 {: #subscription-identity-set-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Update the Satellite subscription to use your identity to manage resources.
 
@@ -4376,7 +4376,7 @@ ibmcloud sat subscription identity set --subscription SUBSCRIPTION
 ### `ibmcloud sat subscription ls`
 {: #subscription-ls-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 List all Satellite subscriptions in your IBM Cloud account.
 
@@ -4412,7 +4412,7 @@ ibmcloud sat subscription ls
 ### `ibmcloud sat subscription rm`
 {: #subscription-rm-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Remove a Satellite subscription. The Kubernetes resources are no longer deployed to your clusters.
 
@@ -4448,7 +4448,7 @@ ibmcloud sat subscription rm --subscription SUBSCRIPTION
 ### `ibmcloud sat subscription update`
 {: #subscription-update-cli}
 
-
+[Satellite]{: tag-satellite} 
 
 Update a Satellite subscription.
 
