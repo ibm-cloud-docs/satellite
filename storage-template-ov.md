@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-09"
+lastupdated: "2026-09-29"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -126,7 +126,7 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 | [Azure File CSI Driver](/docs/satellite?topic=satellite-storage-azurefile-csi-driver) | `azurefile-csi-driver` | Version: 1.31.2 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-azurefile-csi-driver)  |
 | [GCP Compute Persistent Disk CSI Driver](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver) | `gcp-compute-persistent-disk-csi-driver` | Version: 1.8.0 (Default), Patch: 2 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-gcp-compute-persistent-disk-csi-driver)  |
 | [IBM Object Storage Plugin](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin) | `ibm-object-storage-plugin` | Version: 2.2 (Default), Patch: 43 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin)  |
-| [[Beta] IBM VPC Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver) | `ibm-vpc-block-csi-driver` | Version: 5.1 (Default), Patch: 18 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver)  |
+| [IBM VPC Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver) | `ibm-vpc-block-csi-driver` | Version: 5.1 (Default), Patch: 18 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver)  |
 | [[Beta] Local Storage File and/or Block](/docs/satellite?topic=satellite-storage-local-storage) | `local-storage` | Version: 1.0.0 (Default), Patch: 2 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-local-storage)  |
 | [Local Storage Operator](/docs/satellite?topic=satellite-storage-local-storage-operator) | `local-storage-operator` | Version: 1.0.0 (Default), Patch: 2 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-local-storage-operator)  |
 | [NetApp Ontap-NAS Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-nas) | `netapp-ontap-nas` | Version: 24.02 (Default), Patch: 9 | Supported | [Change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas) 
