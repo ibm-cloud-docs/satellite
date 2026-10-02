@@ -3,12 +3,12 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-03"
+lastupdated: "2026-10-02"
 
 
 keywords: change log, version history, netapp-trident
 
-subcollection: "satellite"
+subcollection: satellite
 
 ---
 
@@ -89,8 +89,10 @@ Review the version history for `netapp-trident`.
 {: #cl-storage-templates-netapp-trident-23.10-1}
 
 
-## Version 22.04
-{: #cl-storage-templates-netapp-trident-22.04}
+## Version 22.10
+{: #cl-storage-templates-netapp-trident-22.10}
+
+
 
 
 ### 13 December 2024, Version 22.04 - Revision 4

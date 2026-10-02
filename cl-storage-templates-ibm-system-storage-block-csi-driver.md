@@ -3,12 +3,12 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-07-30"
+lastupdated: "2026-10-02"
 
 
 keywords: change log, version history, ibm-system-storage-block-csi-driver
 
-subcollection: "satellite"
+subcollection: satellite
 
 ---
 

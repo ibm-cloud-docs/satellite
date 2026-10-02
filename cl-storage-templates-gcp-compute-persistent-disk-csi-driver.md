@@ -3,12 +3,12 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-24"
+lastupdated: "2026-10-02"
 
 
 keywords: change log, version history, gcp-compute-persistent-disk-csi-driver
 
-subcollection: "satellite"
+subcollection: satellite
 
 ---
 
