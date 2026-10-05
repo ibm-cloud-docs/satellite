@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-09-18"
+lastupdated: "2026-10-02"
 
 keywords: satellite, sitemap, IBM Cloud satellite, getting started, data, cloud
 subcollection: satellite
@@ -2970,7 +2970,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 [CLI change log](/docs/satellite?topic=satellite-cs_cli_changelog#cs_cli_changelog)
 
-* [Version 1.0](/docs/satellite?topic=satellite-cs_cli_changelog#10)
+* [Version v1.0.877](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01877)
 
 * [Version v1.0.864](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01864)
 
@@ -3707,7 +3707,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
     * [13 December 2024, Version 23.10 - Revision 1](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-23.10-1)
 
-* [Version 22.04](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-22.04)
+* [Version 22.10](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-22.10)
 
     * [13 December 2024, Version 22.04 - Revision 4](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-22.04-4)
 

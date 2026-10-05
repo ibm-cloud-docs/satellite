@@ -3,12 +3,12 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-18"
+lastupdated: "2026-10-02"
 
 
 keywords: change log, version history, netapp-ontap-san
 
-subcollection: "satellite"
+subcollection: satellite
 
 ---
 
