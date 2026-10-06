@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-28"
+lastupdated: "2026-10-06"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -779,5 +779,4 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local file s
 1. Review the FAQs in the [Red Hat OpenShift docs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.9/html/storage/configuring-persistent-storage#persistent-storage-using-local-volume){: external}.
 1. Review the [troubleshooting documentation](/docs/satellite?topic=satellite-storage-must-gather) to troubleshoot and resolve common issues.
 1. Check the status of the {{site.data.keyword.Bluemix_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external}.
-1. Review [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud){: external} to see whether other users experienced the same problem. Tag any questions with ibm-cloud, so that it's seen by the {{site.data.keyword.Bluemix_notm}} development teams.
-1. If you run into an issue with the Local File Storage Operator, you can open an issue in the [Red Hat Customer Portal](https://access.redhat.com/){: external}. 
+1. If you run into an issue with the Local File Storage Operator, you can open an issue in the [Red Hat Customer Portal](https://access.redhat.com/){: external}.
