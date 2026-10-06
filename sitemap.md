@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-10-02"
+lastupdated: "2026-10-06"
 
 keywords: satellite, sitemap, IBM Cloud satellite, getting started, data, cloud
 subcollection: satellite
@@ -498,6 +498,21 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
     * [12 January 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan1224)
 
         * Connector agent image version `1.1.3`.
+
+
+## Important notices
+{: #sitemap_important_notices}
+
+
+[Deprecation of RHEL-only location creation](/docs/satellite?topic=satellite-satellite-rhel-only-deprecation-notice#satellite-rhel-only-deprecation-notice)
+
+* [What is changing?](/docs/satellite?topic=satellite-satellite-rhel-only-deprecation-notice#rhel-only-deprecation-changes)
+
+* [What actions do I need to take?](/docs/satellite?topic=satellite-satellite-rhel-only-deprecation-notice#rhel-only-deprecation-actions)
+
+* [Which regions are impacted?](/docs/satellite?topic=satellite-satellite-rhel-only-deprecation-notice#rhel-only-deprecation-regions)
+
+* [Getting help](/docs/satellite?topic=satellite-satellite-rhel-only-deprecation-notice#rhel-only-deprecation-help)
 
 
 ## Tutorial library for Satellite

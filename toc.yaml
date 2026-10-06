@@ -29,6 +29,10 @@ toc:
           - connector-faq.md
       - managed-services.md
       - release-notes.md
+      - topicgroup:
+          label: Important notices
+          topics:
+          - sat-rhel-only-deprecation-notice.md
   - navgroup:
       id: tutorial
       topics:
