@@ -207,6 +207,10 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [October 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct26)
 
+    * [09 October 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct0926)
+
+        * Satellite Connector agent image version `1.2.14`.
+
     * [07 October 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct0726)
 
         * Deprecation of RHEL-only location creation.
