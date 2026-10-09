@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-10-06"
+lastupdated: "2026-10-09"
 
 keywords: satellite, sitemap, IBM Cloud satellite, getting started, data, cloud
 subcollection: satellite
@@ -3278,6 +3278,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 [{{site.data.keyword.satelliteshort}} Connector agent image change log](/docs/satellite?topic=satellite-cl-connector-agent-image#cl-connector-agent-image)
 
 * [Version 1.2](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2-change-log)
+
+    * [Version 1.2.14, released 8 Oct 2026](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2.14-change-log)
 
     * [Version 1.2.13, released 16 Sep 2026](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2.13-change-log)
 
