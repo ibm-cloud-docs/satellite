@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-02"
+lastupdated: "2026-10-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -25,7 +25,7 @@ Logging for your {{site.data.keyword.satelliteshort}} location and for the {{sit
 ## Setting up {{site.data.keyword.logs_full_notm}} for {{site.data.keyword.satelliteshort}} location platform logs
 {: #setup-la}
 
-Forward and view automatically generated {{site.data.keyword.satelliteshort}} location logs in a {{site.data.keyword.logs_full_notm}} instance enabled for platform-level logs.
+Forward and view automatically generated {{site.data.keyword.satelliteshort}} location logs in an {{site.data.keyword.logs_full_notm}} instance enabled for platform-level logs.
 {: shortdesc}
 
 ### Enabling platform logs

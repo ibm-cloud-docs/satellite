@@ -47,7 +47,7 @@
     }
   ],
   "section_devtools": {
-    "api": "/apidocs/kubernetes/containers-v1-v2",
+    "api": "/docs/apis/kubernetes/containers-v1-v2",
     "cli": "/docs/satellite?topic=satellite-icsat_map",
     "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/satellite_cluster"
   },

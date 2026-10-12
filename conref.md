@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-03"
+lastupdated: "2026-10-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -272,13 +272,13 @@ If you enable automatic patch updates, you must still apply major updates manual
 
 1. Copy one of the following example requests. 
 
-    Example request to assign a [configuration to a cluster](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external}.
+    Example request to assign a [configuration to a cluster](https://cloud.ibm.com/docs/apis/kubernetes/containers-v1-v2){: external}.
     ```sh
     curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createAssignmentByCluster" -H "accept: application/json" -H "Authorization: Bearer TOKEN" -H "Content-Type: application/json" -d "{ \"channelName\": \"CONFIGURATION-NAME\", \"cluster\": \"CLUSTER-ID\", \"controller\": \"LOCATION-ID\", \"name\": \"ASSIGNMENT-NAME\"}"
     ```
     {: pre}
     
-    Example request to [assign configuration to a cluster group](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external}.
+    Example request to [assign configuration to a cluster group](https://cloud.ibm.com/docs/apis/kubernetes/containers-v1-v2){: external}.
     ```sh
     curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createAssignment" -H "accept: application/json" -H "Authorization: Bearer TOKEN" -H "Content-Type: application/json" -d "{ \"channelName\": \"CONFIGURATION-NAME\", \"cluster\": \"string\", \"groups\": [ \"CLUSTER-GROUP\" ], \"name\": \"ASSIGNMENT-NAME\"}"
     ```
@@ -297,7 +297,7 @@ If you enable automatic patch updates, you must still apply major updates manual
 {: #assignment-update-api}
 {: api}
 
-You can use the [`/v2/storage/satellite/updateAssignment`](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external} API to update your assignments with new clusters or cluster groups.
+You can use the [`/v2/storage/satellite/updateAssignment`](https://cloud.ibm.com/docs/apis/kubernetes/containers-v1-v2){: external} API to update your assignments with new clusters or cluster groups.
 
 1. Copy the following example request and replace the variables for the cluster groups and assignments that you want to update.
     ```sh
@@ -318,7 +318,7 @@ You can use the [`/v2/storage/satellite/updateAssignment`](https://cloud.ibm.com
 {: #assignment-upgrade-api}
 {: api}
 
-You can use the [`/v2/storage/satellite/updateAssignment`](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external} API to update your assignments with new clusters or cluster groups. Set `updateConfigVersion` to `true` to apply the revision update.
+You can use the [`/v2/storage/satellite/updateAssignment`](https://cloud.ibm.com/docs/apis/kubernetes/containers-v1-v2){: external} API to update your assignments with new clusters or cluster groups. Set `updateConfigVersion` to `true` to apply the revision update.
 
 1. Copy the following example request and replace the variables for the cluster groups and assignments that you want to update.
     ```sh
