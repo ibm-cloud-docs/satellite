@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-19"
+lastupdated: "2026-10-06"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce, compute engine
 
@@ -481,5 +481,4 @@ When you use Google Compute Engine, try the following resources before you open 
 1. Review the FAQs in the [Google Cloud docs](https://docs.cloud.google.com/storage/docs/faq){: external}.
 1. Review the [troubleshooting documentation](/docs/satellite?topic=satellite-storage-must-gather) to troubleshoot and resolve common issues.
 1. Check the status of the {{site.data.keyword.Bluemix_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external}.
-1. Review [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud){: external} to see whether other users experienced the same problem. Tag any questions with `ibm-cloud` and `Google-Cloud`.
 1. Open an issue in the [Google Cloud Console](https://cloud.google.com/support-hub){: external}.

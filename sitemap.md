@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-10-02"
+lastupdated: "2026-10-09"
 
 keywords: satellite, sitemap, IBM Cloud satellite, getting started, data, cloud
 subcollection: satellite
@@ -204,6 +204,16 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 
 [{{site.data.keyword.satellitelong_notm}} release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
+
+* [October 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct26)
+
+    * [09 October 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct0926)
+
+        * Satellite Connector agent image version `1.2.14`.
+
+    * [07 October 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct0726)
+
+        * Deprecation of RHEL-only location creation.
 
 * [September 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep26)
 
@@ -498,6 +508,21 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
     * [12 January 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan1224)
 
         * Connector agent image version `1.1.3`.
+
+
+## Important notices
+{: #sitemap_important_notices}
+
+
+[Deprecation of RHEL-only location creation](/docs/satellite?topic=satellite-satellite-rhel-only-deprecation-notice#satellite-rhel-only-deprecation-notice)
+
+* [What is changing?](/docs/satellite?topic=satellite-satellite-rhel-only-deprecation-notice#rhel-only-deprecation-changes)
+
+* [What actions do I need to take?](/docs/satellite?topic=satellite-satellite-rhel-only-deprecation-notice#rhel-only-deprecation-actions)
+
+* [Which regions are impacted?](/docs/satellite?topic=satellite-satellite-rhel-only-deprecation-notice#rhel-only-deprecation-regions)
+
+* [Getting help](/docs/satellite?topic=satellite-satellite-rhel-only-deprecation-notice#rhel-only-deprecation-help)
 
 
 ## Tutorial library for Satellite
@@ -3257,6 +3282,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 [{{site.data.keyword.satelliteshort}} Connector agent image change log](/docs/satellite?topic=satellite-cl-connector-agent-image#cl-connector-agent-image)
 
 * [Version 1.2](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2-change-log)
+
+    * [Version 1.2.14, released 8 Oct 2026](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2.14-change-log)
 
     * [Version 1.2.13, released 16 Sep 2026](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2.13-change-log)
 

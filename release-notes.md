@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-17"
+lastupdated: "2026-10-09"
 
 keywords: satellite, hybrid, multicloud, release notes, changes, IBM Cloud satellite, updates, storage templates, connector agent
 
@@ -21,6 +21,24 @@ content-type: release-note
 
 Review the latest changes to the {{site.data.keyword.satellitelong_notm}} documentation, including storage template updates, connector agent versions, and new features.
 {: shortdesc}
+
+## October 2026
+{: #satellite-oct26}
+
+
+### 09 October 2026
+{: #satellite-oct0926}
+{: release-note}
+
+Satellite Connector agent image version `1.2.14`.
+:   For more information, see the [change log](/docs/satellite?topic=satellite-cl-connector-agent-image) and [Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally#pull-agent-image).
+
+### 07 October 2026
+{: #satellite-oct0726}
+{: release-note}
+
+Deprecation of RHEL-only location creation.
+:   Creation of new RHEL-only (non-Red Hat CoreOS enabled) {{site.data.keyword.satellitelong_notm}} locations is deprecated. After 30 days, creating a new RHEL hosts only location will no longer be supported. All newly created locations will be Red Hat CoreOS enabled by default. Existing RHEL hosts only locations are not affected. For more information, see [Deprecation of RHEL-only location creation](/docs/satellite?topic=satellite-satellite-rhel-only-deprecation-notice).
 
 ## September 2026
 {: #satellite-sep26}

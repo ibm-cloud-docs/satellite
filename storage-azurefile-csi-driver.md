@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-09"
+lastupdated: "2026-10-06"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file, azure file
 
@@ -533,5 +533,4 @@ When you use Azure File, try the following resources before you open a support c
 1. Review the FAQs in the [Azure Knowledge Center](https://azure.microsoft.com/en-us/support/legal/faq){: external}.
 1. Review the [troubleshooting documentation](/docs/satellite?topic=satellite-storage-must-gather) to troubleshoot and resolve common issues.
 1. Check the status of the {{site.data.keyword.Bluemix_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external}.
-1. Review [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud){: external} to see whether other users experienced the same problem. Tag any questions with `ibm-cloud` and `Azure-Disk`.
-1. Open an issue in the [Azure Service Portal](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview){: external}. 
+1. Open an issue in the [Azure Service Portal](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview){: external}.
