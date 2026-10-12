@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-27"
+lastupdated: "2026-10-12"
 
 keywords: satellite, api, iam, tokens, refresh
 
@@ -34,8 +34,8 @@ API endpoint prefix
 :   v2 API: `https://containers.cloud.ibm.com/global/v2`
 
 API reference docs
-:   v1 API: [`https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2`](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external}
-:   v2 API: [`https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2`](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external}
+:   v1 API: [`https://cloud.ibm.com/docs/apis/kubernetes/containers-v1-v2`](https://cloud.ibm.com/docs/apis/kubernetes/containers-v1-v2){: external}
+:   v2 API: [`https://cloud.ibm.com/docs/apis/kubernetes/containers-v1-v2`](https://cloud.ibm.com/docs/apis/kubernetes/containers-v1-v2){: external}
 
 API architectural style
 :   v1 API: Representational state transfer (REST) that focuses on resources that you interact with through HTTP methods such as `GET`, `POST`, `PUT`, `PATCH`, and `DELETE`.
