@@ -3,12 +3,12 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-02"
+lastupdated: "2026-10-13"
 
 
 keywords: change log, version history, aws-ebs-csi-driver
 
-subcollection: satellite
+subcollection: {[subcollection]}
 
 ---
 
