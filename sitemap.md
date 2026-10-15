@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-10-14"
+lastupdated: "2026-10-15"
 
 keywords: satellite, sitemap, IBM Cloud satellite, getting started, data, cloud
 subcollection: satellite
@@ -2336,8 +2336,6 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#odf-local-parameter-reference)
 
-    * [4.15 parameter reference](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#odf-local-4.15-parameters)
-
     * [4.16 parameter reference](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#odf-local-4.16-parameters)
 
     * [4.17 parameter reference](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#odf-local-4.17-parameters)
@@ -2391,8 +2389,6 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
     * [Removing the ODF remote storage assignment from the command line](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-template-rm-cli)
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-parameter-reference)
-
-    * [4.15 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-4.15-parameters)
 
     * [4.16 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-4.16-parameters)
 

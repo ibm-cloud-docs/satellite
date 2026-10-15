@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-20"
+lastupdated: "2026-10-15"
 
 
 keywords: satellite storage, features, overview
@@ -33,14 +33,12 @@ subcollection: satellite
 | NetApp Ontap-NAS Driver | 25.06 | AWS, Azure, IBM, GCP | True | True | True | Zonal | True |
 | NetApp Ontap-SAN Driver | 24.02 | AWS,Azure,IBM | True | True | True | Zonal | True |
 | NetApp Ontap-SAN Driver | 25.06 | AWS, Azure, IBM, GCP | True | True | True | Zonal | True |
-| OpenShift Data Foundation for local devices | 4.15 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for local devices | 4.16 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for local devices | 4.17 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for local devices | 4.18 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for local devices | 4.19 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for local devices | 4.20 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for local devices | 4.21 | OpenShift Container Platform | True | True | False | Regional | True |
-| OpenShift Data Foundation for remote storage | 4.15 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for remote storage | 4.16 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for remote storage | 4.17 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for remote storage | 4.18 | OpenShift Container Platform | True | True | False | Regional | True |
