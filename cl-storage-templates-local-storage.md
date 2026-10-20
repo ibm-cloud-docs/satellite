@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-13"
+lastupdated: "2026-10-20"
 
 
 keywords: change log, version history, local-storage
@@ -33,9 +33,3 @@ Review the version history for `local-storage`.
 {: #cl-storage-templates-local-storage-1.0.0-2}
 
 - Add support for ROKS 4.15 & 4.16
-
-
-### 18 October 2023, Version 1.0.0 - Revision 1
-{: #cl-storage-templates-local-storage-1.0.0-1}
-
-- Initial release
