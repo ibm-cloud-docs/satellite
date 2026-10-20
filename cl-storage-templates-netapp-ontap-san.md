@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-14"
+lastupdated: "2026-10-20"
 
 
 keywords: change log, version history, netapp-ontap-san
@@ -206,13 +206,6 @@ Review the version history for `netapp-ontap-san`.
 - Updates the UBI to version `8.8-1072.1697626218`.
 
 
-### 18 October 2023, Version 22.10 - Revision 9
-{: #cl-storage-templates-netapp-ontap-san-22.10-9}
-
-- Resolves the following CVEs: [CVE-2023-29491](https://nvd.nist.gov/vuln/detail/cve-2023-29491){: external}, [CVE-2023-30630](https://nvd.nist.gov/vuln/detail/cve-2023-30630){: external}, [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/cve-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/cve-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/cve-2023-4806){: external}, and [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/cve-2023-4813){: external}.
-- Updates the UBI to version `8.8-1072.1696517598`.
-
-
 
 
 ### 24 June 2025, Version 22.04 - Revision 29
@@ -261,13 +254,6 @@ Review the version history for `netapp-ontap-san`.
 - Updates the UBI to version `8.8-1072.1697626218`.
 
 
-### 18 October 2023, Version 22.04 - Revision 22
-{: #cl-storage-templates-netapp-ontap-san-22.04-22}
-
-- Resolves the following CVEs: [CVE-2023-29491](https://nvd.nist.gov/vuln/detail/cve-2023-29491){: external}, [CVE-2023-30630](https://nvd.nist.gov/vuln/detail/cve-2023-30630){: external}, [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/cve-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/cve-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/cve-2023-4806){: external}, and [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/cve-2023-4813){: external}.
-- Updates the UBI to version `8.8-1072.1696517598`.
-
-
 
 
 ### 30 October 2023, Version 21.04 - Revision 26
@@ -275,10 +261,3 @@ Review the version history for `netapp-ontap-san`.
 
 - Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/cve-2023-44487){: external}.
 - Updates the UBI to version `8.8-1072.1697626218`.
-
-
-### 18 October 2023, Version 21.04 - Revision 25
-{: #cl-storage-templates-netapp-ontap-san-21.04-25}
-
-- Resolves the following CVEs: [CVE-2023-29491](https://nvd.nist.gov/vuln/detail/cve-2023-29491){: external}, [CVE-2023-30630](https://nvd.nist.gov/vuln/detail/cve-2023-30630){: external}, [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/cve-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/cve-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/cve-2023-4806){: external}, and [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/cve-2023-4813){: external}.
-- Updates the UBI to version `8.8-1072.1696517598`.

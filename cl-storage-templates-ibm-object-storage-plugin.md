@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-13"
+lastupdated: "2026-10-20"
 
 
 keywords: change log, version history, ibm-object-storage-plug-in
@@ -217,12 +217,4 @@ Review the version history for `ibm-object-storage-plugin`.
 
 - Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/cve-2023-44487){: external}, and [CVE-2023-39325](https://nvd.nist.gov/vuln/detail/cve-2023-39325){: external}.
 - Updates the UBI to version `8.8-1072.1697626218`.
-- Updates Go to version `1.19.12`.
-
-
-### 18 October 2023, Version 2.2 - Revision 15
-{: #cl-storage-templates-ibm-object-storage-plugin-2.2-15}
-
-- Resolves the following CVEs: [CVE-2023-29491](https://nvd.nist.gov/vuln/detail/cve-2023-29491){: external}, [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/cve-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/cve-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/cve-2023-4806){: external}, and [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/cve-2023-4813){: external}.
-- Updates the UBI to version `8.8-1072.1696517598`.
 - Updates Go to version `1.19.12`.
