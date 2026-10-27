@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-10-13"
+lastupdated: "2026-10-26"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -36,6 +36,10 @@ To install the CLI, see [Installing the the CLI](/docs/satellite?topic=satellite
     ibmcloud plugin install ks
     ```
     {: pre}
+
+
+
+
 
 
 
