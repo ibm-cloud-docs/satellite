@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-10-26"
+lastupdated: "2026-10-29"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -2617,7 +2617,7 @@ Create, view, and modify Satellite locations.
 Create a Satellite location. A Satellite location is a representation of an environment in your infrastructure provider. After you create a location, attach hosts from separate zones of your backing infrastructure environment with the `ibmcloud sat host attach` command.
 
 ```sh
-ibmcloud sat location create --managed-from REGION --name NAME [--capability CAPABILITY ...] [--coreos-enabled] [--cos-bucket BUCKET] [--description DESCRIPTION] [--ha-zone ZONE ...] [--physical-address ADDRESS] [--pod-network-interface-selection SELECTION] [--pod-subnet SUBNET] [--provider PROVIDER] [--provider-credential CREDENTIAL] [--provider-region REGION] [-q] [--service-subnet SUBNET]
+ibmcloud sat location create --managed-from REGION --name NAME [--capability CAPABILITY ...] [--cos-bucket BUCKET] [--description DESCRIPTION] [--ha-zone ZONE ...] [--physical-address ADDRESS] [--pod-network-interface-selection SELECTION] [--pod-subnet SUBNET] [--provider PROVIDER] [--provider-credential CREDENTIAL] [--provider-region REGION] [-q] [--service-subnet SUBNET]
 ```
 
 #### Command options
@@ -2626,9 +2626,6 @@ ibmcloud sat location create --managed-from REGION --name NAME [--capability CAP
 
 `--capability`
 :    A capability of the Satellite location.
-
-`--coreos-enabled`
-:    Enable Red Hat CoreOS features for the Satellite location. This action cannot be undone. See [https://ibm.biz/infra-os](https://ibm.biz/infra-os).
 
 `--cos-bucket`
 :    Specify the name of the IBM Cloud Object Storage bucket to store your Satellite location control plane data. Otherwise, a new bucket is created for you.
@@ -2649,10 +2646,10 @@ ibmcloud sat location create --managed-from REGION --name NAME [--capability CAP
 :    The physical address of the Satellite location.
 
 `--pod-network-interface-selection`
-:    The method for selecting the node network interface for the internal pod network. This option can be used only if you also enable Red Hat CoreOS with the `--coreos-enabled` option. To provide a direct URL or IP address, specify `can-reach=<url>` or `can-reach=<ip_address>`. To choose a network interface, specify `interface=<network_interface>`.
+:    The method for selecting the node network interface for the internal pod network. To provide a direct URL or IP address, specify `can-reach=<url>` or `can-reach=<ip_address>`. To choose a network interface, specify `interface=<network_interface>`.
 
 `--pod-subnet`
-:    Specify a custom subnet CIDR to provide private IP addresses for pods. This option is used only if you enable Red Hat CoreOS with the `--coreos-enabled` option. The subnet must be `/23` or larger. See [https://ibm.biz/sat-location-create](https://ibm.biz/sat-location-create). Default value: '172.16.0.0/16
+:    Specify a custom subnet CIDR to provide private IP addresses for pods. The subnet must be `/23` or larger. See [https://ibm.biz/sat-location-create](https://ibm.biz/sat-location-create). Default value: '172.16.0.0/16
 
 `--provider`
 :    Indicate the infrastructure provider to use for the Satellite location. If you include this option, you must also include the `--provider-credential` option. Accepted values: `aws`, `azure`, `gcp`, `vmware`
@@ -2667,7 +2664,7 @@ ibmcloud sat location create --managed-from REGION --name NAME [--capability CAP
 :    Do not show the message of the day or update reminders.
 
 `--service-subnet`
-:    Specify a custom subnet CIDR to provide private IP addresses for services. This option is used only if you enable Red Hat CoreOS with the `--coreos-enabled` option. The subnet must be `/24` or larger. See [https://ibm.biz/sat-location-create](https://ibm.biz/sat-location-create). Default value: `172.20.0.0/16`
+:    Specify a custom subnet CIDR to provide private IP addresses for services. The subnet must be `/24` or larger. See [https://ibm.biz/sat-location-create](https://ibm.biz/sat-location-create). Default value: `172.20.0.0/16`
 
 
 #### Examples

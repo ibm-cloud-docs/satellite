@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-13"
+lastupdated: "2026-10-29"
 
 
 keywords: change log, version history, ibm-vpc-block-csi-driver
@@ -178,11 +178,3 @@ Review the version history for `ibm-vpc-block-csi-driver`.
 - Updates the UBI to version `8.9-1029`.
 - Updates Go to version `1.20.11`.
 - security fix to use correct socket path as SElinux policy modules has been changed and CSI also recommending to use /var/lib/kubelet/plugins/.
-
-
-### 30 October 2023, Version 5.0 - Revision 14
-{: #cl-storage-templates-ibm-vpc-block-csi-driver-5.0-14}
-
-- Resolves the following CVEs: [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/cve-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/cve-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/cve-2023-4806){: external}, [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/cve-2023-4813){: external}, [CVE-2023-39325](https://nvd.nist.gov/vuln/detail/cve-2023-39325){: external}, and [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/cve-2023-44487){: external}.
-- Updates the UBI to version `8.8-1072.1697626218`.
-- Updates Go to version `1.20.10`.

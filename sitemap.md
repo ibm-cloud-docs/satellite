@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-10-26"
+lastupdated: "2026-10-29"
 
 keywords: satellite, sitemap, IBM Cloud satellite, getting started, data, cloud
 subcollection: satellite
@@ -2991,6 +2991,10 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 [CLI change log](/docs/satellite?topic=satellite-cs_cli_changelog#cs_cli_changelog)
 
+* [Version v1.0.901](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01901)
+
+* [Version v1.0.899](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01899)
+
 * [Version v1.0.896](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01896)
 
 * [Version v1.0.892](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01892)
@@ -3468,8 +3472,6 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
     * [27 November 2023, Version 2.2 - Revision 17](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-17)
 
-    * [30 October 2023, Version 2.2 - Revision 16](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-16)
-
 [`ibm-spectrum-fusion` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-ibm-spectrum-fusion#cl-storage-templates-ibm-spectrum-fusion)
 
 * [Version 2.4.0](/docs/satellite?topic=satellite-cl-storage-templates-ibm-spectrum-fusion#cl-storage-templates-ibm-spectrum-fusion-2.4.0)
@@ -3519,8 +3521,6 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 * [Version 5.0](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.0)
 
     * [27 November 2023, Version 5.0 - Revision 15](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.0-15)
-
-    * [30 October 2023, Version 5.0 - Revision 14](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.0-14)
 
 [`local-storage-operator` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-local-storage-operator#cl-storage-templates-local-storage-operator)
 
@@ -3598,8 +3598,6 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
     * [27 November 2023, Version 22.10 - Revision 11](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.10-11)
 
-    * [30 October 2023, Version 22.10 - Revision 10](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.10-10)
-
     * [24 June 2025, Version 22.04 - Revision 29](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.04-29)
 
     * [28 April 2025, Version 22.04 - Revision 28](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.04-28)
@@ -3611,10 +3609,6 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
     * [25 January 2024, Version 22.04 - Revision 25](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.04-25)
 
     * [27 November 2023, Version 22.04 - Revision 24](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.04-24)
-
-    * [30 October 2023, Version 22.04 - Revision 23](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.04-23)
-
-    * [30 October 2023, Version 21.04 - Revision 25](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-21.04-25)
 
 [`netapp-ontap-san` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san)
 
@@ -3672,8 +3666,6 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
     * [27 November 2023, Version 22.10 - Revision 11](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.10-11)
 
-    * [30 October 2023, Version 22.10 - Revision 10](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.10-10)
-
     * [24 June 2025, Version 22.04 - Revision 29](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.04-29)
 
     * [28 April 2025, Version 22.04 - Revision 28](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.04-28)
@@ -3685,10 +3677,6 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
     * [25 January 2024, Version 22.04 - Revision 25](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.04-25)
 
     * [27 November 2023, Version 22.04 - Revision 24](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.04-24)
-
-    * [30 October 2023, Version 22.04 - Revision 23](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.04-23)
-
-    * [30 October 2023, Version 21.04 - Revision 26](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-21.04-26)
 
 [`netapp-trident` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident)
 
@@ -3936,8 +3924,6 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
     * [25 January 2024, Version 4.13 - Revision 6](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.13-6)
 
-    * [30 October 2023, Version 4.13 - Revision 5](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.13-5)
-
     * [05 June 2025, Version 4.12 - Revision 20](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.12-20)
 
     * [25 April 2025, Version 4.12 - Revision 19](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.12-19)
@@ -3958,8 +3944,6 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
     * [27 November 2023, Version 4.12 - Revision 8](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.12-8)
 
-    * [30 October 2023, Version 4.12 - Revision 7](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.12-7)
-
     * [07 March 2024, Version 4.11 - Revision 15](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.11-15)
 
     * [16 February 2024, Version 4.11 - Revision 14](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.11-14)
@@ -3968,11 +3952,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
     * [27 November 2023, Version 4.11 - Revision 12](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.11-12)
 
-    * [30 October 2023, Version 4.11 - Revision 11](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.11-11)
-
     * [27 November 2023, Version 4.10 - Revision 23](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.10-23)
-
-    * [30 October 2023, Version 4.10 - Revision 22](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.10-22)
 
 [`odf-remote` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote)
 
@@ -4190,8 +4170,6 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
     * [25 January 2024, Version 4.13 - Revision 6](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.13-6)
 
-    * [30 October 2023, Version 4.13 - Revision 5](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.13-5)
-
     * [05 June 2025, Version 4.12 - Revision 20](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.12-20)
 
     * [25 April 2025, Version 4.12 - Revision 19](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.12-19)
@@ -4212,8 +4190,6 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
     * [27 November 2023, Version 4.12 - Revision 8](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.12-8)
 
-    * [30 October 2023, Version 4.12 - Revision 7](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.12-7)
-
     * [07 March 2024, Version 4.11 - Revision 15](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.11-15)
 
     * [16 February 2024, Version 4.11 - Revision 14](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.11-14)
@@ -4222,11 +4198,7 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
     * [27 November 2023, Version 4.11 - Revision 12](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.11-12)
 
-    * [30 October 2023, Version 4.11 - Revision 11](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.11-11)
-
     * [27 November 2023, Version 4.10 - Revision 23](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.10-23)
-
-    * [30 October 2023, Version 4.10 - Revision 22](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.10-22)
 
 [`ridge-csi-driver` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-ridge-csi-driver#cl-storage-templates-ridge-csi-driver)
 

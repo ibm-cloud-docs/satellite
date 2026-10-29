@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-20"
+lastupdated: "2026-10-29"
 
 
 keywords: change log, version history, odf-local
@@ -762,14 +762,6 @@ Review the version history for `odf-local`.
 - Enable/Disable Noobaa public LB
 
 
-### 30 October 2023, Version 4.13 - Revision 5
-{: #cl-storage-templates-odf-local-4.13-5}
-
-- Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/cve-2023-44487){: external}.
-- Updates the UBI to version `8.8-1072.1697626218`.
-- Updates Go to version `1.20.7`.
-
-
 
 
 ### 05 June 2025, Version 4.12 - Revision 20
@@ -846,14 +838,6 @@ Review the version history for `odf-local`.
 - Updates Go to version `1.20.11`.
 
 
-### 30 October 2023, Version 4.12 - Revision 7
-{: #cl-storage-templates-odf-local-4.12-7}
-
-- Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/cve-2023-44487){: external}.
-- Updates the UBI to version `8.8-1072.1697626218`.
-- Updates Go to version `1.20.7`.
-
-
 
 
 ### 07 March 2024, Version 4.11 - Revision 15
@@ -888,14 +872,6 @@ Review the version history for `odf-local`.
 - Updates Go to version `1.20.11`.
 
 
-### 30 October 2023, Version 4.11 - Revision 11
-{: #cl-storage-templates-odf-local-4.11-11}
-
-- Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/cve-2023-44487){: external}.
-- Updates the UBI to version `8.8-1072.1697626218`.
-- Updates Go to version `1.20.7`.
-
-
 
 
 ### 27 November 2023, Version 4.10 - Revision 23
@@ -904,11 +880,3 @@ Review the version history for `odf-local`.
 - Resolves the following CVEs: [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/cve-2007-4559){: external}, [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}, and [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}.
 - Updates the UBI to version `8.9-1029`.
 - Updates Go to version `1.20.11`.
-
-
-### 30 October 2023, Version 4.10 - Revision 22
-{: #cl-storage-templates-odf-local-4.10-22}
-
-- Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/cve-2023-44487){: external}.
-- Updates the UBI to version `8.8-1072.1697626218`.
-- Updates Go to version `1.20.7`.
