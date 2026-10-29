@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-20"
+lastupdated: "2026-10-29"
 
 
 keywords: change log, version history, ibm-object-storage-plug-in
@@ -210,11 +210,3 @@ Review the version history for `ibm-object-storage-plugin`.
 - Updates the UBI to version `8.9-1029`.
 - Updates Go to version `1.21.4`.
 - s3fs fuse version updated to v1.93
-
-
-### 30 October 2023, Version 2.2 - Revision 16
-{: #cl-storage-templates-ibm-object-storage-plugin-2.2-16}
-
-- Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/cve-2023-44487){: external}, and [CVE-2023-39325](https://nvd.nist.gov/vuln/detail/cve-2023-39325){: external}.
-- Updates the UBI to version `8.8-1072.1697626218`.
-- Updates Go to version `1.19.12`.
