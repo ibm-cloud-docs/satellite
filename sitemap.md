@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-10-29"
+lastupdated: "2026-11-02"
 
 keywords: satellite, sitemap, IBM Cloud satellite, getting started, data, cloud
 subcollection: satellite
@@ -2414,6 +2414,10 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Scale down OpenShift Data Foundation](/docs/satellite?topic=satellite-sat-storage-odf-update#scale-down-odf-sat)
 
+* [Option 1: Update the worker node in place](/docs/satellite?topic=satellite-sat-storage-odf-update#update-worker-node-inplace-sat)
+
+* [Option 2: Replace the worker node](/docs/satellite?topic=satellite-sat-storage-odf-update#replace-worker-node-sat)
+
 * [Cordon and drain the worker node](/docs/satellite?topic=satellite-sat-storage-odf-update#cordon-drain-worker-node-sat)
 
 * [Assign a new host as a worker node](/docs/satellite?topic=satellite-sat-storage-odf-update#assign-worker-node-sat)
@@ -2990,6 +2994,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
     * [`ibmcloud sat subscription update`](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-update-cli)
 
 [CLI change log](/docs/satellite?topic=satellite-cs_cli_changelog#cs_cli_changelog)
+
+* [Version v1.0.904](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01904)
 
 * [Version v1.0.901](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01901)
 

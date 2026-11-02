@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-28"
+lastupdated: "2026-11-02"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -26,7 +26,7 @@ Update OpenShift Data Foundation in your {{site.data.keyword.satelliteshort}} cl
 ## Prerequisites
 {: #sat-storage-odf-update-prereq}
 
-* You must have additional unassigned hosts available in your location. Make sure that you [attach](/docs/satellite?topic=satellite-attach-hosts) additional hosts before starting the update process.
+* If you replace your worker nodes instead of [updating them in place](#update-worker-node-inplace-sat), you must have additional unassigned hosts available in your location. Make sure that you [attach](/docs/satellite?topic=satellite-attach-hosts) additional hosts before starting the update process. In-place updates don't require additional hosts.
 
 ## Update the cluster master
 {: #sat-storage-update-cluster-master}
@@ -35,12 +35,11 @@ Update OpenShift Data Foundation in your {{site.data.keyword.satelliteshort}} cl
 
 1. Update the [management plane](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-update-cli)
 
-    Example command: 
+    Example command:
     ```sh
     ibmcloud oc cluster master update --cluster CLUSTER [--version MAJOR.MINOR.PATCH] [--force-update] [-f] [-q]
     ```
     {: pre}
-
 
 ## Determine which OpenShift Data Foundation (ODF) worker nodes you want to update
 {: #determine-worker-nodes-sat}
@@ -54,9 +53,9 @@ Update OpenShift Data Foundation in your {{site.data.keyword.satelliteshort}} cl
     oc get nodes
     ```
     {: pre}
-    
+
     Example output
-        
+
     ```sh
     NAME           STATUS   ROLES           AGE    VERSION
     10.241.0.4     Ready    master,worker   106s   v1.21.6+4b61f94
@@ -71,45 +70,100 @@ Update OpenShift Data Foundation in your {{site.data.keyword.satelliteshort}} cl
 
 [Major]{: tag-red} [Minor]{: tag-blue}
 
-1.  For each worker node that you found in the previous step, find the `rook-ceph-mon` and `rook-ceph-osd` deployments.
+1. For each worker node that you found in the previous step, find the `rook-ceph-mon` and `rook-ceph-osd` deployments.
     ```sh
-    oc get pods -n openshift-storage -o wide | grep -i <node_name>
+    oc get pods -n openshift-storage -o wide | grep -i NODE_NAME
     ```
     {: pre}
-    
-1. Scale down the deployments that you found in the previous step. 
+
+1. Scale down the deployments that you found in the previous step.
     ```sh
     oc scale deployment rook-ceph-mon-c --replicas=0 -n openshift-storage
     oc scale deployment rook-ceph-osd-2 --replicas=0 -n openshift-storage
-    oc scale deployment --selector=app=rook-ceph-crashcollector,node_name=NODE-NAME --replicas=0 -n openshift-storage
+    oc scale deployment --selector=app=rook-ceph-crashcollector,node_name=NODE_NAME --replicas=0 -n openshift-storage
     ```
     {: pre}
-    
+
+## Option 1: Update the worker node in place
+{: #update-worker-node-inplace-sat}
+{: step}
+
+[Major]{: tag-red} [Minor]{: tag-blue}
+
+You can update your worker nodes in place, one at a time, instead of replacing them with new hosts. In-place updates are supported for all OpenShift Data Foundation versions. When you update a worker node in place, the update process automatically cordons and drains the worker node, so you don't need to cordon and drain it manually.
+
+If you update your worker nodes in place, skip the following sections. You also don't need to scale up OpenShift Data Foundation manually after the update.
+
+* [Cordon and drain the worker node](#cordon-drain-worker-node-sat)
+* [Assign a new host as a worker node](#assign-worker-node-sat)
+* [Update your configuration to add the new storage nodes](#add-storage-node-sat)
+* [Clean up the resources from the old node](#cleanup-os-storage-sat)
+
+Complete the steps for one worker node at a time.
+{: important}
+
+1. Update the worker node.
+    ```sh
+    ibmcloud ks worker update --cluster CLUSTER_ID --worker WORKER_ID
+    ```
+    {: pre}
+
+    `--cluster CLUSTER_ID`
+    :   The name or ID of your cluster.
+
+    `--worker WORKER_ID`
+    :   The ID of the worker node that you want to update. To list the worker node IDs, run `ibmcloud ks worker ls --cluster CLUSTER_ID`.
+
+1. Verify that the worker node is in a `Ready` state and shows the updated version.
+    ```sh
+    oc get nodes
+    ```
+    {: pre}
+
+1. Wait for the pods to come up on the updated worker node. In the output, verify that the `rook-ceph-mon` and `rook-ceph-osd` pods are in a `Running` state.
+    ```sh
+    oc get pods -n openshift-storage -o wide | grep -i NODE_NAME
+    ```
+    {: pre}
+
+1. Repeat the scale down and update steps for each worker node that you want to update.
+
+1. [Major]{: tag-red} After you update all of your worker nodes, complete the steps to [edit your old storage assignment](#sat-storage-config-edit), [create a new storage configuration](#sat-odf-new-config), and [create a new assignment](#sat-odf-new-assignment).
+
+## Option 2: Replace the worker node
+{: #replace-worker-node-sat}
+
+[Major]{: tag-red} [Minor]{: tag-blue}
+
+Instead of [updating your worker nodes in place](#update-worker-node-inplace-sat), you can replace them with new hosts. Complete the steps in the following sections to replace the worker node with a new host.
+
 ## Cordon and drain the worker node
 {: #cordon-drain-worker-node-sat}
 {: step}
 
 [Major]{: tag-red} [Minor]{: tag-blue}
 
-1.  Cordon the node. Cordoning the node prevents any pods from being scheduled on this node.
+Complete these steps only if you are replacing your worker nodes.
+
+1. Cordon the node. Cordoning the node prevents any pods from being scheduled on this node.
     ```sh
     oc adm cordon NODE_NAME
     ```
     {: pre}
-    
+
     Example output
-    
+
     ```sh
     node/10.241.0.4 cordoned
     ```
     {: screen}
-    
-1. Drain the node to remove all the pods. When you drain the worker node, the pods move to the other worker nodes ensuring there is no downtime. Draining also ensures that there is no disruption of the pod disruption budget. 
+
+1. Drain the node to remove all the pods. When you drain the worker node, the pods move to the other worker nodes ensuring there is no downtime. Draining also ensures that there is no disruption of the pod disruption budget.
     ```sh
     oc adm drain NODE_NAME --force --delete-emptydir-data --ignore-daemonsets
     ```
     {: pre}
-    
+
     Example output
     ```sh
     evicting pod "managed-storage-validation-webhooks-7fd79bc9f7-pdpv6"
@@ -125,9 +179,8 @@ Update OpenShift Data Foundation in your {{site.data.keyword.satelliteshort}} cl
     evicting pod "network-check-source-66c7fbb86-2r78z"
     ```
     {: screen}
-    
-1. Wait until draining finishes, then complete the following steps to replace the worker node. 
 
+1. Wait until draining finishes, then complete the following steps to replace the worker node.
 
 ## Assign a new host as a worker node
 {: #assign-worker-node-sat}
@@ -135,19 +188,20 @@ Update OpenShift Data Foundation in your {{site.data.keyword.satelliteshort}} cl
 
 [Major]{: tag-red} [Minor]{: tag-blue}
 
+Complete these steps only if you are replacing your worker nodes.
+
 1. [Assign](/docs/satellite?topic=satellite-assigning-hosts#host-assign-ui) one of the unassigned hosts in your location to your cluster.
 
 1. Wait a few minutes until the bootstrapping process is complete and your host is successfully assigned to your cluster. When a new host is assigned to a cluster as a worker node it adopts the same version as the cluster master.
 
-    
 1. Verify that the nodes are in a `Ready` state.
     ```sh
     oc get nodes
     ```
     {: pre}
-    
+
     Example output
-    
+
     ```sh
     NAME           STATUS   ROLES           AGE   VERSION
     10.241.0.4     Ready    master,worker   22d   v1.21.6+bb8d50a
@@ -156,14 +210,15 @@ Update OpenShift Data Foundation in your {{site.data.keyword.satelliteshort}} cl
     ```
     {: screen}
 
-
 ## Update your configuration to add the new storage nodes
 {: #add-storage-node-sat}
 {: step}
 
 [Major]{: tag-red} [Minor]{: tag-blue}
 
-1. If you are deploying ODF on a subset of worker nodes, update your satellite configuration to add the new `worker node name(s)` from the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. 
+Complete these steps only if you are replacing your worker nodes.
+
+1. If you are deploying ODF on a subset of worker nodes, update your satellite configuration to add the new `worker node name(s)` from the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}.
 
 1. Wait for the OpenShift Data Foundation pods to deploy to the new worker. Verify that the OSD persistent volumes are created and that all pods are in a `Running` state.
     ```sh
@@ -178,7 +233,7 @@ Update OpenShift Data Foundation in your {{site.data.keyword.satelliteshort}} cl
     oc get pod -n openshift-storage | grep mon
     ```
     {: pre}
-    
+
     Example output:
     ```sh
     rook-ceph-mon-a-cd575c89b-b6k66         2/2     Running
@@ -192,23 +247,23 @@ Update OpenShift Data Foundation in your {{site.data.keyword.satelliteshort}} cl
 
 1. Verify that new OSD pods are running on the replacement node:
     ```sh
-    oc get pods -o wide -n openshift-storage| egrep -i <new_node_name> | egrep osd
+    oc get pods -o wide -n openshift-storage| egrep -i NEW_NODE_NAME | egrep osd
     ```
     {: pre}
 
 1. Identify the `crashcollector` pod deployment.
     ```sh
-    oc get deployment --selector=app=rook-ceph-crashcollector,node_name=NODE-NAME -n openshift-storage
+    oc get deployment --selector=app=rook-ceph-crashcollector,node_name=NODE_NAME -n openshift-storage
     ```
     {: pre}
 
 1. If there is an existing `crashcollector` deployment, delete it.
     ```sh
-    oc delete deployment --selector=app=rook-ceph-crashcollector,node_name=NODE-NAME -n openshift-storage
+    oc delete deployment --selector=app=rook-ceph-crashcollector,node_name=NODE_NAME -n openshift-storage
     ```
     {: pre}
 
-1. Delete the ocs-osd-removal-job. 
+1. Delete the ocs-osd-removal-job.
     ```sh
     oc delete -n openshift-storage job ocs-osd-removal-job
     ```
@@ -219,7 +274,6 @@ Update OpenShift Data Foundation in your {{site.data.keyword.satelliteshort}} cl
     job.batch "ocs-osd-removal-job" deleted
     ```
     {: screen}
-    
 
 ## Clean up the resources from the old node
 {: #cleanup-os-storage-sat}
@@ -227,10 +281,11 @@ Update OpenShift Data Foundation in your {{site.data.keyword.satelliteshort}} cl
 
 [Major]{: tag-red} [Minor]{: tag-blue}
 
+Complete these steps only if you are replacing your worker nodes.
 
 1. Remove the failed OSD from the cluster. You can specify multiple failed OSDs if required.
     ```sh
-    oc process -n openshift-storage ocs-osd-removal -p FAILED_OSD_IDS=<failed_osd_id> -p FORCE_OSD_REMOVAL=true | oc create -f
+    oc process -n openshift-storage ocs-osd-removal -p FAILED_OSD_IDS=OSD_ID -p FORCE_OSD_REMOVAL=true | oc create -f
     ```
     {: pre}
 
@@ -271,12 +326,11 @@ Update OpenShift Data Foundation in your {{site.data.keyword.satelliteshort}} cl
     If there is a PV in a `Released` state, delete it:
 
     ```sh
-    oc delete pv <persistent_volume>
+    oc delete pv PERSISTENT_VOLUME
     ```
     {: pre}
 
-1. Repeat the previous steps for each worker node you are updating. 
-
+1. Repeat the previous steps for each worker node you are updating.
 
 ## Edit your old storage assignment
 {: #sat-storage-config-edit}
@@ -284,7 +338,7 @@ Update OpenShift Data Foundation in your {{site.data.keyword.satelliteshort}} cl
 
 [Major]{: tag-red}
 
-The following steps upgrade ODF to the next version.
+Complete these steps for major updates, whether you updated your worker nodes in place or replaced them. The following steps upgrade ODF to the next version.
 
 1. Update your storage configuration to set the `perform-cleanup` parameter to `false` from the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. If this parameter is not set to `false`, ODF is removed.
 
@@ -296,7 +350,7 @@ The following steps upgrade ODF to the next version.
 
 1. Remove the assignment. After the assignment is removed, the ODF driver pods and storage classes remain on your cluster.
     ```sh
-    ibmcloud sat storage assignment rm --assignment <assignment_ID>
+    ibmcloud sat storage assignment rm --assignment ASSIGNMENT_ID
     ```
     {: pre}
 
@@ -306,11 +360,12 @@ The following steps upgrade ODF to the next version.
 
 [Major]{: tag-red}
 
+Complete this step for major updates, whether you updated your worker nodes in place or replaced them.
+
 1. Create a new storage configuration that contains all the same information as the old configuration with the `upgrade` parameter set to `true`.
 
-    - [ODF for Remote Devices](/docs/satellite?topic=satellite-storage-odf-remote&interface=ui#odf-remote-config-create-console) 
+    - [ODF for Remote Devices](/docs/satellite?topic=satellite-storage-odf-remote&interface=ui#odf-remote-config-create-console)
     - [ODF for Local Disks](/docs/satellite?topic=satellite-storage-odf-local&interface=ui#odf-local-config-create-console)
-
 
 ## Create a new assignment
 {: #sat-odf-new-assignment}
@@ -318,8 +373,10 @@ The following steps upgrade ODF to the next version.
 
 [Major]{: tag-red}
 
-1. Create a new storage assignment. 
-    - [ODF for Remote Devices](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#storage-odf-remote-include-assignment-create-cli) 
+Complete this step for major updates, whether you updated your worker nodes in place or replaced them.
+
+1. Create a new storage assignment.
+    - [ODF for Remote Devices](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#storage-odf-remote-include-assignment-create-cli)
     - [ODF for Local Disks](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#storage-odf-local-include-assignment-create-cli)
 
 1. Verify your storage assignment was created.
@@ -328,7 +385,7 @@ The following steps upgrade ODF to the next version.
     ```
     {: pre}
 
-1. Verify that ODF has been upgraded in your cluster. 
+1. Verify that ODF has been upgraded in your cluster.
 
     ```sh
     oc get storagecluster -n openshift-storage
