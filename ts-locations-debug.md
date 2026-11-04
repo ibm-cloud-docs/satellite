@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-11-04"
 
 keywords: satellite, hybrid, multicloud, location error messages, location messages, location errors
 
@@ -508,4 +508,19 @@ Steps to resolve
 
 1. Check that your hosts meet all [system requirements](/docs/satellite?topic=satellite-host-reqs), specifically for outbound connectivity to connect to IBM and Link tunnel clients. 
 1. If you have met all the system requirements and the issue persists, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID. You can find your location ID by running the `ibmcloud sat location ls` command.
+
+
+## R0062: Control plane is running an unsupported version
+{: #R0062}
+
+Location message
+:   The {{site.data.keyword.satelliteshort}} location control plane is currently running an unsupported version. Follow the documentation to identify the control plane hosts that require an upgrade, then follow the documented procedure to upgrade them.
+
+Steps to resolve
+:    Identify the control plane hosts that are running an outdated version, and then update them.
+
+1. [Identify the control plane hosts that need updating](/docs/satellite?topic=satellite-host-update-location#host-update-identify-cli).
+1. [Update the control plane hosts](/docs/satellite?topic=satellite-host-update-location#host-update-cp-procedure) that you identified in the previous step. Make sure that you update only one host at a time and that each update completes before you update another host.
+
+
  

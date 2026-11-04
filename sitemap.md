@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-11-02"
+lastupdated: "2026-11-04"
 
 keywords: satellite, sitemap, IBM Cloud satellite, getting started, data, cloud
 subcollection: satellite
@@ -204,6 +204,12 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 
 [{{site.data.keyword.satellitelong_notm}} release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
+
+* [November 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov26)
+
+    * [03 November 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov0326)
+
+        * Satellite Connector agent image version `1.2.15`.
 
 * [October 2026](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct26)
 
@@ -3293,6 +3299,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [Version 1.2](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2-change-log)
 
+    * [Version 1.2.15, released 3 Nov 2026](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2.15-change-log)
+
     * [Version 1.2.14, released 8 Oct 2026](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2.14-change-log)
 
     * [Version 1.2.13, released 16 Sep 2026](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.2.13-change-log)
@@ -4346,6 +4354,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 * [R0059: Outbound traffic to IBM Cloud Container Registry is failing.](/docs/satellite?topic=satellite-ts-locations-debug#R0059)
 
 * [R0061: A Satellite cluster API server is unreachable from IBM Cloud.](/docs/satellite?topic=satellite-ts-locations-debug#R0061)
+
+* [R0062: Control plane is running an unsupported version](/docs/satellite?topic=satellite-ts-locations-debug#R0062)
 
 [Recovering a satellite location after a disaster](/docs/satellite?topic=satellite-ts-recover-location#ts-recover-location)
 
