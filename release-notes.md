@@ -1,4 +1,4 @@
-d---
+---
 
 
 copyright:
@@ -24,7 +24,6 @@ Review the latest changes to the {{site.data.keyword.satellitelong_notm}} docume
 
 ## November 2026
 {: #satellite-nov26}
-
 
 ### 03 November 2026
 {: #satellite-nov0326}

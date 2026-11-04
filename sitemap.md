@@ -4355,6 +4355,8 @@ Learn how to navigate the {{site.data.keyword.satellitelong_notm}} documentation
 
 * [R0061: A Satellite cluster API server is unreachable from IBM Cloud.](/docs/satellite?topic=satellite-ts-locations-debug#R0061)
 
+* [R0062: Control plane is running an unsupported version](/docs/satellite?topic=satellite-ts-locations-debug#R0062)
+
 [Recovering a satellite location after a disaster](/docs/satellite?topic=satellite-ts-recover-location#ts-recover-location)
 
 [Checking cluster health after recovery](/docs/satellite?topic=satellite-ts-recovery-validation#ts-recovery-validation)
