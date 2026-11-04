@@ -3,7 +3,7 @@
 copyright:
   years: 2023, 2026
 
-lastupdated: "2026-10-09"
+lastupdated: "2026-11-04"
 
 
 keywords: satellite, connector, agent, image, change log, version history, IBM Cloud Satellite, connector version history
@@ -25,6 +25,12 @@ Only the most recent version of the Connector agent image (identified by the ver
 
 ## Version 1.2
 {: #connector-agent-1.2-change-log}
+
+### Version 1.2.15, released 3 Nov 2026
+{: #connector-agent-1.2.15-change-log}
+
+- Fixes security vulnerabilities.
+
 
 ### Version 1.2.14, released 8 Oct 2026
 {: #connector-agent-1.2.14-change-log}
